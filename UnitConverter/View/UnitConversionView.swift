@@ -22,12 +22,36 @@ struct UnitConversionView: View {
             }
             
             Section("Value") {
-                TextField("Enter value to convert", text: $viewModel.firstUnitInputValue)
-                    .keyboardType(.decimalPad)
-
+                HStack {
+                    TextField("Enter value to convert", text: $viewModel.firstUnitInputValue)
+                        .keyboardType(.decimalPad)
+                    Spacer()
+                    Button(action: {
+                        UIPasteboard.general.string = viewModel.firstUnitInputValue
+                    }) {
+                        Text("paste")
+                    }
+                    .padding(9)
+                    .padding(.horizontal)
+                    .background(.ultraThinMaterial)
+                    .containerShape(.rect(cornerRadius: 10))
+                }
             }
             Section("Result") {
-                Text("\(viewModel.convertUnits(value: viewModel.firstUnitInputValue, unit1: viewModel.availableUnits[viewModel.selectedFirstUnitIndex], unit2: viewModel.availableUnits[viewModel.selectedSecondUnitIndex]), specifier: "%g") \(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)")
+                HStack {
+                    Text("\(viewModel.convertUnits(value: viewModel.firstUnitInputValue, unit1: viewModel.availableUnits[viewModel.selectedFirstUnitIndex], unit2: viewModel.availableUnits[viewModel.selectedSecondUnitIndex]), specifier: "%g") \(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)")
+                    Spacer()
+                    Button(action: {
+                        let result = String(format: "%g", viewModel.convertUnits(value: viewModel.firstUnitInputValue, unit1: viewModel.availableUnits[viewModel.selectedFirstUnitIndex], unit2: viewModel.availableUnits[viewModel.selectedSecondUnitIndex]))
+                        UIPasteboard.general.string = result
+                    }) {
+                        Text("copy")
+                    }
+                    .padding(9)
+                    .padding(.horizontal)
+                    .background(.ultraThinMaterial)
+                    .containerShape(.rect(cornerRadius: 10))
+                }
             }
         }
         .sheet(isPresented: $viewModel.isInfoPresented, content: {
