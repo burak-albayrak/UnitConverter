@@ -19,7 +19,7 @@ struct CategoryInfoView: View {
                 Text(category.rawValue)
                     .bold()
             }
-            .padding(.top, 30)
+            .padding(.top, 40)
             .font(.largeTitle)
 
             Text(category.info)

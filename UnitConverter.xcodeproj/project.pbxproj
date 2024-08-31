@@ -15,6 +15,7 @@
 		EF37C05C2C829111004B974A /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C05B2C829111004B974A /* MainMenuView.swift */; };
 		EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C05D2C829315004B974A /* UnitConversionView.swift */; };
 		EF37C0602C829390004B974A /* CategoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C05F2C829390004B974A /* CategoryInfoView.swift */; };
+		EF37C0622C834FE1004B974A /* AdvencedUnitsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0612C834FE1004B974A /* AdvencedUnitsMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		EF37C05B2C829111004B974A /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		EF37C05D2C829315004B974A /* UnitConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversionView.swift; sourceTree = "<group>"; };
 		EF37C05F2C829390004B974A /* CategoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfoView.swift; sourceTree = "<group>"; };
+		EF37C0612C834FE1004B974A /* AdvencedUnitsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvencedUnitsMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				EF37C05B2C829111004B974A /* MainMenuView.swift */,
 				EF37C05D2C829315004B974A /* UnitConversionView.swift */,
 				EF37C05F2C829390004B974A /* CategoryInfoView.swift */,
+				EF37C0612C834FE1004B974A /* AdvencedUnitsMenu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				EF37C0602C829390004B974A /* CategoryInfoView.swift in Sources */,
 				EF37C05C2C829111004B974A /* MainMenuView.swift in Sources */,
 				EF0F874E2C82870400114906 /* UnitModel.swift in Sources */,
+				EF37C0622C834FE1004B974A /* AdvencedUnitsMenu.swift in Sources */,
 				EF0F873F2C8285FF00114906 /* UnitConverterApp.swift in Sources */,
 				EF37C0592C828D0D004B974A /* UnitConverterViewModel.swift in Sources */,
 				EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */,

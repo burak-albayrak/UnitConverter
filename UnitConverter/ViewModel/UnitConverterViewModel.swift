@@ -11,7 +11,7 @@ final class DetailViewModel: ObservableObject {
     @Published var selectedFirstUnitIndex = 0
     @Published var selectedSecondUnitIndex = 1
     @Published var firstUnitInputValue = ""
-    @Published var secondUnitInputValue = "" //??? second input value derken ?? is this output??
+    @Published var secondUnitInputValue = "" //FIXME: ??? second input value derken ?? is this output??
     @Published var isInfoPresented = false
     
     var category: Category

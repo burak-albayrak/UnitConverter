@@ -8,12 +8,12 @@
 import Foundation
 
 enum Category: String, CaseIterable {
-    case mass = "Mass"
-    case length = "Length"
-    case area = "Area"
+    case length = "Length / Distance"
+    case mass = "Weight / Mass"
     case volume = "Volume"
-    case pressure = "Pressure"
     case temperature = "Temperature"
+    case area = "Area"
+    case pressure = "Pressure"
     case angle = "Angle"
     case speed = "Speed"
     case duration = "Duration"
