@@ -17,26 +17,29 @@ struct CategoryInfoView: View {
                 Image(systemName: category.icon)
                     .foregroundColor(.blue)
                 Text(category.rawValue)
-                    .font(.title2)
                     .bold()
             }
-            .padding(.top, 70)
+            .padding(.top, 30)
+            .font(.largeTitle)
 
             Text(category.info)
-                .padding(20)
-            
+                .padding(30)
+                .multilineTextAlignment(.center)
             Spacer()
             
             Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }, label: {
-                Text("OK")
-                    .font(.headline)
-                    .bold()
-                    .foregroundColor(.white)
-                    .frame(width: 280, height: 44)
-                    .background(Color.blue)
-                    .cornerRadius(12)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 27)
+                        .frame(width: 160, height: 54)
+                    .foregroundStyle(.blue.gradient)
+                    Text("OK")
+                        .font(.headline)
+                        .bold()
+                        .foregroundColor(.white)
+                }
+
             })
                 .padding(.bottom, 60)
         }

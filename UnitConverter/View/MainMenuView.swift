@@ -27,3 +27,13 @@ struct MainMenuView: View {
 #Preview {
     MainMenuView()
 }
+
+// TODO: improve info section
+// TODO: divide Categories
+// TODO: add advanced mode
+// TODO: improve UnitConversation View
+// TODO: add Copy and Paste Buttons
+
+// FIXME: fix unit order and base orders
+
+// TODO: ADD price convertions
