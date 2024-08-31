@@ -30,7 +30,7 @@ struct UnitConversionView: View {
                 Text("\(viewModel.convertUnits(value: viewModel.firstUnitInputValue, unit1: viewModel.availableUnits[viewModel.selectedFirstUnitIndex], unit2: viewModel.availableUnits[viewModel.selectedSecondUnitIndex]), specifier: "%g") \(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)")
             }
         }
-        .sheet(isPresented: $viewModel.showingInfo, content: {
+        .sheet(isPresented: $viewModel.isInfoPresented, content: {
             CategoryInfoView(category: viewModel.category)
         })
         .navigationTitle(viewModel.category.rawValue)
@@ -42,7 +42,7 @@ struct UnitConversionView: View {
                     Image(systemName: "keyboard.chevron.compact.down")
                 })
                 Button(action: {
-                    viewModel.showingInfo = true
+                    viewModel.isInfoPresented = true
                 }, label: {
                     Image(systemName: "info.circle")
                 })

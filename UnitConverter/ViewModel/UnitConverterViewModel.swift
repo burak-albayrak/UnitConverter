@@ -12,7 +12,7 @@ final class DetailViewModel: ObservableObject {
     @Published var selectedSecondUnitIndex = 1
     @Published var firstUnitInputValue = ""
     @Published var secondUnitInputValue = ""
-    @Published var showingInfo = false
+    @Published var isInfoPresented = false
     
     var category: Category
     

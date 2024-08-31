@@ -7,12 +7,23 @@
 
 import SwiftUI
 
-struct MainMenu: View {
+struct MainMenuView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List {
+                ForEach(Category.allCases, id: \.self) { category in
+                    NavigationLink {
+                        UnitConversionView(viewModel: DetailViewModel(category: category))
+                    } label: {
+                        Label(category.rawValue, systemImage: category.icon)
+                    }
+                }
+            }
+            .navigationTitle("Unit Converter")
+        }
     }
 }
 
 #Preview {
-    MainMenu()
+    MainMenuView()
 }
