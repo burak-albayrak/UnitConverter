@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryInfoView: View {
     @Environment(\.presentationMode) var presentationMode
-    var category: Category
+    var category: CommonUnitsCategory
     
     var body: some View {
         VStack {

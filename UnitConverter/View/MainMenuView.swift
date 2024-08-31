@@ -12,7 +12,7 @@ struct MainMenuView: View {
         NavigationView {
             List {
                 Section("Common Converters") {
-                    ForEach(Category.allCases, id: \.self) { category in
+                    ForEach(CommonUnitsCategory.allCases, id: \.self) { category in
                         NavigationLink {
                             UnitConversionView(viewModel: DetailViewModel(category: category))
                         } label: {
@@ -22,35 +22,12 @@ struct MainMenuView: View {
                 }
                 
                 Section("All Converters") {
-                    NavigationLink {
-                        AdvencedUnitsMenu()
-                    } label: {
-                        Label("Engineering Converters", systemImage: "wrench.and.screwdriver")
-                    }
-                    NavigationLink {
-                        AdvencedUnitsMenu()
-                    } label: {
-                        Label("Heat Converters", systemImage: "flame")
-                    }
-                    NavigationLink {
-                        AdvencedUnitsMenu()
-                    } label: {
-                        Label("Fluids Converters", systemImage: "drop")
-                    }
-                    NavigationLink {
-                        AdvencedUnitsMenu()
-                    } label: {
-                        Label("Light Converters", systemImage: "lightbulb")
-                    }
-                    NavigationLink {
-                        AdvencedUnitsMenu()
-                    } label: {
-                        Label("Electricity Converters", systemImage: "bolt")
-                    }
-                    NavigationLink {
-                        AdvencedUnitsMenu()
-                    } label: {
-                        Label("Magnetism Converters", systemImage: "bolt.batteryblock")
+                    ForEach(AllConverters.allCases, id: \.self) { category in
+                        NavigationLink {
+                            AdvencedUnitsMenu()
+                        } label: {
+                            Label(category.rawValue, systemImage: category.icon)
+                        }
                     }
                 }
                 

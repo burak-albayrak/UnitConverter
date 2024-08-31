@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Category: String, CaseIterable {
+enum CommonUnitsCategory: String, CaseIterable {
     case length = "Length / Distance"
     case mass = "Weight / Mass"
     case volume = "Volume"

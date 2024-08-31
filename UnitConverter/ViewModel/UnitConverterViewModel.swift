@@ -11,16 +11,16 @@ final class DetailViewModel: ObservableObject {
     @Published var selectedFirstUnitIndex = 0
     @Published var selectedSecondUnitIndex = 1
     @Published var firstUnitInputValue = ""
-    @Published var secondUnitInputValue = "" //FIXME: ??? second input value derken ?? is this output??
+    @Published var secondUnitInputValue = ""
     @Published var isInfoPresented = false
     
-    var category: Category
+    var category: CommonUnitsCategory
     
     var availableUnits: [Dimension] {
         return unitsForCategory(category: category)
     }
     
-    init(category: Category) {
+    init(category: CommonUnitsCategory) {
         self.category = category
     }
     
@@ -31,7 +31,7 @@ final class DetailViewModel: ObservableObject {
         return Measurement(value: numericValue, unit: unit1).converted(to: unit2).value
     }
     
-    func unitsForCategory(category: Category) -> [Dimension] {
+    func unitsForCategory(category: CommonUnitsCategory) -> [Dimension] {
         switch category {
         case .area:
             return [

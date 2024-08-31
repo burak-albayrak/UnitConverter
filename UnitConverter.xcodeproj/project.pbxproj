@@ -10,12 +10,14 @@
 		EF0F873F2C8285FF00114906 /* UnitConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F873E2C8285FF00114906 /* UnitConverterApp.swift */; };
 		EF0F87432C82860100114906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0F87422C82860100114906 /* Assets.xcassets */; };
 		EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0F87452C82860100114906 /* Preview Assets.xcassets */; };
-		EF0F874E2C82870400114906 /* UnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* UnitModel.swift */; };
+		EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
 		EF37C0592C828D0D004B974A /* UnitConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConverterViewModel.swift */; };
 		EF37C05C2C829111004B974A /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C05B2C829111004B974A /* MainMenuView.swift */; };
 		EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C05D2C829315004B974A /* UnitConversionView.swift */; };
 		EF37C0602C829390004B974A /* CategoryInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C05F2C829390004B974A /* CategoryInfoView.swift */; };
 		EF37C0622C834FE1004B974A /* AdvencedUnitsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0612C834FE1004B974A /* AdvencedUnitsMenu.swift */; };
+		EF37C0642C8359BF004B974A /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
+		EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,12 +25,14 @@
 		EF0F873E2C8285FF00114906 /* UnitConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterApp.swift; sourceTree = "<group>"; };
 		EF0F87422C82860100114906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF0F87452C82860100114906 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		EF0F874D2C82870400114906 /* UnitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitModel.swift; sourceTree = "<group>"; };
+		EF0F874D2C82870400114906 /* CommonUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C0582C828D0D004B974A /* UnitConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterViewModel.swift; sourceTree = "<group>"; };
 		EF37C05B2C829111004B974A /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		EF37C05D2C829315004B974A /* UnitConversionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversionView.swift; sourceTree = "<group>"; };
 		EF37C05F2C829390004B974A /* CategoryInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryInfoView.swift; sourceTree = "<group>"; };
 		EF37C0612C834FE1004B974A /* AdvencedUnitsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvencedUnitsMenu.swift; sourceTree = "<group>"; };
+		EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineeringUnitsModel.swift; sourceTree = "<group>"; };
+		EF37C0652C835F59004B974A /* AllConvertersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllConvertersModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,9 @@
 		EF0F874C2C8286DA00114906 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF0F874D2C82870400114906 /* UnitModel.swift */,
+				EF0F874D2C82870400114906 /* CommonUnitsModel.swift */,
+				EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */,
+				EF37C0652C835F59004B974A /* AllConvertersModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -178,9 +184,11 @@
 			files = (
 				EF37C0602C829390004B974A /* CategoryInfoView.swift in Sources */,
 				EF37C05C2C829111004B974A /* MainMenuView.swift in Sources */,
-				EF0F874E2C82870400114906 /* UnitModel.swift in Sources */,
+				EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */,
 				EF37C0622C834FE1004B974A /* AdvencedUnitsMenu.swift in Sources */,
+				EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */,
 				EF0F873F2C8285FF00114906 /* UnitConverterApp.swift in Sources */,
+				EF37C0642C8359BF004B974A /* EngineeringUnitsModel.swift in Sources */,
 				EF37C0592C828D0D004B974A /* UnitConverterViewModel.swift in Sources */,
 				EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */,
 			);
