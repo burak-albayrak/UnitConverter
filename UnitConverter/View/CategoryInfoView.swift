@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CategoryInfoView: View {
+struct CategoryInfoView<T: UnitCategory>: View {
     @Environment(\.presentationMode) var presentationMode
-    var category: CommonUnitsCategory
+    var category: T
     
     var body: some View {
         VStack {
@@ -47,5 +47,5 @@ struct CategoryInfoView: View {
 }
 
 #Preview {
-    CategoryInfoView(category: .mass)
+    CategoryInfoView(category: CommonUnitsCategory.mass)
 }

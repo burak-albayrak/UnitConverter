@@ -7,17 +7,21 @@
 
 import SwiftUI
 
-struct UnitConversionView: View {
-    @StateObject var viewModel: DetailViewModel
+struct UnitConversionView<T: UnitCategory>: View {
+    @StateObject var viewModel: UnitConversionViewModel<T>
     
     var body: some View {
         Form {
             Section("Select Units") {
                 Picker("From Unit", selection: $viewModel.selectedFirstUnitIndex) {
-                    ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { Text("\(viewModel.availableUnits[$0].symbol)") }
+                    ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { index in
+                        Text("\(viewModel.availableUnits[index].symbol)")
+                    }
                 }
                 Picker("To Unit", selection: $viewModel.selectedSecondUnitIndex) {
-                    ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { Text("\(viewModel.availableUnits[$0].symbol)") }
+                    ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { index in
+                        Text("\(viewModel.availableUnits[index].symbol)")
+                    }
                 }
             }
             
@@ -39,11 +43,13 @@ struct UnitConversionView: View {
             }
             Section("Result") {
                 HStack {
-                    Text("\(viewModel.convertUnits(value: viewModel.firstUnitInputValue, unit1: viewModel.availableUnits[viewModel.selectedFirstUnitIndex], unit2: viewModel.availableUnits[viewModel.selectedSecondUnitIndex]), specifier: "%g") \(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)")
+                    let convertedValue = viewModel.convertUnits(value: viewModel.firstUnitInputValue)
+                    
+                    Text("\(convertedValue) \(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)")
                     Spacer()
+                    
                     Button(action: {
-                        let result = String(format: "%g", viewModel.convertUnits(value: viewModel.firstUnitInputValue, unit1: viewModel.availableUnits[viewModel.selectedFirstUnitIndex], unit2: viewModel.availableUnits[viewModel.selectedSecondUnitIndex]))
-                        UIPasteboard.general.string = result
+                        UIPasteboard.general.string = convertedValue
                     }) {
                         Text("copy")
                     }
@@ -53,6 +59,7 @@ struct UnitConversionView: View {
                     .containerShape(.rect(cornerRadius: 10))
                 }
             }
+
         }
         .sheet(isPresented: $viewModel.isInfoPresented, content: {
             CategoryInfoView(category: viewModel.category)
@@ -76,5 +83,5 @@ struct UnitConversionView: View {
 }
 
 #Preview {
-    UnitConversionView(viewModel: DetailViewModel(category: .mass))
+    UnitConversionView(viewModel: UnitConversionViewModel<CommonUnitsCategory>(category: .mass))
 }

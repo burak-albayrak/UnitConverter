@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AllConverters: String, CaseIterable {
+enum AllConvertersCategory: String, CaseIterable {
     case engineeringConverters = "Engineering Converters"
     case heatConverters = "Heat Converters"
     case fluidsConverters = "Fluids Converters"

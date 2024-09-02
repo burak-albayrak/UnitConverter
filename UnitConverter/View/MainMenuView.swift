@@ -14,7 +14,7 @@ struct MainMenuView: View {
                 Section("Common Converters") {
                     ForEach(CommonUnitsCategory.allCases, id: \.self) { category in
                         NavigationLink {
-                            UnitConversionView(viewModel: DetailViewModel(category: category))
+                            UnitConversionView(viewModel: UnitConversionViewModel(category: category))
                         } label: {
                             Label(category.rawValue, systemImage: category.icon)
                         }
@@ -22,9 +22,9 @@ struct MainMenuView: View {
                 }
                 
                 Section("All Converters") {
-                    ForEach(AllConverters.allCases, id: \.self) { category in
+                    ForEach(AllConvertersCategory.allCases, id: \.self) { category in
                         NavigationLink {
-                            AdvencedUnitsMenu()
+                            AllConvertersMenu()
                         } label: {
                             Label(category.rawValue, systemImage: category.icon)
                         }
@@ -57,6 +57,6 @@ struct MainMenuView: View {
 // TODO: ADD price convertions
 // TODO: add convert case ***
 
-// TODO: Dark mode
+// TODO: Dark mode ✅
 // TODO: Dil desteği
 
