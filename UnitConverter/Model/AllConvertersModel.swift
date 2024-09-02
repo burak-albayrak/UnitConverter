@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum AllConvertersCategory: String, CaseIterable {
+enum AllConvertersCategory: String, CaseIterable, Identifiable{
     case engineeringConverters = "Engineering Converters"
     case heatConverters = "Heat Converters"
     case fluidsConverters = "Fluids Converters"
@@ -15,6 +15,8 @@ enum AllConvertersCategory: String, CaseIterable {
     case electricityConverters = "Electricity Converters"
     case magnetismConverters = "Magnetism Converters"
     case radiologyConverters = "Radiology Converters"
+    
+    var id: String { self.rawValue }
     
     var icon: String {
         switch self {
@@ -32,6 +34,19 @@ enum AllConvertersCategory: String, CaseIterable {
             return "bolt.batteryblock"
         case .radiologyConverters:
             return "waveform.path.ecg" // TODO: find better
+        }
+    }
+    
+    var unitCategory: [UnitCategory] {
+        switch self {
+        case .engineeringConverters:
+            return EngineeringUnitsCategory.allCases
+        // Diğer kategoriler için benzer şekilde devam edin
+        // case .heat:
+        //     return HeatUnitsCategory.allCases
+        // ...
+        default:
+            return [] // Geçici olarak boş dizi döndürüyoruz
         }
     }
 }

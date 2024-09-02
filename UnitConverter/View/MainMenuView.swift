@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainMenuView: View {
+    @State private var selectedCategory: AllConvertersCategory?
+    @State private var selectedUnitCategory: UnitCategory?
+    
     var body: some View {
         NavigationView {
             List {
@@ -22,9 +25,9 @@ struct MainMenuView: View {
                 }
                 
                 Section("All Converters") {
-                    ForEach(AllConvertersCategory.allCases, id: \.self) { category in
+                    ForEach(AllConvertersCategory.allCases) { category in
                         NavigationLink {
-                            AllConvertersMenu()
+                            AllConvertersMenu(category: category)
                         } label: {
                             Label(category.rawValue, systemImage: category.icon)
                         }

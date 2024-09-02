@@ -8,22 +8,37 @@
 import SwiftUI
 
 struct AllConvertersMenu: View {
+    let category: AllConvertersCategory
+
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(CommonUnitsCategory.allCases, id: \.self) { category in
-                    NavigationLink {
-                        UnitConversionView(viewModel: UnitConversionViewModel(category: category))
-                    } label: {
-                        Label(category.rawValue, systemImage: category.icon)
-                    }
+        List {
+            ForEach(category.unitCategory, id: \.rawValue) { unitCategory in
+                NavigationLink {
+                    AnyView(makeUnitConversionView(for: unitCategory))
+                } label: {
+                    Label(unitCategory.rawValue, systemImage: unitCategory.icon)
                 }
             }
         }
-        .navigationTitle("seçilen ünit")
+        .navigationTitle(category.rawValue)
+    }
+    
+    @ViewBuilder
+    private func makeUnitConversionView(for unitCategory: any UnitCategory) -> some View {
+        if let engineeringCategory = unitCategory as? EngineeringUnitsCategory {
+            UnitConversionView(viewModel: UnitConversionViewModel(category: engineeringCategory))
+        }
+        // Diğer kategoriler için benzer şekilde devam edin
+        // else if let heatCategory = unitCategory as? HeatUnitsCategory {
+        //     UnitConversionView(viewModel: UnitConversionViewModel(category: heatCategory))
+        // }
+        // ...
+        else {
+            Text("Unsupported category")
+        }
     }
 }
 
 #Preview {
-    AllConvertersMenu()
+    AllConvertersMenu(category: AllConvertersCategory.engineeringConverters)
 }

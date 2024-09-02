@@ -59,7 +59,6 @@ struct UnitConversionView<T: UnitCategory>: View {
                     .containerShape(.rect(cornerRadius: 10))
                 }
             }
-
         }
         .sheet(isPresented: $viewModel.isInfoPresented, content: {
             CategoryInfoView(category: viewModel.category)

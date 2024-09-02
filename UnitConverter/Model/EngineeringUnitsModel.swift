@@ -415,6 +415,8 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             return [
                 UnitDuration.hours,
                 UnitDuration.minutes,
+                UnitDuration.minutes,
+                UnitDuration.minutes,
                 UnitDuration.seconds,
                 UnitDuration.milliseconds,
                 UnitDuration.microseconds,
