@@ -19,6 +19,12 @@
 		EF37C0642C8359BF004B974A /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
 		EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
 		EF37C06D2C860C94004B974A /* UnitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C06C2C860C94004B974A /* UnitCategory.swift */; };
+		EF37C0712C867E90004B974A /* HeatUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0702C867E90004B974A /* HeatUnitsModel.swift */; };
+		EF37C0732C8680BA004B974A /* FluidsUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */; };
+		EF37C0752C8682E6004B974A /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
+		EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
+		EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
+		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,12 @@
 		EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineeringUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C0652C835F59004B974A /* AllConvertersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllConvertersModel.swift; sourceTree = "<group>"; };
 		EF37C06C2C860C94004B974A /* UnitCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitCategory.swift; sourceTree = "<group>"; };
+		EF37C0702C867E90004B974A /* HeatUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatUnitsModel.swift; sourceTree = "<group>"; };
+		EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidsUnitsModel.swift; sourceTree = "<group>"; };
+		EF37C0742C8682E6004B974A /* LightUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightUnitsModel.swift; sourceTree = "<group>"; };
+		EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricityUnitsModel.swift; sourceTree = "<group>"; };
+		EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetismUnitsModel.swift; sourceTree = "<group>"; };
+		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,9 +101,15 @@
 		EF0F874C2C8286DA00114906 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EF37C0652C835F59004B974A /* AllConvertersModel.swift */,
 				EF0F874D2C82870400114906 /* CommonUnitsModel.swift */,
 				EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */,
-				EF37C0652C835F59004B974A /* AllConvertersModel.swift */,
+				EF37C0702C867E90004B974A /* HeatUnitsModel.swift */,
+				EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */,
+				EF37C0742C8682E6004B974A /* LightUnitsModel.swift */,
+				EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */,
+				EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */,
+				EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,8 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF37C0732C8680BA004B974A /* FluidsUnitsModel.swift in Sources */,
+				EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */,
+				EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */,
+				EF37C0712C867E90004B974A /* HeatUnitsModel.swift in Sources */,
 				EF37C0602C829390004B974A /* CategoryInfoView.swift in Sources */,
 				EF37C05C2C829111004B974A /* MainMenuView.swift in Sources */,
+				EF37C0752C8682E6004B974A /* LightUnitsModel.swift in Sources */,
 				EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */,
 				EF37C0622C834FE1004B974A /* AllConvertersMenu.swift in Sources */,
 				EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */,
@@ -203,6 +226,7 @@
 				EF37C0642C8359BF004B974A /* EngineeringUnitsModel.swift in Sources */,
 				EF37C0592C828D0D004B974A /* UnitConversionViewModel.swift in Sources */,
 				EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */,
+				EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
