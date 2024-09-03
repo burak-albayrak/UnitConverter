@@ -23,25 +23,25 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     var icon: String {
         switch self {
         case .fuelEfficiencyMass:
-            return "scalemass"
+            return "gauge"
         case .fuelEfficiencyVolume:
-            return "ruler"
+            return "fuelpump"
         case .heatDensity:
-            return "skew"
+            return "flame"
         case .heatFluxDensity:
-            return "pyramid"
+            return "waveform.path.badge.plus"
         case .heatTransverCoefficient:
-            return "barometer"
-        case .spesificHeatCapacity:
             return "thermometer"
+        case .spesificHeatCapacity:
+            return "flame.circle"
         case .temperatureInterval:
-            return "angle"
+            return "thermometer.sun"
         case .thermalConductivity:
-            return "gauge.with.dots.needle.67percent"
+            return "waveform.path"
         case .thermalExpansion:
-            return "stopwatch"
+            return "arrow.up.right.circle"
         case .thermalResistance:
-            return "stopwatch"
+            return "snowflake"
         }
     }
     

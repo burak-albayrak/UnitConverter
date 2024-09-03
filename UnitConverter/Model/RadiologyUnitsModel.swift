@@ -12,17 +12,18 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     case radiationActivity = "Radiation - Activity"
     case radiationExposure = "Radiation - Exposure"
     case radiationAbsorbedDose = "Radiation - Absorbed Dose"
+
     
     var icon: String {
         switch self {
         case .radiation:
-            return "scalemass"
+            return "waveform.path"
         case .radiationAbsorbedDose:
-            return "ruler"
+            return "dot.radiowaves.right"
         case .radiationActivity:
-            return "skew"
+            return "antenna.radiowaves.left.and.right"
         case .radiationExposure:
-            return "pyramid"
+            return "wave.3.right"
         }
     }
     

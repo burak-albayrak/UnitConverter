@@ -33,7 +33,7 @@ enum AllConvertersCategory: String, CaseIterable, Identifiable{
         case .magnetismConverters:
             return "bolt.batteryblock"
         case .radiologyConverters:
-            return "waveform.path.ecg" // TODO: find better
+            return "dot.radiowaves.left.and.right"
         }
     }
     

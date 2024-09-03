@@ -23,25 +23,25 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
     var icon: String {
         switch self {
         case .concentrationMolar:
-            return "scalemass"
+            return "circle.grid.cross"
         case .concentrationSolution:
-            return "ruler"
+            return "drop"
         case .flow:
-            return "skew"
+            return "arrow.right.to.line"
         case .flowMass:
-            return "pyramid"
+            return "scalemass"
         case .flowMolar:
-            return "barometer"
+            return "wave.3.forward"
         case .massFluxDensity:
-            return "thermometer"
+            return "chart.bar"
         case .permeability:
-            return "angle"
+            return "square.stack.3d.forward.dottedline"
         case .surfaceTension:
-            return "gauge.with.dots.needle.67percent"
+            return "drop.triangle"
         case .viscosityDynamic:
-            return "stopwatch"
+            return "waveform.path.ecg"
         case .viscosityKinematic:
-            return "stopwatch"
+            return "waveform.path.ecg.rectangle"
         }
     }
     

@@ -16,13 +16,13 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
     var icon: String {
         switch self {
         case .magneticFieldStrength:
-            return "scalemass"
+            return "waveform.circle"
         case .magneticFlux:
-            return "ruler"
+            return "circle.grid.cross"
         case .magneticFluxDensity:
-            return "skew"
+            return "dot.circle.and.hand.point.up.left.fill"
         case .magnetomotiveForce:
-            return "pyramid"
+            return "bolt.square"
         }
     }
     

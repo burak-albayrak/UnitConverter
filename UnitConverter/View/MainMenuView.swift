@@ -53,7 +53,7 @@ struct MainMenuView: View {
 
 // Ugrastirici isler
 
-// TODO: tüm unitlerin açıklamalarını ayarla (belki hepsine wikipedia linki)
+// TODO: tüm unitlerin açıklamalarını ve logolarını ayarla (belki hepsine wikipedia linki)
 
 // TODO: birimlerin yanında isimleri yazmalı
 

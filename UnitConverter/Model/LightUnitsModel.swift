@@ -18,15 +18,15 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     var icon: String {
         switch self {
         case .digitalImageResolution:
-            return "scalemass"
+            return "photo"
         case .frequencyWavelength:
-            return "ruler"
+            return "waveform.path"
         case .illumination:
-            return "skew"
+            return "lightbulb"
         case .luminance:
-            return "pyramid"
+            return "sun.max"
         case .luminousIntensity:
-            return "pyramid"
+            return "light.max"
         }
     }
     

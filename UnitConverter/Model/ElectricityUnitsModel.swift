@@ -27,35 +27,35 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
     var icon: String {
         switch self {
         case .charge:
-            return "scalemass"
+            return "bolt.circle"
         case .current:
-            return "ruler"
+            return "wave.3.forward"
         case .electricConductance:
-            return "skew"
+            return "dot.radiowaves.right"
         case .electricConductivity:
-            return "pyramid"
+            return "antenna.radiowaves.left.and.right"
         case .electricFieldStrength:
-            return "barometer"
+            return "waveform.path.ecg"
         case .electricPotential:
-            return "thermometer"
+            return "bolt"
         case .electricResistance:
-            return "angle"
+            return "bolt.horizontal"
         case .electricResistivity:
-            return "gauge.with.dots.needle.67percent"
+            return "waveform.path.badge.minus"
         case .electrostaticCapacitance:
-            return "stopwatch"
+            return "capsule.portrait"
         case .inductance:
-            return "stopwatch"
+            return "waveform.path.badge.plus"
         case .linearChargeDensity:
-            return "stopwatch"
+            return "ruler"
         case .linearCurrentDensity:
-            return "stopwatch"
+            return "cable.connector.horizontal"
         case .surfaceChargeDensity:
-            return "stopwatch"
+            return "rectangle.grid.2x2"
         case .surfaceCurrentDensity:
-            return "stopwatch"
+            return "rectangle.grid.3x2"
         case .volumeChargeDensity:
-            return "stopwatch"
+            return "cube.box"
         }
     }
     
