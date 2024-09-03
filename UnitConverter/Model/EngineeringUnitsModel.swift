@@ -55,37 +55,37 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         case .duration:
             return "stopwatch"
         case .energy:
-            return "stopwatch"
+            return "bolt"
         case .power:
-            return "stopwatch"
+            return "power" // TODO: daha iyisini bul
         case .force:
-            return "stopwatch"
+            return "arrow.left.arrow.right" // TODO: daha iyisini bul
         case .time:
-            return "stopwatch"
+            return "stopwatch" // TODO: ???????
         case .fuelConsuption:
-            return "stopwatch"
+            return "fuelpump"
         case .numbers:
-            return "stopwatch"
+            return "numbersign" // TODO: daha iyisini bul
         case .dataStorage:
-            return "stopwatch"
+            return "externaldrive"
         case .volumeDry:
-            return "stopwatch"
+            return "speaker.wave.2"
         case .velocityAngular:
-            return "stopwatch"
+            return "arrow.clockwise"
         case .acceleration:
-            return "stopwatch"
+            return "gauge.open.with.lines.needle.84percent.exclamation" // TODO: daha iyisini bul
         case .accelerationAngular:
-            return "stopwatch"
+            return "digitalcrown.arrow.clockwise" // TODO: daha iyisini bul
         case .density:
-            return "stopwatch"
+            return "circle.dotted.and.circle" // TODO: daha iyisini bul
         case .spesificVolume:
-            return "stopwatch"
+            return "cube"
         case .momentOfInertia:
-            return "stopwatch"
+            return "arrow.right.arrow.left" // TODO: daha iyisini bul
         case .momentOfForce:
-            return "stopwatch"
+            return "circle" // TODO: daha iyisini bul
         case .torque:
-            return "stopwatch"
+            return "gearshape" // TODO: daha iyisini bul
         }
     }
     

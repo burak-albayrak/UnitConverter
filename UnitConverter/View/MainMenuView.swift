@@ -47,19 +47,40 @@ struct MainMenuView: View {
     MainMenuView()
 }
 
-// TODO: improve info section ✅
-// TODO: add Copy and Paste Buttons ✅
-// TODO: improve UnitConversation View ✅
-// TODO: divide Categories ✅
+
+
+// FIXME: paste button
+
+// Ugrastirici isler
+
+// TODO: tüm unitlerin açıklamalarını ayarla (belki hepsine wikipedia linki)
+
+// TODO: birimlerin yanında isimleri yazmalı
+
+// TODO: birimlerin sırasını ayarla ve ilk girinceki unit'leri ayarla
+
+// TODO: tüm unit dönüşümlerini ayarla
+
+// TODO: ADD price convertions (internetten güncel çekmeli)
+
+// TODO: add convert case ***
+
+
+
+// Zor islerrrrr
 
 // TODO: add history section with SwiftData
 // TODO: add fav section with SwiftData I guess??
 
-// FIXME: fix unit order and base orders
 
-// TODO: ADD price convertions
-// TODO: add convert case ***
+// pre-Final
+
+// TODO: improve info section
+// TODO: improve UnitConversation View
+
+
+// FINAL
 
 // TODO: Dark mode ✅
 // TODO: Dil desteği
-
+// TODO: uygulama rengi belirle.
