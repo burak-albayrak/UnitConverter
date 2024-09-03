@@ -13,7 +13,7 @@ struct CategoryInfoView<T: UnitCategory>: View {
     
     var body: some View {
         VStack {
-            HStack {
+            VStack {
                 Image(systemName: category.icon)
                     .foregroundColor(.blue)
                 Text(category.rawValue)
@@ -22,9 +22,15 @@ struct CategoryInfoView<T: UnitCategory>: View {
             .padding(.top, 40)
             .font(.largeTitle)
 
-            Text(category.info)
-                .padding(30)
-                .multilineTextAlignment(.center)
+            ScrollView {
+                Text(category.info)
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 5)
+                    .padding(.bottom, 10)
+                    .multilineTextAlignment(.leading)
+            }
+            Spacer()
+            Spacer()
             Spacer()
             
             Button(action: {
@@ -41,7 +47,7 @@ struct CategoryInfoView<T: UnitCategory>: View {
                 }
 
             })
-                .padding(.bottom, 60)
+                .padding(.bottom, 20)
         }
     }
 }

@@ -49,28 +49,31 @@ struct MainMenuView: View {
 
 
 
+
+
 // FIXME: paste button
 
 // Ugrastirici isler
 
 // TODO: tüm unitlerin açıklamalarını ve logolarını ayarla (belki hepsine wikipedia linki)
 
-// TODO: birimlerin yanında isimleri yazmalı
+// TODO: birimlerin yanında isimleri yazmalı (nası yapcam bilmiyom)
 
-// TODO: birimlerin sırasını ayarla ve ilk girinceki unit'leri ayarla
+// TODO: birimlerin ilk girinceki unit'leri ayarla
 
 // TODO: tüm unit dönüşümlerini ayarla
 
-// TODO: ADD price convertions (internetten güncel çekmeli)
-
 // TODO: add convert case ***
 
+// TODO: info kısmı için wikipedia linkleri koyulabilir.
 
 
 // Zor islerrrrr
 
 // TODO: add history section with SwiftData
 // TODO: add fav section with SwiftData I guess??
+
+// TODO: ADD price convertions (internetten güncel çekmeli)
 
 
 // pre-Final
@@ -81,6 +84,12 @@ struct MainMenuView: View {
 
 // FINAL
 
-// TODO: Dark mode ✅
+// TODO: Dark mode kontrol
 // TODO: Dil desteği
 // TODO: uygulama rengi belirle.
+
+// Extralar
+
+// TODO: widget ????
+// TODO: control center button ????
+

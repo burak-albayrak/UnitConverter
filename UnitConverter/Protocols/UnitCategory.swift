@@ -12,5 +12,6 @@ protocol UnitCategory {
     var icon: String { get }
     var info: String { get }
     var availableUnits: [Dimension] { get }
+    
 }
 
