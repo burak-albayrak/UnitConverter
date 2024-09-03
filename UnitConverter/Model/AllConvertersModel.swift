@@ -41,12 +41,18 @@ enum AllConvertersCategory: String, CaseIterable, Identifiable{
         switch self {
         case .engineeringConverters:
             return EngineeringUnitsCategory.allCases
-        // Diğer kategoriler için benzer şekilde devam edin
-        // case .heat:
-        //     return HeatUnitsCategory.allCases
-        // ...
-        default:
-            return [] // Geçici olarak boş dizi döndürüyoruz
+        case .heatConverters:
+            return HeatUnitsCategory.allCases
+        case .fluidsConverters:
+            return FluidsUnitsCategory.allCases
+        case .lightConverters:
+            return LightUnitsCategory.allCases
+        case .electricityConverters:
+            return ElectricityUnitsCategory.allCases
+        case .magnetismConverters:
+            return MagnetismUnitsCategory.allCases
+        case .radiologyConverters:
+            return RadiollogyUnitsCategory.allCases
         }
     }
 }

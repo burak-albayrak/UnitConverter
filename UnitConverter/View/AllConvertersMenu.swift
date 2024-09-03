@@ -27,14 +27,18 @@ struct AllConvertersMenu: View {
     private func makeUnitConversionView(for unitCategory: any UnitCategory) -> some View {
         if let engineeringCategory = unitCategory as? EngineeringUnitsCategory {
             UnitConversionView(viewModel: UnitConversionViewModel(category: engineeringCategory))
-        }
-        // Diğer kategoriler için benzer şekilde devam edin
-        // else if let heatCategory = unitCategory as? HeatUnitsCategory {
-        //     UnitConversionView(viewModel: UnitConversionViewModel(category: heatCategory))
-        // }
-        // ...
-        else {
-            Text("Unsupported category")
+        } else if let heatCategory = unitCategory as? HeatUnitsCategory {
+            UnitConversionView(viewModel: UnitConversionViewModel(category: heatCategory))
+        } else if let fluidsCategory = unitCategory as? FluidsUnitsCategory {
+            UnitConversionView(viewModel: UnitConversionViewModel(category: fluidsCategory))
+        } else if let lightCategory = unitCategory as? LightUnitsCategory {
+            UnitConversionView(viewModel: UnitConversionViewModel(category: lightCategory))
+        } else if let electricityCategory = unitCategory as? ElectricityUnitsCategory {
+            UnitConversionView(viewModel: UnitConversionViewModel(category: electricityCategory))
+        } else if let magnetismCategory = unitCategory as? MagnetismUnitsCategory {
+            UnitConversionView(viewModel: UnitConversionViewModel(category: magnetismCategory))
+        } else if let radiologyCategory = unitCategory as? RadiollogyUnitsCategory {
+            UnitConversionView(viewModel: UnitConversionViewModel(category: radiologyCategory))
         }
     }
 }
