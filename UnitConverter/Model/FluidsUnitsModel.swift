@@ -48,25 +48,111 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
     var info: String {
         switch self {
         case .concentrationMolar:
-            return "Mass is a fundamental property of matter that causes it to resist being accelerated by a force. The SI unit for mass is the kilogram (kg), which is defined in terms of the mass of the international prototype kilogram."
+            return """
+                Concentration molar, or molarity, measures the concentration of a solute in a solution, expressed as the number of moles of solute per liter of solution. It is represented by the unit mol/L (M).
+                
+                For example, a solution with a molarity of 1 M means there is one mole of solute dissolved in one liter of solution.
+                
+                Molar concentration is a fundamental concept in chemistry, used to prepare solutions, conduct reactions, and determine the concentrations of reactants and products in chemical processes.
+                
+                Accurate calculation and measurement of molar concentration are crucial for precise chemical analysis, laboratory experiments, and industrial processes, ensuring the correct proportions and reactivity of chemical substances.
+                """
         case .concentrationSolution:
-            return "Length is the dimensional extent of matter. The SI unit for length is the meter (m), which is defined in terms of the distance traveled by light in a vacuum."
+            return """
+                Concentration solution refers to the amount of solute present in a given volume of solvent or solution. It is typically expressed in terms such as molarity (moles per liter), molality (moles per kilogram of solvent), or mass percent (mass of solute per mass of solution).
+                
+                For instance, a solution with a concentration of 0.5 M indicates that there are 0.5 moles of solute dissolved in one liter of solution.
+                
+                Concentration is crucial in various fields, including chemistry, biology, and environmental science, as it affects the rate and extent of chemical reactions, biological processes, and pollutant levels.
+                
+                Accurate measurement and control of solution concentration are essential for preparing solutions with precise properties, conducting experiments, and ensuring the effectiveness of chemical and biological processes.
+                """
         case .flow:
-            return "Area is a quantity of extent in two dimensions. Area can be expressed by SI derived units in terms of square meters (m2). Area is also commonly measured in square feet (ft2) and acres (ac)."
+            return """
+                Flow refers to the movement or transfer of a fluid (liquid or gas) through a medium or along a path, characterized by the rate at which it moves. It is commonly measured in terms of volume per unit time, such as liters per second (L/s) or cubic meters per hour (m³/h).
+                
+                For example, the flow rate of water through a pipe might be 10 L/s.
+                
+                Flow is a key concept in various fields including fluid dynamics, engineering, and environmental science.
+                
+                It influences the design and operation of systems such as pipelines, pumps, and ventilation systems.
+                
+                Understanding and controlling flow is essential for optimizing performance, ensuring safety, and managing resources effectively in applications ranging from industrial processes to natural water systems.
+                """
         case .flowMass:
-            return "Volume is a quantity of the extent of matter in three dimensions. The SI accepted unit of volume is the liter (L), which is derived as one cubic decimeter (1 dm3). Volume is also commonly expressed in terms of cubic meters (m3), gallons (gal), and cups (cup)."
+            return """
+                Flow mass refers to the mass of a fluid passing through a given cross-sectional area per unit of time. It quantifies how much mass of a fluid is moving through a pipe or channel and is typically measured in kilograms per second (kg/s).
+                
+                For example, if a pipeline transports 5 kg of water per second, its flow mass is 5 kg/s.
+                
+                This measurement is crucial in various industries, including chemical processing, oil and gas, and water management, as it affects the efficiency and design of systems that handle fluids.
+                
+                Accurate determination of flow mass is essential for optimizing processes, controlling chemical reactions, and managing resources effectively.
+                """
         case .flowMolar:
-            return "Pressure is the normal force over a surface. The SI unit for pressure is the pascal (Pa), which is derived as one newton of force over one square meter (1Pa = 1N / 1m2)."
+            return """
+                Flow molar, or molar flow rate, measures the amount of substance (in moles) passing through a given cross-sectional area per unit time. It is typically expressed in units like moles per second (mol/s).
+                
+                For example, a molar flow rate of 2 mol/s indicates that two moles of a substance are flowing through the area each second.
+                
+                This measurement is essential in chemical engineering and process design, particularly in reactions and processes where the concentration of reactants and products is critical.
+                
+                Accurate determination of flow molar is crucial for optimizing chemical reactions, controlling production rates, and ensuring the efficient operation of processes involving gaseous or liquid reactants and products.
+                """
         case .massFluxDensity:
-            return "Temperature is a comparative measure of thermal energy. The SI unit for temperature is the kelvin (K), which is defined in terms of the triple point of water. Temperature is also commonly measured by degrees of various scales, including Celsius (°C) and Fahrenheit (°F)."
+            return """
+                Mass flux density, or mass flow density, measures the amount of mass flowing through a unit area per unit time. It quantifies how much mass passes through a cross-sectional area in a given time frame and is typically expressed in units such as kilograms per square meter per second (kg/m²/s).
+                
+                For example, if a fluid has a mass flux density of 3 kg/m²/s, it means that 3 kilograms of mass are flowing through each square meter of cross-sectional area every second.
+                
+                This concept is important in various fields such as fluid dynamics, meteorology, and chemical engineering, where it helps in understanding and designing systems involving the movement of fluids or particulate matter.
+                
+                Accurate measurement of mass flux density is crucial for optimizing processes, controlling environmental impacts, and ensuring efficient operation in applications like pipeline design and atmospheric studies.
+                """
         case .permeability:
-            return "Angle is a quantity of rotation. The SI unit for angle is the radian (rad), which is dimensionless and defined to be the angle subtended by an arc that is equal in length to the radius of a circle. Angle is also commonly expressed in terms of degrees (°) and revolutions (rev)."
+            return """
+                Permeability measures a material's ability to allow fluids (liquids or gases) to pass through it. It quantifies how easily a fluid can move through a porous medium, such as soil, rock, or filter material.
+                
+                The SI unit for permeability is the square meter (m²), but it is often expressed in darcys or millidarcys in geotechnical and petroleum engineering.
+                
+                For example, a rock with high permeability allows water to flow through it easily, while a material with low permeability, such as clay, restricts fluid flow. Permeability is crucial in fields like hydrogeology, civil engineering, and materials science, affecting groundwater flow, oil extraction, and the design of filtration systems.
+                
+                Accurate measurement of permeability is essential for understanding fluid dynamics, optimizing resource extraction, and managing environmental impacts.
+                """
         case .surfaceTension:
-            return "Speed is the magnitude of velocity, or the rate of change of position. Speed can be expressed by SI derived units in terms of meters per second (m/s), and is also commonly expressed in terms of kilometers per hour (km/h) and miles per hour (mph)."
+            return """
+                Surface tension is a physical phenomenon where the surface of a liquid behaves like a stretched elastic membrane. It is caused by the cohesive forces between liquid molecules at the surface, which create a tendency for the liquid to minimize its surface area. 
+                
+                The SI unit for surface tension is the newton per meter (N/m).
+                
+                For example, water has a relatively high surface tension, which allows it to form droplets and enables small objects, like a paperclip, to float on its surface if placed gently. 
+                
+                Surface tension is significant in various processes and applications, including the formation of bubbles, the behavior of liquids in capillary tubes, and the design of detergents and coatings.
+                
+                Understanding and measuring surface tension are crucial for optimizing chemical reactions, improving fluid handling, and enhancing material properties.
+                """
         case .viscosityDynamic:
-            return "Duration is a quantity of time. The SI unit for time is the second (sec), which is defined in terms of the radioactivity of a cesium-133 atom. Duration is also commonly expressed in terms of minutes (min) and hours (hr)."
+            return """
+                Dynamic viscosity measures a fluid's resistance to shear or flow. It quantifies the internal friction between adjacent layers of a fluid as they move relative to each other.
+                
+                The SI unit for dynamic viscosity is the pascal-second (Pa·s), but it is also commonly expressed in poise (P), where 1 P = 0.1 Pa·s.
+                
+                For example, honey has a high dynamic viscosity compared to water, meaning it flows more slowly and resists deformation more.
+                
+                Dynamic viscosity is crucial in various applications such as fluid dynamics, engineering, and manufacturing, influencing how fluids are pumped, processed, and utilized.
+                
+                Accurate measurement of dynamic viscosity is essential for designing efficient systems, optimizing fluid handling, and ensuring product quality in industries like petrochemicals, food processing, and pharmaceuticals.
+                """
         case .viscosityKinematic:
-            return "Duration is a quantity of time. The SI unit for time is the second (sec), which is defined in terms of the radioactivity of a cesium-133 atom. Duration is also commonly expressed in terms of minutes (min) and hours (hr)."
+            return """
+                Kinematic viscosity measures a fluid's resistance to flow under the influence of gravity. It represents the ratio of dynamic viscosity to the fluid's density and is expressed in square meters per second (m²/s) or centistokes (cSt), where 1 cSt = 1 × 10⁻⁶ m²/s.
+                
+                For example, motor oil with a kinematic viscosity of 10 cSt flows more easily than oil with a viscosity of 100 cSt.
+                
+                Kinematic viscosity is important in various applications, such as lubrication, hydraulic systems, and fluid dynamics, as it affects how fluids move and interact in different conditions.
+                
+                Accurate measurement of kinematic viscosity is essential for ensuring proper fluid performance, optimizing system efficiency, and maintaining the quality of products in industries like automotive, aerospace, and manufacturing.
+                """
         }
     }
     
