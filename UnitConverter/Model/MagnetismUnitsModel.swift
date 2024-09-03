@@ -29,13 +29,45 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
     var info: String {
         switch self {
         case .magneticFieldStrength:
-            return "Mass is a fundamental property of matter that causes it to resist being accelerated by a force. The SI unit for mass is the kilogram (kg), which is defined in terms of the mass of the international prototype kilogram."
+            return """
+                Magnetic field strength, also known as magnetic field intensity, measures the force that a magnetic field exerts on moving electric charges and magnetic materials. It indicates the intensity of the magnetic field in a specific area.
+                
+                The SI unit for magnetic field strength is the ampere per meter (A/m). This property is crucial in understanding and designing magnetic systems, such as electromagnets, transformers, and electric motors.
+                
+                Magnetic field strength plays a vital role in various applications, including MRI machines in medical diagnostics, where strong magnetic fields are used to produce detailed images of the human body.
+                
+                Accurate measurement of magnetic field strength is essential for ensuring the proper functioning and safety of devices that rely on magnetic fields.
+                """
         case .magneticFlux:
-            return "Length is the dimensional extent of matter. The SI unit for length is the meter (m), which is defined in terms of the distance traveled by light in a vacuum."
+            return """
+                Magnetic flux quantifies the total magnetic field passing through a given area. It measures the strength and extent of a magnetic field over a surface, providing a key understanding of how magnetic fields interact with materials.
+                
+                The SI unit for magnetic flux is the weber (Wb), where one weber equals one tesla meter squared (T·m²). For example, in an electrical generator, the magnetic flux through the coils influences the amount of electrical current generated.
+                
+                Magnetic flux is fundamental in electromagnetism, affecting the operation of transformers, inductors, and motors.
+                
+                Accurate measurement of magnetic flux is essential for designing and optimizing devices that rely on magnetic fields to function efficiently.
+                """
         case .magneticFluxDensity:
-            return "Area is a quantity of extent in two dimensions. Area can be expressed by SI derived units in terms of square meters (m2). Area is also commonly measured in square feet (ft2) and acres (ac)."
+            return """
+                Magnetic flux density, also known as the magnetic field density or simply the magnetic field, measures the strength and direction of a magnetic field in a given area. It represents the amount of magnetic flux passing through a unit area perpendicular to the magnetic field.
+                
+                The SI unit for magnetic flux density is the tesla (T), where one tesla equals one weber per square meter (Wb/m²). For example, the Earth's magnetic field has a flux density of about 25 to 65 microteslas (µT).
+                
+                Magnetic flux density is crucial in various applications, including designing electric motors, transformers, and magnetic resonance imaging (MRI) machines.
+                
+                Accurate measurement of flux density is essential for optimizing performance and ensuring safety in devices that utilize magnetic fields.
+                """
         case .magnetomotiveForce:
-            return "Volume is a quantity of the extent of matter in three dimensions. The SI accepted unit of volume is the liter (L), which is derived as one cubic decimeter (1 dm3). Volume is also commonly expressed in terms of cubic meters (m3), gallons (gal), and cups (cup)."
+            return """
+                Magnetomotive force (MMF) is a measure of the magnetic potential that drives the magnetic flux through a magnetic circuit. It represents the force required to produce a magnetic field and is analogous to electromotive force (EMF) in electrical circuits.
+                
+                The SI unit for magnetomotive force is the ampere-turn (At), which quantifies the product of the current in amperes and the number of turns in a coil generating the magnetic field. For example, a coil with 10 turns carrying a current of 2 amperes produces an MMF of 20 ampere-turns.
+                
+                MMF is essential in understanding the behavior of magnetic circuits and designing electromagnetic devices such as transformers, inductors, and magnetic relays.
+                
+                Accurate measurement of MMF helps in optimizing the efficiency and performance of magnetic systems.
+                """
         }
     }
     
