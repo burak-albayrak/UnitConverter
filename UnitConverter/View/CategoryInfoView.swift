@@ -15,7 +15,7 @@ struct CategoryInfoView<T: UnitCategory>: View {
         VStack {
             VStack {
                 Image(systemName: category.icon)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.cyan)
                 Text(category.rawValue)
                     .bold()
             }
@@ -39,7 +39,7 @@ struct CategoryInfoView<T: UnitCategory>: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 27)
                         .frame(width: 160, height: 54)
-                    .foregroundStyle(.blue.gradient)
+                    .foregroundStyle(.cyan.gradient)
                     Text("OK")
                         .font(.headline)
                         .bold()
