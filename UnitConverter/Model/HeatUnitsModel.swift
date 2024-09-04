@@ -311,4 +311,29 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             ]
         }
     }
+    
+    var availableUnitNames: [String] {
+        switch self {
+        case .fuelEfficiencyMass:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .fuelEfficiencyVolume:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .heatDensity:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .heatFluxDensity:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .heatTransverCoefficient:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .spesificHeatCapacity:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .temperatureInterval:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .thermalConductivity:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .thermalExpansion:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .thermalResistance:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        }
+    }
 }

@@ -365,19 +365,8 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         switch self {
         case .acceleration:
             return [
-                UnitArea.squareMegameters,
-                UnitArea.squareKilometers,
-                UnitArea.squareMeters,
-                UnitArea.squareCentimeters,
-                UnitArea.squareMillimeters,
-                UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
-                UnitArea.squareMiles,
-                UnitArea.acres,
-                UnitArea.ares,
-                UnitArea.hectares
+                UnitAcceleration.gravity,
+                UnitAcceleration.metersPerSecondSquared
             ]
             
         case .accelerationAngular:
@@ -660,6 +649,59 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
                 UnitDuration.nanoseconds,
                 UnitDuration.picoseconds
             ]            
+        }
+    }
+    
+    var availableUnitNames: [String] {
+        switch self {
+        case .acceleration:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .accelerationAngular:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .angle:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .area:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .dataStorage:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .density:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .duration:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .energy:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .force:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .fuelConsuption:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .length:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .mass:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .momentOfForce:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .momentOfInertia:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .numbers:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .power:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .pressure:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .speed:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .spesificVolume:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .temperature:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .torque:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .velocityAngular:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .volume:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .volumeDry:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
         }
     }
 }

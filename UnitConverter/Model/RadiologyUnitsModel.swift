@@ -138,5 +138,18 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
                     UnitTemperature.kelvin]
         }
     }
+    
+    var availableUnitNames: [String] {
+        switch self {
+        case .radiation:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .radiationAbsorbedDose:
+            return ["Square Megameters", "Square Kilometers", "Square Meters", "Square Centimeters", "Square Millimeters", "Square Nanometers", "Square Inches", "Square Feet", "Square Yards", "Square Miles", "Acres", "Ares", "Hectares"]
+        case .radiationActivity:
+            return ["Hours", "Minutes", "Seconds", "Milliseconds", "Microseconds", "Nanoseconds", "Picoseconds"]
+        case .radiationExposure:
+            return ["Megameters", "Kilometers", "Hectometers", "Decameters", "Meters", "Decimeters", "Centimeters", "Millimeters", "Micrometers", "Nanometers", "Picometers", "Inches", "Feet", "Yards", "Miles", "Scandinavian Miles", "Lightyears", "Nautical Miles", "Fathoms", "Astronomical Units", "Parsecs"]
+        }
+    }
 }
 

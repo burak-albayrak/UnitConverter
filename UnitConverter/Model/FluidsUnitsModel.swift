@@ -315,4 +315,29 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             ]
         }
     }
+    
+    var availableUnitNames: [String] {
+        switch self {
+        case .concentrationMolar:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .concentrationSolution:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .flow:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .flowMass:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .flowMolar:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .massFluxDensity:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .permeability:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .surfaceTension:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .viscosityDynamic:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .viscosityKinematic:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        }
+    }
 }

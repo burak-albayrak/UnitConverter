@@ -194,5 +194,21 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             ]
         }
     }
+    
+    var availableUnitNames: [String] {
+        switch self {
+        case .digitalImageResolution:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .frequencyWavelength:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .illumination:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .luminance:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .luminousIntensity:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+
+        }
+    }
 }
 

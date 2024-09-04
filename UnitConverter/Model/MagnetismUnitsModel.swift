@@ -135,5 +135,18 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
                     UnitTemperature.kelvin]
         }
     }
+    
+    var availableUnitNames: [String] {
+        switch self {
+        case .magneticFieldStrength:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .magneticFlux:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .magneticFluxDensity:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .magnetomotiveForce:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        }
+    }
 }
 

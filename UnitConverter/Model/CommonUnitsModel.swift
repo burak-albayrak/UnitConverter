@@ -292,4 +292,27 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             ]
         }
     }
+    
+    var availableUnitNames: [String] {
+        switch self {
+        case .angle:
+            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+        case .area:
+            return ["Square Megameters", "Square Kilometers", "Square Meters", "Square Centimeters", "Square Millimeters", "Square Nanometers", "Square Inches", "Square Feet", "Square Yards", "Square Miles", "Acres", "Ares", "Hectares"]
+        case .duration:
+            return ["Hours", "Minutes", "Seconds", "Milliseconds", "Microseconds", "Nanoseconds", "Picoseconds"]
+        case .length:
+            return ["Megameters", "Kilometers", "Hectometers", "Decameters", "Meters", "Decimeters", "Centimeters", "Millimeters", "Micrometers", "Nanometers", "Picometers", "Inches", "Feet", "Yards", "Miles", "Scandinavian Miles", "Lightyears", "Nautical Miles", "Fathoms", "Astronomical Units", "Parsecs"]
+        case .mass:
+            return ["Kilograms", "Grams", "Decigrams", "Centigrams", "Milligrams", "Micrograms", "Nanograms", "Picograms", "Ounces", "Pounds", "Stones", "Metric Tons", "Short Tons", "Carats", "Ounces Troy", "Slugs"]
+        case .pressure:
+            return ["Newtons Per Meter Squared", "Gigapascals", "Megapascals", "Kilopascals", "Hectopascals", "Inches Of Mercury", "Bars", "Millibars", "Millimeters Of Mercury", "Pounds Force Per Square Inch"]
+        case .speed:
+            return ["Meters Per Second", "Kilometers Per Hour", "Miles Per Hour", "Knots"]
+        case .temperature:
+            return ["Celsius", "Fahrenheit", "Kelvin"]
+        case .volume:
+            return ["Megaliters", "Kiloliters", "Liters", "Deciliters", "Centiliters", "Milliliters", "Cubic Kilometers", "Cubic Meters", "Cubic Decimeters", "Cubic Centimeters", "Cubic Millimeters", "Cubic Inches", "Cubic Feet", "Cubic Yards", "Cubic Miles", "Acre Feet", "Bushels", "Teaspoons", "Tablespoons", "Fluid Ounces", "Cups", "Pints", "Quarts", "Gallons", "Imperial Teaspoons", "Imperial Tablespoons", "Imperial Fluid Ounces", "Imperial Pints", "Imperial Quarts", "Imperial Gallons", "Metric Cups"]
+        }
+    }
 }

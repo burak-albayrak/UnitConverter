@@ -11,6 +11,7 @@ protocol UnitCategory {
     var rawValue: String { get }
     var icon: String { get }
     var info: String { get }
+    var availableUnitNames: [String] { get }
     var availableUnits: [Dimension] { get }
 }
 

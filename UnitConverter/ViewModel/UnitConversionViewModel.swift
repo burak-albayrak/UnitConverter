@@ -24,6 +24,10 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         return category.availableUnits
     }
     
+    var availableUnitNames: [String] {
+        return category.availableUnitNames
+    }
+    
     func convertUnits(value: String) -> String {
         guard let numericValue = Double(value) else {
             return ""

@@ -15,12 +15,12 @@ struct UnitConversionView<T: UnitCategory>: View {
             Section("Select Units") {
                 Picker("From Unit", selection: $viewModel.selectedFirstUnitIndex) {
                     ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { index in
-                        Text("\(viewModel.availableUnits[index].symbol)")
+                        Text("\(viewModel.availableUnits[index].symbol) (\(viewModel.availableUnitNames[index]))")
                     }
                 }
                 Picker("To Unit", selection: $viewModel.selectedSecondUnitIndex) {
                     ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { index in
-                        Text("\(viewModel.availableUnits[index].symbol)")
+                        Text("\(viewModel.availableUnits[index].symbol) (\(viewModel.availableUnitNames[index]))")
                     }
                 }
             }

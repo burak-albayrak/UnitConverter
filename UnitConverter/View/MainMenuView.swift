@@ -24,6 +24,10 @@ struct MainMenuView: View {
                     }
                 }
                 
+                Section {
+                    Text("// Price Convertions //")
+                }
+                
                 Section("All Converters") {
                     ForEach(AllConvertersCategory.allCases) { category in
                         NavigationLink {
@@ -48,33 +52,26 @@ struct MainMenuView: View {
 }
 
 
-
-
-
 // FIXME: paste button
 
 // Ugrastirici isler
 
-// TODO: tüm unitlerin açıklamalarını ve logolarını ayarla (belki hepsine wikipedia linki)
-
-// TODO: birimlerin yanında isimleri yazmalı (nası yapcam bilmiyom)
-
-// TODO: birimlerin ilk girinceki unit'leri ayarla
-
 // TODO: tüm unit dönüşümlerini ayarla
 
-// TODO: add convert case ***
+// TODO: ADD price convertions (internetten güncel çekmeli)
+
+// TODO: tüm unitlerin açıklamalarını ve logolarını ayarla (belki hepsine wikipedia linki)
 
 // TODO: info kısmı için wikipedia linkleri koyulabilir.
 
+// TODO: birimlerin ilk girinceki unit'leri ayarla
+
+// TODO: birimlerin yanında isimleri yazmalı (nası yapcam bilmiyom)
 
 // Zor islerrrrr
 
 // TODO: add history section with SwiftData
 // TODO: add fav section with SwiftData I guess??
-
-// TODO: ADD price convertions (internetten güncel çekmeli)
-
 
 // pre-Final
 
@@ -93,3 +90,4 @@ struct MainMenuView: View {
 // TODO: widget ????
 // TODO: control center button ????
 
+// TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)
