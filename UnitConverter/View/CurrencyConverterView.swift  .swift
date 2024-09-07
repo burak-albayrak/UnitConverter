@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct CurrencyConverterView: View {
-    @StateObject private var viewModel = CurrencyConverterViewModel()
+struct CurrencyConversionView: View {
+    @StateObject private var viewModel = CurrencyConversionViewModel()
     
     var body: some View {
         Form {
@@ -33,25 +33,51 @@ struct CurrencyConverterView: View {
             }
             
             Section("Value") {
-                TextField("Enter value to convert", text: $viewModel.inputValue)
-                    .keyboardType(.decimalPad)
-                    .onChange(of: viewModel.inputValue) { _, _ in
-                        viewModel.convertCurrency()
+                HStack {
+                    TextField("Enter value to convert", text: $viewModel.inputValue)
+                        .keyboardType(.decimalPad)
+                        .onChange(of: viewModel.inputValue) { _, _ in
+                            viewModel.convertCurrency()
                     }
+                    Spacer()
+                    Button(action: {
+                        if let pasteboardString = UIPasteboard.general.string {
+                            viewModel.inputValue = pasteboardString
+                        }
+                    }) {
+                        Text("paste")
+                    }
+                    .padding(9)
+                    .padding(.horizontal)
+                    .background(.ultraThinMaterial)
+                    .containerShape(.rect(cornerRadius: 10))
+                }
             }
             
             Section("Result") {
-                if viewModel.isLoading {
-                    ProgressView()
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                } else {
-                    Text("\(viewModel.convertedValue) \(viewModel.category.availableUnits[viewModel.selectedToCurrencyIndex].symbol)")
+                HStack {
+                    if viewModel.isLoading {
+                        ProgressView()
+                    } else if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.red)
+                    } else {
+                        Text("\(viewModel.convertedValue) \(viewModel.category.availableUnits[viewModel.selectedToCurrencyIndex].symbol)")
+                    }
+                    Spacer()
+                    Button(action: {
+                        UIPasteboard.general.string = viewModel.convertedValue
+                    }) {
+                        Text("copy")
+                    }
+                    .padding(9)
+                    .padding(.horizontal)
+                    .background(.ultraThinMaterial)
+                    .containerShape(.rect(cornerRadius: 10))
                 }
             }
         }
-        .navigationTitle("Currency Converter")
+        .navigationTitle("Currency")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
@@ -72,4 +98,8 @@ struct CurrencyConverterView: View {
             CategoryInfoView(category: viewModel.category)
         }
     }
+}
+
+#Preview {
+    CurrencyConversionView()
 }

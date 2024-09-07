@@ -34,7 +34,6 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
             UnitCurrency.aud,
             UnitCurrency.chf,
             UnitCurrency.cny,
-            // Add more currencies as needed
         ]
     }
     
@@ -48,7 +47,6 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
             "Australian Dollar",
             "Swiss Franc",
             "Chinese Yuan",
-            // Add more currency names as needed
         ]
     }
 }
@@ -62,7 +60,6 @@ class UnitCurrency: Dimension {
     static let aud = UnitCurrency(symbol: "AUD", converter: UnitConverterLinear(coefficient: 1.0))
     static let chf = UnitCurrency(symbol: "CHF", converter: UnitConverterLinear(coefficient: 1.0))
     static let cny = UnitCurrency(symbol: "CNY", converter: UnitConverterLinear(coefficient: 1.0))
-    // Add more currencies as needed
     
     override class func baseUnit() -> Self {
         return usd as! Self

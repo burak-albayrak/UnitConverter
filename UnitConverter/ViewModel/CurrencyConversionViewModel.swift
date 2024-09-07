@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class CurrencyConverterViewModel: ObservableObject {
+class CurrencyConversionViewModel: ObservableObject {
     @Published var selectedFromCurrencyIndex = 0
     @Published var selectedToCurrencyIndex = 1
     @Published var inputValue = ""

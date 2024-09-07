@@ -12,7 +12,7 @@
 		EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0F87452C82860100114906 /* Preview Assets.xcassets */; };
 		EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
 		EF37ACD72C8C918500477945 /* CurrencyConverterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */; };
-		EF37ACD92C8C91A600477945 /* CurrencyConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyConvertersModel.swift */; };
+		EF37ACD92C8C91A600477945 /* CurrencyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */; };
 		EF37ACDB2C8C91D100477945 /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
 		EF37ACDD2C8C920A00477945 /* CurrencyConverterView.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDC2C8C920A00477945 /* CurrencyConverterView.swift  .swift */; };
 		EF37C0592C828D0D004B974A /* UnitConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */; };
@@ -38,7 +38,7 @@
 		EF0F87452C82860100114906 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF0F874D2C82870400114906 /* CommonUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUnitsModel.swift; sourceTree = "<group>"; };
 		EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterNetwork.swift; sourceTree = "<group>"; };
-		EF37ACD82C8C91A600477945 /* CurrencyConvertersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConvertersModel.swift; sourceTree = "<group>"; };
+		EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUnitsModel.swift; sourceTree = "<group>"; };
 		EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConversionViewModel.swift; sourceTree = "<group>"; };
 		EF37ACDC2C8C920A00477945 /* CurrencyConverterView.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyConverterView.swift  .swift"; sourceTree = "<group>"; };
 		EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConversionViewModel.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 				EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */,
 				EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */,
 				EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */,
-				EF37ACD82C8C91A600477945 /* CurrencyConvertersModel.swift */,
+				EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 				EF37C0752C8682E6004B974A /* LightUnitsModel.swift in Sources */,
 				EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */,
 				EF37C0622C834FE1004B974A /* AllConvertersMenu.swift in Sources */,
-				EF37ACD92C8C91A600477945 /* CurrencyConvertersModel.swift in Sources */,
+				EF37ACD92C8C91A600477945 /* CurrencyUnitsModel.swift in Sources */,
 				EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */,
 				EF37C06D2C860C94004B974A /* UnitCategory.swift in Sources */,
 				EF0F873F2C8285FF00114906 /* UnitConverterApp.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UnitConversionView<T: UnitCategory>: View {
     @StateObject var viewModel: UnitConversionViewModel<T>
+    @State private var copiedToClipboard: Bool = false
     
     var body: some View {
         Form {
@@ -31,7 +32,9 @@ struct UnitConversionView<T: UnitCategory>: View {
                         .keyboardType(.decimalPad)
                     Spacer()
                     Button(action: {
-                        UIPasteboard.general.string = viewModel.firstUnitInputValue
+                        if let pasteboardString = UIPasteboard.general.string {
+                            viewModel.firstUnitInputValue = pasteboardString
+                        }
                     }) {
                         Text("paste")
                     }
@@ -41,15 +44,23 @@ struct UnitConversionView<T: UnitCategory>: View {
                     .containerShape(.rect(cornerRadius: 10))
                 }
             }
+            
             Section("Result") {
                 HStack {
                     let convertedValue = viewModel.convertUnits(value: viewModel.firstUnitInputValue)
                     
                     Text("\(convertedValue) \(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)")
                     Spacer()
-                    
                     Button(action: {
                         UIPasteboard.general.string = convertedValue
+                        withAnimation(.snappy) {
+                            copiedToClipboard = true
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation(.smooth) {
+                                copiedToClipboard = false
+                            }
+                        }
                     }) {
                         Text("copy")
                     }
@@ -76,6 +87,19 @@ struct UnitConversionView<T: UnitCategory>: View {
                 }, label: {
                     Image(systemName: "info.circle")
                 })
+            }
+        }
+        .overlay {
+            if copiedToClipboard {
+                Text("Copied to Clipboard")
+                    .font(.system(.body, design: .rounded, weight: .semibold))
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background(Color.cyan.cornerRadius(20))
+                    .padding(.bottom)
+                    .shadow(radius: 5)
+                    .transition(.move(edge: .bottom))
+                    .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
     }
