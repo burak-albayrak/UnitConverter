@@ -53,11 +53,11 @@ struct UnitConversionView<T: UnitCategory>: View {
                     Spacer()
                     Button(action: {
                         UIPasteboard.general.string = convertedValue
-                        withAnimation(.snappy) {
+                        withAnimation(.easeIn(duration: 0.5)) {
                             copiedToClipboard = true
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            withAnimation(.smooth) {
+                            withAnimation(.easeOut(duration: 2)) {
                                 copiedToClipboard = false
                             }
                         }

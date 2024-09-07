@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CurrencyConversionView: View {
     @StateObject private var viewModel = CurrencyConversionViewModel()
-    
+    @State private var copiedToClipboard: Bool = false
+
     var body: some View {
         Form {
             Section("Select Currencies") {
@@ -67,6 +68,14 @@ struct CurrencyConversionView: View {
                     Spacer()
                     Button(action: {
                         UIPasteboard.general.string = viewModel.convertedValue
+                        withAnimation(.easeIn(duration: 0.5)) {
+                            copiedToClipboard = true
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation(.easeOut(duration: 2)) {
+                                copiedToClipboard = false
+                            }
+                        }
                     }) {
                         Text("copy")
                     }
@@ -96,6 +105,19 @@ struct CurrencyConversionView: View {
         }
         .sheet(isPresented: $viewModel.isInfoPresented) {
             CategoryInfoView(category: viewModel.category)
+        }
+        .overlay {
+            if copiedToClipboard {
+                Text("Copied to Clipboard")
+                    .font(.system(.body, design: .rounded, weight: .semibold))
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background(Color.cyan.cornerRadius(20))
+                    .padding(.bottom)
+                    .shadow(radius: 5)
+                    .transition(.move(edge: .bottom))
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+            }
         }
     }
 }

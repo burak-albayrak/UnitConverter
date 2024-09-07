@@ -39,7 +39,6 @@ class CurrencyConverterNetwork {
                 return
             }
             
-            // Print raw data for debugging
             if let dataString = String(data: data, encoding: .utf8) {
                 print("Raw API Response: \(dataString)")
             }
