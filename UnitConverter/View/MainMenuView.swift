@@ -24,8 +24,12 @@ struct MainMenuView: View {
                     }
                 }
                 
-                Section {
-                    Text("// Price Convertions //")
+                Section("Price Converter") {
+                    NavigationLink {
+                        CurrencyConverterView()
+                    } label: {
+                        Label("Currency Converter", systemImage: "dollarsign.circle")
+                    }
                 }
                 
                 Section("All Converters") {
@@ -48,11 +52,9 @@ struct MainMenuView: View {
 }
 
 
-// FIXME: paste button
+// FIXME: paste button, add copy paste to currency converter
 
 // Ugrastirici isler
-
-// TODO: tüm unit dönüşümlerini teker teker kontrol et ve bitir. dönüşümleri, logoları, açıklamaları.
 
 // TODO: birimlerin ilk girinceki unit'leri ayarla
 
@@ -60,6 +62,7 @@ struct MainMenuView: View {
 
 
 // Zor islerrrrr
+// TODO: tüm unit dönüşümlerini teker teker kontrol et ve bitir. dönüşümleri, logoları, açıklamaları.
 
 // TODO: add history section with SwiftData
 // TODO: add fav section with SwiftData I guess??
