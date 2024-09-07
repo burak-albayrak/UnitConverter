@@ -148,23 +148,27 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
         switch self {
         case .area:
             return [
+                // SI Units: Ordered from largest to smallest
                 UnitArea.squareMegameters,
                 UnitArea.squareKilometers,
                 UnitArea.squareMeters,
                 UnitArea.squareCentimeters,
                 UnitArea.squareMillimeters,
+                UnitArea.squareMicrometers,
                 UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
+                // Imperial and Other Common Area Units
                 UnitArea.squareMiles,
                 UnitArea.acres,
+                UnitArea.squareYards,
+                UnitArea.squareFeet,
+                UnitArea.squareInches,
+                // Metric Units (Non-SI)
+                UnitArea.hectares,
                 UnitArea.ares,
-                UnitArea.hectares
             ]
-            
         case .length:
             return [
+                // SI Units: Ordered from largest to smallest
                 UnitLength.megameters,
                 UnitLength.kilometers,
                 UnitLength.hectometers,
@@ -176,74 +180,84 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
                 UnitLength.micrometers,
                 UnitLength.nanometers,
                 UnitLength.picometers,
+                // Imperial and Other Common Units
                 UnitLength.inches,
                 UnitLength.feet,
                 UnitLength.yards,
                 UnitLength.miles,
-                UnitLength.scandinavianMiles,
-                UnitLength.lightyears,
                 UnitLength.nauticalMiles,
+                UnitLength.furlongs,
                 UnitLength.fathoms,
+                UnitLength.scandinavianMiles,
+                // Astronomical and Other Special Units
+                UnitLength.lightyears,
                 UnitLength.astronomicalUnits,
-                UnitLength.parsecs
+                UnitLength.parsecs,
             ]
-            
         case .pressure:
             return [
-                UnitPressure.newtonsPerMetersSquared,
+                // SI Units: Ordered from largest to smallest
                 UnitPressure.gigapascals,
                 UnitPressure.megapascals,
                 UnitPressure.kilopascals,
                 UnitPressure.hectopascals,
-                UnitPressure.inchesOfMercury,
+                UnitPressure.newtonsPerMetersSquared,
                 UnitPressure.bars,
                 UnitPressure.millibars,
-                UnitPressure.millimetersOfMercury,
-                UnitPressure.poundsForcePerSquareInch
+                // Other Common Pressure Units
+                UnitPressure.poundsForcePerSquareInch,
+                UnitPressure.inchesOfMercury,
+                UnitPressure.millimetersOfMercury
             ]
-            
         case .temperature:
-            return [UnitTemperature.celsius,
-                    UnitTemperature.fahrenheit,
-                    UnitTemperature.kelvin]
-            
+            return [
+                UnitTemperature.kelvin,
+                UnitTemperature.celsius,
+                UnitTemperature.fahrenheit,
+            ]
         case .volume:
             return [
+                // SI Units: Ordered from largest to smallest
                 UnitVolume.megaliters,
                 UnitVolume.kiloliters,
                 UnitVolume.liters,
                 UnitVolume.deciliters,
                 UnitVolume.centiliters,
                 UnitVolume.milliliters,
+                // Cubic Units: Ordered from largest to smallest
                 UnitVolume.cubicKilometers,
                 UnitVolume.cubicMeters,
                 UnitVolume.cubicDecimeters,
                 UnitVolume.cubicCentimeters,
                 UnitVolume.cubicMillimeters,
-                UnitVolume.cubicInches,
-                UnitVolume.cubicFeet,
-                UnitVolume.cubicYards,
-                UnitVolume.cubicMiles,
+                // Imperial and Other Common Volume Units
                 UnitVolume.acreFeet,
                 UnitVolume.bushels,
-                UnitVolume.teaspoons,
-                UnitVolume.tablespoons,
-                UnitVolume.fluidOunces,
-                UnitVolume.cups,
-                UnitVolume.pints,
-                UnitVolume.quarts,
                 UnitVolume.gallons,
-                UnitVolume.imperialTeaspoons,
-                UnitVolume.imperialTablespoons,
-                UnitVolume.imperialFluidOunces,
-                UnitVolume.imperialPints,
-                UnitVolume.imperialQuarts,
+                UnitVolume.quarts,
+                UnitVolume.pints,
+                UnitVolume.cups,
+                UnitVolume.fluidOunces,
+                UnitVolume.tablespoons,
+                UnitVolume.teaspoons,
+                // Cubic Imperial Units: Ordered from largest to smallest
+                UnitVolume.cubicMiles,
+                UnitVolume.cubicYards,
+                UnitVolume.cubicFeet,
+                UnitVolume.cubicInches,
+                // Imperial Units: Ordered from largest to smallest
                 UnitVolume.imperialGallons,
+                UnitVolume.imperialQuarts,
+                UnitVolume.imperialPints,
+                UnitVolume.imperialFluidOunces,
+                UnitVolume.imperialTablespoons,
+                UnitVolume.imperialTeaspoons,
+                // Metric Units (Non-SI)
                 UnitVolume.metricCups
             ]
-            
         case .mass:
             return [
+                // SI Units
                 UnitMass.kilograms,
                 UnitMass.grams,
                 UnitMass.decigrams,
@@ -252,34 +266,41 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
                 UnitMass.micrograms,
                 UnitMass.nanograms,
                 UnitMass.picograms,
-                UnitMass.ounces,
-                UnitMass.pounds,
-                UnitMass.stones,
+                // Metric Ton
                 UnitMass.metricTons,
+                // Imperial Units
                 UnitMass.shortTons,
+                UnitMass.stones,
+                UnitMass.pounds,
+                UnitMass.ounces,
+                // Other Units
                 UnitMass.carats,
                 UnitMass.ouncesTroy,
-                UnitMass.slugs
+                UnitMass.slugs,
             ]
-            
         case .angle:
             return [
+                // Basic Units
                 UnitAngle.degrees,
                 UnitAngle.arcMinutes,
                 UnitAngle.arcSeconds,
+                // Metric Units
                 UnitAngle.radians,
                 UnitAngle.gradians,
+                // Special Unit
                 UnitAngle.revolutions
             ]
-            
         case .speed:
             return [
+                // SI Unit
                 UnitSpeed.metersPerSecond,
+                // Metric Unit
                 UnitSpeed.kilometersPerHour,
+                // Imperial Unit
                 UnitSpeed.milesPerHour,
-                UnitSpeed.knots
+                // Nautical Unit
+                UnitSpeed.knots,
             ]
-            
         case .duration:
             return [
                 UnitDuration.hours,
@@ -288,7 +309,7 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
                 UnitDuration.milliseconds,
                 UnitDuration.microseconds,
                 UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
+                UnitDuration.picoseconds,
             ]
         }
     }
@@ -298,21 +319,21 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
         case .angle:
             return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
         case .area:
-            return ["Square Megameters", "Square Kilometers", "Square Meters", "Square Centimeters", "Square Millimeters", "Square Nanometers", "Square Inches", "Square Feet", "Square Yards", "Square Miles", "Acres", "Ares", "Hectares"]
+            return ["Square Megameters", "Square Kilometers", "Square Meters", "Square Centimeters", "Square Millimeters", "Square Micrometers", "Square Nanometers", "Square Miles", "Acres", "Square Yards", "Square Feet", "Square Inches", "Hectares", "Ares",]
         case .duration:
             return ["Hours", "Minutes", "Seconds", "Milliseconds", "Microseconds", "Nanoseconds", "Picoseconds"]
         case .length:
-            return ["Megameters", "Kilometers", "Hectometers", "Decameters", "Meters", "Decimeters", "Centimeters", "Millimeters", "Micrometers", "Nanometers", "Picometers", "Inches", "Feet", "Yards", "Miles", "Scandinavian Miles", "Lightyears", "Nautical Miles", "Fathoms", "Astronomical Units", "Parsecs"]
+            return ["Megameters", "Kilometers", "Hectometers", "Decameters", "Meters", "Decimeters", "Centimeters", "Millimeters", "Micrometers", "Nanometers", "Picometers", "Inches", "Feet", "Yards", "Miles", "Scandinavian Miles", "Furlong", "Lightyears", "Nautical Miles", "Fathoms", "Astronomical Units", "Parsecs"]
         case .mass:
-            return ["Kilograms", "Grams", "Decigrams", "Centigrams", "Milligrams", "Micrograms", "Nanograms", "Picograms", "Ounces", "Pounds", "Stones", "Metric Tons", "Short Tons", "Carats", "Ounces Troy", "Slugs"]
+            return ["Kilograms", "Grams", "Decigrams", "Centigrams", "Milligrams", "Micrograms", "Nanograms", "Picograms", "Metric Tons", "Short Tons", "Stones", "Pounds", "Ounces", "Carats", "Ounces Troy", "Slugs"]
         case .pressure:
-            return ["Newtons Per Meter Squared", "Gigapascals", "Megapascals", "Kilopascals", "Hectopascals", "Inches Of Mercury", "Bars", "Millibars", "Millimeters Of Mercury", "Pounds Force Per Square Inch"]
+            return ["Gigapascals", "Megapascals", "Kilopascals", "Hectopascals", "Newtons Per Meter Squared", "Bars", "Millibars", "Pounds Force Per Square Inch", "Inches Of Mercury", "Millimeters Of Mercury"]
         case .speed:
             return ["Meters Per Second", "Kilometers Per Hour", "Miles Per Hour", "Knots"]
         case .temperature:
-            return ["Celsius", "Fahrenheit", "Kelvin"]
+            return ["Kelvin", "Celsius", "Fahrenheit"]
         case .volume:
-            return ["Megaliters", "Kiloliters", "Liters", "Deciliters", "Centiliters", "Milliliters", "Cubic Kilometers", "Cubic Meters", "Cubic Decimeters", "Cubic Centimeters", "Cubic Millimeters", "Cubic Inches", "Cubic Feet", "Cubic Yards", "Cubic Miles", "Acre Feet", "Bushels", "Teaspoons", "Tablespoons", "Fluid Ounces", "Cups", "Pints", "Quarts", "Gallons", "Imperial Teaspoons", "Imperial Tablespoons", "Imperial Fluid Ounces", "Imperial Pints", "Imperial Quarts", "Imperial Gallons", "Metric Cups"]
+            return ["Megaliters", "Kiloliters", "Liters", "Deciliters", "Centiliters", "Milliliters", "Cubic Kilometers", "Cubic Meters", "Cubic Decimeters", "Cubic Centimeters", "Cubic Millimeters", "Acre Feet", "Bushels", "Gallons", "Quarts", "Pints", "Cups", "Fluid Ounces", "Tablespoons", "Teaspoons", "Cubic Miles", "Cubic Yards", "Cubic Feet", "Cubic Inches", "Imperial Gallons", "Imperial Quarts", "Imperial Pints", "Imperial Fluid Ounces", "Imperial Tablespoons", "Imperial Teaspoons", "Metric Cups"]
         }
     }
 }

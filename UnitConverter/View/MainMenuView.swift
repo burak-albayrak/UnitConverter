@@ -37,10 +37,6 @@ struct MainMenuView: View {
                         }
                     }
                 }
-                
-                Section {
-                    Text("// BUY ME A COFFEE //") // TODO: add payment system
-                }
             }
             .navigationTitle("Unit Converter")
         }
@@ -56,17 +52,12 @@ struct MainMenuView: View {
 
 // Ugrastirici isler
 
-// TODO: tüm unit dönüşümlerini ayarla
-
-// TODO: ADD price convertions (internetten güncel çekmeli)
-
-// TODO: tüm unitlerin açıklamalarını ve logolarını ayarla (belki hepsine wikipedia linki)
-
-// TODO: info kısmı için wikipedia linkleri koyulabilir.
+// TODO: tüm unit dönüşümlerini teker teker kontrol et ve bitir. dönüşümleri, logoları, açıklamaları.
 
 // TODO: birimlerin ilk girinceki unit'leri ayarla
 
-// TODO: birimlerin yanında isimleri yazmalı (nası yapcam bilmiyom)
+// TODO: ADD price convertions (internetten güncel çekmeli)
+
 
 // Zor islerrrrr
 
@@ -78,7 +69,6 @@ struct MainMenuView: View {
 // TODO: improve info section
 // TODO: improve UnitConversation View
 
-
 // FINAL
 
 // TODO: Dark mode kontrol
@@ -89,5 +79,6 @@ struct MainMenuView: View {
 
 // TODO: widget ????
 // TODO: control center button ????
+// TODO: info kısmı için wikipedia linkleri koyulabilir.
 
 // TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)
