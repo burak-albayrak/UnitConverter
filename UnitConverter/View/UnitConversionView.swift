@@ -10,6 +10,8 @@ import SwiftUI
 struct UnitConversionView<T: UnitCategory>: View {
     @StateObject var viewModel: UnitConversionViewModel<T>
     @State private var copiedToClipboard: Bool = false
+    @State private var isCopyButtonPressed: Bool = false 
+    @State private var isPasteButtonPressed: Bool = false
     
     var body: some View {
         Form {
@@ -37,11 +39,20 @@ struct UnitConversionView<T: UnitCategory>: View {
                         }
                     }) {
                         Text("paste")
+                            .padding(9)
+                            .padding(.horizontal)
+                            .foregroundStyle(.cyan)
+                            .background(.ultraThinMaterial)
+                            .containerShape(.rect(cornerRadius: 10))
+                            .opacity(isPasteButtonPressed ? 0.5 : 1.0)
+                            .animation(.easeInOut(duration: 0.1), value: isPasteButtonPressed)
                     }
-                    .padding(9)
-                    .padding(.horizontal)
-                    .background(.ultraThinMaterial)
-                    .containerShape(.rect(cornerRadius: 10))
+                    .buttonStyle(PlainButtonStyle())
+                    .simultaneousGesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { _ in isPasteButtonPressed = true }
+                            .onEnded { _ in isPasteButtonPressed = false }
+                    )
                 }
             }
             
@@ -63,11 +74,20 @@ struct UnitConversionView<T: UnitCategory>: View {
                         }
                     }) {
                         Text("copy")
+                            .padding(9)
+                            .padding(.horizontal)
+                            .foregroundStyle(.cyan)
+                            .background(.ultraThinMaterial)
+                            .containerShape(.rect(cornerRadius: 10))
+                            .opacity(isCopyButtonPressed ? 0.5 : 1.0)
+                            .animation(.easeInOut(duration: 0.1), value: isCopyButtonPressed)
                     }
-                    .padding(9)
-                    .padding(.horizontal)
-                    .background(.ultraThinMaterial)
-                    .containerShape(.rect(cornerRadius: 10))
+                    .buttonStyle(PlainButtonStyle())
+                    .simultaneousGesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { _ in isCopyButtonPressed = true }
+                            .onEnded { _ in isCopyButtonPressed = false }
+                    )
                 }
             }
         }
