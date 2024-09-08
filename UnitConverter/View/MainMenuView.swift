@@ -55,8 +55,6 @@ struct MainMenuView: View {
                                 .font(.title2)
                                 .foregroundColor(.cyan)
                                 .frame(width: 40, height: 40)
-                                .background(Color.gray.opacity(0.05))
-                                .clipShape(Circle())
                         }
                         
                         Button(action: {
@@ -66,8 +64,6 @@ struct MainMenuView: View {
                                 .font(.title2)
                                 .foregroundColor(.cyan)
                                 .frame(width: 40, height: 40)
-                                .background(Color.gray.opacity(0.05))
-                                .clipShape(Circle())
                         }
                     }
                 }
@@ -97,8 +93,6 @@ struct MainMenuView: View {
 // islerrrrrr
 
 // TODO: her şeyi kontrol et
-
-// TODO: settings'de kullanıcıya kaç virgül istiyo diye sor default 2 yap
 
 // TODO: ilk yükleyen kullanıcı için welcome screen yap
 

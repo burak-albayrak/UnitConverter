@@ -55,6 +55,7 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         
         return formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
     }
+    
     func setFromFavorite(_ favorite: FavoriteConversion) {
         selectedFirstUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.fromUnit }) ?? 0
         selectedSecondUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.toUnit }) ?? 1

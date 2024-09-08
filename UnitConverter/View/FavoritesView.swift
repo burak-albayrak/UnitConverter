@@ -14,6 +14,7 @@ struct FavoritesView: View {
                     Text("No Favorites Yet")
                         .font(.title)
                         .foregroundColor(.secondary)
+                        .padding(.vertical)
                     Text("Add some conversions to your favorites!")
                         .font(.subheadline)
                         .foregroundColor(.secondary)

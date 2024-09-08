@@ -111,9 +111,11 @@ struct UnitConversionView<T: UnitCategory>: View {
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button(action: {
-                    // hideKeyboard()
+                    UIApplication.shared.hideKeyboard()
                 }, label: {
                     Image(systemName: "keyboard.chevron.compact.down")
+                        .font(.title3)
+                        .foregroundColor(.cyan)
                 })
                 Button(action: {
                     favoritesViewModel.addFavorite(
@@ -144,6 +146,8 @@ struct UnitConversionView<T: UnitCategory>: View {
                     viewModel.isInfoPresented = true
                 }, label: {
                     Image(systemName: "info.circle")
+                        .font(.title3)
+                        .foregroundColor(.cyan)
                 })
 
             }
