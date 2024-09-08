@@ -175,15 +175,15 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Earth's distance from sun": 149600000000,
             "Sun's radius": 696000000
         ]
-
+        
         guard let fromValue = meterValues[fromUnit.lowercased()], let toValue = meterValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let meters = value * fromValue
         return meters / toValue
     }
-
+    
     private func convertMass(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
         let kilogramValues: [String: Double] = [
             "kilogram": 1,
@@ -256,11 +256,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Earth's mass": 5.9760000000002e24,
             "Sun's mass": 2e30
         ]
-
+        
         guard let fromValue = kilogramValues[fromUnit.lowercased()], let toValue = kilogramValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let kilograms = value * fromValue
         return kilograms / toValue
     }
@@ -344,11 +344,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Taza (Spanish)": 0.0002365882,
             "Earth's volume": 1.083E+21
         ]
-
+        
         guard let fromValue = cubicMeterValues[fromUnit.lowercased()], let toValue = cubicMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let cubicMeter = value * fromValue
         return cubicMeter / toValue
     }
@@ -372,7 +372,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         default:
             return value // Bilinmeyen birim, orijinal değeri döndür
         }
-
+        
         // Şimdi Kelvin'i hedef birime çevirelim
         switch toUnit.lowercased() {
         case "kelvin", "k":
@@ -434,11 +434,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "varas conuqueras cuad": 6.288633,
             "Electron cross section": 6.6524615999999e-29
         ]
-
+        
         guard let fromValue = squareMeterValues[fromUnit.lowercased()], let toValue = squareMeterValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let squareMeters = value * fromValue
         return squareMeters / toValue
     }
@@ -498,11 +498,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "foot water (60°F)": 2986.116,
             "atmosphere technical": 98066.500000003
         ]
-
+        
         guard let fromValue = pascalValues[fromUnit.lowercased()], let toValue = pascalValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let pascals = value * fromValue
         return pascals / toValue
     }
@@ -564,11 +564,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Hartree energy": 4.3597482e-18,
             "Rydberg constant": 2.1798741e-18
         ]
-
+        
         guard let fromValue = jouleValues[fromUnit.lowercased()], let toValue = jouleValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let joules = value * fromValue
         return joules / toValue
     }
@@ -652,11 +652,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "kilojoule/hour": 0.2777777778,
             "kilojoule/minute": 16.6666666667
         ]
-
+        
         guard let fromValue = wattValues[fromUnit.lowercased()], let toValue = wattValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let watts = value * fromValue
         return watts / toValue
     }
@@ -697,11 +697,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "pond": 0.00980665,
             "kilopond": 9.80665
         ]
-
+        
         guard let fromValue = newtonValues[fromUnit.lowercased()], let toValue = newtonValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let newtons = value * fromValue
         return newtons / toValue
     }
@@ -742,11 +742,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "quinquennial": 157680000,
             "Planck time": 5.39056e-44
         ]
-
+        
         guard let fromValue = secondValues[fromUnit.lowercased()], let toValue = secondValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let seconds = value * fromValue
         return seconds / toValue
     }
@@ -786,11 +786,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Mach (20°C, 1 atm)": 343.6,
             "Mach (SI standard)": 295.0464000003
         ]
-
+        
         guard let fromValue = meterPerSecondValues[fromUnit], let toValue = meterPerSecondValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let meterPerSecond = value * fromValue
         return meterPerSecond / toValue
     }
@@ -812,11 +812,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "right angle": 90,
             "sextant": 60
         ]
-
+        
         guard let fromValue = degreeValues[fromUnit.lowercased()], let toValue = degreeValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let degrees = value * fromValue
         return degrees / toValue
     }
@@ -861,11 +861,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "gallon (UK)/mile": 354.0061899559,
             "gallon (UK)/100 mi": 35400.618995592
         ]
-
+        
         guard let fromValue = meterPerLiterValues[fromUnit], let toValue = meterPerLiterValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let meterPerLiter = value * fromValue
         return meterPerLiter / toValue
     }
@@ -888,11 +888,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "cab (Biblical)": 1.2222221627,
             "log (Biblical)": 0.3055555407
         ]
-
+        
         guard let fromValue = literValues[fromUnit], let toValue = literValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let liters = value * fromValue
         return liters / toValue
     }
@@ -912,11 +912,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "revolution/minute": 0.1047197551,
             "revolution/second": 6.2831853072
         ]
-
+        
         guard let fromValue = radianPerSecondValues[fromUnit], let toValue = radianPerSecondValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let radianPerSecond = value * fromValue
         return radianPerSecond / toValue
     }
@@ -943,11 +943,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "inch/square second": 0.0254,
             "Acceleration of gravity": 9.80665
         ]
-
+        
         guard let fromValue = meterPerSquareSecondValues[fromUnit], let toValue = meterPerSquareSecondValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let meterPerSquareSecond = value * fromValue
         return meterPerSquareSecond / toValue
     }
@@ -960,11 +960,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "revolution/minute/second": 0.1047197551,
             "revolution/square minute": 0.0017453293
         ]
-
+        
         guard let fromValue = radianPerSquareSecondValues[fromUnit], let toValue = radianPerSquareSecondValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let radianPerSquareSecond = value * fromValue
         return radianPerSquareSecond / toValue
     }
@@ -1014,11 +1014,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "psi/1000 feet": 2.3066587258,
             "Earth's density (mean)": 5517.9999999999
         ]
-
+        
         guard let fromValue = kilogramPerCubicMeterValues[fromUnit], let toValue = kilogramPerCubicMeterValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let kilogramPerCubicMeter = value * fromValue
         return kilogramPerCubicMeter / toValue
     }
@@ -1034,11 +1034,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "gallon (US)/pound": 0.0083454039,
             "gallon (UK)/pound": 0.0100224128
         ]
-
+        
         guard let fromValue = cubicMeterPerKilogramValues[fromUnit], let toValue = cubicMeterPerKilogramValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let cubicMeterPerKilogram = value * fromValue
         return cubicMeterPerKilogram / toValue
     }
@@ -1060,11 +1060,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "pound-force inch sq. second": 0.1129848302,
             "slug square foot": 1.3558179619
         ]
-
+        
         guard let fromValue = kilogramSquareMeterValues[fromUnit], let toValue = kilogramSquareMeterValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let kilogramSquareMeter = value * fromValue
         return kilogramSquareMeter / toValue
     }
@@ -1084,11 +1084,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "poundal foot": 0.0421401,
             "poundal inch": 0.003511675
         ]
-
+        
         guard let fromValue = newtonMeterValues[fromUnit], let toValue = newtonMeterValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let newtonMeter = value * fromValue
         return newtonMeter / toValue
     }
@@ -1121,11 +1121,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "poundal foot": 0.0421401,
             "poundal inch": 0.003511675
         ]
-
+        
         guard let fromValue = newtonMeterValues[fromUnit], let toValue = newtonMeterValues[toUnit] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let newtonMeter = value * fromValue
         return newtonMeter / toValue
     }
@@ -1186,7 +1186,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             Mass measures the amount of matter in an object, and its SI unit is the kilogram (kg). It is a fundamental property of physical objects and remains constant regardless of location.
             
             Mass is used to quantify the resistance of an object to acceleration when a force is applied.
-
+            
             Weight, on the other hand, is the force exerted by gravity on an object’s mass. Its SI unit is the newton (N), defined as the force needed to accelerate a one-kilogram mass by one meter per second squared.
             
             Weight varies depending on the gravitational field strength of the location. For example, an object weighs less on the Moon than on Earth due to the Moon’s weaker gravity.
@@ -1373,11 +1373,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             return """
                 Density is a measure of how much mass is contained in a given volume. It is an important property in physics and engineering that helps in understanding the distribution of mass within a substance.
                 
-                The SI unit for density is kilograms per cubic meter (kg/m³). 
+                The SI unit for density is kilograms per cubic meter (kg/m³).
                 
                 For example, the density of water is approximately 1,000 kg/m³, meaning one cubic meter of water has a mass of 1,000 kilograms.
                 
-                Density can also be expressed in other units, such as grams per cubic centimeter (g/cm³), where 1 g/cm³ equals 1,000 kg/m³. 
+                Density can also be expressed in other units, such as grams per cubic centimeter (g/cm³), where 1 g/cm³ equals 1,000 kg/m³.
                 
                 Density is used to identify materials, determine buoyancy, and analyze the behavior of substances under various conditions.
                 
@@ -1403,7 +1403,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
                 
                 For example, a solid cylinder rotating about its central axis has a different moment of inertia compared to a hollow cylinder with the same mass and radius.
                 
-                The moment of inertia is crucial in rotational dynamics and is used to calculate angular acceleration, torque, and kinetic energy in rotating systems. 
+                The moment of inertia is crucial in rotational dynamics and is used to calculate angular acceleration, torque, and kinetic energy in rotating systems.
                 
                 Accurate determination of moment of inertia is essential for designing and analyzing mechanical systems, including wheels, gears, and flywheels, where rotational motion plays a significant role.
                 """
@@ -1419,7 +1419,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
                 """
         case .torque:
             return """
-                Torque, also known as the moment of force, measures the tendency of a force to rotate an object around an axis or pivot point. It is a crucial concept in rotational dynamics and engineering. 
+                Torque, also known as the moment of force, measures the tendency of a force to rotate an object around an axis or pivot point. It is a crucial concept in rotational dynamics and engineering.
                 
                 The SI unit for torque is the newton meter (N·m), representing the force applied at a perpendicular distance from the axis of rotation.
                 
@@ -1432,253 +1432,837 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [String] {
+    var availableUnits: [(symbol: String, name: String)] {
         switch self {
         case .length:
             return [
-                "meter", "kilometer", "decimeter", "centimeter", "millimeter", "micrometer", "nanometer",
-                "mile", "yard", "foot", "inch", "light year", "exameter", "petameter", "terameter",
-                "gigameter", "megameter", "hectometer", "dekameter", "micron", "picometer", "femtometer",
-                "attometer", "megaparsec", "kiloparsec", "parsec", "astronomical unit", "league",
-                "nautical league (UK)", "nautical league (int.)", "league (statute)", "nautical mile (UK)",
-                "nautical mile (international)", "mile (statute)", "mile (US survey)", "mile (Roman)",
-                "kiloyard", "furlong", "furlong (US survey)", "chain", "chain (US survey)", "rope", "rod",
-                "rod (US survey)", "perch", "pole", "fathom", "fathom (US survey)", "ell", "foot (US survey)",
-                "link", "link (US survey)", "cubit (UK)", "hand", "span (cloth)", "finger (cloth)",
-                "nail (cloth)", "inch (US survey)", "barleycorn", "mil", "microinch", "angstrom",
-                "a.u. of length", "X-unit", "fermi", "arpent", "pica", "point", "twip", "aln", "famn",
-                "caliber", "centiinch", "ken", "Russian archin", "Roman actus", "vara de tarea",
-                "vara conuquera", "vara castellana", "cubit (Greek)", "long reed", "reed", "long cubit",
-                "handbreadth", "fingerbreadth", "Planck length", "Electron radius (classical)", "Bohr radius",
-                "Earth's equatorial radius", "Earth's polar radius", "Earth's distance from sun", "Sun's radius"
+                ("m", "meter"),
+                ("km", "kilometer"),
+                ("dm", "decimeter"),
+                ("cm", "centimeter"),
+                ("mm", "millimeter"),
+                ("µm", "micrometer"),
+                ("nm", "nanometer"),
+                ("mi", "mile"),
+                ("yd", "yard"),
+                ("ft", "foot"),
+                ("in", "inch"),
+                ("ly", "light year"),
+                ("Em", "exameter"),
+                ("Pm", "petameter"),
+                ("Tm", "terameter"),
+                ("Gm", "gigameter"),
+                ("Mm", "megameter"),
+                ("hm", "hectometer"),
+                ("dam", "dekameter"),
+                ("µ", "micron"),
+                ("pm", "picometer"),
+                ("fm", "femtometer"),
+                ("am", "attometer"),
+                ("Mpc", "megaparsec"),
+                ("kpc", "kiloparsec"),
+                ("pc", "parsec"),
+                ("au", "astronomical unit"),
+                ("lea", "league"),
+                ("nlea(UK)", "nautical league (UK)"),
+                ("nlea(int)", "nautical league (int.)"),
+                ("lea(st)", "league (statute)"),
+                ("nmi(UK)", "nautical mile (UK)"),
+                ("nmi(int)", "nautical mile (international)"),
+                ("mi(st)", "mile (statute)"),
+                ("mi(US)", "mile (US survey)"),
+                ("mi(Rom)", "mile (Roman)"),
+                ("kyd", "kiloyard"),
+                ("fur", "furlong"),
+                ("fur(US)", "furlong (US survey)"),
+                ("ch", "chain"),
+                ("ch(US)", "chain (US survey)"),
+                ("rope", "rope"),
+                ("rod", "rod"),
+                ("rod(US)", "rod (US survey)"),
+                ("per", "perch"),
+                ("pole", "pole"),
+                ("fth", "fathom"),
+                ("fth(US)", "fathom (US survey)"),
+                ("ell", "ell"),
+                ("ft(US)", "foot (US survey)"),
+                ("link", "link"),
+                ("link(US)", "link (US survey)"),
+                ("cubit(UK)", "cubit (UK)"),
+                ("hand", "hand"),
+                ("span", "span (cloth)"),
+                ("finger", "finger (cloth)"),
+                ("nail", "nail (cloth)"),
+                ("in(US)", "inch (US survey)"),
+                ("barleycorn", "barleycorn"),
+                ("mil", "mil"),
+                ("µin", "microinch"),
+                ("Å", "angstrom"),
+                ("au(l)", "a.u. of length"),
+                ("X", "X-unit"),
+                ("F", "fermi"),
+                ("arpent", "arpent"),
+                ("pica", "pica"),
+                ("point", "point"),
+                ("twip", "twip"),
+                ("aln", "aln"),
+                ("famn", "famn"),
+                ("cal", "caliber"),
+                ("cin", "centiinch"),
+                ("ken", "ken"),
+                ("archin", "Russian archin"),
+                ("actus", "Roman actus"),
+                ("vara(t)", "vara de tarea"),
+                ("vara(c)", "vara conuquera"),
+                ("vara(cas)", "vara castellana"),
+                ("cubit(Gr)", "cubit (Greek)"),
+                ("lreed", "long reed"),
+                ("reed", "reed"),
+                ("lcubit", "long cubit"),
+                ("hb", "handbreadth"),
+                ("fb", "fingerbreadth"),
+                ("lP", "Planck length"),
+                ("re", "Electron radius (classical)"),
+                ("a0", "Bohr radius"),
+                ("REq", "Earth's equatorial radius"),
+                ("RPol", "Earth's polar radius"),
+                ("AU", "Earth's distance from sun"),
+                ("RS", "Sun's radius")
             ]
         case .mass:
             return [
-                "kilogram", "gram", "milligram", "ton (metric)", "pound", "ounce", "carat", "ton (short)",
-                "ton (long)", "Atomic mass unit", "exagram", "petagram", "teragram", "gigagram", "megagram",
-                "hectogram", "dekagram", "decigram", "centigram", "microgram", "nanogram", "picogram",
-                "femtogram", "attogram", "dalton", "kilogram-force square second/meter", "kilopound", "kip",
-                "slug", "pound-force square second/foot", "pound (troy or apothecary)", "poundal",
-                "ton (assay) (US)", "ton (assay) (UK)", "kiloton (metric)", "quintal (metric)",
-                "hundredweight (US)", "hundredweight (UK)", "quarter (US)", "quarter (UK)", "stone (US)",
-                "stone (UK)", "tonne", "pennyweight", "scruple (apothecary)", "grain", "gamma",
-                "talent (Biblical Hebrew)", "mina (Biblical Hebrew)", "shekel (Biblical Hebrew)",
-                "bekan (Biblical Hebrew)", "gerah (Biblical Hebrew)", "talent (Biblical Greek)",
-                "mina (Biblical Greek)", "tetradrachma (Biblical Greek)", "didrachma (Biblical Greek)",
-                "drachma (Biblical Greek)", "denarius (Biblical Roman)", "assarion (Biblical Roman)",
-                "quadrans (Biblical Roman)", "lepton (Biblical Roman)", "Planck mass", "Electron mass (rest)",
-                "Muon mass", "Proton mass", "Neutron mass", "Deuteron mass", "Earth's mass", "Sun's mass"
+                ("kg", "kilogram"),
+                ("g", "gram"),
+                ("mg", "milligram"),
+                ("t", "ton (metric)"),
+                ("lb", "pound"),
+                ("oz", "ounce"),
+                ("ct", "carat"),
+                ("ton(sh)", "ton (short)"),
+                ("ton(l)", "ton (long)"),
+                ("u", "Atomic mass unit"),
+                ("Eg", "exagram"),
+                ("Pg", "petagram"),
+                ("Tg", "teragram"),
+                ("Gg", "gigagram"),
+                ("Mg", "megagram"),
+                ("hg", "hectogram"),
+                ("dag", "dekagram"),
+                ("dg", "decigram"),
+                ("cg", "centigram"),
+                ("µg", "microgram"),
+                ("ng", "nanogram"),
+                ("pg", "picogram"),
+                ("fg", "femtogram"),
+                ("ag", "attogram"),
+                ("Da", "dalton"),
+                ("kgf·s²/m", "kilogram-force square second/meter"),
+                ("klb", "kilopound"),
+                ("kip", "kip"),
+                ("slug", "slug"),
+                ("lbf·s²/ft", "pound-force square second/foot"),
+                ("lb(t)", "pound (troy or apothecary)"),
+                ("pdl", "poundal"),
+                ("ton(a,US)", "ton (assay) (US)"),
+                ("ton(a,UK)", "ton (assay) (UK)"),
+                ("kt", "kiloton (metric)"),
+                ("q", "quintal (metric)"),
+                ("cwt(US)", "hundredweight (US)"),
+                ("cwt(UK)", "hundredweight (UK)"),
+                ("qr(US)", "quarter (US)"),
+                ("qr(UK)", "quarter (UK)"),
+                ("stone(US)", "stone (US)"),
+                ("stone(UK)", "stone (UK)"),
+                ("t", "tonne"),
+                ("dwt", "pennyweight"),
+                ("s(ap)", "scruple (apothecary)"),
+                ("gr", "grain"),
+                ("γ", "gamma"),
+                ("talent(BH)", "talent (Biblical Hebrew)"),
+                ("mina(BH)", "mina (Biblical Hebrew)"),
+                ("shekel(BH)", "shekel (Biblical Hebrew)"),
+                ("bekan(BH)", "bekan (Biblical Hebrew)"),
+                ("gerah(BH)", "gerah (Biblical Hebrew)"),
+                ("talent(BG)", "talent (Biblical Greek)"),
+                ("mina(BG)", "mina (Biblical Greek)"),
+                ("tetradrachma(BG)", "tetradrachma (Biblical Greek)"),
+                ("didrachma(BG)", "didrachma (Biblical Greek)"),
+                ("drachma(BG)", "drachma (Biblical Greek)"),
+                ("denarius(BR)", "denarius (Biblical Roman)"),
+                ("assarion(BR)", "assarion (Biblical Roman)"),
+                ("quadrans(BR)", "quadrans (Biblical Roman)"),
+                ("lepton(BR)", "lepton (Biblical Roman)"),
+                ("mP", "Planck mass"),
+                ("me", "Electron mass (rest)"),
+                ("mµ", "Muon mass"),
+                ("mp", "Proton mass"),
+                ("mn", "Neutron mass"),
+                ("md", "Deuteron mass"),
+                ("ME", "Earth's mass"),
+                ("MS", "Sun's mass")
             ]
         case .volume:
             return [
-                "cubic meter", "cubic kilometer", "cubic centimeter", "cubic millimeter", "liter", "milliliter",
-                "gallon (US)", "quart (US)", "pint (US)", "cup (US)", "tablespoon (US)", "teaspoon (US)",
-                "cubic mile", "cubic yard", "cubic foot", "cubic inch", "cubic decimeter", "exaliter", "petaliter",
-                "teraliter", "gigaliter", "megaliter", "kiloliter", "hectoliter", "dekaliter", "deciliter",
-                "centiliter", "microliter", "nanoliter", "picoliter", "femtoliter", "attoliter", "cc", "drop",
-                "barrel (oil)", "barrel (US)", "barrel (UK)", "gallon (UK)", "quart (UK)", "pint (UK)",
-                "cup (metric)", "cup (UK)", "fluid ounce (US)", "fluid ounce (UK)", "tablespoon (metric)",
-                "tablespoon (UK)", "dessertspoon (US)", "dessertspoon (UK)", "teaspoon (metric)", "teaspoon (UK)",
-                "gill (US)", "gill (UK)", "minim (US)", "minim (UK)", "ton register", "ccf", "hundred-cubic foot",
-                "acre-foot", "acre-foot (US survey)", "acre-inch", "dekastere", "stere", "decistere", "cord",
-                "tun", "hogshead", "board foot", "dram", "cor (Biblical)", "homer (Biblical)", "bath (Biblical)",
-                "hin (Biblical)", "cab (Biblical)", "log (Biblical)", "Taza (Spanish)", "Earth's volume"
+                ("m³", "cubic meter"),
+                ("km³", "cubic kilometer"),
+                ("cm³", "cubic centimeter"),
+                ("mm³", "cubic millimeter"),
+                ("L", "liter"),
+                ("mL", "milliliter"),
+                ("gal(US)", "gallon (US)"),
+                ("qt(US)", "quart (US)"),
+                ("pt(US)", "pint (US)"),
+                ("cup(US)", "cup (US)"),
+                ("tbsp(US)", "tablespoon (US)"),
+                ("tsp(US)", "teaspoon (US)"),
+                ("mi³", "cubic mile"),
+                ("yd³", "cubic yard"),
+                ("ft³", "cubic foot"),
+                ("in³", "cubic inch"),
+                ("dm³", "cubic decimeter"),
+                ("EL", "exaliter"),
+                ("PL", "petaliter"),
+                ("TL", "teraliter"),
+                ("GL", "gigaliter"),
+                ("ML", "megaliter"),
+                ("kL", "kiloliter"),
+                ("hL", "hectoliter"),
+                ("daL", "dekaliter"),
+                ("dL", "deciliter"),
+                ("cL", "centiliter"),
+                ("µL", "microliter"),
+                ("nL", "nanoliter"),
+                ("pL", "picoliter"),
+                ("fL", "femtoliter"),
+                ("aL", "attoliter"),
+                ("cc", "cc"),
+                ("drop", "drop"),
+                ("bbl(oil)", "barrel (oil)"),
+                ("bbl(US)", "barrel (US)"),
+                ("bbl(UK)", "barrel (UK)"),
+                ("gal(UK)", "gallon (UK)"),
+                ("qt(UK)", "quart (UK)"),
+                ("pt(UK)", "pint (UK)"),
+                ("cup(m)", "cup (metric)"),
+                ("cup(UK)", "cup (UK)"),
+                ("fl oz(US)", "fluid ounce (US)"),
+                ("fl oz(UK)", "fluid ounce (UK)"),
+                ("tbsp(m)", "tablespoon (metric)"),
+                ("tbsp(UK)", "tablespoon (UK)"),
+                ("dsp(US)", "dessertspoon (US)"),
+                ("dsp(UK)", "dessertspoon (UK)"),
+                ("tsp(m)", "teaspoon (metric)"),
+                ("tsp(UK)", "teaspoon (UK)"),
+                ("gill(US)", "gill (US)"),
+                ("gill(UK)", "gill (UK)"),
+                ("min(US)", "minim (US)"),
+                ("min(UK)", "minim (UK)"),
+                ("reg ton", "ton register"),
+                ("ccf", "ccf"),
+                ("hcf", "hundred-cubic foot"),
+                ("ac·ft", "acre-foot"),
+                ("ac·ft(US)", "acre-foot (US survey)"),
+                ("ac·in", "acre-inch"),
+                ("das", "dekastere"),
+                ("s", "stere"),
+                ("ds", "decistere"),
+                ("cord", "cord"),
+                ("tun", "tun"),
+                ("hhd", "hogshead"),
+                ("bf", "board foot"),
+                ("dr", "dram"),
+                ("cor(B)", "cor (Biblical)"),
+                ("homer(B)", "homer (Biblical)"),
+                ("bath(B)", "bath (Biblical)"),
+                ("hin(B)", "hin (Biblical)"),
+                ("cab(B)", "cab (Biblical)"),
+                ("log(B)", "log (Biblical)"),
+                ("taza", "Taza (Spanish)"),
+                ("VE", "Earth's volume")
             ]
         case .temperature:
-            return ["Kelvin", "Celsius", "Fahrenheit", "Rankine", "Reaumur", "Triple point of water"]
+            return [
+                ("K", "Kelvin"),
+                ("°C", "Celsius"),
+                ("°F", "Fahrenheit"),
+                ("°R", "Rankine"),
+                ("°Ré", "Reaumur"),
+                ("Tw", "Triple point of water")
+            ]
         case .area:
             return [
-                "square meter", "square kilometer", "square centimeter", "square millimeter",
-                "square micrometer", "hectare", "acre", "square mile", "square yard", "square foot",
-                "square inch", "square hectometer", "square dekameter", "square decimeter",
-                "square nanometer", "are", "barn", "square mile (US survey)", "square foot (US survey)",
-                "circular inch", "township", "section", "acre (US survey)", "rood", "square chain",
-                "square rod", "square rod (US survey)", "square perch", "square pole", "square mil",
-                "circular mil", "homestead", "sabin", "arpent", "cuerda", "plaza",
-                "varas castellanas cuad", "varas conuqueras cuad", "Electron cross section"
+                ("m²", "square meter"),
+                ("km²", "square kilometer"),
+                ("cm²", "square centimeter"),
+                ("mm²", "square millimeter"),
+                ("µm²", "square micrometer"),
+                ("ha", "hectare"),
+                ("ac", "acre"),
+                ("mi²", "square mile"),
+                ("yd²", "square yard"),
+                ("ft²", "square foot"),
+                ("in²", "square inch"),
+                ("hm²", "square hectometer"),
+                ("dam²", "square dekameter"),
+                ("dm²", "square decimeter"),
+                ("nm²", "square nanometer"),
+                ("a", "are"),
+                ("b", "barn"),
+                ("mi²(US)", "square mile (US survey)"),
+                ("ft²(US)", "square foot (US survey)"),
+                ("cir in", "circular inch"),
+                ("twp", "township"),
+                ("sec", "section"),
+                ("ac(US)", "acre (US survey)"),
+                ("rood", "rood"),
+                ("ch²", "square chain"),
+                ("rod²", "square rod"),
+                ("rod²(US)", "square rod (US survey)"),
+                ("per²", "square perch"),
+                ("pole²", "square pole"),
+                ("mil²", "square mil"),
+                ("cir mil", "circular mil"),
+                ("homestead", "homestead"),
+                ("sabin", "sabin"),
+                ("arpent", "arpent"),
+                ("cuerda", "cuerda"),
+                ("plaza", "plaza"),
+                ("var²(cas)", "varas castellanas cuad"),
+                ("var²(con)", "varas conuqueras cuad"),
+                ("σe", "Electron cross section")
             ]
         case .pressure:
             return [
-                "pascal", "kilopascal", "bar", "psi", "ksi", "Standard atmosphere", "exapascal",
-                "petapascal", "terapascal", "gigapascal", "megapascal", "hectopascal", "dekapascal",
-                "decipascal", "centipascal", "millipascal", "micropascal", "nanopascal", "picopascal",
-                "femtopascal", "attopascal", "newton/square meter", "newton/square centimeter",
-                "newton/square millimeter", "kilonewton/square meter", "millibar", "microbar",
-                "dyne/square centimeter", "kilogram-force/square meter", "kilogram-force/sq. cm",
-                "kilogram-force/sq. millimeter", "gram-force/sq. centimeter", "ton-force (short)/sq. foot",
-                "ton-force (short)/sq. inch", "ton-force (long)/square foot", "ton-force (long)/square inch",
-                "kip-force/square inch", "pound-force/square foot", "pound-force/square inch",
-                "poundal/square foot", "torr", "centimeter mercury (0°C)", "millimeter mercury (0°C)",
-                "inch mercury (32°F)", "inch mercury (60°F)", "centimeter water (4°C)", "millimeter water (4°C)",
-                "inch water (4°C)", "foot water (4°C)", "inch water (60°F)", "foot water (60°F)",
-                "atmosphere technical"
+                ("Pa", "pascal"),
+                ("kPa", "kilopascal"),
+                ("bar", "bar"),
+                ("psi", "psi"),
+                ("ksi", "ksi"),
+                ("atm", "Standard atmosphere"),
+                ("EPa", "exapascal"),
+                ("PPa", "petapascal"),
+                ("TPa", "terapascal"),
+                ("GPa", "gigapascal"),
+                ("MPa", "megapascal"),
+                ("hPa", "hectopascal"),
+                ("daPa", "dekapascal"),
+                ("dPa", "decipascal"),
+                ("cPa", "centipascal"),
+                ("mPa", "millipascal"),
+                ("µPa", "micropascal"),
+                ("nPa", "nanopascal"),
+                ("pPa", "picopascal"),
+                ("fPa", "femtopascal"),
+                ("aPa", "attopascal"),
+                ("N/m²", "newton/square meter"),
+                ("N/cm²", "newton/square centimeter"),
+                ("N/mm²", "newton/square millimeter"),
+                ("kN/m²", "kilonewton/square meter"),
+                ("mbar", "millibar"),
+                ("µbar", "microbar"),
+                ("dyn/cm²", "dyne/square centimeter"),
+                ("kgf/m²", "kilogram-force/square meter"),
+                ("kgf/cm²", "kilogram-force/sq. cm"),
+                ("kgf/mm²", "kilogram-force/sq. millimeter"),
+                ("gf/cm²", "gram-force/sq. centimeter"),
+                ("tonf(sh)/ft²", "ton-force (short)/sq. foot"),
+                ("tonf(sh)/in²", "ton-force (short)/sq. inch"),
+                ("tonf(l)/ft²", "ton-force (long)/square foot"),
+                ("tonf(l)/in²", "ton-force (long)/square inch"),
+                ("kipf/in²", "kip-force/square inch"),
+                ("lbf/ft²", "pound-force/square foot"),
+                ("lbf/in²", "pound-force/square inch"),
+                ("pdl/ft²", "poundal/square foot"),
+                ("Torr", "torr"),
+                ("cmHg", "centimeter mercury (0°C)"),
+                ("mmHg", "millimeter mercury (0°C)"),
+                ("inHg", "inch mercury (32°F)"),
+                ("inHg(60°F)", "inch mercury (60°F)"),
+                ("cmH2O", "centimeter water (4°C)"),
+                ("mmH2O", "millimeter water (4°C)"),
+                ("inH2O", "inch water (4°C)"),
+                ("ftH2O", "foot water (4°C)"),
+                ("inH2O(60°F)", "inch water (60°F)"),
+                ("ftH2O(60°F)", "foot water (60°F)"),
+                ("at", "atmosphere technical")
             ]
         case .energy:
             return [
-                "joule", "kilojoule", "kilowatt-hour", "watt-hour", "calorie (nutritional)",
-                "horsepower (metric) hour", "Btu (IT)", "Btu (th)", "gigajoule", "megajoule",
-                "millijoule", "microjoule", "nanojoule", "attojoule", "megaelectron-volt",
-                "kiloelectron-volt", "electron-volt", "erg", "gigawatt-hour", "megawatt-hour",
-                "kilowatt-second", "watt-second", "newton meter", "horsepower hour",
-                "kilocalorie (IT)", "kilocalorie (th)", "calorie (IT)", "calorie (th)",
-                "mega Btu (IT)", "ton-hour (refrigeration)", "fuel oil equivalent @kiloliter",
-                "fuel oil equivalent @barrel (US)", "gigaton", "megaton", "kiloton",
-                "ton (explosives)", "dyne centimeter", "gram-force meter", "gram-force centimeter",
-                "kilogram-force centimeter", "kilogram-force meter", "kilopond meter",
-                "pound-force foot", "pound-force inch", "ounce-force inch", "foot-pound",
-                "inch-pound", "inch-ounce", "poundal foot", "therm", "therm (EC)", "therm (US)",
-                "Hartree energy", "Rydberg constant"
+                ("J", "joule"),
+                ("kJ", "kilojoule"),
+                ("kWh", "kilowatt-hour"),
+                ("Wh", "watt-hour"),
+                ("Cal", "calorie (nutritional)"),
+                ("hp·h", "horsepower (metric) hour"),
+                ("Btu(IT)", "Btu (IT)"),
+                ("Btu(th)", "Btu (th)"),
+                ("GJ", "gigajoule"),
+                ("MJ", "megajoule"),
+                ("mJ", "millijoule"),
+                ("µJ", "microjoule"),
+                ("nJ", "nanojoule"),
+                ("aJ", "attojoule"),
+                ("MeV", "megaelectron-volt"),
+                ("keV", "kiloelectron-volt"),
+                ("eV", "electron-volt"),
+                ("erg", "erg"),
+                ("GWh", "gigawatt-hour"),
+                ("MWh", "megawatt-hour"),
+                ("kW·s", "kilowatt-second"),
+                ("W·s", "watt-second"),
+                ("N·m", "newton meter"),
+                ("hp·h", "horsepower hour"),
+                ("kcal(IT)", "kilocalorie (IT)"),
+                ("kcal(th)", "kilocalorie (th)"),
+                ("cal(IT)", "calorie (IT)"),
+                ("cal(th)", "calorie (th)"),
+                ("MBtu(IT)", "mega Btu (IT)"),
+                ("ton·h", "ton-hour (refrigeration)"),
+                ("FOE(kL)", "fuel oil equivalent @kiloliter"),
+                ("FOE(bbl)", "fuel oil equivalent @barrel (US)"),
+                ("Gt", "gigaton"),
+                ("Mt", "megaton"),
+                ("kt", "kiloton"),
+                ("t(TNT)", "ton (explosives)"),
+                ("dyn·cm", "dyne centimeter"),
+                ("gf·m", "gram-force meter"),
+                ("gf·cm", "gram-force centimeter"),
+                ("kgf·cm", "kilogram-force centimeter"),
+                ("kgf·m", "kilogram-force meter"),
+                ("kp·m", "kilopond meter"),
+                ("lbf·ft", "pound-force foot"),
+                ("lbf·in", "pound-force inch"),
+                ("ozf·in", "ounce-force inch"),
+                ("ft·lb", "foot-pound"),
+                ("in·lb", "inch-pound"),
+                ("in·oz", "inch-ounce"),
+                ("pdl·ft", "poundal foot"),
+                ("th", "therm"),
+                ("th(EC)", "therm (EC)"),
+                ("th(US)", "therm (US)"),
+                ("Eh", "Hartree energy"),
+                ("Ry", "Rydberg constant")
             ]
         case .power:
             return [
-                "watt", "exawatt", "petawatt", "terawatt", "gigawatt", "megawatt", "kilowatt",
-                "hectowatt", "dekawatt", "deciwatt", "centiwatt", "milliwatt", "microwatt",
-                "nanowatt", "picowatt", "femtowatt", "attowatt", "horsepower",
-                "horsepower (550 ft*lbf/s)", "horsepower (metric)", "horsepower (boiler)",
-                "horsepower (electric)", "horsepower (water)", "pferdestarke (ps)",
-                "Btu (IT)/hour", "Btu (IT)/minute", "Btu (IT)/second", "Btu (th)/hour",
-                "Btu (th)/minute", "Btu (th)/second", "MBtu (IT)/hour", "MBH",
-                "ton (refrigeration)", "kilocalorie (IT)/hour", "kilocalorie (IT)/minute",
-                "kilocalorie (IT)/second", "kilocalorie (th)/hour", "kilocalorie (th)/minute",
-                "kilocalorie (th)/second", "calorie (IT)/hour", "calorie (IT)/minute",
-                "calorie (IT)/second", "calorie (th)/hour", "calorie (th)/minute",
-                "calorie (th)/second", "foot pound-force/hour", "foot pound-force/minute",
-                "foot pound-force/second", "pound-foot/hour", "pound-foot/minute",
-                "pound-foot/second", "erg/second", "kilovolt ampere", "volt ampere",
-                "newton meter/second", "joule/second", "exajoule/second", "petajoule/second",
-                "terajoule/second", "gigajoule/second", "megajoule/second", "kilojoule/second",
-                "hectojoule/second", "dekajoule/second", "decijoule/second", "centijoule/second",
-                "millijoule/second", "microjoule/second", "nanojoule/second", "picojoule/second",
-                "femtojoule/second", "attojoule/second", "joule/hour", "joule/minute",
-                "kilojoule/hour", "kilojoule/minute"
+                ("W", "watt"),
+                ("EW", "exawatt"),
+                ("PW", "petawatt"),
+                ("TW", "terawatt"),
+                ("GW", "gigawatt"),
+                ("MW", "megawatt"),
+                ("kW", "kilowatt"),
+                ("hW", "hectowatt"),
+                ("daW", "dekawatt"),
+                ("dW", "deciwatt"),
+                ("cW", "centiwatt"),
+                ("mW", "milliwatt"),
+                ("µW", "microwatt"),
+                ("nW", "nanowatt"),
+                ("pW", "picowatt"),
+                ("fW", "femtowatt"),
+                ("aW", "attowatt"),
+                ("hp", "horsepower"),
+                ("hp(550)", "horsepower (550 ft*lbf/s)"),
+                ("hp(m)", "horsepower (metric)"),
+                ("hp(b)", "horsepower (boiler)"),
+                ("hp(e)", "horsepower (electric)"),
+                ("hp(w)", "horsepower (water)"),
+                ("PS", "pferdestarke (ps)"),
+                ("Btu(IT)/h", "Btu (IT)/hour"),
+                ("Btu(IT)/min", "Btu (IT)/minute"),
+                ("Btu(IT)/s", "Btu (IT)/second"),
+                ("Btu(th)/h", "Btu (th)/hour"),
+                ("Btu(th)/min", "Btu (th)/minute"),
+                ("Btu(th)/s", "Btu (th)/second"),
+                ("MBtu(IT)/h", "MBtu (IT)/hour"),
+                ("MBH", "MBH"),
+                ("ton(ref)", "ton (refrigeration)"),
+                ("kcal(IT)/h", "kilocalorie (IT)/hour"),
+                ("kcal(IT)/min", "kilocalorie (IT)/minute"),
+                ("kcal(IT)/s", "kilocalorie (IT)/second"),
+                ("kcal(th)/h", "kilocalorie (th)/hour"),
+                ("kcal(th)/min", "kilocalorie (th)/minute"),
+                ("kcal(th)/s", "kilocalorie (th)/second"),
+                ("cal(IT)/h", "calorie (IT)/hour"),
+                ("cal(IT)/min", "calorie (IT)/minute"),
+                ("cal(IT)/s", "calorie (IT)/second"),
+                ("cal(th)/h", "calorie (th)/hour"),
+                ("cal(th)/min", "calorie (th)/minute"),
+                ("cal(th)/s", "calorie (th)/second"),
+                ("ft·lbf/h", "foot pound-force/hour"),
+                ("ft·lbf/min", "foot pound-force/minute"),
+                ("ft·lbf/s", "foot pound-force/second"),
+                ("lb·ft/h", "pound-foot/hour"),
+                ("lb·ft/min", "pound-foot/minute"),
+                ("lb·ft/s", "pound-foot/second"),
+                ("erg/s", "erg/second"),
+                ("kVA", "kilovolt ampere"),
+                ("VA", "volt ampere"),
+                ("N·m/s", "newton meter/second"),
+                ("J/s", "joule/second"),
+                ("EJ/s", "exajoule/second"),
+                ("PJ/s", "petajoule/second"),
+                ("TJ/s", "terajoule/second"),
+                ("GJ/s", "gigajoule/second"),
+                ("MJ/s", "megajoule/second"),
+                ("kJ/s", "kilojoule/second"),
+                ("hJ/s", "hectojoule/second"),
+                ("daJ/s", "dekajoule/second"),
+                ("dJ/s", "decijoule/second"),
+                ("cJ/s", "centijoule/second"),
+                ("mJ/s", "millijoule/second"),
+                ("µJ/s", "microjoule/second"),
+                ("nJ/s", "nanojoule/second"),
+                ("pJ/s", "picojoule/second"),
+                ("fJ/s", "femtojoule/second"),
+                ("aJ/s", "attojoule/second"),
+                ("J/h", "joule/hour"),
+                ("J/min", "joule/minute"),
+                ("kJ/h", "kilojoule/hour"),
+                ("kJ/min", "kilojoule/minute")
             ]
         case .force:
             return [
-                "newton", "kilonewton", "gram-force", "kilogram-force", "ton-force (metric)",
-                "exanewton", "petanewton", "teranewton", "giganewton", "meganewton",
-                "hectonewton", "dekanewton", "decinewton", "centinewton", "millinewton",
-                "micronewton", "nanonewton", "piconewton", "femtonewton", "attonewton",
-                "dyne", "joule/meter", "joule/centimeter", "ton-force (short)", "ton-force (long)",
-                "kip-force", "kilopound-force", "pound-force", "ounce-force", "poundal",
-                "pound foot/square second", "pond", "kilopond"
+                ("N", "newton"),
+                ("kN", "kilonewton"),
+                ("gf", "gram-force"),
+                ("kgf", "kilogram-force"),
+                ("tf", "ton-force (metric)"),
+                ("EN", "exanewton"),
+                ("PN", "petanewton"),
+                ("TN", "teranewton"),
+                ("GN", "giganewton"),
+                ("MN", "meganewton"),
+                ("hN", "hectonewton"),
+                ("daN", "dekanewton"),
+                ("dN", "decinewton"),
+                ("cN", "centinewton"),
+                ("mN", "millinewton"),
+                ("µN", "micronewton"),
+                ("nN", "nanonewton"),
+                ("pN", "piconewton"),
+                ("fN", "femtonewton"),
+                ("aN", "attonewton"),
+                ("dyn", "dyne"),
+                ("J/m", "joule/meter"),
+                ("J/cm", "joule/centimeter"),
+                ("tf(sh)", "ton-force (short)"),
+                ("tf(l)", "ton-force (long)"),
+                ("kipf", "kip-force"),
+                ("klbf", "kilopound-force"),
+                ("lbf", "pound-force"),
+                ("ozf", "ounce-force"),
+                ("pdl", "poundal"),
+                ("lb·ft/s²", "pound foot/square second"),
+                ("p", "pond"),
+                ("kp", "kilopond")
             ]
         case .duration:
             return [
-                "second", "millisecond", "minute", "hour", "day", "week", "month", "year",
-                "decade", "century", "millennium", "microsecond", "nanosecond", "picosecond",
-                "femtosecond", "attosecond", "shake", "month (synodic)", "year (Julian)",
-                "year (leap)", "year (tropical)", "year (sidereal)", "day (sidereal)",
-                "hour (sidereal)", "minute (sidereal)", "second (sidereal)", "fortnight",
-                "septennial", "octennial", "novennial", "quindecennial", "quinquennial",
-                "Planck time"
+                ("s", "second"),
+                ("ms", "millisecond"),
+                ("min", "minute"),
+                ("h", "hour"),
+                ("d", "day"),
+                ("wk", "week"),
+                ("mo", "month"),
+                ("yr", "year"),
+                ("dec", "decade"),
+                ("c", "century"),
+                ("mill", "millennium"),
+                ("µs", "microsecond"),
+                ("ns", "nanosecond"),
+                ("ps", "picosecond"),
+                ("fs", "femtosecond"),
+                ("as", "attosecond"),
+                ("shake", "shake"),
+                ("mo(syn)", "month (synodic)"),
+                ("yr(J)", "year (Julian)"),
+                ("yr(leap)", "year (leap)"),
+                ("yr(t)", "year (tropical)"),
+                ("yr(s)", "year (sidereal)"),
+                ("d(s)", "day (sidereal)"),
+                ("h(s)", "hour (sidereal)"),
+                ("min(s)", "minute (sidereal)"),
+                ("s(s)", "second (sidereal)"),
+                ("fn", "fortnight"),
+                ("septennial", "septennial"),
+                ("octennial", "octennial"),
+                ("novennial", "novennial"),
+                ("quindecennial", "quindecennial"),
+                ("quinquennial", "quinquennial"),
+                ("tP", "Planck time")
             ]
         case .speed:
             return [
-                "meter/second", "kilometer/hour", "mile/hour", "meter/hour", "meter/minute",
-                "kilometer/minute", "kilometer/second", "centimeter/hour", "centimeter/minute",
-                "centimeter/second", "millimeter/hour", "millimeter/minute", "millimeter/second",
-                "foot/hour", "foot/minute", "foot/second", "yard/hour", "yard/minute",
-                "yard/second", "mile/minute", "mile/second", "knot", "knot (UK)",
-                "Velocity of light in vacuum", "Cosmic velocity - first", "Cosmic velocity - second",
-                "Cosmic velocity - third", "Earth's velocity", "Velocity of sound in pure water",
-                "Velocity of sound in sea water (20°C, 10 meter deep)", "Mach (20°C, 1 atm)",
-                "Mach (SI standard)"
+                ("m/s", "meter/second"),
+                ("km/h", "kilometer/hour"),
+                ("mi/h", "mile/hour"),
+                ("m/h", "meter/hour"),
+                ("m/min", "meter/minute"),
+                ("km/min", "kilometer/minute"),
+                ("km/s", "kilometer/second"),
+                ("cm/h", "centimeter/hour"),
+                ("cm/min", "centimeter/minute"),
+                ("cm/s", "centimeter/second"),
+                ("mm/h", "millimeter/hour"),
+                ("mm/min", "millimeter/minute"),
+                ("mm/s", "millimeter/second"),
+                ("ft/h", "foot/hour"),
+                ("ft/min", "foot/minute"),
+                ("ft/s", "foot/second"),
+                ("yd/h", "yard/hour"),
+                ("yd/min", "yard/minute"),
+                ("yd/s", "yard/second"),
+                ("mi/min", "mile/minute"),
+                ("mi/s", "mile/second"),
+                ("kn", "knot"),
+                ("kn(UK)", "knot (UK)"),
+                ("c", "Velocity of light in vacuum"),
+                ("v1", "Cosmic velocity - first"),
+                ("v2", "Cosmic velocity - second"),
+                ("v3", "Cosmic velocity - third"),
+                ("vE", "Earth's velocity"),
+                ("vs(w)", "Velocity of sound in pure water"),
+                ("vs(sw)", "Velocity of sound in sea water (20°C, 10 meter deep)"),
+                ("M", "Mach (20°C, 1 atm)"),
+                ("M(SI)", "Mach (SI standard)")
             ]
         case .angle:
             return [
-                "degree", "radian", "grad", "minute", "second", "gon", "sign", "mil",
-                "revolution", "circle", "turn", "quadrant", "right angle", "sextant"
+                ("°", "degree"),
+                ("rad", "radian"),
+                ("grad", "grad"),
+                ("'", "minute"),
+                ("\"", "second"),
+                ("gon", "gon"),
+                ("sign", "sign"),
+                ("mil", "mil"),
+                ("rev", "revolution"),
+                ("⊙", "circle"),
+                ("tr", "turn"),
+                ("quad", "quadrant"),
+                ("right angle", "right angle"),
+                ("sextant", "sextant")
             ]
         case .fuelConsumption:
             return [
-                "meter/liter", "exameter/liter", "petameter/liter", "terameter/liter",
-                "gigameter/liter", "megameter/liter", "kilometer/liter", "hectometer/liter",
-                "dekameter/liter", "centimeter/liter", "mile (US)/liter", "nautical mile/liter",
-                "nautical mile/gallon (US)", "kilometer/gallon (US)", "meter/gallon (US)",
-                "meter/gallon (UK)", "mile/gallon (US)", "mile/gallon (UK)", "meter/cubic meter",
-                "meter/cubic centimeter", "meter/cubic yard", "meter/cubic foot",
-                "meter/cubic inch", "meter/quart (US)", "meter/quart (UK)", "meter/pint (US)",
-                "meter/pint (UK)", "meter/cup (US)", "meter/cup (UK)", "meter/fluid ounce (US)",
-                "meter/fluid ounce (UK)", "liter/meter", "liter/100 km", "gallon (US)/mile",
-                "gallon (US)/100 mi", "gallon (UK)/mile", "gallon (UK)/100 mi"
+                ("m/L", "meter/liter"),
+                ("Em/L", "exameter/liter"),
+                ("Pm/L", "petameter/liter"),
+                ("Tm/L", "terameter/liter"),
+                ("Gm/L", "gigameter/liter"),
+                ("Mm/L", "megameter/liter"),
+                ("km/L", "kilometer/liter"),
+                ("hm/L", "hectometer/liter"),
+                ("dam/L", "dekameter/liter"),
+                ("cm/L", "centimeter/liter"),
+                ("mi(US)/L", "mile (US)/liter"),
+                ("nmi/L", "nautical mile/liter"),
+                ("nmi/gal(US)", "nautical mile/gallon (US)"),
+                ("km/gal(US)", "kilometer/gallon (US)"),
+                ("m/gal(US)", "meter/gallon (US)"),
+                ("m/gal(UK)", "meter/gallon (UK)"),
+                ("mi/gal(US)", "mile/gallon (US)"),
+                ("mi/gal(UK)", "mile/gallon (UK)"),
+                ("m/m³", "meter/cubic meter"),
+                ("m/cm³", "meter/cubic centimeter"),
+                ("m/yd³", "meter/cubic yard"),
+                ("m/ft³", "meter/cubic foot"),
+                ("m/in³", "meter/cubic inch"),
+                ("m/qt(US)", "meter/quart (US)"),
+                ("m/qt(UK)", "meter/quart (UK)"),
+                ("m/pt(US)", "meter/pint (US)"),
+                ("m/pt(UK)", "meter/pint (UK)"),
+                ("m/cup(US)", "meter/cup (US)"),
+                ("m/cup(UK)", "meter/cup (UK)"),
+                ("m/fl oz(US)", "meter/fluid ounce (US)"),
+                ("m/fl oz(UK)", "meter/fluid ounce (UK)"),
+                ("L/m", "liter/meter"),
+                ("L/100km", "liter/100 km"),
+                ("gal(US)/mi", "gallon (US)/mile"),
+                ("gal(US)/100mi", "gallon (US)/100 mi"),
+                ("gal(UK)/mi", "gallon (UK)/mile"),
+                ("gal(UK)/100mi", "gallon (UK)/100 mi")
             ]
         case .volumeDry:
             return [
-                "liter", "barrel dry (US)", "pint dry (US)", "quart dry (US)", "peck (US)",
-                "peck (UK)", "bushel (US)", "bushel (UK)", "cor (Biblical)", "homer (Biblical)",
-                "ephah (Biblical)", "seah (Biblical)", "omer (Biblical)", "cab (Biblical)",
-                "log (Biblical)"
+                ("L", "liter"),
+                ("bbl(d,US)", "barrel dry (US)"),
+                ("pt(d,US)", "pint dry (US)"),
+                ("qt(d,US)", "quart dry (US)"),
+                ("pk(US)", "peck (US)"),
+                ("pk(UK)", "peck (UK)"),
+                ("bu(US)", "bushel (US)"),
+                ("bu(UK)", "bushel (UK)"),
+                ("cor(B)", "cor (Biblical)"),
+                ("homer(B)", "homer (Biblical)"),
+                ("ephah(B)", "ephah (Biblical)"),
+                ("seah(B)", "seah (Biblical)"),
+                ("omer(B)", "omer (Biblical)"),
+                ("cab(B)", "cab (Biblical)"),
+                ("log(B)", "log (Biblical)")
             ]
         case .velocityAngular:
             return [
-                "radian/second", "radian/day", "radian/hour", "radian/minute",
-                "degree/day", "degree/hour", "degree/minute", "degree/second",
-                "revolution/day", "revolution/hour", "revolution/minute", "revolution/second"
+                ("rad/s", "radian/second"),
+                ("rad/d", "radian/day"),
+                ("rad/h", "radian/hour"),
+                ("rad/min", "radian/minute"),
+                ("°/d", "degree/day"),
+                ("°/h", "degree/hour"),
+                ("°/min", "degree/minute"),
+                ("°/s", "degree/second"),
+                ("rev/d", "revolution/day"),
+                ("rev/h", "revolution/hour"),
+                ("rev/min", "revolution/minute"),
+                ("rev/s", "revolution/second")
             ]
         case .acceleration:
             return [
-                "meter/square second", "decimeter/square second", "kilometer/square second",
-                "hectometer/square second", "dekameter/square second", "centimeter/square second",
-                "millimeter/square second", "micrometer/square second", "nanometer/square second",
-                "picometer/square second", "femtometer/square second", "attometer/square second",
-                "gal", "galileo", "mile/square second", "yard/square second",
-                "foot/square second", "inch/square second", "Acceleration of gravity"
+                ("m/s²", "meter/square second"),
+                ("dm/s²", "decimeter/square second"),
+                ("km/s²", "kilometer/square second"),
+                ("hm/s²", "hectometer/square second"),
+                ("dam/s²", "dekameter/square second"),
+                ("cm/s²", "centimeter/square second"),
+                ("mm/s²", "millimeter/square second"),
+                ("µm/s²", "micrometer/square second"),
+                ("nm/s²", "nanometer/square second"),
+                ("pm/s²", "picometer/square second"),
+                ("fm/s²", "femtometer/square second"),
+                ("am/s²", "attometer/square second"),
+                ("Gal", "gal"),
+                ("Gal", "galileo"),
+                ("mi/s²", "mile/square second"),
+                ("yd/s²", "yard/square second"),
+                ("ft/s²", "foot/square second"),
+                ("in/s²", "inch/square second"),
+                ("g", "Acceleration of gravity")
             ]
         case .accelerationAngular:
             return [
-                "radian/square second", "radian/square minute",
-                "revolution/square second", "revolution/minute/second",
-                "revolution/square minute"
+                ("rad/s²", "radian/square second"),
+                ("rad/min²", "radian/square minute"),
+                ("rev/s²", "revolution/square second"),
+                ("rev/min/s", "revolution/minute/second"),
+                ("rev/min²", "revolution/square minute")
             ]
         case .density:
             return [
-                "kilogram/cubic meter", "gram/cubic centimeter", "kilogram/cubic centimeter",
-                "gram/cubic meter", "gram/cubic millimeter", "milligram/cubic meter",
-                "milligram/cubic centimeter", "milligram/cubic millimeter", "exagram/liter",
-                "petagram/liter", "teragram/liter", "gigagram/liter", "megagram/liter",
-                "kilogram/liter", "hectogram/liter", "dekagram/liter", "gram/liter",
-                "decigram/liter", "centigram/liter", "milligram/liter", "microgram/liter",
-                "nanogram/liter", "picogram/liter", "femtogram/liter", "attogram/liter",
-                "pound/cubic inch", "pound/cubic foot", "pound/cubic yard",
-                "pound/gallon (US)", "pound/gallon (UK)", "ounce/cubic inch",
-                "ounce/cubic foot", "ounce/gallon (US)", "ounce/gallon (UK)",
-                "grain/gallon (US)", "grain/gallon (UK)", "grain/cubic foot",
-                "ton (short)/cubic yard", "ton (long)/cubic yard", "slug/cubic foot",
-                "psi/1000 feet", "Earth's density (mean)"
+                ("kg/m³", "kilogram/cubic meter"),
+                ("g/cm³", "gram/cubic centimeter"),
+                ("kg/cm³", "kilogram/cubic centimeter"),
+                ("g/m³", "gram/cubic meter"),
+                ("g/mm³", "gram/cubic millimeter"),
+                ("mg/m³", "milligram/cubic meter"),
+                ("mg/cm³", "milligram/cubic centimeter"),
+                ("mg/mm³", "milligram/cubic millimeter"),
+                ("Eg/L", "exagram/liter"),
+                ("Pg/L", "petagram/liter"),
+                ("Tg/L", "teragram/liter"),
+                ("Gg/L", "gigagram/liter"),
+                ("Mg/L", "megagram/liter"),
+                ("kg/L", "kilogram/liter"),
+                ("hg/L", "hectogram/liter"),
+                ("dag/L", "dekagram/liter"),
+                ("g/L", "gram/liter"),
+                ("dg/L", "decigram/liter"),
+                ("cg/L", "centigram/liter"),
+                ("mg/L", "milligram/liter"),
+                ("µg/L", "microgram/liter"),
+                ("ng/L", "nanogram/liter"),
+                ("pg/L", "picogram/liter"),
+                ("fg/L", "femtogram/liter"),
+                ("ag/L", "attogram/liter"),
+                ("lb/in³", "pound/cubic inch"),
+                ("lb/ft³", "pound/cubic foot"),
+                ("lb/yd³", "pound/cubic yard"),
+                ("lb/gal(US)", "pound/gallon (US)"),
+                ("lb/gal(UK)", "pound/gallon (UK)"),
+                ("oz/in³", "ounce/cubic inch"),
+                ("oz/ft³", "ounce/cubic foot"),
+                ("oz/gal(US)", "ounce/gallon (US)"),
+                ("oz/gal(UK)", "ounce/gallon (UK)"),
+                ("gr/gal(US)", "grain/gallon (US)"),
+                ("gr/gal(UK)", "grain/gallon (UK)"),
+                ("gr/ft³", "grain/cubic foot"),
+                ("ton(sh)/yd³", "ton (short)/cubic yard"),
+                ("ton(l)/yd³", "ton (long)/cubic yard"),
+                ("slug/ft³", "slug/cubic foot"),
+                ("psi/1000ft", "psi/1000 feet"),
+                ("ρE", "Earth's density (mean)")
             ]
         case .specificVolume:
             return [
-                "cubic meter/kilogram", "cubic centimeter/gram", "liter/kilogram",
-                "liter/gram", "cubic foot/kilogram", "cubic foot/pound",
-                "gallon (US)/pound", "gallon (UK)/pound"
+                ("m³/kg", "cubic meter/kilogram"),
+                ("cm³/g", "cubic centimeter/gram"),
+                ("L/kg", "liter/kilogram"),
+                ("L/g", "liter/gram"),
+                ("ft³/kg", "cubic foot/kilogram"),
+                ("ft³/lb", "cubic foot/pound"),
+                ("gal(US)/lb", "gallon (US)/pound"),
+                ("gal(UK)/lb", "gallon (UK)/pound")
             ]
         case .momentOfInertia:
             return [
-                "kilogram square meter", "kilogram square centimeter", "kilogram square millimeter",
-                "gram square centimeter", "gram square millimeter",
-                "kilogram-force meter square second", "kilogram-force centimeter square second",
-                "ounce square inch", "ounce-force inch sq. second",
-                "pound square foot", "pound-force foot sq. second",
-                "pound square inch", "pound-force inch sq. second",
-                "slug square foot"
+                ("kg·m²", "kilogram square meter"),
+                ("kg·cm²", "kilogram square centimeter"),
+                ("kg·mm²", "kilogram square millimeter"),
+                ("g·cm²", "gram square centimeter"),
+                ("g·mm²", "gram square millimeter"),
+                ("kgf·m·s²", "kilogram-force meter square second"),
+                ("kgf·cm·s²", "kilogram-force centimeter square second"),
+                ("oz·in²", "ounce square inch"),
+                ("ozf·in·s²", "ounce-force inch sq. second"),
+                ("lb·ft²", "pound square foot"),
+                ("lbf·ft·s²", "pound-force foot sq. second"),
+                ("lb·in²", "pound square inch"),
+                ("lbf·in·s²", "pound-force inch sq. second"),
+                ("slug·ft²", "slug square foot")
             ]
         case .momentOfForce:
             return [
-                "newton meter", "kilonewton meter", "millinewton meter", "micronewton meter",
-                "ton-force (short) meter", "ton-force (long) meter", "ton-force (metric) meter",
-                "kilogram-force meter", "gram-force centimeter", "pound-force foot",
-                "poundal foot", "poundal inch"
+                ("N·m", "newton meter"),
+                ("kN·m", "kilonewton meter"),
+                ("mN·m", "millinewton meter"),
+                ("µN·m", "micronewton meter"),
+                ("tonf(sh)·m", "ton-force (short) meter"),
+                ("tonf(l)·m", "ton-force (long) meter"),
+                ("tonf(m)·m", "ton-force (metric) meter"),
+                ("kgf·m", "kilogram-force meter"),
+                ("gf·cm", "gram-force centimeter"),
+                ("lbf·ft", "pound-force foot"),
+                ("pdl·ft", "poundal foot"),
+                ("pdl·in", "poundal inch")
             ]
         case .torque:
             return [
-                "newton meter", "newton centimeter", "newton millimeter", "kilonewton meter",
-                "dyne meter", "dyne centimeter", "dyne millimeter",
-                "kilogram-force meter", "kilogram-force centimeter", "kilogram-force millimeter",
-                "gram-force meter", "gram-force centimeter", "gram-force millimeter",
-                "ounce-force foot", "ounce-force inch", "pound-force foot", "pound-force inch",
-                "millinewton meter", "micronewton meter",
-                "ton-force (short) meter", "ton-force (long) meter", "ton-force (metric) meter",
-                "poundal foot", "poundal inch"
+                ("N·m", "newton meter"),
+                ("N·cm", "newton centimeter"),
+                ("N·mm", "newton millimeter"),
+                ("kN·m", "kilonewton meter"),
+                ("dyn·m", "dyne meter"),
+                ("dyn·cm", "dyne centimeter"),
+                ("dyn·mm", "dyne millimeter"),
+                ("kgf·m", "kilogram-force meter"),
+                ("kgf·cm", "kilogram-force centimeter"),
+                ("kgf·mm", "kilogram-force millimeter"),
+                ("gf·m", "gram-force meter"),
+                ("gf·cm", "gram-force centimeter"),
+                ("gf·mm", "gram-force millimeter"),
+                ("ozf·ft", "ounce-force foot"),
+                ("ozf·in", "ounce-force inch"),
+                ("lbf·ft", "pound-force foot"),
+                ("lbf·in", "pound-force inch"),
+                ("mN·m", "millinewton meter"),
+                ("µN·m", "micronewton meter"),
+                ("tonf(sh)·m", "ton-force (short) meter"),
+                ("tonf(l)·m", "ton-force (long) meter"),
+                ("tonf(m)·m", "ton-force (metric) meter"),
+                ("pdl·ft", "poundal foot"),
+                ("pdl·in", "poundal inch")
             ]
         }
     }

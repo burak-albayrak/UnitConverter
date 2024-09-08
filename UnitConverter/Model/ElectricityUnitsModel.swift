@@ -613,98 +613,212 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [String] {
+    var availableUnits: [(symbol: String, name: String)] {
         switch self {
         case .charge:
             return [
-                "coulomb", "megacoulomb", "kilocoulomb", "millicoulomb", "microcoulomb",
-                "nanocoulomb", "picocoulomb", "abcoulomb", "EMU of charge", "statcoulomb",
-                "ESU of charge", "franklin", "ampere-hour", "ampere-minute", "ampere-second",
-                "faraday (based on carbon 12)", "Elementary charge"
+                ("C", "coulomb"),
+                ("MC", "megacoulomb"),
+                ("kC", "kilocoulomb"),
+                ("mC", "millicoulomb"),
+                ("µC", "microcoulomb"),
+                ("nC", "nanocoulomb"),
+                ("pC", "picocoulomb"),
+                ("abC", "abcoulomb"),
+                ("emuC", "EMU of charge"),
+                ("statC", "statcoulomb"),
+                ("esuC", "ESU of charge"),
+                ("Fr", "franklin"),
+                ("A·h", "ampere-hour"),
+                ("A·min", "ampere-minute"),
+                ("A·s", "ampere-second"),
+                ("F", "faraday (based on carbon 12)"),
+                ("e", "Elementary charge")
             ]
         case .linearChargeDensity:
             return [
-                "coulomb/meter", "coulomb/centimeter", "coulomb/inch",
-                "abcoulomb/meter", "abcoulomb/centimeter", "abcoulomb/inch"
+                ("C/m", "coulomb/meter"),
+                ("C/cm", "coulomb/centimeter"),
+                ("C/in", "coulomb/inch"),
+                ("abC/m", "abcoulomb/meter"),
+                ("abC/cm", "abcoulomb/centimeter"),
+                ("abC/in", "abcoulomb/inch")
             ]
         case .surfaceChargeDensity:
             return [
-                "coulomb/square meter", "coulomb/square centimeter", "coulomb/square inch",
-                "abcoulomb/square meter", "abcoulomb/square centimeter", "abcoulomb/square inch"
+                ("C/m²", "coulomb/square meter"),
+                ("C/cm²", "coulomb/square centimeter"),
+                ("C/in²", "coulomb/square inch"),
+                ("abC/m²", "abcoulomb/square meter"),
+                ("abC/cm²", "abcoulomb/square centimeter"),
+                ("abC/in²", "abcoulomb/square inch")
             ]
         case .volumeChargeDensity:
             return [
-                "coulomb/cubic meter", "coulomb/cubic centimeter", "coulomb/cubic inch",
-                "abcoulomb/cubic meter", "abcoulomb/cubic centimeter", "abcoulomb/cubic inch"
+                ("C/m³", "coulomb/cubic meter"),
+                ("C/cm³", "coulomb/cubic centimeter"),
+                ("C/in³", "coulomb/cubic inch"),
+                ("abC/m³", "abcoulomb/cubic meter"),
+                ("abC/cm³", "abcoulomb/cubic centimeter"),
+                ("abC/in³", "abcoulomb/cubic inch")
             ]
         case .current:
             return [
-                "ampere", "kiloampere", "milliampere", "biot", "abampere",
-                "EMU of current", "statampere", "ESU of current",
-                "CGS e.m. unit", "CGS e.s. unit"
+                ("A", "ampere"),
+                ("kA", "kiloampere"),
+                ("mA", "milliampere"),
+                ("Bi", "biot"),
+                ("abA", "abampere"),
+                ("emuI", "EMU of current"),
+                ("statA", "statampere"),
+                ("esuI", "ESU of current"),
+                ("CGSem", "CGS e.m. unit"),
+                ("CGSes", "CGS e.s. unit")
             ]
         case .linearCurrentDensity:
             return [
-                "ampere/meter", "ampere/centimeter", "ampere/inch",
-                "abampere/meter", "abampere/centimeter", "abampere/inch",
-                "oersted", "gilbert/centimeter"
+                ("A/m", "ampere/meter"),
+                ("A/cm", "ampere/centimeter"),
+                ("A/in", "ampere/inch"),
+                ("abA/m", "abampere/meter"),
+                ("abA/cm", "abampere/centimeter"),
+                ("abA/in", "abampere/inch"),
+                ("Oe", "oersted"),
+                ("Gb/cm", "gilbert/centimeter")
             ]
         case .surfaceCurrentDensity:
             return [
-                "ampere/square meter", "ampere/square centimeter", "ampere/square inch",
-                "ampere/square mil", "ampere/circular mil", "abampere/square centimeter"
+                ("A/m²", "ampere/square meter"),
+                ("A/cm²", "ampere/square centimeter"),
+                ("A/in²", "ampere/square inch"),
+                ("A/mil²", "ampere/square mil"),
+                ("A/cmil", "ampere/circular mil"),
+                ("abA/cm²", "abampere/square centimeter")
             ]
         case .electricFieldStrength:
             return [
-                "volt/meter", "kilovolt/meter", "kilovolt/centimeter", "volt/centimeter",
-                "millivolt/meter", "microvolt/meter", "kilovolt/inch", "volt/inch",
-                "volt/mil", "abvolt/centimeter", "statvolt/centimeter", "statvolt/inch",
-                "newton/coulomb"
+                ("V/m", "volt/meter"),
+                ("kV/m", "kilovolt/meter"),
+                ("kV/cm", "kilovolt/centimeter"),
+                ("V/cm", "volt/centimeter"),
+                ("mV/m", "millivolt/meter"),
+                ("µV/m", "microvolt/meter"),
+                ("kV/in", "kilovolt/inch"),
+                ("V/in", "volt/inch"),
+                ("V/mil", "volt/mil"),
+                ("abV/cm", "abvolt/centimeter"),
+                ("statV/cm", "statvolt/centimeter"),
+                ("statV/in", "statvolt/inch"),
+                ("N/C", "newton/coulomb")
             ]
         case .electricPotential:
             return [
-                "volt", "watt/ampere", "abvolt", "EMU of electric potential",
-                "statvolt", "ESU of electric potential"
+                ("V", "volt"),
+                ("W/A", "watt/ampere"),
+                ("abV", "abvolt"),
+                ("emuV", "EMU of electric potential"),
+                ("statV", "statvolt"),
+                ("esuV", "ESU of electric potential")
             ]
         case .electricResistance:
             return [
-                "ohm", "megohm", "microhm", "volt/ampere", "reciprocal siemens",
-                "abohm", "EMU of resistance", "statohm", "ESU of resistance",
-                "Quantized Hall resistance"
+                ("Ω", "ohm"),
+                ("MΩ", "megohm"),
+                ("µΩ", "microhm"),
+                ("V/A", "volt/ampere"),
+                ("S⁻¹", "reciprocal siemens"),
+                ("abΩ", "abohm"),
+                ("emuR", "EMU of resistance"),
+                ("statΩ", "statohm"),
+                ("esuR", "ESU of resistance"),
+                ("RH", "Quantized Hall resistance")
             ]
         case .electricResistivity:
             return [
-                "ohm meter", "ohm centimeter", "ohm inch", "microhm centimeter",
-                "microhm inch", "abohm centimeter", "statohm centimeter",
-                "circular mil ohm/foot"
+                ("Ω·m", "ohm meter"),
+                ("Ω·cm", "ohm centimeter"),
+                ("Ω·in", "ohm inch"),
+                ("µΩ·cm", "microhm centimeter"),
+                ("µΩ·in", "microhm inch"),
+                ("abΩ·cm", "abohm centimeter"),
+                ("statΩ·cm", "statohm centimeter"),
+                ("cmil·Ω/ft", "circular mil ohm/foot")
             ]
         case .electricConductance:
             return [
-                "siemens", "megasiemens", "kilosiemens", "millisiemens", "microsiemens",
-                "ampere/volt", "mho", "gemmho", "micromho", "abmho", "statmho",
-                "Quantized Hall conductance"
+                ("S", "siemens"),
+                ("MS", "megasiemens"),
+                ("kS", "kilosiemens"),
+                ("mS", "millisiemens"),
+                ("µS", "microsiemens"),
+                ("A/V", "ampere/volt"),
+                ("℧", "mho"),
+                ("g℧", "gemmho"),
+                ("µ℧", "micromho"),
+                ("ab℧", "abmho"),
+                ("stat℧", "statmho"),
+                ("G₀", "Quantized Hall conductance")
             ]
         case .electricConductivity:
             return [
-                "siemens/meter", "picosiemens/meter", "mho/meter", "mho/centimeter",
-                "abmho/meter", "abmho/centimeter", "statmho/meter", "statmho/centimeter"
+                ("S/m", "siemens/meter"),
+                ("pS/m", "picosiemens/meter"),
+                ("℧/m", "mho/meter"),
+                ("℧/cm", "mho/centimeter"),
+                ("ab℧/m", "abmho/meter"),
+                ("ab℧/cm", "abmho/centimeter"),
+                ("stat℧/m", "statmho/meter"),
+                ("stat℧/cm", "statmho/centimeter")
             ]
         case .electrostaticCapacitance:
             return [
-                "farad", "exafarad", "petafarad", "terafarad", "gigafarad", "megafarad",
-                "kilofarad", "hectofarad", "dekafarad", "decifarad", "centifarad",
-                "millifarad", "microfarad", "nanofarad", "picofarad", "femtofarad",
-                "attofarad", "coulomb/volt", "abfarad", "EMU of capacitance",
-                "statfarad", "ESU of capacitance"
+                ("F", "farad"),
+                ("EF", "exafarad"),
+                ("PF", "petafarad"),
+                ("TF", "terafarad"),
+                ("GF", "gigafarad"),
+                ("MF", "megafarad"),
+                ("kF", "kilofarad"),
+                ("hF", "hectofarad"),
+                ("daF", "dekafarad"),
+                ("dF", "decifarad"),
+                ("cF", "centifarad"),
+                ("mF", "millifarad"),
+                ("µF", "microfarad"),
+                ("nF", "nanofarad"),
+                ("pF", "picofarad"),
+                ("fF", "femtofarad"),
+                ("aF", "attofarad"),
+                ("C/V", "coulomb/volt"),
+                ("abF", "abfarad"),
+                ("emuC", "EMU of capacitance"),
+                ("statF", "statfarad"),
+                ("esuC", "ESU of capacitance")
             ]
         case .inductance:
             return [
-                "henry", "exahenry", "petahenry", "terahenry", "gigahenry", "megahenry",
-                "kilohenry", "hectohenry", "dekahenry", "decihenry", "centihenry",
-                "millihenry", "microhenry", "nanohenry", "picohenry", "femtohenry",
-                "attohenry", "weber/ampere", "abhenry", "EMU of inductance",
-                "stathenry", "ESU of inductance"
+                ("H", "henry"),
+                ("EH", "exahenry"),
+                ("PH", "petahenry"),
+                ("TH", "terahenry"),
+                ("GH", "gigahenry"),
+                ("MH", "megahenry"),
+                ("kH", "kilohenry"),
+                ("hH", "hectohenry"),
+                ("daH", "dekahenry"),
+                ("dH", "decihenry"),
+                ("cH", "centihenry"),
+                ("mH", "millihenry"),
+                ("µH", "microhenry"),
+                ("nH", "nanohenry"),
+                ("pH", "picohenry"),
+                ("fH", "femtohenry"),
+                ("aH", "attohenry"),
+                ("Wb/A", "weber/ampere"),
+                ("abH", "abhenry"),
+                ("emuL", "EMU of inductance"),
+                ("statH", "stathenry"),
+                ("esuL", "ESU of inductance")
             ]
         }
-    }
-}
+    }}

@@ -21,26 +21,25 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     }
     
     var availableUnits: [(symbol: String, name: String)] {
-        return category.availableUnits.map { unit in
-            let name = unit.prefix(1).uppercased() + unit.dropFirst().lowercased()
-            return (symbol: unit, name: name)
-        }
+        category.availableUnits
     }
+
     
     var availableUnitsIndices: Range<Int> {
         0..<availableUnits.count
     }
     
     func convertUnits(value: String) -> String {
-        guard let numericValue = Double(value) else {
-            return ""
+        guard let doubleValue = Double(value),
+              selectedFirstUnitIndex < availableUnits.count,
+              selectedSecondUnitIndex < availableUnits.count else {
+            return "Invalid Input"
         }
-        
-        let fromUnit = availableUnits[selectedFirstUnitIndex].symbol
-        let toUnit = availableUnits[selectedSecondUnitIndex].symbol
-        
-        let convertedValue = category.convert(numericValue, from: fromUnit, to: toUnit)
-        
-        return String(format: "%g", convertedValue)
+
+        let fromUnit = availableUnits[selectedFirstUnitIndex].name
+        let toUnit = availableUnits[selectedSecondUnitIndex].name
+
+        let result = category.convert(doubleValue, from: fromUnit, to: toUnit)
+        return String(format: "%.4f", result)
     }
 }

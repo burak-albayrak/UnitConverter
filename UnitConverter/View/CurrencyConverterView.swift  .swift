@@ -18,7 +18,7 @@ struct CurrencyConversionView: View {
             Section("Select Currencies") {
                 Picker("From Currency", selection: $viewModel.selectedFromCurrencyIndex) {
                     ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
-                        Text("\(viewModel.availableCurrencies[index]) (\(viewModel.getCurrencyFullName(for: index)))")
+                        Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                     }
                 }
                 .onChange(of: viewModel.selectedFromCurrencyIndex) { _, _ in
@@ -27,7 +27,7 @@ struct CurrencyConversionView: View {
                 
                 Picker("To Currency", selection: $viewModel.selectedToCurrencyIndex) {
                     ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
-                        Text("\(viewModel.availableCurrencies[index]) (\(viewModel.getCurrencyFullName(for: index)))")
+                        Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                     }
                 }
                 .onChange(of: viewModel.selectedToCurrencyIndex) { _, _ in
@@ -74,9 +74,9 @@ struct CurrencyConversionView: View {
                         Text(errorMessage)
                             .foregroundColor(.red)
                     } else {
-                        Text("\(viewModel.convertedValue)")
+                        Text(viewModel.convertedValue)
                         Spacer()
-                        Text("\(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex])")
+                        Text(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol)
                     }
                     Button(action: {
                         UIPasteboard.general.string = viewModel.convertedValue

@@ -13,7 +13,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     case illumination = "Illumination"
     case digitalImageResolution = "Digital Image Resolution"
     case frequencyWavelength = "Frequency Wavelength"
-
+    
     func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
         switch self {
         case .luminance:
@@ -51,11 +51,11 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "bril": 3.1830988618379e-8,
             "skot": 0.0003183099
         ]
-
+        
         guard let fromValue = candelaPerSquareMeterValues[fromUnit.lowercased()], let toValue = candelaPerSquareMeterValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let candelaPerSquareMeter = value * fromValue
         return candelaPerSquareMeter / toValue
     }
@@ -73,11 +73,11 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "bougie decimal": 1,
             "lumen/steradian": 1
         ]
-
+        
         guard let fromValue = candleInternationalValues[fromUnit.lowercased()], let toValue = candleInternationalValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let candleInternational = value * fromValue
         return candleInternational / toValue
     }
@@ -97,11 +97,11 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "lumen/square foot": 10.7639104167,
             "watt/sq. cm (at 555 nm)": 6830000
         ]
-
+        
         guard let fromValue = luxValues[fromUnit.lowercased()], let toValue = luxValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let lux = value * fromValue
         return lux / toValue
     }
@@ -113,11 +113,11 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "dot/inch": 39.3700787402,
             "pixel/inch": 39.3700787402
         ]
-
+        
         guard let fromValue = dotPerMeterValues[fromUnit.lowercased()], let toValue = dotPerMeterValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let dotPerMeter = value * fromValue
         return dotPerMeter / toValue
     }
@@ -160,11 +160,11 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "Proton Compton wavelength": 2.2687315327002e23,
             "Neutron Compton wavelength": 2.2718587447278e23
         ]
-
+        
         guard let fromValue = hertzValues[fromUnit.lowercased()], let toValue = hertzValues[toUnit.lowercased()] else {
             return value // Eğer birim bulunamazsa, orijinal değeri döndür
         }
-
+        
         let hertz = value * fromValue
         return hertz / toValue
     }
@@ -188,13 +188,13 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
         switch self {
         case .digitalImageResolution:
             return """
-                Digital image resolution refers to the detail an image holds, usually measured in pixels. 
+                Digital image resolution refers to the detail an image holds, usually measured in pixels.
                 
                 It is defined by the number of pixels along the width and height of an image, such as 1920x1080 pixels.
                 
                 Higher resolution images have more pixels and thus contain more detail, resulting in sharper and clearer images.
                 
-                The resolution is a critical factor in determining the quality of digital images used in various applications, including photography, television, and computer displays. 
+                The resolution is a critical factor in determining the quality of digital images used in various applications, including photography, television, and computer displays.
                 
                 It affects the clarity and size of an image, influencing how it appears on screens and in print.
                 
@@ -249,46 +249,103 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [String] {
+    var availableUnits: [(symbol: String, name: String)] {
         switch self {
         case .luminance:
             return [
-                "candela/square meter", "candela/square centimeter", "candela/square foot",
-                "candela/square inch", "kilocandela/square meter", "stilb",
-                "lumen/sq. meter/steradian", "lumen/sq. cm/steradian",
-                "lumen/square foot/steradian", "watt/sq. cm/steradian (at 555 nm)",
-                "nit", "millinit", "lambert", "millilambert", "foot-lambert",
-                "apostilb", "blondel", "bril", "skot"
+                ("cd/m²", "candela/square meter"),
+                ("cd/cm²", "candela/square centimeter"),
+                ("cd/ft²", "candela/square foot"),
+                ("cd/in²", "candela/square inch"),
+                ("kcd/m²", "kilocandela/square meter"),
+                ("sb", "stilb"),
+                ("lm/m²/sr", "lumen/sq. meter/steradian"),
+                ("lm/cm²/sr", "lumen/sq. cm/steradian"),
+                ("lm/ft²/sr", "lumen/square foot/steradian"),
+                ("W/cm²/sr", "watt/sq. cm/steradian (at 555 nm)"),
+                ("nt", "nit"),
+                ("mnt", "millinit"),
+                ("L", "lambert"),
+                ("mL", "millilambert"),
+                ("fL", "foot-lambert"),
+                ("asb", "apostilb"),
+                ("bl", "blondel"),
+                ("bril", "bril"),
+                ("sk", "skot")
             ]
         case .luminousIntensity:
             return [
-                "candle (international)", "candle (German)", "candle (UK)",
-                "decimal candle", "candle (pentane)", "pentane candle (10 candle power)",
-                "hefner candle", "carcel unit", "bougie decimal", "lumen/steradian"
+                ("cd", "candle (international)"),
+                ("cd (G)", "candle (German)"),
+                ("cd (UK)", "candle (UK)"),
+                ("dc", "decimal candle"),
+                ("cp", "candle (pentane)"),
+                ("10 cp", "pentane candle (10 candle power)"),
+                ("HC", "hefner candle"),
+                ("cu", "carcel unit"),
+                ("bd", "bougie decimal"),
+                ("lm/sr", "lumen/steradian")
             ]
         case .illumination:
             return [
-                "lux", "meter-candle", "centimeter-candle", "foot-candle", "flame",
-                "phot", "nox", "candela steradian/sq. meter", "lumen/square meter",
-                "lumen/square centimeter", "lumen/square foot", "watt/sq. cm (at 555 nm)"
+                ("lx", "lux"),
+                ("m·cd", "meter-candle"),
+                ("cm·cd", "centimeter-candle"),
+                ("fc", "foot-candle"),
+                ("fl", "flame"),
+                ("ph", "phot"),
+                ("nx", "nox"),
+                ("cd·sr/m²", "candela steradian/sq. meter"),
+                ("lm/m²", "lumen/square meter"),
+                ("lm/cm²", "lumen/square centimeter"),
+                ("lm/ft²", "lumen/square foot"),
+                ("W/cm²", "watt/sq. cm (at 555 nm)")
             ]
         case .digitalImageResolution:
             return [
-                "dot/meter", "dot/millimeter", "dot/inch", "pixel/inch"
+                ("dpm", "dot/meter"),
+                ("dpmm", "dot/millimeter"),
+                ("dpi", "dot/inch"),
+                ("ppi", "pixel/inch")
             ]
         case .frequencyWavelength:
             return [
-                "hertz", "exahertz", "petahertz", "terahertz", "gigahertz", "megahertz",
-                "kilohertz", "hectohertz", "dekahertz", "decihertz", "centihertz",
-                "millihertz", "microhertz", "nanohertz", "picohertz", "femtohertz",
-                "attohertz", "cycle/second", "wavelength in exametres", "wavelength in petametres",
-                "wavelength in terametres", "wavelength in gigametres", "wavelength in megametres",
-                "wavelength in kilometres", "wavelength in hectometres", "wavelength in dekametres",
-                "wavelength in metres", "wavelength in decimetres", "wavelength in centimetres",
-                "wavelength in millimetres", "wavelength in micrometres", "wavelength in nanometres",
-                "Electron Compton wavelength", "Proton Compton wavelength", "Neutron Compton wavelength"
+                ("Hz", "hertz"),
+                ("EHz", "exahertz"),
+                ("PHz", "petahertz"),
+                ("THz", "terahertz"),
+                ("GHz", "gigahertz"),
+                ("MHz", "megahertz"),
+                ("kHz", "kilohertz"),
+                ("hHz", "hectohertz"),
+                ("daHz", "dekahertz"),
+                ("dHz", "decihertz"),
+                ("cHz", "centihertz"),
+                ("mHz", "millihertz"),
+                ("µHz", "microhertz"),
+                ("nHz", "nanohertz"),
+                ("pHz", "picohertz"),
+                ("fHz", "femtohertz"),
+                ("aHz", "attohertz"),
+                ("c/s", "cycle/second"),
+                ("λ Em", "wavelength in exametres"),
+                ("λ Pm", "wavelength in petametres"),
+                ("λ Tm", "wavelength in terametres"),
+                ("λ Gm", "wavelength in gigametres"),
+                ("λ Mm", "wavelength in megametres"),
+                ("λ km", "wavelength in kilometres"),
+                ("λ hm", "wavelength in hectometres"),
+                ("λ dam", "wavelength in dekametres"),
+                ("λ m", "wavelength in metres"),
+                ("λ dm", "wavelength in decimetres"),
+                ("λ cm", "wavelength in centimetres"),
+                ("λ mm", "wavelength in millimetres"),
+                ("λ µm", "wavelength in micrometres"),
+                ("λ nm", "wavelength in nanometres"),
+                ("λC,e", "Electron Compton wavelength"),
+                ("λC,p", "Proton Compton wavelength"),
+                ("λC,n", "Neutron Compton wavelength")
             ]
         }
     }
 }
-

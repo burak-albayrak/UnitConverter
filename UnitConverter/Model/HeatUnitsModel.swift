@@ -433,113 +433,158 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [String] {
+    var availableUnits: [(symbol: String, name: String)] {
         switch self {
         case .fuelEfficiencyMass:
             return [
-                "joule/kilogram", "kilojoule/kilogram", "calorie (IT)/gram", "calorie (th)/gram",
-                "Btu (IT)/pound", "Btu (th)/pound", "kilogram/joule", "kilogram/kilojoule",
-                "gram/calorie (IT)", "gram/calorie (th)", "pound/Btu (IT)", "pound/Btu (th)",
-                "pound/horsepower/hour", "gram/horsepower (metric)/hour", "gram/kilowatt/hour"
+                ("J/kg", "joule/kilogram"),
+                ("kJ/kg", "kilojoule/kilogram"),
+                ("cal(IT)/g", "calorie (IT)/gram"),
+                ("cal(th)/g", "calorie (th)/gram"),
+                ("Btu(IT)/lb", "Btu (IT)/pound"),
+                ("Btu(th)/lb", "Btu (th)/pound"),
+                ("kg/J", "kilogram/joule"),
+                ("kg/kJ", "kilogram/kilojoule"),
+                ("g/cal(IT)", "gram/calorie (IT)"),
+                ("g/cal(th)", "gram/calorie (th)"),
+                ("lb/Btu(IT)", "pound/Btu (IT)"),
+                ("lb/Btu(th)", "pound/Btu (th)"),
+                ("lb/hp/h", "pound/horsepower/hour"),
+                ("g/hp(m)/h", "gram/horsepower (metric)/hour"),
+                ("g/kW/h", "gram/kilowatt/hour")
             ]
         case .fuelEfficiencyVolume:
             return [
-                "joule/cubic meter", "joule/liter", "megajoule/cubic meter", "kilojoule/cubic meter",
-                "kilocalorie (IT)/cubic meter", "calorie (IT)/cubic centimeter", "therm/cubic foot",
-                "therm/gallon (UK)", "Btu (IT)/cubic foot", "Btu (th)/cubic foot", "CHU/cubic foot",
-                "cubic meter/joule", "liter/joule", "gallon (US)/horsepower"
+                ("J/m³", "joule/cubic meter"),
+                ("J/L", "joule/liter"),
+                ("MJ/m³", "megajoule/cubic meter"),
+                ("kJ/m³", "kilojoule/cubic meter"),
+                ("kcal(IT)/m³", "kilocalorie (IT)/cubic meter"),
+                ("cal(IT)/cm³", "calorie (IT)/cubic centimeter"),
+                ("therm/ft³", "therm/cubic foot"),
+                ("therm/gal(UK)", "therm/gallon (UK)"),
+                ("Btu(IT)/ft³", "Btu (IT)/cubic foot"),
+                ("Btu(th)/ft³", "Btu (th)/cubic foot"),
+                ("CHU/ft³", "CHU/cubic foot"),
+                ("m³/J", "cubic meter/joule"),
+                ("L/J", "liter/joule"),
+                ("gal(US)/hp", "gallon (US)/horsepower")
             ]
         case .temperatureInterval:
             return [
-                "kelvin",
-                "degree Celsius",
-                "degree centigrade",
-                "degree Fahrenheit",
-                "degree Rankine",
-                "degree Reaumur"
+                ("K", "kelvin"),
+                ("°C", "degree Celsius"),
+                ("°C", "degree centigrade"),
+                ("°F", "degree Fahrenheit"),
+                ("°R", "degree Rankine"),
+                ("°Ré", "degree Reaumur")
             ]
         case .thermalExpansion:
             return [
-                "length/length/kelvin",
-                "length/length/degree Celsius",
-                "length/length/degree Fahrenheit",
-                "length/length/degree Rankine",
-                "length/length/degree Reaumur"
+                ("1/K", "length/length/kelvin"),
+                ("1/°C", "length/length/degree Celsius"),
+                ("1/°F", "length/length/degree Fahrenheit"),
+                ("1/°R", "length/length/degree Rankine"),
+                ("1/°Ré", "length/length/degree Reaumur")
             ]
         case .thermalResistance:
             return [
-                "kelvin/watt",
-                "degree Fahrenheit hour/Btu (IT)",
-                "degree Fahrenheit hour/Btu (th)",
-                "degree Fahrenheit second/Btu (IT)",
-                "degree Fahrenheit second/Btu (th)"
+                ("K/W", "kelvin/watt"),
+                ("°F·h/Btu(IT)", "degree Fahrenheit hour/Btu (IT)"),
+                ("°F·h/Btu(th)", "degree Fahrenheit hour/Btu (th)"),
+                ("°F·s/Btu(IT)", "degree Fahrenheit second/Btu (IT)"),
+                ("°F·s/Btu(th)", "degree Fahrenheit second/Btu (th)")
             ]
         case .thermalConductivity:
             return [
-                "watt/meter/K",
-                "watt/centimeter/°C",
-                "kilowatt/meter/K",
-                "calorie (IT)/second/cm/°C",
-                "calorie (th)/second/cm/°C",
-                "kilocalorie (IT)/hour/meter/°C",
-                "kilocalorie (th)/hour/meter/°C",
-                "Btu (IT) inch/second/sq. foot/°F",
-                "Btu (th) inch/second/sq. foot/°F",
-                "Btu (IT) foot/hour/sq. foot/°F",
-                "Btu (th) foot/hour/sq. foot/°F",
-                "Btu (IT) inch/hour/sq. foot/°F",
-                "Btu (th) inch/hour/sq. foot/°F"
+                ("W/m·K", "watt/meter/K"),
+                ("W/cm·°C", "watt/centimeter/°C"),
+                ("kW/m·K", "kilowatt/meter/K"),
+                ("cal(IT)/s·cm·°C", "calorie (IT)/second/cm/°C"),
+                ("cal(th)/s·cm·°C", "calorie (th)/second/cm/°C"),
+                ("kcal(IT)/h·m·°C", "kilocalorie (IT)/hour/meter/°C"),
+                ("kcal(th)/h·m·°C", "kilocalorie (th)/hour/meter/°C"),
+                ("Btu(IT)·in/s·ft²·°F", "Btu (IT) inch/second/sq. foot/°F"),
+                ("Btu(th)·in/s·ft²·°F", "Btu (th) inch/second/sq. foot/°F"),
+                ("Btu(IT)·ft/h·ft²·°F", "Btu (IT) foot/hour/sq. foot/°F"),
+                ("Btu(th)·ft/h·ft²·°F", "Btu (th) foot/hour/sq. foot/°F"),
+                ("Btu(IT)·in/h·ft²·°F", "Btu (IT) inch/hour/sq. foot/°F"),
+                ("Btu(th)·in/h·ft²·°F", "Btu (th) inch/hour/sq. foot/°F")
             ]
         case .spesificHeatCapacity:
             return [
-                "joule/kilogram/K", "joule/kilogram/°C", "joule/gram/°C",
-                "kilojoule/kilogram/K", "kilojoule/kilogram/°C",
-                "calorie (IT)/gram/°C", "calorie (IT)/gram/°F", "calorie (th)/gram/°C",
-                "kilocalorie (IT)/kilogram/°C", "kilocalorie (th)/kilogram/°C",
-                "kilocalorie (IT)/kilogram/K", "kilocalorie (th)/kilogram/K",
-                "kilogram-force meter/kilogram/K", "pound-force foot/pound/°R",
-                "Btu (IT)/pound/°F", "Btu (th)/pound/°F",
-                "Btu (IT)/pound/°R", "Btu (th)/pound/°R",
-                "Btu (IT)/pound/°C", "CHU/pound/°C"
+                ("J/kg·K", "joule/kilogram/K"),
+                ("J/kg·°C", "joule/kilogram/°C"),
+                ("J/g·°C", "joule/gram/°C"),
+                ("kJ/kg·K", "kilojoule/kilogram/K"),
+                ("kJ/kg·°C", "kilojoule/kilogram/°C"),
+                ("cal(IT)/g·°C", "calorie (IT)/gram/°C"),
+                ("cal(IT)/g·°F", "calorie (IT)/gram/°F"),
+                ("cal(th)/g·°C", "calorie (th)/gram/°C"),
+                ("kcal(IT)/kg·°C", "kilocalorie (IT)/kilogram/°C"),
+                ("kcal(th)/kg·°C", "kilocalorie (th)/kilogram/°C"),
+                ("kcal(IT)/kg·K", "kilocalorie (IT)/kilogram/K"),
+                ("kcal(th)/kg·K", "kilocalorie (th)/kilogram/K"),
+                ("kgf·m/kg·K", "kilogram-force meter/kilogram/K"),
+                ("lbf·ft/lb·°R", "pound-force foot/pound/°R"),
+                ("Btu(IT)/lb·°F", "Btu (IT)/pound/°F"),
+                ("Btu(th)/lb·°F", "Btu (th)/pound/°F"),
+                ("Btu(IT)/lb·°R", "Btu (IT)/pound/°R"),
+                ("Btu(th)/lb·°R", "Btu (th)/pound/°R"),
+                ("Btu(IT)/lb·°C", "Btu (IT)/pound/°C"),
+                ("CHU/lb·°C", "CHU/pound/°C")
             ]
         case .heatDensity:
             return [
-                "joule/square meter",
-                "calorie (th)/square centimeter",
-                "langley",
-                "Btu (IT)/square foot",
-                "Btu (th)/square foot"
+                ("J/m²", "joule/square meter"),
+                ("cal(th)/cm²", "calorie (th)/square centimeter"),
+                ("Ly", "langley"),
+                ("Btu(IT)/ft²", "Btu (IT)/square foot"),
+                ("Btu(th)/ft²", "Btu (th)/square foot")
             ]
         case .heatFluxDensity:
             return [
-                "watt/square meter", "kilowatt/square meter", "watt/square centimeter",
-                "watt/square inch", "joule/second/square meter", "kilocalorie (IT)/hour/square meter",
-                "kilocalorie (IT)/hour/square foot", "calorie (IT)/second/square centimeter",
-                "calorie (IT)/minute/square centimeter", "calorie (IT)/hour/square centimeter",
-                "calorie (th)/second/square centimeter", "calorie (th)/minute/square centimeter",
-                "calorie (th)/hour/square centimeter", "dyne/hour/centimeter",
-                "erg/hour/square millimeter", "foot pound/minute/square foot",
-                "horsepower/square foot", "horsepower (metric)/square foot",
-                "Btu (IT)/second/square foot", "Btu (IT)/minute/square foot",
-                "Btu (IT)/hour/square foot", "Btu (th)/second/square inch",
-                "Btu (th)/second/square foot", "Btu (th)/minute/square foot",
-                "Btu (th)/hour/square foot", "CHU/hour/square foot"
+                ("W/m²", "watt/square meter"),
+                ("kW/m²", "kilowatt/square meter"),
+                ("W/cm²", "watt/square centimeter"),
+                ("W/in²", "watt/square inch"),
+                ("J/s·m²", "joule/second/square meter"),
+                ("kcal(IT)/h·m²", "kilocalorie (IT)/hour/square meter"),
+                ("kcal(IT)/h·ft²", "kilocalorie (IT)/hour/square foot"),
+                ("cal(IT)/s·cm²", "calorie (IT)/second/square centimeter"),
+                ("cal(IT)/min·cm²", "calorie (IT)/minute/square centimeter"),
+                ("cal(IT)/h·cm²", "calorie (IT)/hour/square centimeter"),
+                ("cal(th)/s·cm²", "calorie (th)/second/square centimeter"),
+                ("cal(th)/min·cm²", "calorie (th)/minute/square centimeter"),
+                ("cal(th)/h·cm²", "calorie (th)/hour/square centimeter"),
+                ("dyn/h·cm", "dyne/hour/centimeter"),
+                ("erg/h·mm²", "erg/hour/square millimeter"),
+                ("ft·lb/min·ft²", "foot pound/minute/square foot"),
+                ("hp/ft²", "horsepower/square foot"),
+                ("hp(m)/ft²", "horsepower (metric)/square foot"),
+                ("Btu(IT)/s·ft²", "Btu (IT)/second/square foot"),
+                ("Btu(IT)/min·ft²", "Btu (IT)/minute/square foot"),
+                ("Btu(IT)/h·ft²", "Btu (IT)/hour/square foot"),
+                ("Btu(th)/s·in²", "Btu (th)/second/square inch"),
+                ("Btu(th)/s·ft²", "Btu (th)/second/square foot"),
+                ("Btu(th)/min·ft²", "Btu (th)/minute/square foot"),
+                ("Btu(th)/h·ft²", "Btu (th)/hour/square foot"),
+                ("CHU/h·ft²", "CHU/hour/square foot")
             ]
         case .heatTransverCoefficient:
             return [
-                "watt/square meter/K",
-                "watt/square meter/°C",
-                "joule/second/square meter/K",
-                "calorie (IT)/second/square centimeter/°C",
-                "kilocalorie (IT)/hour/square meter/°C",
-                "kilocalorie (IT)/hour/square foot/°C",
-                "Btu (IT)/second/square foot/°F",
-                "Btu (th)/second/square foot/°F",
-                "Btu (IT)/hour/square foot/°F",
-                "Btu (th)/hour/square foot/°F",
-                "CHU/hour/square foot/°C"
+                ("W/m²·K", "watt/square meter/K"),
+                ("W/m²·°C", "watt/square meter/°C"),
+                ("J/s·m²·K", "joule/second/square meter/K"),
+                ("cal(IT)/s·cm²·°C", "calorie (IT)/second/square centimeter/°C"),
+                ("kcal(IT)/h·m²·°C", "kilocalorie (IT)/hour/square meter/°C"),
+                ("kcal(IT)/h·ft²·°C", "kilocalorie (IT)/hour/square foot/°C"),
+                ("Btu(IT)/s·ft²·°F", "Btu (IT)/second/square foot/°F"),
+                ("Btu(th)/s·ft²·°F", "Btu (th)/second/square foot/°F"),
+                ("Btu(IT)/h·ft²·°F", "Btu (IT)/hour/square foot/°F"),
+                ("Btu(th)/h·ft²·°F", "Btu (th)/hour/square foot/°F"),
+                ("CHU/h·ft²·°C", "CHU/hour/square foot/°C")
             ]
         }
     }
-
 }

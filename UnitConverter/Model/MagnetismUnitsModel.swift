@@ -165,28 +165,52 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [String] {
+    var availableUnits: [(symbol: String, name: String)] {
         switch self {
         case .magnetomotiveForce:
             return [
-                "ampere turn", "kiloampere turn", "milliampere turn",
-                "abampere turn", "gilbert"
+                ("At", "ampere turn"),
+                ("kAt", "kiloampere turn"),
+                ("mAt", "milliampere turn"),
+                ("abAt", "abampere turn"),
+                ("Gb", "gilbert")
             ]
         case .magneticFieldStrength:
             return [
-                "ampere/meter", "ampere turn/meter", "kiloampere/meter", "oersted"
+                ("A/m", "ampere/meter"),
+                ("At/m", "ampere turn/meter"),
+                ("kA/m", "kiloampere/meter"),
+                ("Oe", "oersted")
             ]
         case .magneticFlux:
             return [
-                "weber", "milliweber", "microweber", "volt second", "unit pole",
-                "megaline", "kiloline", "line", "maxwell", "tesla square meter",
-                "tesla square centimeter", "gauss square centimeter", "Magnetic flux quantum"
+                ("Wb", "weber"),
+                ("mWb", "milliweber"),
+                ("µWb", "microweber"),
+                ("V·s", "volt second"),
+                ("up", "unit pole"),
+                ("MΦ", "megaline"),
+                ("kΦ", "kiloline"),
+                ("Φ", "line"),
+                ("Mx", "maxwell"),
+                ("T·m²", "tesla square meter"),
+                ("T·cm²", "tesla square centimeter"),
+                ("G·cm²", "gauss square centimeter"),
+                ("Φ₀", "Magnetic flux quantum")
             ]
         case .magneticFluxDensity:
             return [
-                "tesla", "weber/square meter", "weber/square centimeter", "weber/square inch",
-                "maxwell/square meter", "maxwell/square centimeter", "maxwell/square inch",
-                "gauss", "line/square centimeter", "line/square inch", "gamma"
+                ("T", "tesla"),
+                ("Wb/m²", "weber/square meter"),
+                ("Wb/cm²", "weber/square centimeter"),
+                ("Wb/in²", "weber/square inch"),
+                ("Mx/m²", "maxwell/square meter"),
+                ("Mx/cm²", "maxwell/square centimeter"),
+                ("Mx/in²", "maxwell/square inch"),
+                ("G", "gauss"),
+                ("Φ/cm²", "line/square centimeter"),
+                ("Φ/in²", "line/square inch"),
+                ("γ", "gamma")
             ]
         }
     }

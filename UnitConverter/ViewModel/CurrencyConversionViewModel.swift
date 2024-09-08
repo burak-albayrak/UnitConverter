@@ -16,7 +16,7 @@ class CurrencyConversionViewModel: ObservableObject {
     @Published var convertedValue = ""
     @Published var isLoading = false
     @Published var errorMessage: String?
-    @Published var availableCurrencies: [String] = []
+    @Published var availableCurrencies: [(symbol: String, name: String)] = []
     
     let category = CurrencyUnitsCategory.currency
     
@@ -33,12 +33,12 @@ class CurrencyConversionViewModel: ObservableObject {
                 self?.isLoading = false
                 
                 if success {
-                    self?.availableCurrencies = CurrencyUnitsCategory.exchangeRates.keys.sorted()
+                    self?.availableCurrencies = self?.category.availableUnits ?? []
                     self?.convertCurrency()
                 } else {
                     self?.errorMessage = "Failed to fetch exchange rates. Using default rates."
                     CurrencyUnitsCategory.setDefaultExchangeRates()
-                    self?.availableCurrencies = CurrencyUnitsCategory.commonCurrencies
+                    self?.availableCurrencies = CurrencyUnitsCategory.commonCurrencies.map { ($0, self?.category.getCurrencyFullName(for: $0) ?? $0) }
                 }
             }
         }
@@ -52,17 +52,11 @@ class CurrencyConversionViewModel: ObservableObject {
             return
         }
         
-        let fromCurrency = availableCurrencies[selectedFromCurrencyIndex]
-        let toCurrency = availableCurrencies[selectedToCurrencyIndex]
+        let fromCurrency = availableCurrencies[selectedFromCurrencyIndex].symbol
+        let toCurrency = availableCurrencies[selectedToCurrencyIndex].symbol
         
         let result = category.convert(inputNumber, from: fromCurrency, to: toCurrency)
         convertedValue = String(format: "%.2f", result)
-    }
-    
-    func getCurrencyFullName(for index: Int) -> String {
-        guard index < availableCurrencies.count else { return "" }
-        let code = availableCurrencies[index]
-        return category.getCurrencyFullName(for: code)
     }
     
     var info: String {

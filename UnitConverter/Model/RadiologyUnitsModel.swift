@@ -202,36 +202,87 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [String] {
+    var availableUnits: [(symbol: String, name: String)] {
         switch self {
         case .radiation:
             return [
-                "gray/second", "exagray/second", "petagray/second", "teragray/second",
-                "gigagray/second", "megagray/second", "kilogray/second", "hectogray/second",
-                "dekagray/second", "decigray/second", "centigray/second", "milligray/second",
-                "microgray/second", "nanogray/second", "picogray/second", "femtogray/second",
-                "attogray/second", "rad/second", "joule/kilogram/second", "watt/kilogram",
-                "sievert/second", "rem/second"
+                ("Gy/s", "gray/second"),
+                ("EGy/s", "exagray/second"),
+                ("PGy/s", "petagray/second"),
+                ("TGy/s", "teragray/second"),
+                ("GGy/s", "gigagray/second"),
+                ("MGy/s", "megagray/second"),
+                ("kGy/s", "kilogray/second"),
+                ("hGy/s", "hectogray/second"),
+                ("daGy/s", "dekagray/second"),
+                ("dGy/s", "decigray/second"),
+                ("cGy/s", "centigray/second"),
+                ("mGy/s", "milligray/second"),
+                ("µGy/s", "microgray/second"),
+                ("nGy/s", "nanogray/second"),
+                ("pGy/s", "picogray/second"),
+                ("fGy/s", "femtogray/second"),
+                ("aGy/s", "attogray/second"),
+                ("rad/s", "rad/second"),
+                ("J/kg/s", "joule/kilogram/second"),
+                ("W/kg", "watt/kilogram"),
+                ("Sv/s", "sievert/second"),
+                ("rem/s", "rem/second")
             ]
         case .radiationActivity:
             return [
-                "becquerel", "terabecquerel", "gigabecquerel", "megabecquerel",
-                "kilobecquerel", "millibecquerel", "curie", "kilocurie",
-                "millicurie", "microcurie", "nanocurie", "picocurie",
-                "rutherford", "one/second", "disintegrations/second",
-                "disintegrations/minute"
+                ("Bq", "becquerel"),
+                ("TBq", "terabecquerel"),
+                ("GBq", "gigabecquerel"),
+                ("MBq", "megabecquerel"),
+                ("kBq", "kilobecquerel"),
+                ("mBq", "millibecquerel"),
+                ("Ci", "curie"),
+                ("kCi", "kilocurie"),
+                ("mCi", "millicurie"),
+                ("µCi", "microcurie"),
+                ("nCi", "nanocurie"),
+                ("pCi", "picocurie"),
+                ("Rd", "rutherford"),
+                ("s⁻¹", "one/second"),
+                ("dis/s", "disintegrations/second"),
+                ("dis/min", "disintegrations/minute")
             ]
         case .radiationExposure:
             return [
-                "coulomb/kilogram", "millicoulomb/kilogram", "microcoulomb/kilogram",
-                "roentgen", "tissue roentgen", "parker", "rep"
+                ("C/kg", "coulomb/kilogram"),
+                ("mC/kg", "millicoulomb/kilogram"),
+                ("µC/kg", "microcoulomb/kilogram"),
+                ("R", "roentgen"),
+                ("TR", "tissue roentgen"),
+                ("P", "parker"),
+                ("rep", "rep")
             ]
         case .radiationAbsorbedDose:
             return [
-                "rad", "millirad", "joule/kilogram", "joule/gram", "joule/centigram",
-                "joule/milligram", "gray", "exagray", "petagray", "teragray", "gigagray",
-                "megagray", "kilogray", "hectogray", "dekagray", "decigray", "centigray",
-                "milligray", "microgray", "nanogray", "picogray", "femtogray", "attogray"
+                ("rad", "rad"),
+                ("mrad", "millirad"),
+                ("J/kg", "joule/kilogram"),
+                ("J/g", "joule/gram"),
+                ("J/cg", "joule/centigram"),
+                ("J/mg", "joule/milligram"),
+                ("Gy", "gray"),
+                ("EGy", "exagray"),
+                ("PGy", "petagray"),
+                ("TGy", "teragray"),
+                ("GGy", "gigagray"),
+                ("MGy", "megagray"),
+                ("kGy", "kilogray"),
+                ("hGy", "hectogray"),
+                ("daGy", "dekagray"),
+                ("dGy", "decigray"),
+                ("cGy", "centigray"),
+                ("mGy", "milligray"),
+                ("µGy", "microgray"),
+                ("nGy", "nanogray"),
+                ("pGy", "picogray"),
+                ("fGy", "femtogray"),
+                ("aGy", "attogray")
             ]
         }
     }
