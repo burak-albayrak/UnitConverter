@@ -44,13 +44,17 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         let result = category.convert(decimalValue, from: fromUnit, to: toUnit)
         
         let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
+        formatter.numberStyle = .scientific
         formatter.maximumFractionDigits = 6
-        formatter.minimumFractionDigits = 0
+        formatter.exponentSymbol = "e"
+        
+        if abs(result) >= 0.000001 {
+            formatter.numberStyle = .decimal
+            formatter.maximumFractionDigits = 6
+        }
         
         return formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
     }
-    
     func setFromFavorite(_ favorite: FavoriteConversion) {
         selectedFirstUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.fromUnit }) ?? 0
         selectedSecondUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.toUnit }) ?? 1
