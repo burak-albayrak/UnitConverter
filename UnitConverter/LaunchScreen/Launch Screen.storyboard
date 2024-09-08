@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,8 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Gea-C9-gwe">
+                                <rect key="frame" x="121.66666666666669" y="351" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="nba-X3-yai"/>
+                                    <constraint firstAttribute="width" constant="150" id="x8U-oq-TQz"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Unit Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-Lb-o5H">
+                                <rect key="frame" x="90" y="526" width="212.66666666666669" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Gea-C9-gwe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2nd-Y8-R0D"/>
+                            <constraint firstItem="GHc-Lb-o5H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4IA-5a-f8y"/>
+                            <constraint firstItem="Gea-C9-gwe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Lxd-9X-m9X"/>
+                            <constraint firstItem="GHc-Lb-o5H" firstAttribute="top" secondItem="Gea-C9-gwe" secondAttribute="bottom" constant="60" id="Ym1-hG-vL8"/>
+                            <constraint firstItem="GHc-Lb-o5H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="x9G-ON-qa2"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,8 +48,15 @@
     </scenes>
     <color key="tintColor" name="LaunchScreenColor"/>
     <resources>
+        <image name="LaunchScreenLogo" width="1024" height="1024"/>
+        <namedColor name="AccentColor">
+            <color red="0.19600000977516174" green="0.67799997329711914" blue="0.9020000696182251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="LaunchScreenColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

@@ -94,11 +94,9 @@ struct MainMenuView: View {
 
 // TODO: her şeyi kontrol et
 
-// TODO: ilk yükleyen kullanıcı için welcome screen yap
-
 // TODO: settingsde feedback me kısmı
 
-// TODO: settingsde sürüm no kısmı
+// TODO: ilk yükleyen kullanıcı için welcome screen yap
 
 // TODO: buy me a coffee
 

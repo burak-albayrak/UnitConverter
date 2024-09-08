@@ -23,6 +23,8 @@ struct SettingsView: View {
                     }
                     .foregroundColor(.red)
                 }
+                
+                
             }
             .navigationTitle("Settings")
             .toolbar {
@@ -44,6 +46,15 @@ struct SettingsView: View {
         } message: {
             Text("Are you sure you want to clear all favorites? This action cannot be undone.")
         }
+        
+        Text(getAppVersion())
+            .foregroundColor(.secondary)
+            .padding(.top, 20)
+    }
+    
+    func getAppVersion() -> String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
+        return "version \(version)"
     }
 }
 

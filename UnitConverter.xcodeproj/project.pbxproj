@@ -68,7 +68,6 @@
 		EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		EF85EF752C8E3229006E6548 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		EF85EF772C8E33A6006E6548 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EF85EF7B2C8E5D0A006E6548 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,15 +101,14 @@
 		EF0F873D2C8285FF00114906 /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
-				EF85EF772C8E33A6006E6548 /* Info.plist */,
 				EF85EF742C8E3215006E6548 /* LaunchScreen */,
 				EF85EF7A2C8E5CF8006E6548 /* Extension */,
 				EF85EF682C8E06E8006E6548 /* Favorite */,
 				EF37ACD52C8C916F00477945 /* PriceConveriton */,
 				EF37C06B2C860C83004B974A /* Protocols */,
-				EF37C05A2C8290FD004B974A /* View */,
-				EF37C0572C828CC8004B974A /* ViewModel */,
-				EF0F874C2C8286DA00114906 /* Model */,
+				EF37C05A2C8290FD004B974A /* Views */,
+				EF37C0572C828CC8004B974A /* ViewModels */,
+				EF0F874C2C8286DA00114906 /* Models */,
 				EF0F873E2C8285FF00114906 /* UnitConverterApp.swift */,
 				EF0F87422C82860100114906 /* Assets.xcassets */,
 				EF0F87442C82860100114906 /* Preview Content */,
@@ -126,7 +124,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		EF0F874C2C8286DA00114906 /* Model */ = {
+		EF0F874C2C8286DA00114906 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				EF37C0652C835F59004B974A /* AllConvertersModel.swift */,
@@ -140,7 +138,7 @@
 				EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */,
 				EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		EF37ACD52C8C916F00477945 /* PriceConveriton */ = {
@@ -151,17 +149,17 @@
 			path = PriceConveriton;
 			sourceTree = "<group>";
 		};
-		EF37C0572C828CC8004B974A /* ViewModel */ = {
+		EF37C0572C828CC8004B974A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */,
 				EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */,
 				EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		EF37C05A2C8290FD004B974A /* View */ = {
+		EF37C05A2C8290FD004B974A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				EF37C05B2C829111004B974A /* MainMenuView.swift */,
@@ -172,7 +170,7 @@
 				EF85EF632C8DFD29006E6548 /* SettingsView.swift */,
 				EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EF37C06B2C860C83004B974A /* Protocols */ = {
@@ -445,6 +443,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,6 +474,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
