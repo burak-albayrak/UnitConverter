@@ -31,4 +31,13 @@ class FavoritesViewModel: ObservableObject {
         guard let modelContext = modelContext else { return }
         modelContext.delete(favorite)
     }
+    
+    func clearAllFavorites() {
+        guard let modelContext = modelContext else { return }
+        do {
+            try modelContext.delete(model: FavoriteConversion.self)
+        } catch {
+            print("Failed to clear favorites: \(error)")
+        }
+    }
 }

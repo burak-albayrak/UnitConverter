@@ -3,6 +3,7 @@ import SwiftData
 
 struct FavoritesView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var favorites: [FavoriteConversion] = []
     
@@ -35,6 +36,13 @@ struct FavoritesView: View {
             }
         }
         .navigationTitle("Favorites")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button("Done") {
+                    dismiss()
+                }
+            }
+        }
         .onAppear {
             favoritesViewModel.setModelContext(modelContext)
             updateFavorites()

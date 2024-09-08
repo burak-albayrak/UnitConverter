@@ -12,7 +12,8 @@ struct MainMenuView: View {
     @State private var selectedUnitCategory: UnitCategory?
     @State private var showSettings = false
     @State private var showFavorites = false
-    @AppStorage("darkModeEnabled") private var darkModeEnabled = false
+    @AppStorage("darkModePreference") private var darkModePreference = DarkModePreference.system
+    @Environment(\.colorScheme) private var systemColorScheme
     
     var body: some View {
         NavigationView {
@@ -82,7 +83,18 @@ struct MainMenuView: View {
                 FavoritesView()
             }
         }
-        .preferredColorScheme(darkModeEnabled ? .dark : .light)
+        .preferredColorScheme(preferredColorScheme)
+    }
+    
+    private var preferredColorScheme: ColorScheme? {
+        switch darkModePreference {
+        case .system:
+            return nil // Sistem ayarını kullan
+        case .light:
+            return .light
+        case .dark:
+            return .dark
+        }
     }
 }
 
@@ -98,21 +110,15 @@ struct MainMenuView: View {
 
 // islerrrrrr
 
-
 // TODO: her şeyi kontrol et
 
-// TODO: birimlerin ilk girinceki unit'leri ayarla
+// TODO: birimlerin ilk girinceki unit'leri ayarla ??
 
-// pre-Final
-
-// TODO: improve info section
-// TODO: improve UnitConversation View
 
 // FINAL
 
 // TODO: Dark mode kontrol
 // TODO: Dil desteği
-// TODO: uygulama rengi belirle.
 
 // Extralar
 
