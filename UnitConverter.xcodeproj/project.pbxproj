@@ -30,6 +30,10 @@
 		EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
 		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
 		EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF632C8DFD29006E6548 /* SettingsView.swift */; };
+		EF85EF6A2C8E06F8006E6548 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
+		EF85EF6C2C8E0717006E6548 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
+		EF85EF6E2C8E076B006E6548 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */; };
+		EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +61,10 @@
 		EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetismUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
 		EF85EF632C8DFD29006E6548 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteConversion.swift; sourceTree = "<group>"; };
+		EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 		EF0F873D2C8285FF00114906 /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
+				EF85EF682C8E06E8006E6548 /* Favorite */,
 				EF37ACD52C8C916F00477945 /* PriceConveriton */,
 				EF37C06B2C860C83004B974A /* Protocols */,
 				EF37C05A2C8290FD004B974A /* View */,
@@ -139,6 +148,7 @@
 			children = (
 				EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */,
 				EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */,
+				EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -152,6 +162,7 @@
 				EF37C0612C834FE1004B974A /* AllConvertersMenu.swift */,
 				EF37ACDC2C8C920A00477945 /* CurrencyConverterView.swift  .swift */,
 				EF85EF632C8DFD29006E6548 /* SettingsView.swift */,
+				EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +173,15 @@
 				EF37C06C2C860C94004B974A /* UnitCategory.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EF85EF682C8E06E8006E6548 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */,
+				EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +263,7 @@
 				EF37C0712C867E90004B974A /* HeatUnitsModel.swift in Sources */,
 				EF37C0602C829390004B974A /* CategoryInfoView.swift in Sources */,
 				EF37C05C2C829111004B974A /* MainMenuView.swift in Sources */,
+				EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */,
 				EF37C0752C8682E6004B974A /* LightUnitsModel.swift in Sources */,
 				EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */,
 				EF37C0622C834FE1004B974A /* AllConvertersMenu.swift in Sources */,
@@ -251,8 +272,11 @@
 				EF37C06D2C860C94004B974A /* UnitCategory.swift in Sources */,
 				EF0F873F2C8285FF00114906 /* UnitConverterApp.swift in Sources */,
 				EF37ACDB2C8C91D100477945 /* CurrencyConversionViewModel.swift in Sources */,
+				EF85EF6A2C8E06F8006E6548 /* FavoriteConversion.swift in Sources */,
 				EF37C0642C8359BF004B974A /* EngineeringUnitsModel.swift in Sources */,
 				EF37C0592C828D0D004B974A /* UnitConversionViewModel.swift in Sources */,
+				EF85EF6E2C8E076B006E6548 /* FavoritesView.swift in Sources */,
+				EF85EF6C2C8E0717006E6548 /* FavoritesViewModel.swift in Sources */,
 				EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */,
 				EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */,
 			);

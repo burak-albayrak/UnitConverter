@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct UnitConverterApp: App {
@@ -13,5 +14,6 @@ struct UnitConverterApp: App {
         WindowGroup {
             MainMenuView()
         }
+        .modelContainer(for: FavoriteConversion.self)
     }
 }

@@ -11,6 +11,7 @@ struct MainMenuView: View {
     @State private var selectedCategory: AllConvertersCategory?
     @State private var selectedUnitCategory: UnitCategory?
     @State private var showSettings = false
+    @State private var showFavorites = false
     @AppStorage("darkModeEnabled") private var darkModeEnabled = false
     
     var body: some View {
@@ -47,15 +48,28 @@ struct MainMenuView: View {
             .navigationTitle("Unit Converter")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        showSettings = true
-                    }) {
-                        Image(systemName: "gear")
-                            .font(.title2)
-                            .foregroundColor(.cyan)
-                            .frame(width: 44, height: 44)
-                            .background(Color.gray.opacity(0.1))
-                            .clipShape(Circle())
+                    HStack {
+                        Button(action: {
+                            showFavorites = true
+                        }) {
+                            Image(systemName: "star.fill")
+                                .font(.title2)
+                                .foregroundColor(.cyan)
+                                .frame(width: 40, height: 40)
+                                .background(Color.gray.opacity(0.05))
+                                .clipShape(Circle())
+                        }
+                        
+                        Button(action: {
+                            showSettings = true
+                        }) {
+                            Image(systemName: "gear")
+                                .font(.title2)
+                                .foregroundColor(.cyan)
+                                .frame(width: 40, height: 40)
+                                .background(Color.gray.opacity(0.05))
+                                .clipShape(Circle())
+                        }
                     }
                 }
             }
@@ -63,20 +77,27 @@ struct MainMenuView: View {
         .sheet(isPresented: $showSettings) {
             SettingsView()
         }
+        .sheet(isPresented: $showFavorites) {
+            NavigationView {
+                FavoritesView()
+            }
+        }
         .preferredColorScheme(darkModeEnabled ? .dark : .light)
     }
 }
 
 #Preview {
-    MainMenuView()
+    do {
+        let container = try PreviewContainer().container
+        return MainMenuView()
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }
 
 // islerrrrrr
 
-
-// TODO: add history section with SwiftData
-
-// TODO: add fav section with SwiftData I guess??
 
 // TODO: her şeyi kontrol et
 
@@ -99,3 +120,6 @@ struct MainMenuView: View {
 // TODO: control center button ????
 
 // TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)
+
+
+// TODO: add history section with SwiftData (şu anki yapıma göre imkansız.)

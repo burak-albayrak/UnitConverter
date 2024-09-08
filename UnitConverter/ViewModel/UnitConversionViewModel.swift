@@ -44,4 +44,9 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         let result = category.convert(doubleValue, from: fromUnit, to: toUnit)
         return String(format: "%4f", result)
     }
+    
+    func setFromFavorite(_ favorite: FavoriteConversion) {
+        selectedFirstUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.fromUnit }) ?? 0
+        selectedSecondUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.toUnit }) ?? 1
+    }
 }

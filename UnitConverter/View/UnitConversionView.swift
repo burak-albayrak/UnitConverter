@@ -8,10 +8,21 @@
 import SwiftUI
 
 struct UnitConversionView<T: UnitCategory>: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject var viewModel: UnitConversionViewModel<T>
+    @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var copiedToClipboard: Bool = false
     @State private var isCopyButtonPressed: Bool = false
     @State private var isPasteButtonPressed: Bool = false
+    @State private var isFavoriteButtonPressed: Bool = false
+    @State private var addedToFavorites: Bool = false
+    
+    init(viewModel: UnitConversionViewModel<T>, favorite: FavoriteConversion? = nil) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+        if let favorite = favorite {
+            viewModel.setFromFavorite(favorite)
+        }
+    }
     
     var body: some View {
         Form {
@@ -105,23 +116,47 @@ struct UnitConversionView<T: UnitCategory>: View {
                     Image(systemName: "keyboard.chevron.compact.down")
                 })
                 Button(action: {
+                    favoritesViewModel.addFavorite(
+                        category: viewModel.category.rawValue,
+                        fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name,
+                        toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].name
+                    )
+                    withAnimation(.easeIn(duration: 0.5)) {
+                        addedToFavorites = true
+                        isFavoriteButtonPressed = true
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        withAnimation(.easeOut(duration: 0.1)) {
+                            isFavoriteButtonPressed = false
+                        }
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        withAnimation(.easeOut(duration: 2)) {
+                            addedToFavorites = false
+                        }
+                    }
+                }) {
+                    Image(systemName: "star")
+                        .font(.title3)
+                        .foregroundColor(.cyan)
+                }
+                Button(action: {
                     viewModel.isInfoPresented = true
                 }, label: {
                     Image(systemName: "info.circle")
                 })
+
             }
+        }
+        .onAppear {
+            favoritesViewModel.setModelContext(modelContext)
         }
         .overlay {
             if copiedToClipboard {
-                Text("Copied to Clipboard")
-                    .font(.system(.body, design: .rounded, weight: .semibold))
-                    .foregroundStyle(.white)
-                    .padding()
-                    .background(Color.cyan.cornerRadius(20))
-                    .padding(.bottom)
-                    .shadow(radius: 5)
-                    .transition(.move(edge: .bottom))
-                    .frame(maxHeight: .infinity, alignment: .bottom)
+                feedbackOverlay(message: "Copied to Clipboard")
+            }
+            if addedToFavorites {
+                feedbackOverlay(message: "Added to Favorites")
             }
         }
     }
@@ -130,8 +165,26 @@ struct UnitConversionView<T: UnitCategory>: View {
         let unit = viewModel.availableUnits[index]
         return "\(unit.symbol) (\(unit.name))"
     }
+    
+    private func feedbackOverlay(message: String) -> some View {
+        Text(message)
+            .font(.system(.body, design: .rounded, weight: .semibold))
+            .foregroundStyle(.white)
+            .padding()
+            .background(Color.cyan.cornerRadius(20))
+            .padding(.bottom)
+            .shadow(radius: 5)
+            .transition(.move(edge: .bottom))
+            .frame(maxHeight: .infinity, alignment: .bottom)
+    }
 }
 
 #Preview {
-    UnitConversionView(viewModel: UnitConversionViewModel<CommonUnitsCategory>(category: .mass))
+    do {
+        let container = try PreviewContainer().container
+        return UnitConversionView(viewModel: UnitConversionViewModel<CommonUnitsCategory>(category: .mass))
+            .modelContainer(container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }
