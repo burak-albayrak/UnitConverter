@@ -14,13 +14,11 @@ final class FavoriteConversion {
     var category: String
     var fromUnit: String
     var toUnit: String
-    var createdAt: Date
     
     init(category: String, fromUnit: String, toUnit: String) {
         self.id = UUID()
         self.category = category
         self.fromUnit = fromUnit
         self.toUnit = toUnit
-        self.createdAt = Date()
     }
 }

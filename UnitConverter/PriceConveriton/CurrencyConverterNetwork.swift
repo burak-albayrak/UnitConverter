@@ -10,7 +10,22 @@ import Foundation
 struct ExchangeRates: Codable {
     let result: String
     let base_code: String
-    let conversion_rates: [String: Double]
+    let conversion_rates: [String: String]
+    
+    enum CodingKeys: String, CodingKey {
+        case result
+        case base_code
+        case conversion_rates
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        result = try container.decode(String.self, forKey: .result)
+        base_code = try container.decode(String.self, forKey: .base_code)
+        
+        let doubleRates = try container.decode([String: Double].self, forKey: .conversion_rates)
+        conversion_rates = doubleRates.mapValues { String($0) }
+    }
 }
 
 class CurrencyConverterNetwork {

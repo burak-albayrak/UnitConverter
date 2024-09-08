@@ -13,5 +13,5 @@ protocol UnitCategory {
     var info: String { get }
     var availableUnits: [(symbol: String, name: String)] { get }
 
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal
 }

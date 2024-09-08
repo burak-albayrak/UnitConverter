@@ -13,7 +13,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     case radiationExposure = "Radiation - Exposure"
     case radiationAbsorbedDose = "Radiation - Absorbed Dose"
 
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .radiation:
             return convertRadiation(value, from: fromUnit, to: toUnit)
@@ -26,30 +26,30 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
 
-    private func convertRadiation(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let grayPerSecondValues: [String: Double] = [
+    private func convertRadiation(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let grayPerSecondValues: [String: Decimal] = [
             "gray/second": 1,
-            "exagray/second": 1e18,
-            "petagray/second": 1e15,
-            "teragray/second": 1e12,
-            "gigagray/second": 1e9,
-            "megagray/second": 1e6,
-            "kilogray/second": 1e3,
-            "hectogray/second": 1e2,
-            "dekagray/second": 1e1,
-            "decigray/second": 1e-1,
-            "centigray/second": 1e-2,
-            "milligray/second": 1e-3,
-            "microgray/second": 1e-6,
-            "nanogray/second": 1e-9,
-            "picogray/second": 1e-12,
-            "femtogray/second": 1e-15,
-            "attogray/second": 1e-18,
-            "rad/second": 1e-2,
+            "exagray/second": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petagray/second": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "teragray/second": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigagray/second": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megagray/second": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilogray/second": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "hectogray/second": Decimal(sign: .plus, exponent: 2, significand: 1),
+            "dekagray/second": Decimal(sign: .plus, exponent: 1, significand: 1),
+            "decigray/second": Decimal(sign: .minus, exponent: 1, significand: 1),
+            "centigray/second": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "milligray/second": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microgray/second": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanogray/second": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picogray/second": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtogray/second": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attogray/second": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "rad/second": Decimal(sign: .minus, exponent: 2, significand: 1),
             "joule/kilogram/second": 1,
             "watt/kilogram": 1,
             "sievert/second": 1,
-            "rem/second": 1e-2
+            "rem/second": Decimal(sign: .minus, exponent: 2, significand: 1)
         ]
         
         guard let fromValue = grayPerSecondValues[fromUnit.lowercased()], let toValue = grayPerSecondValues[toUnit.lowercased()] else {
@@ -60,24 +60,24 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         return grayPerSecond / toValue
     }
     
-    private func convertRadiationActivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let becquerelValues: [String: Double] = [
+    private func convertRadiationActivity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let becquerelValues: [String: Decimal] = [
             "becquerel": 1,
-            "terabecquerel": 1e12,
-            "gigabecquerel": 1e9,
-            "megabecquerel": 1e6,
-            "kilobecquerel": 1e3,
-            "millibecquerel": 1e-3,
-            "curie": 3.7e10,
-            "kilocurie": 3.7e13,
-            "millicurie": 3.7e7,
-            "microcurie": 3.7e4,
+            "terabecquerel": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigabecquerel": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megabecquerel": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilobecquerel": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "millibecquerel": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "curie": Decimal(string: "3.7e10")!,
+            "kilocurie": Decimal(string: "3.7e13")!,
+            "millicurie": Decimal(string: "3.7e7")!,
+            "microcurie": Decimal(string: "3.7e4")!,
             "nanocurie": 37,
-            "picocurie": 0.037,
-            "rutherford": 1e6,
+            "picocurie": Decimal(string: "0.037")!,
+            "rutherford": Decimal(sign: .plus, exponent: 6, significand: 1),
             "one/second": 1,
             "disintegrations/second": 1,
-            "disintegrations/minute": 1/60
+            "disintegrations/minute": Decimal(1) / Decimal(60)
         ]
 
         guard let fromValue = becquerelValues[fromUnit.lowercased()], let toValue = becquerelValues[toUnit.lowercased()] else {
@@ -88,15 +88,15 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         return becquerels / toValue
     }
     
-    private func convertRadiationExposure(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let coulombPerKilogramValues: [String: Double] = [
+    private func convertRadiationExposure(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let coulombPerKilogramValues: [String: Decimal] = [
             "coulomb/kilogram": 1,
-            "millicoulomb/kilogram": 1e-3,
-            "microcoulomb/kilogram": 1e-6,
-            "roentgen": 0.000258,
-            "tissue roentgen": 0.000258,
-            "parker": 0.000258,
-            "rep": 0.000258
+            "millicoulomb/kilogram": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microcoulomb/kilogram": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "roentgen": Decimal(string: "0.000258")!,
+            "tissue roentgen": Decimal(string: "0.000258")!,
+            "parker": Decimal(string: "0.000258")!,
+            "rep": Decimal(string: "0.000258")!
         ]
 
         guard let fromValue = coulombPerKilogramValues[fromUnit.lowercased()], let toValue = coulombPerKilogramValues[toUnit.lowercased()] else {
@@ -107,31 +107,31 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         return coulombPerKilogram / toValue
     }
     
-    private func convertRadiationAbsorbedDose(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let radValues: [String: Double] = [
+    private func convertRadiationAbsorbedDose(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let radValues: [String: Decimal] = [
             "rad": 1,
-            "millirad": 1e-3,
+            "millirad": Decimal(sign: .minus, exponent: 3, significand: 1),
             "joule/kilogram": 100,
-            "joule/gram": 1e5,
-            "joule/centigram": 1e7,
-            "joule/milligram": 1e8,
+            "joule/gram": Decimal(sign: .plus, exponent: 5, significand: 1),
+            "joule/centigram": Decimal(sign: .plus, exponent: 7, significand: 1),
+            "joule/milligram": Decimal(sign: .plus, exponent: 8, significand: 1),
             "gray": 100,
-            "exagray": 1e20,
-            "petagray": 1e17,
-            "teragray": 1e14,
-            "gigagray": 1e11,
-            "megagray": 1e8,
-            "kilogray": 1e5,
-            "hectogray": 1e4,
-            "dekagray": 1e3,
+            "exagray": Decimal(sign: .plus, exponent: 20, significand: 1),
+            "petagray": Decimal(sign: .plus, exponent: 17, significand: 1),
+            "teragray": Decimal(sign: .plus, exponent: 14, significand: 1),
+            "gigagray": Decimal(sign: .plus, exponent: 11, significand: 1),
+            "megagray": Decimal(sign: .plus, exponent: 8, significand: 1),
+            "kilogray": Decimal(sign: .plus, exponent: 5, significand: 1),
+            "hectogray": Decimal(sign: .plus, exponent: 4, significand: 1),
+            "dekagray": Decimal(sign: .plus, exponent: 3, significand: 1),
             "decigray": 10,
             "centigray": 1,
-            "milligray": 0.1,
-            "microgray": 1e-4,
-            "nanogray": 1e-7,
-            "picogray": 1e-10,
-            "femtogray": 1e-13,
-            "attogray": 1e-16
+            "milligray": Decimal(string: "0.1")!,
+            "microgray": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "nanogray": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "picogray": Decimal(sign: .minus, exponent: 10, significand: 1),
+            "femtogray": Decimal(sign: .minus, exponent: 13, significand: 1),
+            "attogray": Decimal(sign: .minus, exponent: 16, significand: 1)
         ]
 
         guard let fromValue = radValues[fromUnit.lowercased()], let toValue = radValues[toUnit.lowercased()] else {

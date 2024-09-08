@@ -3,8 +3,15 @@
     {
       "filename" : "DALL·E 2024-09-08 22.18.40 - A simple app logo design featuring a cyan background. In the center, there's a white circle, and a ruler extends outwards from the circle, creating th.jpeg",
       "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

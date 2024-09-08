@@ -45,7 +45,7 @@ class CurrencyConversionViewModel: ObservableObject {
     }
     
     func convertCurrency() {
-        guard let inputNumber = Double(inputValue),
+        guard let inputNumber = Decimal(string: inputValue),
               selectedFromCurrencyIndex < availableCurrencies.count,
               selectedToCurrencyIndex < availableCurrencies.count else {
             convertedValue = ""
@@ -56,7 +56,13 @@ class CurrencyConversionViewModel: ObservableObject {
         let toCurrency = availableCurrencies[selectedToCurrencyIndex].symbol
         
         let result = category.convert(inputNumber, from: fromCurrency, to: toCurrency)
-        convertedValue = String(format: "%.2f", result)
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
+        
+        convertedValue = formatter.string(from: NSDecimalNumber(decimal: result)) ?? ""
     }
     
     var info: String {

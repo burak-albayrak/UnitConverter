@@ -10,13 +10,13 @@ import Foundation
 enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
     case currency = "Currency"
 
-    static var exchangeRates: [String: Double] = [:]
+    static var exchangeRates: [String: Decimal] = [:]
     
     static func updateExchangeRates(completion: @escaping (Bool) -> Void) {
         CurrencyConverterNetwork.shared.fetchExchangeRates { result in
             switch result {
             case .success(let rates):
-                self.exchangeRates = rates.conversion_rates
+                self.exchangeRates = rates.conversion_rates.mapValues { Decimal(string: String($0)) ?? 1 }
                 completion(true)
             case .failure(let error):
                 print("Failed to fetch exchange rates: \(error.localizedDescription)")
@@ -25,7 +25,7 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
 
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         guard let fromRate = CurrencyUnitsCategory.exchangeRates[fromUnit],
               let toRate = CurrencyUnitsCategory.exchangeRates[toUnit] else {
             return value // Return original value if conversion rates are not available

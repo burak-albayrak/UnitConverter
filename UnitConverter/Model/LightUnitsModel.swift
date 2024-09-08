@@ -14,7 +14,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     case digitalImageResolution = "Digital Image Resolution"
     case frequencyWavelength = "Frequency Wavelength"
     
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .luminance:
             return convertLuminance(value, from: fromUnit, to: toUnit)
@@ -29,140 +29,140 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    private func convertLuminance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let candelaPerSquareMeterValues: [String: Double] = [
+    private func convertLuminance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let candelaPerSquareMeterValues: [String: Decimal] = [
             "candela/square meter": 1,
             "candela/square centimeter": 10000,
-            "candela/square foot": 10.7639104167,
-            "candela/square inch": 1550.0031000062,
+            "candela/square foot": Decimal(string: "10.7639104167")!,
+            "candela/square inch": Decimal(string: "1550.0031000062")!,
             "kilocandela/square meter": 1000,
             "stilb": 10000,
             "lumen/sq. meter/steradian": 1,
             "lumen/sq. cm/steradian": 10000,
-            "lumen/square foot/steradian": 10.7639104167,
+            "lumen/square foot/steradian": Decimal(string: "10.7639104167")!,
             "watt/sq. cm/steradian (at 555 nm)": 6830000,
             "nit": 1,
-            "millinit": 0.001,
-            "lambert": 3183.0988618379,
-            "millilambert": 3.1830988618,
-            "foot-lambert": 3.4262590996,
-            "apostilb": 0.3183098862,
-            "blondel": 0.3183098862,
-            "bril": 3.1830988618379e-8,
-            "skot": 0.0003183099
+            "millinit": Decimal(string: "0.001")!,
+            "lambert": Decimal(string: "3183.0988618379")!,
+            "millilambert": Decimal(string: "3.1830988618")!,
+            "foot-lambert": Decimal(string: "3.4262590996")!,
+            "apostilb": Decimal(string: "0.3183098862")!,
+            "blondel": Decimal(string: "0.3183098862")!,
+            "bril": Decimal(string: "3.1830988618379e-8")!,
+            "skot": Decimal(string: "0.0003183099")!
         ]
         
         guard let fromValue = candelaPerSquareMeterValues[fromUnit.lowercased()], let toValue = candelaPerSquareMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let candelaPerSquareMeter = value * fromValue
         return candelaPerSquareMeter / toValue
     }
     
-    private func convertLuminousIntensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let candleInternationalValues: [String: Double] = [
+    private func convertLuminousIntensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let candleInternationalValues: [String: Decimal] = [
             "candle (international)": 1,
-            "candle (German)": 1.0526315789,
-            "candle (UK)": 1.0416666667,
+            "candle (German)": Decimal(string: "1.0526315789")!,
+            "candle (UK)": Decimal(string: "1.0416666667")!,
             "decimal candle": 1,
             "candle (pentane)": 1,
             "pentane candle (10 candle power)": 10,
-            "hefner candle": 0.9000000001,
-            "carcel unit": 9.610000003,
+            "hefner candle": Decimal(string: "0.9000000001")!,
+            "carcel unit": Decimal(string: "9.610000003")!,
             "bougie decimal": 1,
             "lumen/steradian": 1
         ]
         
         guard let fromValue = candleInternationalValues[fromUnit.lowercased()], let toValue = candleInternationalValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let candleInternational = value * fromValue
         return candleInternational / toValue
     }
     
-    private func convertIlluminance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let luxValues: [String: Double] = [
+    private func convertIlluminance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let luxValues: [String: Decimal] = [
             "lux": 1,
             "meter-candle": 1,
             "centimeter-candle": 10000,
-            "foot-candle": 10.7639104167,
-            "flame": 43.0556416668,
+            "foot-candle": Decimal(string: "10.7639104167")!,
+            "flame": Decimal(string: "43.0556416668")!,
             "phot": 10000,
-            "nox": 0.001,
+            "nox": Decimal(string: "0.001")!,
             "candela steradian/sq. meter": 1,
             "lumen/square meter": 1,
             "lumen/square centimeter": 10000,
-            "lumen/square foot": 10.7639104167,
+            "lumen/square foot": Decimal(string: "10.7639104167")!,
             "watt/sq. cm (at 555 nm)": 6830000
         ]
         
         guard let fromValue = luxValues[fromUnit.lowercased()], let toValue = luxValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let lux = value * fromValue
         return lux / toValue
     }
     
-    private func convertResolution(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let dotPerMeterValues: [String: Double] = [
+    private func convertResolution(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let dotPerMeterValues: [String: Decimal] = [
             "dot/meter": 1,
             "dot/millimeter": 1000,
-            "dot/inch": 39.3700787402,
-            "pixel/inch": 39.3700787402
+            "dot/inch": Decimal(string: "39.3700787402")!,
+            "pixel/inch": Decimal(string: "39.3700787402")!
         ]
         
         guard let fromValue = dotPerMeterValues[fromUnit.lowercased()], let toValue = dotPerMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let dotPerMeter = value * fromValue
         return dotPerMeter / toValue
     }
     
-    private func convertFrequency(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let hertzValues: [String: Double] = [
+    private func convertFrequency(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let hertzValues: [String: Decimal] = [
             "hertz": 1,
-            "exahertz": 1e18,
-            "petahertz": 1e15,
-            "terahertz": 1e12,
-            "gigahertz": 1e9,
-            "megahertz": 1e6,
-            "kilohertz": 1e3,
-            "hectohertz": 1e2,
-            "dekahertz": 1e1,
-            "decihertz": 1e-1,
-            "centihertz": 1e-2,
-            "millihertz": 1e-3,
-            "microhertz": 1e-6,
-            "nanohertz": 1e-9,
-            "picohertz": 1e-12,
-            "femtohertz": 1e-15,
-            "attohertz": 1e-18,
+            "exahertz": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petahertz": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terahertz": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigahertz": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megahertz": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilohertz": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "hectohertz": Decimal(sign: .plus, exponent: 2, significand: 1),
+            "dekahertz": Decimal(sign: .plus, exponent: 1, significand: 1),
+            "decihertz": Decimal(sign: .minus, exponent: 1, significand: 1),
+            "centihertz": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "millihertz": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microhertz": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanohertz": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picohertz": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtohertz": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attohertz": Decimal(sign: .minus, exponent: 18, significand: 1),
             "cycle/second": 1,
-            "wavelength in exametres": 2.99792458e-10,
-            "wavelength in petametres": 2.99792458e-7,
-            "wavelength in terametres": 0.0002997925,
-            "wavelength in gigametres": 0.299792458,
-            "wavelength in megametres": 299.792458,
-            "wavelength in kilometres": 299792.458,
-            "wavelength in hectometres": 2997924.58,
-            "wavelength in dekametres": 29979245.8,
+            "wavelength in exametres": Decimal(string: "2.99792458e-10")!,
+            "wavelength in petametres": Decimal(string: "2.99792458e-7")!,
+            "wavelength in terametres": Decimal(string: "0.0002997925")!,
+            "wavelength in gigametres": Decimal(string: "0.299792458")!,
+            "wavelength in megametres": Decimal(string: "299.792458")!,
+            "wavelength in kilometres": Decimal(string: "299792.458")!,
+            "wavelength in hectometres": Decimal(string: "2997924.58")!,
+            "wavelength in dekametres": Decimal(string: "29979245.8")!,
             "wavelength in metres": 299792458,
             "wavelength in decimetres": 2997924580,
             "wavelength in centimetres": 29979245800,
             "wavelength in millimetres": 299792458000,
-            "wavelength in micrometres": 2.99792458e14,
-            "wavelength in nanometres": 2.99792458e17,
-            "Electron Compton wavelength": 1.235589789993e20,
-            "Proton Compton wavelength": 2.2687315327002e23,
-            "Neutron Compton wavelength": 2.2718587447278e23
+            "wavelength in micrometres": Decimal(string: "2.99792458e14")!,
+            "wavelength in nanometres": Decimal(string: "2.99792458e17")!,
+            "Electron Compton wavelength": Decimal(string: "1.235589789993e20")!,
+            "Proton Compton wavelength": Decimal(string: "2.2687315327002e23")!,
+            "Neutron Compton wavelength": Decimal(string: "2.2718587447278e23")!
         ]
         
         guard let fromValue = hertzValues[fromUnit.lowercased()], let toValue = hertzValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let hertz = value * fromValue

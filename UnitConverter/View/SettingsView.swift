@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct SettingsView: View {
-    @AppStorage("darkModePreference") private var darkModePreference = DarkModePreference.system
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @StateObject private var favoritesViewModel = FavoritesViewModel()
@@ -18,15 +17,6 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Dark Mode Preference")) {
-                    Picker("Dark Mode", selection: $darkModePreference) {
-                        ForEach(DarkModePreference.allCases, id: \.self) { preference in
-                            Text(preference.description).tag(preference)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
-                }
-                
                 Section(header: Text("Favorites")) {
                     Button("Clear All Favorites") {
                         showingClearConfirmation = true
@@ -53,20 +43,6 @@ struct SettingsView: View {
             }
         } message: {
             Text("Are you sure you want to clear all favorites? This action cannot be undone.")
-        }
-    }
-}
-
-enum DarkModePreference: String, CaseIterable {
-    case system
-    case light
-    case dark
-    
-    var description: String {
-        switch self {
-        case .system: return "System"
-        case .light: return "Light"
-        case .dark: return "Dark"
         }
     }
 }

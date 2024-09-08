@@ -19,7 +19,7 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     case heatFluxDensity = "Heat Flux Density"
     case heatTransverCoefficient = "Heat Transver Coefficient"
 
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .fuelEfficiencyMass:
             return convertSpecificEnergy(value, from: fromUnit, to: toUnit)
@@ -44,21 +44,21 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    private func convertSpecificEnergy(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let joulePerKilogramValues: [String: Double] = [
+    private func convertSpecificEnergy(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let joulePerKilogramValues: [String: Decimal] = [
             "joule/kilogram": 1,
             "kilojoule/kilogram": 1000,
-            "calorie (IT)/gram": 4186.8,
-            "calorie (th)/gram": 4184.000000005,
+            "calorie (IT)/gram": Decimal(string: "4186.8")!,
+            "calorie (th)/gram": Decimal(string: "4184.000000005")!,
             "Btu (IT)/pound": 2326,
-            "Btu (th)/pound": 2324.4444444446,
+            "Btu (th)/pound": Decimal(string: "2324.4444444446")!,
             "kilogram/joule": 1,
             "kilogram/kilojoule": 1000,
-            "gram/calorie (IT)": 4186.8,
-            "gram/calorie (th)": 4184.000000005,
+            "gram/calorie (IT)": Decimal(string: "4186.8")!,
+            "gram/calorie (th)": Decimal(string: "4184.000000005")!,
             "pound/Btu (IT)": 2326,
-            "pound/Btu (th)": 2324.4444444446,
-            "pound/horsepower/hour": 5918352.5016,
+            "pound/Btu (th)": Decimal(string: "2324.4444444446")!,
+            "pound/horsepower/hour": Decimal(string: "5918352.5016")!,
             "gram/horsepower (metric)/hour": 2647795500,
             "gram/kilowatt/hour": 3600000000
         ]
@@ -71,230 +71,229 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         return joulePerKilogram / toValue
     }
     
-    private func convertEnergyDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let joulePerCubicMeterValues: [String: Double] = [
+    private func convertEnergyDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let joulePerCubicMeterValues: [String: Decimal] = [
             "joule/cubic meter": 1,
             "joule/liter": 1000,
             "megajoule/cubic meter": 1000000,
             "kilojoule/cubic meter": 1000,
-            "kilocalorie (IT)/cubic meter": 4186.800000482,
-            "calorie (IT)/cubic centimeter": 4186800.000482,
-            "therm/cubic foot": 3725894617.319,
-            "therm/gallon (UK)": 23207984510.267,
-            "Btu (IT)/cubic foot": 37258.945807808,
-            "Btu (th)/cubic foot": 37234.028198186,
-            "CHU/cubic foot": 67066.103121737,
+            "kilocalorie (IT)/cubic meter": Decimal(string: "4186.800000482")!,
+            "calorie (IT)/cubic centimeter": Decimal(string: "4186800.000482")!,
+            "therm/cubic foot": Decimal(string: "3725894617.319")!,
+            "therm/gallon (UK)": Decimal(string: "23207984510.267")!,
+            "Btu (IT)/cubic foot": Decimal(string: "37258.945807808")!,
+            "Btu (th)/cubic foot": Decimal(string: "37234.028198186")!,
+            "CHU/cubic foot": Decimal(string: "67066.103121737")!,
             "cubic meter/joule": 1,
             "liter/joule": 1000,
-            "gallon (US)/horsepower": 709175035.869
+            "gallon (US)/horsepower": Decimal(string: "709175035.869")!
         ]
 
         guard let fromValue = joulePerCubicMeterValues[fromUnit.lowercased()], let toValue = joulePerCubicMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let joulePerCubicMeter = value * fromValue
         return joulePerCubicMeter / toValue
     }
     
-    private func convertTemperature(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let kelvin: Double
+    private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let kelvin: Decimal
         
-        // Önce giriş birimini Kelvin'e çevirelim
         switch fromUnit.lowercased() {
         case "kelvin", "k":
             kelvin = value
         case "degree celsius", "°c", "degree centigrade":
-            kelvin = value + 273.15
+            kelvin = value + Decimal(273.15)
         case "degree fahrenheit", "°f":
-            kelvin = (value - 32) * 5/9 + 273.15
+            kelvin = (value - 32) * 5/9 + Decimal(273.15)
         case "degree rankine", "°r":
             kelvin = value * 5/9
         case "degree reaumur", "°re":
-            kelvin = value * 1.25 + 273.15
+            kelvin = value * Decimal(1.25) + Decimal(273.15)
         default:
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
-        // Şimdi Kelvin'i hedef birime çevirelim
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
         case "degree celsius", "°c", "degree centigrade":
-            return kelvin - 273.15
+            return kelvin - Decimal(273.15)
         case "degree fahrenheit", "°f":
-            return (kelvin - 273.15) * 9/5 + 32
+            return (kelvin - Decimal(273.15)) * 9/5 + 32
         case "degree rankine", "°r":
-            return kelvin * 1.8
+            return kelvin * Decimal(1.8)
         case "degree reaumur", "°re":
-            return (kelvin - 273.15) * 0.8
+            return (kelvin - Decimal(273.15)) * Decimal(0.8)
         default:
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
     }
     
-    private func convertThermalExpansionCoefficient(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let perKelvinValues: [String: Double] = [
+    private func convertThermalExpansionCoefficient(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let perKelvinValues: [String: Decimal] = [
             "length/length/kelvin": 1,
             "length/length/degree celsius": 1,
-            "length/length/degree fahrenheit": 1.8,
-            "length/length/degree rankine": 1.8,
-            "length/length/degree reaumur": 0.8
+            "length/length/degree fahrenheit": Decimal(1.8),
+            "length/length/degree rankine": Decimal(1.8),
+            "length/length/degree reaumur": Decimal(0.8)
         ]
 
         guard let fromValue = perKelvinValues[fromUnit.lowercased()], let toValue = perKelvinValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let perKelvin = value * fromValue
         return perKelvin / toValue
     }
     
-    private func convertThermalResistance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let kelvinPerWattValues: [String: Double] = [
+    private func convertThermalResistance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let kelvinPerWattValues: [String: Decimal] = [
             "kelvin/watt": 1,
-            "degree fahrenheit hour/btu (it)": 1.8956342406,
-            "degree fahrenheit hour/btu (th)": 1.8969028295,
-            "degree fahrenheit second/btu (it)": 0.0005265651,
-            "degree fahrenheit second/btu (th)": 0.0005269175
+            "degree fahrenheit hour/btu (it)": Decimal(string: "1.8956342406")!,
+            "degree fahrenheit hour/btu (th)": Decimal(string: "1.8969028295")!,
+            "degree fahrenheit second/btu (it)": Decimal(string: "0.0005265651")!,
+            "degree fahrenheit second/btu (th)": Decimal(string: "0.0005269175")!
         ]
 
         guard let fromValue = kelvinPerWattValues[fromUnit.lowercased()], let toValue = kelvinPerWattValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let kelvinPerWatt = value * fromValue
         return kelvinPerWatt / toValue
     }
-    private func convertThermalConductivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let wattPerMeterKelvinValues: [String: Double] = [
+    
+    private func convertThermalConductivity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let wattPerMeterKelvinValues: [String: Decimal] = [
             "watt/meter/K": 1,
             "watt/centimeter/°C": 100,
             "kilowatt/meter/K": 1000,
-            "calorie (IT)/second/cm/°C": 418.6800000009,
-            "calorie (th)/second/cm/°C": 418.3999999994,
-            "kilocalorie (IT)/hour/meter/°C": 1.163,
-            "kilocalorie (th)/hour/meter/°C": 1.1622222222,
-            "Btu (IT) inch/second/sq. foot/°F": 519.2203999105,
-            "Btu (th) inch/second/sq. foot/°F": 518.8731616576,
-            "Btu (IT) foot/hour/sq. foot/°F": 1.7307346664,
-            "Btu (th) foot/hour/sq. foot/°F": 1.7295772055,
-            "Btu (IT) inch/hour/sq. foot/°F": 0.1442278889,
-            "Btu (th) inch/hour/sq. foot/°F": 0.1441314338
+            "calorie (IT)/second/cm/°C": Decimal(string: "418.6800000009")!,
+            "calorie (th)/second/cm/°C": Decimal(string: "418.3999999994")!,
+            "kilocalorie (IT)/hour/meter/°C": Decimal(string: "1.163")!,
+            "kilocalorie (th)/hour/meter/°C": Decimal(string: "1.1622222222")!,
+            "Btu (IT) inch/second/sq. foot/°F": Decimal(string: "519.2203999105")!,
+            "Btu (th) inch/second/sq. foot/°F": Decimal(string: "518.8731616576")!,
+            "Btu (IT) foot/hour/sq. foot/°F": Decimal(string: "1.7307346664")!,
+            "Btu (th) foot/hour/sq. foot/°F": Decimal(string: "1.7295772055")!,
+            "Btu (IT) inch/hour/sq. foot/°F": Decimal(string: "0.1442278889")!,
+            "Btu (th) inch/hour/sq. foot/°F": Decimal(string: "0.1441314338")!
         ]
 
         guard let fromValue = wattPerMeterKelvinValues[fromUnit.lowercased()], let toValue = wattPerMeterKelvinValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let wattPerMeterKelvin = value * fromValue
         return wattPerMeterKelvin / toValue
     }
     
-    private func convertSpecificHeatCapacity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let joulePerKilogramKelvinValues: [String: Double] = [
+    private func convertSpecificHeatCapacity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let joulePerKilogramKelvinValues: [String: Decimal] = [
             "joule/kilogram/K": 1,
             "joule/kilogram/°C": 1,
             "joule/gram/°C": 1000,
             "kilojoule/kilogram/K": 1000,
             "kilojoule/kilogram/°C": 1000,
-            "calorie (IT)/gram/°C": 4186.8000000087,
-            "calorie (IT)/gram/°F": 4186.8000000087,
+            "calorie (IT)/gram/°C": Decimal(string: "4186.8000000087")!,
+            "calorie (IT)/gram/°F": Decimal(string: "4186.8000000087")!,
             "calorie (th)/gram/°C": 4184,
-            "kilocalorie (IT)/kilogram/°C": 4186.8000000087,
+            "kilocalorie (IT)/kilogram/°C": Decimal(string: "4186.8000000087")!,
             "kilocalorie (th)/kilogram/°C": 4184,
-            "kilocalorie (IT)/kilogram/K": 4186.8000000087,
+            "kilocalorie (IT)/kilogram/K": Decimal(string: "4186.8000000087")!,
             "kilocalorie (th)/kilogram/K": 4184,
-            "kilogram-force meter/kilogram/K": 9.80665,
-            "pound-force foot/pound/°R": 5.380320456,
-            "Btu (IT)/pound/°F": 4186.8000000087,
+            "kilogram-force meter/kilogram/K": Decimal(string: "9.80665")!,
+            "pound-force foot/pound/°R": Decimal(string: "5.380320456")!,
+            "Btu (IT)/pound/°F": Decimal(string: "4186.8000000087")!,
             "Btu (th)/pound/°F": 4184,
-            "Btu (IT)/pound/°R": 4186.8000000087,
+            "Btu (IT)/pound/°R": Decimal(string: "4186.8000000087")!,
             "Btu (th)/pound/°R": 4184,
-            "Btu (IT)/pound/°C": 2326.0000001596,
-            "CHU/pound/°C": 4186.800000482
+            "Btu (IT)/pound/°C": Decimal(string: "2326.0000001596")!,
+            "CHU/pound/°C": Decimal(string: "4186.800000482")!
         ]
 
         guard let fromValue = joulePerKilogramKelvinValues[fromUnit.lowercased()], let toValue = joulePerKilogramKelvinValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let joulePerKilogramKelvin = value * fromValue
         return joulePerKilogramKelvin / toValue
     }
     
-    private func convertRadiationEnergyDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let joulePerSquareMeterValues: [String: Double] = [
+    private func convertRadiationEnergyDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let joulePerSquareMeterValues: [String: Decimal] = [
             "joule/square meter": 1,
-            "calorie (th)/square centimeter": 41839.999999999,
-            "langley": 41839.999999999,
-            "Btu (IT)/square foot": 11356.526682227,
-            "Btu (th)/square foot": 11348.931794793
+            "calorie (th)/square centimeter": Decimal(string: "41839.999999999")!,
+            "langley": Decimal(string: "41839.999999999")!,
+            "Btu (IT)/square foot": Decimal(string: "11356.526682227")!,
+            "Btu (th)/square foot": Decimal(string: "11348.931794793")!
         ]
 
         guard let fromValue = joulePerSquareMeterValues[fromUnit.lowercased()], let toValue = joulePerSquareMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let joulePerSquareMeter = value * fromValue
         return joulePerSquareMeter / toValue
     }
     
-    private func convertRadiationFluxDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let wattPerSquareMeterValues: [String: Double] = [
+    private func convertRadiationFluxDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let wattPerSquareMeterValues: [String: Decimal] = [
             "watt/square meter": 1,
             "kilowatt/square meter": 1000,
             "watt/square centimeter": 10000,
-            "watt/square inch": 1550.0031012075,
+            "watt/square inch": Decimal(string: "1550.0031012075")!,
             "joule/second/square meter": 1,
-            "kilocalorie (IT)/hour/square meter": 1.1629999999,
-            "kilocalorie (IT)/hour/square foot": 12.5184278205,
-            "calorie (IT)/second/square centimeter": 41868.00000482,
-            "calorie (IT)/minute/square centimeter": 697.8000000803,
-            "calorie (IT)/hour/square centimeter": 11.6300000008,
-            "calorie (th)/second/square centimeter": 41839.999999942,
-            "calorie (th)/minute/square centimeter": 697.3333333314,
-            "calorie (th)/hour/square centimeter": 11.6222222222,
-            "dyne/hour/centimeter": 2.7777777777778E-7,
-            "erg/hour/square millimeter": 2.77778E-5,
-            "foot pound/minute/square foot": 0.2432317156,
-            "horsepower/square foot": 8026.6466174305,
-            "horsepower (metric)/square foot": 7916.8426564296,
-            "Btu (IT)/second/square foot": 11356.526682221,
-            "Btu (IT)/minute/square foot": 189.2754465477,
-            "Btu (IT)/hour/square foot": 3.1545907451,
-            "Btu (th)/second/square inch": 1634246.1784508,
-            "Btu (th)/second/square foot": 11348.93179479,
-            "Btu (th)/minute/square foot": 189.1488632466,
-            "Btu (th)/hour/square foot": 3.1524810541,
-            "CHU/hour/square foot": 5.6782633986
+            "kilocalorie (IT)/hour/square meter": Decimal(string: "1.1629999999")!,
+            "kilocalorie (IT)/hour/square foot": Decimal(string: "12.5184278205")!,
+            "calorie (IT)/second/square centimeter": Decimal(string: "41868.00000482")!,
+            "calorie (IT)/minute/square centimeter": Decimal(string: "697.8000000803")!,
+            "calorie (IT)/hour/square centimeter": Decimal(string: "11.6300000008")!,
+            "calorie (th)/second/square centimeter": Decimal(string: "41839.999999942")!,
+            "calorie (th)/minute/square centimeter": Decimal(string: "697.3333333314")!,
+            "calorie (th)/hour/square centimeter": Decimal(string: "11.6222222222")!,
+            "dyne/hour/centimeter": Decimal(string: "2.7777777777778E-7")!,
+            "erg/hour/square millimeter": Decimal(string: "2.77778E-5")!,
+            "foot pound/minute/square foot": Decimal(string: "0.2432317156")!,
+            "horsepower/square foot": Decimal(string: "8026.6466174305")!,
+            "horsepower (metric)/square foot": Decimal(string: "7916.8426564296")!,
+            "Btu (IT)/second/square foot": Decimal(string: "11356.526682221")!,
+            "Btu (IT)/minute/square foot": Decimal(string: "189.2754465477")!,
+            "Btu (IT)/hour/square foot": Decimal(string: "3.1545907451")!,
+            "Btu (th)/second/square inch": Decimal(string: "1634246.1784508")!,
+            "Btu (th)/second/square foot": Decimal(string: "11348.93179479")!,
+            "Btu (th)/minute/square foot": Decimal(string: "189.1488632466")!,
+            "Btu (th)/hour/square foot": Decimal(string: "3.1524810541")!,
+            "CHU/hour/square foot": Decimal(string: "5.6782633986")!
         ]
 
         guard let fromValue = wattPerSquareMeterValues[fromUnit.lowercased()], let toValue = wattPerSquareMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let wattPerSquareMeter = value * fromValue
         return wattPerSquareMeter / toValue
     }
     
-    private func convertHeatTransferCoefficient(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let wattPerSquareMeterKelvinValues: [String: Double] = [
+    private func convertHeatTransferCoefficient(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let wattPerSquareMeterKelvinValues: [String: Decimal] = [
             "watt/square meter/K": 1,
             "watt/square meter/°C": 1,
             "joule/second/square meter/K": 1,
-            "calorie (IT)/second/square centimeter/°C": 41868.00000482,
-            "kilocalorie (IT)/hour/square meter/°C": 1.163,
-            "kilocalorie (IT)/hour/square foot/°C": 12.5184278205,
-            "Btu (IT)/second/square foot/°F": 20441.748028012,
-            "Btu (th)/second/square foot/°F": 20428.077230618,
-            "Btu (IT)/hour/square foot/°F": 5.6782633411,
-            "Btu (th)/hour/square foot/°F": 5.6744658974,
-            "CHU/hour/square foot/°C": 5.6782633411
+            "calorie (IT)/second/square centimeter/°C": Decimal(string: "41868.00000482")!,
+            "kilocalorie (IT)/hour/square meter/°C": Decimal(string: "1.163")!,
+            "kilocalorie (IT)/hour/square foot/°C": Decimal(string: "12.5184278205")!,
+            "Btu (IT)/second/square foot/°F": Decimal(string: "20441.748028012")!,
+            "Btu (th)/second/square foot/°F": Decimal(string: "20428.077230618")!,
+            "Btu (IT)/hour/square foot/°F": Decimal(string: "5.6782633411")!,
+            "Btu (th)/hour/square foot/°F": Decimal(string: "5.6744658974")!,
+            "CHU/hour/square foot/°C": Decimal(string: "5.6782633411")!
         ]
 
         guard let fromValue = wattPerSquareMeterKelvinValues[fromUnit.lowercased()], let toValue = wattPerSquareMeterKelvinValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let wattPerSquareMeterKelvin = value * fromValue

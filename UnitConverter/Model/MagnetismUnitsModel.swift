@@ -13,7 +13,7 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
     case magneticFlux = "Magnetic Flux"
     case magneticFluxDensity = "Magnetic Flux Density"
     
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .magnetomotiveForce:
             return convertMagnetomotiveForce(value, from: fromUnit, to: toUnit)
@@ -26,13 +26,13 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    private func convertMagnetomotiveForce(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let ampereTurnValues: [String: Double] = [
+    private func convertMagnetomotiveForce(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let ampereTurnValues: [String: Decimal] = [
             "ampere turn": 1,
-            "kiloampere turn": 1e3,
-            "milliampere turn": 1e-3,
+            "kiloampere turn": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "milliampere turn": Decimal(sign: .minus, exponent: 3, significand: 1),
             "abampere turn": 10,
-            "gilbert": 0.7957747151
+            "gilbert": Decimal(string: "0.7957747151")!
         ]
 
         guard let fromValue = ampereTurnValues[fromUnit.lowercased()], let toValue = ampereTurnValues[toUnit.lowercased()] else {
@@ -43,12 +43,12 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         return ampereTurns / toValue
     }
     
-    private func convertMagneticFieldStrength(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let amperePerMeterValues: [String: Double] = [
+    private func convertMagneticFieldStrength(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let amperePerMeterValues: [String: Decimal] = [
             "ampere/meter": 1,
             "ampere turn/meter": 1,
-            "kiloampere/meter": 1e3,
-            "oersted": 79.5774715459
+            "kiloampere/meter": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "oersted": Decimal(string: "79.5774715459")!
         ]
 
         guard let fromValue = amperePerMeterValues[fromUnit.lowercased()], let toValue = amperePerMeterValues[toUnit.lowercased()] else {
@@ -59,21 +59,21 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         return amperePerMeter / toValue
     }
     
-    private func convertMagneticFlux(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let weberValues: [String: Double] = [
+    private func convertMagneticFlux(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let weberValues: [String: Decimal] = [
             "weber": 1,
-            "milliweber": 1e-3,
-            "microweber": 1e-6,
+            "milliweber": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microweber": Decimal(sign: .minus, exponent: 6, significand: 1),
             "volt second": 1,
-            "unit pole": 1.256637061436e-7,
-            "megaline": 0.01,
-            "kiloline": 1e-5,
-            "line": 1e-8,
-            "maxwell": 1e-8,
+            "unit pole": Decimal(string: "1.256637061436e-7")!,
+            "megaline": Decimal(string: "0.01")!,
+            "kiloline": Decimal(sign: .minus, exponent: 5, significand: 1),
+            "line": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "maxwell": Decimal(sign: .minus, exponent: 8, significand: 1),
             "tesla square meter": 1,
-            "tesla square centimeter": 1e-4,
-            "gauss square centimeter": 1e-8,
-            "Magnetic flux quantum": 2.06783461e-15
+            "tesla square centimeter": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "gauss square centimeter": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "Magnetic flux quantum": Decimal(string: "2.06783461e-15")!
         ]
 
         guard let fromValue = weberValues[fromUnit.lowercased()], let toValue = weberValues[toUnit.lowercased()] else {
@@ -84,19 +84,19 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         return webers / toValue
     }
     
-    private func convertMagneticFluxDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let teslaValues: [String: Double] = [
+    private func convertMagneticFluxDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let teslaValues: [String: Decimal] = [
             "tesla": 1,
             "weber/square meter": 1,
-            "weber/square centimeter": 1e4,
-            "weber/square inch": 1550.0031000062,
+            "weber/square centimeter": Decimal(sign: .plus, exponent: 4, significand: 1),
+            "weber/square inch": Decimal(string: "1550.0031000062")!,
             "maxwell/square meter": 1,
-            "maxwell/square centimeter": 1e-4,
-            "maxwell/square inch": 1.55e-5,
-            "gauss": 1e-4,
-            "line/square centimeter": 1e-4,
-            "line/square inch": 1.55e-5,
-            "gamma": 1e-9
+            "maxwell/square centimeter": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "maxwell/square inch": Decimal(string: "1.55e-5")!,
+            "gauss": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "line/square centimeter": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "line/square inch": Decimal(string: "1.55e-5")!,
+            "gamma": Decimal(sign: .minus, exponent: 9, significand: 1)
         ]
 
         guard let fromValue = teslaValues[fromUnit.lowercased()], let toValue = teslaValues[toUnit.lowercased()] else {

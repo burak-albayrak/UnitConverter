@@ -31,7 +31,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
     case momentOfForce = "Moment of Force"
     case torque = "Torque"
     
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .length:
             return convertLength(value, from: fromUnit, to: toUnit)
@@ -80,636 +80,505 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    private func convertLength(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let meterValues: [String: Double] = [
+    private func convertLength(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let meterValues: [String: Decimal] = [
             "meter": 1,
             "kilometer": 1000,
-            "decimeter": 0.1,
-            "centimeter": 0.01,
-            "millimeter": 0.001,
-            "micrometer": 1e-6,
-            "nanometer": 1e-9,
-            "mile": 1609.344,
-            "yard": 0.9144,
-            "foot": 0.3048,
-            "inch": 0.0254,
-            "light year": 9.46073047258e15,
-            "exameter": 1e18,
-            "petameter": 1e15,
-            "terameter": 1e12,
-            "gigameter": 1e9,
-            "megameter": 1e6,
+            "decimeter": Decimal(string: "0.1")!,
+            "centimeter": Decimal(string: "0.01")!,
+            "millimeter": Decimal(string: "0.001")!,
+            "micrometer": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanometer": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "mile": Decimal(string: "1609.344")!,
+            "yard": Decimal(string: "0.9144")!,
+            "foot": Decimal(string: "0.3048")!,
+            "inch": Decimal(string: "0.0254")!,
+            "light year": Decimal(string: "9.46073047258e15")!,
+            "exameter": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petameter": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terameter": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigameter": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megameter": Decimal(sign: .plus, exponent: 6, significand: 1),
             "hectometer": 100,
             "dekameter": 10,
-            "micron": 1e-6,
-            "picometer": 1e-12,
-            "femtometer": 1e-15,
-            "attometer": 1e-18,
-            "megaparsec": 3.08567758128e22,
-            "kiloparsec": 3.08567758128e19,
-            "parsec": 3.08567758128e16,
+            "micron": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "picometer": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtometer": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attometer": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "megaparsec": Decimal(string: "3.08567758128e22")!,
+            "kiloparsec": Decimal(string: "3.08567758128e19")!,
+            "parsec": Decimal(string: "3.08567758128e16")!,
             "astronomical unit": 149597870691,
-            "league": 4828.032,
-            "nautical league (UK)": 5559.552,
+            "league": Decimal(string: "4828.032")!,
+            "nautical league (UK)": Decimal(string: "5559.552")!,
             "nautical league (int.)": 5556,
-            "league (statute)": 4828.0416560833,
-            "nautical mile (UK)": 1853.184,
+            "league (statute)": Decimal(string: "4828.0416560833")!,
+            "nautical mile (UK)": Decimal(string: "1853.184")!,
             "nautical mile (international)": 1852,
-            "mile (statute)": 1609.3472186944,
-            "mile (US survey)": 1609.3472186944,
-            "mile (Roman)": 1479.804,
-            "kiloyard": 914.4,
-            "furlong": 201.168,
-            "furlong (US survey)": 201.1684023368,
-            "chain": 20.1168,
-            "chain (US survey)": 20.1168402337,
-            "rope": 6.096,
-            "rod": 5.0292,
-            "rod (US survey)": 5.0292100584,
-            "perch": 5.0292,
-            "pole": 5.0292,
-            "fathom": 1.8288,
-            "fathom (US survey)": 1.8288036576,
-            "ell": 1.143,
-            "foot (US survey)": 0.3048006096,
-            "link": 0.201168,
-            "link (US survey)": 0.2011684023,
-            "cubit (UK)": 0.4572,
-            "hand": 0.1016,
-            "span (cloth)": 0.2286,
-            "finger (cloth)": 0.1143,
-            "nail (cloth)": 0.05715,
-            "inch (US survey)": 0.0254000508,
-            "barleycorn": 0.0084666667,
-            "mil": 2.54e-5,
-            "microinch": 2.54e-8,
-            "angstrom": 1e-10,
-            "a.u. of length": 5.2917724900001e-11,
-            "X-unit": 1.00208e-13,
-            "fermi": 1e-15,
-            "arpent": 58.5216,
-            "pica": 0.0042333333,
-            "point": 0.0003527778,
-            "twip": 1.76389e-5,
-            "aln": 0.5937777778,
-            "famn": 1.7813333333,
-            "caliber": 0.000254,
-            "centiinch": 0.000254,
-            "ken": 2.11836,
-            "Russian archin": 0.7112,
-            "Roman actus": 35.47872,
-            "vara de tarea": 2.505456,
-            "vara conuquera": 2.505456,
-            "vara castellana": 0.835152,
-            "cubit (Greek)": 0.462788,
-            "long reed": 3.2004,
-            "reed": 2.7432,
-            "long cubit": 0.5334,
-            "handbreadth": 0.0762,
-            "fingerbreadth": 0.01905,
-            "Planck length": 1.61605e-35,
-            "Electron radius (classical)": 2.81794092e-15,
-            "Bohr radius": 5.2917724900001e-11,
+            "mile (statute)": Decimal(string: "1609.3472186944")!,
+            "mile (US survey)": Decimal(string: "1609.3472186944")!,
+            "mile (Roman)": Decimal(string: "1479.804")!,
+            "kiloyard": Decimal(string: "914.4")!,
+            "furlong": Decimal(string: "201.168")!,
+            "furlong (US survey)": Decimal(string: "201.1684023368")!,
+            "chain": Decimal(string: "20.1168")!,
+            "chain (US survey)": Decimal(string: "20.1168402337")!,
+            "rope": Decimal(string: "6.096")!,
+            "rod": Decimal(string: "5.0292")!,
+            "rod (US survey)": Decimal(string: "5.0292100584")!,
+            "perch": Decimal(string: "5.0292")!,
+            "pole": Decimal(string: "5.0292")!,
+            "fathom": Decimal(string: "1.8288")!,
+            "fathom (US survey)": Decimal(string: "1.8288036576")!,
+            "ell": Decimal(string: "1.143")!,
+            "foot (US survey)": Decimal(string: "0.3048006096")!,
+            "link": Decimal(string: "0.201168")!,
+            "link (US survey)": Decimal(string: "0.2011684023")!,
+            "cubit (UK)": Decimal(string: "0.4572")!,
+            "hand": Decimal(string: "0.1016")!,
+            "span (cloth)": Decimal(string: "0.2286")!,
+            "finger (cloth)": Decimal(string: "0.1143")!,
+            "nail (cloth)": Decimal(string: "0.05715")!,
+            "inch (US survey)": Decimal(string: "0.0254000508")!,
+            "barleycorn": Decimal(string: "0.0084666667")!,
+            "mil": Decimal(string: "2.54e-5")!,
+            "microinch": Decimal(string: "2.54e-8")!,
+            "angstrom": Decimal(sign: .minus, exponent: 10, significand: 1),
+            "a.u. of length": Decimal(string: "5.2917724900001e-11")!,
+            "X-unit": Decimal(string: "1.00208e-13")!,
+            "fermi": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "arpent": Decimal(string: "58.5216")!,
+            "pica": Decimal(string: "0.0042333333")!,
+            "point": Decimal(string: "0.0003527778")!,
+            "twip": Decimal(string: "1.76389e-5")!,
+            "aln": Decimal(string: "0.5937777778")!,
+            "famn": Decimal(string: "1.7813333333")!,
+            "caliber": Decimal(string: "0.000254")!,
+            "centiinch": Decimal(string: "0.000254")!,
+            "ken": Decimal(string: "2.11836")!,
+            "Russian archin": Decimal(string: "0.7112")!,
+            "Roman actus": Decimal(string: "35.47872")!,
+            "vara de tarea": Decimal(string: "2.505456")!,
+            "vara conuquera": Decimal(string: "2.505456")!,
+            "vara castellana": Decimal(string: "0.835152")!,
+            "cubit (Greek)": Decimal(string: "0.462788")!,
+            "long reed": Decimal(string: "3.2004")!,
+            "reed": Decimal(string: "2.7432")!,
+            "long cubit": Decimal(string: "0.5334")!,
+            "handbreadth": Decimal(string: "0.0762")!,
+            "fingerbreadth": Decimal(string: "0.01905")!,
+            "Planck length": Decimal(string: "1.61605e-35")!,
+            "Electron radius (classical)": Decimal(string: "2.81794092e-15")!,
+            "Bohr radius": Decimal(string: "5.2917724900001e-11")!,
             "Earth's equatorial radius": 6378160,
-            "Earth's polar radius": 6356776.9999999,
+            "Earth's polar radius": Decimal(string: "6356776.9999999")!,
             "Earth's distance from sun": 149600000000,
             "Sun's radius": 696000000
         ]
-        
+
         guard let fromValue = meterValues[fromUnit.lowercased()], let toValue = meterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
-        
+
         let meters = value * fromValue
         return meters / toValue
     }
     
-    private func convertMass(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let kilogramValues: [String: Double] = [
+    private func convertMass(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let kilogramValues: [String: Decimal] = [
             "kilogram": 1,
-            "gram": 0.001,
-            "milligram": 1e-6,
+            "gram": Decimal(string: "0.001")!,
+            "milligram": Decimal(sign: .minus, exponent: 6, significand: 1),
             "ton (metric)": 1000,
-            "pound": 0.45359237,
-            "ounce": 0.0283495231,
-            "carat": 0.0002,
-            "ton (short)": 907.18474,
-            "ton (long)": 1016.0469088,
-            "Atomic mass unit": 1.6605402e-27,
-            "exagram": 1e15,
-            "petagram": 1e12,
-            "teragram": 1e9,
-            "gigagram": 1e6,
+            "pound": Decimal(string: "0.45359237")!,
+            "ounce": Decimal(string: "0.0283495231")!,
+            "carat": Decimal(string: "0.0002")!,
+            "ton (short)": Decimal(string: "907.18474")!,
+            "ton (long)": Decimal(string: "1016.0469088")!,
+            "Atomic mass unit": Decimal(string: "1.6605402e-27")!,
+            "exagram": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "petagram": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "teragram": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "gigagram": Decimal(sign: .plus, exponent: 6, significand: 1),
             "megagram": 1000,
-            "hectogram": 0.1,
-            "dekagram": 0.01,
-            "decigram": 1e-4,
-            "centigram": 1e-5,
-            "microgram": 1e-9,
-            "nanogram": 1e-12,
-            "picogram": 1e-15,
-            "femtogram": 1e-18,
-            "attogram": 1e-21,
-            "dalton": 1.6605300000013e-27,
-            "kilogram-force square second/meter": 9.80665,
-            "kilopound": 453.59237,
-            "kip": 453.59237,
-            "slug": 14.5939029372,
-            "pound-force square second/foot": 14.5939029372,
-            "pound (troy or apothecary)": 0.3732417216,
-            "poundal": 0.0140867196,
-            "ton (assay) (US)": 0.02916667,
-            "ton (assay) (UK)": 0.0326666667,
-            "kiloton (metric)": 1e6,
+            "hectogram": Decimal(string: "0.1")!,
+            "dekagram": Decimal(string: "0.01")!,
+            "decigram": Decimal(string: "0.0001")!,
+            "centigram": Decimal(sign: .minus, exponent: 5, significand: 1),
+            "microgram": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "nanogram": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "picogram": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "femtogram": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "attogram": Decimal(sign: .minus, exponent: 21, significand: 1),
+            "dalton": Decimal(string: "1.6605300000013e-27")!,
+            "kilogram-force square second/meter": Decimal(string: "9.80665")!,
+            "kilopound": Decimal(string: "453.59237")!,
+            "kip": Decimal(string: "453.59237")!,
+            "slug": Decimal(string: "14.5939029372")!,
+            "pound-force square second/foot": Decimal(string: "14.5939029372")!,
+            "pound (troy or apothecary)": Decimal(string: "0.3732417216")!,
+            "poundal": Decimal(string: "0.0140867196")!,
+            "ton (assay) (US)": Decimal(string: "0.02916667")!,
+            "ton (assay) (UK)": Decimal(string: "0.0326666667")!,
+            "kiloton (metric)": Decimal(sign: .plus, exponent: 6, significand: 1),
             "quintal (metric)": 100,
-            "hundredweight (US)": 45.359237,
-            "hundredweight (UK)": 50.80234544,
-            "quarter (US)": 11.33980925,
-            "quarter (UK)": 12.70058636,
-            "stone (US)": 5.669904625,
-            "stone (UK)": 6.35029318,
+            "hundredweight (US)": Decimal(string: "45.359237")!,
+            "hundredweight (UK)": Decimal(string: "50.80234544")!,
+            "quarter (US)": Decimal(string: "11.33980925")!,
+            "quarter (UK)": Decimal(string: "12.70058636")!,
+            "stone (US)": Decimal(string: "5.669904625")!,
+            "stone (UK)": Decimal(string: "6.35029318")!,
             "tonne": 1000,
-            "pennyweight": 0.0015551738,
-            "scruple (apothecary)": 0.0012959782,
-            "grain": 6.47989e-5,
-            "gamma": 1e-9,
-            "talent (Biblical Hebrew)": 34.2,
-            "mina (Biblical Hebrew)": 0.57,
-            "shekel (Biblical Hebrew)": 0.0114,
-            "bekan (Biblical Hebrew)": 0.0057,
-            "gerah (Biblical Hebrew)": 0.00057,
-            "talent (Biblical Greek)": 20.4,
-            "mina (Biblical Greek)": 0.34,
-            "tetradrachma (Biblical Greek)": 0.0136,
-            "didrachma (Biblical Greek)": 0.0068,
-            "drachma (Biblical Greek)": 0.0034,
-            "denarius (Biblical Roman)": 0.00385,
-            "assarion (Biblical Roman)": 0.000240625,
-            "quadrans (Biblical Roman)": 6.01563e-5,
-            "lepton (Biblical Roman)": 3.00781e-5,
-            "Planck mass": 2.17671e-8,
-            "Electron mass (rest)": 9.1093897e-31,
-            "Muon mass": 1.8835327e-28,
-            "Proton mass": 1.6726231e-27,
-            "Neutron mass": 1.6749286e-27,
-            "Deuteron mass": 3.343586e-27,
-            "Earth's mass": 5.9760000000002e24,
-            "Sun's mass": 2e30
+            "pennyweight": Decimal(string: "0.0015551738")!,
+            "scruple (apothecary)": Decimal(string: "0.0012959782")!,
+            "grain": Decimal(string: "6.47989e-5")!,
+            "gamma": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "talent (Biblical Hebrew)": Decimal(string: "34.2")!,
+            "mina (Biblical Hebrew)": Decimal(string: "0.57")!,
+            "shekel (Biblical Hebrew)": Decimal(string: "0.0114")!,
+            "bekan (Biblical Hebrew)": Decimal(string: "0.0057")!,
+            "gerah (Biblical Hebrew)": Decimal(string: "0.00057")!,
+            "talent (Biblical Greek)": Decimal(string: "20.4")!,
+            "mina (Biblical Greek)": Decimal(string: "0.34")!,
+            "tetradrachma (Biblical Greek)": Decimal(string: "0.0136")!,
+            "didrachma (Biblical Greek)": Decimal(string: "0.0068")!,
+            "drachma (Biblical Greek)": Decimal(string: "0.0034")!,
+            "denarius (Biblical Roman)": Decimal(string: "0.00385")!,
+            "assarion (Biblical Roman)": Decimal(string: "0.000240625")!,
+            "quadrans (Biblical Roman)": Decimal(string: "6.01563e-5")!,
+            "lepton (Biblical Roman)": Decimal(string: "3.00781e-5")!,
+            "Planck mass": Decimal(string: "2.17671e-8")!,
+            "Electron mass (rest)": Decimal(string: "9.1093897e-31")!,
+            "Muon mass": Decimal(string: "1.8835327e-28")!,
+            "Proton mass": Decimal(string: "1.6726231e-27")!,
+            "Neutron mass": Decimal(string: "1.6749286e-27")!,
+            "Deuteron mass": Decimal(string: "3.343586e-27")!,
+            "Earth's mass": Decimal(string: "5.9760000000002e24")!,
+            "Sun's mass": Decimal(sign: .plus, exponent: 30, significand: 2)
         ]
-        
+
         guard let fromValue = kilogramValues[fromUnit.lowercased()], let toValue = kilogramValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
-        
+
         let kilograms = value * fromValue
         return kilograms / toValue
     }
-    
-    private func convertVolume(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let cubicMeterValues: [String: Double] = [
+            
+    private func convertVolume(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let cubicMeterValues: [String: Decimal] = [
             "cubic meter": 1,
-            "cubic kilometer": 1000000000,
-            "cubic centimeter": 1.0E-6,
-            "cubic millimeter": 1.0E-9,
-            "liter": 0.001,
-            "milliliter": 1.0E-6,
-            "gallon (US)": 0.0037854118,
-            "quart (US)": 0.0009463529,
-            "pint (US)": 0.0004731765,
-            "cup (US)": 0.0002365882,
-            "tablespoon (US)": 1.47868E-5,
-            "teaspoon (US)": 4.92892159375E-6,
-            "cubic mile": 4168181825.4406,
-            "cubic yard": 0.764554858,
-            "cubic foot": 0.0283168466,
-            "cubic inch": 1.63871E-5,
-            "cubic decimeter": 0.001,
-            "exaliter": 1.0E+15,
-            "petaliter": 1000000000000,
-            "teraliter": 1000000000,
-            "gigaliter": 1000000,
+            "cubic kilometer": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "cubic centimeter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "cubic millimeter": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "liter": Decimal(string: "0.001")!,
+            "milliliter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "gallon (US)": Decimal(string: "0.0037854118")!,
+            "quart (US)": Decimal(string: "0.0009463529")!,
+            "pint (US)": Decimal(string: "0.0004731765")!,
+            "cup (US)": Decimal(string: "0.0002365882")!,
+            "tablespoon (US)": Decimal(string: "1.47868e-5")!,
+            "teaspoon (US)": Decimal(string: "4.92892159375e-6")!,
+            "cubic mile": Decimal(string: "4168181825.4406")!,
+            "cubic yard": Decimal(string: "0.764554858")!,
+            "cubic foot": Decimal(string: "0.0283168466")!,
+            "cubic inch": Decimal(string: "1.63871e-5")!,
+            "cubic decimeter": Decimal(string: "0.001")!,
+            "exaliter": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "petaliter": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "teraliter": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "gigaliter": Decimal(sign: .plus, exponent: 6, significand: 1),
             "megaliter": 1000,
             "kiloliter": 1,
-            "hectoliter": 0.1,
-            "dekaliter": 0.01,
-            "deciliter": 0.0001,
-            "centiliter": 1.0E-5,
-            "microliter": 1.0E-9,
-            "nanoliter": 1.0E-12,
-            "picoliter": 1.0E-15,
-            "femtoliter": 1.0E-18,
-            "attoliter": 1.0E-21,
-            "cc": 1.0E-6,
-            "drop": 5.0E-8,
-            "barrel (oil)": 0.1589872949,
-            "barrel (US)": 0.1192404712,
-            "barrel (UK)": 0.16365924,
-            "gallon (UK)": 0.00454609,
-            "quart (UK)": 0.0011365225,
-            "pint (UK)": 0.0005682613,
-            "cup (metric)": 0.00025,
-            "cup (UK)": 0.0002841306,
-            "fluid ounce (US)": 2.95735E-5,
-            "fluid ounce (UK)": 2.84131E-5,
-            "tablespoon (metric)": 1.5E-5,
-            "tablespoon (UK)": 1.77582E-5,
-            "dessertspoon (US)": 9.8578431875E-6,
-            "dessertspoon (UK)": 1.18388E-5,
-            "teaspoon (metric)": 5.0E-6,
-            "teaspoon (UK)": 5.9193880208333E-6,
-            "gill (US)": 0.0001182941,
-            "gill (UK)": 0.0001420653,
-            "minim (US)": 6.1611519921875E-8,
-            "minim (UK)": 5.9193880208333E-8,
-            "ton register": 2.8316846592,
-            "ccf": 2.8316846592,
-            "hundred-cubic foot": 2.8316846592,
-            "acre-foot": 1233.4818375475,
-            "acre-foot (US survey)": 1233.4892384682,
-            "acre-inch": 102.790153129,
+            "hectoliter": Decimal(string: "0.1")!,
+            "dekaliter": Decimal(string: "0.01")!,
+            "deciliter": Decimal(string: "0.0001")!,
+            "centiliter": Decimal(sign: .minus, exponent: 5, significand: 1),
+            "microliter": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "nanoliter": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "picoliter": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "femtoliter": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "attoliter": Decimal(sign: .minus, exponent: 21, significand: 1),
+            "cc": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "drop": Decimal(sign: .minus, exponent: 8, significand: 5),
+            "barrel (oil)": Decimal(string: "0.1589872949")!,
+            "barrel (US)": Decimal(string: "0.1192404712")!,
+            "barrel (UK)": Decimal(string: "0.16365924")!,
+            "gallon (UK)": Decimal(string: "0.00454609")!,
+            "quart (UK)": Decimal(string: "0.0011365225")!,
+            "pint (UK)": Decimal(string: "0.0005682613")!,
+            "cup (metric)": Decimal(string: "0.00025")!,
+            "cup (UK)": Decimal(string: "0.0002841306")!,
+            "fluid ounce (US)": Decimal(string: "2.95735e-5")!,
+            "fluid ounce (UK)": Decimal(string: "2.84131e-5")!,
+            "tablespoon (metric)": Decimal(string: "1.5e-5")!,
+            "tablespoon (UK)": Decimal(string: "1.77582e-5")!,
+            "dessertspoon (US)": Decimal(string: "9.8578431875e-6")!,
+            "dessertspoon (UK)": Decimal(string: "1.18388e-5")!,
+            "teaspoon (metric)": Decimal(string: "5e-6")!,
+            "teaspoon (UK)": Decimal(string: "5.9193880208333e-6")!,
+            "gill (US)": Decimal(string: "0.0001182941")!,
+            "gill (UK)": Decimal(string: "0.0001420653")!,
+            "minim (US)": Decimal(string: "6.1611519921875e-8")!,
+            "minim (UK)": Decimal(string: "5.9193880208333e-8")!,
+            "ton register": Decimal(string: "2.8316846592")!,
+            "ccf": Decimal(string: "2.8316846592")!,
+            "hundred-cubic foot": Decimal(string: "2.8316846592")!,
+            "acre-foot": Decimal(string: "1233.4818375475")!,
+            "acre-foot (US survey)": Decimal(string: "1233.4892384682")!,
+            "acre-inch": Decimal(string: "102.790153129")!,
             "dekastere": 10,
             "stere": 1,
-            "decistere": 0.1,
-            "cord": 3.6245563638,
-            "tun": 0.9539237696,
-            "hogshead": 0.2384809424,
-            "board foot": 0.0023597372,
-            "dram": 3.6966911953125E-6,
-            "cor (Biblical)": 0.22,
-            "homer (Biblical)": 0.22,
-            "bath (Biblical)": 0.022,
-            "hin (Biblical)": 0.0036666667,
-            "cab (Biblical)": 0.0012222222,
-            "log (Biblical)": 0.0003055556,
-            "Taza (Spanish)": 0.0002365882,
-            "Earth's volume": 1.083E+21
+            "decistere": Decimal(string: "0.1")!,
+            "cord": Decimal(string: "3.6245563638")!,
+            "tun": Decimal(string: "0.9539237696")!,
+            "hogshead": Decimal(string: "0.2384809424")!,
+            "board foot": Decimal(string: "0.0023597372")!,
+            "dram": Decimal(string: "3.6966911953125e-6")!,
+            "cor (Biblical)": Decimal(string: "0.22")!,
+            "homer (Biblical)": Decimal(string: "0.22")!,
+            "bath (Biblical)": Decimal(string: "0.022")!,
+            "hin (Biblical)": Decimal(string: "0.0036666667")!,
+            "cab (Biblical)": Decimal(string: "0.0012222222")!,
+            "log (Biblical)": Decimal(string: "0.0003055556")!,
+            "Taza (Spanish)": Decimal(string: "0.0002365882")!,
+            "Earth's volume": Decimal(string: "1.083e21")!
         ]
         
         guard let fromValue = cubicMeterValues[fromUnit.lowercased()], let toValue = cubicMeterValues[toUnit.lowercased()] else {
             return value
         }
-        
-        let cubicMeter = value * fromValue
-        return cubicMeter / toValue
+
+        let cubicMeters = value * fromValue
+        return cubicMeters / toValue
     }
-    
-    private func convertTemperature(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        // Önce giriş değerini Kelvin'e çevirelim
-        let kelvin: Double
+            
+    private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let kelvin: Decimal
         switch fromUnit.lowercased() {
         case "kelvin", "k":
             kelvin = value
         case "celsius", "°c":
-            kelvin = value + 273.15
+            kelvin = value + Decimal(273.15)
         case "fahrenheit", "°f":
-            kelvin = (value - 32) * 5/9 + 273.15
+            kelvin = (value - 32) * 5/9 + Decimal(273.15)
         case "rankine", "°r":
             kelvin = value * 5/9
         case "reaumur", "°re":
-            kelvin = value * 5/4 + 273.15
+            kelvin = value * 5/4 + Decimal(273.15)
         case "triple point of water":
-            kelvin = 273.16
+            kelvin = Decimal(273.16)
         default:
-            return value // Bilinmeyen birim, orijinal değeri döndür
+            return value
         }
-        
-        // Şimdi Kelvin'i hedef birime çevirelim
+
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
         case "celsius", "°c":
-            return kelvin - 273.15
+            return kelvin - Decimal(273.15)
         case "fahrenheit", "°f":
-            return (kelvin - 273.15) * 9/5 + 32
+            return (kelvin - Decimal(273.15)) * 9/5 + 32
         case "rankine", "°r":
             return kelvin * 9/5
         case "reaumur", "°re":
-            return (kelvin - 273.15) * 4/5
+            return (kelvin - Decimal(273.15)) * 4/5
         case "triple point of water":
-            return kelvin / 273.16
+            return Decimal(273.16)
         default:
-            return value // Bilinmeyen birim, orijinal değeri döndür
+            return value
         }
     }
     
-    private func convertArea(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let squareMeterValues: [String: Double] = [
+    private func convertArea(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let squareMeterValues: [String: Decimal] = [
             "square meter": 1,
-            "square kilometer": 1e6,
-            "square centimeter": 1e-4,
-            "square millimeter": 1e-6,
-            "square micrometer": 1e-12,
-            "hectare": 1e4,
-            "acre": 4046.8564224,
-            "square mile": 2589988.110336,
-            "square yard": 0.83612736,
-            "square foot": 0.09290304,
-            "square inch": 0.00064516,
-            "square hectometer": 1e4,
+            "square kilometer": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "square centimeter": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "square millimeter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "square micrometer": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "hectare": Decimal(sign: .plus, exponent: 4, significand: 1),
+            "acre": Decimal(string: "4046.8564224")!,
+            "square mile": Decimal(string: "2589988.110336")!,
+            "square yard": Decimal(string: "0.83612736")!,
+            "square foot": Decimal(string: "0.09290304")!,
+            "square inch": Decimal(string: "0.00064516")!,
+            "square hectometer": Decimal(sign: .plus, exponent: 4, significand: 1),
             "square dekameter": 100,
-            "square decimeter": 0.01,
-            "square nanometer": 1e-18,
+            "square decimeter": Decimal(string: "0.01")!,
+            "square nanometer": Decimal(sign: .minus, exponent: 18, significand: 1),
             "are": 100,
-            "barn": 1e-28,
-            "square mile (US survey)": 2589998.4703195,
-            "square foot (US survey)": 0.0929034116,
-            "circular inch": 0.0005067075,
-            "township": 93239571.972096,
-            "section": 2589988.110336,
-            "acre (US survey)": 4046.8726098743,
-            "rood": 1011.7141056,
-            "square chain": 404.68564224,
-            "square rod": 25.29285264,
-            "square rod (US survey)": 25.2929538117,
-            "square perch": 25.29285264,
-            "square pole": 25.29285264,
-            "square mil": 6.4516e-10,
-            "circular mil": 5.067074790975e-10,
-            "homestead": 647497.027584,
-            "sabin": 0.09290304,
-            "arpent": 3418.8929236669,
-            "cuerda": 3930.395625,
+            "barn": Decimal(sign: .minus, exponent: 28, significand: 1),
+            "square mile (US survey)": Decimal(string: "2589998.4703195")!,
+            "square foot (US survey)": Decimal(string: "0.0929034116")!,
+            "circular inch": Decimal(string: "0.0005067075")!,
+            "township": Decimal(string: "93239571.972096")!,
+            "section": Decimal(string: "2589988.110336")!,
+            "acre (US survey)": Decimal(string: "4046.8726098743")!,
+            "rood": Decimal(string: "1011.7141056")!,
+            "square chain": Decimal(string: "404.68564224")!,
+            "square rod": Decimal(string: "25.29285264")!,
+            "square rod (US survey)": Decimal(string: "25.2929538117")!,
+            "square perch": Decimal(string: "25.29285264")!,
+            "square pole": Decimal(string: "25.29285264")!,
+            "square mil": Decimal(string: "6.4516e-10")!,
+            "circular mil": Decimal(string: "5.067074790975e-10")!,
+            "homestead": Decimal(string: "647497.027584")!,
+            "sabin": Decimal(string: "0.09290304")!,
+            "arpent": Decimal(string: "3418.8929236669")!,
+            "cuerda": Decimal(string: "3930.395625")!,
             "plaza": 6400,
-            "varas castellanas cuad": 0.698737,
-            "varas conuqueras cuad": 6.288633,
-            "Electron cross section": 6.6524615999999e-29
+            "varas castellanas cuad": Decimal(string: "0.698737")!,
+            "varas conuqueras cuad": Decimal(string: "6.288633")!,
+            "Electron cross section": Decimal(string: "6.6524615999999e-29")!
         ]
-        
+
         guard let fromValue = squareMeterValues[fromUnit.lowercased()], let toValue = squareMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
-        
+
         let squareMeters = value * fromValue
         return squareMeters / toValue
     }
-    
-    private func convertPressure(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let pascalValues: [String: Double] = [
+            
+    private func convertPressure(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let pascalValues: [String: Decimal] = [
             "pascal": 1,
             "kilopascal": 1000,
             "bar": 100000,
-            "psi": 6894.7572931783,
-            "ksi": 6894757.2931783,
+            "psi": Decimal(string: "6894.7572931783")!,
+            "ksi": Decimal(string: "6894757.2931783")!,
             "Standard atmosphere": 101325,
-            "exapascal": 1e18,
-            "petapascal": 1e15,
-            "terapascal": 1e12,
-            "gigapascal": 1e9,
-            "megapascal": 1e6,
+            "exapascal": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petapascal": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terapascal": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigapascal": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megapascal": Decimal(sign: .plus, exponent: 6, significand: 1),
             "hectopascal": 100,
             "dekapascal": 10,
-            "decipascal": 0.1,
-            "centipascal": 0.01,
-            "millipascal": 0.001,
-            "micropascal": 1e-6,
-            "nanopascal": 1e-9,
-            "picopascal": 1e-12,
-            "femtopascal": 1e-15,
-            "attopascal": 1e-18,
+            "decipascal": Decimal(string: "0.1")!,
+            "centipascal": Decimal(string: "0.01")!,
+            "millipascal": Decimal(string: "0.001")!,
+            "micropascal": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanopascal": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picopascal": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtopascal": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attopascal": Decimal(sign: .minus, exponent: 18, significand: 1),
             "newton/square meter": 1,
             "newton/square centimeter": 10000,
             "newton/square millimeter": 1000000,
             "kilonewton/square meter": 1000,
             "millibar": 100,
-            "microbar": 0.1,
-            "dyne/square centimeter": 0.1,
-            "kilogram-force/square meter": 9.80665,
-            "kilogram-force/sq. cm": 98066.5,
+            "microbar": Decimal(string: "0.1")!,
+            "dyne/square centimeter": Decimal(string: "0.1")!,
+            "kilogram-force/square meter": Decimal(string: "9.80665")!,
+            "kilogram-force/sq. cm": Decimal(string: "98066.5")!,
             "kilogram-force/sq. millimeter": 9806650,
-            "gram-force/sq. centimeter": 98.0665,
-            "ton-force (short)/sq. foot": 95760.517960678,
-            "ton-force (short)/sq. inch": 13789514.586338,
-            "ton-force (long)/square foot": 107251.78011595,
-            "ton-force (long)/square inch": 15444256.336697,
-            "kip-force/square inch": 6894757.2931783,
-            "pound-force/square foot": 47.8802589804,
-            "pound-force/square inch": 6894.7572931783,
-            "poundal/square foot": 1.4881639436,
-            "torr": 133.3223684211,
-            "centimeter mercury (0°C)": 1333.22,
-            "millimeter mercury (0°C)": 133.322,
-            "inch mercury (32°F)": 3386.38,
-            "inch mercury (60°F)": 3376.85,
-            "centimeter water (4°C)": 98.0638,
-            "millimeter water (4°C)": 9.80638,
-            "inch water (4°C)": 249.082,
-            "foot water (4°C)": 2988.98,
-            "inch water (60°F)": 248.843,
-            "foot water (60°F)": 2986.116,
-            "atmosphere technical": 98066.500000003
+            "gram-force/sq. centimeter": Decimal(string: "98.0665")!,
+            "ton-force (short)/sq. foot": Decimal(string: "95760.517960678")!,
+            "ton-force (short)/sq. inch": Decimal(string: "13789514.586338")!,
+            "ton-force (long)/square foot": Decimal(string: "107251.78011595")!,
+            "ton-force (long)/square inch": Decimal(string: "15444256.336697")!,
+            "kip-force/square inch": Decimal(string: "6894757.2931783")!,
+            "pound-force/square foot": Decimal(string: "47.8802589804")!,
+            "pound-force/square inch": Decimal(string: "6894.7572931783")!,
+            "poundal/square foot": Decimal(string: "1.4881639436")!,
+            "torr": Decimal(string: "133.3223684211")!,
+            "centimeter mercury (0°C)": Decimal(string: "1333.22")!,
+            "millimeter mercury (0°C)": Decimal(string: "133.322")!,
+            "inch mercury (32°F)": Decimal(string: "3386.38")!,
+            "inch mercury (60°F)": Decimal(string: "3376.85")!,
+            "centimeter water (4°C)": Decimal(string: "98.0638")!,
+            "millimeter water (4°C)": Decimal(string: "9.80638")!,
+            "inch water (4°C)": Decimal(string: "249.082")!,
+            "foot water (4°C)": Decimal(string: "2988.98")!,
+            "inch water (60°F)": Decimal(string: "248.843")!,
+            "foot water (60°F)": Decimal(string: "2986.116")!,
+            "atmosphere technical": Decimal(string: "98066.500000003")!
         ]
-        
+
         guard let fromValue = pascalValues[fromUnit.lowercased()], let toValue = pascalValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
-        
+
         let pascals = value * fromValue
         return pascals / toValue
     }
-    
-    private func convertEnergy(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let jouleValues: [String: Double] = [
-            "joule": 1,
-            "kilojoule": 1000,
-            "kilowatt-hour": 3600000,
-            "watt-hour": 3600,
-            "calorie (nutritional)": 4186.8,
-            "horsepower (metric) hour": 2647795.5,
-            "Btu (IT)": 1055.05585262,
-            "Btu (th)": 1054.3499999744,
-            "gigajoule": 1e9,
-            "megajoule": 1e6,
-            "millijoule": 0.001,
-            "microjoule": 1e-6,
-            "nanojoule": 1e-9,
-            "attojoule": 1e-18,
-            "megaelectron-volt": 1.6021766339999e-13,
-            "kiloelectron-volt": 1.6021766339999e-16,
-            "electron-volt": 1.6021766339999e-19,
-            "erg": 1e-7,
-            "gigawatt-hour": 3.6e12,
-            "megawatt-hour": 3.6e9,
-            "kilowatt-second": 1000,
-            "watt-second": 1,
-            "newton meter": 1,
-            "horsepower hour": 2684519.5368856,
-            "kilocalorie (IT)": 4186.8,
-            "kilocalorie (th)": 4184,
-            "calorie (IT)": 4.1868,
-            "calorie (th)": 4.184,
-            "mega Btu (IT)": 1055055852.62,
-            "ton-hour (refrigeration)": 12660670.23144,
-            "fuel oil equivalent @kiloliter": 40197627984.822,
-            "fuel oil equivalent @barrel (US)": 6383087908.3509,
-            "gigaton": 4.184e18,
-            "megaton": 4.184e15,
-            "kiloton": 4.184e12,
-            "ton (explosives)": 4.184e9,
-            "dyne centimeter": 1e-7,
-            "gram-force meter": 0.00980665,
-            "gram-force centimeter": 9.80665e-5,
-            "kilogram-force centimeter": 0.0980665,
-            "kilogram-force meter": 9.8066499997,
-            "kilopond meter": 9.8066499997,
-            "pound-force foot": 1.3558179483,
-            "pound-force inch": 0.112984829,
-            "ounce-force inch": 0.0070615518,
-            "foot-pound": 1.3558179483,
-            "inch-pound": 0.112984829,
-            "inch-ounce": 0.0070615518,
-            "poundal foot": 0.04214011,
-            "therm": 105505600,
-            "therm (EC)": 105505600,
-            "therm (US)": 105480400,
-            "Hartree energy": 4.3597482e-18,
-            "Rydberg constant": 2.1798741e-18
+            
+    private func convertAngle(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let degreeValues: [String: Decimal] = [
+            "degree": 1,
+            "radian": Decimal(string: "57.2957795131")!,
+            "grad": Decimal(string: "0.9")!,
+            "minute": Decimal(1) / 60,
+            "second": Decimal(1) / 3600,
+            "gon": Decimal(string: "0.9")!,
+            "sign": 30,
+            "mil": Decimal(string: "0.05625")!,
+            "revolution": 360,
+            "circle": 360,
+            "turn": 360,
+            "quadrant": 90,
+            "right angle": 90,
+            "sextant": 60
         ]
-        
-        guard let fromValue = jouleValues[fromUnit.lowercased()], let toValue = jouleValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+
+        guard let fromValue = degreeValues[fromUnit.lowercased()], let toValue = degreeValues[toUnit.lowercased()] else {
+            return value
         }
-        
-        let joules = value * fromValue
-        return joules / toValue
+
+        let degrees = value * fromValue
+        return degrees / toValue
     }
     
-    private func convertPower(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let wattValues: [String: Double] = [
-            "watt": 1,
-            "exawatt": 1e18,
-            "petawatt": 1e15,
-            "terawatt": 1e12,
-            "gigawatt": 1e9,
-            "megawatt": 1e6,
-            "kilowatt": 1e3,
-            "hectowatt": 1e2,
-            "dekawatt": 1e1,
-            "deciwatt": 1e-1,
-            "centiwatt": 1e-2,
-            "milliwatt": 1e-3,
-            "microwatt": 1e-6,
-            "nanowatt": 1e-9,
-            "picowatt": 1e-12,
-            "femtowatt": 1e-15,
-            "attowatt": 1e-18,
-            "horsepower": 745.6998715823,
-            "horsepower (550 ft*lbf/s)": 745.6998715823,
-            "horsepower (metric)": 735.49875,
-            "horsepower (boiler)": 9809.5000000002,
-            "horsepower (electric)": 746,
-            "horsepower (water)": 746.043,
-            "pferdestarke (ps)": 735.49875,
-            "Btu (IT)/hour": 0.2930710702,
-            "Btu (IT)/minute": 17.5842642103,
-            "Btu (IT)/second": 1055.05585262,
-            "Btu (th)/hour": 0.292875,
-            "Btu (th)/minute": 17.5724999996,
-            "Btu (th)/second": 1054.3499999744,
-            "MBtu (IT)/hour": 293071.07017222,
-            "MBH": 293.0710701722,
-            "ton (refrigeration)": 3516.8528420667,
-            "kilocalorie (IT)/hour": 1.163,
-            "kilocalorie (IT)/minute": 69.78,
-            "kilocalorie (IT)/second": 4186.8,
-            "kilocalorie (th)/hour": 1.1622222222,
-            "kilocalorie (th)/minute": 69.7333333333,
-            "kilocalorie (th)/second": 4184,
-            "calorie (IT)/hour": 0.001163,
-            "calorie (IT)/minute": 0.06978,
-            "calorie (IT)/second": 4.1868,
-            "calorie (th)/hour": 0.0011622222,
-            "calorie (th)/minute": 0.0697333333,
-            "calorie (th)/second": 4.184,
-            "foot pound-force/hour": 0.0003766161,
-            "foot pound-force/minute": 0.0225969658,
-            "foot pound-force/second": 1.3558179483,
-            "pound-foot/hour": 0.0003766161,
-            "pound-foot/minute": 0.0225969658,
-            "pound-foot/second": 1.3558179483,
-            "erg/second": 1e-7,
-            "kilovolt ampere": 1000,
-            "volt ampere": 1,
-            "newton meter/second": 1,
-            "joule/second": 1,
-            "exajoule/second": 1e18,
-            "petajoule/second": 1e15,
-            "terajoule/second": 1e12,
-            "gigajoule/second": 1e9,
-            "megajoule/second": 1e6,
-            "kilojoule/second": 1e3,
-            "hectojoule/second": 1e2,
-            "dekajoule/second": 1e1,
-            "decijoule/second": 1e-1,
-            "centijoule/second": 1e-2,
-            "millijoule/second": 1e-3,
-            "microjoule/second": 1e-6,
-            "nanojoule/second": 1e-9,
-            "picojoule/second": 1e-12,
-            "femtojoule/second": 1e-15,
-            "attojoule/second": 1e-18,
-            "joule/hour": 0.0002777778,
-            "joule/minute": 0.0166666667,
-            "kilojoule/hour": 0.2777777778,
-            "kilojoule/minute": 16.6666666667
+    private func convertSpeed(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let meterPerSecondValues: [String: Decimal] = [
+            "meter/second": 1,
+            "kilometer/hour": Decimal(string: "0.2777777778")!,
+            "mile/hour": Decimal(string: "0.44704")!,
+            "meter/hour": Decimal(string: "0.0002777778")!,
+            "meter/minute": Decimal(string: "0.0166666667")!,
+            "kilometer/minute": Decimal(string: "16.6666666667")!,
+            "kilometer/second": 1000,
+            "centimeter/hour": Decimal(string: "2.7777777777778E-6")!,
+            "centimeter/minute": Decimal(string: "0.0001666667")!,
+            "centimeter/second": Decimal(string: "0.01")!,
+            "millimeter/hour": Decimal(string: "2.7777777777778E-7")!,
+            "millimeter/minute": Decimal(string: "1.66667E-5")!,
+            "millimeter/second": Decimal(string: "0.001")!,
+            "foot/hour": Decimal(string: "8.46667E-5")!,
+            "foot/minute": Decimal(string: "0.00508")!,
+            "foot/second": Decimal(string: "0.3048")!,
+            "yard/hour": Decimal(string: "0.000254")!,
+            "yard/minute": Decimal(string: "0.01524")!,
+            "yard/second": Decimal(string: "0.9144")!,
+            "mile/minute": Decimal(string: "26.8224")!,
+            "mile/second": Decimal(string: "1609.344")!,
+            "knot": Decimal(string: "0.5144444444")!,
+            "knot (UK)": Decimal(string: "0.5147733333")!,
+            "Velocity of light in vacuum": 299792458,
+            "Cosmic velocity - first": Decimal(string: "7899.9999999999")!,
+            "Cosmic velocity - second": 11200,
+            "Cosmic velocity - third": 16670,
+            "Earth's velocity": 29765,
+            "Velocity of sound in pure water": Decimal(string: "1482.6999999998")!,
+            "Velocity of sound in sea water (20°C, 10 meter deep)": Decimal(string: "1521.6")!,
+            "Mach (20°C, 1 atm)": Decimal(string: "343.6")!,
+            "Mach (SI standard)": Decimal(string: "295.0464000003")!
         ]
         
-        guard let fromValue = wattValues[fromUnit.lowercased()], let toValue = wattValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = meterPerSecondValues[fromUnit.lowercased()], let toValue = meterPerSecondValues[toUnit.lowercased()] else {
+            return value
         }
-        
-        let watts = value * fromValue
-        return watts / toValue
+
+        let meterPerSecond = value * fromValue
+        return meterPerSecond / toValue
     }
-    
-    private func convertForce(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let newtonValues: [String: Double] = [
-            "newton": 1,
-            "kilonewton": 1000,
-            "gram-force": 0.00980665,
-            "kilogram-force": 9.80665,
-            "ton-force (metric)": 9806.65,
-            "exanewton": 1e18,
-            "petanewton": 1e15,
-            "teranewton": 1e12,
-            "giganewton": 1e9,
-            "meganewton": 1e6,
-            "hectonewton": 100,
-            "dekanewton": 10,
-            "decinewton": 0.1,
-            "centinewton": 0.01,
-            "millinewton": 0.001,
-            "micronewton": 1e-6,
-            "nanonewton": 1e-9,
-            "piconewton": 1e-12,
-            "femtonewton": 1e-15,
-            "attonewton": 1e-18,
-            "dyne": 1e-5,
-            "joule/meter": 1,
-            "joule/centimeter": 0.01,
-            "ton-force (short)": 8896.443230521,
-            "ton-force (long)": 9964.0164181707,
-            "kip-force": 4448.2216152548,
-            "kilopound-force": 4448.2216152548,
-            "pound-force": 4.4482216153,
-            "ounce-force": 0.278013851,
-            "poundal": 0.1382549544,
-            "pound foot/square second": 0.1382549544,
-            "pond": 0.00980665,
-            "kilopond": 9.80665
-        ]
         
-        guard let fromValue = newtonValues[fromUnit.lowercased()], let toValue = newtonValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
-        }
-        
-        let newtons = value * fromValue
-        return newtons / toValue
-    }
-    
-    private func convertDuration(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let secondValues: [String: Double] = [
+    private func convertDuration(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let secondValues: [String: Decimal] = [
             "second": 1,
-            "millisecond": 0.001,
+            "millisecond": Decimal(string: "0.001")!,
             "minute": 60,
             "hour": 3600,
             "day": 86400,
@@ -719,411 +588,539 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "decade": 315576000,
             "century": 3155760000,
             "millennium": 31557600000,
-            "microsecond": 1e-6,
-            "nanosecond": 1e-9,
-            "picosecond": 1e-12,
-            "femtosecond": 1e-15,
-            "attosecond": 1e-18,
-            "shake": 1e-8,
-            "month (synodic)": 2551443.84,
+            "microsecond": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanosecond": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picosecond": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtosecond": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attosecond": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "shake": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "month (synodic)": Decimal(string: "2551443.84")!,
             "year (Julian)": 31557600,
             "year (leap)": 31622400,
             "year (tropical)": 31556930,
-            "year (sidereal)": 31558149.54,
-            "day (sidereal)": 86164.09,
-            "hour (sidereal)": 3590.1704166667,
-            "minute (sidereal)": 59.8361736111,
-            "second (sidereal)": 0.9972695602,
+            "year (sidereal)": Decimal(string: "31558149.54")!,
+            "day (sidereal)": Decimal(string: "86164.09")!,
+            "hour (sidereal)": Decimal(string: "3590.1704166667")!,
+            "minute (sidereal)": Decimal(string: "59.8361736111")!,
+            "second (sidereal)": Decimal(string: "0.9972695602")!,
             "fortnight": 1209600,
             "septennial": 220752000,
             "octennial": 252288000,
             "novennial": 283824000,
             "quindecennial": 473040000,
             "quinquennial": 157680000,
-            "Planck time": 5.39056e-44
+            "Planck time": Decimal(string: "5.39056e-44")!
         ]
         
         guard let fromValue = secondValues[fromUnit.lowercased()], let toValue = secondValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
-        
+
         let seconds = value * fromValue
         return seconds / toValue
     }
     
-    private func convertSpeed(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let meterPerSecondValues: [String: Double] = [
-            "meter/second": 1,
-            "kilometer/hour": 0.2777777778,
-            "mile/hour": 0.44704,
-            "meter/hour": 0.0002777778,
-            "meter/minute": 0.0166666667,
-            "kilometer/minute": 16.6666666667,
-            "kilometer/second": 1000,
-            "centimeter/hour": 2.7777777777778E-6,
-            "centimeter/minute": 0.0001666667,
-            "centimeter/second": 0.01,
-            "millimeter/hour": 2.7777777777778E-7,
-            "millimeter/minute": 1.66667E-5,
-            "millimeter/second": 0.001,
-            "foot/hour": 8.46667E-5,
-            "foot/minute": 0.00508,
-            "foot/second": 0.3048,
-            "yard/hour": 0.000254,
-            "yard/minute": 0.01524,
-            "yard/second": 0.9144,
-            "mile/minute": 26.8224,
-            "mile/second": 1609.344,
-            "knot": 0.5144444444,
-            "knot (UK)": 0.5147733333,
-            "Velocity of light in vacuum": 299792458,
-            "Cosmic velocity - first": 7899.9999999999,
-            "Cosmic velocity - second": 11200,
-            "Cosmic velocity - third": 16670,
-            "Earth's velocity": 29765,
-            "Velocity of sound in pure water": 1482.6999999998,
-            "Velocity of sound in sea water (20°C, 10 meter deep)": 1521.6,
-            "Mach (20°C, 1 atm)": 343.6,
-            "Mach (SI standard)": 295.0464000003
+    private func convertEnergy(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let jouleValues: [String: Decimal] = [
+            "joule": 1,
+            "kilojoule": 1000,
+            "kilowatt-hour": 3600000,
+            "watt-hour": 3600,
+            "calorie (nutritional)": Decimal(string: "4186.8")!,
+            "horsepower (metric) hour": Decimal(string: "2647795.5")!,
+            "Btu (IT)": Decimal(string: "1055.05585262")!,
+            "Btu (th)": Decimal(string: "1054.3499999744")!,
+            "gigajoule": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megajoule": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "millijoule": Decimal(string: "0.001")!,
+            "microjoule": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanojoule": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "attojoule": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "megaelectron-volt": Decimal(string: "1.6021766339999e-13")!,
+            "kiloelectron-volt": Decimal(string: "1.6021766339999e-16")!,
+            "electron-volt": Decimal(string: "1.6021766339999e-19")!,
+            "erg": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "gigawatt-hour": Decimal(string: "3.6e12")!,
+            "megawatt-hour": Decimal(string: "3.6e9")!,
+            "kilowatt-second": 1000,
+            "watt-second": 1,
+            "newton meter": 1,
+            "horsepower hour": Decimal(string: "2684519.5368856")!,
+            "kilocalorie (IT)": Decimal(string: "4186.8")!,
+            "kilocalorie (th)": 4184,
+            "calorie (IT)": Decimal(string: "4.1868")!,
+            "calorie (th)": Decimal(string: "4.184")!,
+            "mega Btu (IT)": Decimal(string: "1055055852.62")!,
+            "ton-hour (refrigeration)": Decimal(string: "12660670.23144")!,
+            "fuel oil equivalent @kiloliter": Decimal(string: "40197627984.822")!,
+            "fuel oil equivalent @barrel (US)": Decimal(string: "6383087908.3509")!,
+            "gigaton": Decimal(string: "4.184e18")!,
+            "megaton": Decimal(string: "4.184e15")!,
+            "kiloton": Decimal(string: "4.184e12")!,
+            "ton (explosives)": Decimal(string: "4.184e9")!,
+            "dyne centimeter": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "gram-force meter": Decimal(string: "0.00980665")!,
+            "gram-force centimeter": Decimal(string: "9.80665e-5")!,
+            "kilogram-force centimeter": Decimal(string: "0.0980665")!,
+            "kilogram-force meter": Decimal(string: "9.8066499997")!,
+            "kilopond meter": Decimal(string: "9.8066499997")!,
+            "pound-force foot": Decimal(string: "1.3558179483")!,
+            "pound-force inch": Decimal(string: "0.112984829")!,
+            "ounce-force inch": Decimal(string: "0.0070615518")!,
+            "foot-pound": Decimal(string: "1.3558179483")!,
+            "inch-pound": Decimal(string: "0.112984829")!,
+            "inch-ounce": Decimal(string: "0.0070615518")!,
+            "poundal foot": Decimal(string: "0.04214011")!,
+            "therm": 105505600,
+            "therm (EC)": 105505600,
+            "therm (US)": 105480400,
+            "Hartree energy": Decimal(string: "4.3597482e-18")!,
+            "Rydberg constant": Decimal(string: "2.1798741e-18")!
         ]
         
-        guard let fromValue = meterPerSecondValues[fromUnit], let toValue = meterPerSecondValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = jouleValues[fromUnit.lowercased()], let toValue = jouleValues[toUnit.lowercased()] else {
+            return value
         }
         
-        let meterPerSecond = value * fromValue
-        return meterPerSecond / toValue
+        let joules = value * fromValue
+        return joules / toValue
     }
-    
-    private func convertAngle(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let degreeValues: [String: Double] = [
-            "degree": 1,
-            "radian": 57.2957795131,
-            "grad": 0.9,
-            "minute": 0.0166666667,
-            "second": 0.0002777778,
-            "gon": 0.9,
-            "sign": 30,
-            "mil": 0.05625,
-            "revolution": 360,
-            "circle": 360,
-            "turn": 360,
-            "quadrant": 90,
-            "right angle": 90,
-            "sextant": 60
+            
+    private func convertPower(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let wattValues: [String: Decimal] = [
+            "watt": 1,
+            "exawatt": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petawatt": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terawatt": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigawatt": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megawatt": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilowatt": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "hectowatt": Decimal(sign: .plus, exponent: 2, significand: 1),
+            "dekawatt": Decimal(sign: .plus, exponent: 1, significand: 1),
+            "deciwatt": Decimal(sign: .minus, exponent: 1, significand: 1),
+            "centiwatt": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "milliwatt": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microwatt": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanowatt": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picowatt": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtowatt": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attowatt": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "horsepower": Decimal(string: "745.6998715823")!,
+            "horsepower (550 ft*lbf/s)": Decimal(string: "745.6998715823")!,
+            "horsepower (metric)": Decimal(string: "735.49875")!,
+            "horsepower (boiler)": Decimal(string: "9809.5000000002")!,
+            "horsepower (electric)": 746,
+            "horsepower (water)": Decimal(string: "746.043")!,
+            "pferdestarke (ps)": Decimal(string: "735.49875")!,
+            "Btu (IT)/hour": Decimal(string: "0.2930710702")!,
+            "Btu (IT)/minute": Decimal(string: "17.5842642103")!,
+            "Btu (IT)/second": Decimal(string: "1055.05585262")!,
+            "Btu (th)/hour": Decimal(string: "0.292875")!,
+            "Btu (th)/minute": Decimal(string: "17.5724999996")!,
+            "Btu (th)/second": Decimal(string: "1054.3499999744")!,
+            "MBtu (IT)/hour": Decimal(string: "293071.07017222")!,
+            "MBH": Decimal(string: "293.0710701722")!,
+            "ton (refrigeration)": Decimal(string: "3516.8528420667")!,
+            "kilocalorie (IT)/hour": Decimal(string: "1.163")!,
+            "kilocalorie (IT)/minute": Decimal(string: "69.78")!,
+            "kilocalorie (IT)/second": Decimal(string: "4186.8")!,
+            "kilocalorie (th)/hour": Decimal(string: "1.1622222222")!,
+            "kilocalorie (th)/minute": Decimal(string: "69.7333333333")!,
+            "kilocalorie (th)/second": 4184,
+            "calorie (IT)/hour": Decimal(string: "0.001163")!,
+            "calorie (IT)/minute": Decimal(string: "0.06978")!,
+            "calorie (IT)/second": Decimal(string: "4.1868")!,
+            "calorie (th)/hour": Decimal(string: "0.0011622222")!,
+            "calorie (th)/minute": Decimal(string: "0.0697333333")!,
+            "calorie (th)/second": Decimal(string: "4.184")!,
+            "foot pound-force/hour": Decimal(string: "0.0003766161")!,
+            "foot pound-force/minute": Decimal(string: "0.0225969658")!,
+            "foot pound-force/second": Decimal(string: "1.3558179483")!,
+            "pound-foot/hour": Decimal(string: "0.0003766161")!,
+            "pound-foot/minute": Decimal(string: "0.0225969658")!,
+            "pound-foot/second": Decimal(string: "1.3558179483")!,
+            "erg/second": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "kilovolt ampere": 1000,
+            "volt ampere": 1,
+            "newton meter/second": 1,
+            "joule/second": 1,
+            "exajoule/second": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petajoule/second": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terajoule/second": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigajoule/second": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megajoule/second": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilojoule/second": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "hectojoule/second": Decimal(sign: .plus, exponent: 2, significand: 1),
+            "dekajoule/second": Decimal(sign: .plus, exponent: 1, significand: 1),
+            "decijoule/second": Decimal(sign: .minus, exponent: 1, significand: 1),
+            "centijoule/second": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "millijoule/second": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microjoule/second": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanojoule/second": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picojoule/second": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtojoule/second": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attojoule/second": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "joule/hour": Decimal(string: "0.0002777778")!,
+            "joule/minute": Decimal(string: "0.0166666667")!,
+            "kilojoule/hour": Decimal(string: "0.2777777778")!,
+            "kilojoule/minute": Decimal(string: "16.6666666667")!
         ]
         
-        guard let fromValue = degreeValues[fromUnit.lowercased()], let toValue = degreeValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = wattValues[fromUnit.lowercased()], let toValue = wattValues[toUnit.lowercased()] else {
+            return value
         }
         
-        let degrees = value * fromValue
-        return degrees / toValue
+        let watts = value * fromValue
+        return watts / toValue
     }
     
-    private func convertFuelConsumption(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let meterPerLiterValues: [String: Double] = [
+    private func convertForce(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let newtonValues: [String: Decimal] = [
+            "newton": 1,
+            "kilonewton": 1000,
+            "gram-force": Decimal(string: "0.00980665")!,
+            "kilogram-force": Decimal(string: "9.80665")!,
+            "ton-force (metric)": Decimal(string: "9806.65")!,
+            "exanewton": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petanewton": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "teranewton": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "giganewton": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "meganewton": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "hectonewton": 100,
+            "dekanewton": 10,
+            "decinewton": Decimal(string: "0.1")!,
+            "centinewton": Decimal(string: "0.01")!,
+            "millinewton": Decimal(string: "0.001")!,
+            "micronewton": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanonewton": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "piconewton": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtonewton": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attonewton": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "dyne": Decimal(sign: .minus, exponent: 5, significand: 1),
+            "joule/meter": 1,
+            "joule/centimeter": Decimal(string: "0.01")!,
+            "ton-force (short)": Decimal(string: "8896.443230521")!,
+            "ton-force (long)": Decimal(string: "9964.0164181707")!,
+            "kip-force": Decimal(string: "4448.2216152548")!,
+            "kilopound-force": Decimal(string: "4448.2216152548")!,
+            "pound-force": Decimal(string: "4.4482216153")!,
+            "ounce-force": Decimal(string: "0.278013851")!,
+            "poundal": Decimal(string: "0.1382549544")!,
+            "pound foot/square second": Decimal(string: "0.1382549544")!,
+            "pond": Decimal(string: "0.00980665")!,
+            "kilopond": Decimal(string: "9.80665")!
+        ]
+        
+        guard let fromValue = newtonValues[fromUnit.lowercased()], let toValue = newtonValues[toUnit.lowercased()] else {
+            return value
+        }
+        
+        let newtons = value * fromValue
+        return newtons / toValue
+    }
+        
+    private func convertFuelConsumption(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let meterPerLiterValues: [String: Decimal] = [
             "meter/liter": 1,
-            "exameter/liter": 1e18,
-            "petameter/liter": 1e15,
-            "terameter/liter": 1e12,
-            "gigameter/liter": 1e9,
-            "megameter/liter": 1e6,
+            "exameter/liter": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petameter/liter": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terameter/liter": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigameter/liter": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megameter/liter": Decimal(sign: .plus, exponent: 6, significand: 1),
             "kilometer/liter": 1000,
             "hectometer/liter": 100,
             "dekameter/liter": 10,
-            "centimeter/liter": 0.01,
-            "mile (US)/liter": 1609.344,
-            "nautical mile/liter": 1853.24496,
-            "nautical mile/gallon (US)": 489.5755247,
-            "kilometer/gallon (US)": 264.1720524,
-            "meter/gallon (US)": 0.2641720524,
-            "meter/gallon (UK)": 0.2199687986,
-            "mile/gallon (US)": 425.1437075,
-            "mile/gallon (UK)": 354.00619,
-            "meter/cubic meter": 0.001,
+            "centimeter/liter": Decimal(string: "0.01")!,
+            "mile (US)/liter": Decimal(string: "1609.344")!,
+            "nautical mile/liter": Decimal(string: "1853.24496")!,
+            "nautical mile/gallon (US)": Decimal(string: "489.5755247")!,
+            "kilometer/gallon (US)": Decimal(string: "264.1720524")!,
+            "meter/gallon (US)": Decimal(string: "0.2641720524")!,
+            "meter/gallon (UK)": Decimal(string: "0.2199687986")!,
+            "mile/gallon (US)": Decimal(string: "425.1437075")!,
+            "mile/gallon (UK)": Decimal(string: "354.00619")!,
+            "meter/cubic meter": Decimal(string: "0.001")!,
             "meter/cubic centimeter": 1000,
-            "meter/cubic yard": 0.0013079506,
-            "meter/cubic foot": 0.0353146667,
-            "meter/cubic inch": 61.02374409,
-            "meter/quart (US)": 1.056688209,
-            "meter/quart (UK)": 0.8798751948,
-            "meter/pint (US)": 2.113376419,
-            "meter/pint (UK)": 1.759750389,
-            "meter/cup (US)": 4.226752838,
-            "meter/cup (UK)": 3.519500777,
-            "meter/fluid ounce (US)": 33.8140227,
-            "meter/fluid ounce (UK)": 35.19500777,
+            "meter/cubic yard": Decimal(string: "0.0013079506")!,
+            "meter/cubic foot": Decimal(string: "0.0353146667")!,
+            "meter/cubic inch": Decimal(string: "61.02374409")!,
+            "meter/quart (US)": Decimal(string: "1.056688209")!,
+            "meter/quart (UK)": Decimal(string: "0.8798751948")!,
+            "meter/pint (US)": Decimal(string: "2.113376419")!,
+            "meter/pint (UK)": Decimal(string: "1.759750389")!,
+            "meter/cup (US)": Decimal(string: "4.226752838")!,
+            "meter/cup (UK)": Decimal(string: "3.519500777")!,
+            "meter/fluid ounce (US)": Decimal(string: "33.8140227")!,
+            "meter/fluid ounce (UK)": Decimal(string: "35.19500777")!,
             "liter/meter": 1,
             "liter/100 km": 100000,
-            "gallon (US)/mile": 425.1437074976,
-            "gallon (US)/100 mi": 42514.370749763,
-            "gallon (UK)/mile": 354.0061899559,
-            "gallon (UK)/100 mi": 35400.618995592
+            "gallon (US)/mile": Decimal(string: "425.1437074976")!,
+            "gallon (US)/100 mi": Decimal(string: "42514.370749763")!,
+            "gallon (UK)/mile": Decimal(string: "354.0061899559")!,
+            "gallon (UK)/100 mi": Decimal(string: "35400.618995592")!
         ]
         
         guard let fromValue = meterPerLiterValues[fromUnit], let toValue = meterPerLiterValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let meterPerLiter = value * fromValue
         return meterPerLiter / toValue
     }
     
-    private func convertVolumeDry(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let literValues: [String: Double] = [
+    private func convertVolumeDry(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let literValues: [String: Decimal] = [
             "liter": 1,
-            "barrel dry (US)": 115.6271236039,
-            "pint dry (US)": 0.5506104714,
-            "quart dry (US)": 1.1012209428,
-            "peck (US)": 8.8097675424,
-            "peck (UK)": 9.09218,
-            "bushel (US)": 35.2390701696,
-            "bushel (UK)": 36.36872,
-            "cor (Biblical)": 219.9999892918,
-            "homer (Biblical)": 219.9999892918,
-            "ephah (Biblical)": 21.9999989292,
-            "seah (Biblical)": 7.3333329764,
-            "omer (Biblical)": 2.1999998929,
-            "cab (Biblical)": 1.2222221627,
-            "log (Biblical)": 0.3055555407
+            "barrel dry (US)": Decimal(string: "115.6271236039")!,
+            "pint dry (US)": Decimal(string: "0.5506104714")!,
+            "quart dry (US)": Decimal(string: "1.1012209428")!,
+            "peck (US)": Decimal(string: "8.8097675424")!,
+            "peck (UK)": Decimal(string: "9.09218")!,
+            "bushel (US)": Decimal(string: "35.2390701696")!,
+            "bushel (UK)": Decimal(string: "36.36872")!,
+            "cor (Biblical)": Decimal(string: "219.9999892918")!,
+            "homer (Biblical)": Decimal(string: "219.9999892918")!,
+            "ephah (Biblical)": Decimal(string: "21.9999989292")!,
+            "seah (Biblical)": Decimal(string: "7.3333329764")!,
+            "omer (Biblical)": Decimal(string: "2.1999998929")!,
+            "cab (Biblical)": Decimal(string: "1.2222221627")!,
+            "log (Biblical)": Decimal(string: "0.3055555407")!
         ]
         
         guard let fromValue = literValues[fromUnit], let toValue = literValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let liters = value * fromValue
         return liters / toValue
     }
     
-    private func convertAngularVelocity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let radianPerSecondValues: [String: Double] = [
+    private func convertAngularVelocity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let radianPerSecondValues: [String: Decimal] = [
             "radian/second": 1,
-            "radian/day": 1.15741E-5,
-            "radian/hour": 0.0002777778,
-            "radian/minute": 0.0166666667,
-            "degree/day": 2.0200570046231E-7,
-            "degree/hour": 4.8481368110954E-6,
-            "degree/minute": 0.0002908882,
-            "degree/second": 0.0174532925,
-            "revolution/day": 7.27221E-5,
-            "revolution/hour": 0.0017453293,
-            "revolution/minute": 0.1047197551,
-            "revolution/second": 6.2831853072
+            "radian/day": Decimal(string: "1.15741E-5")!,
+            "radian/hour": Decimal(string: "0.0002777778")!,
+            "radian/minute": Decimal(string: "0.0166666667")!,
+            "degree/day": Decimal(string: "2.0200570046231E-7")!,
+            "degree/hour": Decimal(string: "4.8481368110954E-6")!,
+            "degree/minute": Decimal(string: "0.0002908882")!,
+            "degree/second": Decimal(string: "0.0174532925")!,
+            "revolution/day": Decimal(string: "7.27221E-5")!,
+            "revolution/hour": Decimal(string: "0.0017453293")!,
+            "revolution/minute": Decimal(string: "0.1047197551")!,
+            "revolution/second": Decimal(string: "6.2831853072")!
         ]
         
         guard let fromValue = radianPerSecondValues[fromUnit], let toValue = radianPerSecondValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let radianPerSecond = value * fromValue
         return radianPerSecond / toValue
     }
     
-    private func convertAcceleration(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let meterPerSquareSecondValues: [String: Double] = [
+    private func convertAcceleration(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let meterPerSquareSecondValues: [String: Decimal] = [
             "meter/square second": 1,
-            "decimeter/square second": 0.1,
+            "decimeter/square second": Decimal(string: "0.1")!,
             "kilometer/square second": 1000,
             "hectometer/square second": 100,
             "dekameter/square second": 10,
-            "centimeter/square second": 0.01,
-            "millimeter/square second": 0.001,
-            "micrometer/square second": 1e-6,
-            "nanometer/square second": 1e-9,
-            "picometer/square second": 1e-12,
-            "femtometer/square second": 1e-15,
-            "attometer/square second": 1e-18,
-            "gal": 0.01,
-            "galileo": 0.01,
-            "mile/square second": 1609.344,
-            "yard/square second": 0.9144,
-            "foot/square second": 0.3048,
-            "inch/square second": 0.0254,
-            "Acceleration of gravity": 9.80665
+            "centimeter/square second": Decimal(string: "0.01")!,
+            "millimeter/square second": Decimal(string: "0.001")!,
+            "micrometer/square second": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanometer/square second": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picometer/square second": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtometer/square second": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attometer/square second": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "gal": Decimal(string: "0.01")!,
+            "galileo": Decimal(string: "0.01")!,
+            "mile/square second": Decimal(string: "1609.344")!,
+            "yard/square second": Decimal(string: "0.9144")!,
+            "foot/square second": Decimal(string: "0.3048")!,
+            "inch/square second": Decimal(string: "0.0254")!,
+            "Acceleration of gravity": Decimal(string: "9.80665")!
         ]
         
         guard let fromValue = meterPerSquareSecondValues[fromUnit], let toValue = meterPerSquareSecondValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let meterPerSquareSecond = value * fromValue
         return meterPerSquareSecond / toValue
     }
     
-    private func convertAngularAcceleration(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let radianPerSquareSecondValues: [String: Double] = [
+    private func convertAngularAcceleration(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let radianPerSquareSecondValues: [String: Decimal] = [
             "radian/square second": 1,
-            "radian/square minute": 0.0002777778,
-            "revolution/square second": 6.2831853069,
-            "revolution/minute/second": 0.1047197551,
-            "revolution/square minute": 0.0017453293
+            "radian/square minute": Decimal(string: "0.0002777778")!,
+            "revolution/square second": Decimal(string: "6.2831853069")!,
+            "revolution/minute/second": Decimal(string: "0.1047197551")!,
+            "revolution/square minute": Decimal(string: "0.0017453293")!
         ]
         
         guard let fromValue = radianPerSquareSecondValues[fromUnit], let toValue = radianPerSquareSecondValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let radianPerSquareSecond = value * fromValue
         return radianPerSquareSecond / toValue
     }
     
-    private func convertDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let kilogramPerCubicMeterValues: [String: Double] = [
+    private func convertDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let kilogramPerCubicMeterValues: [String: Decimal] = [
             "kilogram/cubic meter": 1,
             "gram/cubic centimeter": 1000,
             "kilogram/cubic centimeter": 1000000,
-            "gram/cubic meter": 0.001,
+            "gram/cubic meter": Decimal(string: "0.001")!,
             "gram/cubic millimeter": 1000000,
-            "milligram/cubic meter": 1e-6,
+            "milligram/cubic meter": Decimal(sign: .minus, exponent: 6, significand: 1),
             "milligram/cubic centimeter": 1,
             "milligram/cubic millimeter": 1000,
-            "exagram/liter": 1e18,
-            "petagram/liter": 1e15,
-            "teragram/liter": 1e12,
-            "gigagram/liter": 1e9,
-            "megagram/liter": 1e6,
+            "exagram/liter": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petagram/liter": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "teragram/liter": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigagram/liter": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megagram/liter": Decimal(sign: .plus, exponent: 6, significand: 1),
             "kilogram/liter": 1000,
             "hectogram/liter": 100,
             "dekagram/liter": 10,
             "gram/liter": 1,
-            "decigram/liter": 0.1,
-            "centigram/liter": 0.01,
-            "milligram/liter": 0.001,
-            "microgram/liter": 1e-6,
-            "nanogram/liter": 1e-9,
-            "picogram/liter": 1e-12,
-            "femtogram/liter": 1e-15,
-            "attogram/liter": 1e-18,
-            "pound/cubic inch": 27679.904710191,
-            "pound/cubic foot": 16.018463374,
-            "pound/cubic yard": 0.5932764213,
-            "pound/gallon (US)": 119.8264273167,
-            "pound/gallon (UK)": 99.7763726631,
-            "ounce/cubic inch": 1729.9940443869,
-            "ounce/cubic foot": 1.0011539609,
-            "ounce/gallon (US)": 7.4891517073,
-            "ounce/gallon (UK)": 6.2360232914,
-            "grain/gallon (US)": 0.017118061,
-            "grain/gallon (UK)": 0.0142537675,
-            "grain/cubic foot": 0.0022883519,
-            "ton (short)/cubic yard": 1186.552842515,
-            "ton (long)/cubic yard": 1328.9391836174,
-            "slug/cubic foot": 515.3788183932,
-            "psi/1000 feet": 2.3066587258,
-            "Earth's density (mean)": 5517.9999999999
+            "decigram/liter": Decimal(string: "0.1")!,
+            "centigram/liter": Decimal(string: "0.01")!,
+            "milligram/liter": Decimal(string: "0.001")!,
+            "microgram/liter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanogram/liter": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picogram/liter": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtogram/liter": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attogram/liter": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "pound/cubic inch": Decimal(string: "27679.904710191")!,
+            "pound/cubic foot": Decimal(string: "16.018463374")!,
+            "pound/cubic yard": Decimal(string: "0.5932764213")!,
+            "pound/gallon (US)": Decimal(string: "119.8264273167")!,
+            "pound/gallon (UK)": Decimal(string: "99.7763726631")!,
+            "ounce/cubic inch": Decimal(string: "1729.9940443869")!,
+            "ounce/cubic foot": Decimal(string: "1.0011539609")!,
+            "ounce/gallon (US)": Decimal(string: "7.4891517073")!,
+            "ounce/gallon (UK)": Decimal(string: "6.2360232914")!,
+            "grain/gallon (US)": Decimal(string: "0.017118061")!,
+            "grain/gallon (UK)": Decimal(string: "0.0142537675")!,
+            "grain/cubic foot": Decimal(string: "0.0022883519")!,
+            "ton (short)/cubic yard": Decimal(string: "1186.552842515")!,
+            "ton (long)/cubic yard": Decimal(string: "1328.9391836174")!,
+            "slug/cubic foot": Decimal(string: "515.3788183932")!,
+            "psi/1000 feet": Decimal(string: "2.3066587258")!,
+            "Earth's density (mean)": Decimal(string: "5517.9999999999")!
         ]
         
         guard let fromValue = kilogramPerCubicMeterValues[fromUnit], let toValue = kilogramPerCubicMeterValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let kilogramPerCubicMeter = value * fromValue
         return kilogramPerCubicMeter / toValue
     }
     
-    private func convertSpecificVolume(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let cubicMeterPerKilogramValues: [String: Double] = [
+    private func convertSpecificVolume(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let cubicMeterPerKilogramValues: [String: Decimal] = [
             "cubic meter/kilogram": 1,
-            "cubic centimeter/gram": 0.001,
-            "liter/kilogram": 0.001,
+            "cubic centimeter/gram": Decimal(string: "0.001")!,
+            "liter/kilogram": Decimal(string: "0.001")!,
             "liter/gram": 1,
-            "cubic foot/kilogram": 0.0283168466,
-            "cubic foot/pound": 0.06242796,
-            "gallon (US)/pound": 0.0083454039,
-            "gallon (UK)/pound": 0.0100224128
+            "cubic foot/kilogram": Decimal(string: "0.0283168466")!,
+            "cubic foot/pound": Decimal(string: "0.06242796")!,
+            "gallon (US)/pound": Decimal(string: "0.0083454039")!,
+            "gallon (UK)/pound": Decimal(string: "0.0100224128")!
         ]
         
         guard let fromValue = cubicMeterPerKilogramValues[fromUnit], let toValue = cubicMeterPerKilogramValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let cubicMeterPerKilogram = value * fromValue
         return cubicMeterPerKilogram / toValue
     }
     
-    private func convertMomentOfInertia(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let kilogramSquareMeterValues: [String: Double] = [
+    private func convertMomentOfInertia(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let kilogramSquareMeterValues: [String: Decimal] = [
             "kilogram square meter": 1,
-            "kilogram square centimeter": 0.0001,
-            "kilogram square millimeter": 1e-6,
-            "gram square centimeter": 1e-7,
-            "gram square millimeter": 1e-9,
-            "kilogram-force meter square second": 9.8066499998,
-            "kilogram-force centimeter square second": 0.0980665,
-            "ounce square inch": 1.829e-5,
-            "ounce-force inch sq. second": 0.0070615519,
-            "pound square foot": 0.0421401101,
-            "pound-force foot sq. second": 1.3558179619,
-            "pound square inch": 0.0002926397,
-            "pound-force inch sq. second": 0.1129848302,
-            "slug square foot": 1.3558179619
+            "kilogram square centimeter": Decimal(string: "0.0001")!,
+            "kilogram square millimeter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "gram square centimeter": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "gram square millimeter": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "kilogram-force meter square second": Decimal(string: "9.8066499998")!,
+            "kilogram-force centimeter square second": Decimal(string: "0.0980665")!,
+            "ounce square inch": Decimal(string: "1.829e-5")!,
+            "ounce-force inch sq. second": Decimal(string: "0.0070615519")!,
+            "pound square foot": Decimal(string: "0.0421401101")!,
+            "pound-force foot sq. second": Decimal(string: "1.3558179619")!,
+            "pound square inch": Decimal(string: "0.0002926397")!,
+            "pound-force inch sq. second": Decimal(string: "0.1129848302")!,
+            "slug square foot": Decimal(string: "1.3558179619")!
         ]
         
         guard let fromValue = kilogramSquareMeterValues[fromUnit], let toValue = kilogramSquareMeterValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let kilogramSquareMeter = value * fromValue
         return kilogramSquareMeter / toValue
     }
     
-    private func convertMomentOfForce(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let newtonMeterValues: [String: Double] = [
+    private func convertMomentOfForce(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let newtonMeterValues: [String: Decimal] = [
             "newton meter": 1,
             "kilonewton meter": 1000,
-            "millinewton meter": 0.001,
-            "micronewton meter": 1e-6,
-            "ton-force (short) meter": 8896.4400000035,
-            "ton-force (long) meter": 9964.0200000047,
-            "ton-force (metric) meter": 9806.6499999993,
-            "kilogram-force meter": 9.80665,
-            "gram-force centimeter": 9.80665e-5,
-            "pound-force foot": 1.35582,
-            "poundal foot": 0.0421401,
-            "poundal inch": 0.003511675
+            "millinewton meter": Decimal(string: "0.001")!,
+            "micronewton meter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "ton-force (short) meter": Decimal(string: "8896.4400000035")!,
+            "ton-force (long) meter": Decimal(string: "9964.0200000047")!,
+            "ton-force (metric) meter": Decimal(string: "9806.6499999993")!,
+            "kilogram-force meter": Decimal(string: "9.80665")!,
+            "gram-force centimeter": Decimal(string: "9.80665e-5")!,
+            "pound-force foot": Decimal(string: "1.35582")!,
+            "poundal foot": Decimal(string: "0.0421401")!,
+            "poundal inch": Decimal(string: "0.003511675")!
         ]
         
         guard let fromValue = newtonMeterValues[fromUnit], let toValue = newtonMeterValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let newtonMeter = value * fromValue
         return newtonMeter / toValue
     }
     
-    private func convertTorque(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let newtonMeterValues: [String: Double] = [
+    private func convertTorque(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let newtonMeterValues: [String: Decimal] = [
             "newton meter": 1,
-            "newton centimeter": 0.01,
-            "newton millimeter": 0.001,
+            "newton centimeter": Decimal(string: "0.01")!,
+            "newton millimeter": Decimal(string: "0.001")!,
             "kilonewton meter": 1000,
-            "dyne meter": 1e-5,
-            "dyne centimeter": 1e-7,
-            "dyne millimeter": 1e-8,
-            "kilogram-force meter": 9.80665,
-            "kilogram-force centimeter": 0.0980665,
-            "kilogram-force millimeter": 0.00980665,
-            "gram-force meter": 0.00980665,
-            "gram-force centimeter": 9.80665e-5,
-            "gram-force millimeter": 9.80665e-6,
-            "ounce-force foot": 0.084738624,
-            "ounce-force inch": 0.007061552,
-            "pound-force foot": 1.355818,
-            "pound-force inch": 0.1129848333,
-            // Önceki birimler
-            "millinewton meter": 0.001,
-            "micronewton meter": 1e-6,
-            "ton-force (short) meter": 8896.4400000035,
-            "ton-force (long) meter": 9964.0200000047,
-            "ton-force (metric) meter": 9806.6499999993,
-            "poundal foot": 0.0421401,
-            "poundal inch": 0.003511675
+            "dyne meter": Decimal(sign: .minus, exponent: 5, significand: 1),
+            "dyne centimeter": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "dyne millimeter": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "kilogram-force meter": Decimal(string: "9.80665")!,
+            "kilogram-force centimeter": Decimal(string: "0.0980665")!,
+            "kilogram-force millimeter": Decimal(string: "0.00980665")!,
+            "gram-force meter": Decimal(string: "0.00980665")!,
+            "gram-force centimeter": Decimal(string: "9.80665e-5")!,
+            "gram-force millimeter": Decimal(string: "9.80665e-6")!,
+            "ounce-force foot": Decimal(string: "0.084738624")!,
+            "ounce-force inch": Decimal(string: "0.007061552")!,
+            "pound-force foot": Decimal(string: "1.355818")!,
+            "pound-force inch": Decimal(string: "0.1129848333")!,
+            "millinewton meter": Decimal(string: "0.001")!,
+            "micronewton meter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "ton-force (short) meter": Decimal(string: "8896.4400000035")!,
+            "ton-force (long) meter": Decimal(string: "9964.0200000047")!,
+            "ton-force (metric) meter": Decimal(string: "9806.6499999993")!,
+            "poundal foot": Decimal(string: "0.0421401")!,
+            "poundal inch": Decimal(string: "0.003511675")!
         ]
         
         guard let fromValue = newtonMeterValues[fromUnit], let toValue = newtonMeterValues[toUnit] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
         
         let newtonMeter = value * fromValue

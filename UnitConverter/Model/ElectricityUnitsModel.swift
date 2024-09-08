@@ -24,7 +24,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
     case electrostaticCapacitance = "Electrostatic Capacitance"
     case inductance = "Inductance"
     
-    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+    func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .charge:
             return convertElectricCharge(value, from: fromUnit, to: toUnit)
@@ -59,25 +59,25 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    private func convertElectricCharge(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let coulombValues: [String: Double] = [
+    private func convertElectricCharge(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let coulombValues: [String: Decimal] = [
             "coulomb": 1,
-            "megacoulomb": 1e6,
-            "kilocoulomb": 1e3,
-            "millicoulomb": 1e-3,
-            "microcoulomb": 1e-6,
-            "nanocoulomb": 1e-9,
-            "picocoulomb": 1e-12,
+            "megacoulomb": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilocoulomb": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "millicoulomb": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microcoulomb": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanocoulomb": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picocoulomb": Decimal(sign: .minus, exponent: 12, significand: 1),
             "abcoulomb": 10,
             "EMU of charge": 10,
-            "statcoulomb": 3.335640951982e-10,
-            "ESU of charge": 3.335640951982e-10,
-            "franklin": 3.335640951982e-10,
+            "statcoulomb": Decimal(string: "3.335640951982e-10")!,
+            "ESU of charge": Decimal(string: "3.335640951982e-10")!,
+            "franklin": Decimal(string: "3.335640951982e-10")!,
             "ampere-hour": 3600,
             "ampere-minute": 60,
             "ampere-second": 1,
-            "faraday (based on carbon 12)": 96485.309000004,
-            "Elementary charge": 1.60217733e-19
+            "faraday (based on carbon 12)": Decimal(string: "96485.309000004")!,
+            "Elementary charge": Decimal(string: "1.60217733e-19")!
         ]
 
         guard let fromValue = coulombValues[fromUnit.lowercased()], let toValue = coulombValues[toUnit.lowercased()] else {
@@ -88,14 +88,14 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         return coulombs / toValue
     }
     
-    private func convertElectricChargeDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let coulombPerMeterValues: [String: Double] = [
+    private func convertElectricChargeDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let coulombPerMeterValues: [String: Decimal] = [
             "coulomb/meter": 1,
             "coulomb/centimeter": 100,
-            "coulomb/inch": 39.3700787402,
+            "coulomb/inch": Decimal(string: "39.3700787402")!,
             "abcoulomb/meter": 10,
             "abcoulomb/centimeter": 1000,
-            "abcoulomb/inch": 393.7007874016
+            "abcoulomb/inch": Decimal(string: "393.7007874016")!
         ]
 
         guard let fromValue = coulombPerMeterValues[fromUnit.lowercased()], let toValue = coulombPerMeterValues[toUnit.lowercased()] else {
@@ -106,14 +106,14 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         return coulombsPerMeter / toValue
     }
     
-    private func convertSurfaceElectricChargeDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let coulombPerSquareMeterValues: [String: Double] = [
+    private func convertSurfaceElectricChargeDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let coulombPerSquareMeterValues: [String: Decimal] = [
             "coulomb/square meter": 1,
             "coulomb/square centimeter": 10000,
-            "coulomb/square inch": 1550.0031000062,
+            "coulomb/square inch": Decimal(string: "1550.0031000062")!,
             "abcoulomb/square meter": 10,
             "abcoulomb/square centimeter": 100000,
-            "abcoulomb/square inch": 15500.031000062
+            "abcoulomb/square inch": Decimal(string: "15500.031000062")!
         ]
 
         guard let fromValue = coulombPerSquareMeterValues[fromUnit.lowercased()], let toValue = coulombPerSquareMeterValues[toUnit.lowercased()] else {
@@ -124,14 +124,14 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         return coulombsPerSquareMeter / toValue
     }
     
-    private func convertVolumetricElectricChargeDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let coulombPerCubicMeterValues: [String: Double] = [
+    private func convertVolumetricElectricChargeDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let coulombPerCubicMeterValues: [String: Decimal] = [
             "coulomb/cubic meter": 1,
-            "coulomb/cubic centimeter": 1e6,
-            "coulomb/cubic inch": 61023.744094732,
+            "coulomb/cubic centimeter": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "coulomb/cubic inch": Decimal(string: "61023.744094732")!,
             "abcoulomb/cubic meter": 10,
-            "abcoulomb/cubic centimeter": 1e7,
-            "abcoulomb/cubic inch": 610237.44094732
+            "abcoulomb/cubic centimeter": Decimal(sign: .plus, exponent: 7, significand: 1),
+            "abcoulomb/cubic inch": Decimal(string: "610237.44094732")!
         ]
 
         guard let fromValue = coulombPerCubicMeterValues[fromUnit.lowercased()], let toValue = coulombPerCubicMeterValues[toUnit.lowercased()] else {
@@ -142,257 +142,257 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         return coulombsPerCubicMeter / toValue
     }
     
-    private func convertElectricCurrent(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let ampereValues: [String: Double] = [
+    private func convertElectricCurrent(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let ampereValues: [String: Decimal] = [
             "ampere": 1,
-            "kiloampere": 1e3,
-            "milliampere": 1e-3,
+            "kiloampere": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "milliampere": Decimal(sign: .minus, exponent: 3, significand: 1),
             "biot": 10,
             "abampere": 10,
             "EMU of current": 10,
-            "statampere": 3.335641e-10,
-            "ESU of current": 3.335641e-10,
+            "statampere": Decimal(string: "3.335641e-10")!,
+            "ESU of current": Decimal(string: "3.335641e-10")!,
             "CGS e.m. unit": 10,
-            "CGS e.s. unit": 3.335641e-10
+            "CGS e.s. unit": Decimal(string: "3.335641e-10")!
         ]
 
         guard let fromValue = ampereValues[fromUnit.lowercased()], let toValue = ampereValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let amperes = value * fromValue
         return amperes / toValue
     }
     
-    private func convertMagneticFieldIntensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let amperePerMeterValues: [String: Double] = [
+    private func convertMagneticFieldIntensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let amperePerMeterValues: [String: Decimal] = [
             "ampere/meter": 1,
             "ampere/centimeter": 100,
-            "ampere/inch": 39.3700787402,
+            "ampere/inch": Decimal(string: "39.3700787402")!,
             "abampere/meter": 10,
             "abampere/centimeter": 1000,
-            "abampere/inch": 393.7007874016,
-            "oersted": 79.5774715102,
-            "gilbert/centimeter": 79.5774715102
+            "abampere/inch": Decimal(string: "393.7007874016")!,
+            "oersted": Decimal(string: "79.5774715102")!,
+            "gilbert/centimeter": Decimal(string: "79.5774715102")!
         ]
 
         guard let fromValue = amperePerMeterValues[fromUnit.lowercased()], let toValue = amperePerMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let amperesPerMeter = value * fromValue
         return amperesPerMeter / toValue
     }
     
-    private func convertElectricCurrentDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let amperePerSquareMeterValues: [String: Double] = [
+    private func convertElectricCurrentDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let amperePerSquareMeterValues: [String: Decimal] = [
             "ampere/square meter": 1,
             "ampere/square centimeter": 10000,
-            "ampere/square inch": 1550.0031000062,
-            "ampere/square mil": 1550003100.0062,
-            "ampere/circular mil": 1973525240.9908,
+            "ampere/square inch": Decimal(string: "1550.0031000062")!,
+            "ampere/square mil": Decimal(string: "1550003100.0062")!,
+            "ampere/circular mil": Decimal(string: "1973525240.9908")!,
             "abampere/square centimeter": 100000
         ]
 
         guard let fromValue = amperePerSquareMeterValues[fromUnit.lowercased()], let toValue = amperePerSquareMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let amperesPerSquareMeter = value * fromValue
         return amperesPerSquareMeter / toValue
     }
     
-    private func convertElectricFieldStrength(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let voltPerMeterValues: [String: Double] = [
+    private func convertElectricFieldStrength(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let voltPerMeterValues: [String: Decimal] = [
             "volt/meter": 1,
             "kilovolt/meter": 1000,
             "kilovolt/centimeter": 100000,
             "volt/centimeter": 100,
-            "millivolt/meter": 0.001,
-            "microvolt/meter": 1e-6,
-            "kilovolt/inch": 39370.078740157,
-            "volt/inch": 39.3700787402,
-            "volt/mil": 39370.078740157,
-            "abvolt/centimeter": 1e-6,
-            "statvolt/centimeter": 29979.19999934,
-            "statvolt/inch": 11802.834645298,
+            "millivolt/meter": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microvolt/meter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "kilovolt/inch": Decimal(string: "39370.078740157")!,
+            "volt/inch": Decimal(string: "39.3700787402")!,
+            "volt/mil": Decimal(string: "39370.078740157")!,
+            "abvolt/centimeter": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "statvolt/centimeter": Decimal(string: "29979.19999934")!,
+            "statvolt/inch": Decimal(string: "11802.834645298")!,
             "newton/coulomb": 1
         ]
 
         guard let fromValue = voltPerMeterValues[fromUnit.lowercased()], let toValue = voltPerMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let voltsPerMeter = value * fromValue
         return voltsPerMeter / toValue
     }
     
-    private func convertElectricPotential(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let voltValues: [String: Double] = [
+    private func convertElectricPotential(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let voltValues: [String: Decimal] = [
             "volt": 1,
             "watt/ampere": 1,
-            "abvolt": 1e-8,
-            "EMU of electric potential": 1e-8,
-            "statvolt": 299.7925,
-            "ESU of electric potential": 299.7925
+            "abvolt": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "EMU of electric potential": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "statvolt": Decimal(string: "299.7925")!,
+            "ESU of electric potential": Decimal(string: "299.7925")!
         ]
 
         guard let fromValue = voltValues[fromUnit.lowercased()], let toValue = voltValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let volts = value * fromValue
         return volts / toValue
     }
     
-    private func convertElectricResistance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let ohmValues: [String: Double] = [
+    private func convertElectricResistance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let ohmValues: [String: Decimal] = [
             "ohm": 1,
-            "megohm": 1e6,
-            "microhm": 1e-6,
+            "megohm": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "microhm": Decimal(sign: .minus, exponent: 6, significand: 1),
             "volt/ampere": 1,
             "reciprocal siemens": 1,
-            "abohm": 1e-9,
-            "EMU of resistance": 1e-9,
-            "statohm": 898755200000,
-            "ESU of resistance": 898755200000,
-            "Quantized Hall resistance": 25812.8056
+            "abohm": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "EMU of resistance": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "statohm": Decimal(string: "898755200000")!,
+            "ESU of resistance": Decimal(string: "898755200000")!,
+            "Quantized Hall resistance": Decimal(string: "25812.8056")!
         ]
 
         guard let fromValue = ohmValues[fromUnit.lowercased()], let toValue = ohmValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let ohms = value * fromValue
         return ohms / toValue
     }
     
-    private func convertElectricResistivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let ohmMeterValues: [String: Double] = [
+    private func convertElectricResistivity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let ohmMeterValues: [String: Decimal] = [
             "ohm meter": 1,
-            "ohm centimeter": 0.01,
-            "ohm inch": 0.0254,
-            "microhm centimeter": 1e-8,
-            "microhm inch": 2.5400000000102e-8,
-            "abohm centimeter": 1e-11,
-            "statohm centimeter": 8987524324.0156,
-            "circular mil ohm/foot": 1.6624261130101e-9
+            "ohm centimeter": Decimal(string: "0.01")!,
+            "ohm inch": Decimal(string: "0.0254")!,
+            "microhm centimeter": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "microhm inch": Decimal(string: "2.5400000000102e-8")!,
+            "abohm centimeter": Decimal(sign: .minus, exponent: 11, significand: 1),
+            "statohm centimeter": Decimal(string: "8987524324.0156")!,
+            "circular mil ohm/foot": Decimal(string: "1.6624261130101e-9")!
         ]
 
         guard let fromValue = ohmMeterValues[fromUnit.lowercased()], let toValue = ohmMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let ohmMeters = value * fromValue
         return ohmMeters / toValue
     }
     
-    private func convertElectricConductance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let siemensValues: [String: Double] = [
+    private func convertElectricConductance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let siemensValues: [String: Decimal] = [
             "siemens": 1,
-            "megasiemens": 1e6,
-            "kilosiemens": 1e3,
-            "millisiemens": 1e-3,
-            "microsiemens": 1e-6,
+            "megasiemens": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilosiemens": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "millisiemens": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microsiemens": Decimal(sign: .minus, exponent: 6, significand: 1),
             "ampere/volt": 1,
             "mho": 1,
-            "gemmho": 1e-6,
-            "micromho": 1e-6,
-            "abmho": 1e9,
-            "statmho": 1.1123470522803e-12,
-            "Quantized Hall conductance": 3.87405e-5
+            "gemmho": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "micromho": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "abmho": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "statmho": Decimal(string: "1.1123470522803e-12")!,
+            "Quantized Hall conductance": Decimal(string: "3.87405e-5")!
         ]
 
         guard let fromValue = siemensValues[fromUnit.lowercased()], let toValue = siemensValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let siemens = value * fromValue
         return siemens / toValue
     }
     
-    private func convertElectricConductivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let siemensPerMeterValues: [String: Double] = [
+    private func convertElectricConductivity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let siemensPerMeterValues: [String: Decimal] = [
             "siemens/meter": 1,
-            "picosiemens/meter": 1e-12,
+            "picosiemens/meter": Decimal(sign: .minus, exponent: 12, significand: 1),
             "mho/meter": 1,
             "mho/centimeter": 100,
-            "abmho/meter": 1e9,
-            "abmho/centimeter": 1e11,
-            "statmho/meter": 1.1126534560019e-12,
-            "statmho/centimeter": 1.1126534560019e-10
+            "abmho/meter": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "abmho/centimeter": Decimal(sign: .plus, exponent: 11, significand: 1),
+            "statmho/meter": Decimal(string: "1.1126534560019e-12")!,
+            "statmho/centimeter": Decimal(string: "1.1126534560019e-10")!
         ]
 
         guard let fromValue = siemensPerMeterValues[fromUnit.lowercased()], let toValue = siemensPerMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let siemensPerMeter = value * fromValue
         return siemensPerMeter / toValue
     }
     
-    private func convertElectricCapacitance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let faradValues: [String: Double] = [
+    private func convertElectricCapacitance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let faradValues: [String: Decimal] = [
             "farad": 1,
-            "exafarad": 1e18,
-            "petafarad": 1e15,
-            "terafarad": 1e12,
-            "gigafarad": 1e9,
-            "megafarad": 1e6,
-            "kilofarad": 1e3,
-            "hectofarad": 1e2,
-            "dekafarad": 1e1,
-            "decifarad": 1e-1,
-            "centifarad": 1e-2,
-            "millifarad": 1e-3,
-            "microfarad": 1e-6,
-            "nanofarad": 1e-9,
-            "picofarad": 1e-12,
-            "femtofarad": 1e-15,
-            "attofarad": 1e-18,
+            "exafarad": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petafarad": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terafarad": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigafarad": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megafarad": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilofarad": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "hectofarad": Decimal(sign: .plus, exponent: 2, significand: 1),
+            "dekafarad": Decimal(sign: .plus, exponent: 1, significand: 1),
+            "decifarad": Decimal(sign: .minus, exponent: 1, significand: 1),
+            "centifarad": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "millifarad": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microfarad": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanofarad": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picofarad": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtofarad": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attofarad": Decimal(sign: .minus, exponent: 18, significand: 1),
             "coulomb/volt": 1,
-            "abfarad": 1e9,
-            "EMU of capacitance": 1e9,
-            "statfarad": 1.112650056054e-12,
-            "ESU of capacitance": 1.112650056054e-12
+            "abfarad": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "EMU of capacitance": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "statfarad": Decimal(string: "1.112650056054e-12")!,
+            "ESU of capacitance": Decimal(string: "1.112650056054e-12")!
         ]
 
         guard let fromValue = faradValues[fromUnit.lowercased()], let toValue = faradValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let farads = value * fromValue
         return farads / toValue
     }
     
-    private func convertElectricInductance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
-        let henryValues: [String: Double] = [
+    private func convertElectricInductance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
+        let henryValues: [String: Decimal] = [
             "henry": 1,
-            "exahenry": 1e18,
-            "petahenry": 1e15,
-            "terahenry": 1e12,
-            "gigahenry": 1e9,
-            "megahenry": 1e6,
-            "kilohenry": 1e3,
-            "hectohenry": 1e2,
-            "dekahenry": 1e1,
-            "decihenry": 1e-1,
-            "centihenry": 1e-2,
-            "millihenry": 1e-3,
-            "microhenry": 1e-6,
-            "nanohenry": 1e-9,
-            "picohenry": 1e-12,
-            "femtohenry": 1e-15,
-            "attohenry": 1e-18,
+            "exahenry": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "petahenry": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "terahenry": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "gigahenry": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "megahenry": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kilohenry": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "hectohenry": Decimal(sign: .plus, exponent: 2, significand: 1),
+            "dekahenry": Decimal(sign: .plus, exponent: 1, significand: 1),
+            "decihenry": Decimal(sign: .minus, exponent: 1, significand: 1),
+            "centihenry": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "millihenry": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "microhenry": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nanohenry": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "picohenry": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "femtohenry": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "attohenry": Decimal(sign: .minus, exponent: 18, significand: 1),
             "weber/ampere": 1,
-            "abhenry": 1e-9,
-            "EMU of inductance": 1e-9,
-            "stathenry": 898755200000,
-            "ESU of inductance": 898755200000
+            "abhenry": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "EMU of inductance": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "stathenry": Decimal(string: "898755200000")!,
+            "ESU of inductance": Decimal(string: "898755200000")!
         ]
 
         guard let fromValue = henryValues[fromUnit.lowercased()], let toValue = henryValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value
         }
 
         let henries = value * fromValue

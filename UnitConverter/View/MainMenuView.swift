@@ -12,8 +12,6 @@ struct MainMenuView: View {
     @State private var selectedUnitCategory: UnitCategory?
     @State private var showSettings = false
     @State private var showFavorites = false
-    @AppStorage("darkModePreference") private var darkModePreference = DarkModePreference.system
-    @Environment(\.colorScheme) private var systemColorScheme
     
     var body: some View {
         NavigationView {
@@ -83,18 +81,6 @@ struct MainMenuView: View {
                 FavoritesView()
             }
         }
-        .preferredColorScheme(preferredColorScheme)
-    }
-    
-    private var preferredColorScheme: ColorScheme? {
-        switch darkModePreference {
-        case .system:
-            return nil // Sistem ayarını kullan
-        case .light:
-            return .light
-        case .dark:
-            return .dark
-        }
     }
 }
 
@@ -112,20 +98,32 @@ struct MainMenuView: View {
 
 // TODO: her şeyi kontrol et
 
-// TODO: birimlerin ilk girinceki unit'leri ayarla ??
+// TODO: settings'de kullanıcıya kaç virgül istiyo diye sor default 2 yap
 
+// TODO: ilk yükleyen kullanıcı için welcome screen yap
+
+// TODO: settingsde feedback me kısmı
+
+// TODO: settingsde sürüm no kısmı
+
+// TODO: buy me a coffee
 
 // FINAL
 
-// TODO: Dark mode kontrol
+// FIXME: Dark mode bug'ını fixle
+
 // TODO: Dil desteği
 
 // Extralar
+
+// TODO: Formül gösterimleri eklenebilir.
+
+// TODO: Swiftlint nedir araştır.
 
 // TODO: widget ????
 // TODO: control center button ????
 
 // TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)
 
-
 // TODO: add history section with SwiftData (şu anki yapıma göre imkansız.)
+

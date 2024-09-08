@@ -32,7 +32,7 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     }
     
     func convertUnits(value: String) -> String {
-        guard let doubleValue = Double(value),
+        guard let decimalValue = Decimal(string: value),
               selectedFirstUnitIndex < availableUnits.count,
               selectedSecondUnitIndex < availableUnits.count else {
             return "0"
@@ -41,8 +41,14 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         let fromUnit = availableUnits[selectedFirstUnitIndex].name
         let toUnit = availableUnits[selectedSecondUnitIndex].name
 
-        let result = category.convert(doubleValue, from: fromUnit, to: toUnit)
-        return String(format: "%4f", result)
+        let result = category.convert(decimalValue, from: fromUnit, to: toUnit)
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 6
+        formatter.minimumFractionDigits = 0
+        
+        return formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
     }
     
     func setFromFavorite(_ favorite: FavoriteConversion) {
