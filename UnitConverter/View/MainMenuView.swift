@@ -10,6 +10,8 @@ import SwiftUI
 struct MainMenuView: View {
     @State private var selectedCategory: AllConvertersCategory?
     @State private var selectedUnitCategory: UnitCategory?
+    @State private var showSettings = false
+    @AppStorage("darkModeEnabled") private var darkModeEnabled = false
     
     var body: some View {
         NavigationView {
@@ -43,7 +45,25 @@ struct MainMenuView: View {
                 }
             }
             .navigationTitle("Unit Converter")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showSettings = true
+                    }) {
+                        Image(systemName: "gear")
+                            .font(.title2)
+                            .foregroundColor(.cyan)
+                            .frame(width: 44, height: 44)
+                            .background(Color.gray.opacity(0.1))
+                            .clipShape(Circle())
+                    }
+                }
+            }
         }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
+        }
+        .preferredColorScheme(darkModeEnabled ? .dark : .light)
     }
 }
 
@@ -53,15 +73,14 @@ struct MainMenuView: View {
 
 // islerrrrrr
 
-// TODO: tüm unit dönüşümlerini teker teker kontrol et ve bitir. dönüşümleri, logoları, açıklamaları.
-
-// TODO: unit symboller gidddi
-
-// TODO: birimlerin ilk girinceki unit'leri ayarla
 
 // TODO: add history section with SwiftData
 
 // TODO: add fav section with SwiftData I guess??
+
+// TODO: her şeyi kontrol et
+
+// TODO: birimlerin ilk girinceki unit'leri ayarla
 
 // pre-Final
 

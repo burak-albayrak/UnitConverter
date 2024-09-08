@@ -7,8 +7,10 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
+    @Environment(\.modelContext) private var modelContext
     @Published var selectedFirstUnitIndex = 0
     @Published var selectedSecondUnitIndex = 1
     @Published var firstUnitInputValue = ""
@@ -33,13 +35,13 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         guard let doubleValue = Double(value),
               selectedFirstUnitIndex < availableUnits.count,
               selectedSecondUnitIndex < availableUnits.count else {
-            return "Invalid Input"
+            return "0"
         }
 
         let fromUnit = availableUnits[selectedFirstUnitIndex].name
         let toUnit = availableUnits[selectedSecondUnitIndex].name
 
         let result = category.convert(doubleValue, from: fromUnit, to: toUnit)
-        return String(format: "%.4f", result)
+        return String(format: "%4f", result)
     }
 }

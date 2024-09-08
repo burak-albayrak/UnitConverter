@@ -29,6 +29,7 @@
 		EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
 		EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
 		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
+		EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF632C8DFD29006E6548 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricityUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetismUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
+		EF85EF632C8DFD29006E6548 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				EF37C05F2C829390004B974A /* CategoryInfoView.swift */,
 				EF37C0612C834FE1004B974A /* AllConvertersMenu.swift */,
 				EF37ACDC2C8C920A00477945 /* CurrencyConverterView.swift  .swift */,
+				EF85EF632C8DFD29006E6548 /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */,
 				EF37ACD72C8C918500477945 /* CurrencyConverterNetwork.swift in Sources */,
 				EF37C0732C8680BA004B974A /* FluidsUnitsModel.swift in Sources */,
 				EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */,
