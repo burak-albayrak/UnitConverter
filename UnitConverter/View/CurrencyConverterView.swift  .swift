@@ -37,7 +37,7 @@ struct CurrencyConversionView: View {
             
             Section("Value") {
                 HStack {
-                    TextField("Enter value to convert", text: $viewModel.inputValue)
+                    TextField("Enter value", text: $viewModel.inputValue)
                         .keyboardType(.decimalPad)
                         .onChange(of: viewModel.inputValue) { _, _ in
                             viewModel.convertCurrency()
@@ -74,9 +74,10 @@ struct CurrencyConversionView: View {
                         Text(errorMessage)
                             .foregroundColor(.red)
                     } else {
-                        Text("\(viewModel.convertedValue) \(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex])")
+                        Text("\(viewModel.convertedValue)")
+                        Spacer()
+                        Text("\(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex])")
                     }
-                    Spacer()
                     Button(action: {
                         UIPasteboard.general.string = viewModel.convertedValue
                         withAnimation(.easeIn(duration: 0.5)) {

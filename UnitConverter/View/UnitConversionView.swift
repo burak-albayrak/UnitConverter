@@ -30,8 +30,9 @@ struct UnitConversionView<T: UnitCategory>: View {
             
             Section("Value") {
                 HStack {
-                    TextField("Enter value to convert", text: $viewModel.firstUnitInputValue)
+                    TextField("Enter value", text: $viewModel.firstUnitInputValue)
                         .keyboardType(.decimalPad)
+                    Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
                     Spacer()
                     Button(action: {
                         if let pasteboardString = UIPasteboard.general.string {
@@ -60,8 +61,9 @@ struct UnitConversionView<T: UnitCategory>: View {
                 HStack {
                     let convertedValue = viewModel.convertUnits(value: viewModel.firstUnitInputValue)
                     
-                    Text("\(convertedValue) \(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)")
+                    Text(convertedValue)
                     Spacer()
+                    Text(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)
                     Button(action: {
                         UIPasteboard.general.string = convertedValue
                         withAnimation(.easeIn(duration: 0.5)) {
