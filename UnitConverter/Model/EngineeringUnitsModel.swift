@@ -20,18 +20,1115 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
     case energy = "Energy"
     case power = "Power"
     case force = "Force"
-    case fuelConsuption = "Fuel Consuption"
-    case numbers = "Numbers"
-    case dataStorage = "Data Storage"
+    case fuelConsumption = "Fuel Consumption"
     case volumeDry = "Volume - Dry"
     case velocityAngular = "Velocity - Angular"
     case acceleration = "Acceleration"
     case accelerationAngular = "Acceleration - Angular"
     case density = "Density"
-    case spesificVolume = "Spesific Volume"
+    case specificVolume = "Specific Volume"
     case momentOfInertia = "Moment of Inertia"
     case momentOfForce = "Moment of Force"
     case torque = "Torque"
+    
+    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        switch self {
+        case .length:
+            return convertLength(value, from: fromUnit, to: toUnit)
+        case .mass:
+            return convertMass(value, from: fromUnit, to: toUnit)
+        case .volume:
+            return convertVolume(value, from: fromUnit, to: toUnit)
+        case .temperature:
+            return convertTemperature(value, from: fromUnit, to: toUnit)
+        case .area:
+            return convertArea(value, from: fromUnit, to: toUnit)
+        case .pressure:
+            return convertPressure(value, from: fromUnit, to: toUnit)
+        case .energy:
+            return convertEnergy(value, from: fromUnit, to: toUnit)
+        case .power:
+            return convertPower(value, from: fromUnit, to: toUnit)
+        case .force:
+            return convertForce(value, from: fromUnit, to: toUnit)
+        case .duration:
+            return convertDuration(value, from: fromUnit, to: toUnit)
+        case .speed:
+            return convertSpeed(value, from: fromUnit, to: toUnit)
+        case .angle:
+            return convertAngle(value, from: fromUnit, to: toUnit)
+        case .fuelConsumption:
+            return convertFuelConsumption(value, from: fromUnit, to: toUnit)
+        case .volumeDry:
+            return convertVolumeDry(value, from: fromUnit, to: toUnit)
+        case .velocityAngular:
+            return convertAngularVelocity(value, from: fromUnit, to: toUnit)
+        case .acceleration:
+            return convertAcceleration(value, from: fromUnit, to: toUnit)
+        case .accelerationAngular:
+            return convertAngularAcceleration(value, from: fromUnit, to: toUnit)
+        case .density:
+            return convertDensity(value, from: fromUnit, to: toUnit)
+        case .specificVolume:
+            return convertSpecificVolume(value, from: fromUnit, to: toUnit)
+        case .momentOfInertia:
+            return convertMomentOfInertia(value, from: fromUnit, to: toUnit)
+        case .momentOfForce:
+            return convertMomentOfForce(value, from: fromUnit, to: toUnit)
+        case .torque:
+            return convertTorque(value, from: fromUnit, to: toUnit)
+        }
+    }
+    
+    private func convertLength(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let meterValues: [String: Double] = [
+            "meter": 1,
+            "kilometer": 1000,
+            "decimeter": 0.1,
+            "centimeter": 0.01,
+            "millimeter": 0.001,
+            "micrometer": 1e-6,
+            "nanometer": 1e-9,
+            "mile": 1609.344,
+            "yard": 0.9144,
+            "foot": 0.3048,
+            "inch": 0.0254,
+            "light year": 9.46073047258e15,
+            "exameter": 1e18,
+            "petameter": 1e15,
+            "terameter": 1e12,
+            "gigameter": 1e9,
+            "megameter": 1e6,
+            "hectometer": 100,
+            "dekameter": 10,
+            "micron": 1e-6,
+            "picometer": 1e-12,
+            "femtometer": 1e-15,
+            "attometer": 1e-18,
+            "megaparsec": 3.08567758128e22,
+            "kiloparsec": 3.08567758128e19,
+            "parsec": 3.08567758128e16,
+            "astronomical unit": 149597870691,
+            "league": 4828.032,
+            "nautical league (UK)": 5559.552,
+            "nautical league (int.)": 5556,
+            "league (statute)": 4828.0416560833,
+            "nautical mile (UK)": 1853.184,
+            "nautical mile (international)": 1852,
+            "mile (statute)": 1609.3472186944,
+            "mile (US survey)": 1609.3472186944,
+            "mile (Roman)": 1479.804,
+            "kiloyard": 914.4,
+            "furlong": 201.168,
+            "furlong (US survey)": 201.1684023368,
+            "chain": 20.1168,
+            "chain (US survey)": 20.1168402337,
+            "rope": 6.096,
+            "rod": 5.0292,
+            "rod (US survey)": 5.0292100584,
+            "perch": 5.0292,
+            "pole": 5.0292,
+            "fathom": 1.8288,
+            "fathom (US survey)": 1.8288036576,
+            "ell": 1.143,
+            "foot (US survey)": 0.3048006096,
+            "link": 0.201168,
+            "link (US survey)": 0.2011684023,
+            "cubit (UK)": 0.4572,
+            "hand": 0.1016,
+            "span (cloth)": 0.2286,
+            "finger (cloth)": 0.1143,
+            "nail (cloth)": 0.05715,
+            "inch (US survey)": 0.0254000508,
+            "barleycorn": 0.0084666667,
+            "mil": 2.54e-5,
+            "microinch": 2.54e-8,
+            "angstrom": 1e-10,
+            "a.u. of length": 5.2917724900001e-11,
+            "X-unit": 1.00208e-13,
+            "fermi": 1e-15,
+            "arpent": 58.5216,
+            "pica": 0.0042333333,
+            "point": 0.0003527778,
+            "twip": 1.76389e-5,
+            "aln": 0.5937777778,
+            "famn": 1.7813333333,
+            "caliber": 0.000254,
+            "centiinch": 0.000254,
+            "ken": 2.11836,
+            "Russian archin": 0.7112,
+            "Roman actus": 35.47872,
+            "vara de tarea": 2.505456,
+            "vara conuquera": 2.505456,
+            "vara castellana": 0.835152,
+            "cubit (Greek)": 0.462788,
+            "long reed": 3.2004,
+            "reed": 2.7432,
+            "long cubit": 0.5334,
+            "handbreadth": 0.0762,
+            "fingerbreadth": 0.01905,
+            "Planck length": 1.61605e-35,
+            "Electron radius (classical)": 2.81794092e-15,
+            "Bohr radius": 5.2917724900001e-11,
+            "Earth's equatorial radius": 6378160,
+            "Earth's polar radius": 6356776.9999999,
+            "Earth's distance from sun": 149600000000,
+            "Sun's radius": 696000000
+        ]
+
+        guard let fromValue = meterValues[fromUnit.lowercased()], let toValue = meterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let meters = value * fromValue
+        return meters / toValue
+    }
+
+    private func convertMass(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let kilogramValues: [String: Double] = [
+            "kilogram": 1,
+            "gram": 0.001,
+            "milligram": 1e-6,
+            "ton (metric)": 1000,
+            "pound": 0.45359237,
+            "ounce": 0.0283495231,
+            "carat": 0.0002,
+            "ton (short)": 907.18474,
+            "ton (long)": 1016.0469088,
+            "Atomic mass unit": 1.6605402e-27,
+            "exagram": 1e15,
+            "petagram": 1e12,
+            "teragram": 1e9,
+            "gigagram": 1e6,
+            "megagram": 1000,
+            "hectogram": 0.1,
+            "dekagram": 0.01,
+            "decigram": 1e-4,
+            "centigram": 1e-5,
+            "microgram": 1e-9,
+            "nanogram": 1e-12,
+            "picogram": 1e-15,
+            "femtogram": 1e-18,
+            "attogram": 1e-21,
+            "dalton": 1.6605300000013e-27,
+            "kilogram-force square second/meter": 9.80665,
+            "kilopound": 453.59237,
+            "kip": 453.59237,
+            "slug": 14.5939029372,
+            "pound-force square second/foot": 14.5939029372,
+            "pound (troy or apothecary)": 0.3732417216,
+            "poundal": 0.0140867196,
+            "ton (assay) (US)": 0.02916667,
+            "ton (assay) (UK)": 0.0326666667,
+            "kiloton (metric)": 1e6,
+            "quintal (metric)": 100,
+            "hundredweight (US)": 45.359237,
+            "hundredweight (UK)": 50.80234544,
+            "quarter (US)": 11.33980925,
+            "quarter (UK)": 12.70058636,
+            "stone (US)": 5.669904625,
+            "stone (UK)": 6.35029318,
+            "tonne": 1000,
+            "pennyweight": 0.0015551738,
+            "scruple (apothecary)": 0.0012959782,
+            "grain": 6.47989e-5,
+            "gamma": 1e-9,
+            "talent (Biblical Hebrew)": 34.2,
+            "mina (Biblical Hebrew)": 0.57,
+            "shekel (Biblical Hebrew)": 0.0114,
+            "bekan (Biblical Hebrew)": 0.0057,
+            "gerah (Biblical Hebrew)": 0.00057,
+            "talent (Biblical Greek)": 20.4,
+            "mina (Biblical Greek)": 0.34,
+            "tetradrachma (Biblical Greek)": 0.0136,
+            "didrachma (Biblical Greek)": 0.0068,
+            "drachma (Biblical Greek)": 0.0034,
+            "denarius (Biblical Roman)": 0.00385,
+            "assarion (Biblical Roman)": 0.000240625,
+            "quadrans (Biblical Roman)": 6.01563e-5,
+            "lepton (Biblical Roman)": 3.00781e-5,
+            "Planck mass": 2.17671e-8,
+            "Electron mass (rest)": 9.1093897e-31,
+            "Muon mass": 1.8835327e-28,
+            "Proton mass": 1.6726231e-27,
+            "Neutron mass": 1.6749286e-27,
+            "Deuteron mass": 3.343586e-27,
+            "Earth's mass": 5.9760000000002e24,
+            "Sun's mass": 2e30
+        ]
+
+        guard let fromValue = kilogramValues[fromUnit.lowercased()], let toValue = kilogramValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let kilograms = value * fromValue
+        return kilograms / toValue
+    }
+    
+    private func convertVolume(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let cubicMeterValues: [String: Double] = [
+            "cubic meter": 1,
+            "cubic kilometer": 1000000000,
+            "cubic centimeter": 1.0E-6,
+            "cubic millimeter": 1.0E-9,
+            "liter": 0.001,
+            "milliliter": 1.0E-6,
+            "gallon (US)": 0.0037854118,
+            "quart (US)": 0.0009463529,
+            "pint (US)": 0.0004731765,
+            "cup (US)": 0.0002365882,
+            "tablespoon (US)": 1.47868E-5,
+            "teaspoon (US)": 4.92892159375E-6,
+            "cubic mile": 4168181825.4406,
+            "cubic yard": 0.764554858,
+            "cubic foot": 0.0283168466,
+            "cubic inch": 1.63871E-5,
+            "cubic decimeter": 0.001,
+            "exaliter": 1.0E+15,
+            "petaliter": 1000000000000,
+            "teraliter": 1000000000,
+            "gigaliter": 1000000,
+            "megaliter": 1000,
+            "kiloliter": 1,
+            "hectoliter": 0.1,
+            "dekaliter": 0.01,
+            "deciliter": 0.0001,
+            "centiliter": 1.0E-5,
+            "microliter": 1.0E-9,
+            "nanoliter": 1.0E-12,
+            "picoliter": 1.0E-15,
+            "femtoliter": 1.0E-18,
+            "attoliter": 1.0E-21,
+            "cc": 1.0E-6,
+            "drop": 5.0E-8,
+            "barrel (oil)": 0.1589872949,
+            "barrel (US)": 0.1192404712,
+            "barrel (UK)": 0.16365924,
+            "gallon (UK)": 0.00454609,
+            "quart (UK)": 0.0011365225,
+            "pint (UK)": 0.0005682613,
+            "cup (metric)": 0.00025,
+            "cup (UK)": 0.0002841306,
+            "fluid ounce (US)": 2.95735E-5,
+            "fluid ounce (UK)": 2.84131E-5,
+            "tablespoon (metric)": 1.5E-5,
+            "tablespoon (UK)": 1.77582E-5,
+            "dessertspoon (US)": 9.8578431875E-6,
+            "dessertspoon (UK)": 1.18388E-5,
+            "teaspoon (metric)": 5.0E-6,
+            "teaspoon (UK)": 5.9193880208333E-6,
+            "gill (US)": 0.0001182941,
+            "gill (UK)": 0.0001420653,
+            "minim (US)": 6.1611519921875E-8,
+            "minim (UK)": 5.9193880208333E-8,
+            "ton register": 2.8316846592,
+            "ccf": 2.8316846592,
+            "hundred-cubic foot": 2.8316846592,
+            "acre-foot": 1233.4818375475,
+            "acre-foot (US survey)": 1233.4892384682,
+            "acre-inch": 102.790153129,
+            "dekastere": 10,
+            "stere": 1,
+            "decistere": 0.1,
+            "cord": 3.6245563638,
+            "tun": 0.9539237696,
+            "hogshead": 0.2384809424,
+            "board foot": 0.0023597372,
+            "dram": 3.6966911953125E-6,
+            "cor (Biblical)": 0.22,
+            "homer (Biblical)": 0.22,
+            "bath (Biblical)": 0.022,
+            "hin (Biblical)": 0.0036666667,
+            "cab (Biblical)": 0.0012222222,
+            "log (Biblical)": 0.0003055556,
+            "Taza (Spanish)": 0.0002365882,
+            "Earth's volume": 1.083E+21
+        ]
+
+        guard let fromValue = cubicMeterValues[fromUnit.lowercased()], let toValue = cubicMeterValues[toUnit.lowercased()] else {
+            return value
+        }
+
+        let cubicMeter = value * fromValue
+        return cubicMeter / toValue
+    }
+    
+    private func convertTemperature(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        // Önce giriş değerini Kelvin'e çevirelim
+        let kelvin: Double
+        switch fromUnit.lowercased() {
+        case "kelvin", "k":
+            kelvin = value
+        case "celsius", "°c":
+            kelvin = value + 273.15
+        case "fahrenheit", "°f":
+            kelvin = (value - 32) * 5/9 + 273.15
+        case "rankine", "°r":
+            kelvin = value * 5/9
+        case "reaumur", "°re":
+            kelvin = value * 5/4 + 273.15
+        case "triple point of water":
+            kelvin = 273.16
+        default:
+            return value // Bilinmeyen birim, orijinal değeri döndür
+        }
+
+        // Şimdi Kelvin'i hedef birime çevirelim
+        switch toUnit.lowercased() {
+        case "kelvin", "k":
+            return kelvin
+        case "celsius", "°c":
+            return kelvin - 273.15
+        case "fahrenheit", "°f":
+            return (kelvin - 273.15) * 9/5 + 32
+        case "rankine", "°r":
+            return kelvin * 9/5
+        case "reaumur", "°re":
+            return (kelvin - 273.15) * 4/5
+        case "triple point of water":
+            return kelvin / 273.16
+        default:
+            return value // Bilinmeyen birim, orijinal değeri döndür
+        }
+    }
+    
+    private func convertArea(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let squareMeterValues: [String: Double] = [
+            "square meter": 1,
+            "square kilometer": 1e6,
+            "square centimeter": 1e-4,
+            "square millimeter": 1e-6,
+            "square micrometer": 1e-12,
+            "hectare": 1e4,
+            "acre": 4046.8564224,
+            "square mile": 2589988.110336,
+            "square yard": 0.83612736,
+            "square foot": 0.09290304,
+            "square inch": 0.00064516,
+            "square hectometer": 1e4,
+            "square dekameter": 100,
+            "square decimeter": 0.01,
+            "square nanometer": 1e-18,
+            "are": 100,
+            "barn": 1e-28,
+            "square mile (US survey)": 2589998.4703195,
+            "square foot (US survey)": 0.0929034116,
+            "circular inch": 0.0005067075,
+            "township": 93239571.972096,
+            "section": 2589988.110336,
+            "acre (US survey)": 4046.8726098743,
+            "rood": 1011.7141056,
+            "square chain": 404.68564224,
+            "square rod": 25.29285264,
+            "square rod (US survey)": 25.2929538117,
+            "square perch": 25.29285264,
+            "square pole": 25.29285264,
+            "square mil": 6.4516e-10,
+            "circular mil": 5.067074790975e-10,
+            "homestead": 647497.027584,
+            "sabin": 0.09290304,
+            "arpent": 3418.8929236669,
+            "cuerda": 3930.395625,
+            "plaza": 6400,
+            "varas castellanas cuad": 0.698737,
+            "varas conuqueras cuad": 6.288633,
+            "Electron cross section": 6.6524615999999e-29
+        ]
+
+        guard let fromValue = squareMeterValues[fromUnit.lowercased()], let toValue = squareMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let squareMeters = value * fromValue
+        return squareMeters / toValue
+    }
+    
+    private func convertPressure(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let pascalValues: [String: Double] = [
+            "pascal": 1,
+            "kilopascal": 1000,
+            "bar": 100000,
+            "psi": 6894.7572931783,
+            "ksi": 6894757.2931783,
+            "Standard atmosphere": 101325,
+            "exapascal": 1e18,
+            "petapascal": 1e15,
+            "terapascal": 1e12,
+            "gigapascal": 1e9,
+            "megapascal": 1e6,
+            "hectopascal": 100,
+            "dekapascal": 10,
+            "decipascal": 0.1,
+            "centipascal": 0.01,
+            "millipascal": 0.001,
+            "micropascal": 1e-6,
+            "nanopascal": 1e-9,
+            "picopascal": 1e-12,
+            "femtopascal": 1e-15,
+            "attopascal": 1e-18,
+            "newton/square meter": 1,
+            "newton/square centimeter": 10000,
+            "newton/square millimeter": 1000000,
+            "kilonewton/square meter": 1000,
+            "millibar": 100,
+            "microbar": 0.1,
+            "dyne/square centimeter": 0.1,
+            "kilogram-force/square meter": 9.80665,
+            "kilogram-force/sq. cm": 98066.5,
+            "kilogram-force/sq. millimeter": 9806650,
+            "gram-force/sq. centimeter": 98.0665,
+            "ton-force (short)/sq. foot": 95760.517960678,
+            "ton-force (short)/sq. inch": 13789514.586338,
+            "ton-force (long)/square foot": 107251.78011595,
+            "ton-force (long)/square inch": 15444256.336697,
+            "kip-force/square inch": 6894757.2931783,
+            "pound-force/square foot": 47.8802589804,
+            "pound-force/square inch": 6894.7572931783,
+            "poundal/square foot": 1.4881639436,
+            "torr": 133.3223684211,
+            "centimeter mercury (0°C)": 1333.22,
+            "millimeter mercury (0°C)": 133.322,
+            "inch mercury (32°F)": 3386.38,
+            "inch mercury (60°F)": 3376.85,
+            "centimeter water (4°C)": 98.0638,
+            "millimeter water (4°C)": 9.80638,
+            "inch water (4°C)": 249.082,
+            "foot water (4°C)": 2988.98,
+            "inch water (60°F)": 248.843,
+            "foot water (60°F)": 2986.116,
+            "atmosphere technical": 98066.500000003
+        ]
+
+        guard let fromValue = pascalValues[fromUnit.lowercased()], let toValue = pascalValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let pascals = value * fromValue
+        return pascals / toValue
+    }
+    
+    private func convertEnergy(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let jouleValues: [String: Double] = [
+            "joule": 1,
+            "kilojoule": 1000,
+            "kilowatt-hour": 3600000,
+            "watt-hour": 3600,
+            "calorie (nutritional)": 4186.8,
+            "horsepower (metric) hour": 2647795.5,
+            "Btu (IT)": 1055.05585262,
+            "Btu (th)": 1054.3499999744,
+            "gigajoule": 1e9,
+            "megajoule": 1e6,
+            "millijoule": 0.001,
+            "microjoule": 1e-6,
+            "nanojoule": 1e-9,
+            "attojoule": 1e-18,
+            "megaelectron-volt": 1.6021766339999e-13,
+            "kiloelectron-volt": 1.6021766339999e-16,
+            "electron-volt": 1.6021766339999e-19,
+            "erg": 1e-7,
+            "gigawatt-hour": 3.6e12,
+            "megawatt-hour": 3.6e9,
+            "kilowatt-second": 1000,
+            "watt-second": 1,
+            "newton meter": 1,
+            "horsepower hour": 2684519.5368856,
+            "kilocalorie (IT)": 4186.8,
+            "kilocalorie (th)": 4184,
+            "calorie (IT)": 4.1868,
+            "calorie (th)": 4.184,
+            "mega Btu (IT)": 1055055852.62,
+            "ton-hour (refrigeration)": 12660670.23144,
+            "fuel oil equivalent @kiloliter": 40197627984.822,
+            "fuel oil equivalent @barrel (US)": 6383087908.3509,
+            "gigaton": 4.184e18,
+            "megaton": 4.184e15,
+            "kiloton": 4.184e12,
+            "ton (explosives)": 4.184e9,
+            "dyne centimeter": 1e-7,
+            "gram-force meter": 0.00980665,
+            "gram-force centimeter": 9.80665e-5,
+            "kilogram-force centimeter": 0.0980665,
+            "kilogram-force meter": 9.8066499997,
+            "kilopond meter": 9.8066499997,
+            "pound-force foot": 1.3558179483,
+            "pound-force inch": 0.112984829,
+            "ounce-force inch": 0.0070615518,
+            "foot-pound": 1.3558179483,
+            "inch-pound": 0.112984829,
+            "inch-ounce": 0.0070615518,
+            "poundal foot": 0.04214011,
+            "therm": 105505600,
+            "therm (EC)": 105505600,
+            "therm (US)": 105480400,
+            "Hartree energy": 4.3597482e-18,
+            "Rydberg constant": 2.1798741e-18
+        ]
+
+        guard let fromValue = jouleValues[fromUnit.lowercased()], let toValue = jouleValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let joules = value * fromValue
+        return joules / toValue
+    }
+    
+    private func convertPower(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let wattValues: [String: Double] = [
+            "watt": 1,
+            "exawatt": 1e18,
+            "petawatt": 1e15,
+            "terawatt": 1e12,
+            "gigawatt": 1e9,
+            "megawatt": 1e6,
+            "kilowatt": 1e3,
+            "hectowatt": 1e2,
+            "dekawatt": 1e1,
+            "deciwatt": 1e-1,
+            "centiwatt": 1e-2,
+            "milliwatt": 1e-3,
+            "microwatt": 1e-6,
+            "nanowatt": 1e-9,
+            "picowatt": 1e-12,
+            "femtowatt": 1e-15,
+            "attowatt": 1e-18,
+            "horsepower": 745.6998715823,
+            "horsepower (550 ft*lbf/s)": 745.6998715823,
+            "horsepower (metric)": 735.49875,
+            "horsepower (boiler)": 9809.5000000002,
+            "horsepower (electric)": 746,
+            "horsepower (water)": 746.043,
+            "pferdestarke (ps)": 735.49875,
+            "Btu (IT)/hour": 0.2930710702,
+            "Btu (IT)/minute": 17.5842642103,
+            "Btu (IT)/second": 1055.05585262,
+            "Btu (th)/hour": 0.292875,
+            "Btu (th)/minute": 17.5724999996,
+            "Btu (th)/second": 1054.3499999744,
+            "MBtu (IT)/hour": 293071.07017222,
+            "MBH": 293.0710701722,
+            "ton (refrigeration)": 3516.8528420667,
+            "kilocalorie (IT)/hour": 1.163,
+            "kilocalorie (IT)/minute": 69.78,
+            "kilocalorie (IT)/second": 4186.8,
+            "kilocalorie (th)/hour": 1.1622222222,
+            "kilocalorie (th)/minute": 69.7333333333,
+            "kilocalorie (th)/second": 4184,
+            "calorie (IT)/hour": 0.001163,
+            "calorie (IT)/minute": 0.06978,
+            "calorie (IT)/second": 4.1868,
+            "calorie (th)/hour": 0.0011622222,
+            "calorie (th)/minute": 0.0697333333,
+            "calorie (th)/second": 4.184,
+            "foot pound-force/hour": 0.0003766161,
+            "foot pound-force/minute": 0.0225969658,
+            "foot pound-force/second": 1.3558179483,
+            "pound-foot/hour": 0.0003766161,
+            "pound-foot/minute": 0.0225969658,
+            "pound-foot/second": 1.3558179483,
+            "erg/second": 1e-7,
+            "kilovolt ampere": 1000,
+            "volt ampere": 1,
+            "newton meter/second": 1,
+            "joule/second": 1,
+            "exajoule/second": 1e18,
+            "petajoule/second": 1e15,
+            "terajoule/second": 1e12,
+            "gigajoule/second": 1e9,
+            "megajoule/second": 1e6,
+            "kilojoule/second": 1e3,
+            "hectojoule/second": 1e2,
+            "dekajoule/second": 1e1,
+            "decijoule/second": 1e-1,
+            "centijoule/second": 1e-2,
+            "millijoule/second": 1e-3,
+            "microjoule/second": 1e-6,
+            "nanojoule/second": 1e-9,
+            "picojoule/second": 1e-12,
+            "femtojoule/second": 1e-15,
+            "attojoule/second": 1e-18,
+            "joule/hour": 0.0002777778,
+            "joule/minute": 0.0166666667,
+            "kilojoule/hour": 0.2777777778,
+            "kilojoule/minute": 16.6666666667
+        ]
+
+        guard let fromValue = wattValues[fromUnit.lowercased()], let toValue = wattValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let watts = value * fromValue
+        return watts / toValue
+    }
+    
+    private func convertForce(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let newtonValues: [String: Double] = [
+            "newton": 1,
+            "kilonewton": 1000,
+            "gram-force": 0.00980665,
+            "kilogram-force": 9.80665,
+            "ton-force (metric)": 9806.65,
+            "exanewton": 1e18,
+            "petanewton": 1e15,
+            "teranewton": 1e12,
+            "giganewton": 1e9,
+            "meganewton": 1e6,
+            "hectonewton": 100,
+            "dekanewton": 10,
+            "decinewton": 0.1,
+            "centinewton": 0.01,
+            "millinewton": 0.001,
+            "micronewton": 1e-6,
+            "nanonewton": 1e-9,
+            "piconewton": 1e-12,
+            "femtonewton": 1e-15,
+            "attonewton": 1e-18,
+            "dyne": 1e-5,
+            "joule/meter": 1,
+            "joule/centimeter": 0.01,
+            "ton-force (short)": 8896.443230521,
+            "ton-force (long)": 9964.0164181707,
+            "kip-force": 4448.2216152548,
+            "kilopound-force": 4448.2216152548,
+            "pound-force": 4.4482216153,
+            "ounce-force": 0.278013851,
+            "poundal": 0.1382549544,
+            "pound foot/square second": 0.1382549544,
+            "pond": 0.00980665,
+            "kilopond": 9.80665
+        ]
+
+        guard let fromValue = newtonValues[fromUnit.lowercased()], let toValue = newtonValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let newtons = value * fromValue
+        return newtons / toValue
+    }
+    
+    private func convertDuration(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let secondValues: [String: Double] = [
+            "second": 1,
+            "millisecond": 0.001,
+            "minute": 60,
+            "hour": 3600,
+            "day": 86400,
+            "week": 604800,
+            "month": 2628000,
+            "year": 31557600,
+            "decade": 315576000,
+            "century": 3155760000,
+            "millennium": 31557600000,
+            "microsecond": 1e-6,
+            "nanosecond": 1e-9,
+            "picosecond": 1e-12,
+            "femtosecond": 1e-15,
+            "attosecond": 1e-18,
+            "shake": 1e-8,
+            "month (synodic)": 2551443.84,
+            "year (Julian)": 31557600,
+            "year (leap)": 31622400,
+            "year (tropical)": 31556930,
+            "year (sidereal)": 31558149.54,
+            "day (sidereal)": 86164.09,
+            "hour (sidereal)": 3590.1704166667,
+            "minute (sidereal)": 59.8361736111,
+            "second (sidereal)": 0.9972695602,
+            "fortnight": 1209600,
+            "septennial": 220752000,
+            "octennial": 252288000,
+            "novennial": 283824000,
+            "quindecennial": 473040000,
+            "quinquennial": 157680000,
+            "Planck time": 5.39056e-44
+        ]
+
+        guard let fromValue = secondValues[fromUnit.lowercased()], let toValue = secondValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let seconds = value * fromValue
+        return seconds / toValue
+    }
+    
+    private func convertSpeed(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let meterPerSecondValues: [String: Double] = [
+            "meter/second": 1,
+            "kilometer/hour": 0.2777777778,
+            "mile/hour": 0.44704,
+            "meter/hour": 0.0002777778,
+            "meter/minute": 0.0166666667,
+            "kilometer/minute": 16.6666666667,
+            "kilometer/second": 1000,
+            "centimeter/hour": 2.7777777777778E-6,
+            "centimeter/minute": 0.0001666667,
+            "centimeter/second": 0.01,
+            "millimeter/hour": 2.7777777777778E-7,
+            "millimeter/minute": 1.66667E-5,
+            "millimeter/second": 0.001,
+            "foot/hour": 8.46667E-5,
+            "foot/minute": 0.00508,
+            "foot/second": 0.3048,
+            "yard/hour": 0.000254,
+            "yard/minute": 0.01524,
+            "yard/second": 0.9144,
+            "mile/minute": 26.8224,
+            "mile/second": 1609.344,
+            "knot": 0.5144444444,
+            "knot (UK)": 0.5147733333,
+            "Velocity of light in vacuum": 299792458,
+            "Cosmic velocity - first": 7899.9999999999,
+            "Cosmic velocity - second": 11200,
+            "Cosmic velocity - third": 16670,
+            "Earth's velocity": 29765,
+            "Velocity of sound in pure water": 1482.6999999998,
+            "Velocity of sound in sea water (20°C, 10 meter deep)": 1521.6,
+            "Mach (20°C, 1 atm)": 343.6,
+            "Mach (SI standard)": 295.0464000003
+        ]
+
+        guard let fromValue = meterPerSecondValues[fromUnit], let toValue = meterPerSecondValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let meterPerSecond = value * fromValue
+        return meterPerSecond / toValue
+    }
+    
+    private func convertAngle(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let degreeValues: [String: Double] = [
+            "degree": 1,
+            "radian": 57.2957795131,
+            "grad": 0.9,
+            "minute": 0.0166666667,
+            "second": 0.0002777778,
+            "gon": 0.9,
+            "sign": 30,
+            "mil": 0.05625,
+            "revolution": 360,
+            "circle": 360,
+            "turn": 360,
+            "quadrant": 90,
+            "right angle": 90,
+            "sextant": 60
+        ]
+
+        guard let fromValue = degreeValues[fromUnit.lowercased()], let toValue = degreeValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let degrees = value * fromValue
+        return degrees / toValue
+    }
+    
+    private func convertFuelConsumption(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let meterPerLiterValues: [String: Double] = [
+            "meter/liter": 1,
+            "exameter/liter": 1e18,
+            "petameter/liter": 1e15,
+            "terameter/liter": 1e12,
+            "gigameter/liter": 1e9,
+            "megameter/liter": 1e6,
+            "kilometer/liter": 1000,
+            "hectometer/liter": 100,
+            "dekameter/liter": 10,
+            "centimeter/liter": 0.01,
+            "mile (US)/liter": 1609.344,
+            "nautical mile/liter": 1853.24496,
+            "nautical mile/gallon (US)": 489.5755247,
+            "kilometer/gallon (US)": 264.1720524,
+            "meter/gallon (US)": 0.2641720524,
+            "meter/gallon (UK)": 0.2199687986,
+            "mile/gallon (US)": 425.1437075,
+            "mile/gallon (UK)": 354.00619,
+            "meter/cubic meter": 0.001,
+            "meter/cubic centimeter": 1000,
+            "meter/cubic yard": 0.0013079506,
+            "meter/cubic foot": 0.0353146667,
+            "meter/cubic inch": 61.02374409,
+            "meter/quart (US)": 1.056688209,
+            "meter/quart (UK)": 0.8798751948,
+            "meter/pint (US)": 2.113376419,
+            "meter/pint (UK)": 1.759750389,
+            "meter/cup (US)": 4.226752838,
+            "meter/cup (UK)": 3.519500777,
+            "meter/fluid ounce (US)": 33.8140227,
+            "meter/fluid ounce (UK)": 35.19500777,
+            "liter/meter": 1,
+            "liter/100 km": 100000,
+            "gallon (US)/mile": 425.1437074976,
+            "gallon (US)/100 mi": 42514.370749763,
+            "gallon (UK)/mile": 354.0061899559,
+            "gallon (UK)/100 mi": 35400.618995592
+        ]
+
+        guard let fromValue = meterPerLiterValues[fromUnit], let toValue = meterPerLiterValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let meterPerLiter = value * fromValue
+        return meterPerLiter / toValue
+    }
+    
+    private func convertVolumeDry(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let literValues: [String: Double] = [
+            "liter": 1,
+            "barrel dry (US)": 115.6271236039,
+            "pint dry (US)": 0.5506104714,
+            "quart dry (US)": 1.1012209428,
+            "peck (US)": 8.8097675424,
+            "peck (UK)": 9.09218,
+            "bushel (US)": 35.2390701696,
+            "bushel (UK)": 36.36872,
+            "cor (Biblical)": 219.9999892918,
+            "homer (Biblical)": 219.9999892918,
+            "ephah (Biblical)": 21.9999989292,
+            "seah (Biblical)": 7.3333329764,
+            "omer (Biblical)": 2.1999998929,
+            "cab (Biblical)": 1.2222221627,
+            "log (Biblical)": 0.3055555407
+        ]
+
+        guard let fromValue = literValues[fromUnit], let toValue = literValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let liters = value * fromValue
+        return liters / toValue
+    }
+    
+    private func convertAngularVelocity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let radianPerSecondValues: [String: Double] = [
+            "radian/second": 1,
+            "radian/day": 1.15741E-5,
+            "radian/hour": 0.0002777778,
+            "radian/minute": 0.0166666667,
+            "degree/day": 2.0200570046231E-7,
+            "degree/hour": 4.8481368110954E-6,
+            "degree/minute": 0.0002908882,
+            "degree/second": 0.0174532925,
+            "revolution/day": 7.27221E-5,
+            "revolution/hour": 0.0017453293,
+            "revolution/minute": 0.1047197551,
+            "revolution/second": 6.2831853072
+        ]
+
+        guard let fromValue = radianPerSecondValues[fromUnit], let toValue = radianPerSecondValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let radianPerSecond = value * fromValue
+        return radianPerSecond / toValue
+    }
+    
+    private func convertAcceleration(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let meterPerSquareSecondValues: [String: Double] = [
+            "meter/square second": 1,
+            "decimeter/square second": 0.1,
+            "kilometer/square second": 1000,
+            "hectometer/square second": 100,
+            "dekameter/square second": 10,
+            "centimeter/square second": 0.01,
+            "millimeter/square second": 0.001,
+            "micrometer/square second": 1e-6,
+            "nanometer/square second": 1e-9,
+            "picometer/square second": 1e-12,
+            "femtometer/square second": 1e-15,
+            "attometer/square second": 1e-18,
+            "gal": 0.01,
+            "galileo": 0.01,
+            "mile/square second": 1609.344,
+            "yard/square second": 0.9144,
+            "foot/square second": 0.3048,
+            "inch/square second": 0.0254,
+            "Acceleration of gravity": 9.80665
+        ]
+
+        guard let fromValue = meterPerSquareSecondValues[fromUnit], let toValue = meterPerSquareSecondValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let meterPerSquareSecond = value * fromValue
+        return meterPerSquareSecond / toValue
+    }
+    
+    private func convertAngularAcceleration(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let radianPerSquareSecondValues: [String: Double] = [
+            "radian/square second": 1,
+            "radian/square minute": 0.0002777778,
+            "revolution/square second": 6.2831853069,
+            "revolution/minute/second": 0.1047197551,
+            "revolution/square minute": 0.0017453293
+        ]
+
+        guard let fromValue = radianPerSquareSecondValues[fromUnit], let toValue = radianPerSquareSecondValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let radianPerSquareSecond = value * fromValue
+        return radianPerSquareSecond / toValue
+    }
+    
+    private func convertDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let kilogramPerCubicMeterValues: [String: Double] = [
+            "kilogram/cubic meter": 1,
+            "gram/cubic centimeter": 1000,
+            "kilogram/cubic centimeter": 1000000,
+            "gram/cubic meter": 0.001,
+            "gram/cubic millimeter": 1000000,
+            "milligram/cubic meter": 1e-6,
+            "milligram/cubic centimeter": 1,
+            "milligram/cubic millimeter": 1000,
+            "exagram/liter": 1e18,
+            "petagram/liter": 1e15,
+            "teragram/liter": 1e12,
+            "gigagram/liter": 1e9,
+            "megagram/liter": 1e6,
+            "kilogram/liter": 1000,
+            "hectogram/liter": 100,
+            "dekagram/liter": 10,
+            "gram/liter": 1,
+            "decigram/liter": 0.1,
+            "centigram/liter": 0.01,
+            "milligram/liter": 0.001,
+            "microgram/liter": 1e-6,
+            "nanogram/liter": 1e-9,
+            "picogram/liter": 1e-12,
+            "femtogram/liter": 1e-15,
+            "attogram/liter": 1e-18,
+            "pound/cubic inch": 27679.904710191,
+            "pound/cubic foot": 16.018463374,
+            "pound/cubic yard": 0.5932764213,
+            "pound/gallon (US)": 119.8264273167,
+            "pound/gallon (UK)": 99.7763726631,
+            "ounce/cubic inch": 1729.9940443869,
+            "ounce/cubic foot": 1.0011539609,
+            "ounce/gallon (US)": 7.4891517073,
+            "ounce/gallon (UK)": 6.2360232914,
+            "grain/gallon (US)": 0.017118061,
+            "grain/gallon (UK)": 0.0142537675,
+            "grain/cubic foot": 0.0022883519,
+            "ton (short)/cubic yard": 1186.552842515,
+            "ton (long)/cubic yard": 1328.9391836174,
+            "slug/cubic foot": 515.3788183932,
+            "psi/1000 feet": 2.3066587258,
+            "Earth's density (mean)": 5517.9999999999
+        ]
+
+        guard let fromValue = kilogramPerCubicMeterValues[fromUnit], let toValue = kilogramPerCubicMeterValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let kilogramPerCubicMeter = value * fromValue
+        return kilogramPerCubicMeter / toValue
+    }
+    
+    private func convertSpecificVolume(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let cubicMeterPerKilogramValues: [String: Double] = [
+            "cubic meter/kilogram": 1,
+            "cubic centimeter/gram": 0.001,
+            "liter/kilogram": 0.001,
+            "liter/gram": 1,
+            "cubic foot/kilogram": 0.0283168466,
+            "cubic foot/pound": 0.06242796,
+            "gallon (US)/pound": 0.0083454039,
+            "gallon (UK)/pound": 0.0100224128
+        ]
+
+        guard let fromValue = cubicMeterPerKilogramValues[fromUnit], let toValue = cubicMeterPerKilogramValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let cubicMeterPerKilogram = value * fromValue
+        return cubicMeterPerKilogram / toValue
+    }
+    
+    private func convertMomentOfInertia(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let kilogramSquareMeterValues: [String: Double] = [
+            "kilogram square meter": 1,
+            "kilogram square centimeter": 0.0001,
+            "kilogram square millimeter": 1e-6,
+            "gram square centimeter": 1e-7,
+            "gram square millimeter": 1e-9,
+            "kilogram-force meter square second": 9.8066499998,
+            "kilogram-force centimeter square second": 0.0980665,
+            "ounce square inch": 1.829e-5,
+            "ounce-force inch sq. second": 0.0070615519,
+            "pound square foot": 0.0421401101,
+            "pound-force foot sq. second": 1.3558179619,
+            "pound square inch": 0.0002926397,
+            "pound-force inch sq. second": 0.1129848302,
+            "slug square foot": 1.3558179619
+        ]
+
+        guard let fromValue = kilogramSquareMeterValues[fromUnit], let toValue = kilogramSquareMeterValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let kilogramSquareMeter = value * fromValue
+        return kilogramSquareMeter / toValue
+    }
+    
+    private func convertMomentOfForce(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let newtonMeterValues: [String: Double] = [
+            "newton meter": 1,
+            "kilonewton meter": 1000,
+            "millinewton meter": 0.001,
+            "micronewton meter": 1e-6,
+            "ton-force (short) meter": 8896.4400000035,
+            "ton-force (long) meter": 9964.0200000047,
+            "ton-force (metric) meter": 9806.6499999993,
+            "kilogram-force meter": 9.80665,
+            "gram-force centimeter": 9.80665e-5,
+            "pound-force foot": 1.35582,
+            "poundal foot": 0.0421401,
+            "poundal inch": 0.003511675
+        ]
+
+        guard let fromValue = newtonMeterValues[fromUnit], let toValue = newtonMeterValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let newtonMeter = value * fromValue
+        return newtonMeter / toValue
+    }
+    
+    private func convertTorque(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let newtonMeterValues: [String: Double] = [
+            "newton meter": 1,
+            "newton centimeter": 0.01,
+            "newton millimeter": 0.001,
+            "kilonewton meter": 1000,
+            "dyne meter": 1e-5,
+            "dyne centimeter": 1e-7,
+            "dyne millimeter": 1e-8,
+            "kilogram-force meter": 9.80665,
+            "kilogram-force centimeter": 0.0980665,
+            "kilogram-force millimeter": 0.00980665,
+            "gram-force meter": 0.00980665,
+            "gram-force centimeter": 9.80665e-5,
+            "gram-force millimeter": 9.80665e-6,
+            "ounce-force foot": 0.084738624,
+            "ounce-force inch": 0.007061552,
+            "pound-force foot": 1.355818,
+            "pound-force inch": 0.1129848333,
+            // Önceki birimler
+            "millinewton meter": 0.001,
+            "micronewton meter": 1e-6,
+            "ton-force (short) meter": 8896.4400000035,
+            "ton-force (long) meter": 9964.0200000047,
+            "ton-force (metric) meter": 9806.6499999993,
+            "poundal foot": 0.0421401,
+            "poundal inch": 0.003511675
+        ]
+
+        guard let fromValue = newtonMeterValues[fromUnit], let toValue = newtonMeterValues[toUnit] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let newtonMeter = value * fromValue
+        return newtonMeter / toValue
+    }
     
     var icon: String {
         switch self {
@@ -59,12 +1156,8 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             return "power" // TODO: daha iyisini bul
         case .force:
             return "arrow.left.arrow.right" // TODO: daha iyisini bul
-        case .fuelConsuption:
+        case .fuelConsumption:
             return "fuelpump"
-        case .numbers:
-            return "numbersign" // TODO: daha iyisini bul
-        case .dataStorage:
-            return "externaldrive"
         case .volumeDry:
             return "speaker.wave.2"
         case .velocityAngular:
@@ -75,7 +1168,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             return "digitalcrown.arrow.clockwise" // TODO: daha iyisini bul
         case .density:
             return "circle.dotted.and.circle" // TODO: daha iyisini bul
-        case .spesificVolume:
+        case .specificVolume:
             return "cube"
         case .momentOfInertia:
             return "arrow.right.arrow.left" // TODO: daha iyisini bul
@@ -218,7 +1311,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
                 
                 Accurate measurement of force is crucial for designing structures, machinery, and various systems where precise control and stability are required.
                 """
-        case .fuelConsuption:
+        case .fuelConsumption:
             return """
                 Fuel consumption measures the amount of fuel used by a vehicle or machine over a specific distance or period. It is an important metric for assessing efficiency and environmental impact.
                 
@@ -229,28 +1322,6 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
                 Fuel consumption is crucial for evaluating the performance of engines, optimizing operational costs, and reducing emissions.
                 
                 Accurate measurement and management of fuel consumption are essential for both economic and environmental reasons.
-                """
-        case .numbers:
-            return """
-                Numbers are fundamental mathematical objects used to quantify, measure, and label. They represent values and can be classified into various types, such as natural numbers, integers, rational numbers, and real numbers.
-                
-                The most basic numbers are natural numbers (1, 2, 3, …), which are used for counting. Integers include both positive and negative whole numbers.
-                
-                Rational numbers are fractions or ratios of integers, while real numbers encompass all possible values along a continuous line, including irrational numbers like √2. 
-                
-                Numbers are essential in mathematics, science, and daily life for performing calculations, analyzing data, and making decisions.
-                
-                Accurate number representation and manipulation are crucial for solving problems and understanding various phenomena.
-                """
-        case .dataStorage:
-            return """
-                Data storage refers to the method of recording, preserving, and retrieving digital information. It involves various media and technologies used to save data for future use.
-                
-                Common data storage units include bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB), each representing a specific amount of data.
-                
-                Storage devices can be categorized into primary storage, such as RAM (Random Access Memory) which provides quick access to data, and secondary storage, like hard drives (HDDs), solid-state drives (SSDs), and optical discs, which store data more permanently.
-                
-                Data storage is essential for managing large volumes of information, ensuring data integrity, and enabling efficient access and retrieval for applications ranging from personal computing to enterprise systems.
                 """
         case .volumeDry:
             return """
@@ -312,7 +1383,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
                 
                 Accurate density measurement is crucial for material science, fluid dynamics, and engineering applications.
                 """
-        case .spesificVolume:
+        case .specificVolume:
             return """
                 Specific volume is a property that measures the volume occupied by a unit mass of a substance. It is the reciprocal of density and provides insights into the space a given mass occupies.
                 
@@ -361,347 +1432,254 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [Dimension] {
+    var availableUnits: [String] {
         switch self {
-        case .acceleration:
-            return [
-                UnitAcceleration.gravity,
-                UnitAcceleration.metersPerSecondSquared
-            ]
-            
-        case .accelerationAngular:
-            return [
-                UnitLength.megameters,
-                UnitLength.kilometers,
-                UnitLength.hectometers,
-                UnitLength.decameters,
-                UnitLength.meters,
-                UnitLength.decimeters,
-                UnitLength.centimeters,
-                UnitLength.millimeters,
-                UnitLength.micrometers,
-                UnitLength.nanometers,
-                UnitLength.picometers,
-                UnitLength.inches,
-                UnitLength.feet,
-                UnitLength.yards,
-                UnitLength.miles,
-                UnitLength.scandinavianMiles,
-                UnitLength.lightyears,
-                UnitLength.nauticalMiles,
-                UnitLength.fathoms,
-                UnitLength.astronomicalUnits,
-                UnitLength.parsecs
-            ]
-            
-        case .angle:
-            return [
-                UnitPressure.newtonsPerMetersSquared,
-                UnitPressure.gigapascals,
-                UnitPressure.megapascals,
-                UnitPressure.kilopascals,
-                UnitPressure.hectopascals,
-                UnitPressure.inchesOfMercury,
-                UnitPressure.bars,
-                UnitPressure.millibars,
-                UnitPressure.millimetersOfMercury,
-                UnitPressure.poundsForcePerSquareInch
-            ]
-            
-        case .area:
-            return [UnitTemperature.celsius,
-                    UnitTemperature.fahrenheit,
-                    UnitTemperature.kelvin]
-            
-        case .dataStorage:
-            return [
-                UnitVolume.megaliters,
-                UnitVolume.kiloliters,
-                UnitVolume.liters,
-                UnitVolume.deciliters,
-                UnitVolume.centiliters,
-                UnitVolume.milliliters,
-                UnitVolume.cubicKilometers,
-                UnitVolume.cubicMeters,
-                UnitVolume.cubicDecimeters,
-                UnitVolume.cubicCentimeters,
-                UnitVolume.cubicMillimeters,
-                UnitVolume.cubicInches,
-                UnitVolume.cubicFeet,
-                UnitVolume.cubicYards,
-                UnitVolume.cubicMiles,
-                UnitVolume.acreFeet,
-                UnitVolume.bushels,
-                UnitVolume.teaspoons,
-                UnitVolume.tablespoons,
-                UnitVolume.fluidOunces,
-                UnitVolume.cups,
-                UnitVolume.pints,
-                UnitVolume.quarts,
-                UnitVolume.gallons,
-                UnitVolume.imperialTeaspoons,
-                UnitVolume.imperialTablespoons,
-                UnitVolume.imperialFluidOunces,
-                UnitVolume.imperialPints,
-                UnitVolume.imperialQuarts,
-                UnitVolume.imperialGallons,
-                UnitVolume.metricCups
-            ]
-            
-        case .density:
-            return [
-                UnitMass.kilograms,
-                UnitMass.grams,
-                UnitMass.decigrams,
-                UnitMass.centigrams,
-                UnitMass.milligrams,
-                UnitMass.micrograms,
-                UnitMass.nanograms,
-                UnitMass.picograms,
-                UnitMass.ounces,
-                UnitMass.pounds,
-                UnitMass.stones,
-                UnitMass.metricTons,
-                UnitMass.shortTons,
-                UnitMass.carats,
-                UnitMass.ouncesTroy,
-                UnitMass.slugs
-            ]
-            
-        case .duration:
-            return [
-                UnitAngle.degrees,
-                UnitAngle.arcMinutes,
-                UnitAngle.arcSeconds,
-                UnitAngle.radians,
-                UnitAngle.gradians,
-                UnitAngle.revolutions
-            ]
-            
-        case .energy:
-            return [
-                UnitSpeed.metersPerSecond,
-                UnitSpeed.kilometersPerHour,
-                UnitSpeed.milesPerHour,
-                UnitSpeed.knots
-            ]
-            
-        case .force:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]
-            
-        case .fuelConsuption:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
         case .length:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
+                "meter", "kilometer", "decimeter", "centimeter", "millimeter", "micrometer", "nanometer",
+                "mile", "yard", "foot", "inch", "light year", "exameter", "petameter", "terameter",
+                "gigameter", "megameter", "hectometer", "dekameter", "micron", "picometer", "femtometer",
+                "attometer", "megaparsec", "kiloparsec", "parsec", "astronomical unit", "league",
+                "nautical league (UK)", "nautical league (int.)", "league (statute)", "nautical mile (UK)",
+                "nautical mile (international)", "mile (statute)", "mile (US survey)", "mile (Roman)",
+                "kiloyard", "furlong", "furlong (US survey)", "chain", "chain (US survey)", "rope", "rod",
+                "rod (US survey)", "perch", "pole", "fathom", "fathom (US survey)", "ell", "foot (US survey)",
+                "link", "link (US survey)", "cubit (UK)", "hand", "span (cloth)", "finger (cloth)",
+                "nail (cloth)", "inch (US survey)", "barleycorn", "mil", "microinch", "angstrom",
+                "a.u. of length", "X-unit", "fermi", "arpent", "pica", "point", "twip", "aln", "famn",
+                "caliber", "centiinch", "ken", "Russian archin", "Roman actus", "vara de tarea",
+                "vara conuquera", "vara castellana", "cubit (Greek)", "long reed", "reed", "long cubit",
+                "handbreadth", "fingerbreadth", "Planck length", "Electron radius (classical)", "Bohr radius",
+                "Earth's equatorial radius", "Earth's polar radius", "Earth's distance from sun", "Sun's radius"
+            ]
         case .mass:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .momentOfForce:
+                "kilogram", "gram", "milligram", "ton (metric)", "pound", "ounce", "carat", "ton (short)",
+                "ton (long)", "Atomic mass unit", "exagram", "petagram", "teragram", "gigagram", "megagram",
+                "hectogram", "dekagram", "decigram", "centigram", "microgram", "nanogram", "picogram",
+                "femtogram", "attogram", "dalton", "kilogram-force square second/meter", "kilopound", "kip",
+                "slug", "pound-force square second/foot", "pound (troy or apothecary)", "poundal",
+                "ton (assay) (US)", "ton (assay) (UK)", "kiloton (metric)", "quintal (metric)",
+                "hundredweight (US)", "hundredweight (UK)", "quarter (US)", "quarter (UK)", "stone (US)",
+                "stone (UK)", "tonne", "pennyweight", "scruple (apothecary)", "grain", "gamma",
+                "talent (Biblical Hebrew)", "mina (Biblical Hebrew)", "shekel (Biblical Hebrew)",
+                "bekan (Biblical Hebrew)", "gerah (Biblical Hebrew)", "talent (Biblical Greek)",
+                "mina (Biblical Greek)", "tetradrachma (Biblical Greek)", "didrachma (Biblical Greek)",
+                "drachma (Biblical Greek)", "denarius (Biblical Roman)", "assarion (Biblical Roman)",
+                "quadrans (Biblical Roman)", "lepton (Biblical Roman)", "Planck mass", "Electron mass (rest)",
+                "Muon mass", "Proton mass", "Neutron mass", "Deuteron mass", "Earth's mass", "Sun's mass"
+            ]
+        case .volume:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .momentOfInertia:
+                "cubic meter", "cubic kilometer", "cubic centimeter", "cubic millimeter", "liter", "milliliter",
+                "gallon (US)", "quart (US)", "pint (US)", "cup (US)", "tablespoon (US)", "teaspoon (US)",
+                "cubic mile", "cubic yard", "cubic foot", "cubic inch", "cubic decimeter", "exaliter", "petaliter",
+                "teraliter", "gigaliter", "megaliter", "kiloliter", "hectoliter", "dekaliter", "deciliter",
+                "centiliter", "microliter", "nanoliter", "picoliter", "femtoliter", "attoliter", "cc", "drop",
+                "barrel (oil)", "barrel (US)", "barrel (UK)", "gallon (UK)", "quart (UK)", "pint (UK)",
+                "cup (metric)", "cup (UK)", "fluid ounce (US)", "fluid ounce (UK)", "tablespoon (metric)",
+                "tablespoon (UK)", "dessertspoon (US)", "dessertspoon (UK)", "teaspoon (metric)", "teaspoon (UK)",
+                "gill (US)", "gill (UK)", "minim (US)", "minim (UK)", "ton register", "ccf", "hundred-cubic foot",
+                "acre-foot", "acre-foot (US survey)", "acre-inch", "dekastere", "stere", "decistere", "cord",
+                "tun", "hogshead", "board foot", "dram", "cor (Biblical)", "homer (Biblical)", "bath (Biblical)",
+                "hin (Biblical)", "cab (Biblical)", "log (Biblical)", "Taza (Spanish)", "Earth's volume"
+            ]
+        case .temperature:
+            return ["Kelvin", "Celsius", "Fahrenheit", "Rankine", "Reaumur", "Triple point of water"]
+        case .area:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .numbers:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .power:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
+                "square meter", "square kilometer", "square centimeter", "square millimeter",
+                "square micrometer", "hectare", "acre", "square mile", "square yard", "square foot",
+                "square inch", "square hectometer", "square dekameter", "square decimeter",
+                "square nanometer", "are", "barn", "square mile (US survey)", "square foot (US survey)",
+                "circular inch", "township", "section", "acre (US survey)", "rood", "square chain",
+                "square rod", "square rod (US survey)", "square perch", "square pole", "square mil",
+                "circular mil", "homestead", "sabin", "arpent", "cuerda", "plaza",
+                "varas castellanas cuad", "varas conuqueras cuad", "Electron cross section"
+            ]
         case .pressure:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
+                "pascal", "kilopascal", "bar", "psi", "ksi", "Standard atmosphere", "exapascal",
+                "petapascal", "terapascal", "gigapascal", "megapascal", "hectopascal", "dekapascal",
+                "decipascal", "centipascal", "millipascal", "micropascal", "nanopascal", "picopascal",
+                "femtopascal", "attopascal", "newton/square meter", "newton/square centimeter",
+                "newton/square millimeter", "kilonewton/square meter", "millibar", "microbar",
+                "dyne/square centimeter", "kilogram-force/square meter", "kilogram-force/sq. cm",
+                "kilogram-force/sq. millimeter", "gram-force/sq. centimeter", "ton-force (short)/sq. foot",
+                "ton-force (short)/sq. inch", "ton-force (long)/square foot", "ton-force (long)/square inch",
+                "kip-force/square inch", "pound-force/square foot", "pound-force/square inch",
+                "poundal/square foot", "torr", "centimeter mercury (0°C)", "millimeter mercury (0°C)",
+                "inch mercury (32°F)", "inch mercury (60°F)", "centimeter water (4°C)", "millimeter water (4°C)",
+                "inch water (4°C)", "foot water (4°C)", "inch water (60°F)", "foot water (60°F)",
+                "atmosphere technical"
+            ]
+        case .energy:
+            return [
+                "joule", "kilojoule", "kilowatt-hour", "watt-hour", "calorie (nutritional)",
+                "horsepower (metric) hour", "Btu (IT)", "Btu (th)", "gigajoule", "megajoule",
+                "millijoule", "microjoule", "nanojoule", "attojoule", "megaelectron-volt",
+                "kiloelectron-volt", "electron-volt", "erg", "gigawatt-hour", "megawatt-hour",
+                "kilowatt-second", "watt-second", "newton meter", "horsepower hour",
+                "kilocalorie (IT)", "kilocalorie (th)", "calorie (IT)", "calorie (th)",
+                "mega Btu (IT)", "ton-hour (refrigeration)", "fuel oil equivalent @kiloliter",
+                "fuel oil equivalent @barrel (US)", "gigaton", "megaton", "kiloton",
+                "ton (explosives)", "dyne centimeter", "gram-force meter", "gram-force centimeter",
+                "kilogram-force centimeter", "kilogram-force meter", "kilopond meter",
+                "pound-force foot", "pound-force inch", "ounce-force inch", "foot-pound",
+                "inch-pound", "inch-ounce", "poundal foot", "therm", "therm (EC)", "therm (US)",
+                "Hartree energy", "Rydberg constant"
+            ]
+        case .power:
+            return [
+                "watt", "exawatt", "petawatt", "terawatt", "gigawatt", "megawatt", "kilowatt",
+                "hectowatt", "dekawatt", "deciwatt", "centiwatt", "milliwatt", "microwatt",
+                "nanowatt", "picowatt", "femtowatt", "attowatt", "horsepower",
+                "horsepower (550 ft*lbf/s)", "horsepower (metric)", "horsepower (boiler)",
+                "horsepower (electric)", "horsepower (water)", "pferdestarke (ps)",
+                "Btu (IT)/hour", "Btu (IT)/minute", "Btu (IT)/second", "Btu (th)/hour",
+                "Btu (th)/minute", "Btu (th)/second", "MBtu (IT)/hour", "MBH",
+                "ton (refrigeration)", "kilocalorie (IT)/hour", "kilocalorie (IT)/minute",
+                "kilocalorie (IT)/second", "kilocalorie (th)/hour", "kilocalorie (th)/minute",
+                "kilocalorie (th)/second", "calorie (IT)/hour", "calorie (IT)/minute",
+                "calorie (IT)/second", "calorie (th)/hour", "calorie (th)/minute",
+                "calorie (th)/second", "foot pound-force/hour", "foot pound-force/minute",
+                "foot pound-force/second", "pound-foot/hour", "pound-foot/minute",
+                "pound-foot/second", "erg/second", "kilovolt ampere", "volt ampere",
+                "newton meter/second", "joule/second", "exajoule/second", "petajoule/second",
+                "terajoule/second", "gigajoule/second", "megajoule/second", "kilojoule/second",
+                "hectojoule/second", "dekajoule/second", "decijoule/second", "centijoule/second",
+                "millijoule/second", "microjoule/second", "nanojoule/second", "picojoule/second",
+                "femtojoule/second", "attojoule/second", "joule/hour", "joule/minute",
+                "kilojoule/hour", "kilojoule/minute"
+            ]
+        case .force:
+            return [
+                "newton", "kilonewton", "gram-force", "kilogram-force", "ton-force (metric)",
+                "exanewton", "petanewton", "teranewton", "giganewton", "meganewton",
+                "hectonewton", "dekanewton", "decinewton", "centinewton", "millinewton",
+                "micronewton", "nanonewton", "piconewton", "femtonewton", "attonewton",
+                "dyne", "joule/meter", "joule/centimeter", "ton-force (short)", "ton-force (long)",
+                "kip-force", "kilopound-force", "pound-force", "ounce-force", "poundal",
+                "pound foot/square second", "pond", "kilopond"
+            ]
+        case .duration:
+            return [
+                "second", "millisecond", "minute", "hour", "day", "week", "month", "year",
+                "decade", "century", "millennium", "microsecond", "nanosecond", "picosecond",
+                "femtosecond", "attosecond", "shake", "month (synodic)", "year (Julian)",
+                "year (leap)", "year (tropical)", "year (sidereal)", "day (sidereal)",
+                "hour (sidereal)", "minute (sidereal)", "second (sidereal)", "fortnight",
+                "septennial", "octennial", "novennial", "quindecennial", "quinquennial",
+                "Planck time"
+            ]
         case .speed:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .spesificVolume:
+                "meter/second", "kilometer/hour", "mile/hour", "meter/hour", "meter/minute",
+                "kilometer/minute", "kilometer/second", "centimeter/hour", "centimeter/minute",
+                "centimeter/second", "millimeter/hour", "millimeter/minute", "millimeter/second",
+                "foot/hour", "foot/minute", "foot/second", "yard/hour", "yard/minute",
+                "yard/second", "mile/minute", "mile/second", "knot", "knot (UK)",
+                "Velocity of light in vacuum", "Cosmic velocity - first", "Cosmic velocity - second",
+                "Cosmic velocity - third", "Earth's velocity", "Velocity of sound in pure water",
+                "Velocity of sound in sea water (20°C, 10 meter deep)", "Mach (20°C, 1 atm)",
+                "Mach (SI standard)"
+            ]
+        case .angle:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .temperature:
+                "degree", "radian", "grad", "minute", "second", "gon", "sign", "mil",
+                "revolution", "circle", "turn", "quadrant", "right angle", "sextant"
+            ]
+        case .fuelConsumption:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
+                "meter/liter", "exameter/liter", "petameter/liter", "terameter/liter",
+                "gigameter/liter", "megameter/liter", "kilometer/liter", "hectometer/liter",
+                "dekameter/liter", "centimeter/liter", "mile (US)/liter", "nautical mile/liter",
+                "nautical mile/gallon (US)", "kilometer/gallon (US)", "meter/gallon (US)",
+                "meter/gallon (UK)", "mile/gallon (US)", "mile/gallon (UK)", "meter/cubic meter",
+                "meter/cubic centimeter", "meter/cubic yard", "meter/cubic foot",
+                "meter/cubic inch", "meter/quart (US)", "meter/quart (UK)", "meter/pint (US)",
+                "meter/pint (UK)", "meter/cup (US)", "meter/cup (UK)", "meter/fluid ounce (US)",
+                "meter/fluid ounce (UK)", "liter/meter", "liter/100 km", "gallon (US)/mile",
+                "gallon (US)/100 mi", "gallon (UK)/mile", "gallon (UK)/100 mi"
+            ]
+        case .volumeDry:
+            return [
+                "liter", "barrel dry (US)", "pint dry (US)", "quart dry (US)", "peck (US)",
+                "peck (UK)", "bushel (US)", "bushel (UK)", "cor (Biblical)", "homer (Biblical)",
+                "ephah (Biblical)", "seah (Biblical)", "omer (Biblical)", "cab (Biblical)",
+                "log (Biblical)"
+            ]
+        case .velocityAngular:
+            return [
+                "radian/second", "radian/day", "radian/hour", "radian/minute",
+                "degree/day", "degree/hour", "degree/minute", "degree/second",
+                "revolution/day", "revolution/hour", "revolution/minute", "revolution/second"
+            ]
+        case .acceleration:
+            return [
+                "meter/square second", "decimeter/square second", "kilometer/square second",
+                "hectometer/square second", "dekameter/square second", "centimeter/square second",
+                "millimeter/square second", "micrometer/square second", "nanometer/square second",
+                "picometer/square second", "femtometer/square second", "attometer/square second",
+                "gal", "galileo", "mile/square second", "yard/square second",
+                "foot/square second", "inch/square second", "Acceleration of gravity"
+            ]
+        case .accelerationAngular:
+            return [
+                "radian/square second", "radian/square minute",
+                "revolution/square second", "revolution/minute/second",
+                "revolution/square minute"
+            ]
+        case .density:
+            return [
+                "kilogram/cubic meter", "gram/cubic centimeter", "kilogram/cubic centimeter",
+                "gram/cubic meter", "gram/cubic millimeter", "milligram/cubic meter",
+                "milligram/cubic centimeter", "milligram/cubic millimeter", "exagram/liter",
+                "petagram/liter", "teragram/liter", "gigagram/liter", "megagram/liter",
+                "kilogram/liter", "hectogram/liter", "dekagram/liter", "gram/liter",
+                "decigram/liter", "centigram/liter", "milligram/liter", "microgram/liter",
+                "nanogram/liter", "picogram/liter", "femtogram/liter", "attogram/liter",
+                "pound/cubic inch", "pound/cubic foot", "pound/cubic yard",
+                "pound/gallon (US)", "pound/gallon (UK)", "ounce/cubic inch",
+                "ounce/cubic foot", "ounce/gallon (US)", "ounce/gallon (UK)",
+                "grain/gallon (US)", "grain/gallon (UK)", "grain/cubic foot",
+                "ton (short)/cubic yard", "ton (long)/cubic yard", "slug/cubic foot",
+                "psi/1000 feet", "Earth's density (mean)"
+            ]
+        case .specificVolume:
+            return [
+                "cubic meter/kilogram", "cubic centimeter/gram", "liter/kilogram",
+                "liter/gram", "cubic foot/kilogram", "cubic foot/pound",
+                "gallon (US)/pound", "gallon (UK)/pound"
+            ]
+        case .momentOfInertia:
+            return [
+                "kilogram square meter", "kilogram square centimeter", "kilogram square millimeter",
+                "gram square centimeter", "gram square millimeter",
+                "kilogram-force meter square second", "kilogram-force centimeter square second",
+                "ounce square inch", "ounce-force inch sq. second",
+                "pound square foot", "pound-force foot sq. second",
+                "pound square inch", "pound-force inch sq. second",
+                "slug square foot"
+            ]
+        case .momentOfForce:
+            return [
+                "newton meter", "kilonewton meter", "millinewton meter", "micronewton meter",
+                "ton-force (short) meter", "ton-force (long) meter", "ton-force (metric) meter",
+                "kilogram-force meter", "gram-force centimeter", "pound-force foot",
+                "poundal foot", "poundal inch"
             ]
         case .torque:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.minutes,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .velocityAngular:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .volume:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        case .volumeDry:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]            
-        }
-    }
-    
-    var availableUnitNames: [String] {
-        switch self {
-        case .acceleration:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .accelerationAngular:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .angle:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .area:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .dataStorage:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .density:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .duration:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .energy:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .force:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .fuelConsuption:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .length:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .mass:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .momentOfForce:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .momentOfInertia:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .numbers:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .power:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .pressure:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .speed:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .spesificVolume:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .temperature:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .torque:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .velocityAngular:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .volume:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .volumeDry:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+                "newton meter", "newton centimeter", "newton millimeter", "kilonewton meter",
+                "dyne meter", "dyne centimeter", "dyne millimeter",
+                "kilogram-force meter", "kilogram-force centimeter", "kilogram-force millimeter",
+                "gram-force meter", "gram-force centimeter", "gram-force millimeter",
+                "ounce-force foot", "ounce-force inch", "pound-force foot", "pound-force inch",
+                "millinewton meter", "micronewton meter",
+                "ton-force (short) meter", "ton-force (long) meter", "ton-force (metric) meter",
+                "poundal foot", "poundal inch"
+            ]
         }
     }
 }

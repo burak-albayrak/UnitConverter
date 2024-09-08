@@ -19,6 +19,287 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     case heatFluxDensity = "Heat Flux Density"
     case heatTransverCoefficient = "Heat Transver Coefficient"
 
+    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        switch self {
+        case .fuelEfficiencyMass:
+            return convertSpecificEnergy(value, from: fromUnit, to: toUnit)
+        case .fuelEfficiencyVolume:
+            return convertEnergyDensity(value, from: fromUnit, to: toUnit)
+        case .temperatureInterval:
+            return convertTemperature(value, from: fromUnit, to: toUnit)
+        case .thermalExpansion:
+            return convertThermalExpansionCoefficient(value, from: fromUnit, to: toUnit)
+        case .thermalResistance:
+            return convertThermalResistance(value, from: fromUnit, to: toUnit)
+        case .thermalConductivity:
+            return convertThermalConductivity(value, from: fromUnit, to: toUnit)
+        case .spesificHeatCapacity:
+            return convertSpecificHeatCapacity(value, from: fromUnit, to: toUnit)
+        case .heatDensity:
+            return convertRadiationEnergyDensity(value, from: fromUnit, to: toUnit)
+        case .heatFluxDensity:
+            return convertRadiationFluxDensity(value, from: fromUnit, to: toUnit)
+        case .heatTransverCoefficient:
+            return convertHeatTransferCoefficient(value, from: fromUnit, to: toUnit)
+        }
+    }
+    
+    private func convertSpecificEnergy(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let joulePerKilogramValues: [String: Double] = [
+            "joule/kilogram": 1,
+            "kilojoule/kilogram": 1000,
+            "calorie (IT)/gram": 4186.8,
+            "calorie (th)/gram": 4184.000000005,
+            "Btu (IT)/pound": 2326,
+            "Btu (th)/pound": 2324.4444444446,
+            "kilogram/joule": 1,
+            "kilogram/kilojoule": 1000,
+            "gram/calorie (IT)": 4186.8,
+            "gram/calorie (th)": 4184.000000005,
+            "pound/Btu (IT)": 2326,
+            "pound/Btu (th)": 2324.4444444446,
+            "pound/horsepower/hour": 5918352.5016,
+            "gram/horsepower (metric)/hour": 2647795500,
+            "gram/kilowatt/hour": 3600000000
+        ]
+
+        guard let fromValue = joulePerKilogramValues[fromUnit.lowercased()], let toValue = joulePerKilogramValues[toUnit.lowercased()] else {
+            return value
+        }
+
+        let joulePerKilogram = value * fromValue
+        return joulePerKilogram / toValue
+    }
+    
+    private func convertEnergyDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let joulePerCubicMeterValues: [String: Double] = [
+            "joule/cubic meter": 1,
+            "joule/liter": 1000,
+            "megajoule/cubic meter": 1000000,
+            "kilojoule/cubic meter": 1000,
+            "kilocalorie (IT)/cubic meter": 4186.800000482,
+            "calorie (IT)/cubic centimeter": 4186800.000482,
+            "therm/cubic foot": 3725894617.319,
+            "therm/gallon (UK)": 23207984510.267,
+            "Btu (IT)/cubic foot": 37258.945807808,
+            "Btu (th)/cubic foot": 37234.028198186,
+            "CHU/cubic foot": 67066.103121737,
+            "cubic meter/joule": 1,
+            "liter/joule": 1000,
+            "gallon (US)/horsepower": 709175035.869
+        ]
+
+        guard let fromValue = joulePerCubicMeterValues[fromUnit.lowercased()], let toValue = joulePerCubicMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let joulePerCubicMeter = value * fromValue
+        return joulePerCubicMeter / toValue
+    }
+    
+    private func convertTemperature(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let kelvin: Double
+        
+        // Önce giriş birimini Kelvin'e çevirelim
+        switch fromUnit.lowercased() {
+        case "kelvin", "k":
+            kelvin = value
+        case "degree celsius", "°c", "degree centigrade":
+            kelvin = value + 273.15
+        case "degree fahrenheit", "°f":
+            kelvin = (value - 32) * 5/9 + 273.15
+        case "degree rankine", "°r":
+            kelvin = value * 5/9
+        case "degree reaumur", "°re":
+            kelvin = value * 1.25 + 273.15
+        default:
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+        
+        // Şimdi Kelvin'i hedef birime çevirelim
+        switch toUnit.lowercased() {
+        case "kelvin", "k":
+            return kelvin
+        case "degree celsius", "°c", "degree centigrade":
+            return kelvin - 273.15
+        case "degree fahrenheit", "°f":
+            return (kelvin - 273.15) * 9/5 + 32
+        case "degree rankine", "°r":
+            return kelvin * 1.8
+        case "degree reaumur", "°re":
+            return (kelvin - 273.15) * 0.8
+        default:
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+    }
+    
+    private func convertThermalExpansionCoefficient(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let perKelvinValues: [String: Double] = [
+            "length/length/kelvin": 1,
+            "length/length/degree celsius": 1,
+            "length/length/degree fahrenheit": 1.8,
+            "length/length/degree rankine": 1.8,
+            "length/length/degree reaumur": 0.8
+        ]
+
+        guard let fromValue = perKelvinValues[fromUnit.lowercased()], let toValue = perKelvinValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let perKelvin = value * fromValue
+        return perKelvin / toValue
+    }
+    
+    private func convertThermalResistance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let kelvinPerWattValues: [String: Double] = [
+            "kelvin/watt": 1,
+            "degree fahrenheit hour/btu (it)": 1.8956342406,
+            "degree fahrenheit hour/btu (th)": 1.8969028295,
+            "degree fahrenheit second/btu (it)": 0.0005265651,
+            "degree fahrenheit second/btu (th)": 0.0005269175
+        ]
+
+        guard let fromValue = kelvinPerWattValues[fromUnit.lowercased()], let toValue = kelvinPerWattValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let kelvinPerWatt = value * fromValue
+        return kelvinPerWatt / toValue
+    }
+    private func convertThermalConductivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let wattPerMeterKelvinValues: [String: Double] = [
+            "watt/meter/K": 1,
+            "watt/centimeter/°C": 100,
+            "kilowatt/meter/K": 1000,
+            "calorie (IT)/second/cm/°C": 418.6800000009,
+            "calorie (th)/second/cm/°C": 418.3999999994,
+            "kilocalorie (IT)/hour/meter/°C": 1.163,
+            "kilocalorie (th)/hour/meter/°C": 1.1622222222,
+            "Btu (IT) inch/second/sq. foot/°F": 519.2203999105,
+            "Btu (th) inch/second/sq. foot/°F": 518.8731616576,
+            "Btu (IT) foot/hour/sq. foot/°F": 1.7307346664,
+            "Btu (th) foot/hour/sq. foot/°F": 1.7295772055,
+            "Btu (IT) inch/hour/sq. foot/°F": 0.1442278889,
+            "Btu (th) inch/hour/sq. foot/°F": 0.1441314338
+        ]
+
+        guard let fromValue = wattPerMeterKelvinValues[fromUnit.lowercased()], let toValue = wattPerMeterKelvinValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let wattPerMeterKelvin = value * fromValue
+        return wattPerMeterKelvin / toValue
+    }
+    
+    private func convertSpecificHeatCapacity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let joulePerKilogramKelvinValues: [String: Double] = [
+            "joule/kilogram/K": 1,
+            "joule/kilogram/°C": 1,
+            "joule/gram/°C": 1000,
+            "kilojoule/kilogram/K": 1000,
+            "kilojoule/kilogram/°C": 1000,
+            "calorie (IT)/gram/°C": 4186.8000000087,
+            "calorie (IT)/gram/°F": 4186.8000000087,
+            "calorie (th)/gram/°C": 4184,
+            "kilocalorie (IT)/kilogram/°C": 4186.8000000087,
+            "kilocalorie (th)/kilogram/°C": 4184,
+            "kilocalorie (IT)/kilogram/K": 4186.8000000087,
+            "kilocalorie (th)/kilogram/K": 4184,
+            "kilogram-force meter/kilogram/K": 9.80665,
+            "pound-force foot/pound/°R": 5.380320456,
+            "Btu (IT)/pound/°F": 4186.8000000087,
+            "Btu (th)/pound/°F": 4184,
+            "Btu (IT)/pound/°R": 4186.8000000087,
+            "Btu (th)/pound/°R": 4184,
+            "Btu (IT)/pound/°C": 2326.0000001596,
+            "CHU/pound/°C": 4186.800000482
+        ]
+
+        guard let fromValue = joulePerKilogramKelvinValues[fromUnit.lowercased()], let toValue = joulePerKilogramKelvinValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let joulePerKilogramKelvin = value * fromValue
+        return joulePerKilogramKelvin / toValue
+    }
+    
+    private func convertRadiationEnergyDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let joulePerSquareMeterValues: [String: Double] = [
+            "joule/square meter": 1,
+            "calorie (th)/square centimeter": 41839.999999999,
+            "langley": 41839.999999999,
+            "Btu (IT)/square foot": 11356.526682227,
+            "Btu (th)/square foot": 11348.931794793
+        ]
+
+        guard let fromValue = joulePerSquareMeterValues[fromUnit.lowercased()], let toValue = joulePerSquareMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let joulePerSquareMeter = value * fromValue
+        return joulePerSquareMeter / toValue
+    }
+    
+    private func convertRadiationFluxDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let wattPerSquareMeterValues: [String: Double] = [
+            "watt/square meter": 1,
+            "kilowatt/square meter": 1000,
+            "watt/square centimeter": 10000,
+            "watt/square inch": 1550.0031012075,
+            "joule/second/square meter": 1,
+            "kilocalorie (IT)/hour/square meter": 1.1629999999,
+            "kilocalorie (IT)/hour/square foot": 12.5184278205,
+            "calorie (IT)/second/square centimeter": 41868.00000482,
+            "calorie (IT)/minute/square centimeter": 697.8000000803,
+            "calorie (IT)/hour/square centimeter": 11.6300000008,
+            "calorie (th)/second/square centimeter": 41839.999999942,
+            "calorie (th)/minute/square centimeter": 697.3333333314,
+            "calorie (th)/hour/square centimeter": 11.6222222222,
+            "dyne/hour/centimeter": 2.7777777777778E-7,
+            "erg/hour/square millimeter": 2.77778E-5,
+            "foot pound/minute/square foot": 0.2432317156,
+            "horsepower/square foot": 8026.6466174305,
+            "horsepower (metric)/square foot": 7916.8426564296,
+            "Btu (IT)/second/square foot": 11356.526682221,
+            "Btu (IT)/minute/square foot": 189.2754465477,
+            "Btu (IT)/hour/square foot": 3.1545907451,
+            "Btu (th)/second/square inch": 1634246.1784508,
+            "Btu (th)/second/square foot": 11348.93179479,
+            "Btu (th)/minute/square foot": 189.1488632466,
+            "Btu (th)/hour/square foot": 3.1524810541,
+            "CHU/hour/square foot": 5.6782633986
+        ]
+
+        guard let fromValue = wattPerSquareMeterValues[fromUnit.lowercased()], let toValue = wattPerSquareMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let wattPerSquareMeter = value * fromValue
+        return wattPerSquareMeter / toValue
+    }
+    
+    private func convertHeatTransferCoefficient(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let wattPerSquareMeterKelvinValues: [String: Double] = [
+            "watt/square meter/K": 1,
+            "watt/square meter/°C": 1,
+            "joule/second/square meter/K": 1,
+            "calorie (IT)/second/square centimeter/°C": 41868.00000482,
+            "kilocalorie (IT)/hour/square meter/°C": 1.163,
+            "kilocalorie (IT)/hour/square foot/°C": 12.5184278205,
+            "Btu (IT)/second/square foot/°F": 20441.748028012,
+            "Btu (th)/second/square foot/°F": 20428.077230618,
+            "Btu (IT)/hour/square foot/°F": 5.6782633411,
+            "Btu (th)/hour/square foot/°F": 5.6744658974,
+            "CHU/hour/square foot/°C": 5.6782633411
+        ]
+
+        guard let fromValue = wattPerSquareMeterKelvinValues[fromUnit.lowercased()], let toValue = wattPerSquareMeterKelvinValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let wattPerSquareMeterKelvin = value * fromValue
+        return wattPerSquareMeterKelvin / toValue
+    }
     
     var icon: String {
         switch self {
@@ -152,188 +433,113 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [Dimension] {
+    var availableUnits: [String] {
         switch self {
         case .fuelEfficiencyMass:
             return [
-                UnitArea.squareMegameters,
-                UnitArea.squareKilometers,
-                UnitArea.squareMeters,
-                UnitArea.squareCentimeters,
-                UnitArea.squareMillimeters,
-                UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
-                UnitArea.squareMiles,
-                UnitArea.acres,
-                UnitArea.ares,
-                UnitArea.hectares
+                "joule/kilogram", "kilojoule/kilogram", "calorie (IT)/gram", "calorie (th)/gram",
+                "Btu (IT)/pound", "Btu (th)/pound", "kilogram/joule", "kilogram/kilojoule",
+                "gram/calorie (IT)", "gram/calorie (th)", "pound/Btu (IT)", "pound/Btu (th)",
+                "pound/horsepower/hour", "gram/horsepower (metric)/hour", "gram/kilowatt/hour"
             ]
-            
         case .fuelEfficiencyVolume:
             return [
-                UnitLength.megameters,
-                UnitLength.kilometers,
-                UnitLength.hectometers,
-                UnitLength.decameters,
-                UnitLength.meters,
-                UnitLength.decimeters,
-                UnitLength.centimeters,
-                UnitLength.millimeters,
-                UnitLength.micrometers,
-                UnitLength.nanometers,
-                UnitLength.picometers,
-                UnitLength.inches,
-                UnitLength.feet,
-                UnitLength.yards,
-                UnitLength.miles,
-                UnitLength.scandinavianMiles,
-                UnitLength.lightyears,
-                UnitLength.nauticalMiles,
-                UnitLength.fathoms,
-                UnitLength.astronomicalUnits,
-                UnitLength.parsecs
+                "joule/cubic meter", "joule/liter", "megajoule/cubic meter", "kilojoule/cubic meter",
+                "kilocalorie (IT)/cubic meter", "calorie (IT)/cubic centimeter", "therm/cubic foot",
+                "therm/gallon (UK)", "Btu (IT)/cubic foot", "Btu (th)/cubic foot", "CHU/cubic foot",
+                "cubic meter/joule", "liter/joule", "gallon (US)/horsepower"
             ]
-            
-        case .heatDensity:
-            return [
-                UnitPressure.newtonsPerMetersSquared,
-                UnitPressure.gigapascals,
-                UnitPressure.megapascals,
-                UnitPressure.kilopascals,
-                UnitPressure.hectopascals,
-                UnitPressure.inchesOfMercury,
-                UnitPressure.bars,
-                UnitPressure.millibars,
-                UnitPressure.millimetersOfMercury,
-                UnitPressure.poundsForcePerSquareInch
-            ]
-            
-        case .heatFluxDensity:
-            return [UnitTemperature.celsius,
-                    UnitTemperature.fahrenheit,
-                    UnitTemperature.kelvin]
-            
-        case .heatTransverCoefficient:
-            return [
-                UnitVolume.megaliters,
-                UnitVolume.kiloliters,
-                UnitVolume.liters,
-                UnitVolume.deciliters,
-                UnitVolume.centiliters,
-                UnitVolume.milliliters,
-                UnitVolume.cubicKilometers,
-                UnitVolume.cubicMeters,
-                UnitVolume.cubicDecimeters,
-                UnitVolume.cubicCentimeters,
-                UnitVolume.cubicMillimeters,
-                UnitVolume.cubicInches,
-                UnitVolume.cubicFeet,
-                UnitVolume.cubicYards,
-                UnitVolume.cubicMiles,
-                UnitVolume.acreFeet,
-                UnitVolume.bushels,
-                UnitVolume.teaspoons,
-                UnitVolume.tablespoons,
-                UnitVolume.fluidOunces,
-                UnitVolume.cups,
-                UnitVolume.pints,
-                UnitVolume.quarts,
-                UnitVolume.gallons,
-                UnitVolume.imperialTeaspoons,
-                UnitVolume.imperialTablespoons,
-                UnitVolume.imperialFluidOunces,
-                UnitVolume.imperialPints,
-                UnitVolume.imperialQuarts,
-                UnitVolume.imperialGallons,
-                UnitVolume.metricCups
-            ]
-            
-        case .spesificHeatCapacity:
-            return [
-                UnitMass.kilograms,
-                UnitMass.grams,
-                UnitMass.decigrams,
-                UnitMass.centigrams,
-                UnitMass.milligrams,
-                UnitMass.micrograms,
-                UnitMass.nanograms,
-                UnitMass.picograms,
-                UnitMass.ounces,
-                UnitMass.pounds,
-                UnitMass.stones,
-                UnitMass.metricTons,
-                UnitMass.shortTons,
-                UnitMass.carats,
-                UnitMass.ouncesTroy,
-                UnitMass.slugs
-            ]
-            
         case .temperatureInterval:
             return [
-                UnitAngle.degrees,
-                UnitAngle.arcMinutes,
-                UnitAngle.arcSeconds,
-                UnitAngle.radians,
-                UnitAngle.gradians,
-                UnitAngle.revolutions
+                "kelvin",
+                "degree Celsius",
+                "degree centigrade",
+                "degree Fahrenheit",
+                "degree Rankine",
+                "degree Reaumur"
             ]
-            
-        case .thermalConductivity:
-            return [
-                UnitSpeed.metersPerSecond,
-                UnitSpeed.kilometersPerHour,
-                UnitSpeed.milesPerHour,
-                UnitSpeed.knots
-            ]
-            
         case .thermalExpansion:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
+                "length/length/kelvin",
+                "length/length/degree Celsius",
+                "length/length/degree Fahrenheit",
+                "length/length/degree Rankine",
+                "length/length/degree Reaumur"
             ]
-            
         case .thermalResistance:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
+                "kelvin/watt",
+                "degree Fahrenheit hour/Btu (IT)",
+                "degree Fahrenheit hour/Btu (th)",
+                "degree Fahrenheit second/Btu (IT)",
+                "degree Fahrenheit second/Btu (th)"
+            ]
+        case .thermalConductivity:
+            return [
+                "watt/meter/K",
+                "watt/centimeter/°C",
+                "kilowatt/meter/K",
+                "calorie (IT)/second/cm/°C",
+                "calorie (th)/second/cm/°C",
+                "kilocalorie (IT)/hour/meter/°C",
+                "kilocalorie (th)/hour/meter/°C",
+                "Btu (IT) inch/second/sq. foot/°F",
+                "Btu (th) inch/second/sq. foot/°F",
+                "Btu (IT) foot/hour/sq. foot/°F",
+                "Btu (th) foot/hour/sq. foot/°F",
+                "Btu (IT) inch/hour/sq. foot/°F",
+                "Btu (th) inch/hour/sq. foot/°F"
+            ]
+        case .spesificHeatCapacity:
+            return [
+                "joule/kilogram/K", "joule/kilogram/°C", "joule/gram/°C",
+                "kilojoule/kilogram/K", "kilojoule/kilogram/°C",
+                "calorie (IT)/gram/°C", "calorie (IT)/gram/°F", "calorie (th)/gram/°C",
+                "kilocalorie (IT)/kilogram/°C", "kilocalorie (th)/kilogram/°C",
+                "kilocalorie (IT)/kilogram/K", "kilocalorie (th)/kilogram/K",
+                "kilogram-force meter/kilogram/K", "pound-force foot/pound/°R",
+                "Btu (IT)/pound/°F", "Btu (th)/pound/°F",
+                "Btu (IT)/pound/°R", "Btu (th)/pound/°R",
+                "Btu (IT)/pound/°C", "CHU/pound/°C"
+            ]
+        case .heatDensity:
+            return [
+                "joule/square meter",
+                "calorie (th)/square centimeter",
+                "langley",
+                "Btu (IT)/square foot",
+                "Btu (th)/square foot"
+            ]
+        case .heatFluxDensity:
+            return [
+                "watt/square meter", "kilowatt/square meter", "watt/square centimeter",
+                "watt/square inch", "joule/second/square meter", "kilocalorie (IT)/hour/square meter",
+                "kilocalorie (IT)/hour/square foot", "calorie (IT)/second/square centimeter",
+                "calorie (IT)/minute/square centimeter", "calorie (IT)/hour/square centimeter",
+                "calorie (th)/second/square centimeter", "calorie (th)/minute/square centimeter",
+                "calorie (th)/hour/square centimeter", "dyne/hour/centimeter",
+                "erg/hour/square millimeter", "foot pound/minute/square foot",
+                "horsepower/square foot", "horsepower (metric)/square foot",
+                "Btu (IT)/second/square foot", "Btu (IT)/minute/square foot",
+                "Btu (IT)/hour/square foot", "Btu (th)/second/square inch",
+                "Btu (th)/second/square foot", "Btu (th)/minute/square foot",
+                "Btu (th)/hour/square foot", "CHU/hour/square foot"
+            ]
+        case .heatTransverCoefficient:
+            return [
+                "watt/square meter/K",
+                "watt/square meter/°C",
+                "joule/second/square meter/K",
+                "calorie (IT)/second/square centimeter/°C",
+                "kilocalorie (IT)/hour/square meter/°C",
+                "kilocalorie (IT)/hour/square foot/°C",
+                "Btu (IT)/second/square foot/°F",
+                "Btu (th)/second/square foot/°F",
+                "Btu (IT)/hour/square foot/°F",
+                "Btu (th)/hour/square foot/°F",
+                "CHU/hour/square foot/°C"
             ]
         }
     }
-    
-    var availableUnitNames: [String] {
-        switch self {
-        case .fuelEfficiencyMass:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .fuelEfficiencyVolume:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .heatDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .heatFluxDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .heatTransverCoefficient:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .spesificHeatCapacity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .temperatureInterval:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .thermalConductivity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .thermalExpansion:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .thermalResistance:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        }
-    }
+
 }

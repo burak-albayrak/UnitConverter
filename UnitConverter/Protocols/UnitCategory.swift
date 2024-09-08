@@ -11,7 +11,7 @@ protocol UnitCategory {
     var rawValue: String { get }
     var icon: String { get }
     var info: String { get }
-    var availableUnitNames: [String] { get }
-    var availableUnits: [Dimension] { get }
-}
+    var availableUnits: [String] { get }
 
+    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double
+}

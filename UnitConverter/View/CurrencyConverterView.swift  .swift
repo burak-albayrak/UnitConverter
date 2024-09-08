@@ -10,13 +10,15 @@ import SwiftUI
 struct CurrencyConversionView: View {
     @StateObject private var viewModel = CurrencyConversionViewModel()
     @State private var copiedToClipboard: Bool = false
+    @State private var isCopyButtonPressed: Bool = false
+    @State private var isPasteButtonPressed: Bool = false
 
     var body: some View {
         Form {
             Section("Select Currencies") {
                 Picker("From Currency", selection: $viewModel.selectedFromCurrencyIndex) {
-                    ForEach(0 ..< viewModel.category.availableUnits.count, id: \.self) { index in
-                        Text("\(viewModel.category.availableUnits[index].symbol) (\(viewModel.category.availableUnitNames[index]))")
+                    ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
+                        Text("\(viewModel.availableCurrencies[index]) (\(viewModel.getCurrencyFullName(for: index)))")
                     }
                 }
                 .onChange(of: viewModel.selectedFromCurrencyIndex) { _, _ in
@@ -24,8 +26,8 @@ struct CurrencyConversionView: View {
                 }
                 
                 Picker("To Currency", selection: $viewModel.selectedToCurrencyIndex) {
-                    ForEach(0 ..< viewModel.category.availableUnits.count, id: \.self) { index in
-                        Text("\(viewModel.category.availableUnits[index].symbol) (\(viewModel.category.availableUnitNames[index]))")
+                    ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
+                        Text("\(viewModel.availableCurrencies[index]) (\(viewModel.getCurrencyFullName(for: index)))")
                     }
                 }
                 .onChange(of: viewModel.selectedToCurrencyIndex) { _, _ in
@@ -47,11 +49,20 @@ struct CurrencyConversionView: View {
                         }
                     }) {
                         Text("paste")
+                            .padding(9)
+                            .padding(.horizontal)
+                            .foregroundStyle(.cyan)
+                            .background(.ultraThinMaterial)
+                            .containerShape(.rect(cornerRadius: 10))
+                            .opacity(isPasteButtonPressed ? 0.5 : 1.0)
+                            .animation(.easeInOut(duration: 0.1), value: isPasteButtonPressed)
                     }
-                    .padding(9)
-                    .padding(.horizontal)
-                    .background(.ultraThinMaterial)
-                    .containerShape(.rect(cornerRadius: 10))
+                    .buttonStyle(PlainButtonStyle())
+                    .simultaneousGesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { _ in isPasteButtonPressed = true }
+                            .onEnded { _ in isPasteButtonPressed = false }
+                    )
                 }
             }
             
@@ -63,7 +74,7 @@ struct CurrencyConversionView: View {
                         Text(errorMessage)
                             .foregroundColor(.red)
                     } else {
-                        Text("\(viewModel.convertedValue) \(viewModel.category.availableUnits[viewModel.selectedToCurrencyIndex].symbol)")
+                        Text("\(viewModel.convertedValue) \(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex])")
                     }
                     Spacer()
                     Button(action: {
@@ -78,11 +89,20 @@ struct CurrencyConversionView: View {
                         }
                     }) {
                         Text("copy")
+                            .padding(9)
+                            .padding(.horizontal)
+                            .foregroundStyle(.cyan)
+                            .background(.ultraThinMaterial)
+                            .containerShape(.rect(cornerRadius: 10))
+                            .opacity(isCopyButtonPressed ? 0.5 : 1.0)
+                            .animation(.easeInOut(duration: 0.1), value: isCopyButtonPressed)
                     }
-                    .padding(9)
-                    .padding(.horizontal)
-                    .background(.ultraThinMaterial)
-                    .containerShape(.rect(cornerRadius: 10))
+                    .buttonStyle(PlainButtonStyle())
+                    .simultaneousGesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { _ in isCopyButtonPressed = true }
+                            .onEnded { _ in isCopyButtonPressed = false }
+                    )
                 }
             }
         }

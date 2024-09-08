@@ -16,9 +16,9 @@ class CurrencyConversionViewModel: ObservableObject {
     @Published var convertedValue = ""
     @Published var isLoading = false
     @Published var errorMessage: String?
+    @Published var availableCurrencies: [String] = []
     
     let category = CurrencyUnitsCategory.currency
-    private var exchangeRates: [String: Double] = [:]
     
     init() {
         fetchExchangeRates()
@@ -28,17 +28,17 @@ class CurrencyConversionViewModel: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        CurrencyConverterNetwork.shared.fetchExchangeRates { [weak self] result in
+        CurrencyUnitsCategory.updateExchangeRates { [weak self] success in
             DispatchQueue.main.async {
                 self?.isLoading = false
                 
-                switch result {
-                case .success(let rates):
-                    self?.exchangeRates = rates.conversion_rates
+                if success {
+                    self?.availableCurrencies = CurrencyUnitsCategory.exchangeRates.keys.sorted()
                     self?.convertCurrency()
-                case .failure(let error):
-                    self?.errorMessage = "Failed to fetch exchange rates: \(error.localizedDescription)"
-                    print("Error details: \(error)")
+                } else {
+                    self?.errorMessage = "Failed to fetch exchange rates. Using default rates."
+                    CurrencyUnitsCategory.setDefaultExchangeRates()
+                    self?.availableCurrencies = CurrencyUnitsCategory.commonCurrencies
                 }
             }
         }
@@ -46,13 +46,26 @@ class CurrencyConversionViewModel: ObservableObject {
     
     func convertCurrency() {
         guard let inputNumber = Double(inputValue),
-              let fromRate = exchangeRates[category.availableUnits[selectedFromCurrencyIndex].symbol],
-              let toRate = exchangeRates[category.availableUnits[selectedToCurrencyIndex].symbol] else {
+              selectedFromCurrencyIndex < availableCurrencies.count,
+              selectedToCurrencyIndex < availableCurrencies.count else {
             convertedValue = ""
             return
         }
         
-        let result = inputNumber * (toRate / fromRate)
+        let fromCurrency = availableCurrencies[selectedFromCurrencyIndex]
+        let toCurrency = availableCurrencies[selectedToCurrencyIndex]
+        
+        let result = category.convert(inputNumber, from: fromCurrency, to: toCurrency)
         convertedValue = String(format: "%.2f", result)
+    }
+    
+    func getCurrencyFullName(for index: Int) -> String {
+        guard index < availableCurrencies.count else { return "" }
+        let code = availableCurrencies[index]
+        return category.getCurrencyFullName(for: code)
+    }
+    
+    var info: String {
+        return category.info
     }
 }

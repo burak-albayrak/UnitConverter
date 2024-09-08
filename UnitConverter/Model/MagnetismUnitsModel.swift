@@ -13,6 +13,100 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
     case magneticFlux = "Magnetic Flux"
     case magneticFluxDensity = "Magnetic Flux Density"
     
+    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        switch self {
+        case .magnetomotiveForce:
+            return convertMagnetomotiveForce(value, from: fromUnit, to: toUnit)
+        case .magneticFieldStrength:
+            return convertMagneticFieldStrength(value, from: fromUnit, to: toUnit)
+        case .magneticFlux:
+            return convertMagneticFlux(value, from: fromUnit, to: toUnit)
+        case .magneticFluxDensity:
+            return convertMagneticFluxDensity(value, from: fromUnit, to: toUnit)
+        }
+    }
+    
+    private func convertMagnetomotiveForce(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let ampereTurnValues: [String: Double] = [
+            "ampere turn": 1,
+            "kiloampere turn": 1e3,
+            "milliampere turn": 1e-3,
+            "abampere turn": 10,
+            "gilbert": 0.7957747151
+        ]
+
+        guard let fromValue = ampereTurnValues[fromUnit.lowercased()], let toValue = ampereTurnValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let ampereTurns = value * fromValue
+        return ampereTurns / toValue
+    }
+    
+    private func convertMagneticFieldStrength(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let amperePerMeterValues: [String: Double] = [
+            "ampere/meter": 1,
+            "ampere turn/meter": 1,
+            "kiloampere/meter": 1e3,
+            "oersted": 79.5774715459
+        ]
+
+        guard let fromValue = amperePerMeterValues[fromUnit.lowercased()], let toValue = amperePerMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let amperePerMeter = value * fromValue
+        return amperePerMeter / toValue
+    }
+    
+    private func convertMagneticFlux(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let weberValues: [String: Double] = [
+            "weber": 1,
+            "milliweber": 1e-3,
+            "microweber": 1e-6,
+            "volt second": 1,
+            "unit pole": 1.256637061436e-7,
+            "megaline": 0.01,
+            "kiloline": 1e-5,
+            "line": 1e-8,
+            "maxwell": 1e-8,
+            "tesla square meter": 1,
+            "tesla square centimeter": 1e-4,
+            "gauss square centimeter": 1e-8,
+            "Magnetic flux quantum": 2.06783461e-15
+        ]
+
+        guard let fromValue = weberValues[fromUnit.lowercased()], let toValue = weberValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let webers = value * fromValue
+        return webers / toValue
+    }
+    
+    private func convertMagneticFluxDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let teslaValues: [String: Double] = [
+            "tesla": 1,
+            "weber/square meter": 1,
+            "weber/square centimeter": 1e4,
+            "weber/square inch": 1550.0031000062,
+            "maxwell/square meter": 1,
+            "maxwell/square centimeter": 1e-4,
+            "maxwell/square inch": 1.55e-5,
+            "gauss": 1e-4,
+            "line/square centimeter": 1e-4,
+            "line/square inch": 1.55e-5,
+            "gamma": 1e-9
+        ]
+
+        guard let fromValue = teslaValues[fromUnit.lowercased()], let toValue = teslaValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let teslas = value * fromValue
+        return teslas / toValue
+    }
+    
     var icon: String {
         switch self {
         case .magneticFieldStrength:
@@ -71,81 +165,29 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [Dimension] {
+    var availableUnits: [String] {
         switch self {
+        case .magnetomotiveForce:
+            return [
+                "ampere turn", "kiloampere turn", "milliampere turn",
+                "abampere turn", "gilbert"
+            ]
         case .magneticFieldStrength:
             return [
-                UnitArea.squareMegameters,
-                UnitArea.squareKilometers,
-                UnitArea.squareMeters,
-                UnitArea.squareCentimeters,
-                UnitArea.squareMillimeters,
-                UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
-                UnitArea.squareMiles,
-                UnitArea.acres,
-                UnitArea.ares,
-                UnitArea.hectares
+                "ampere/meter", "ampere turn/meter", "kiloampere/meter", "oersted"
             ]
-            
         case .magneticFlux:
             return [
-                UnitLength.megameters,
-                UnitLength.kilometers,
-                UnitLength.hectometers,
-                UnitLength.decameters,
-                UnitLength.meters,
-                UnitLength.decimeters,
-                UnitLength.centimeters,
-                UnitLength.millimeters,
-                UnitLength.micrometers,
-                UnitLength.nanometers,
-                UnitLength.picometers,
-                UnitLength.inches,
-                UnitLength.feet,
-                UnitLength.yards,
-                UnitLength.miles,
-                UnitLength.scandinavianMiles,
-                UnitLength.lightyears,
-                UnitLength.nauticalMiles,
-                UnitLength.fathoms,
-                UnitLength.astronomicalUnits,
-                UnitLength.parsecs
+                "weber", "milliweber", "microweber", "volt second", "unit pole",
+                "megaline", "kiloline", "line", "maxwell", "tesla square meter",
+                "tesla square centimeter", "gauss square centimeter", "Magnetic flux quantum"
             ]
-            
         case .magneticFluxDensity:
             return [
-                UnitPressure.newtonsPerMetersSquared,
-                UnitPressure.gigapascals,
-                UnitPressure.megapascals,
-                UnitPressure.kilopascals,
-                UnitPressure.hectopascals,
-                UnitPressure.inchesOfMercury,
-                UnitPressure.bars,
-                UnitPressure.millibars,
-                UnitPressure.millimetersOfMercury,
-                UnitPressure.poundsForcePerSquareInch
+                "tesla", "weber/square meter", "weber/square centimeter", "weber/square inch",
+                "maxwell/square meter", "maxwell/square centimeter", "maxwell/square inch",
+                "gauss", "line/square centimeter", "line/square inch", "gamma"
             ]
-            
-        case .magnetomotiveForce:
-            return [UnitTemperature.celsius,
-                    UnitTemperature.fahrenheit,
-                    UnitTemperature.kelvin]
-        }
-    }
-    
-    var availableUnitNames: [String] {
-        switch self {
-        case .magneticFieldStrength:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .magneticFlux:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .magneticFluxDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .magnetomotiveForce:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
         }
     }
 }

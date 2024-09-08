@@ -20,12 +20,15 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         self.category = category
     }
     
-    var availableUnits: [Dimension] {
-        return category.availableUnits
+    var availableUnits: [(symbol: String, name: String)] {
+        return category.availableUnits.map { unit in
+            let name = unit.prefix(1).uppercased() + unit.dropFirst().lowercased()
+            return (symbol: unit, name: name)
+        }
     }
     
-    var availableUnitNames: [String] {
-        return category.availableUnitNames
+    var availableUnitsIndices: Range<Int> {
+        0..<availableUnits.count
     }
     
     func convertUnits(value: String) -> String {
@@ -33,11 +36,10 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
             return ""
         }
         
-        let fromUnit = availableUnits[selectedFirstUnitIndex]
-        let toUnit = availableUnits[selectedSecondUnitIndex]
+        let fromUnit = availableUnits[selectedFirstUnitIndex].symbol
+        let toUnit = availableUnits[selectedSecondUnitIndex].symbol
         
-        let measurement = Measurement(value: numericValue, unit: fromUnit)
-        let convertedValue = measurement.converted(to: toUnit).value
+        let convertedValue = category.convert(numericValue, from: fromUnit, to: toUnit)
         
         return String(format: "%g", convertedValue)
     }

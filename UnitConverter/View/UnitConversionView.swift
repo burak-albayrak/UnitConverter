@@ -10,20 +10,20 @@ import SwiftUI
 struct UnitConversionView<T: UnitCategory>: View {
     @StateObject var viewModel: UnitConversionViewModel<T>
     @State private var copiedToClipboard: Bool = false
-    @State private var isCopyButtonPressed: Bool = false 
+    @State private var isCopyButtonPressed: Bool = false
     @State private var isPasteButtonPressed: Bool = false
     
     var body: some View {
         Form {
             Section("Select Units") {
                 Picker("From Unit", selection: $viewModel.selectedFirstUnitIndex) {
-                    ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { index in
-                        Text("\(viewModel.availableUnits[index].symbol) (\(viewModel.availableUnitNames[index]))")
+                    ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
+                        Text(unitText(for: index))
                     }
                 }
                 Picker("To Unit", selection: $viewModel.selectedSecondUnitIndex) {
-                    ForEach(0 ..< viewModel.availableUnits.count, id: \.self) { index in
-                        Text("\(viewModel.availableUnits[index].symbol) (\(viewModel.availableUnitNames[index]))")
+                    ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
+                        Text(unitText(for: index))
                     }
                 }
             }
@@ -122,6 +122,11 @@ struct UnitConversionView<T: UnitCategory>: View {
                     .frame(maxHeight: .infinity, alignment: .bottom)
             }
         }
+    }
+    
+    private func unitText(for index: Int) -> String {
+        let unit = viewModel.availableUnits[index]
+        return "\(unit.symbol) (\(unit.name))"
     }
 }
 

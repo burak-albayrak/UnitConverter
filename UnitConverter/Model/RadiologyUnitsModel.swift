@@ -13,6 +13,134 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     case radiationExposure = "Radiation - Exposure"
     case radiationAbsorbedDose = "Radiation - Absorbed Dose"
 
+    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        switch self {
+        case .radiation:
+            return convertRadiation(value, from: fromUnit, to: toUnit)
+        case .radiationActivity:
+            return convertRadiationActivity(value, from: fromUnit, to: toUnit)
+        case .radiationExposure:
+            return convertRadiationExposure(value, from: fromUnit, to: toUnit)
+        case .radiationAbsorbedDose:
+            return convertRadiationAbsorbedDose(value, from: fromUnit, to: toUnit)
+        }
+    }
+
+    private func convertRadiation(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let grayPerSecondValues: [String: Double] = [
+            "gray/second": 1,
+            "exagray/second": 1e18,
+            "petagray/second": 1e15,
+            "teragray/second": 1e12,
+            "gigagray/second": 1e9,
+            "megagray/second": 1e6,
+            "kilogray/second": 1e3,
+            "hectogray/second": 1e2,
+            "dekagray/second": 1e1,
+            "decigray/second": 1e-1,
+            "centigray/second": 1e-2,
+            "milligray/second": 1e-3,
+            "microgray/second": 1e-6,
+            "nanogray/second": 1e-9,
+            "picogray/second": 1e-12,
+            "femtogray/second": 1e-15,
+            "attogray/second": 1e-18,
+            "rad/second": 1e-2,
+            "joule/kilogram/second": 1,
+            "watt/kilogram": 1,
+            "sievert/second": 1,
+            "rem/second": 1e-2
+        ]
+        
+        guard let fromValue = grayPerSecondValues[fromUnit.lowercased()], let toValue = grayPerSecondValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let grayPerSecond = value * fromValue
+        return grayPerSecond / toValue
+    }
+    
+    private func convertRadiationActivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let becquerelValues: [String: Double] = [
+            "becquerel": 1,
+            "terabecquerel": 1e12,
+            "gigabecquerel": 1e9,
+            "megabecquerel": 1e6,
+            "kilobecquerel": 1e3,
+            "millibecquerel": 1e-3,
+            "curie": 3.7e10,
+            "kilocurie": 3.7e13,
+            "millicurie": 3.7e7,
+            "microcurie": 3.7e4,
+            "nanocurie": 37,
+            "picocurie": 0.037,
+            "rutherford": 1e6,
+            "one/second": 1,
+            "disintegrations/second": 1,
+            "disintegrations/minute": 1/60
+        ]
+
+        guard let fromValue = becquerelValues[fromUnit.lowercased()], let toValue = becquerelValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let becquerels = value * fromValue
+        return becquerels / toValue
+    }
+    
+    private func convertRadiationExposure(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let coulombPerKilogramValues: [String: Double] = [
+            "coulomb/kilogram": 1,
+            "millicoulomb/kilogram": 1e-3,
+            "microcoulomb/kilogram": 1e-6,
+            "roentgen": 0.000258,
+            "tissue roentgen": 0.000258,
+            "parker": 0.000258,
+            "rep": 0.000258
+        ]
+
+        guard let fromValue = coulombPerKilogramValues[fromUnit.lowercased()], let toValue = coulombPerKilogramValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let coulombPerKilogram = value * fromValue
+        return coulombPerKilogram / toValue
+    }
+    
+    private func convertRadiationAbsorbedDose(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let radValues: [String: Double] = [
+            "rad": 1,
+            "millirad": 1e-3,
+            "joule/kilogram": 100,
+            "joule/gram": 1e5,
+            "joule/centigram": 1e7,
+            "joule/milligram": 1e8,
+            "gray": 100,
+            "exagray": 1e20,
+            "petagray": 1e17,
+            "teragray": 1e14,
+            "gigagray": 1e11,
+            "megagray": 1e8,
+            "kilogray": 1e5,
+            "hectogray": 1e4,
+            "dekagray": 1e3,
+            "decigray": 10,
+            "centigray": 1,
+            "milligray": 0.1,
+            "microgray": 1e-4,
+            "nanogray": 1e-7,
+            "picogray": 1e-10,
+            "femtogray": 1e-13,
+            "attogray": 1e-16
+        ]
+
+        guard let fromValue = radValues[fromUnit.lowercased()], let toValue = radValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let rads = value * fromValue
+        return rads / toValue
+    }
     
     var icon: String {
         switch self {
@@ -74,81 +202,37 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [Dimension] {
+    var availableUnits: [String] {
         switch self {
         case .radiation:
             return [
-                UnitArea.squareMegameters,
-                UnitArea.squareKilometers,
-                UnitArea.squareMeters,
-                UnitArea.squareCentimeters,
-                UnitArea.squareMillimeters,
-                UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
-                UnitArea.squareMiles,
-                UnitArea.acres,
-                UnitArea.ares,
-                UnitArea.hectares
+                "gray/second", "exagray/second", "petagray/second", "teragray/second",
+                "gigagray/second", "megagray/second", "kilogray/second", "hectogray/second",
+                "dekagray/second", "decigray/second", "centigray/second", "milligray/second",
+                "microgray/second", "nanogray/second", "picogray/second", "femtogray/second",
+                "attogray/second", "rad/second", "joule/kilogram/second", "watt/kilogram",
+                "sievert/second", "rem/second"
             ]
-            
-        case .radiationAbsorbedDose:
-            return [
-                UnitLength.megameters,
-                UnitLength.kilometers,
-                UnitLength.hectometers,
-                UnitLength.decameters,
-                UnitLength.meters,
-                UnitLength.decimeters,
-                UnitLength.centimeters,
-                UnitLength.millimeters,
-                UnitLength.micrometers,
-                UnitLength.nanometers,
-                UnitLength.picometers,
-                UnitLength.inches,
-                UnitLength.feet,
-                UnitLength.yards,
-                UnitLength.miles,
-                UnitLength.scandinavianMiles,
-                UnitLength.lightyears,
-                UnitLength.nauticalMiles,
-                UnitLength.fathoms,
-                UnitLength.astronomicalUnits,
-                UnitLength.parsecs
-            ]
-            
         case .radiationActivity:
             return [
-                UnitPressure.newtonsPerMetersSquared,
-                UnitPressure.gigapascals,
-                UnitPressure.megapascals,
-                UnitPressure.kilopascals,
-                UnitPressure.hectopascals,
-                UnitPressure.inchesOfMercury,
-                UnitPressure.bars,
-                UnitPressure.millibars,
-                UnitPressure.millimetersOfMercury,
-                UnitPressure.poundsForcePerSquareInch
+                "becquerel", "terabecquerel", "gigabecquerel", "megabecquerel",
+                "kilobecquerel", "millibecquerel", "curie", "kilocurie",
+                "millicurie", "microcurie", "nanocurie", "picocurie",
+                "rutherford", "one/second", "disintegrations/second",
+                "disintegrations/minute"
             ]
-            
         case .radiationExposure:
-            return [UnitTemperature.celsius,
-                    UnitTemperature.fahrenheit,
-                    UnitTemperature.kelvin]
-        }
-    }
-    
-    var availableUnitNames: [String] {
-        switch self {
-        case .radiation:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+            return [
+                "coulomb/kilogram", "millicoulomb/kilogram", "microcoulomb/kilogram",
+                "roentgen", "tissue roentgen", "parker", "rep"
+            ]
         case .radiationAbsorbedDose:
-            return ["Square Megameters", "Square Kilometers", "Square Meters", "Square Centimeters", "Square Millimeters", "Square Nanometers", "Square Inches", "Square Feet", "Square Yards", "Square Miles", "Acres", "Ares", "Hectares"]
-        case .radiationActivity:
-            return ["Hours", "Minutes", "Seconds", "Milliseconds", "Microseconds", "Nanoseconds", "Picoseconds"]
-        case .radiationExposure:
-            return ["Megameters", "Kilometers", "Hectometers", "Decameters", "Meters", "Decimeters", "Centimeters", "Millimeters", "Micrometers", "Nanometers", "Picometers", "Inches", "Feet", "Yards", "Miles", "Scandinavian Miles", "Lightyears", "Nautical Miles", "Fathoms", "Astronomical Units", "Parsecs"]
+            return [
+                "rad", "millirad", "joule/kilogram", "joule/gram", "joule/centigram",
+                "joule/milligram", "gray", "exagray", "petagray", "teragray", "gigagray",
+                "megagray", "kilogray", "hectogray", "dekagray", "decigray", "centigray",
+                "milligray", "microgray", "nanogray", "picogray", "femtogray", "attogray"
+            ]
         }
     }
 }

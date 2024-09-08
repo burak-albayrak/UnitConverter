@@ -24,6 +24,381 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
     case electrostaticCapacitance = "Electrostatic Capacitance"
     case inductance = "Inductance"
     
+    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        switch self {
+        case .charge:
+            return convertElectricCharge(value, from: fromUnit, to: toUnit)
+        case .linearChargeDensity:
+            return convertElectricChargeDensity(value, from: fromUnit, to: toUnit)
+        case .surfaceChargeDensity:
+            return convertSurfaceElectricChargeDensity(value, from: fromUnit, to: toUnit)
+        case .volumeChargeDensity:
+            return convertVolumetricElectricChargeDensity(value, from: fromUnit, to: toUnit)
+        case .current:
+            return convertElectricCurrent(value, from: fromUnit, to: toUnit)
+        case .linearCurrentDensity:
+            return convertMagneticFieldIntensity(value, from: fromUnit, to: toUnit)
+        case .surfaceCurrentDensity:
+            return convertElectricCurrentDensity(value, from: fromUnit, to: toUnit)
+        case .electricFieldStrength:
+            return convertElectricFieldStrength(value, from: fromUnit, to: toUnit)
+        case .electricPotential:
+            return convertElectricPotential(value, from: fromUnit, to: toUnit)
+        case .electricResistance:
+            return convertElectricResistance(value, from: fromUnit, to: toUnit)
+        case .electricResistivity:
+            return convertElectricResistivity(value, from: fromUnit, to: toUnit)
+        case .electricConductance:
+            return convertElectricConductance(value, from: fromUnit, to: toUnit)
+        case .electricConductivity:
+            return convertElectricConductivity(value, from: fromUnit, to: toUnit)
+        case .electrostaticCapacitance:
+            return convertElectricCapacitance(value, from: fromUnit, to: toUnit)
+        case .inductance:
+            return convertElectricInductance(value, from: fromUnit, to: toUnit)
+        }
+    }
+    
+    private func convertElectricCharge(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let coulombValues: [String: Double] = [
+            "coulomb": 1,
+            "megacoulomb": 1e6,
+            "kilocoulomb": 1e3,
+            "millicoulomb": 1e-3,
+            "microcoulomb": 1e-6,
+            "nanocoulomb": 1e-9,
+            "picocoulomb": 1e-12,
+            "abcoulomb": 10,
+            "EMU of charge": 10,
+            "statcoulomb": 3.335640951982e-10,
+            "ESU of charge": 3.335640951982e-10,
+            "franklin": 3.335640951982e-10,
+            "ampere-hour": 3600,
+            "ampere-minute": 60,
+            "ampere-second": 1,
+            "faraday (based on carbon 12)": 96485.309000004,
+            "Elementary charge": 1.60217733e-19
+        ]
+
+        guard let fromValue = coulombValues[fromUnit.lowercased()], let toValue = coulombValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let coulombs = value * fromValue
+        return coulombs / toValue
+    }
+    
+    private func convertElectricChargeDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let coulombPerMeterValues: [String: Double] = [
+            "coulomb/meter": 1,
+            "coulomb/centimeter": 100,
+            "coulomb/inch": 39.3700787402,
+            "abcoulomb/meter": 10,
+            "abcoulomb/centimeter": 1000,
+            "abcoulomb/inch": 393.7007874016
+        ]
+
+        guard let fromValue = coulombPerMeterValues[fromUnit.lowercased()], let toValue = coulombPerMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let coulombsPerMeter = value * fromValue
+        return coulombsPerMeter / toValue
+    }
+    
+    private func convertSurfaceElectricChargeDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let coulombPerSquareMeterValues: [String: Double] = [
+            "coulomb/square meter": 1,
+            "coulomb/square centimeter": 10000,
+            "coulomb/square inch": 1550.0031000062,
+            "abcoulomb/square meter": 10,
+            "abcoulomb/square centimeter": 100000,
+            "abcoulomb/square inch": 15500.031000062
+        ]
+
+        guard let fromValue = coulombPerSquareMeterValues[fromUnit.lowercased()], let toValue = coulombPerSquareMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let coulombsPerSquareMeter = value * fromValue
+        return coulombsPerSquareMeter / toValue
+    }
+    
+    private func convertVolumetricElectricChargeDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let coulombPerCubicMeterValues: [String: Double] = [
+            "coulomb/cubic meter": 1,
+            "coulomb/cubic centimeter": 1e6,
+            "coulomb/cubic inch": 61023.744094732,
+            "abcoulomb/cubic meter": 10,
+            "abcoulomb/cubic centimeter": 1e7,
+            "abcoulomb/cubic inch": 610237.44094732
+        ]
+
+        guard let fromValue = coulombPerCubicMeterValues[fromUnit.lowercased()], let toValue = coulombPerCubicMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let coulombsPerCubicMeter = value * fromValue
+        return coulombsPerCubicMeter / toValue
+    }
+    
+    private func convertElectricCurrent(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let ampereValues: [String: Double] = [
+            "ampere": 1,
+            "kiloampere": 1e3,
+            "milliampere": 1e-3,
+            "biot": 10,
+            "abampere": 10,
+            "EMU of current": 10,
+            "statampere": 3.335641e-10,
+            "ESU of current": 3.335641e-10,
+            "CGS e.m. unit": 10,
+            "CGS e.s. unit": 3.335641e-10
+        ]
+
+        guard let fromValue = ampereValues[fromUnit.lowercased()], let toValue = ampereValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let amperes = value * fromValue
+        return amperes / toValue
+    }
+    
+    private func convertMagneticFieldIntensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let amperePerMeterValues: [String: Double] = [
+            "ampere/meter": 1,
+            "ampere/centimeter": 100,
+            "ampere/inch": 39.3700787402,
+            "abampere/meter": 10,
+            "abampere/centimeter": 1000,
+            "abampere/inch": 393.7007874016,
+            "oersted": 79.5774715102,
+            "gilbert/centimeter": 79.5774715102
+        ]
+
+        guard let fromValue = amperePerMeterValues[fromUnit.lowercased()], let toValue = amperePerMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let amperesPerMeter = value * fromValue
+        return amperesPerMeter / toValue
+    }
+    
+    private func convertElectricCurrentDensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let amperePerSquareMeterValues: [String: Double] = [
+            "ampere/square meter": 1,
+            "ampere/square centimeter": 10000,
+            "ampere/square inch": 1550.0031000062,
+            "ampere/square mil": 1550003100.0062,
+            "ampere/circular mil": 1973525240.9908,
+            "abampere/square centimeter": 100000
+        ]
+
+        guard let fromValue = amperePerSquareMeterValues[fromUnit.lowercased()], let toValue = amperePerSquareMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let amperesPerSquareMeter = value * fromValue
+        return amperesPerSquareMeter / toValue
+    }
+    
+    private func convertElectricFieldStrength(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let voltPerMeterValues: [String: Double] = [
+            "volt/meter": 1,
+            "kilovolt/meter": 1000,
+            "kilovolt/centimeter": 100000,
+            "volt/centimeter": 100,
+            "millivolt/meter": 0.001,
+            "microvolt/meter": 1e-6,
+            "kilovolt/inch": 39370.078740157,
+            "volt/inch": 39.3700787402,
+            "volt/mil": 39370.078740157,
+            "abvolt/centimeter": 1e-6,
+            "statvolt/centimeter": 29979.19999934,
+            "statvolt/inch": 11802.834645298,
+            "newton/coulomb": 1
+        ]
+
+        guard let fromValue = voltPerMeterValues[fromUnit.lowercased()], let toValue = voltPerMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let voltsPerMeter = value * fromValue
+        return voltsPerMeter / toValue
+    }
+    
+    private func convertElectricPotential(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let voltValues: [String: Double] = [
+            "volt": 1,
+            "watt/ampere": 1,
+            "abvolt": 1e-8,
+            "EMU of electric potential": 1e-8,
+            "statvolt": 299.7925,
+            "ESU of electric potential": 299.7925
+        ]
+
+        guard let fromValue = voltValues[fromUnit.lowercased()], let toValue = voltValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let volts = value * fromValue
+        return volts / toValue
+    }
+    
+    private func convertElectricResistance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let ohmValues: [String: Double] = [
+            "ohm": 1,
+            "megohm": 1e6,
+            "microhm": 1e-6,
+            "volt/ampere": 1,
+            "reciprocal siemens": 1,
+            "abohm": 1e-9,
+            "EMU of resistance": 1e-9,
+            "statohm": 898755200000,
+            "ESU of resistance": 898755200000,
+            "Quantized Hall resistance": 25812.8056
+        ]
+
+        guard let fromValue = ohmValues[fromUnit.lowercased()], let toValue = ohmValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let ohms = value * fromValue
+        return ohms / toValue
+    }
+    
+    private func convertElectricResistivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let ohmMeterValues: [String: Double] = [
+            "ohm meter": 1,
+            "ohm centimeter": 0.01,
+            "ohm inch": 0.0254,
+            "microhm centimeter": 1e-8,
+            "microhm inch": 2.5400000000102e-8,
+            "abohm centimeter": 1e-11,
+            "statohm centimeter": 8987524324.0156,
+            "circular mil ohm/foot": 1.6624261130101e-9
+        ]
+
+        guard let fromValue = ohmMeterValues[fromUnit.lowercased()], let toValue = ohmMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let ohmMeters = value * fromValue
+        return ohmMeters / toValue
+    }
+    
+    private func convertElectricConductance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let siemensValues: [String: Double] = [
+            "siemens": 1,
+            "megasiemens": 1e6,
+            "kilosiemens": 1e3,
+            "millisiemens": 1e-3,
+            "microsiemens": 1e-6,
+            "ampere/volt": 1,
+            "mho": 1,
+            "gemmho": 1e-6,
+            "micromho": 1e-6,
+            "abmho": 1e9,
+            "statmho": 1.1123470522803e-12,
+            "Quantized Hall conductance": 3.87405e-5
+        ]
+
+        guard let fromValue = siemensValues[fromUnit.lowercased()], let toValue = siemensValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let siemens = value * fromValue
+        return siemens / toValue
+    }
+    
+    private func convertElectricConductivity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let siemensPerMeterValues: [String: Double] = [
+            "siemens/meter": 1,
+            "picosiemens/meter": 1e-12,
+            "mho/meter": 1,
+            "mho/centimeter": 100,
+            "abmho/meter": 1e9,
+            "abmho/centimeter": 1e11,
+            "statmho/meter": 1.1126534560019e-12,
+            "statmho/centimeter": 1.1126534560019e-10
+        ]
+
+        guard let fromValue = siemensPerMeterValues[fromUnit.lowercased()], let toValue = siemensPerMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let siemensPerMeter = value * fromValue
+        return siemensPerMeter / toValue
+    }
+    
+    private func convertElectricCapacitance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let faradValues: [String: Double] = [
+            "farad": 1,
+            "exafarad": 1e18,
+            "petafarad": 1e15,
+            "terafarad": 1e12,
+            "gigafarad": 1e9,
+            "megafarad": 1e6,
+            "kilofarad": 1e3,
+            "hectofarad": 1e2,
+            "dekafarad": 1e1,
+            "decifarad": 1e-1,
+            "centifarad": 1e-2,
+            "millifarad": 1e-3,
+            "microfarad": 1e-6,
+            "nanofarad": 1e-9,
+            "picofarad": 1e-12,
+            "femtofarad": 1e-15,
+            "attofarad": 1e-18,
+            "coulomb/volt": 1,
+            "abfarad": 1e9,
+            "EMU of capacitance": 1e9,
+            "statfarad": 1.112650056054e-12,
+            "ESU of capacitance": 1.112650056054e-12
+        ]
+
+        guard let fromValue = faradValues[fromUnit.lowercased()], let toValue = faradValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let farads = value * fromValue
+        return farads / toValue
+    }
+    
+    private func convertElectricInductance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let henryValues: [String: Double] = [
+            "henry": 1,
+            "exahenry": 1e18,
+            "petahenry": 1e15,
+            "terahenry": 1e12,
+            "gigahenry": 1e9,
+            "megahenry": 1e6,
+            "kilohenry": 1e3,
+            "hectohenry": 1e2,
+            "dekahenry": 1e1,
+            "decihenry": 1e-1,
+            "centihenry": 1e-2,
+            "millihenry": 1e-3,
+            "microhenry": 1e-6,
+            "nanohenry": 1e-9,
+            "picohenry": 1e-12,
+            "femtohenry": 1e-15,
+            "attohenry": 1e-18,
+            "weber/ampere": 1,
+            "abhenry": 1e-9,
+            "EMU of inductance": 1e-9,
+            "stathenry": 898755200000,
+            "ESU of inductance": 898755200000
+        ]
+
+        guard let fromValue = henryValues[fromUnit.lowercased()], let toValue = henryValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let henries = value * fromValue
+        return henries / toValue
+    }
+    
     var icon: String {
         switch self {
         case .charge:
@@ -238,254 +613,98 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [Dimension] {
+    var availableUnits: [String] {
         switch self {
         case .charge:
             return [
-                UnitArea.squareMegameters,
-                UnitArea.squareKilometers,
-                UnitArea.squareMeters,
-                UnitArea.squareCentimeters,
-                UnitArea.squareMillimeters,
-                UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
-                UnitArea.squareMiles,
-                UnitArea.acres,
-                UnitArea.ares,
-                UnitArea.hectares
+                "coulomb", "megacoulomb", "kilocoulomb", "millicoulomb", "microcoulomb",
+                "nanocoulomb", "picocoulomb", "abcoulomb", "EMU of charge", "statcoulomb",
+                "ESU of charge", "franklin", "ampere-hour", "ampere-minute", "ampere-second",
+                "faraday (based on carbon 12)", "Elementary charge"
             ]
-        case .current:
-            return [
-                UnitArea.squareMegameters,
-                UnitArea.squareKilometers,
-                UnitArea.squareMeters,
-                UnitArea.squareCentimeters,
-                UnitArea.squareMillimeters,
-                UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
-                UnitArea.squareMiles,
-                UnitArea.acres,
-                UnitArea.ares,
-                UnitArea.hectares
-            ]
-        case .electricConductance:
-            return [
-                UnitLength.megameters,
-                UnitLength.kilometers,
-                UnitLength.hectometers,
-                UnitLength.decameters,
-                UnitLength.meters,
-                UnitLength.decimeters,
-                UnitLength.centimeters,
-                UnitLength.millimeters,
-                UnitLength.micrometers,
-                UnitLength.nanometers,
-                UnitLength.picometers,
-                UnitLength.inches,
-                UnitLength.feet,
-                UnitLength.yards,
-                UnitLength.miles,
-                UnitLength.scandinavianMiles,
-                UnitLength.lightyears,
-                UnitLength.nauticalMiles,
-                UnitLength.fathoms,
-                UnitLength.astronomicalUnits,
-                UnitLength.parsecs
-            ]
-            
-        case .electricConductivity:
-            return [
-                UnitPressure.newtonsPerMetersSquared,
-                UnitPressure.gigapascals,
-                UnitPressure.megapascals,
-                UnitPressure.kilopascals,
-                UnitPressure.hectopascals,
-                UnitPressure.inchesOfMercury,
-                UnitPressure.bars,
-                UnitPressure.millibars,
-                UnitPressure.millimetersOfMercury,
-                UnitPressure.poundsForcePerSquareInch
-            ]
-            
-        case .electricFieldStrength:
-            return [UnitTemperature.celsius,
-                    UnitTemperature.fahrenheit,
-                    UnitTemperature.kelvin]
-            
-        case .electricPotential:
-            return [
-                UnitVolume.megaliters,
-                UnitVolume.kiloliters,
-                UnitVolume.liters,
-                UnitVolume.deciliters,
-                UnitVolume.centiliters,
-                UnitVolume.milliliters,
-                UnitVolume.cubicKilometers,
-                UnitVolume.cubicMeters,
-                UnitVolume.cubicDecimeters,
-                UnitVolume.cubicCentimeters,
-                UnitVolume.cubicMillimeters,
-                UnitVolume.cubicInches,
-                UnitVolume.cubicFeet,
-                UnitVolume.cubicYards,
-                UnitVolume.cubicMiles,
-                UnitVolume.acreFeet,
-                UnitVolume.bushels,
-                UnitVolume.teaspoons,
-                UnitVolume.tablespoons,
-                UnitVolume.fluidOunces,
-                UnitVolume.cups,
-                UnitVolume.pints,
-                UnitVolume.quarts,
-                UnitVolume.gallons,
-                UnitVolume.imperialTeaspoons,
-                UnitVolume.imperialTablespoons,
-                UnitVolume.imperialFluidOunces,
-                UnitVolume.imperialPints,
-                UnitVolume.imperialQuarts,
-                UnitVolume.imperialGallons,
-                UnitVolume.metricCups
-            ]
-            
-        case .electricResistance:
-            return [
-                UnitMass.kilograms,
-                UnitMass.grams,
-                UnitMass.decigrams,
-                UnitMass.centigrams,
-                UnitMass.milligrams,
-                UnitMass.micrograms,
-                UnitMass.nanograms,
-                UnitMass.picograms,
-                UnitMass.ounces,
-                UnitMass.pounds,
-                UnitMass.stones,
-                UnitMass.metricTons,
-                UnitMass.shortTons,
-                UnitMass.carats,
-                UnitMass.ouncesTroy,
-                UnitMass.slugs
-            ]
-            
-        case .electricResistivity:
-            return [
-                UnitAngle.degrees,
-                UnitAngle.arcMinutes,
-                UnitAngle.arcSeconds,
-                UnitAngle.radians,
-                UnitAngle.gradians,
-                UnitAngle.revolutions
-            ]
-            
-        case .electrostaticCapacitance:
-            return [
-                UnitSpeed.metersPerSecond,
-                UnitSpeed.kilometersPerHour,
-                UnitSpeed.milesPerHour,
-                UnitSpeed.knots
-            ]
-            
-        case .inductance:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]
-            
         case .linearChargeDensity:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]
-        case .linearCurrentDensity:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
+                "coulomb/meter", "coulomb/centimeter", "coulomb/inch",
+                "abcoulomb/meter", "abcoulomb/centimeter", "abcoulomb/inch"
             ]
         case .surfaceChargeDensity:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
-            ]
-        case .surfaceCurrentDensity:
-            return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
+                "coulomb/square meter", "coulomb/square centimeter", "coulomb/square inch",
+                "abcoulomb/square meter", "abcoulomb/square centimeter", "abcoulomb/square inch"
             ]
         case .volumeChargeDensity:
             return [
-                UnitDuration.hours,
-                UnitDuration.minutes,
-                UnitDuration.seconds,
-                UnitDuration.milliseconds,
-                UnitDuration.microseconds,
-                UnitDuration.nanoseconds,
-                UnitDuration.picoseconds
+                "coulomb/cubic meter", "coulomb/cubic centimeter", "coulomb/cubic inch",
+                "abcoulomb/cubic meter", "abcoulomb/cubic centimeter", "abcoulomb/cubic inch"
             ]
-        }
-    }
-    
-    var availableUnitNames: [String] {
-        switch self {
-        case .charge:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
         case .current:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .electricConductance:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .electricConductivity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .electricFieldStrength:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .electricPotential:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .electricResistance:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .electricResistivity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .electrostaticCapacitance:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .inductance:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .linearChargeDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+            return [
+                "ampere", "kiloampere", "milliampere", "biot", "abampere",
+                "EMU of current", "statampere", "ESU of current",
+                "CGS e.m. unit", "CGS e.s. unit"
+            ]
         case .linearCurrentDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .surfaceChargeDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
+            return [
+                "ampere/meter", "ampere/centimeter", "ampere/inch",
+                "abampere/meter", "abampere/centimeter", "abampere/inch",
+                "oersted", "gilbert/centimeter"
+            ]
         case .surfaceCurrentDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .volumeChargeDensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-
+            return [
+                "ampere/square meter", "ampere/square centimeter", "ampere/square inch",
+                "ampere/square mil", "ampere/circular mil", "abampere/square centimeter"
+            ]
+        case .electricFieldStrength:
+            return [
+                "volt/meter", "kilovolt/meter", "kilovolt/centimeter", "volt/centimeter",
+                "millivolt/meter", "microvolt/meter", "kilovolt/inch", "volt/inch",
+                "volt/mil", "abvolt/centimeter", "statvolt/centimeter", "statvolt/inch",
+                "newton/coulomb"
+            ]
+        case .electricPotential:
+            return [
+                "volt", "watt/ampere", "abvolt", "EMU of electric potential",
+                "statvolt", "ESU of electric potential"
+            ]
+        case .electricResistance:
+            return [
+                "ohm", "megohm", "microhm", "volt/ampere", "reciprocal siemens",
+                "abohm", "EMU of resistance", "statohm", "ESU of resistance",
+                "Quantized Hall resistance"
+            ]
+        case .electricResistivity:
+            return [
+                "ohm meter", "ohm centimeter", "ohm inch", "microhm centimeter",
+                "microhm inch", "abohm centimeter", "statohm centimeter",
+                "circular mil ohm/foot"
+            ]
+        case .electricConductance:
+            return [
+                "siemens", "megasiemens", "kilosiemens", "millisiemens", "microsiemens",
+                "ampere/volt", "mho", "gemmho", "micromho", "abmho", "statmho",
+                "Quantized Hall conductance"
+            ]
+        case .electricConductivity:
+            return [
+                "siemens/meter", "picosiemens/meter", "mho/meter", "mho/centimeter",
+                "abmho/meter", "abmho/centimeter", "statmho/meter", "statmho/centimeter"
+            ]
+        case .electrostaticCapacitance:
+            return [
+                "farad", "exafarad", "petafarad", "terafarad", "gigafarad", "megafarad",
+                "kilofarad", "hectofarad", "dekafarad", "decifarad", "centifarad",
+                "millifarad", "microfarad", "nanofarad", "picofarad", "femtofarad",
+                "attofarad", "coulomb/volt", "abfarad", "EMU of capacitance",
+                "statfarad", "ESU of capacitance"
+            ]
+        case .inductance:
+            return [
+                "henry", "exahenry", "petahenry", "terahenry", "gigahenry", "megahenry",
+                "kilohenry", "hectohenry", "dekahenry", "decihenry", "centihenry",
+                "millihenry", "microhenry", "nanohenry", "picohenry", "femtohenry",
+                "attohenry", "weber/ampere", "abhenry", "EMU of inductance",
+                "stathenry", "ESU of inductance"
+            ]
         }
     }
 }

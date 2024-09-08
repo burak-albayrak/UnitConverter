@@ -14,6 +14,160 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     case digitalImageResolution = "Digital Image Resolution"
     case frequencyWavelength = "Frequency Wavelength"
 
+    func convert(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        switch self {
+        case .luminance:
+            return convertLuminance(value, from: fromUnit, to: toUnit)
+        case .luminousIntensity:
+            return convertLuminousIntensity(value, from: fromUnit, to: toUnit)
+        case .illumination:
+            return convertIlluminance(value, from: fromUnit, to: toUnit)
+        case .digitalImageResolution:
+            return convertResolution(value, from: fromUnit, to: toUnit)
+        case .frequencyWavelength:
+            return convertFrequency(value, from: fromUnit, to: toUnit)
+        }
+    }
+    
+    private func convertLuminance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let candelaPerSquareMeterValues: [String: Double] = [
+            "candela/square meter": 1,
+            "candela/square centimeter": 10000,
+            "candela/square foot": 10.7639104167,
+            "candela/square inch": 1550.0031000062,
+            "kilocandela/square meter": 1000,
+            "stilb": 10000,
+            "lumen/sq. meter/steradian": 1,
+            "lumen/sq. cm/steradian": 10000,
+            "lumen/square foot/steradian": 10.7639104167,
+            "watt/sq. cm/steradian (at 555 nm)": 6830000,
+            "nit": 1,
+            "millinit": 0.001,
+            "lambert": 3183.0988618379,
+            "millilambert": 3.1830988618,
+            "foot-lambert": 3.4262590996,
+            "apostilb": 0.3183098862,
+            "blondel": 0.3183098862,
+            "bril": 3.1830988618379e-8,
+            "skot": 0.0003183099
+        ]
+
+        guard let fromValue = candelaPerSquareMeterValues[fromUnit.lowercased()], let toValue = candelaPerSquareMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let candelaPerSquareMeter = value * fromValue
+        return candelaPerSquareMeter / toValue
+    }
+    
+    private func convertLuminousIntensity(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let candleInternationalValues: [String: Double] = [
+            "candle (international)": 1,
+            "candle (German)": 1.0526315789,
+            "candle (UK)": 1.0416666667,
+            "decimal candle": 1,
+            "candle (pentane)": 1,
+            "pentane candle (10 candle power)": 10,
+            "hefner candle": 0.9000000001,
+            "carcel unit": 9.610000003,
+            "bougie decimal": 1,
+            "lumen/steradian": 1
+        ]
+
+        guard let fromValue = candleInternationalValues[fromUnit.lowercased()], let toValue = candleInternationalValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let candleInternational = value * fromValue
+        return candleInternational / toValue
+    }
+    
+    private func convertIlluminance(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let luxValues: [String: Double] = [
+            "lux": 1,
+            "meter-candle": 1,
+            "centimeter-candle": 10000,
+            "foot-candle": 10.7639104167,
+            "flame": 43.0556416668,
+            "phot": 10000,
+            "nox": 0.001,
+            "candela steradian/sq. meter": 1,
+            "lumen/square meter": 1,
+            "lumen/square centimeter": 10000,
+            "lumen/square foot": 10.7639104167,
+            "watt/sq. cm (at 555 nm)": 6830000
+        ]
+
+        guard let fromValue = luxValues[fromUnit.lowercased()], let toValue = luxValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let lux = value * fromValue
+        return lux / toValue
+    }
+    
+    private func convertResolution(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let dotPerMeterValues: [String: Double] = [
+            "dot/meter": 1,
+            "dot/millimeter": 1000,
+            "dot/inch": 39.3700787402,
+            "pixel/inch": 39.3700787402
+        ]
+
+        guard let fromValue = dotPerMeterValues[fromUnit.lowercased()], let toValue = dotPerMeterValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let dotPerMeter = value * fromValue
+        return dotPerMeter / toValue
+    }
+    
+    private func convertFrequency(_ value: Double, from fromUnit: String, to toUnit: String) -> Double {
+        let hertzValues: [String: Double] = [
+            "hertz": 1,
+            "exahertz": 1e18,
+            "petahertz": 1e15,
+            "terahertz": 1e12,
+            "gigahertz": 1e9,
+            "megahertz": 1e6,
+            "kilohertz": 1e3,
+            "hectohertz": 1e2,
+            "dekahertz": 1e1,
+            "decihertz": 1e-1,
+            "centihertz": 1e-2,
+            "millihertz": 1e-3,
+            "microhertz": 1e-6,
+            "nanohertz": 1e-9,
+            "picohertz": 1e-12,
+            "femtohertz": 1e-15,
+            "attohertz": 1e-18,
+            "cycle/second": 1,
+            "wavelength in exametres": 2.99792458e-10,
+            "wavelength in petametres": 2.99792458e-7,
+            "wavelength in terametres": 0.0002997925,
+            "wavelength in gigametres": 0.299792458,
+            "wavelength in megametres": 299.792458,
+            "wavelength in kilometres": 299792.458,
+            "wavelength in hectometres": 2997924.58,
+            "wavelength in dekametres": 29979245.8,
+            "wavelength in metres": 299792458,
+            "wavelength in decimetres": 2997924580,
+            "wavelength in centimetres": 29979245800,
+            "wavelength in millimetres": 299792458000,
+            "wavelength in micrometres": 2.99792458e14,
+            "wavelength in nanometres": 2.99792458e17,
+            "Electron Compton wavelength": 1.235589789993e20,
+            "Proton Compton wavelength": 2.2687315327002e23,
+            "Neutron Compton wavelength": 2.2718587447278e23
+        ]
+
+        guard let fromValue = hertzValues[fromUnit.lowercased()], let toValue = hertzValues[toUnit.lowercased()] else {
+            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        }
+
+        let hertz = value * fromValue
+        return hertz / toValue
+    }
     
     var icon: String {
         switch self {
@@ -95,119 +249,45 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var availableUnits: [Dimension] {
+    var availableUnits: [String] {
         switch self {
-        case .digitalImageResolution:
-            return [
-                UnitArea.squareMegameters,
-                UnitArea.squareKilometers,
-                UnitArea.squareMeters,
-                UnitArea.squareCentimeters,
-                UnitArea.squareMillimeters,
-                UnitArea.squareNanometers,
-                UnitArea.squareInches,
-                UnitArea.squareFeet,
-                UnitArea.squareYards,
-                UnitArea.squareMiles,
-                UnitArea.acres,
-                UnitArea.ares,
-                UnitArea.hectares
-            ]
-            
-        case .frequencyWavelength:
-            return [
-                UnitLength.megameters,
-                UnitLength.kilometers,
-                UnitLength.hectometers,
-                UnitLength.decameters,
-                UnitLength.meters,
-                UnitLength.decimeters,
-                UnitLength.centimeters,
-                UnitLength.millimeters,
-                UnitLength.micrometers,
-                UnitLength.nanometers,
-                UnitLength.picometers,
-                UnitLength.inches,
-                UnitLength.feet,
-                UnitLength.yards,
-                UnitLength.miles,
-                UnitLength.scandinavianMiles,
-                UnitLength.lightyears,
-                UnitLength.nauticalMiles,
-                UnitLength.fathoms,
-                UnitLength.astronomicalUnits,
-                UnitLength.parsecs
-            ]
-            
-        case .illumination:
-            return [
-                UnitPressure.newtonsPerMetersSquared,
-                UnitPressure.gigapascals,
-                UnitPressure.megapascals,
-                UnitPressure.kilopascals,
-                UnitPressure.hectopascals,
-                UnitPressure.inchesOfMercury,
-                UnitPressure.bars,
-                UnitPressure.millibars,
-                UnitPressure.millimetersOfMercury,
-                UnitPressure.poundsForcePerSquareInch
-            ]
-            
         case .luminance:
-            return [UnitTemperature.celsius,
-                    UnitTemperature.fahrenheit,
-                    UnitTemperature.kelvin]
-            
+            return [
+                "candela/square meter", "candela/square centimeter", "candela/square foot",
+                "candela/square inch", "kilocandela/square meter", "stilb",
+                "lumen/sq. meter/steradian", "lumen/sq. cm/steradian",
+                "lumen/square foot/steradian", "watt/sq. cm/steradian (at 555 nm)",
+                "nit", "millinit", "lambert", "millilambert", "foot-lambert",
+                "apostilb", "blondel", "bril", "skot"
+            ]
         case .luminousIntensity:
             return [
-                UnitVolume.megaliters,
-                UnitVolume.kiloliters,
-                UnitVolume.liters,
-                UnitVolume.deciliters,
-                UnitVolume.centiliters,
-                UnitVolume.milliliters,
-                UnitVolume.cubicKilometers,
-                UnitVolume.cubicMeters,
-                UnitVolume.cubicDecimeters,
-                UnitVolume.cubicCentimeters,
-                UnitVolume.cubicMillimeters,
-                UnitVolume.cubicInches,
-                UnitVolume.cubicFeet,
-                UnitVolume.cubicYards,
-                UnitVolume.cubicMiles,
-                UnitVolume.acreFeet,
-                UnitVolume.bushels,
-                UnitVolume.teaspoons,
-                UnitVolume.tablespoons,
-                UnitVolume.fluidOunces,
-                UnitVolume.cups,
-                UnitVolume.pints,
-                UnitVolume.quarts,
-                UnitVolume.gallons,
-                UnitVolume.imperialTeaspoons,
-                UnitVolume.imperialTablespoons,
-                UnitVolume.imperialFluidOunces,
-                UnitVolume.imperialPints,
-                UnitVolume.imperialQuarts,
-                UnitVolume.imperialGallons,
-                UnitVolume.metricCups
+                "candle (international)", "candle (German)", "candle (UK)",
+                "decimal candle", "candle (pentane)", "pentane candle (10 candle power)",
+                "hefner candle", "carcel unit", "bougie decimal", "lumen/steradian"
             ]
-        }
-    }
-    
-    var availableUnitNames: [String] {
-        switch self {
-        case .digitalImageResolution:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .frequencyWavelength:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
         case .illumination:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .luminance:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-        case .luminousIntensity:
-            return ["Degrees", "Arc Minutes", "Arc Seconds", "Radians", "Gradians", "Revolutions"]
-
+            return [
+                "lux", "meter-candle", "centimeter-candle", "foot-candle", "flame",
+                "phot", "nox", "candela steradian/sq. meter", "lumen/square meter",
+                "lumen/square centimeter", "lumen/square foot", "watt/sq. cm (at 555 nm)"
+            ]
+        case .digitalImageResolution:
+            return [
+                "dot/meter", "dot/millimeter", "dot/inch", "pixel/inch"
+            ]
+        case .frequencyWavelength:
+            return [
+                "hertz", "exahertz", "petahertz", "terahertz", "gigahertz", "megahertz",
+                "kilohertz", "hectohertz", "dekahertz", "decihertz", "centihertz",
+                "millihertz", "microhertz", "nanohertz", "picohertz", "femtohertz",
+                "attohertz", "cycle/second", "wavelength in exametres", "wavelength in petametres",
+                "wavelength in terametres", "wavelength in gigametres", "wavelength in megametres",
+                "wavelength in kilometres", "wavelength in hectometres", "wavelength in dekametres",
+                "wavelength in metres", "wavelength in decimetres", "wavelength in centimetres",
+                "wavelength in millimetres", "wavelength in micrometres", "wavelength in nanometres",
+                "Electron Compton wavelength", "Proton Compton wavelength", "Neutron Compton wavelength"
+            ]
         }
     }
 }

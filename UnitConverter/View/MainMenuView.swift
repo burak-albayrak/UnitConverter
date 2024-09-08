@@ -55,6 +55,8 @@ struct MainMenuView: View {
 
 // TODO: tüm unit dönüşümlerini teker teker kontrol et ve bitir. dönüşümleri, logoları, açıklamaları.
 
+// TODO: unit symboller gidddi
+
 // TODO: birimlerin ilk girinceki unit'leri ayarla
 
 // TODO: add history section with SwiftData
@@ -76,6 +78,5 @@ struct MainMenuView: View {
 
 // TODO: widget ????
 // TODO: control center button ????
-// TODO: info kısmı için wikipedia linkleri koyulabilir.
 
 // TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)

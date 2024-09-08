@@ -24,7 +24,7 @@ struct CategoryInfoView<T: UnitCategory>: View {
 
             ScrollView {
                 Text(category.info)
-                    .padding(.horizontal, 30)
+                    .padding(.horizontal, 33)
                     .padding(.vertical, 5)
                     .padding(.bottom, 10)
                     .multilineTextAlignment(.leading)
