@@ -94,8 +94,6 @@ struct MainMenuView: View {
 
 // TODO: her şeyi kontrol et
 
-// TODO: settingsde feedback me kısmı
-
 // TODO: add dark mode
 
 // TODO: buy me a coffee

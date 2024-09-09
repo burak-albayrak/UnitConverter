@@ -36,6 +36,7 @@
 		EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
 		EF85EF762C8E3229006E6548 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF85EF752C8E3229006E6548 /* Launch Screen.storyboard */; };
 		EF85EF7C2C8E5D0A006E6548 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
+		EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8C2C8F8EFD009699EC /* MailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		EF85EF752C8E3229006E6548 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EF85EF7B2C8E5D0A006E6548 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		EFDFFB8C2C8F8EFD009699EC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				EF37ACDC2C8C920A00477945 /* CurrencyConverterView.swift  .swift */,
 				EF85EF632C8DFD29006E6548 /* SettingsView.swift */,
 				EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */,
+				EFDFFB8C2C8F8EFD009699EC /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				EF85EF6E2C8E076B006E6548 /* FavoritesView.swift in Sources */,
 				EF85EF6C2C8E0717006E6548 /* FavoritesViewModel.swift in Sources */,
 				EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */,
+				EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */,
 				EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,16 +7,21 @@
 
 import SwiftUI
 import SwiftData
+import MessageUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var showingClearConfirmation = false
+    @State private var isShowingMailView = false
+    @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
 
     var body: some View {
         NavigationView {
             Form {
+
+                
                 Section(header: Text("Favorites")) {
                     Button("Clear All Favorites") {
                         showingClearConfirmation = true
@@ -24,6 +29,11 @@ struct SettingsView: View {
                     .foregroundColor(.red)
                 }
                 
+                Section(header: Text("Feedback")) {
+                    Button("Feedback Me") {
+                        isShowingMailView = true
+                    }
+                }
                 
             }
             .navigationTitle("Settings")
@@ -33,6 +43,12 @@ struct SettingsView: View {
                         dismiss()
                     }
                 }
+            }
+        }
+        .sheet(isPresented: $isShowingMailView) {
+            MailView(result: $mailResult) { composer in
+                composer.setSubject("Feedback for Unit Converter App")
+                composer.setToRecipients(["burak_albayrak0@icloud.com"])
             }
         }
         .onAppear {
