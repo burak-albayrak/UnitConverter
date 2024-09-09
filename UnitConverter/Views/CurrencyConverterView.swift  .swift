@@ -25,18 +25,14 @@ struct CurrencyConversionView: View {
                         Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                     }
                 }
-                .onChange(of: viewModel.selectedFromCurrencyIndex) { _, _ in
-                    viewModel.convertCurrency()
-                }
-                
+                .id(viewModel.selectedFromCurrencyIndex) // Picker'ı yeniden oluşturmak için id ekleyin
+
                 Picker("To Currency", selection: $viewModel.selectedToCurrencyIndex) {
                     ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
                         Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                     }
                 }
-                .onChange(of: viewModel.selectedToCurrencyIndex) { _, _ in
-                    viewModel.convertCurrency()
-                }
+                .id(viewModel.selectedToCurrencyIndex) // Picker'ı yeniden oluşturmak için id ekleyin
             }
             
             Section("Value") {
@@ -166,7 +162,7 @@ struct CurrencyConversionView: View {
             }
         }
         .onAppear {
-            favoritesViewModel.setModelContext(modelContext)
+            viewModel.setDefaultCurrencies() // View görünür olduğunda varsayılan para birimlerini ayarla
         }
         .sheet(isPresented: $viewModel.isInfoPresented) {
             CategoryInfoView(category: viewModel.category)

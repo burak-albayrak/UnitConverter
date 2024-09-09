@@ -24,6 +24,18 @@ class CurrencyConversionViewModel: ObservableObject {
         fetchExchangeRates()
     }
     
+    func setDefaultCurrencies() {
+        let usdIndex = availableCurrencies.firstIndex(where: { $0.symbol == "USD" }) ?? 0
+        let eurIndex = availableCurrencies.firstIndex(where: { $0.symbol == "EUR" }) ?? 1
+
+        selectedFromCurrencyIndex = usdIndex
+        selectedToCurrencyIndex = eurIndex
+        
+        // Değerleri güncelledikten sonra dönüşümü yap
+        convertCurrency()
+    }
+
+    
     func fetchExchangeRates() {
         isLoading = true
         errorMessage = nil
@@ -34,15 +46,17 @@ class CurrencyConversionViewModel: ObservableObject {
                 
                 if success {
                     self?.availableCurrencies = self?.category.availableUnits ?? []
-                    self?.convertCurrency()
+                    self?.setDefaultCurrencies()
                 } else {
                     self?.errorMessage = "Failed to fetch exchange rates. Using default rates."
                     CurrencyUnitsCategory.setDefaultExchangeRates()
                     self?.availableCurrencies = CurrencyUnitsCategory.commonCurrencies.map { ($0, self?.category.getCurrencyFullName(for: $0) ?? $0) }
+                    self?.setDefaultCurrencies()
                 }
             }
         }
     }
+    
     
     func convertCurrency() {
         guard let inputNumber = Decimal(string: inputValue),
