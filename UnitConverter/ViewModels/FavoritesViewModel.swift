@@ -20,10 +20,13 @@ class FavoritesViewModel: ObservableObject {
         guard let modelContext = modelContext else { return [] }
         return (try? modelContext.fetch(FetchDescriptor<FavoriteConversion>())) ?? []
     }
-    
     func addFavorite(category: String, fromUnit: String, toUnit: String) {
         guard let modelContext = modelContext else { return }
-        let newFavorite = FavoriteConversion(category: category, fromUnit: fromUnit, toUnit: toUnit)
+        
+        // Currency kategorisi için özel durum
+        let actualCategory = category == CurrencyUnitsCategory.currency.rawValue ? "Currency" : category
+        
+        let newFavorite = FavoriteConversion(category: actualCategory, fromUnit: fromUnit, toUnit: toUnit)
         modelContext.insert(newFavorite)
     }
     

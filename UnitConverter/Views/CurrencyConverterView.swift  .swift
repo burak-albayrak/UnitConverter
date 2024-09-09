@@ -122,8 +122,8 @@ struct CurrencyConversionView: View {
                 Button(action: {
                     favoritesViewModel.addFavorite(
                         category: CurrencyUnitsCategory.currency.rawValue,
-                        fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].name,
-                        toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].name
+                        fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
+                        toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
                     )
                     withAnimation(.easeIn(duration: 0.5)) {
                         addedToFavorites = true
@@ -162,7 +162,8 @@ struct CurrencyConversionView: View {
             }
         }
         .onAppear {
-            viewModel.setDefaultCurrencies() // View görünür olduğunda varsayılan para birimlerini ayarla
+            favoritesViewModel.setModelContext(modelContext)
+            viewModel.setDefaultCurrencies()
         }
         .sheet(isPresented: $viewModel.isInfoPresented) {
             CategoryInfoView(category: viewModel.category)
