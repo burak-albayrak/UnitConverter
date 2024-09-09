@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct CurrencyConversionView: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var viewModel = CurrencyConversionViewModel()
+    @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var copiedToClipboard: Bool = false
     @State private var isCopyButtonPressed: Bool = false
     @State private var isPasteButtonPressed: Bool = false
+    @State private var isFavoriteButtonPressed: Bool = false
+    @State private var addedToFavorites: Bool = false
 
     var body: some View {
         Form {
@@ -120,6 +124,34 @@ struct CurrencyConversionView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
+                    favoritesViewModel.addFavorite(
+                        category: CurrencyUnitsCategory.currency.rawValue,
+                        fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].name,
+                        toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].name
+                    )
+                    withAnimation(.easeIn(duration: 0.5)) {
+                        addedToFavorites = true
+                        isFavoriteButtonPressed = true
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        withAnimation(.easeOut(duration: 0.1)) {
+                            isFavoriteButtonPressed = false
+                        }
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        withAnimation(.easeOut(duration: 2)) {
+                            addedToFavorites = false
+                        }
+                    }
+                }) {
+                    Image(systemName: "star")
+                        .font(.title3)
+                        .foregroundColor(.cyan)
+                }
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
                     viewModel.fetchExchangeRates()
                 }) {
                     Image(systemName: "arrow.clockwise")
@@ -133,22 +165,32 @@ struct CurrencyConversionView: View {
                 }
             }
         }
+        .onAppear {
+            favoritesViewModel.setModelContext(modelContext)
+        }
         .sheet(isPresented: $viewModel.isInfoPresented) {
             CategoryInfoView(category: viewModel.category)
         }
         .overlay {
             if copiedToClipboard {
-                Text("Copied to Clipboard")
-                    .font(.system(.body, design: .rounded, weight: .semibold))
-                    .foregroundStyle(.white)
-                    .padding()
-                    .background(Color.cyan.cornerRadius(20))
-                    .padding(.bottom)
-                    .shadow(radius: 5)
-                    .transition(.move(edge: .bottom))
-                    .frame(maxHeight: .infinity, alignment: .bottom)
+                feedbackOverlay(message: "Copied to Clipboard")
+            }
+            if addedToFavorites {
+                feedbackOverlay(message: "Added to Favorites")
             }
         }
+    }
+    
+    private func feedbackOverlay(message: String) -> some View {
+        Text(message)
+            .font(.system(.body, design: .rounded, weight: .semibold))
+            .foregroundStyle(.white)
+            .padding()
+            .background(Color.cyan.cornerRadius(20))
+            .padding(.bottom)
+            .shadow(radius: 5)
+            .transition(.move(edge: .bottom))
+            .frame(maxHeight: .infinity, alignment: .bottom)
     }
 }
 

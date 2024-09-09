@@ -94,6 +94,8 @@ struct MainMenuView: View {
 
 // TODO: her şeyi kontrol et
 
+// TODO: currency'de güncellenecek yerler var (unit) (favorites)
+
 // TODO: settingsde feedback me kısmı
 
 // TODO: add dark mode
@@ -113,7 +115,7 @@ struct MainMenuView: View {
 // TODO: Swiftlint nedir araştır.
 
 // TODO: widget ????
-// TODO: control center button ????
+// TODO: control center button ????     "
 
 // TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)
 
