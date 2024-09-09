@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import MessageUI
+import StoreKit
 
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
@@ -16,10 +17,14 @@ struct SettingsView: View {
     @State private var showingClearConfirmation = false
     @State private var isShowingMailView = false
     @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
+    @StateObject private var storeKit = StoreKitManager()
+    @State private var showingPurchaseAlert = false
+    @State private var purchaseAlertMessage = ""
 
     var body: some View {
         NavigationView {
             Form {
+
 
                 
                 Section(header: Text("Favorites")) {
@@ -27,6 +32,13 @@ struct SettingsView: View {
                         showingClearConfirmation = true
                     }
                     .foregroundColor(.red)
+                }
+                
+                Section(header: Text("Support Me")) {
+                    Button("Buy Me a Coffee") {
+                        storeKit.purchaseCoffee()
+                    }
+                    .disabled(storeKit.isLoading)
                 }
                 
                 Section(header: Text("Feedback")) {
@@ -53,6 +65,20 @@ struct SettingsView: View {
         }
         .onAppear {
             favoritesViewModel.setModelContext(modelContext)
+        }
+        .alert(isPresented: $showingPurchaseAlert) {
+            Alert(title: Text("Purchase"), message: Text(purchaseAlertMessage), dismissButton: .default(Text("OK")))
+        }
+        .onReceive(storeKit.$purchaseResult) { result in
+            if let result = result {
+                showingPurchaseAlert = true
+                switch result {
+                case .success:
+                    purchaseAlertMessage = "Thank you for your support!"
+                case .failure(let error):
+                    purchaseAlertMessage = "Purchase failed: \(error.localizedDescription)"
+                }
+            }
         }
         .alert("Clear All Favorites", isPresented: $showingClearConfirmation) {
             Button("Cancel", role: .cancel) { }
