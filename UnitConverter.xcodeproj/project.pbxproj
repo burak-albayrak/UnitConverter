@@ -38,6 +38,7 @@
 		EF85EF7C2C8E5D0A006E6548 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
 		EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8C2C8F8EFD009699EC /* MailView.swift */; };
 		EFDFFB902C8F9414009699EC /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */; };
+		EFDFFB962C8FBA08009699EC /* AppReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		EF85EF7B2C8E5D0A006E6548 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EFDFFB8C2C8F8EFD009699EC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				EF85EF742C8E3215006E6548 /* LaunchScreen */,
+				EFDFFB942C8FB9F7009699EC /* AppReview */,
 				EFDFFB8E2C8F940A009699EC /* Payment */,
 				EF85EF7A2C8E5CF8006E6548 /* Extension */,
 				EF85EF682C8E06E8006E6548 /* Favorite */,
@@ -220,6 +223,14 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
+		EFDFFB942C8FB9F7009699EC /* AppReview */ = {
+			isa = PBXGroup;
+			children = (
+				EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */,
+			);
+			path = AppReview;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -305,6 +316,7 @@
 				EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */,
 				EF37C0752C8682E6004B974A /* LightUnitsModel.swift in Sources */,
 				EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */,
+				EFDFFB962C8FBA08009699EC /* AppReviewManager.swift in Sources */,
 				EF37C0622C834FE1004B974A /* AllConvertersMenu.swift in Sources */,
 				EF37ACD92C8C91A600477945 /* CurrencyUnitsModel.swift in Sources */,
 				EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */,

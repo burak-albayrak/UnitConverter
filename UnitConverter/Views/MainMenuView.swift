@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainMenuView: View {
+    @StateObject private var reviewManager = AppReviewManager()
     @State private var selectedCategory: AllConvertersCategory?
     @State private var selectedUnitCategory: UnitCategory?
     @State private var showSettings = false
@@ -69,6 +70,9 @@ struct MainMenuView: View {
                 }
             }
         }
+        .onAppear {
+            reviewManager.checkIfReviewShouldBeRequested()
+        }
         .sheet(isPresented: $showSettings) {
             SettingsView()
         }
@@ -89,30 +93,3 @@ struct MainMenuView: View {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }
-
-// islerrrrrr
-
-// TODO: her şeyi kontrol et
-
-// TODO: add dark mode
-
-// TODO: ilk yükleyen kullanıcı için welcome screen yap
-
-// FINAL
-
-// TODO: Dil desteği
-
-// Extralar
-
-// TODO: currency'de güncellenecek yerler var (unit)
-
-// TODO: Formül gösterimleri eklenebilir.
-
-// TODO: Swiftlint nedir araştır.
-
-// TODO: widget ????
-// TODO: control center button ????     "
-
-// TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)
-
-// TODO: add history section with SwiftData (şu anki yapıma göre imkansız.)

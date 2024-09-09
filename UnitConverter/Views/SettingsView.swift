@@ -50,6 +50,11 @@ struct SettingsView: View {
                     }
                 }
                 
+                Section(header: Text("About")) {
+                    Link("Rate the App", destination: URL(string: "https://apps.apple.com/app/id123456789")!) // FIXME: app sayfası
+//                    Link("Privacy Policy", destination: URL(string: "https://yourwebsite.com/privacy")!)
+                }
+                
             }
             .navigationTitle("Settings")
             .toolbar {
