@@ -23,8 +23,11 @@
                                     <constraint firstAttribute="width" constant="150" id="x8U-oq-TQz"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Unit Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-Lb-o5H">
-                                <rect key="frame" x="90" y="526" width="212.66666666666669" height="40.666666666666629"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unit Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHc-Lb-o5H">
+                                <rect key="frame" x="90.333333333333329" y="561" width="212.66666666666669" height="40.666666666666629"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40.670000000000002" id="Kzy-nl-rzW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +39,7 @@
                             <constraint firstItem="Gea-C9-gwe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2nd-Y8-R0D"/>
                             <constraint firstItem="GHc-Lb-o5H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4IA-5a-f8y"/>
                             <constraint firstItem="Gea-C9-gwe" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Lxd-9X-m9X"/>
-                            <constraint firstItem="GHc-Lb-o5H" firstAttribute="top" secondItem="Gea-C9-gwe" secondAttribute="bottom" constant="60" id="Ym1-hG-vL8"/>
+                            <constraint firstItem="GHc-Lb-o5H" firstAttribute="top" secondItem="Gea-C9-gwe" secondAttribute="bottom" constant="60" id="YU4-8R-czw"/>
                             <constraint firstItem="GHc-Lb-o5H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="x9G-ON-qa2"/>
                         </constraints>
                     </view>

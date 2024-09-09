@@ -111,6 +111,15 @@ struct CurrencyConversionView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
+                    UIApplication.shared.hideKeyboard()
+                }, label: {
+                    Image(systemName: "keyboard.chevron.compact.down")
+                        .font(.title3)
+                        .foregroundColor(.cyan)
+                })
+            }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
                     viewModel.fetchExchangeRates()
                 }) {
                     Image(systemName: "arrow.clockwise")

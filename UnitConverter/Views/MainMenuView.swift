@@ -96,13 +96,13 @@ struct MainMenuView: View {
 
 // TODO: settingsde feedback me kısmı
 
-// TODO: ilk yükleyen kullanıcı için welcome screen yap
+// TODO: add dark mode
 
 // TODO: buy me a coffee
 
-// FINAL
+// TODO: ilk yükleyen kullanıcı için welcome screen yap
 
-// FIXME: Dark mode bug'ını fixle
+// FINAL
 
 // TODO: Dil desteği
 
@@ -118,4 +118,3 @@ struct MainMenuView: View {
 // TODO: add convert case (text inputum yok. farklı bir mac app olabilir.)
 
 // TODO: add history section with SwiftData (şu anki yapıma göre imkansız.)
-
