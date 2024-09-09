@@ -44,16 +44,18 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         let result = category.convert(decimalValue, from: fromUnit, to: toUnit)
         
         let formatter = NumberFormatter()
-        formatter.numberStyle = .scientific
+        formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 6
-        formatter.exponentSymbol = "e"
+        formatter.minimumFractionDigits = 0 // Sıfırdan sonraki gereksiz ondalık basamakları kaldırır
         
-        if abs(result) >= 0.000001 {
-            formatter.numberStyle = .decimal
-            formatter.maximumFractionDigits = 6
+        if abs(result) >= 0.000001 && abs(result) < 1000000 {
+            return formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
+        } else {
+            formatter.numberStyle = .scientific
+            formatter.exponentSymbol = "e"
+            let formattedResult = formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
+            return formattedResult == "0e0" ? "0" : formattedResult
         }
-        
-        return formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
     }
     
     func setFromFavorite(_ favorite: FavoriteConversion) {

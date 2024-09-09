@@ -114,7 +114,7 @@ struct UnitConversionView<T: UnitCategory>: View {
                     UIApplication.shared.hideKeyboard()
                 }, label: {
                     Image(systemName: "keyboard.chevron.compact.down")
-                        .font(.title3)
+                        .font(.callout)
                         .foregroundColor(.cyan)
                 })
                 Button(action: {

@@ -94,8 +94,6 @@ struct MainMenuView: View {
 
 // TODO: her şeyi kontrol et
 
-// TODO: currency'de güncellenecek yerler var (unit) (favorites)
-
 // TODO: settingsde feedback me kısmı
 
 // TODO: add dark mode
@@ -109,6 +107,8 @@ struct MainMenuView: View {
 // TODO: Dil desteği
 
 // Extralar
+
+// TODO: currency'de güncellenecek yerler var (unit)
 
 // TODO: Formül gösterimleri eklenebilir.
 
