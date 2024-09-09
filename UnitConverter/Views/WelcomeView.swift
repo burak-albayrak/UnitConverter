@@ -10,6 +10,8 @@ import SwiftUI
 struct WelcomeView: View {
     @State private var currentPage = 0
     @Binding var showWelcomeScreen: Bool
+    @State private var imageScale: CGFloat = 0.5
+    @State private var textOpacity: Double = 0
     
     let pages: [WelcomePage] = [
         WelcomePage(title: "Welcome to Unit Converter", description: "Convert units easily and quickly", imageName: "ruler"),
@@ -24,29 +26,46 @@ struct WelcomeView: View {
             
             VStack {
                 TabView(selection: $currentPage) {
-                    ForEach(0..<4) { index in
+                    ForEach(0..<pages.count, id: \.self) { index in
                         VStack {
                             Image(systemName: pages[index].imageName)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 100, height: 100)
                                 .foregroundColor(.cyan)
-                                .padding()
+                                .scaleEffect(currentPage == index ? 1 : imageScale)
+                                .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.5), value: currentPage)
                             
                             Text(pages[index].title)
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .padding()
+                                .opacity(currentPage == index ? 1 : textOpacity)
+                                .animation(.easeIn(duration: 0.5), value: currentPage)
                             
                             Text(pages[index].description)
                                 .font(.body)
                                 .multilineTextAlignment(.center)
                                 .padding()
+                                .opacity(currentPage == index ? 1 : textOpacity)
+                                .animation(.easeIn(duration: 0.5), value: currentPage)
                         }
                         .tag(index)
                     }
                 }
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                .onChange(of: currentPage) { _, _ in
+                    withAnimation {
+                        imageScale = 0.5
+                        textOpacity = 0
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        withAnimation(.easeIn(duration: 0.5)) {
+                            imageScale = 1.0
+                            textOpacity = 1
+                        }
+                    }
+                }
                 
                 Button(action: {
                     if currentPage < pages.count - 1 {
@@ -67,6 +86,14 @@ struct WelcomeView: View {
                 .padding()
             }
         }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                withAnimation(.easeIn(duration: 0.5)) {
+                    imageScale = 1.0
+                    textOpacity = 1
+                }
+            }
+        }
     }
 }
 
@@ -76,4 +103,14 @@ struct WelcomePage {
     let imageName: String
 }
 
-
+#Preview {
+    struct PreviewWrapper: View {
+        @State private var showWelcomeScreen = true
+        
+        var body: some View {
+            WelcomeView(showWelcomeScreen: $showWelcomeScreen)
+        }
+    }
+    
+    return PreviewWrapper()
+}
