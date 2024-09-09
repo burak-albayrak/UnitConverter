@@ -20,12 +20,15 @@ struct SettingsView: View {
     @StateObject private var storeKit = StoreKitManager()
     @State private var showingPurchaseAlert = false
     @State private var purchaseAlertMessage = ""
+    @AppStorage("isDarkMode") private var isDarkMode = false
 
     var body: some View {
         NavigationView {
             Form {
 
-
+                Section(header: Text("Appearance")) {
+                    Toggle("Dark Mode", isOn: $isDarkMode)
+                }
                 
                 Section(header: Text("Favorites")) {
                     Button("Clear All Favorites") {
@@ -88,6 +91,7 @@ struct SettingsView: View {
         } message: {
             Text("Are you sure you want to clear all favorites? This action cannot be undone.")
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
         
         Text(getAppVersion())
             .foregroundColor(.secondary)

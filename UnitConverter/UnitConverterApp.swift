@@ -10,9 +10,12 @@ import SwiftData
 
 @main
 struct UnitConverterApp: App {
+    @AppStorage("isDarkMode") private var isDarkMode = false
+
     var body: some Scene {
         WindowGroup {
             MainMenuView()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
         .modelContainer(for: FavoriteConversion.self)
     }

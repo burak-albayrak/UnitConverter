@@ -96,8 +96,6 @@ struct MainMenuView: View {
 
 // TODO: add dark mode
 
-// TODO: buy me a coffee
-
 // TODO: ilk yükleyen kullanıcı için welcome screen yap
 
 // FINAL
