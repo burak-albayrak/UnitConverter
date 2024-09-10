@@ -39,6 +39,7 @@ struct WelcomeView: View {
                             Text(pages[index].title)
                                 .font(.title)
                                 .fontWeight(.bold)
+                                .multilineTextAlignment(.center)
                                 .padding()
                                 .opacity(currentPage == index ? 1 : textOpacity)
                                 .animation(.easeIn(duration: 0.5), value: currentPage)
