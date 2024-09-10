@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @Binding var hasSeenWelcomeScreen: Bool
     @State private var isShowingMainMenu = false
+    @State private var mainMenuScale: CGFloat = 0.8
+    @State private var mainMenuOpacity: Double = 0.0
 
     var body: some View {
         ZStack {
@@ -19,18 +21,23 @@ struct ContentView: View {
                     set: { newValue in
                         withAnimation(.easeInOut(duration: 0.5)) {
                             self.hasSeenWelcomeScreen = !newValue
-                            self.isShowingMainMenu = !newValue
+                            if !newValue {
+                                self.isShowingMainMenu = true
+                                withAnimation(.easeInOut(duration: 0.5).delay(0.3)) {
+                                    self.mainMenuScale = 1.0
+                                    self.mainMenuOpacity = 1.0
+                                }
+                            }
                         }
                     }
                 ))
-                .transition(.asymmetric(insertion: .opacity, removal: .move(edge: .leading)))
-            } else {
-                MainMenuView()
+                .transition(.opacity)
             }
             
             if isShowingMainMenu {
                 MainMenuView()
-                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
+                    .scaleEffect(mainMenuScale)
+                    .opacity(mainMenuOpacity)
             }
         }
     }

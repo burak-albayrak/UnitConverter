@@ -15,5 +15,5 @@ extension UIApplication {
 }
 
 extension Color {
-    static let customCyan = Color(red: 122/255, green: 225/255, blue: 250/255)
+    static let customCyan = Color(red: 110/255, green: 225/255, blue: 240/255)
 }
