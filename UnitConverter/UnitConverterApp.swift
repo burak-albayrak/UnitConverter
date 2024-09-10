@@ -15,19 +15,8 @@ struct UnitConverterApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Group {
-                if !hasSeenWelcomeScreen {
-                    WelcomeView(showWelcomeScreen: Binding(
-                        get: { !self.hasSeenWelcomeScreen },
-                        set: { newValue in
-                            self.hasSeenWelcomeScreen = !newValue
-                        }
-                    ))
-                } else {
-                    MainMenuView()
-                }
-            }
-            .preferredColorScheme(isDarkMode ? .dark : .light)
+            ContentView(hasSeenWelcomeScreen: $hasSeenWelcomeScreen)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
         .modelContainer(for: FavoriteConversion.self)
     }

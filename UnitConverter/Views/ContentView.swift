@@ -8,17 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showWelcomeScreen = true
+    @Binding var hasSeenWelcomeScreen: Bool
+    @State private var isShowingMainMenu = false
 
     var body: some View {
-        if showWelcomeScreen {
-            WelcomeView(showWelcomeScreen: $showWelcomeScreen)
-        } else {
-            MainMenuView()
+        ZStack {
+            if !hasSeenWelcomeScreen {
+                WelcomeView(showWelcomeScreen: Binding(
+                    get: { !self.hasSeenWelcomeScreen },
+                    set: { newValue in
+                        withAnimation(.easeInOut(duration: 0.5)) {
+                            self.hasSeenWelcomeScreen = !newValue
+                            self.isShowingMainMenu = !newValue
+                        }
+                    }
+                ))
+                .transition(.asymmetric(insertion: .opacity, removal: .move(edge: .leading)))
+            }
+            
+            if isShowingMainMenu {
+                MainMenuView()
+                    .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .opacity))
+            }
         }
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(hasSeenWelcomeScreen: .constant(false))
 }
