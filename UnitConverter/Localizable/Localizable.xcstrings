@@ -1,0 +1,1340 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "(self.rawValue)Info" : {
+      "comment" : "Unit category info",
+      "extractionState" : "stale",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "%@ to %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ to %2$@"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "%@Info" : {
+
+    },
+    "About" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hakkında"
+          }
+        }
+      }
+    },
+    "Acceleration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İvme"
+          }
+        }
+      }
+    },
+    "Acceleration - Angular" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Açısal İvme"
+          }
+        }
+      }
+    },
+    "Add some conversions to your favorites!" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorilerinize birkaç dönüşüm ekleyin!"
+          }
+        }
+      }
+    },
+    "All Converters" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm Dönüştürücüler"
+          }
+        }
+      }
+    },
+    "Angle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Açı"
+          }
+        }
+      }
+    },
+    "Appearance" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Görünüş"
+          }
+        }
+      }
+    },
+    "Are you sure you want to clear all favorites? This action cannot be undone." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm favorileri temizlemek istediğinizden emin misiniz? Bu eylem geri alınamaz."
+          }
+        }
+      }
+    },
+    "Area" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alan"
+          }
+        }
+      }
+    },
+    "Buy Me a Coffee" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bana bir kahve Ismarla"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İptal"
+          }
+        }
+      }
+    },
+    "Charge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şarj"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sil"
+          }
+        }
+      }
+    },
+    "Clear All Favorites" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tüm Favorileri Sil"
+          }
+        }
+      }
+    },
+    "Common Converters" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yaygın Dönüştürücüler"
+          }
+        }
+      }
+    },
+    "Concentration - Molar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konsantrasyon - Molar"
+          }
+        }
+      }
+    },
+    "Concentration Solution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konsantrasyon Çözeltisi"
+          }
+        }
+      }
+    },
+    "copy" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kopyala"
+          }
+        }
+      }
+    },
+    "Currency" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Döviz"
+          }
+        }
+      }
+    },
+    "Current" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akım"
+          }
+        }
+      }
+    },
+    "Dark Mode" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Koyu Mod"
+          }
+        }
+      }
+    },
+    "Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yoğunluk"
+          }
+        }
+      }
+    },
+    "Digital Image Resolution" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dijital Görüntü Çözünürlüğü"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamam"
+          }
+        }
+      }
+    },
+    "Duration" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Süre"
+          }
+        }
+      }
+    },
+    "Electric Conductance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektriksel İletkenlik"
+          }
+        }
+      }
+    },
+    "Electric Conductivity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektriksel İletkenlik2"
+          }
+        }
+      }
+    },
+    "Electric Field Strength" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik Alan Gücü"
+          }
+        }
+      }
+    },
+    "Electric Potential" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektriksel Potansiyel"
+          }
+        }
+      }
+    },
+    "Electric Resistance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektriksel Direnç"
+          }
+        }
+      }
+    },
+    "Electric Resistivity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektriksel Direnç2"
+          }
+        }
+      }
+    },
+    "Electricity Converters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik Dönüştürücüler"
+          }
+        }
+      }
+    },
+    "Electrostatic Capacitance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrostatik Kapasitans"
+          }
+        }
+      }
+    },
+    "Energy" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enerji"
+          }
+        }
+      }
+    },
+    "Engineering Converters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mühendislik Dönüştürücüleri"
+          }
+        }
+      }
+    },
+    "English" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "English"
+          }
+        }
+      }
+    },
+    "Enter value" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Değer giriniz"
+          }
+        }
+      }
+    },
+    "Failed to create preview: %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Önizleme oluşturulamadı: %@"
+          }
+        }
+      }
+    },
+    "Favorites" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriler"
+          }
+        }
+      }
+    },
+    "Feedback" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri Bildirim"
+          }
+        }
+      }
+    },
+    "Feedback Me" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bana geri bildirimde bulun"
+          }
+        }
+      }
+    },
+    "Flow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akış"
+          }
+        }
+      }
+    },
+    "Flow - Mass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akış - Kütle"
+          }
+        }
+      }
+    },
+    "Flow Molar" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akış Molar"
+          }
+        }
+      }
+    },
+    "Force" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvvet"
+          }
+        }
+      }
+    },
+    "Frequency Wavelength" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frekans Dalga Boyu"
+          }
+        }
+      }
+    },
+    "From Currency" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu Birimden"
+          }
+        }
+      }
+    },
+    "From Unit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu Birimden"
+          }
+        }
+      }
+    },
+    "Fuel Consumption" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakıt Tüketimi"
+          }
+        }
+      }
+    },
+    "Fuel Efficiency - Mass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakıt Verimliliği - Kütle"
+          }
+        }
+      }
+    },
+    "Fuel Efficiency - Volume" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakıt Verimliliği - Hacim"
+          }
+        }
+      }
+    },
+    "Get Started" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başlayalım!"
+          }
+        }
+      }
+    },
+    "Heat Converters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isı Dönüştürücüleri"
+          }
+        }
+      }
+    },
+    "Heat Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isı Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Heat Flux Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isı Akısı Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Heat Transver Coefficient" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isı Transfer Katsayısı"
+          }
+        }
+      }
+    },
+    "Illumination" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aydınlatma"
+          }
+        }
+      }
+    },
+    "Inductance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İndüktans"
+          }
+        }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dil"
+          }
+        }
+      }
+    },
+    "Language Changed" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dil Değiştirildi"
+          }
+        }
+      }
+    },
+    "Length" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzunluk"
+          }
+        }
+      }
+    },
+    "Light Converters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Işık Dönüştürücüleri"
+          }
+        }
+      }
+    },
+    "Linear Charge Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doğrusal Yük Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Linear Current Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doğrusal Akım Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Luminance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parlaklık"
+          }
+        }
+      }
+    },
+    "Luminous Intensity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Işık Şiddeti"
+          }
+        }
+      }
+    },
+    "Magnetic Field Strength" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetik Alan Gücü"
+          }
+        }
+      }
+    },
+    "Magnetic Flux" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetik akı"
+          }
+        }
+      }
+    },
+    "Magnetic Flux Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetik Akı Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Magnetism Converters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetizma Dönüştürücüleri"
+          }
+        }
+      }
+    },
+    "Magnetomotive Force" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetomotor kuvveti"
+          }
+        }
+      }
+    },
+    "Mass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kütle"
+          }
+        }
+      }
+    },
+    "Mass Flux Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kütle Akışı Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Moment of Force" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvvet Anı"
+          }
+        }
+      }
+    },
+    "Moment of Inertia" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eylemsizlik Momenti"
+          }
+        }
+      }
+    },
+    "Next" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıradaki"
+          }
+        }
+      }
+    },
+    "No Favorites Yet" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Henüz Favori Yok"
+          }
+        }
+      }
+    },
+    "OK" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tamam"
+          }
+        }
+      }
+    },
+    "paste" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yapıştır"
+          }
+        }
+      }
+    },
+    "Permeability" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçirgenlik"
+          }
+        }
+      }
+    },
+    "Please restart the app for the language change to take effect." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dil değişikliğinin etkili olması için lütfen uygulamayı yeniden başlatın."
+          }
+        }
+      }
+    },
+    "Power" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güç"
+          }
+        }
+      }
+    },
+    "Pressure" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basınç"
+          }
+        }
+      }
+    },
+    "Price Converter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Döviz Dönüştürücü"
+          }
+        }
+      }
+    },
+    "Purchase" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Satın al"
+          }
+        }
+      }
+    },
+    "Radiation" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyasyon"
+          }
+        }
+      }
+    },
+    "Radiation - Absorbed Dose" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyasyon - Emilen Doz"
+          }
+        }
+      }
+    },
+    "Radiation - Activity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyasyon - Aktivite"
+          }
+        }
+      }
+    },
+    "Radiation - Exposure" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyasyon - Maruziyet"
+          }
+        }
+      }
+    },
+    "Radiology Converters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyoloji Dönüştürücüleri"
+          }
+        }
+      }
+    },
+    "Rate the App" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uygulamayı derecelendirin"
+          }
+        }
+      }
+    },
+    "Result" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonuç"
+          }
+        }
+      }
+    },
+    "Select Currencies" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Döviz Seçin"
+          }
+        }
+      }
+    },
+    "Select Units" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Seçin"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar"
+          }
+        }
+      }
+    },
+    "Specific Volume" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belirli Hacim"
+          }
+        }
+      }
+    },
+    "Speed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hız"
+          }
+        }
+      }
+    },
+    "Spesific Heat Capacity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özgül Isı Kapasitesi"
+          }
+        }
+      }
+    },
+    "Support Me" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bana Destek Ol"
+          }
+        }
+      }
+    },
+    "Surface Charge Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doğrusal Yük Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Surface Current Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yüzey Akım Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Surface Tension" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yüzey gerilimi"
+          }
+        }
+      }
+    },
+    "Temperature" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıcaklık"
+          }
+        }
+      }
+    },
+    "Temperature Interval" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıcaklık Aralığı"
+          }
+        }
+      }
+    },
+    "Thermal Conductivity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isıl İletkenlik"
+          }
+        }
+      }
+    },
+    "Thermal Expansion" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termal Genleşme"
+          }
+        }
+      }
+    },
+    "Thermal Resistance" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isıl Direnç"
+          }
+        }
+      }
+    },
+    "To Currency" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu Birime"
+          }
+        }
+      }
+    },
+    "To Unit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu Birime"
+          }
+        }
+      }
+    },
+    "Torque" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tork"
+          }
+        }
+      }
+    },
+    "Türkçe" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Türkçe"
+          }
+        }
+      }
+    },
+    "Unit Converter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Dönüştürücü"
+          }
+        }
+      }
+    },
+    "Unsupported category: %@" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desteklenmeyen kategori: %@"
+          }
+        }
+      }
+    },
+    "Value" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Değer"
+          }
+        }
+      }
+    },
+    "Velocity - Angular" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hız - Açısal"
+          }
+        }
+      }
+    },
+    "Viscosity - Dynamic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viskozite - Dinamik"
+          }
+        }
+      }
+    },
+    "Viscosity - Kinematic" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Viskozite - Kinematik"
+          }
+        }
+      }
+    },
+    "Volume" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacim"
+          }
+        }
+      }
+    },
+    "Volume - Dry" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacim - kuru"
+          }
+        }
+      }
+    },
+    "Volume Charge Density" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacim Yük Yoğunluğu"
+          }
+        }
+      }
+    },
+    "Weight and Mass" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ağırlık ve Kütle"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -12,7 +12,13 @@ import SwiftData
 struct UnitConverterApp: App {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("hasSeenWelcomeScreen") private var hasSeenWelcomeScreen = false
+    @AppStorage("appLanguage") private var appLanguage = "en"
 
+    init() {
+        UserDefaults.standard.set([appLanguage], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView(hasSeenWelcomeScreen: $hasSeenWelcomeScreen)

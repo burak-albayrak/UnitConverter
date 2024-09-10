@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
     case currency = "Currency"
@@ -23,6 +24,14 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
                 completion(false)
             }
         }
+    }
+    
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
     }
 
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {

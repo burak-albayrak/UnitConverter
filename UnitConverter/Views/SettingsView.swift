@@ -20,7 +20,9 @@ struct SettingsView: View {
     @StateObject private var storeKit = StoreKitManager()
     @State private var showingPurchaseAlert = false
     @State private var purchaseAlertMessage = ""
+    @State private var showLanguageChangeAlert = false
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @AppStorage("appLanguage") private var appLanguage = "en"
 
     var body: some View {
         NavigationView {
@@ -28,6 +30,17 @@ struct SettingsView: View {
 
                 Section(header: Text("Appearance")) {
                     Toggle("Dark Mode", isOn: $isDarkMode)
+                }
+                
+                Section(header: Text("Language")) {
+                    Picker("Language", selection: $appLanguage) {
+                        Text("English").tag("en")
+                        Text("Türkçe").tag("tr")
+                    }
+                    .pickerStyle(DefaultPickerStyle())
+                    .onChange(of: appLanguage) { _,_ in
+                        showLanguageChangeAlert = true
+                    }
                 }
                 
                 Section(header: Text("Favorites")) {
@@ -76,6 +89,15 @@ struct SettingsView: View {
         }
         .alert(isPresented: $showingPurchaseAlert) {
             Alert(title: Text("Purchase"), message: Text(purchaseAlertMessage), dismissButton: .default(Text("OK")))
+        }
+        .alert(isPresented: $showLanguageChangeAlert) {
+            Alert(
+                title: Text("Language Changed"),
+                message: Text("Please restart the app for the language change to take effect."),
+                dismissButton: .default(Text("OK")) {
+                    exit(0) // This will force quit the app
+                }
+            )
         }
         .onReceive(storeKit.$purchaseResult) { result in
             if let result = result {

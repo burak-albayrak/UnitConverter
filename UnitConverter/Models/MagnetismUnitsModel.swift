@@ -6,12 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
     case magnetomotiveForce = "Magnetomotive Force"
     case magneticFieldStrength = "Magnetic Field Strength"
     case magneticFlux = "Magnetic Flux"
     case magneticFluxDensity = "Magnetic Flux Density"
+    
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
     
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
@@ -36,7 +45,7 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         ]
 
         guard let fromValue = ampereTurnValues[fromUnit.lowercased()], let toValue = ampereTurnValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+            return value 
         }
 
         let ampereTurns = value * fromValue

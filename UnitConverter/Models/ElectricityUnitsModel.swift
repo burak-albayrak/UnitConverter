@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
     case charge = "Charge"
@@ -23,6 +24,14 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
     case electricConductivity = "Electric Conductivity"
     case electrostaticCapacitance = "Electrostatic Capacitance"
     case inductance = "Inductance"
+    
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
     
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {

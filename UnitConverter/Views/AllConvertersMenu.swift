@@ -16,11 +16,11 @@ struct AllConvertersMenu: View {
                 NavigationLink {
                     AnyView(makeUnitConversionView(for: unitCategory))
                 } label: {
-                    Label(unitCategory.rawValue, systemImage: unitCategory.icon)
+                    Label(unitCategory.localizedName, systemImage: unitCategory.icon)
                 }
             }
         }
-        .navigationTitle(category.rawValue)
+        .navigationTitle(category.localizedName)
     }
     
     @ViewBuilder

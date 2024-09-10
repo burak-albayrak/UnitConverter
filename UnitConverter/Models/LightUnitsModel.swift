@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     case luminance = "Luminance"
@@ -13,6 +14,14 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     case illumination = "Illumination"
     case digitalImageResolution = "Digital Image Resolution"
     case frequencyWavelength = "Frequency Wavelength"
+    
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
     
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {

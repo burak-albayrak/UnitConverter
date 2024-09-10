@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
     case length = "Length"
@@ -30,6 +31,14 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
     case momentOfInertia = "Moment of Inertia"
     case momentOfForce = "Moment of Force"
     case torque = "Torque"
+    
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
     
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {

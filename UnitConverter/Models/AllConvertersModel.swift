@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum AllConvertersCategory: String, CaseIterable, Identifiable{
     case engineeringConverters = "Engineering Converters"
@@ -17,6 +18,10 @@ enum AllConvertersCategory: String, CaseIterable, Identifiable{
     case radiologyConverters = "Radiology Converters"
     
     var id: String { self.rawValue }
+    
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
     
     var icon: String {
         switch self {

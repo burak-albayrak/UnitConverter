@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     case radiation = "Radiation"
@@ -13,6 +14,14 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     case radiationExposure = "Radiation - Exposure"
     case radiationAbsorbedDose = "Radiation - Absorbed Dose"
 
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .radiation:

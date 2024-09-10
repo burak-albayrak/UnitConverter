@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
     case flow = "Flow"
@@ -19,6 +20,14 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
     case surfaceTension = "Surface Tension"
     case permeability = "Permeability"
 
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .flow:

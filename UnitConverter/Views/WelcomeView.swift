@@ -14,10 +14,10 @@ struct WelcomeView: View {
     @State private var textOpacity: Double = 0
     
     let pages: [WelcomePage] = [
-        WelcomePage(title: "Welcome to Unit Converter", description: "Convert units easily and quickly", imageName: "ruler"),
-        WelcomePage(title: "Multiple Categories", description: "From length to radiation, we've got you covered", imageName: "list.bullet"),
-        WelcomePage(title: "Save Favorites", description: "Keep your most used conversions handy", imageName: "star"),
-        WelcomePage(title: "Get Started", description: "Start converting units now!", imageName: "arrow.right.circle")
+        WelcomePage(title: "Welcome to Unit Converter", description: "Convert units easily and quickly", imageName: "WelcomeImage1", isSymbol: false),
+        WelcomePage(title: "Multiple Categories", description: "From length to radiation, we've got you covered", imageName: "rectangle.stack", isSymbol: true),
+        WelcomePage(title: "Save Favorites", description: "Keep your most used conversions handy", imageName: "star", isSymbol: true),
+        WelcomePage(title: "Get Started", description: "Start converting units now!", imageName: "livephoto.play", isSymbol: true)
     ]
     
     var body: some View {
@@ -28,13 +28,22 @@ struct WelcomeView: View {
                 TabView(selection: $currentPage) {
                     ForEach(0..<pages.count, id: \.self) { index in
                         VStack {
-                            Image(systemName: pages[index].imageName)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 100)
-                                .foregroundColor(.cyan)
-                                .scaleEffect(currentPage == index ? 1 : imageScale)
-                                .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.5), value: currentPage)
+                            Group {
+                                if pages[index].isSymbol {
+                                    Image(systemName: pages[index].imageName)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 100, height: 100)
+                                        .foregroundColor(.cyan)
+                                } else {
+                                    Image(pages[index].imageName)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 100, height: 100)
+                                }
+                            }
+                            .scaleEffect(currentPage == index ? 1 : imageScale)
+                            .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.5), value: currentPage)
                             
                             Text(pages[index].title)
                                 .font(.title)
@@ -54,7 +63,12 @@ struct WelcomeView: View {
                         .tag(index)
                     }
                 }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
+                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .overlay(
+                    CustomPageControl(numberOfPages: pages.count, currentPage: currentPage)
+                        .padding(.bottom)
+                    , alignment: .bottom
+                )
                 .onChange(of: currentPage) { _, _ in
                     withAnimation {
                         imageScale = 0.5
@@ -102,6 +116,25 @@ struct WelcomePage {
     let title: String
     let description: String
     let imageName: String
+    let isSymbol: Bool
+}
+
+struct CustomPageControl: UIViewRepresentable {
+    var numberOfPages: Int
+    var currentPage: Int
+    
+    func makeUIView(context: Context) -> UIPageControl {
+        let control = UIPageControl()
+        control.numberOfPages = numberOfPages
+        control.currentPage = currentPage
+        control.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.5)
+        control.currentPageIndicatorTintColor = UIColor(Color.customCyan)
+        return control
+    }
+    
+    func updateUIView(_ uiView: UIPageControl, context: Context) {
+        uiView.currentPage = currentPage
+    }
 }
 
 #Preview {

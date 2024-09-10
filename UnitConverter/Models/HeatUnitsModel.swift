@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     case fuelEfficiencyMass = "Fuel Efficiency - Mass"
@@ -19,6 +20,14 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     case heatFluxDensity = "Heat Flux Density"
     case heatTransverCoefficient = "Heat Transver Coefficient"
 
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+    
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .fuelEfficiencyMass:

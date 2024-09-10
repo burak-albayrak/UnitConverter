@@ -24,6 +24,8 @@ struct ContentView: View {
                     }
                 ))
                 .transition(.asymmetric(insertion: .opacity, removal: .move(edge: .leading)))
+            } else {
+                MainMenuView()
             }
             
             if isShowingMainMenu {

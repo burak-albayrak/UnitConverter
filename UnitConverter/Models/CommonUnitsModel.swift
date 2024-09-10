@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
     case length = "Length"
@@ -17,6 +18,14 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
     case angle = "Angle"
     case speed = "Speed"
     case duration = "Duration"
+    
+    var localizedName: LocalizedStringKey {
+        LocalizedStringKey(self.rawValue)
+    }
+
+    var localizedInfo: LocalizedStringKey {
+        LocalizedStringKey("\(self.rawValue)Info")
+    }
     
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
             switch self {

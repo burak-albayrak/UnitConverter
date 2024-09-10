@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UIApplication {
     func hideKeyboard() {
         sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
+}
+
+extension Color {
+    static let customCyan = Color(red: 122/255, green: 225/255, blue: 250/255)
 }

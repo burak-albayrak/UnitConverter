@@ -22,7 +22,7 @@ struct MainMenuView: View {
                         NavigationLink {
                             UnitConversionView(viewModel: UnitConversionViewModel(category: category))
                         } label: {
-                            Label(category.rawValue, systemImage: category.icon)
+                            Label(category.localizedName, systemImage: category.icon)
                         }
                     }
                 }
@@ -40,7 +40,7 @@ struct MainMenuView: View {
                         NavigationLink {
                             AllConvertersMenu(category: category)
                         } label: {
-                            Label(category.rawValue, systemImage: category.icon)
+                            Label(category.localizedName, systemImage: category.icon)
                         }
                     }
                 }

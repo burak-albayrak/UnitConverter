@@ -29,18 +29,19 @@
 		EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
 		EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
 		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
+		EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */; };
 		EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF632C8DFD29006E6548 /* SettingsView.swift */; };
 		EF85EF6A2C8E06F8006E6548 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
 		EF85EF6C2C8E0717006E6548 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
 		EF85EF6E2C8E076B006E6548 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */; };
 		EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
-		EF85EF762C8E3229006E6548 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF85EF752C8E3229006E6548 /* Launch Screen.storyboard */; };
 		EF85EF7C2C8E5D0A006E6548 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
 		EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8C2C8F8EFD009699EC /* MailView.swift */; };
 		EFDFFB902C8F9414009699EC /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */; };
 		EFDFFB962C8FBA08009699EC /* AppReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */; };
 		EFDFFB992C8FBD4B009699EC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */; };
 		EFDFFB9B2C8FBD91009699EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB9A2C8FBD91009699EC /* ContentView.swift */; };
+		EFDFFBA12C904CBE009699EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,18 +68,19 @@
 		EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricityUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetismUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
+		EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF85EF632C8DFD29006E6548 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteConversion.swift; sourceTree = "<group>"; };
 		EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
-		EF85EF752C8E3229006E6548 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EF85EF7B2C8E5D0A006E6548 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EFDFFB8C2C8F8EFD009699EC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewManager.swift; sourceTree = "<group>"; };
 		EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		EFDFFB9A2C8FBD91009699EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		EF0F873D2C8285FF00114906 /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
+				EFDFFB9F2C904C32009699EC /* Localizable */,
 				EF85EF742C8E3215006E6548 /* LaunchScreen */,
 				EFDFFB942C8FB9F7009699EC /* AppReview */,
 				EFDFFB8E2C8F940A009699EC /* Payment */,
@@ -208,7 +211,7 @@
 		EF85EF742C8E3215006E6548 /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
-				EF85EF752C8E3229006E6548 /* Launch Screen.storyboard */,
+				EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -235,6 +238,14 @@
 				EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */,
 			);
 			path = AppReview;
+			sourceTree = "<group>";
+		};
+		EFDFFB9F2C904C32009699EC /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = EF0F87322C8285FF00114906;
 			productRefGroup = EF0F873C2C8285FF00114906 /* Products */;
@@ -295,7 +307,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF85EF762C8E3229006E6548 /* Launch Screen.storyboard in Resources */,
+				EFDFFBA12C904CBE009699EC /* Localizable.xcstrings in Resources */,
+				EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */,
 				EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */,
 				EF0F87432C82860100114906 /* Assets.xcassets in Resources */,
 			);
@@ -469,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter/Preview Content\"";
@@ -479,7 +493,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -500,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter/Preview Content\"";
@@ -510,7 +525,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
