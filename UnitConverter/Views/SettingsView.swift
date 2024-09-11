@@ -38,7 +38,9 @@ struct SettingsView: View {
                         Text("Türkçe").tag("tr")
                     }
                     .pickerStyle(DefaultPickerStyle())
-                    .onChange(of: appLanguage) { _,_ in
+                    .onChange(of: appLanguage) { _, newValue in
+                        UserDefaults.standard.set([newValue], forKey: "AppleLanguages")
+                        UserDefaults.standard.synchronize()
                         showLanguageChangeAlert = true
                     }
                 }

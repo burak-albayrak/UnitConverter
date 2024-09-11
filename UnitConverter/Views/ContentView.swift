@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @Binding var hasSeenWelcomeScreen: Bool
-    @State private var isShowingMainMenu = false
     @State private var mainMenuScale: CGFloat = 0.8
     @State private var mainMenuOpacity: Double = 0.0
+    @State private var isTransitioningToMainMenu: Bool = false
 
     var body: some View {
         ZStack {
@@ -22,7 +22,7 @@ struct ContentView: View {
                         withAnimation(.easeInOut(duration: 0.5)) {
                             self.hasSeenWelcomeScreen = !newValue
                             if !newValue {
-                                self.isShowingMainMenu = true
+                                self.isTransitioningToMainMenu = true
                                 withAnimation(.easeInOut(duration: 0.5).delay(0.3)) {
                                     self.mainMenuScale = 1.0
                                     self.mainMenuOpacity = 1.0
@@ -34,10 +34,17 @@ struct ContentView: View {
                 .transition(.opacity)
             }
             
-            if isShowingMainMenu {
+            if hasSeenWelcomeScreen || isTransitioningToMainMenu {
                 MainMenuView()
                     .scaleEffect(mainMenuScale)
                     .opacity(mainMenuOpacity)
+            }
+        }
+        .onAppear {
+            if hasSeenWelcomeScreen && !isTransitioningToMainMenu {
+                // Uygulama yeniden başlatıldığında ve Welcome Screen zaten görülmüşse
+                mainMenuScale = 1.0
+                mainMenuOpacity = 1.0
             }
         }
     }

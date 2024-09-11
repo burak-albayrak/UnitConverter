@@ -12,18 +12,27 @@ import SwiftData
 struct UnitConverterApp: App {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("hasSeenWelcomeScreen") private var hasSeenWelcomeScreen = false
-    @AppStorage("appLanguage") private var appLanguage = "en"
+    @AppStorage("appLanguage") private var appLanguage: String = ""
 
     init() {
-        UserDefaults.standard.set([appLanguage], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
+        setupInitialLanguage()
     }
     
     var body: some Scene {
         WindowGroup {
             ContentView(hasSeenWelcomeScreen: $hasSeenWelcomeScreen)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
+                .environment(\.locale, .init(identifier: appLanguage))
         }
         .modelContainer(for: FavoriteConversion.self)
+    }
+
+    private func setupInitialLanguage() {
+        if appLanguage.isEmpty {
+            let preferredLanguage = Locale.preferredLanguages.first ?? "en"
+            appLanguage = preferredLanguage.starts(with: "tr") ? "tr" : "en"
+        }
+        UserDefaults.standard.set([appLanguage], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
     }
 }
