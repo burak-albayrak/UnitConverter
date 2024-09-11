@@ -36,6 +36,7 @@
 		EF85EF6E2C8E076B006E6548 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */; };
 		EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
 		EF85EF7C2C8E5D0A006E6548 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
+		EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFCCD2902C911745001E0B5F /* InfoPlist.strings */; };
 		EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8C2C8F8EFD009699EC /* MailView.swift */; };
 		EFDFFB902C8F9414009699EC /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */; };
 		EFDFFB962C8FBA08009699EC /* AppReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */; };
@@ -75,6 +76,8 @@
 		EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		EF85EF7B2C8E5D0A006E6548 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		EFCCD2912C911745001E0B5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EFCCD2932C911826001E0B5F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFDFFB8C2C8F8EFD009699EC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
 		EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewManager.swift; sourceTree = "<group>"; };
@@ -244,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */,
+				EFCCD2902C911745001E0B5F /* InfoPlist.strings */,
 			);
 			path = Localizable;
 			sourceTree = "<group>";
@@ -311,6 +315,7 @@
 				EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */,
 				EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */,
 				EF0F87432C82860100114906 /* Assets.xcassets in Resources */,
+				EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +361,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EFCCD2902C911745001E0B5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFCCD2912C911745001E0B5F /* en */,
+				EFCCD2932C911826001E0B5F /* tr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EF0F87472C82860100114906 /* Debug */ = {
@@ -490,6 +507,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UnitConverter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AppName;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -522,6 +540,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UnitConverter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AppName;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

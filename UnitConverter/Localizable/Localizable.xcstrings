@@ -1,18 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "(self.rawValue)Info" : {
-      "comment" : "Unit category info",
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : ""
-          }
-        }
-      }
-    },
     "%@ (%@)" : {
       "localizations" : {
         "en" : {
@@ -46,7 +34,14 @@
       }
     },
     "%@Info" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Dönüştürücü"
+          }
+        }
+      }
     },
     "About" : {
       "localizations" : {
@@ -117,6 +112,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Görünüş"
+          }
+        }
+      }
+    },
+    "AppName": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unit Converter"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Birim Dönüştürücü"
           }
         }
       }

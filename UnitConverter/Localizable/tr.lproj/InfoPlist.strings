@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  UnitConverter
+
+  Created by Burak Albayrak on 11.09.2024.
+  
+*/
+CFBundleDisplayName = "Birim Dönüştürücü";
