@@ -35,11 +35,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
-    
-    var localizedInfo: LocalizedStringKey {
-        LocalizedStringKey("\(self.rawValue)Info")
-    }
-    
+ 
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .length:
@@ -1185,256 +1181,52 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var info: String {
+    var info: LocalizedStringKey {
         switch self {
         case .mass:
-            return """
-            Mass measures the amount of matter in an object, and its SI unit is the kilogram (kg). It is a fundamental property of physical objects and remains constant regardless of location.
-            
-            Mass is used to quantify the resistance of an object to acceleration when a force is applied.
-            
-            Weight, on the other hand, is the force exerted by gravity on an object’s mass. Its SI unit is the newton (N), defined as the force needed to accelerate a one-kilogram mass by one meter per second squared.
-            
-            Weight varies depending on the gravitational field strength of the location. For example, an object weighs less on the Moon than on Earth due to the Moon’s weaker gravity.
-            
-            Both weight and mass are crucial in physics and engineering, but they measure different properties of matter.
-            """
+            return "MassInfo"
         case .length:
-            return """
-                Length is a measure of how long an object is from one end to the other. It is one of the fundamental dimensions in physics and engineering.
-                
-                In the International System of Units (SI), the base unit for length is the meter (m).
-                
-                Length can be measured in various units, such as kilometers (km), centimeters (cm), and millimeters (mm), each of which is a derived unit based on the meter.
-                
-                For example, one kilometer equals 1,000 meters, and one centimeter equals 0.01 meters. These units are used in everyday life, scientific research, and engineering to quantify the size or extent of objects and distances.
-                """
+            return "LengthInfo"
         case .area:
-            return """
-            Area measures the extent of a two-dimensional surface or shape. It quantifies the amount of space within a boundary and is a key concept in geometry, architecture, and various scientific fields.
-            
-            The SI unit for area is the square meter (m²), which represents the area of a square with sides of one meter.
-            
-            Other commonly used units include square kilometers (km²), square centimeters (cm²), and square millimeters (mm²). For instance, one square kilometer equals one million square meters.
-            
-            Area is used to determine the size of land plots, the surface of objects, and the amount of material needed for coverage. Accurate area calculations are essential in tasks ranging from land surveying to designing floor plans.
-            """
+            return "AreaInfo"
         case .volume:
-            return """
-                Volume refers to the amount of three-dimensional space an object or substance occupies. It is a critical measurement in various scientific and practical applications, including fluid dynamics, engineering, and everyday life.
-                
-                The SI unit for volume is the cubic meter (m³), which represents the space occupied by a cube with sides of one meter in length.
-                
-                Other common units include liters (L), where one liter equals one cubic decimeter (dm³), and milliliters (mL), where one milliliter equals one cubic centimeter (cm³).
-                
-                Volume measurements are essential for determining quantities in cooking, filling containers, and calculating capacities in engineering tasks. Understanding volume is fundamental for working with liquids, gases, and solids.
-                """
+            return "VolumeInfo"
         case .pressure:
-            return """
-                Pressure is the force exerted per unit area on the surface of an object. It is a fundamental concept in physics and engineering, relevant to gases, liquids, and solids.
-                
-                The SI unit of pressure is the pascal (Pa), defined as one newton per square meter (N/m²).
-                
-                Pressure can also be measured in other units, such as atmospheres (atm), where one atmosphere equals 101,325 pascals, and bar, where one bar is equal to 100,000 pascals.
-                
-                Pressure is crucial in various applications, including fluid dynamics, meteorology, and engineering.
-                
-                It helps in understanding phenomena like weather patterns, hydraulic systems, and gas laws, and is essential for designing equipment that operates under different pressure conditions.
-                """
+            return "PressureInfo"
         case .temperature:
-            return """
-                Temperature measures the thermal energy or heat within a substance, indicating how hot or cold it is. It is a fundamental physical quantity used in various scientific and everyday contexts.
-                
-                The SI unit for temperature is the kelvin (K), where zero kelvin (0 K) represents absolute zero, the point at which atomic motion ceases.
-                
-                Temperature is also commonly measured in degrees Celsius (°C) and degrees Fahrenheit (°F). In the Celsius scale, water freezes at 0°C and boils at 100°C under standard atmospheric conditions. In Fahrenheit, water freezes at 32°F and boils at 212°F.
-                
-                Accurate temperature measurement is vital for processes ranging from weather forecasting to chemical reactions and everyday temperature control.
-                """
+            return "TemperatureInfo"
         case .angle:
-            return """
-                An angle represents the space between two intersecting lines or surfaces, measured in degrees or radians. It is a fundamental concept in geometry and trigonometry.
-                
-                The SI unit for angles is the radian (rad), where one radian is the angle formed when the arc length of a circle is equal to the radius.
-                
-                Another common unit is the degree (°), where a full circle is divided into 360 degrees. For example, a right angle is 90°, and a full circle is 360°.
-                
-                Angles are essential in various fields such as navigation, engineering, and physics, helping to describe rotations, slopes, and the orientation of objects. Accurate angle measurement is crucial for precise calculations and designs.
-                """
+            return "AngleInfo"
         case .speed:
-            return """
-                Speed measures the rate at which an object moves or changes its position over time. It is a fundamental concept in physics and everyday life, describing how quickly something travels.
-                
-                The SI unit for speed is meters per second (m/s), representing the distance covered in meters within one second.
-                
-                Other common units include kilometers per hour (km/h) and miles per hour (mph). For example, a car traveling at 60 km/h covers 60 kilometers in one hour.
-                
-                Speed is essential in various applications, from vehicle performance and sports to scientific experiments and navigation.
-                
-                Understanding speed is crucial for analyzing motion, optimizing performance, and ensuring safety in different contexts.
-                """
+            return "SpeedInfo"
         case .duration:
-            return """
-                Duration refers to the total time interval during which an event or activity occurs. It measures how long something lasts, from its start to its end.
-                
-                Duration is a fundamental concept in timekeeping and planning, used to quantify the length of various activities, from short tasks to long-term projects.
-                
-                The SI unit for duration is the second (s), but it is often expressed in larger units such as minutes, hours, days, or even years.
-                
-                For instance, an event lasting 5 minutes is measured as 300 seconds.
-                
-                Accurate duration measurement is crucial for scheduling, project management, and time-based calculations in diverse fields including science, engineering, and daily life.
-                """
+            return "DurationInfo"
         case .energy:
-            return """
-                Energy is a fundamental physical quantity representing the ability to perform work or cause change. It exists in various forms, such as kinetic, potential, thermal, and chemical.
-                
-                The SI unit for energy is the joule (J), which is defined as the amount of work done when a force of one newton displaces an object by one meter.
-                
-                Other units include calories (cal) and kilowatt-hours (kWh). For example, one kilowatt-hour equals 3.6 million joules.
-                
-                Energy is a central concept in physics, chemistry, and engineering, essential for understanding processes like heat transfer, mechanical work, and power generation.
-                
-                Accurate energy measurement is vital for optimizing efficiency and managing resources in both everyday applications and advanced technologies.
-                """
+            return "EnergyInfo"
         case .power:
-            return """
-                Power measures the rate at which work is done or energy is transferred over time. It quantifies how quickly energy is used or produced and is a key concept in both physics and engineering.
-                
-                The SI unit for power is the watt (W), defined as one joule per second (J/s). For instance, a 100-watt light bulb consumes 100 joules of energy every second it is operating.
-                
-                Other units of power include horsepower (hp), where one horsepower is approximately 745.7 watts. Power is crucial in various applications, from electrical systems and mechanical engines to energy management and renewable resources.
-                
-                Understanding power helps in designing efficient systems and optimizing performance in both industrial and everyday contexts.
-                """
+            return "PowerInfo"
         case .force:
-            return """
-                Force is an interaction that changes the motion of an object or causes it to accelerate. It is a vector quantity, meaning it has both magnitude and direction.
-                
-                The SI unit for force is the newton (N), which is defined as the amount of force required to accelerate a one-kilogram mass by one meter per second squared.
-                
-                For example, one newton is the force needed to lift a small apple against Earth's gravity. Force is a fundamental concept in mechanics and physics, essential for understanding phenomena such as gravity, friction, and tension.
-                
-                Accurate measurement of force is crucial for designing structures, machinery, and various systems where precise control and stability are required.
-                """
+            return "ForceInfo"
         case .fuelConsumption:
-            return """
-                Fuel consumption measures the amount of fuel used by a vehicle or machine over a specific distance or period. It is an important metric for assessing efficiency and environmental impact.
-                
-                The SI unit for fuel consumption is liters per 100 kilometers (L/100 km), indicating how many liters of fuel are needed to travel 100 kilometers.
-                
-                Another common unit is miles per gallon (mpg), used primarily in the United States, where a higher mpg value signifies better fuel efficiency.
-                
-                Fuel consumption is crucial for evaluating the performance of engines, optimizing operational costs, and reducing emissions.
-                
-                Accurate measurement and management of fuel consumption are essential for both economic and environmental reasons.
-                """
+            return "FuelConsumptionInfo"
         case .volumeDry:
-            return """
-                Dry volume measures the amount of space occupied by a solid substance or dry material, typically in agricultural, culinary, and scientific contexts.
-                
-                Unlike liquid volume, which deals with fluids, dry volume quantifies the space taken up by non-liquid substances.
-                
-                Common units for dry volume include cubic meters (m³), liters (L), and bushels. For example, a bushel is often used in agriculture to measure grains and fruits, where one bushel is equivalent to about 35.24 liters.
-                
-                Accurate measurement of dry volume is crucial for tasks such as portion control in cooking, inventory management, and agricultural yield estimation.
-                
-                Understanding dry volume helps in efficient material handling and precise measurement in various fields.
-                """
+            return "VolumeDryInfo"
         case .velocityAngular:
-            return """
-                Angular velocity measures the rate at which an object rotates around an axis. It quantifies how quickly an angle changes with respect to time and is a key concept in rotational motion.
-                
-                The SI unit for angular velocity is radians per second (rad/s). One radian represents the angle subtended when the arc length of a circle equals the radius.
-                
-                For example, an angular velocity of 2 rad/s means the angle of rotation increases by 2 radians every second. Angular velocity is essential in fields such as physics, engineering, and astronomy for analyzing rotational dynamics, machinery performance, and celestial movements.
-                
-                Accurate measurement of angular velocity is crucial for designing rotating systems and understanding rotational behavior.
-                """
+            return "AngularVelocityInfo"
         case .acceleration:
-            return """
-                Acceleration measures the rate at which an object's velocity changes over time. It is a fundamental concept in mechanics and physics, describing how quickly an object speeds up or slows down.
-                
-                The SI unit for acceleration is meters per second squared (m/s²), indicating the change in velocity (in meters per second) that occurs each second.
-                
-                For example, an acceleration of 9.8 m/s² represents the acceleration due to Earth's gravity, causing objects to speed up by 9.8 meters per second each second when falling freely.
-                
-                Acceleration is crucial for understanding motion dynamics, designing vehicles, and analyzing forces in various applications.
-                
-                Accurate measurement of acceleration helps in predicting and controlling the movement of objects and systems.
-                """
+            return "AccelerationInfo"
         case .accelerationAngular:
-            return """
-                Angular acceleration measures the rate at which an object's angular velocity changes over time. It describes how quickly an object speeds up or slows down its rotation around an axis.
-                
-                The SI unit for angular acceleration is radians per second squared (rad/s²), which represents the change in angular velocity (in radians per second) that occurs each second.
-                
-                For example, if an object's angular velocity increases by 2 rad/s every second, its angular acceleration is 2 rad/s².
-                
-                Angular acceleration is crucial in rotational dynamics, affecting the performance of rotating machinery, the motion of celestial bodies, and the behavior of various mechanical systems.
-                
-                Accurate measurement of angular acceleration helps in designing and analyzing rotational systems and understanding rotational motion.
-                """
+            return "AngularAccelerationInfo"
         case .density:
-            return """
-                Density is a measure of how much mass is contained in a given volume. It is an important property in physics and engineering that helps in understanding the distribution of mass within a substance.
-                
-                The SI unit for density is kilograms per cubic meter (kg/m³).
-                
-                For example, the density of water is approximately 1,000 kg/m³, meaning one cubic meter of water has a mass of 1,000 kilograms.
-                
-                Density can also be expressed in other units, such as grams per cubic centimeter (g/cm³), where 1 g/cm³ equals 1,000 kg/m³.
-                
-                Density is used to identify materials, determine buoyancy, and analyze the behavior of substances under various conditions.
-                
-                Accurate density measurement is crucial for material science, fluid dynamics, and engineering applications.
-                """
+            return "DensityInfo"
         case .specificVolume:
-            return """
-                Specific volume is a property that measures the volume occupied by a unit mass of a substance. It is the reciprocal of density and provides insights into the space a given mass occupies.
-                
-                The SI unit for specific volume is cubic meters per kilogram (m³/kg).
-                
-                For example, if a substance has a density of 2 kg/m³, its specific volume would be 0.5 m³/kg, meaning one kilogram of the substance occupies 0.5 cubic meters.
-                
-                Specific volume is crucial in thermodynamics and fluid mechanics for analyzing the behavior of gases and liquids, especially in processes involving changes in pressure and temperature.
-                
-                Accurate measurement of specific volume helps in designing systems like compressors, engines, and various other equipment where precise volume and mass relationships are important.
-                """
+            return "SpecificVolumeInfo"
         case .momentOfInertia:
-            return """
-                Moment of inertia, also known as the rotational inertia, measures an object's resistance to changes in its rotational motion about an axis. It depends on the mass distribution relative to the axis of rotation.
-                
-                The SI unit for moment of inertia is kilogram square meters (kg·m²).
-                
-                For example, a solid cylinder rotating about its central axis has a different moment of inertia compared to a hollow cylinder with the same mass and radius.
-                
-                The moment of inertia is crucial in rotational dynamics and is used to calculate angular acceleration, torque, and kinetic energy in rotating systems.
-                
-                Accurate determination of moment of inertia is essential for designing and analyzing mechanical systems, including wheels, gears, and flywheels, where rotational motion plays a significant role.
-                """
+            return "MomentOfIneritaInfo"
         case .momentOfForce:
-            return """
-                The moment of force, also known as torque, measures the rotational effect produced by a force applied at a distance from a pivot point or axis. It quantifies how much a force tends to rotate an object around an axis.
-                
-                The SI unit for moment of force is the newton meter (N·m).
-                
-                For example, applying a force of 10 newtons at a distance of 2 meters from the pivot generates a moment of force of 20 N·m. The moment of force is crucial in mechanics for analyzing rotational motion, balancing forces, and designing mechanical systems such as engines and levers.
-                
-                Accurate calculation of torque helps ensure the proper functioning and stability of structures and machinery under rotational loads.
-                """
+            return "MomentOfForceInfo"
         case .torque:
-            return """
-                Torque, also known as the moment of force, measures the tendency of a force to rotate an object around an axis or pivot point. It is a crucial concept in rotational dynamics and engineering.
-                
-                The SI unit for torque is the newton meter (N·m), representing the force applied at a perpendicular distance from the axis of rotation.
-                
-                For example, tightening a bolt with a wrench involves applying a force at a certain distance from the bolt, generating torque that secures the bolt in place.
-                
-                Torque is essential for understanding mechanical systems, including engines, gears, and various machinery.
-                
-                Accurate torque measurement ensures proper operation and efficiency of rotating equipment and helps in balancing and controlling rotational forces.
-                """
+            return "TorqueInfo"
         }
     }
     

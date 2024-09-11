@@ -14,10 +14,30 @@ struct WelcomeView: View {
     @State private var textOpacity: Double = 0
     
     let pages: [WelcomePage] = [
-        WelcomePage(title: "Welcome to Unit Converter", description: "Convert units easily and quickly", imageName: "WelcomeImage1", isSymbol: false),
-        WelcomePage(title: "Multiple Categories", description: "From length to radiation, we've got you covered", imageName: "rectangle.stack", isSymbol: true),
-        WelcomePage(title: "Save Favorites", description: "Keep your most used conversions handy", imageName: "star", isSymbol: true),
-        WelcomePage(title: "Get Started", description: "Start converting units now!", imageName: "livephoto.play", isSymbol: true)
+        WelcomePage(
+            titleKey: "WelcomeTitle",
+            descriptionKey: "WelcomeDescription",
+            imageName: "WelcomeImage1",
+            isSymbol: false
+        ),
+        WelcomePage(
+            titleKey: "CategoriesTitle",
+            descriptionKey: "CategoriesDescription",
+            imageName: "square.grid.2x2",
+            isSymbol: true
+        ),
+        WelcomePage(
+            titleKey: "FavoritesTitle",
+            descriptionKey: "FavoritesDescription",
+            imageName: "star.circle",
+            isSymbol: true
+        ),
+        WelcomePage(
+            titleKey: "GetStartedTitle",
+            descriptionKey: "GetStartedDescription",
+            imageName: "arrow.right.circle",
+            isSymbol: true
+        )
     ]
     
     var body: some View {
@@ -45,7 +65,7 @@ struct WelcomeView: View {
                             .scaleEffect(currentPage == index ? 1 : imageScale)
                             .animation(.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 0.5), value: currentPage)
                             
-                            Text(pages[index].title)
+                            Text(pages[index].titleKey)
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .multilineTextAlignment(.center)
@@ -53,7 +73,7 @@ struct WelcomeView: View {
                                 .opacity(currentPage == index ? 1 : textOpacity)
                                 .animation(.easeIn(duration: 0.5), value: currentPage)
                             
-                            Text(pages[index].description)
+                            Text(pages[index].descriptionKey)
                                 .font(.body)
                                 .multilineTextAlignment(.center)
                                 .padding()
@@ -113,8 +133,8 @@ struct WelcomeView: View {
 }
 
 struct WelcomePage {
-    let title: String
-    let description: String
+    let titleKey: LocalizedStringKey
+    let descriptionKey: LocalizedStringKey
     let imageName: String
     let isSymbol: Bool
 }

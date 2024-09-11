@@ -19,25 +19,25 @@ struct CurrencyConversionView: View {
 
     var body: some View {
         Form {
-            Section("Select Currencies") {
-                Picker("From Currency", selection: $viewModel.selectedFromCurrencyIndex) {
+            Section(LocalizedStringKey("Select Currencies")) {
+                Picker(LocalizedStringKey("From Currency"), selection: $viewModel.selectedFromCurrencyIndex) {
                     ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
                         Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                     }
                 }
-                .id(viewModel.selectedFromCurrencyIndex) // Picker'ı yeniden oluşturmak için id ekleyin
+                .id(viewModel.selectedFromCurrencyIndex)
 
-                Picker("To Currency", selection: $viewModel.selectedToCurrencyIndex) {
+                Picker(LocalizedStringKey("To Currency"), selection: $viewModel.selectedToCurrencyIndex) {
                     ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
                         Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                     }
                 }
-                .id(viewModel.selectedToCurrencyIndex) // Picker'ı yeniden oluşturmak için id ekleyin
+                .id(viewModel.selectedToCurrencyIndex)
             }
             
             Section("Value") {
                 HStack {
-                    TextField("Enter value", text: $viewModel.inputValue)
+                    TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
                         .keyboardType(.decimalPad)
                         .onChange(of: viewModel.inputValue) { _, _ in
                             viewModel.convertCurrency()
@@ -71,7 +71,7 @@ struct CurrencyConversionView: View {
                     if viewModel.isLoading {
                         ProgressView()
                     } else if let errorMessage = viewModel.errorMessage {
-                        Text(errorMessage)
+                        Text(LocalizedStringKey(errorMessage))
                             .foregroundColor(.red)
                     } else {
                         Text(viewModel.convertedValue)
@@ -107,7 +107,7 @@ struct CurrencyConversionView: View {
                 }
             }
         }
-        .navigationTitle("Currency")
+        .navigationTitle(LocalizedStringKey("Currency"))
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
@@ -170,15 +170,15 @@ struct CurrencyConversionView: View {
         }
         .overlay {
             if copiedToClipboard {
-                feedbackOverlay(message: "Copied to Clipboard")
+                feedbackOverlay(message: LocalizedStringKey("Copied to Clipboard"))
             }
             if addedToFavorites {
-                feedbackOverlay(message: "Added to Favorites")
+                feedbackOverlay(message: LocalizedStringKey("Added to Favorites"))
             }
         }
     }
     
-    private func feedbackOverlay(message: String) -> some View {
+    private func feedbackOverlay(message: LocalizedStringKey) -> some View {
         Text(message)
             .font(.system(.body, design: .rounded, weight: .semibold))
             .foregroundStyle(.white)

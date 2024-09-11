@@ -31,7 +31,6 @@ class CurrencyConversionViewModel: ObservableObject {
         selectedFromCurrencyIndex = usdIndex
         selectedToCurrencyIndex = eurIndex
         
-        // Değerleri güncelledikten sonra dönüşümü yap
         convertCurrency()
     }
 
@@ -79,7 +78,7 @@ class CurrencyConversionViewModel: ObservableObject {
         convertedValue = formatter.string(from: NSDecimalNumber(decimal: result)) ?? ""
     }
     
-    var info: String {
+    var info: LocalizedStringKey {
         return category.info
     }
 }

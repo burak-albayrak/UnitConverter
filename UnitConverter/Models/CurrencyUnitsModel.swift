@@ -29,10 +29,6 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
-    
-    var localizedInfo: LocalizedStringKey {
-        LocalizedStringKey("\(self.rawValue)Info")
-    }
 
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         guard let fromRate = CurrencyUnitsCategory.exchangeRates[fromUnit],
@@ -49,20 +45,8 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
         return "dollarsign.circle"
     }
 
-    var info: String {
-        return """
-        Currency conversion allows you to determine the equivalent value of money between different countries' currencies. Exchange rates fluctuate based on various economic factors.
-
-        This converter supports a wide range of global currencies, including major ones like USD, EUR, JPY, GBP, as well as many others. The base currency for these conversions is USD (United States Dollar). All other currencies are converted relative to USD.
-
-        Please note:
-        1. Exchange rates are updated periodically and may not reflect real-time market rates.
-        2. For the most accurate and up-to-date conversions, especially for large amounts or official purposes, consult a bank or official financial institution.
-        3. Currency exchange in practice often involves fees and different rates for buying and selling, which are not reflected in these basic conversions.
-        4. Some currencies might have been redenominated or replaced. Always check for the most current information.
-
-        Use this tool for general reference and educational purposes. For financial decisions, seek professional advice.
-        """
+    var info: LocalizedStringKey {
+        return "CurrencyInfo"
     }
 
     var availableUnits: [(symbol: String, name: String)] {

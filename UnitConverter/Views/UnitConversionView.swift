@@ -26,13 +26,13 @@ struct UnitConversionView<T: UnitCategory>: View {
     
     var body: some View {
         Form {
-            Section("Select Units") {
-                Picker("From Unit", selection: $viewModel.selectedFirstUnitIndex) {
+            Section(LocalizedStringKey("Select Units")) {
+                Picker(LocalizedStringKey("From Unit"), selection: $viewModel.selectedFirstUnitIndex) {
                     ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
                         Text(unitText(for: index))
                     }
                 }
-                Picker("To Unit", selection: $viewModel.selectedSecondUnitIndex) {
+                Picker(LocalizedStringKey("To Unit"), selection: $viewModel.selectedSecondUnitIndex) {
                     ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
                         Text(unitText(for: index))
                     }
@@ -41,7 +41,7 @@ struct UnitConversionView<T: UnitCategory>: View {
             
             Section("Value") {
                 HStack {
-                    TextField("Enter value", text: $viewModel.firstUnitInputValue)
+                    TextField(LocalizedStringKey("Enter value"), text: $viewModel.firstUnitInputValue)
                         .keyboardType(.decimalPad)
                     Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
                     Spacer()
@@ -50,7 +50,7 @@ struct UnitConversionView<T: UnitCategory>: View {
                             viewModel.firstUnitInputValue = pasteboardString
                         }
                     }) {
-                        Text("paste")
+                        Text(LocalizedStringKey("paste"))
                             .padding(9)
                             .padding(.horizontal)
                             .foregroundStyle(.cyan)
@@ -86,7 +86,7 @@ struct UnitConversionView<T: UnitCategory>: View {
                             }
                         }
                     }) {
-                        Text("copy")
+                        Text(LocalizedStringKey("copy"))
                             .padding(9)
                             .padding(.horizontal)
                             .foregroundStyle(.cyan)
@@ -107,7 +107,7 @@ struct UnitConversionView<T: UnitCategory>: View {
         .sheet(isPresented: $viewModel.isInfoPresented, content: {
             CategoryInfoView(category: viewModel.category)
         })
-        .navigationTitle(viewModel.category.rawValue)
+        .navigationTitle(viewModel.category.localizedName)
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button(action: {
@@ -157,10 +157,10 @@ struct UnitConversionView<T: UnitCategory>: View {
         }
         .overlay {
             if copiedToClipboard {
-                feedbackOverlay(message: "Copied to Clipboard")
+                feedbackOverlay(message: LocalizedStringKey("Copied to Clipboard"))
             }
             if addedToFavorites {
-                feedbackOverlay(message: "Added to Favorites")
+                feedbackOverlay(message: LocalizedStringKey("Added to Favorites"))
             }
         }
     }
@@ -170,7 +170,7 @@ struct UnitConversionView<T: UnitCategory>: View {
         return "\(unit.symbol) (\(unit.name))"
     }
     
-    private func feedbackOverlay(message: String) -> some View {
+    private func feedbackOverlay(message: LocalizedStringKey) -> some View {
         Text(message)
             .font(.system(.body, design: .rounded, weight: .semibold))
             .foregroundStyle(.white)

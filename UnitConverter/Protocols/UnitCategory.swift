@@ -11,10 +11,9 @@ import SwiftUI
 protocol UnitCategory {
     var rawValue: String { get }
     var icon: String { get }
-    var info: String { get }
+    var info: LocalizedStringKey { get }
     var availableUnits: [(symbol: String, name: String)] { get }
     var localizedName: LocalizedStringKey { get }
-    var localizedInfo: LocalizedStringKey { get }
 
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal
 }

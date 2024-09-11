@@ -33,16 +33,6 @@
         }
       }
     },
-    "%@Info" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Birim Dönüştürücü"
-          }
-        }
-      }
-    },
     "About" : {
       "localizations" : {
         "tr" : {
@@ -75,12 +65,39 @@
         }
       }
     },
+    "AccelerationInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acceleration measures the rate at which an object's velocity changes over time. It is a fundamental concept in mechanics and physics, describing how quickly an object speeds up or slows down.\n                \nThe SI unit for acceleration is meters per second squared (m/s²), indicating the change in velocity (in meters per second) that occurs each second.\n                \nFor example, an acceleration of 9.8 m/s² represents the acceleration due to Earth's gravity, causing objects to speed up by 9.8 meters per second each second when falling freely.\n                \nAcceleration is crucial for understanding motion dynamics, designing vehicles, and analyzing forces in various applications.\n                \nAccurate measurement of acceleration helps in predicting and controlling the movement of objects and systems.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hızlanma, bir nesnenin hızının zamanla nasıl değiştiğini ölçer. Mekanik ve fizik alanlarında temel bir kavramdır ve bir nesnenin ne kadar hızlı hızlandığını veya yavaşladığını açıklar.\n\nHızlanmanın SI birimi metre/saniye kare'dir (m/s²), bu bir saniyede meydana gelen hız değişimini (metre/saniye cinsinden) ifade eder.\n\nÖrneğin, 9.8 m/s²'lik bir hızlanma, Dünya'nın yerçekimi nedeniyle serbest düşüşteki nesnelerin her saniye 9.8 metre/saniye hızlandığını gösterir.\n\nHızlanma, hareket dinamiklerini anlamak, araç tasarlamak ve çeşitli uygulamalarda kuvvetleri analiz etmek için kritik öneme sahiptir.\n\nHızlanmanın doğru ölçümü, nesnelerin ve sistemlerin hareketini tahmin etmek ve kontrol etmekte yardımcı olur."
+          }
+        }
+      }
+    },
     "Add some conversions to your favorites!" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favorilerinize birkaç dönüşüm ekleyin!"
+          }
+        }
+      }
+    },
+    "Added to Favorites" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorilere Eklendi"
           }
         }
       }
@@ -106,6 +123,57 @@
         }
       }
     },
+    "AngleInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An angle represents the space between two intersecting lines or surfaces, measured in degrees or radians. It is a fundamental concept in geometry and trigonometry.\n                \nThe SI unit for angles is the radian (rad), where one radian is the angle formed when the arc length of a circle is equal to the radius.\n                \nAnother common unit is the degree (°), where a full circle is divided into 360 degrees. For example, a right angle is 90°, and a full circle is 360°.\n                \nAngles are essential in various fields such as navigation, engineering, and physics, helping to describe rotations, slopes, and the orientation of objects. Accurate angle measurement is crucial for precise calculations and designs."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Açı, kesişen iki doğru veya yüzey arasındaki boşluğu temsil eder ve derece veya radyan cinsinden ölçülür. Geometri ve trigonometri alanlarında temel bir kavramdır.\n\nAçılar için SI birimi radyandır (rad). Bir radyan, bir çemberin yay uzunluğunun yarıçapına eşit olduğu durumda oluşan açıyı ifade eder.\n\nDiğer yaygın birim ise derecedir (°); tam bir çember 360 dereceye bölünür. Örneğin, dik açı 90° ve tam bir çember 360°'dir.\n\nAçılar, rotasyonları, eğimleri ve nesnelerin yönelimini tanımlamada gezinme, mühendislik ve fizik gibi çeşitli alanlarda önemlidir. Doğru açı ölçümü, hassas hesaplamalar ve tasarımlar için hayati önem taşır."
+          }
+        }
+      }
+    },
+    "AngularAccelerationInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angular acceleration measures the rate at which an object's angular velocity changes over time. It describes how quickly an object speeds up or slows down its rotation around an axis.\n                \nThe SI unit for angular acceleration is radians per second squared (rad/s²), which represents the change in angular velocity (in radians per second) that occurs each second.\n                \nFor example, if an object's angular velocity increases by 2 rad/s every second, its angular acceleration is 2 rad/s².\n                \nAngular acceleration is crucial in rotational dynamics, affecting the performance of rotating machinery, the motion of celestial bodies, and the behavior of various mechanical systems.\n                \nAccurate measurement of angular acceleration helps in designing and analyzing rotational systems and understanding rotational motion."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Açısal hızlanma, bir nesnenin açısal hızının zamanla nasıl değiştiğini ölçer. Bir nesnenin bir eksen etrafındaki dönüş hızının ne kadar hızlı arttığını veya azaldığını açıklar.\n\nAçısal hızlanmanın SI birimi radyan/saniye kare'dir (rad/s²), bu bir saniyede meydana gelen açısal hız değişimini (radyan/saniye cinsinden) ifade eder.\n\nÖrneğin, bir nesnenin açısal hızı her saniye 2 rad/s artıyorsa, açısal hızlanması 2 rad/s²'dir.\n\nAçısal hızlanma, dönüş dinamiklerinde kritik bir rol oynar ve dönen makinelerin performansını, göksel cisimlerin hareketini ve çeşitli mekanik sistemlerin davranışını etkiler.\n\nAçısal hızlanmanın doğru ölçümü, döner sistemlerin tasarımında ve analizinde yardımcı olur ve dönüş hareketini anlamayı sağlar."
+          }
+        }
+      }
+    },
+    "AngularVelocityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angular velocity measures the rate at which an object rotates around an axis. It quantifies how quickly an angle changes with respect to time and is a key concept in rotational motion.\n                \nThe SI unit for angular velocity is radians per second (rad/s). One radian represents the angle subtended when the arc length of a circle equals the radius.\n                \nFor example, an angular velocity of 2 rad/s means the angle of rotation increases by 2 radians every second. Angular velocity is essential in fields such as physics, engineering, and astronomy for analyzing rotational dynamics, machinery performance, and celestial movements.\n                \nAccurate measurement of angular velocity is crucial for designing rotating systems and understanding rotational behavior."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Açısal hız, bir nesnenin bir eksen etrafında dönme hızını ölçer. Bir açının zamanla ne kadar hızlı değiştiğini niceliksel olarak ifade eder ve dönüş hareketlerinde temel bir kavramdır.\n\nAçısal hızın SI birimi radyan/saniyedir (rad/s). Bir radyan, bir çemberin yay uzunluğunun yarıçapa eşit olduğu açıyı ifade eder.\n\nÖrneğin, 2 rad/s'lik bir açısal hız, dönüş açısının her saniye 2 radyan arttığını gösterir. Açısal hız, fizik, mühendislik ve astronomi gibi alanlarda dönüş dinamiklerini, makinelerin performansını ve göksel hareketleri analiz etmek için önemlidir.\n\nAçısal hızın doğru ölçümü, dönen sistemlerin tasarımı ve dönüş davranışını anlamak için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
     "Appearance" : {
       "localizations" : {
         "tr" : {
@@ -116,19 +184,19 @@
         }
       }
     },
-    "AppName": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unit Converter"
+    "AppName" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unit Converter"
           }
         },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Birim Dönüştürücü"
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Dönüştürücü"
           }
         }
       }
@@ -154,6 +222,22 @@
         }
       }
     },
+    "AreaInfo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Area measures the extent of a two-dimensional surface or shape. It quantifies the amount of space within a boundary and is a key concept in geometry, architecture, and various scientific fields.\n            \nThe SI unit for area is the square meter (m²), which represents the area of a square with sides of one meter. \n            \nOther commonly used units include square kilometers (km²), square centimeters (cm²), and square millimeters (mm²). For instance, one square kilometer equals one million square meters.\n            \nArea is used to determine the size of land plots, the surface of objects, and the amount of material needed for coverage. Accurate area calculations are essential in tasks ranging from land surveying to designing floor plans."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alan, iki boyutlu bir yüzeyin veya şeklin genişliğini ölçer. Bir sınır içindeki alan miktarını ifade eder ve geometri, mimari ve çeşitli bilim dallarında önemli bir kavramdır.\n\nAlan için SI birimi, bir metre kenar uzunluğuna sahip bir karenin alanını temsil eden metrekaredir (m²).\n\nDiğer yaygın olarak kullanılan birimler arasında kilometrekare (km²), santimetrekare (cm²) ve milimetrekare (mm²) bulunur. Örneğin, bir kilometrekare bir milyon metrekareye eşittir.\n\nAlan, arazi parsellerinin büyüklüğünü, nesnelerin yüzeyini ve kaplama için gereken malzeme miktarını belirlemek için kullanılır. Alan hesaplamalarının doğru yapılması, arazi ölçümünden zemin planları tasarlamaya kadar birçok görevde hayati öneme sahiptir.\n"
+          }
+        }
+      }
+    },
     "Buy Me a Coffee" : {
       "localizations" : {
         "tr" : {
@@ -174,6 +258,40 @@
         }
       }
     },
+    "CategoriesDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From everyday measurements to scientific units, we've got every conversion you need"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Günlük ölçümlerden bilimsel birimlere kadar, ihtiyacınız olan her dönüşüm burada"
+          }
+        }
+      }
+    },
+    "CategoriesTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diverse Conversion Categories"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çeşitli Dönüşüm Kategorileri"
+          }
+        }
+      }
+    },
     "Charge" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -181,6 +299,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Şarj"
+          }
+        }
+      }
+    },
+    "ChargeInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric charge is a fundamental property of matter that causes it to experience a force when placed in an electric or magnetic field. It comes in two types: positive and negative, with like charges repelling and opposite charges attracting each other.\n                \nThe SI unit for electric charge is the coulomb (C), where one coulomb is equivalent to the charge of approximately 6.242 × 10¹⁸ elementary charges (such as electrons).\n                \nCharge is a crucial concept in understanding electrical phenomena and is fundamental to the operation of electronic devices, batteries, and circuits. \n                \nFor example, the flow of electric charge through a conductor constitutes an electric current.\n                \nPrecise measurement and control of electric charge are vital in applications ranging from simple electronic circuits to advanced technology in telecommunications, computing, and energy systems."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik yükü, maddeye elektriksel veya manyetik bir alana yerleştirildiğinde bir kuvvet deneyimlemesine neden olan temel bir özelliktir. İki tür elektrik yükü vardır: pozitif ve negatif, benzer yükler birbirini iterken zıt yükler birbirini çeker.\n\nElektrik yükünün SI birimi coulomb (C) ile ifade edilir. Bir coulomb, yaklaşık 6.242 × 10¹⁸ temel yük (örneğin elektronlar) kadar bir yükü temsil eder.\n\nElektrik yükü, elektriksel olayları anlamak ve elektronik cihazlar, piller ve devrelerin çalışması için temel bir kavramdır. Örneğin, bir iletken üzerinden geçen elektrik yükü, elektrik akımını oluşturur.\n\nElektrik yükünün hassas ölçümü ve kontrolü, basit elektronik devrelerden ileri teknolojiye kadar geniş bir uygulama yelpazesinde, telekomünikasyon, bilişim ve enerji sistemlerinde kritik öneme sahiptir."
           }
         }
       }
@@ -237,6 +372,50 @@
         }
       }
     },
+    "ConcentrationMolarInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concentration molar, or molarity, measures the concentration of a solute in a solution, expressed as the number of moles of solute per liter of solution. It is represented by the unit mol/L (M).\n                \nFor example, a solution with a molarity of 1 M means there is one mole of solute dissolved in one liter of solution.\n                \nMolar concentration is a fundamental concept in chemistry, used to prepare solutions, conduct reactions, and determine the concentrations of reactants and products in chemical processes.\n                \nAccurate calculation and measurement of molar concentration are crucial for precise chemical analysis, laboratory experiments, and industrial processes, ensuring the correct proportions and reactivity of chemical substances.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konsantrasyon molar ya da molarite, bir çözeltideki bir çözeltinin konsantrasyonunu ölçer ve çözeltinin her bir litresi başına çözeltinin mol sayısını ifade eder. Birimi mol/L (M) ile gösterilir.\n\nÖrneğin, 1 M'lik bir çözeltide bir litre çözeltide bir mol çözeltinin çözündüğü anlamına gelir.\n\nMolar konsantrasyon, kimyasal reaksiyonların yapılması, çözeltilerin hazırlanması ve kimyasal süreçlerde reaktörlerin ve ürünlerin konsantrasyonlarının belirlenmesi gibi kimyada temel bir kavramdır.\n\nMolar konsantrasyonun doğru hesaplanması ve ölçülmesi, hassas kimyasal analizler, laboratuvar deneyleri ve endüstriyel süreçler için çok önemlidir. Bu, kimyasal maddelerin doğru oranlarını ve reaktivitesini sağlamak için gereklidir."
+          }
+        }
+      }
+    },
+    "ConcentrationSolutionInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concentration solution refers to the amount of solute present in a given volume of solvent or solution. It is typically expressed in terms such as molarity (moles per liter), molality (moles per kilogram of solvent), or mass percent (mass of solute per mass of solution).\n                \nFor instance, a solution with a concentration of 0.5 M indicates that there are 0.5 moles of solute dissolved in one liter of solution.\n                \nConcentration is crucial in various fields, including chemistry, biology, and environmental science, as it affects the rate and extent of chemical reactions, biological processes, and pollutant levels.\n                \nAccurate measurement and control of solution concentration are essential for preparing solutions with precise properties, conducting experiments, and ensuring the effectiveness of chemical and biological processes.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çözeltinin konsantrasyonu, belirli bir hacimdeki çözücünün veya çözeltinin içindeki çözeltinin miktarını ifade eder. Genellikle molarite (litre başına mol), molalite (çözücünün kilogramı başına mol) veya kütle yüzdesi (çözelti kütlesi başına çözeltinin kütlesi) gibi terimlerle ifade edilir.\n\nÖrneğin, 0.5 M'lik bir çözeltide, bir litre çözeltide 0.5 mol çözeltinin çözündüğünü gösterir.\n\nKonsantrasyon, kimya, biyoloji ve çevre bilimleri gibi çeşitli alanlarda kritik öneme sahiptir çünkü kimyasal reaksiyonların hızı ve kapsamını, biyolojik süreçleri ve kirletici seviyelerini etkiler.\n\nÇözeltinin konsantrasyonunun doğru ölçülmesi ve kontrol edilmesi, kesin özelliklere sahip çözeltilerin hazırlanması, deneylerin yapılması ve kimyasal ve biyolojik süreçlerin etkinliğinin sağlanması için gereklidir."
+          }
+        }
+      }
+    },
+    "Copied to Clipboard" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pano'ya Kopyalandı"
+          }
+        }
+      }
+    },
     "copy" : {
       "localizations" : {
         "tr" : {
@@ -257,6 +436,23 @@
         }
       }
     },
+    "CurrencyInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Currency conversion allows you to determine the equivalent value of money between different countries' currencies. Exchange rates fluctuate based on various economic factors.\n\nThis converter supports a wide range of global currencies, including major ones like USD, EUR, JPY, GBP, as well as many others. The base currency for these conversions is USD (United States Dollar). All other currencies are converted relative to USD.\n\nPlease note:\n1. Exchange rates are updated periodically and may not reflect real-time market rates.\n2. For the most accurate and up-to-date conversions, especially for large amounts or official purposes, consult a bank or official financial institution.\n3. Currency exchange in practice often involves fees and different rates for buying and selling, which are not reflected in these basic conversions.\n4. Some currencies might have been redenominated or replaced. Always check for the most current information.\n\nUse this tool for general reference and educational purposes. For financial decisions, seek professional advice."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para birimi dönüşümü, farklı ülkelerin para birimleri arasındaki eşdeğer değeri belirlemenizi sağlar. Döviz kurları çeşitli ekonomik faktörlere bağlı olarak dalgalanır.\n\nBu dönüştürücü, USD (Amerikan Doları) gibi büyük para birimlerinin yanı sıra birçok diğer küresel para birimini destekler. Tüm diğer para birimleri, USD'ye göre dönüştürülür.\n\nLütfen dikkat edin:\n1. Döviz kurları belirli aralıklarla güncellenir ve gerçek zamanlı piyasa kurlarını yansıtmayabilir.\n2. Özellikle büyük miktarlar veya resmi amaçlar için en doğru ve güncel dönüşümler için bir banka veya resmi finansal kuruluşa başvurun.\n3. Pratikte döviz değişimi genellikle işlem ücretleri ve alım-satım için farklı oranlar içerir; bu temel dönüşümlerde yansıtılmamaktadır.\n4. Bazı para birimleri yeniden değerlenmiş veya değiştirilmiş olabilir. Her zaman en güncel bilgileri kontrol edin.\n\nBu aracı genel referans ve eğitim amaçlı kullanın. Finansal kararlar için profesyonel tavsiye alın."
+          }
+        }
+      }
+    },
     "Current" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -264,6 +460,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Akım"
+          }
+        }
+      }
+    },
+    "CurrentInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric current is the flow of electric charge through a conductor, typically measured in amperes (A). It represents the rate at which charge passes through a point in a circuit.\n                \nThe SI unit for current, the ampere, is defined as one coulomb of charge passing through a point in a circuit per second. \n                \nCurrent can be either direct (DC), where the charge flows in one direction, or alternating (AC), where the charge periodically reverses direction.\n                \nElectric current is a fundamental concept in electrical and electronic engineering, playing a crucial role in powering devices, transmitting signals, and performing work in systems ranging from household appliances to industrial machinery.\n                \nAccurate measurement and control of current are essential for the safe and efficient operation of electrical systems and for the design of everything from simple circuits to complex electronic devices."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik akımı, bir iletken üzerinden geçen elektrik yükünün akışıdır ve genellikle amper (A) cinsinden ölçülür. Akım, bir devrede bir noktadan geçen yükün hızını temsil eder.\n\nAkımın SI birimi olan amper, bir devrede bir saniyede bir coulomb yükün geçtiği olarak tanımlanır.\n\nAkım, iki türde olabilir: doğru akım (DC), yükün bir yönde sürekli olarak aktığı ve alternatif akım (AC), yükün periyodik olarak yön değiştirdiği akım türleri.\n\nElektrik akımı, elektrik ve elektronik mühendisliğinde temel bir kavramdır ve cihazları çalıştırmak, sinyalleri iletmek ve iş yapmak için kritik bir rol oynar. Bu, ev aletlerinden endüstriyel makinelerine kadar geniş bir sistem yelpazesini kapsar.\n\nAkımın hassas ölçümü ve kontrolü, elektrik sistemlerinin güvenli ve verimli çalışması için ve basit devrelerden karmaşık elektronik cihazlara kadar her şeyin tasarımında önemlidir."
           }
         }
       }
@@ -289,6 +502,23 @@
         }
       }
     },
+    "DensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Density is a measure of how much mass is contained in a given volume. It is an important property in physics and engineering that helps in understanding the distribution of mass within a substance.\n                \nThe SI unit for density is kilograms per cubic meter (kg/m³).\n                \nFor example, the density of water is approximately 1,000 kg/m³, meaning one cubic meter of water has a mass of 1,000 kilograms.\n                \nDensity can also be expressed in other units, such as grams per cubic centimeter (g/cm³), where 1 g/cm³ equals 1,000 kg/m³.\n\nDensity is used to identify materials, determine buoyancy, and analyze the behavior of substances under various conditions.\n                \nAccurate density measurement is crucial for material science, fluid dynamics, and engineering applications."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yoğunluk, belirli bir hacimde ne kadar kütle bulunduğunu ölçer. Fizik ve mühendislikte önemli bir özelliktir ve bir maddenin içindeki kütlenin dağılımını anlamaya yardımcı olur.\n\nYoğunluğun SI birimi kilogram/metreküptür (kg/m³).\n\nÖrneğin, suyun yoğunluğu yaklaşık 1.000 kg/m³'tür, bu da bir metreküp suyun 1.000 kilogram kütlesine sahip olduğu anlamına gelir.\n\nYoğunluk ayrıca diğer birimlerle de ifade edilebilir, örneğin gram/metreküp santimetre (g/cm³) cinsinden; 1 g/cm³, 1.000 kg/m³'e eşittir.\n\nYoğunluk, malzemeleri tanımlamak, kaldırma kuvvetini belirlemek ve çeşitli koşullar altında maddelerin davranışını analiz etmek için kullanılır.\n\nYoğunluğun doğru ölçümü, malzeme bilimi, akışkan dinamiği ve mühendislik uygulamaları için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
     "Digital Image Resolution" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -296,6 +526,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dijital Görüntü Çözünürlüğü"
+          }
+        }
+      }
+    },
+    "DigitalImageResolutionInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Digital image resolution refers to the detail an image holds, usually measured in pixels.\n                \nIt is defined by the number of pixels along the width and height of an image, such as 1920x1080 pixels.\n                \nHigher resolution images have more pixels and thus contain more detail, resulting in sharper and clearer images.\n                \nThe resolution is a critical factor in determining the quality of digital images used in various applications, including photography, television, and computer displays.\n                \nIt affects the clarity and size of an image, influencing how it appears on screens and in print.\n                \nAccurate understanding and management of digital image resolution are essential for creating high-quality visuals and ensuring they meet the necessary specifications for their intended use."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dijital görüntü çözünürlüğü, bir görüntünün detay seviyesini ifade eder ve genellikle piksel cinsinden ölçülür. \n\nBu, bir görüntünün genişlik ve yükseklik boyunca piksel sayısı ile tanımlanır, örneğin 1920x1080 piksel. \n\nDaha yüksek çözünürlüklü görüntüler, daha fazla piksel içerdiği için daha fazla detay sunar ve bu da görüntülerin daha keskin ve net olmasını sağlar.\n\nÇözünürlük, fotoğrafçılık, televizyon ve bilgisayar ekranları gibi çeşitli uygulamalarda dijital görüntülerin kalitesini belirlemede kritik bir faktördür. \n\nGörüntünün netliğini ve boyutunu etkiler, bu da ekranlarda ve baskılarda nasıl göründüğünü etkiler. \n\nDijital görüntü çözünürlüğünün doğru bir şekilde anlaşılması ve yönetilmesi, yüksek kaliteli görseller oluşturmak ve bunların kullanıldığı alana uygun özelliklere sahip olmalarını sağlamak için önemlidir."
           }
         }
       }
@@ -317,6 +564,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Süre"
+          }
+        }
+      }
+    },
+    "DurationInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duration refers to the total time interval during which an event or activity occurs. It measures how long something lasts, from its start to its end.\n                \nDuration is a fundamental concept in timekeeping and planning, used to quantify the length of various activities, from short tasks to long-term projects.\n                \nThe SI unit for duration is the second (s), but it is often expressed in larger units such as minutes, hours, days, or even years.\n                \nFor instance, an event lasting 5 minutes is measured as 300 seconds.\n                \nAccurate duration measurement is crucial for scheduling, project management, and time-based calculations in diverse fields including science, engineering, and daily life.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hız, bir nesnenin hareket ettiği veya zaman içinde konumunu değiştirdiği oranı ölçer. Fizik ve günlük yaşamda temel bir kavramdır ve bir şeyin ne kadar hızlı hareket ettiğini açıklar.\n\nHızın SI birimi, bir saniye içinde metre cinsinden kat edilen mesafeyi temsil eden metre/saniyedir (m/s).\n\nDiğer yaygın birimler arasında kilometre/saat (km/h) ve mil/saat (mph) bulunur. Örneğin, saatte 60 km hızla giden bir araba, bir saatte 60 kilometre yol kat eder.\n\nHız, araç performansından spora, bilimsel deneylerden navigasyona kadar çeşitli uygulamalarda önemlidir.\n\nHızı anlamak, hareketi analiz etmek, performansı optimize etmek ve farklı durumlarda güvenliği sağlamak için hayati öneme sahiptir."
           }
         }
       }
@@ -387,6 +651,57 @@
         }
       }
     },
+    "ElectricConductanceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric conductance measures a material's ability to conduct electric current, indicating how easily charge flows through it.\n                \nThe SI unit for electric conductance is the siemens (S), where one siemens is the reciprocal of one ohm (Ω⁻¹). High conductance means low resistance to the flow of electric current, making the material an efficient conductor. \n                \nFor example, metals like copper and aluminum have high conductance, making them ideal for electrical wiring.\n                \nElectric conductance is crucial in designing circuits, determining the efficiency of electrical components, and ensuring that systems operate effectively with minimal energy loss.\n                \nAccurate measurement of conductance is essential for optimizing performance in everything from simple electronic devices to complex power distribution networks."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik iletkenliği, bir malzemenin elektrik akımını iletme yeteneğini ölçer ve yükün ne kadar kolay aktığını gösterir.\n\nElektrik iletkenliğinin SI birimi siemens (S) olarak adlandırılır ve bir siemens, bir ohm'un tersidir (Ω⁻¹). Yüksek iletkenlik, elektrik akımına karşı düşük direnç anlamına gelir ve bu da malzemeyi etkili bir iletken yapar.\n\nÖrneğin, bakır ve alüminyum gibi metaller yüksek iletkenliğe sahip olup, bu özellikleri onları elektrik kabloları için ideal malzemeler yapar.\n\nElektrik iletkenliği, devre tasarımı, elektrik bileşenlerinin verimliliğinin belirlenmesi ve sistemlerin etkili bir şekilde çalışmasını sağlamak için kritik öneme sahiptir. Bu nedenle, iletkenliğin hassas ölçümü, basit elektronik cihazlardan karmaşık güç dağıtım ağlarına kadar performansın optimize edilmesi için gereklidir."
+          }
+        }
+      }
+    },
+    "ElectricConductivityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric conductivity measures a material's ability to conduct electric current, reflecting how easily electrons can move through the material. It is the inverse of electrical resistivity and is commonly measured in siemens per meter (S/m). \n                \nMaterials with high conductivity, such as metals like copper and silver, allow electric charges to flow freely, making them excellent conductors.\n                \nElectric conductivity is essential in applications ranging from electrical wiring to semiconductor design, where understanding how materials conduct electricity influences their performance and efficiency.\n                \nFor example, the conductivity of a material determines how much electrical current it can carry without significant energy loss.\n                \nAccurate measurement of conductivity is critical in designing electrical components, optimizing power systems, and ensuring the safety and efficiency of electrical devices."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik iletkenliği, bir malzemenin elektrik akımını iletme yeteneğini ölçer ve malzeme içindeki elektronların ne kadar kolay hareket edebildiğini yansıtır. Elektrik iletkenliği, elektriksel dirençsizlik ile ters orantılıdır ve genellikle siemens/metre (S/m) cinsinden ölçülür.\n\nYüksek iletkenliğe sahip malzemeler, örneğin bakır ve gümüş gibi metaller, elektrik yüklerinin serbestçe akmasına izin verir, bu da onları mükemmel iletkenler yapar.\n\nElektrik iletkenliği, elektrik tesisatından yarı iletken tasarımına kadar geniş bir uygulama yelpazesinde kritik öneme sahiptir. Malzemelerin elektrik iletme şekillerini anlamak, performanslarını ve verimliliklerini etkiler.\n\nÖrneğin, bir malzemenin iletkenliği, ne kadar elektrik akımı taşıyabileceğini ve bu taşımanın ne kadar enerji kaybıyla gerçekleştiğini belirler.\n\nİletkenliğin doğru ölçülmesi, elektrik bileşenlerinin tasarımı, güç sistemlerinin optimize edilmesi ve elektrikli cihazların güvenliği ve verimliliğinin sağlanması için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
+    "ElectricFieldStrengthInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric field strength, also known as electric field intensity, measures the force exerted per unit charge at a given point within an electric field. It indicates how strongly an electric field can influence a charged particle.\n                \nThe SI unit for electric field strength is volts per meter (V/m). For example, an electric field strength of 1 V/m means that a 1-volt potential difference exists between two points that are 1 meter apart.\n                \nElectric field strength is fundamental in understanding the behavior of charges in electric fields and is crucial in applications like capacitors, where it determines how much charge can be stored, and in telecommunications, where it influences signal propagation.\n                \nPrecise measurement and control of electric field strength are essential for designing efficient electrical and electronic systems and ensuring their proper operation."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik alanı şiddeti, ya da elektrik alanı yoğunluğu, bir elektrik alanı içindeki belirli bir noktada birim yük başına uygulanan kuvveti ölçer. Bu, elektrik alanının yüklü bir parçacığı ne kadar güçlü etkileyebileceğini gösterir.\n\nElektrik alanı şiddetinin SI birimi volt/metre (V/m) olarak belirlenmiştir. Örneğin, 1 V/m'lik bir elektrik alanı şiddeti, 1 metre mesafede 1 voltluk bir potansiyel farkının mevcut olduğunu belirtir.\n\nElektrik alanı şiddeti, elektrik alanları içindeki yüklerin davranışını anlamada temel bir kavramdır ve kapasitörler gibi uygulamalarda, ne kadar yük depolanabileceğini belirlemede ve telekomünikasyon gibi alanlarda, sinyal yayılımını etkileyen bir faktördür.\n\nElektrik alanı şiddetinin doğru ölçülmesi ve kontrolü, verimli elektrik ve elektronik sistemler tasarlamak ve bu sistemlerin düzgün çalışmasını sağlamak için gereklidir."
+          }
+        }
+      }
+    },
     "Electricity Converters" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -394,6 +709,57 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elektrik Dönüştürücüler"
+          }
+        }
+      }
+    },
+    "ElectricPotentialInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric potential, also known as voltage, measures the potential energy per unit charge at a specific point in an electric field. It represents the work needed to move a positive charge from a reference point (usually infinity) to the point in question.\n                \nThe SI unit for electric potential is the volt (V), where one volt equals one joule per coulomb (J/C). \n                \nFor example, a battery that provides a potential difference of 12 volts can do 12 joules of work for each coulomb of charge it moves.\n                \nElectric potential is a fundamental concept in electrical circuits, determining the energy available to drive current through a circuit.\n                \nIt is crucial in designing and analyzing electrical and electronic systems, ensuring that components operate at the correct voltage levels for optimal performance."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik potansiyeli, ya da gerilim, belirli bir noktadaki elektrik alanında birim yük başına potansiyel enerjiyi ölçer. Bu, pozitif bir yükü referans noktasından (genellikle sonsuzluktan) belirtilen noktaya taşımak için gereken işi temsil eder.\n\nElektrik potansiyelinin SI birimi volt (V) olarak belirlenmiştir ve bir volt, bir coulomb başına bir joule (J/C) eşdeğerdir.\n\nÖrneğin, 12 voltluk bir potansiyel farkı sağlayan bir batarya, her coulomb yük için 12 joule iş yapabilir.\n\nElektrik potansiyeli, elektrik devrelerinde temel bir kavramdır ve bir devrede akımı sürmek için mevcut enerjiyi belirler.\n\nElektrik ve elektronik sistemlerin tasarımında ve analizinde kritik öneme sahiptir ve bileşenlerin optimum performans için doğru voltaj seviyelerinde çalışmasını sağlamak için gereklidir."
+          }
+        }
+      }
+    },
+    "ElectricResistanceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric resistance measures a material's opposition to the flow of electric current, indicating how much it resists the movement of electric charges.\n                \nThe SI unit for electric resistance is the ohm (Ω), where one ohm is defined as the resistance that produces a one-volt potential difference when a one-ampere current flows through it. For example, if a resistor has a resistance of 10 ohms, it will cause a 10-volt drop in potential when a 1-ampere current flows through it.\n                \nResistance is a key concept in electrical and electronic circuits, affecting the performance and efficiency of devices.\n                \nMaterials with high resistance, such as insulators, impede the flow of current, while conductors, like metals, have low resistance.\n                \nUnderstanding and controlling resistance is crucial in designing circuits to ensure they function correctly and safely."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik direnç, bir materyalin elektrik akımına karşı gösterdiği direnci ölçer ve elektrik yüklerinin hareketine ne kadar karşı koyduğunu gösterir.\n\nElektrik direncinin SI birimi ohm (Ω) olarak belirlenmiştir ve bir ohm, bir amperlik akımın geçtiği durumda bir voltluk potansiyel farkı üreten direnç olarak tanımlanır. Örneğin, 10 ohm'luk bir direnç, 1 amperlik bir akım geçtiğinde 10 voltluk bir potansiyel düşüşüne neden olur.\n\nDirenç, elektrik ve elektronik devrelerde temel bir kavramdır ve cihazların performansını ve verimliliğini etkiler.\n\nYüksek dirençli materyaller, örneğin yalıtkanlar, akımın akışını engellerken, düşük dirençli materyaller, örneğin metaller, akımı kolayca iletebilirler.\n\nDirenci anlamak ve kontrol etmek, devrelerin doğru ve güvenli bir şekilde çalışmasını sağlamak için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
+    "ElectricResistivityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electric resistivity is a fundamental property of materials that quantifies how strongly they resist the flow of electric current. It is the intrinsic resistance of a material, independent of its shape or size, and is measured in ohm meters (Ω·m).\n                \nA higher resistivity indicates that a material is a poor conductor of electricity, such as rubber or glass, while a lower resistivity suggests good conductivity, as seen in metals like copper and silver.\n                \nFor example, copper's low resistivity makes it ideal for electrical wiring.\n                \nElectric resistivity is crucial in material science and electrical engineering, as it determines the efficiency and suitability of materials for various applications.\n                \nAccurate knowledge of resistivity is essential for designing and optimizing electronic components, ensuring that they perform efficiently and safely in circuits and systems."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektrik dirençliliği, materyallerin elektrik akımına karşı ne kadar direnç gösterdiğini ölçen temel bir özelliktir. Bu, bir materyalin şekli veya boyutundan bağımsız olan içsel direncidir ve ohm-metre (Ω·m) cinsinden ölçülür.\n\nYüksek dirençlilik, bir materyalin elektriği kötü ilettiğini, örneğin kauçuk veya cam gibi malzemelerde olduğu gibi, düşük dirençlilik ise iyi iletkenliği gösterir; bakır ve gümüş gibi metallerde olduğu gibi.\n\nÖrneğin, bakırın düşük dirençliliği, elektrikli kablolar için ideal bir seçim yapar.\n\nElektrik dirençliliği, malzeme bilimi ve elektrik mühendisliğinde kritik öneme sahiptir, çünkü bu, malzemelerin çeşitli uygulamalar için verimliliğini ve uygunluğunu belirler.\n\nDirençliliğin doğru bir şekilde bilinmesi, elektronik bileşenlerin tasarımında ve optimize edilmesinde esastır, böylece devrelerde ve sistemlerde verimli ve güvenli performans sağlanabilir."
           }
         }
       }
@@ -409,6 +775,23 @@
         }
       }
     },
+    "ElectrostaticCapacitanceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Electrostatic capacitance measures a component's ability to store electric charge in an electric field, commonly in a capacitor. It quantifies how much charge a capacitor can store per unit voltage applied across its plates.\n                \nThe SI unit for capacitance is the farad (F), where one farad equals one coulomb of charge stored per volt. However, most practical capacitors are rated in microfarads (µF) or picofarads (pF) due to the large size of a farad.\n                \nFor example, a capacitor with a capacitance of 10 µF can store 10 microcoulombs of charge for every volt applied.\n                \nCapacitance is crucial in electronic circuits, where capacitors are used for various purposes, including filtering, energy storage, and timing applications.\n                \nUnderstanding and accurately measuring capacitance is essential for designing and optimizing electronic devices, ensuring that they function correctly and efficiently in their intended applications."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektriksel kapasitans, bir bileşenin bir elektrik alanında elektrik yükünü depolama yeteneğini ölçer ve genellikle bir kapasitörde görülür. Kapasitans, bir kapasitörün plakaları arasında uygulanan her bir volt başına ne kadar yük depolayabildiğini niceler.\n\nKapasitansın SI birimi faraddır (F), bir farad bir volt başına bir coulomb yük depolamak anlamına gelir. Ancak, pratik kapasitörler genellikle mikrofarad (µF) veya pikofarad (pF) ile derecelendirilir, çünkü bir faradın büyüklüğü genellikle çok büyüktür.\n\nÖrneğin, 10 µF kapasitansa sahip bir kapasitör, uygulanan her volt için 10 mikroculomb yük depolayabilir.\n\nKapasitans, elektronik devrelerde çeşitli amaçlar için kullanılan kapasitörler için kritik öneme sahiptir; bu amaçlar arasında filtreleme, enerji depolama ve zamanlama uygulamaları bulunur.\n\nKapasitansı anlamak ve doğru bir şekilde ölçmek, elektronik cihazların tasarımında ve optimizasyonunda esastır ve cihazların doğru ve verimli çalışmasını sağlamada önemli bir rol oynar."
+          }
+        }
+      }
+    },
     "Energy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -416,6 +799,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enerji"
+          }
+        }
+      }
+    },
+    "EnergyInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Energy is a fundamental physical quantity representing the ability to perform work or cause change. It exists in various forms, such as kinetic, potential, thermal, and chemical.\n                \nThe SI unit for energy is the joule (J), which is defined as the amount of work done when a force of one newton displaces an object by one meter.\n                \nOther units include calories (cal) and kilowatt-hours (kWh). For example, one kilowatt-hour equals 3.6 million joules.\n                \nEnergy is a central concept in physics, chemistry, and engineering, essential for understanding processes like heat transfer, mechanical work, and power generation.\n                \nAccurate energy measurement is vital for optimizing efficiency and managing resources in both everyday applications and advanced technologies."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enerji, iş yapma veya değişim yaratma yeteneğini temsil eden temel bir fiziksel büyüklüktür. Kinetik, potansiyel, termal ve kimyasal gibi çeşitli formlarda bulunur.\n\nEnerjinin SI birimi joule'dir (J). Bir joule, bir newton kuvvetin bir nesneyi bir metre yer değiştirmesiyle yapılan iş miktarı olarak tanımlanır.\n\nDiğer birimler arasında kalori (cal) ve kilovat-saat (kWh) bulunur. Örneğin, bir kilovat-saat 3.6 milyon joule'a eşittir.\n\nEnerji, ısı transferi, mekanik iş ve enerji üretimi gibi süreçleri anlamak için fizik, kimya ve mühendislikte merkezi bir kavramdır.\n\nDoğru enerji ölçümü, hem günlük uygulamalarda hem de ileri teknolojilerde verimliliği optimize etmek ve kaynakları yönetmek için hayati öneme sahiptir."
           }
         }
       }
@@ -467,6 +867,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favoriler"
+          }
+        }
+      }
+    },
+    "FavoritesDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save your frequently used conversions for quick access anytime, anywhere"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sık kullandığınız dönüşümleri istediğiniz zaman hızlı erişim için kaydedin"
+          }
+        }
+      }
+    },
+    "FavoritesTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalize Your Experience"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deneyiminizi Kişiselleştirin"
           }
         }
       }
@@ -524,6 +958,68 @@
         }
       }
     },
+    "FlowInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flow refers to the movement or transfer of a fluid (liquid or gas) through a medium or along a path, characterized by the rate at which it moves. It is commonly measured in terms of volume per unit time, such as liters per second (L/s) or cubic meters per hour (m³/h).\n                \nFor example, the flow rate of water through a pipe might be 10 L/s.\n                \nFlow is a key concept in various fields including fluid dynamics, engineering, and environmental science.\n                \nIt influences the design and operation of systems such as pipelines, pumps, and ventilation systems.\n                \nUnderstanding and controlling flow is essential for optimizing performance, ensuring safety, and managing resources effectively in applications ranging from industrial processes to natural water systems.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akış, bir akışkanın (sıvı veya gaz) bir ortam veya yol boyunca hareketini veya transferini ifade eder ve hareket hızını karakterize eder. Genellikle birim zamanda geçen hacimle ölçülür, örneğin litre/saniye (L/s) veya metreküp/saat (m³/h).\n\nÖrneğin, bir borudan geçen suyun akış hızı 10 L/s olabilir.\n\nAkış, akışkanlar dinamiği, mühendislik ve çevre bilimleri gibi çeşitli alanlarda temel bir kavramdır. Boru hatları, pompalar ve havalandırma sistemleri gibi sistemlerin tasarımını ve operasyonunu etkiler.\n\nAkışın anlaşılması ve kontrol edilmesi, performansın optimize edilmesi, güvenliğin sağlanması ve kaynakların etkili bir şekilde yönetilmesi için kritik öneme sahiptir, bu da endüstriyel süreçlerden doğal su sistemlerine kadar geniş bir uygulama yelpazesini kapsar."
+          }
+        }
+      }
+    },
+    "FlowMassInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flow mass refers to the mass of a fluid passing through a given cross-sectional area per unit of time. It quantifies how much mass of a fluid is moving through a pipe or channel and is typically measured in kilograms per second (kg/s).\n                \nFor example, if a pipeline transports 5 kg of water per second, its flow mass is 5 kg/s.\n                \nThis measurement is crucial in various industries, including chemical processing, oil and gas, and water management, as it affects the efficiency and design of systems that handle fluids.\n                \nAccurate determination of flow mass is essential for optimizing processes, controlling chemical reactions, and managing resources effectively."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akış kütlesi, belirli bir kesit alanından birim zamanda geçen akışkanın kütlesini ifade eder. Bu, bir boru veya kanaldan geçen akışkanın ne kadar kütlesinin hareket ettiğini ölçer ve genellikle kilogram/saniye (kg/s) cinsinden ölçülür.\n\nÖrneğin, bir boru hattı saniyede 5 kg su taşıyorsa, akış kütlesi 5 kg/s'dir.\n\nBu ölçüm, kimyasal işleme, petrol ve gaz sektörü ve su yönetimi gibi çeşitli endüstrilerde kritik öneme sahiptir çünkü akışkanları işleyen sistemlerin verimliliğini ve tasarımını etkiler.\n\nAkış kütlesinin doğru belirlenmesi, süreçlerin optimize edilmesi, kimyasal reaksiyonların kontrol edilmesi ve kaynakların etkin bir şekilde yönetilmesi için gereklidir."
+          }
+        }
+      }
+    },
+    "FlowMolarInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flow molar, or molar flow rate, measures the amount of substance (in moles) passing through a given cross-sectional area per unit time. It is typically expressed in units like moles per second (mol/s).\n                \nFor example, a molar flow rate of 2 mol/s indicates that two moles of a substance are flowing through the area each second.\n                \nThis measurement is essential in chemical engineering and process design, particularly in reactions and processes where the concentration of reactants and products is critical.\n                \nAccurate determination of flow molar is crucial for optimizing chemical reactions, controlling production rates, and ensuring the efficient operation of processes involving gaseous or liquid reactants and products."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Akış molar, veya molar akış hızı, belirli bir kesit alanından birim zamanda geçen madde miktarını (mol cinsinden) ölçer. Genellikle mol/saniye (mol/s) cinsinden ifade edilir.\n\nÖrneğin, 2 mol/s'lik bir molar akış hızı, her saniye iki mol maddenin bu alandan geçtiğini gösterir.\n\nBu ölçüm, kimyasal mühendislik ve proses tasarımında, özellikle reaktörlerde ve süreçlerde reaktandır ve ürünlerin konsantrasyonlarının kritik olduğu durumlarda hayati öneme sahiptir.\n\nAkış molarının doğru belirlenmesi, kimyasal reaksiyonların optimize edilmesi, üretim hızlarının kontrol edilmesi ve gaz veya sıvı reaktan ve ürünlerin yer aldığı süreçlerin etkin bir şekilde işletilmesi için gereklidir."
+          }
+        }
+      }
+    },
+    "Fluids Converters" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıvı Dönüştürücüler"
+          }
+        }
+      }
+    },
     "Force" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -535,6 +1031,23 @@
         }
       }
     },
+    "ForceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Force is an interaction that changes the motion of an object or causes it to accelerate. It is a vector quantity, meaning it has both magnitude and direction.\n                \nThe SI unit for force is the newton (N), which is defined as the amount of force required to accelerate a one-kilogram mass by one meter per second squared.\n                \nFor example, one newton is the force needed to lift a small apple against Earth's gravity. Force is a fundamental concept in mechanics and physics, essential for understanding phenomena such as gravity, friction, and tension.\n                \nAccurate measurement of force is crucial for designing structures, machinery, and various systems where precise control and stability are required."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvvet, bir nesnenin hareketini değiştiren veya onu hızlandıran bir etkileşimdir. Bir vektör büyüklüğüdür, yani hem büyüklüğü hem de yönü vardır.\n\nKuvvetin SI birimi newton'dır (N). Bir newton, bir kilogram kütleyi bir metre/saniye kare hızlanma ile hızlandırmak için gereken kuvvet miktarı olarak tanımlanır.\n\nÖrneğin, bir newton, küçük bir elmayı Dünya'nın yerçekimine karşı kaldırmak için gereken kuvveti ifade eder. Kuvvet, mekanik ve fiziksel olayları anlamak için temel bir kavramdır ve yerçekimi, sürtünme ve gerilme gibi fenomenlerin anlaşılmasında kritik öneme sahiptir.\n\nKuvvetin doğru ölçümü, hassas kontrol ve stabilite gerektiren yapıların, makinelerin ve çeşitli sistemlerin tasarımında hayati öneme sahiptir."
+          }
+        }
+      }
+    },
     "Frequency Wavelength" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -542,6 +1055,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Frekans Dalga Boyu"
+          }
+        }
+      }
+    },
+    "FrequencyWaveLengthInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frequency wavelength describes the relationship between the frequency of a wave and its wavelength. It represents how the spatial length of one cycle of a wave is related to how often the wave cycles occur per second.\n                \nThe frequency of a wave is the number of cycles per second, measured in hertz (Hz), while the wavelength (λ) is the distance between successive crests or troughs, measured in meters (m).\n                \nThe two are inversely related by the equation λ = c / f, where c is the speed of the wave in a medium (e.g., the speed of light in a vacuum is approximately 3 × 10^8 meters per second).\n                \nFor example, radio waves with lower frequencies have longer wavelengths, while higher frequencies like X-rays have shorter wavelengths.\n                \nUnderstanding the frequency-wavelength relationship is crucial in fields such as telecommunications, optics, and acoustics."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frekans dalga boyu, bir dalganın frekansı ile dalga boyu arasındaki ilişkiyi açıklar. Bu, bir dalganın bir döngüsünün mekansal uzunluğunun, dalganın saniyede kaç döngü gerçekleştirdiği ile nasıl ilişkili olduğunu temsil eder.\n\nBir dalganın frekansı, saniyedeki döngü sayısını ifade eder ve hertz (Hz) cinsinden ölçülürken, dalga boyu (λ) ardışık zirveler veya çukurlar arasındaki mesafeyi ifade eder ve metre (m) cinsinden ölçülür.\n\nİkisi, λ = c / f denklemi ile ters orantılıdır; burada c, dalganın bir ortamda (örneğin, boşluktaki ışık hızı yaklaşık olarak 3 × 10^8 metre/saniye) hızını temsil eder.\n\nÖrneğin, radyo dalgaları düşük frekansta daha uzun dalga boylarına sahipken, X-ışınları gibi yüksek frekansta daha kısa dalga boylarına sahiptir.\n\nFrekans-dalga boyu ilişkisini anlamak, telekomünikasyon, optik ve akustik gibi alanlarda kritik öneme sahiptir."
           }
         }
       }
@@ -599,12 +1129,97 @@
         }
       }
     },
+    "FuelConsumptionInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuel consumption measures the amount of fuel used by a vehicle or machine over a specific distance or period. It is an important metric for assessing efficiency and environmental impact.\n                \nThe SI unit for fuel consumption is liters per 100 kilometers (L/100 km), indicating how many liters of fuel are needed to travel 100 kilometers.\n                \nAnother common unit is miles per gallon (mpg), used primarily in the United States, where a higher mpg value signifies better fuel efficiency.\n                \nFuel consumption is crucial for evaluating the performance of engines, optimizing operational costs, and reducing emissions.\n                \nAccurate measurement and management of fuel consumption are essential for both economic and environmental reasons."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakıt tüketimi, bir aracın veya makinenin belirli bir mesafe veya süre boyunca kullandığı yakıt miktarını ölçer. Verimlilik ve çevresel etkileri değerlendirmek için önemli bir metriktir.\n\nYakıt tüketimi için SI birimi, 100 kilometrede litre (L/100 km) cinsindendir ve 100 kilometreyi katetmek için gereken litre miktarını gösterir.\n\nBaşka bir yaygın birim ise galon başına mil (mpg) olup, genellikle Amerika Birleşik Devletleri'nde kullanılır; daha yüksek bir mpg değeri, daha iyi yakıt verimliliğini ifade eder.\n\nYakıt tüketimi, motor performansını değerlendirmek, operasyonel maliyetleri optimize etmek ve emisyonları azaltmak için kritiktir.\n\nYakıt tüketiminin doğru ölçümü ve yönetimi, hem ekonomik hem de çevresel nedenlerle hayati öneme sahiptir."
+          }
+        }
+      }
+    },
+    "FuelEfficiencyMassInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuel efficiency mass measures the amount of fuel consumed per unit of mass of a vehicle or engine. It indicates how effectively a vehicle converts fuel into energy relative to its mass, and is typically expressed in units such as liters per 100 kilograms (L/100 kg) or gallons per ton (gal/ton). \n                \nFor example, if a vehicle has a fuel efficiency mass of 0.5 L/100 kg, it means that 0.5 liters of fuel are used for every 100 kilograms of the vehicle’s mass.\n                \nThis metric is important for assessing and comparing the efficiency of different vehicles or engines, influencing fuel economy and operational costs.\n                \nAccurate evaluation of fuel efficiency mass helps in optimizing vehicle performance, reducing environmental impact, and making informed decisions regarding vehicle design and usage."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakıt verimliliği kütlesi, bir aracın veya motorun kütlesi başına tüketilen yakıt miktarını ölçer. Bu, bir aracın yakıtı enerjiye dönüştürme etkinliğini kütlesine göre gösterir ve genellikle litre/100 kilogram (L/100 kg) veya galon/ton (gal/ton) gibi birimlerle ifade edilir.\n\nÖrneğin, bir aracın yakıt verimliliği kütlesi 0.5 L/100 kg ise, bu, aracın her 100 kilogramı için 0.5 litre yakıt kullanıldığı anlamına gelir.\n\nBu ölçüt, farklı araçların veya motorların verimliliğini değerlendirmek ve karşılaştırmak için önemlidir ve yakıt ekonomisini ve işletme maliyetlerini etkiler.\n\nYakıt verimliliği kütlesinin doğru değerlendirilmesi, araç performansını optimize etmeye, çevresel etkileri azaltmaya ve araç tasarımı ve kullanımıyla ilgili bilinçli kararlar almaya yardımcı olur."
+          }
+        }
+      }
+    },
+    "FuelEfficiencyVolumeInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fuel efficiency volume measures the amount of fuel consumed per unit of volume of a vehicle or engine. It indicates how effectively a vehicle uses fuel relative to its volume, and is typically expressed in units such as liters per 100 liters (L/100 L) or gallons per cubic meter (gal/m³).\n                \nFor example, if a vehicle has a fuel efficiency volume of 10 L/100 L, it means that 10 liters of fuel are consumed for every 100 liters of the vehicle's volume.\n                \nThis metric is important for evaluating and comparing the fuel consumption of different vehicles or engines, particularly in applications where space constraints are a factor.\n                \nAccurate assessment of fuel efficiency volume is crucial for optimizing fuel use, reducing operational costs, and making informed choices about vehicle design and performance."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yakıt verimliliği hacmi, bir aracın veya motorun hacim birimi başına tüketilen yakıt miktarını ölçer. Bu, bir aracın yakıtı hacmine göre ne kadar etkili kullandığını gösterir ve genellikle litre/100 litre (L/100 L) veya galon/küçük metre (gal/m³) gibi birimlerle ifade edilir.\n\nÖrneğin, bir aracın yakıt verimliliği hacmi 10 L/100 L ise, bu, aracın her 100 litre hacmi için 10 litre yakıt tüketildiği anlamına gelir.\n\nBu ölçüt, özellikle alan kısıtlamalarının önemli olduğu uygulamalarda, farklı araçların veya motorların yakıt tüketimini değerlendirmek ve karşılaştırmak için önemlidir.\n\nYakıt verimliliği hacminin doğru değerlendirilmesi, yakıt kullanımını optimize etmek, işletme maliyetlerini azaltmak ve araç tasarımı ve performansıyla ilgili bilinçli seçimler yapmak için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
     "Get Started" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başlayalım!"
+          }
+        }
+      }
+    },
+    "GetStartedDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let's start converting units with ease and precision!"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hadi, birimleri kolaylıkla ve hassasiyetle dönüştürmeye başlayalım!"
+          }
+        }
+      }
+    },
+    "GetStartedTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ready to Simplify Your Calculations"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hesaplamalarınızı Basitleştirmeye Hazır mısınız?"
           }
         }
       }
@@ -653,6 +1268,57 @@
         }
       }
     },
+    "HeatDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat density, also known as thermal energy density, measures the amount of heat energy stored per unit volume of a material or system. It is typically expressed in units such as joules per cubic meter (J/m³).\n                \nFor example, a material with a heat density of 5000 J/m³ means that there are 5000 joules of heat energy contained within each cubic meter of the material.\n                \nHeat density is crucial in various applications, including thermal management, energy storage, and materials science, as it helps in assessing how much heat a substance can store or release.\n                \nUnderstanding and measuring heat density is essential for designing efficient thermal systems, optimizing energy storage solutions, and managing heat distribution in processes and devices."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isı yoğunluğu, termal enerji yoğunluğu olarak da bilinir ve bir malzemenin veya sistemin birim hacmindeki ısı enerjisi miktarını ölçer. Genellikle, birim hacim başına joule (J/m³) cinsinden ifade edilir.\n\nÖrneğin, 5000 J/m³ ısı yoğunluğuna sahip bir malzeme, her bir metreküpte 5000 joule ısı enerjisi içerdiği anlamına gelir.\n\nIsı yoğunluğu, termal yönetim, enerji depolama ve malzeme bilimi gibi çeşitli uygulamalarda kritik öneme sahiptir. Bu, bir maddeden ne kadar ısı depolanabileceğini veya serbest bırakılabileceğini değerlendirmede yardımcı olur.\n\nIsı yoğunluğunu anlamak ve ölçmek, verimli termal sistemler tasarlamak, enerji depolama çözümlerini optimize etmek ve süreçler ile cihazlarda ısı dağılımını yönetmek için gereklidir."
+          }
+        }
+      }
+    },
+    "HeatFluxDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat flux density measures the rate at which heat energy is transferred through a unit area of a material. It quantifies the intensity of heat flow per unit area and is typically expressed in watts per square meter (W/m²).\n                \nFor example, a heat flux density of 500 W/m² indicates that 500 watts of heat energy pass through each square meter of the material.\n                \nThis metric is crucial in fields such as thermal engineering, building design, and materials science, as it helps in understanding and managing heat transfer processes.\n                \nAccurate measurement of heat flux density is essential for designing effective thermal insulation, optimizing heat exchangers, and ensuring proper temperature control in various applications."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isı akı yoğunluğu, bir malzemenin birim alanı boyunca ısı enerjisinin aktarım hızını ölçer. Birim alan başına ısı akışının yoğunluğunu nicelendirir ve genellikle watt/metrekare (W/m²) cinsinden ifade edilir.\n\nÖrneğin, 500 W/m² ısı akı yoğunluğu, her bir metrekarelik alandan 500 watt ısı enerjisinin geçtiğini gösterir.\n\nBu metrik, termal mühendislik, bina tasarımı ve malzeme bilimi gibi alanlarda kritik öneme sahiptir çünkü ısı transferi süreçlerini anlamaya ve yönetmeye yardımcı olur.\n\nIsı akı yoğunluğunun doğru ölçümü, etkili termal izolasyon tasarlamak, ısı değiştiricilerini optimize etmek ve çeşitli uygulamalarda uygun sıcaklık kontrolünü sağlamak için gereklidir."
+          }
+        }
+      }
+    },
+    "HeatTransverCoefficientInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The heat transfer coefficient quantifies the rate at which heat is transferred between a solid surface and a fluid (liquid or gas) in contact with it. It is typically expressed in watts per square meter per degree Celsius (W/m²°C) or watts per square meter per kelvin (W/m²·K).\n                \nFor example, a heat transfer coefficient of 100 W/m²·K means that for each degree Celsius (or kelvin) difference in temperature, 100 watts of heat are transferred through each square meter of the surface.\n                \nThis coefficient is crucial in designing and optimizing systems involving heat exchange, such as radiators, heat exchangers, and cooling systems.\n                \nAccurate measurement and understanding of the heat transfer coefficient are essential for improving thermal efficiency, ensuring effective cooling or heating, and enhancing overall system performance in various industrial and engineering applications."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Isı transfer katsayısı, bir katı yüzey ile temas halindeki bir sıvı (sıvı veya gaz) arasında ısının ne hızda aktığını nicelendirir. Genellikle watt/metrekare/°C (W/m²°C) veya watt/metrekare/Kelvin (W/m²·K) cinsinden ifade edilir.\n\nÖrneğin, 100 W/m²·K ısı transfer katsayısı, her bir derece Celsius (veya Kelvin) sıcaklık farkı için, her metrekare yüzeyden 100 watt ısının aktığını gösterir.\n\nBu katsayı, radyatörler, ısı değiştiriciler ve soğutma sistemleri gibi ısı alışverişi içeren sistemlerin tasarımı ve optimizasyonunda kritik öneme sahiptir.\n\nIsı transfer katsayısının doğru ölçümü ve anlaşılması, termal verimliliğin artırılması, etkili soğutma veya ısıtma sağlanması ve çeşitli endüstriyel ve mühendislik uygulamalarında genel sistem performansının geliştirilmesi için gereklidir."
+          }
+        }
+      }
+    },
     "Illumination" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -664,6 +1330,23 @@
         }
       }
     },
+    "IlluminationInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Illumination refers to the amount of light received on a surface area, typically measured in lux (lx) or foot-candles (fc). It describes how well-lit an area is, based on the intensity and distribution of light falling upon it.\n                \nIllumination is crucial in various applications, including lighting design, photography, and architecture, as it affects visibility, aesthetics, and functionality.\n                \nFor instance, a well-lit workspace enhances productivity and reduces eye strain, while appropriate illumination in photography ensures accurate image capture.\n                \nUnderstanding and measuring illumination helps in optimizing lighting conditions for different environments, ensuring that spaces are adequately lit for their intended use while minimizing energy consumption and improving overall lighting quality."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aydınlatma, bir yüzey alanına düşen ışık miktarını ifade eder ve genellikle lüks (lx) veya ayak mumyu (fc) cinsinden ölçülür. Bir alanın ne kadar iyi aydınlatıldığını, üzerine düşen ışığın yoğunluğu ve dağılımına göre açıklar.\n\nAydınlatma, aydınlatma tasarımı, fotoğrafçılık ve mimari gibi çeşitli uygulamalarda kritik öneme sahiptir çünkü görünürlük, estetik ve işlevsellik üzerinde etkili olur.\n\nÖrneğin, iyi aydınlatılmış bir çalışma alanı, üretkenliği artırır ve göz yorgunluğunu azaltır; fotoğrafçılıkta ise uygun aydınlatma, doğru görüntü yakalamayı sağlar.\n\nAydınlatmanın anlaşılması ve ölçülmesi, farklı ortamlar için aydınlatma koşullarını optimize etmeye yardımcı olur, alanların amaçlarına uygun şekilde yeterince aydınlatılmasını sağlar ve enerji tüketimini minimize ederek genel aydınlatma kalitesini artırır."
+          }
+        }
+      }
+    },
     "Inductance" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -671,6 +1354,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İndüktans"
+          }
+        }
+      }
+    },
+    "InductanceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inductance is a property of an electrical circuit or component that opposes changes in current flow, storing energy in a magnetic field. It is a measure of how effectively a coil or inductor can induce an electromotive force (EMF) in itself or another nearby coil when the current through it changes.\n                \nThe SI unit for inductance is the henry (H), where one henry is defined as the amount of inductance required to induce one volt of EMF when the current changes at a rate of one ampere per second.\n                \nFor example, an inductor with an inductance of 1 H will generate 1 volt of EMF when the current through it changes by 1 ampere per second.\n                \nInductance plays a crucial role in various applications, such as in transformers, electric motors, and filters, where it helps in controlling current flow, energy storage, and signal processing.\n                \nAccurate measurement and management of inductance are essential for designing efficient and effective electrical and electronic systems."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İndüktans, bir elektrik devresi veya bileşeninin akım değişikliklerine karşı koyma özelliğidir ve enerjiyi bir manyetik alanda depolar. Bu, bir bobin veya endüktörün akım değiştiğinde kendinde veya yakındaki başka bir bobinde elektromotor kuvveti (EMF) indükleme yeteneğini ölçer.\n\nİndüktansın SI birimi henry'dir (H), bir henry, akım bir ampere/saniye oranında değiştiğinde bir volt EMF indüklemek için gereken miktarda endüktans olarak tanımlanır.\n\nÖrneğin, 1 H endüktansa sahip bir endüktör, akım 1 ampere/saniye oranında değiştiğinde 1 volt EMF üretecektir.\n\nİndüktans, transformatörler, elektrik motorları ve filtreler gibi çeşitli uygulamalarda önemli bir rol oynar; bu, akım akışını kontrol etmede, enerji depolamada ve sinyal işlemekte yardımcı olur.\n\nİndüktansı doğru bir şekilde ölçmek ve yönetmek, etkili ve verimli elektriksel ve elektronik sistemlerin tasarımında esastır."
           }
         }
       }
@@ -702,6 +1402,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uzunluk"
+          }
+        }
+      }
+    },
+    "LengthInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Length is a measure of how long an object is from one end to the other. It is one of the fundamental dimensions in physics and engineering. \n                \nIn the International System of Units (SI), the base unit for length is the meter (m).\n                \nLength can be measured in various units, such as kilometers (km), centimeters (cm), and millimeters (mm), each of which is a derived unit based on the meter.\n                \nFor example, one kilometer equals 1,000 meters, and one centimeter equals 0.01 meters. These units are used in everyday life, scientific research, and engineering to quantify the size or extent of objects and distances."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzunluk, bir nesnenin bir ucundan diğerine kadar olan mesafesini ölçer. Fizik ve mühendislikte temel boyutlardan biridir.\n\nUluslararası Birimler Sistemi'nde (SI), uzunluk için temel birim metredir (m).\n\nUzunluk, kilometre (km), santimetre (cm) ve milimetre (mm) gibi çeşitli birimlerde ölçülebilir. Bunların her biri metreye dayalı türetilmiş birimlerdir.\n\nÖrneğin, bir kilometre 1.000 metreye, bir santimetre ise 0,01 metreye eşittir. Bu birimler günlük yaşamda, bilimsel araştırmalarda ve mühendislikte nesnelerin boyutunu veya mesafeleri ölçmek için kullanılır.\n"
           }
         }
       }
@@ -739,6 +1456,40 @@
         }
       }
     },
+    "LinearChargeDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linear charge density measures the amount of electric charge per unit length along a line or wire. It quantifies how charge is distributed along a linear conductor or along a charged line.\n                \nThe SI unit for linear charge density is the coulomb per meter (C/m).\n                \nFor example, if a charged wire has a linear charge density of 2 µC/m, it means there are 2 microcoulombs of charge distributed along every meter of the wire.\n                \nLinear charge density is important in electrostatics for understanding the electric field created by long, thin conductors and in applications such as transmission lines and charged rods.\n                \nAccurate measurement and calculation of linear charge density are crucial for predicting electric fields and forces in various electrical and electronic systems."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doğru. Lineer yük yoğunluğu, bir hat boyunca veya bir tel üzerinde birim uzunluk başına elektrik yük miktarını ölçer. Bu, yükün doğrusal bir iletken boyunca veya yüklü bir çizgi boyunca nasıl dağıldığını nicelendirir.\n\nSI birimi coulomb/metre (C/m) olarak ifade edilir.\n\nÖrneğin, bir yüklü telin lineer yük yoğunluğu 2 µC/m ise, bu, telin her bir metre uzunluğu boyunca 2 mikroculomb yük bulunduğu anlamına gelir.\n\nLineer yük yoğunluğu, uzun ve ince iletkenlerin oluşturduğu elektrik alanlarını anlamada ve iletim hatları ile yüklü çubuklar gibi uygulamalarda önemlidir.\n\nLineer yük yoğunluğunu doğru bir şekilde ölçmek ve hesaplamak, çeşitli elektriksel ve elektronik sistemlerde elektrik alanlarını ve kuvvetleri tahmin etmek için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
+    "LinearCurrentDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linear current density measures the electric current flowing per unit length of a conductor. It indicates how much current is distributed along a given length of a wire or conductor.\n                \nThe SI unit for linear current density is amperes per meter (A/m).\n                \nFor example, if a wire carries a current of 5 amperes and has a linear current density of 2 A/m, it means that each meter of the wire conducts 2 amperes of current.\n                \nLinear current density is crucial in the design and analysis of electrical circuits, particularly in understanding the distribution of current along conductors and ensuring that the conductors are capable of handling the required current without excessive heating or loss.\n                \nAccurate measurement of linear current density helps in optimizing the performance and safety of electrical and electronic systems."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Evet, doğru. Lineer akı yoğunluğu, bir iletken boyunca birim uzunluk başına geçen elektrik akımını ölçer. Bu, belirli bir uzunlukta bir tel veya iletkende ne kadar akımın dağıldığını gösterir.\n\nSI birimi amper/metre (A/m) olarak ifade edilir.\n\nÖrneğin, bir tel 5 amperlik bir akım taşıyorsa ve lineer akı yoğunluğu 2 A/m ise, bu, telin her bir metre uzunluğunun 2 amper akım taşıdığı anlamına gelir.\n\nLineer akı yoğunluğu, elektrik devrelerinin tasarımı ve analizi için kritik öneme sahiptir, özellikle iletkenler boyunca akım dağılımını anlamada ve iletkenlerin gerekli akımı aşırı ısınma veya kayıptan olmadan taşıyabilecek kapasitede olup olmadığını sağlamakta.\n\nLineer akı yoğunluğunu doğru bir şekilde ölçmek, elektriksel ve elektronik sistemlerin performansını ve güvenliğini optimize etmekte yardımcı olur."
+          }
+        }
+      }
+    },
     "Luminance" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -750,6 +1501,23 @@
         }
       }
     },
+    "LuminanceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luminance measures the amount of light emitted, transmitted, or reflected from a surface per unit area in a specific direction, and it indicates the brightness of that surface.\n                \nThe SI unit for luminance is the candela per square meter (cd/m²).\n                \nIt quantifies how much light is perceived by the human eye and is crucial in fields like photography, display technology, and lighting design.\n                \nFor example, a bright computer screen might have a luminance of 300 cd/m², making it more readable in various lighting conditions.\n                \nLuminance is essential for understanding visual perception, optimizing display quality, and designing effective lighting systems.\n                \nAccurate measurement of luminance ensures that visual displays and environments meet desired brightness levels for comfort and functionality.\n\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lüminans, belirli bir yönde bir yüzeyden yayılan, iletilen veya yansıyan ışık miktarını ölçer ve bu yüzeyin parlaklığını gösterir.\n\nLüminans'ın SI birimi kandela/metrekare (cd/m²) ile ifade edilir.\n\nGöz tarafından algılanan ışık miktarını nicelendirir ve fotoğrafçılık, ekran teknolojisi ve aydınlatma tasarımı gibi alanlarda kritik öneme sahiptir.\n\nÖrneğin, parlak bir bilgisayar ekranı 300 cd/m² lüminansa sahip olabilir, bu da farklı aydınlatma koşullarında okunabilirliğini artırır.\n\nLüminans, görsel algıyı anlamak, ekran kalitesini optimize etmek ve etkili aydınlatma sistemleri tasarlamak için önemlidir.\n\nLüminans'ın doğru ölçülmesi, görsel ekranların ve ortamların konfor ve işlevsellik için istenen parlaklık seviyelerini karşılamasını sağlar."
+          }
+        }
+      }
+    },
     "Luminous Intensity" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -757,6 +1525,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Işık Şiddeti"
+          }
+        }
+      }
+    },
+    "LuminousIntensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Luminous intensity measures the amount of visible light emitted by a source per unit of solid angle, indicating how bright the source appears in a specific direction. It is quantified in candelas (cd), where one candela represents the luminous power emitted by a source in a particular direction.\n                \nFor example, a standard candle has a luminous intensity of about one candela.\n                \nLuminous intensity is important in lighting design and photometry, helping to assess how effectively a light source illuminates an area or directs light.\n                \nAccurate measurement of luminous intensity is crucial for creating effective lighting solutions, ensuring that light sources provide adequate brightness and meet specific requirements for various applications such as street lighting, stage lighting, and indoor illumination."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Işık akısı, bir kaynağın belirli bir yönünde yaydığı görünür ışığın miktarını ölçer ve kaynağın belirli bir yönde ne kadar parlak göründüğünü gösterir. Bu ölçüm, kandela (cd) birimiyle ifade edilir ve bir candela, bir kaynağın belirli bir yönde yaydığı ışık gücünü temsil eder.\n\nÖrneğin, standart bir mumun yaklaşık bir kandela ışık akısına sahip olduğu kabul edilir.\n\nIşık akısı, aydınlatma tasarımı ve fotometri gibi alanlarda önemlidir. Bu ölçüm, bir ışık kaynağının bir alanı ne kadar etkili bir şekilde aydınlattığını veya ışığı ne kadar iyi yönlendirdiğini değerlendirmeye yardımcı olur.\n\nIşık akısının doğru ölçülmesi, etkili aydınlatma çözümleri oluşturmak için kritik öneme sahiptir ve ışık kaynaklarının yeterli parlaklık sağladığından ve çeşitli uygulamalar için özel gereksinimleri karşıladığından emin olmak için gereklidir."
           }
         }
       }
@@ -794,6 +1579,57 @@
         }
       }
     },
+    "MagneticFieldStrengthInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magnetic field strength, also known as magnetic field intensity, measures the force that a magnetic field exerts on moving electric charges and magnetic materials. It indicates the intensity of the magnetic field in a specific area.\n                \nThe SI unit for magnetic field strength is the ampere per meter (A/m). This property is crucial in understanding and designing magnetic systems, such as electromagnets, transformers, and electric motors.\n                \nMagnetic field strength plays a vital role in various applications, including MRI machines in medical diagnostics, where strong magnetic fields are used to produce detailed images of the human body.\n                \nAccurate measurement of magnetic field strength is essential for ensuring the proper functioning and safety of devices that rely on magnetic fields."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetik alan şiddeti, manyetik alanın hareket eden elektrik yükleri ve manyetik malzemeler üzerindeki etkisini ölçen bir özelliktir. Belirli bir alandaki manyetik alanın yoğunluğunu gösterir.\n\nSI birimi amper/metre (A/m) olarak ifade edilir. Bu özellik, elektromıknatıslar, transformatörler ve elektrik motorları gibi manyetik sistemlerin anlaşılması ve tasarımı için kritik öneme sahiptir.\n\nManyetik alan şiddeti, tıbbi tanı cihazları olan MRI makinelerinde olduğu gibi çeşitli uygulamalarda önemli bir rol oynar; burada güçlü manyetik alanlar, insan vücudunun detaylı görüntülerini üretmek için kullanılır.\n\nManyetik alan şiddetinin doğru ölçülmesi, manyetik alanlara dayanan cihazların düzgün çalışmasını ve güvenliğini sağlamak için gereklidir."
+          }
+        }
+      }
+    },
+    "MagneticFluxDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magnetic flux density, also known as the magnetic field density or simply the magnetic field, measures the strength and direction of a magnetic field in a given area. It represents the amount of magnetic flux passing through a unit area perpendicular to the magnetic field.\n                \nThe SI unit for magnetic flux density is the tesla (T), where one tesla equals one weber per square meter (Wb/m²). For example, the Earth's magnetic field has a flux density of about 25 to 65 microteslas (µT).\n                \nMagnetic flux density is crucial in various applications, including designing electric motors, transformers, and magnetic resonance imaging (MRI) machines.\n                \nAccurate measurement of flux density is essential for optimizing performance and ensuring safety in devices that utilize magnetic fields."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetik akı yoğunluğu, manyetik alan yoğunluğu veya basitçe manyetik alan olarak da bilinir, bir alandaki manyetik alanın gücünü ve yönünü ölçer. Birim alana dik olarak geçen manyetik akının miktarını temsil eder.\n\nSI birimi tesla (T) olup, bir tesla bir weber/metrekare (Wb/m²) eşdeğerindedir. Örneğin, Dünya'nın manyetik alanı yaklaşık 25 ile 65 mikrotesla (µT) arasında bir akı yoğunluğuna sahiptir.\n\nManyetik akı yoğunluğu, elektrik motorları, transformatörler ve manyetik rezonans görüntüleme (MRI) makineleri gibi çeşitli uygulamalarda kritik öneme sahiptir.\n\nAkı yoğunluğunun doğru ölçülmesi, manyetik alanları kullanan cihazların performansını optimize etmek ve güvenliğini sağlamak için gereklidir."
+          }
+        }
+      }
+    },
+    "MagneticFluxInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magnetic flux quantifies the total magnetic field passing through a given area. It measures the strength and extent of a magnetic field over a surface, providing a key understanding of how magnetic fields interact with materials.\n                \nThe SI unit for magnetic flux is the weber (Wb), where one weber equals one tesla meter squared (T·m²). For example, in an electrical generator, the magnetic flux through the coils influences the amount of electrical current generated.\n                \nMagnetic flux is fundamental in electromagnetism, affecting the operation of transformers, inductors, and motors.\n                \nAccurate measurement of magnetic flux is essential for designing and optimizing devices that rely on magnetic fields to function efficiently."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetik akı, belirli bir alan üzerinden geçen toplam manyetik alanı niceler. Manyetik alanın bir yüzey üzerindeki gücünü ve kapsamını ölçer, böylece manyetik alanların malzemelerle nasıl etkileşimde bulunduğunu anlamaya yardımcı olur.\n\nSI birimi weber (Wb) olup, bir weber bir tesla metrekare (T·m²) eşdeğerindedir. Örneğin, bir elektrikli jeneratörde, bobinler üzerinden geçen manyetik akı, üretilen elektrik akımının miktarını etkiler.\n\nManyetik akı, elektromanyetizmanın temel bir bileşenidir ve transformatörler, endüktörler ve motorlar gibi cihazların çalışmasını etkiler.\n\nManyetik akının doğru ölçülmesi, manyetik alanlara dayanan cihazların verimli bir şekilde çalışmasını sağlamak ve tasarımını optimize etmek için gereklidir."
+          }
+        }
+      }
+    },
     "Magnetism Converters" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -812,6 +1648,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Manyetomotor kuvveti"
+          }
+        }
+      }
+    },
+    "MagnetomotiveForceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Magnetomotive force (MMF) is a measure of the magnetic potential that drives the magnetic flux through a magnetic circuit. It represents the force required to produce a magnetic field and is analogous to electromotive force (EMF) in electrical circuits.\n                \nThe SI unit for magnetomotive force is the ampere-turn (At), which quantifies the product of the current in amperes and the number of turns in a coil generating the magnetic field. For example, a coil with 10 turns carrying a current of 2 amperes produces an MMF of 20 ampere-turns.\n                \nMMF is essential in understanding the behavior of magnetic circuits and designing electromagnetic devices such as transformers, inductors, and magnetic relays.\n                \nAccurate measurement of MMF helps in optimizing the efficiency and performance of magnetic systems."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manyetik kuvvet (MMF), bir manyetik devreden manyetik akıyı sürmek için gereken manyetik potansiyeli ölçer. Manyetik bir alan üretmek için gerekli olan kuvveti temsil eder ve elektrik devrelerindeki elektromıknatıs kuvvetine (EMF) benzer.\n\nSI birimi amper-dönüş (At) olup, bir bobin içindeki akım (amper) ile bobinin döngü sayısının çarpımını ifade eder. Örneğin, 10 dönüşlü ve 2 amper akım taşıyan bir bobin 20 amper-dönüş MMF üretir.\n\nMMF, manyetik devrelerin davranışını anlamada ve transformatörler, endüktörler ve manyetik röleler gibi elektromıknatıs cihazlarının tasarımında kritik öneme sahiptir.\n\nMMF'nin doğru ölçülmesi, manyetik sistemlerin verimliliğini ve performansını optimize etmek için gereklidir."
           }
         }
       }
@@ -838,6 +1691,40 @@
         }
       }
     },
+    "MassFluxDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mass flux density, or mass flow density, measures the amount of mass flowing through a unit area per unit time. It quantifies how much mass passes through a cross-sectional area in a given time frame and is typically expressed in units such as kilograms per square meter per second (kg/m²/s).\n                \nFor example, if a fluid has a mass flux density of 3 kg/m²/s, it means that 3 kilograms of mass are flowing through each square meter of cross-sectional area every second.\n                \nThis concept is important in various fields such as fluid dynamics, meteorology, and chemical engineering, where it helps in understanding and designing systems involving the movement of fluids or particulate matter.\n                \nAccurate measurement of mass flux density is crucial for optimizing processes, controlling environmental impacts, and ensuring efficient operation in applications like pipeline design and atmospheric studies."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kütle akış yoğunluğu, veya kütle akış hızı, birim alandan birim zamanda geçen kütle miktarını ölçer. Belirli bir zaman diliminde bir kesit alanından geçen kütle miktarını nicelendirir ve genellikle kilogram/metrekare/saniye (kg/m²/s) cinsinden ifade edilir.\n\nÖrneğin, bir akışkanın kütle akış yoğunluğu 3 kg/m²/s ise, bu, her saniye her bir metrekare kesit alanından 3 kilogram kütlenin geçtiğini gösterir.\n\nBu kavram, akışkan dinamiği, meteoroloji ve kimyasal mühendislik gibi çeşitli alanlarda önemlidir ve akışkanların veya parçacıklı maddelerin hareketi ile ilgili sistemlerin anlaşılması ve tasarlanmasında yardımcı olur.\n\nKütle akış yoğunluğunun doğru ölçülmesi, süreçlerin optimize edilmesi, çevresel etkilerin kontrol edilmesi ve boru hatları tasarımı ve atmosfer çalışmaları gibi uygulamalarda etkin bir işletim sağlanması için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
+    "MassInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mass measures the amount of matter in an object, and its SI unit is the kilogram (kg). It is a fundamental property of physical objects and remains constant regardless of location. \n\nMass is used to quantify the resistance of an object to acceleration when a force is applied.\n\nWeight, on the other hand, is the force exerted by gravity on an object's mass. Its SI unit is the newton (N), defined as the force needed to accelerate a one-kilogram mass by one meter per second squared.\n\nWeight varies depending on the gravitational field strength of the location. For example, an object weighs less on the Moon than on Earth due to the Moon's weaker gravity. \n\nBoth weight and mass are crucial in physics and engineering, but they measure different properties of matter.\";\n\n\"LengthInfo\" = \"Length is a measure of how long an object is from one end to the other. It is one of the fundamental dimensions in physics and engineering. \n\nIn the International System of Units (SI), the base unit for length is the meter (m).\n\nLength can be measured in various units, such as kilometers (km), centimeters (cm), and millimeters (mm), each of which is a derived unit based on the meter.\n\nFor example, one kilometer equals 1,000 meters, and one centimeter equals 0.01 meters. These units are used in everyday life, scientific research, and engineering to quantify the size or extent of objects and distances."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kütle, bir nesnedeki madde miktarını ölçer ve SI birimi kilogramdır (kg). Fiziksel nesnelerin temel bir özelliğidir ve konumdan bağımsız olarak sabit kalır.\n\nKütle, bir kuvvet uygulandığında bir nesnenin ivmelenmeye karşı direncini ölçmek için kullanılır.\n\nAğırlık ise, yerçekiminin bir nesnenin kütlesi üzerinde uyguladığı kuvvettir. SI birimi newton'dur (N) ve bir kilogramlık kütleyi saniyede bir metre karelik bir ivmeyle hızlandırmak için gereken kuvvet olarak tanımlanır.\n\nAğırlık, bulunulan yerin yerçekimi alanı şiddetine bağlı olarak değişir. Örneğin, bir nesne Ay'da Dünya'dakinden daha az ağırlığa sahiptir çünkü Ay'ın yerçekimi daha zayıftır.\n\nHem ağırlık hem de kütle fizik ve mühendislikte çok önemlidir, ancak maddenin farklı özelliklerini ölçerler.\";\n\n\"LengthInfo\" = \"Uzunluk, bir nesnenin bir ucundan diğer ucuna kadar olan mesafesini ölçer. Fizik ve mühendislikte temel boyutlardan biridir.\n\nUluslararası Birimler Sisteminde (SI), uzunluk için temel birim metredir (m).\n\nUzunluk, kilometre (km), santimetre (cm) ve milimetre (mm) gibi çeşitli birimlerde ölçülebilir ve bunların her biri metreye dayalı türetilmiş birimlerdir.\n\nÖrneğin, bir kilometre 1.000 metreye, bir santimetre ise 0,01 metreye eşittir. Bu birimler günlük yaşamda, bilimsel araştırmalarda ve mühendislikte nesnelerin boyutunu veya mesafeleri ölçmek için kullanılır."
+          }
+        }
+      }
+    },
     "Moment of Force" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -856,6 +1743,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eylemsizlik Momenti"
+          }
+        }
+      }
+    },
+    "MomentOfForceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The moment of force, also known as torque, measures the rotational effect produced by a force applied at a distance from a pivot point or axis. It quantifies how much a force tends to rotate an object around an axis.\n                \nThe SI unit for moment of force is the newton meter (N·m).\n                \nFor example, applying a force of 10 newtons at a distance of 2 meters from the pivot generates a moment of force of 20 N·m. The moment of force is crucial in mechanics for analyzing rotational motion, balancing forces, and designing mechanical systems such as engines and levers.\n                \nAccurate calculation of torque helps ensure the proper functioning and stability of structures and machinery under rotational loads."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuvvet momenti, aynı zamanda tork olarak da bilinir, bir kuvvetin bir dönme noktasından veya eksenden uzakta uygulandığında ürettiği döner etkiyi ölçer. Bu, bir kuvvetin bir nesneyi bir eksen etrafında döndürme eğilimini nicelendirir.\n\nKuvvet momentinin SI birimi newton metre'dir (N·m).\n\nÖrneğin, pivot noktasından 2 metre uzaklıkta 10 newtonluk bir kuvvet uygulamak, 20 N·m'lik bir kuvvet momenti oluşturur. Kuvvet momenti, mekanikte döner hareketi analiz etmek, kuvvetleri dengelemek ve motorlar ile kol gibi mekanik sistemleri tasarlamak için kritik öneme sahiptir.\n\nTorkun doğru hesaplanması, yapılar ve makinelerin dönme yükleri altındaki düzgün çalışmasını ve stabilitesini sağlamaya yardımcı olur."
+          }
+        }
+      }
+    },
+    "MomentOfIneritaInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moment of inertia, also known as the rotational inertia, measures an object's resistance to changes in its rotational motion about an axis. It depends on the mass distribution relative to the axis of rotation.\n                \nThe SI unit for moment of inertia is kilogram square meters (kg·m²).\n                \nFor example, a solid cylinder rotating about its central axis has a different moment of inertia compared to a hollow cylinder with the same mass and radius.\n                \nThe moment of inertia is crucial in rotational dynamics and is used to calculate angular acceleration, torque, and kinetic energy in rotating systems.\n                \nAccurate determination of moment of inertia is essential for designing and analyzing mechanical systems, including wheels, gears, and flywheels, where rotational motion plays a significant role.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eğilme momenti, aynı zamanda döner moment olarak da bilinir, bir nesnenin bir eksen etrafındaki döner hareketindeki değişikliklere karşı direncini ölçer. Bu, kütle dağılımına bağlı olarak değişir.\n\nEğilme momentinin SI birimi kilogram metrekare'dir (kg·m²).\n\nÖrneğin, merkezi eksen etrafında dönen bir katı silindirin eğilme momenti, aynı kütle ve yarıçapa sahip bir boş silindirin eğilme momentinden farklıdır.\n\nEğilme momenti, dönüş dinamiklerinde kritik bir rol oynar ve dönen sistemlerde açısal hızlanma, tork ve kinetik enerjiyi hesaplamak için kullanılır.\n\nEğilme momentinin doğru belirlenmesi, tekerlekler, dişliler ve enerji depolayıcılar gibi döner hareketin önemli olduğu mekanik sistemlerin tasarımı ve analizinde hayati öneme sahiptir."
           }
         }
       }
@@ -911,6 +1832,23 @@
         }
       }
     },
+    "PermeabilityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permeability measures a material's ability to allow fluids (liquids or gases) to pass through it. It quantifies how easily a fluid can move through a porous medium, such as soil, rock, or filter material.\n                \nThe SI unit for permeability is the square meter (m²), but it is often expressed in darcys or millidarcys in geotechnical and petroleum engineering.\n                \nFor example, a rock with high permeability allows water to flow through it easily, while a material with low permeability, such as clay, restricts fluid flow. Permeability is crucial in fields like hydrogeology, civil engineering, and materials science, affecting groundwater flow, oil extraction, and the design of filtration systems.\n                \nAccurate measurement of permeability is essential for understanding fluid dynamics, optimizing resource extraction, and managing environmental impacts."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geçirgenlik, bir malzemenin sıvıların (liquid) veya gazların içinden geçişine izin verme yeteneğini ölçer. Gözenekli bir ortamdan, örneğin toprak, kaya veya filtre malzemesi gibi, bir akışkanın ne kadar kolay hareket edebileceğini nicelendirir.\n\nGeçirgenlik için SI birimi metrekare (m²) olup, jeoteknik ve petrol mühendisliğinde genellikle darcy veya milidarcy cinsinden ifade edilir.\n\nÖrneğin, yüksek geçirgenliğe sahip bir kaya, suyun kolayca geçmesine izin verirken, kil gibi düşük geçirgenliğe sahip bir malzeme akışkanı kısıtlar. Geçirgenlik, hidrojeoloji, inşaat mühendisliği ve malzeme bilimi gibi alanlarda kritik öneme sahiptir; yer altı suyu akışı, petrol çıkarımı ve filtrasyon sistemlerinin tasarımı üzerinde etkili olur.\n\nGeçirgenliğin doğru ölçülmesi, akışkan dinamiklerini anlamak, kaynak çıkarımını optimize etmek ve çevresel etkileri yönetmek için gereklidir."
+          }
+        }
+      }
+    },
     "Please restart the app for the language change to take effect." : {
       "localizations" : {
         "tr" : {
@@ -932,6 +1870,23 @@
         }
       }
     },
+    "PowerInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Power measures the rate at which work is done or energy is transferred over time. It quantifies how quickly energy is used or produced and is a key concept in both physics and engineering.\n                \nThe SI unit for power is the watt (W), defined as one joule per second (J/s). For instance, a 100-watt light bulb consumes 100 joules of energy every second it is operating.\n                \nOther units of power include horsepower (hp), where one horsepower is approximately 745.7 watts. Power is crucial in various applications, from electrical systems and mechanical engines to energy management and renewable resources.\n                \nUnderstanding power helps in designing efficient systems and optimizing performance in both industrial and everyday contexts."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güç, iş yapma veya enerjiyi belirli bir zaman diliminde aktarma hızını ölçer. Enerjinin ne kadar hızlı kullanıldığını veya üretildiğini niceliksel olarak ifade eder ve hem fizik hem de mühendislikte önemli bir kavramdır.\n\nGüç için SI birimi watt'tır (W), bir watt, saniyede bir joule (J/s) enerji anlamına gelir. Örneğin, 100 watt'lık bir ampul, çalıştığı her saniye 100 joule enerji tüketir.\n\nGücün diğer birimleri arasında beygir gücü (hp) bulunur; bir beygir gücü yaklaşık olarak 745,7 watt'a eşittir. Güç, elektrik sistemlerinden mekanik motorlara, enerji yönetiminden yenilenebilir kaynaklara kadar çeşitli uygulamalarda hayati öneme sahiptir.\n\nGücü anlamak, hem endüstriyel hem de günlük bağlamlarda verimli sistemler tasarlamak ve performansı optimize etmek için kritik bir rol oynar."
+          }
+        }
+      }
+    },
     "Pressure" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -939,6 +1894,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Basınç"
+          }
+        }
+      }
+    },
+    "PressureInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pressure is the force exerted per unit area on the surface of an object. It is a fundamental concept in physics and engineering, relevant to gases, liquids, and solids.\n                \nThe SI unit of pressure is the pascal (Pa), defined as one newton per square meter (N/m²).\n                \nPressure can also be measured in other units, such as atmospheres (atm), where one atmosphere equals 101,325 pascals, and bar, where one bar is equal to 100,000 pascals. \n\nPressure is crucial in various applications, including fluid dynamics, meteorology, and engineering.\n                \nIt helps in understanding phenomena like weather patterns, hydraulic systems, and gas laws, and is essential for designing equipment that operates under different pressure conditions."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basınç, bir nesnenin yüzeyine birim alan başına uygulanan kuvveti ifade eder. Gazlar, sıvılar ve katılarla ilgili fizik ve mühendislikte temel bir kavramdır.\n\nBasıncın SI birimi, metrekare başına bir newton olarak tanımlanan paskaldır (Pa).\n\nBasınç, aynı zamanda bir atmosferin 101.325 paskala eşit olduğu atmosfer (atm) veya bir barın 100.000 paskala eşit olduğu bar gibi diğer birimlerle de ölçülebilir.\n\nBasınç, akışkanlar dinamiği, meteoroloji ve mühendislik gibi çeşitli uygulamalarda kritik öneme sahiptir.\n\nHava durumu modelleri, hidrolik sistemler ve gaz yasaları gibi olguları anlamada yardımcı olur ve farklı basınç koşullarında çalışan ekipmanların tasarlanması için gereklidir."
           }
         }
       }
@@ -1003,6 +1975,74 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Radyasyon - Maruziyet"
+          }
+        }
+      }
+    },
+    "RadiationAbsorbedDoseInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radiation absorbed dose measures the amount of energy deposited by ionizing radiation per unit mass of tissue. It quantifies the extent of radiation exposure experienced by an object or biological tissue.\n                \nThe SI unit for absorbed dose is the gray (Gy), where one gray equals one joule of energy absorbed per kilogram of tissue. For example, an absorbed dose of 1 Gy means that 1 joule of energy has been deposited in 1 kilogram of tissue.\n                \nThis measurement is crucial in fields like radiology and radiation therapy to assess and control the amount of radiation delivered to patients or materials.\n                \nAccurate determination of absorbed dose is essential for effective medical treatments, safety assessments, and minimizing potential radiation damage."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Absorbe edilen doz, iyonlaştırıcı radyasyon tarafından birim kütle başına dokuya bırakılan enerji miktarını ölçer. Bu, bir nesne veya biyolojik dokunun maruz kaldığı radyasyon miktarını nicelendirir.\n\nAbsorbe edilen dozun SI birimi gray (Gy) olup, bir gray, bir kilogram dokuya emilen bir joule enerjiye eşittir. Örneğin, 1 Gy'lik bir absorbe edilen doz, 1 kilogram dokuya 1 joule enerji bırakıldığı anlamına gelir.\n\nBu ölçüm, radyoloji ve radyasyon terapisi gibi alanlarda, hastalara veya materyallere uygulanan radyasyon miktarını değerlendirmek ve kontrol etmek için kritik öneme sahiptir.\n\nAbsorbe edilen dozun doğru bir şekilde belirlenmesi, etkili tıbbi tedaviler, güvenlik değerlendirmeleri ve potansiyel radyasyon hasarını minimize etmek için gereklidir."
+          }
+        }
+      }
+    },
+    "RadiationActivityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radiation activity measures the rate at which radioactive decay occurs in a material, reflecting how much radiation is emitted over a specific period. It quantifies the number of disintegrations or transformations of radioactive atoms per unit time.\n                \nThe SI unit for radiation activity is the becquerel (Bq), where one becquerel equals one disintegration per second. For example, a sample with an activity of 100 Bq means it emits 100 radiation events per second.\n                \nRadiation activity is crucial in monitoring and managing radioactive materials, ensuring safety in nuclear power, medical treatments, and research.\n                \nAccurate measurement of activity helps assess exposure risks, manage radioactive waste, and ensure compliance with safety regulations."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyasyon aktivitesi, bir materyalde radyoaktif bozulma oranını ölçer ve belirli bir süre boyunca yayılan radyasyon miktarını yansıtır. Bu, radyoaktif atomların birim zamanda kaç tane parçalanma veya dönüşüm gerçekleştirdiğini nicelendirir.\n\nRadyasyon aktivitesinin SI birimi becquerel (Bq) olup, bir becquerel, bir saniyede bir parçalanma anlamına gelir. Örneğin, 100 Bq aktiviteye sahip bir örnek, saniyede 100 radyasyon olayı yayar.\n\nRadyasyon aktivitesi, radyoaktif materyallerin izlenmesi ve yönetilmesi için kritik öneme sahiptir ve nükleer enerji, tıbbi tedaviler ve araştırmalarda güvenliğin sağlanmasına yardımcı olur.\n\nAktivitenin doğru bir şekilde ölçülmesi, maruz kalma risklerini değerlendirmek, radyoaktif atıkları yönetmek ve güvenlik düzenlemelerine uyumu sağlamak için gereklidir."
+          }
+        }
+      }
+    },
+    "RadiationExposureInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radiation exposure refers to the amount of ionizing radiation that a person or object encounters over a specific period. It measures the potential for radiation to interact with and affect biological tissues. \n                \nThe SI unit for radiation exposure is the coulomb per kilogram (C/kg), but it is often measured in roentgens (R) in practical applications, where 1 R equals approximately 2.58 × 10⁻⁴ C/kg.\n                \nFor example, an exposure of 1 roentgen indicates that 1 unit of charge has been deposited per kilogram of air. Radiation exposure is critical for assessing safety and health risks in environments where radiation is present, such as in medical imaging, nuclear industries, and research laboratories.\n                \nProper measurement and management of radiation exposure help to minimize health risks and ensure safe practices."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyasyon maruziyeti, bir kişi veya nesnenin belirli bir süre boyunca karşılaştığı iyonlaştırıcı radyasyon miktarını ifade eder. Bu, radyasyonun biyolojik dokularla etkileşim potansiyelini ölçer.\n\nRadyasyon maruziyetinin SI birimi coulomb per kilogram (C/kg) olup, pratik uygulamalarda genellikle roentgen (R) cinsinden ölçülür; 1 R yaklaşık olarak 2.58 × 10⁻⁴ C/kg'ye eşittir.\n\nÖrneğin, 1 roentgen maruziyeti, hava kilogramı başına 1 birim yükün depo edildiğini gösterir. Radyasyon maruziyeti, radyasyonun mevcut olduğu ortamlarda, örneğin tıbbi görüntüleme, nükleer endüstriler ve araştırma laboratuvarlarında güvenlik ve sağlık risklerini değerlendirmek için kritik öneme sahiptir.\n\nRadyasyon maruziyetinin doğru bir şekilde ölçülmesi ve yönetilmesi, sağlık risklerini minimize etmek ve güvenli uygulamaları sağlamak için önemlidir."
+          }
+        }
+      }
+    },
+    "RadiationInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radiation refers to the emission and transmission of energy in the form of waves or particles through space or a medium. It encompasses various types of energy, including electromagnetic radiation (such as light, radio waves, and X-rays) and particulate radiation (such as alpha and beta particles).\n                \nThe SI unit for radiation dose is the sievert (Sv), which quantifies the biological effect of ionizing radiation.\n                \nFor instance, X-rays and gamma rays are forms of high-energy electromagnetic radiation, while alpha and beta particles are types of particulate radiation. \n                \nRadiation is crucial in fields like medicine, where it is used in diagnostic imaging and cancer treatment, as well as in nuclear power and research.\n                \nUnderstanding radiation helps in managing its safe use and minimizing exposure to harmful effects."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radyasyon, enerji emisyonu ve iletimini dalgalar veya parçacıklar şeklinde boşlukta veya bir ortamda ifade eder. Elektromanyetik radyasyon (ışık, radyo dalgaları ve X-ışınları gibi) ve parçacık radyasyonu (alfa ve beta parçacıkları gibi) gibi çeşitli enerji türlerini kapsar.\n\nRadyasyon dozunun SI birimi sievert (Sv) olup, iyonlaştırıcı radyasyonun biyolojik etkisini ölçer.\n\nÖrneğin, X-ışınları ve gama ışınları yüksek enerjili elektromanyetik radyasyonun biçimidir, alfa ve beta parçacıkları ise parçacık radyasyonunun türlerindendir.\n\nRadyasyon, tıp gibi alanlarda tanısal görüntüleme ve kanser tedavisi gibi uygulamalarda, nükleer enerji ve araştırmalarda önemlidir.\n\nRadyasyonun anlaşılması, güvenli kullanımını yönetmeye ve zararlı etkilerden kaçınmaya yardımcı olur."
           }
         }
       }
@@ -1079,6 +2119,23 @@
         }
       }
     },
+    "SpecificVolumeInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specific volume is a property that measures the volume occupied by a unit mass of a substance. It is the reciprocal of density and provides insights into the space a given mass occupies.\n                \nThe SI unit for specific volume is cubic meters per kilogram (m³/kg).\n                \nFor example, if a substance has a density of 2 kg/m³, its specific volume would be 0.5 m³/kg, meaning one kilogram of the substance occupies 0.5 cubic meters.\n                \nSpecific volume is crucial in thermodynamics and fluid mechanics for analyzing the behavior of gases and liquids, especially in processes involving changes in pressure and temperature.\n\nAccurate measurement of specific volume helps in designing systems like compressors, engines, and various other equipment where precise volume and mass relationships are important."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özgül hacim, bir birim kütle başına kaplanan hacmi ölçen bir özelliktir. Yoğunluğun tersidir ve belirli bir kütlenin kapladığı alan hakkında bilgi verir.\n\nÖzgül hacmin SI birimi metreküp/kilogram'dır (m³/kg).\n\nÖrneğin, bir madde 2 kg/m³ yoğunluğa sahipse, özgül hacmi 0.5 m³/kg olur; bu, bir kilogram maddeyi 0.5 metreküp hacmin kapladığı anlamına gelir.\n\nÖzgül hacim, termodinamik ve akışkanlar mekaniğinde, özellikle basınç ve sıcaklık değişimlerini içeren süreçlerde gazların ve sıvıların davranışını analiz etmek için kritik öneme sahiptir.\n\nÖzgül hacmin doğru ölçümü, kompresörler, motorlar ve hassas hacim ve kütle ilişkilerinin önemli olduğu diğer ekipmanların tasarımında yardımcı olur."
+          }
+        }
+      }
+    },
     "Speed" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1090,6 +2147,23 @@
         }
       }
     },
+    "SpeedInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Speed measures the rate at which an object moves or changes its position over time. It is a fundamental concept in physics and everyday life, describing how quickly something travels. \n                \nThe SI unit for speed is meters per second (m/s), representing the distance covered in meters within one second.\n                \nOther common units include kilometers per hour (km/h) and miles per hour (mph). For example, a car traveling at 60 km/h covers 60 kilometers in one hour.\n                \nSpeed is essential in various applications, from vehicle performance and sports to scientific experiments and navigation. \n                \nUnderstanding speed is crucial for analyzing motion, optimizing performance, and ensuring safety in different contexts."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hız, bir nesnenin hareket ettiği veya zaman içinde konumunu değiştirdiği oranı ölçer. Fizik ve günlük yaşamda temel bir kavramdır ve bir şeyin ne kadar hızlı hareket ettiğini açıklar.\n\nHızın SI birimi, bir saniye içinde metre cinsinden kat edilen mesafeyi temsil eden metre/saniyedir (m/s).\n\nDiğer yaygın birimler arasında kilometre/saat (km/h) ve mil/saat (mph) bulunur. Örneğin, saatte 60 km hızla giden bir araba, bir saatte 60 kilometre yol kat eder.\n\nHız, araç performansından spora, bilimsel deneylerden navigasyona kadar çeşitli uygulamalarda önemlidir.\n\nHızı anlamak, hareketi analiz etmek, performansı optimize etmek ve farklı durumlarda güvenliği sağlamak için hayati öneme sahiptir."
+          }
+        }
+      }
+    },
     "Spesific Heat Capacity" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1097,6 +2171,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Özgül Isı Kapasitesi"
+          }
+        }
+      }
+    },
+    "SpesificHeatCapacityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specific heat capacity is the amount of heat required to raise the temperature of a unit mass of a substance by one degree Celsius (or one kelvin). It is expressed in units such as joules per kilogram per degree Celsius (J/kg·°C) or joules per kilogram per kelvin (J/kg·K).\n                \nFor example, the specific heat capacity of water is approximately 4,186 J/kg·K, meaning it takes 4,186 joules to raise the temperature of one kilogram of water by one kelvin.\n                \nSpecific heat capacity is crucial in thermodynamics and heat transfer, as it determines how a substance reacts to heat and affects processes such as heating, cooling, and phase changes.\n                \nAccurate knowledge of specific heat capacity is essential for designing thermal systems, calculating energy requirements, and understanding material behavior in various scientific and engineering applications."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özgül ısı kapasitesi, bir maddenin sıcaklığını bir derece Celsius (veya bir Kelvin) artırmak için gereken ısı miktarını ölçen bir özelliktir. Bu özellik genellikle joule/kg·°C (J/kg·°C) veya joule/kg·K (J/kg·K) birimlerinde ifade edilir.\n\nÖrneğin, suyun özgül ısı kapasitesi yaklaşık 4.186 J/kg·K'dir, bu da bir kilogram suyun sıcaklığını bir Kelvin artırmak için 4.186 joule ısı gerektiği anlamına gelir.\n\nÖzgül ısı kapasitesi, termodinamik ve ısı transferinde kritik bir öneme sahiptir, çünkü bir maddenin ısıya nasıl tepki verdiğini belirler ve ısıtma, soğutma ve faz değişimleri gibi süreçleri etkiler.\n\nÖzgül ısı kapasitesinin doğru bir şekilde bilinmesi, termal sistemlerin tasarımı, enerji gereksinimlerinin hesaplanması ve çeşitli bilimsel ve mühendislik uygulamalarında malzeme davranışının anlaşılması için esastır."
           }
         }
       }
@@ -1144,6 +2235,57 @@
         }
       }
     },
+    "SurfaceChargeDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surface charge density measures the amount of electric charge per unit area on a surface. It quantifies how charge is distributed over a two-dimensional surface, such as that of a charged plate or conductor.\n                \nThe SI unit for surface charge density is coulombs per square meter (C/m²). For example, if a charged plate has a surface charge density of 3 µC/m², it means there are 3 microcoulombs of charge distributed over each square meter of the plate’s surface.\n                \nSurface charge density is important in electrostatics for understanding the electric field and potential created by charged surfaces, as well as in applications such as capacitors, sensors, and electrostatic precipitators.\n                \nAccurate measurement and control of surface charge density are essential for designing and optimizing devices that rely on surface charge effects."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Evet, yüzey yük yoğunluğu, bir yüzeyde birim alan başına bulunan elektrik yük miktarını ölçer. Yüzeydeki yüklerin nasıl dağıldığını iki boyutlu bir yüzey üzerinde gösterir.\n\nSI birimi coulombs/metrekare (C/m²) olarak ifade edilir. Örneğin, yüklenmiş bir plakanın yüzey yük yoğunluğu 3 µC/m² ise, bu, plakanın her bir metrekarelik yüzeyinde 3 mikroculomb yük bulunduğu anlamına gelir.\n\nYüzey yük yoğunluğu, elektrostatikte yüklenmiş yüzeylerin yarattığı elektrik alanı ve potansiyeli anlamada önemlidir. Ayrıca, kapasitörler, sensörler ve elektrostatik precipitatorler gibi uygulamalarda da önemli bir rol oynar.\n\nYüzey yük yoğunluğunun doğru bir şekilde ölçülmesi ve kontrol edilmesi, yüzey yük etkilerine dayanan cihazların tasarımı ve optimizasyonu için gereklidir."
+          }
+        }
+      }
+    },
+    "SurfaceCurrentDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surface current density measures the amount of electric current flowing per unit length along a surface. It indicates how much current is distributed over a two-dimensional surface, such as a conductor or a thin film.\n                \nThe SI unit for surface current density is amperes per meter (A/m).\n                \nFor example, if a thin film has a surface current density of 4 A/m, it means that each meter length of the surface carries a current of 4 amperes.\n                \nSurface current density is important in understanding and designing various electrical and electronic devices, such as thin-film conductors, antennas, and superconductors.\n                \nAccurate measurement and management of surface current density are essential for optimizing the performance and efficiency of devices where current distribution over a surface impacts their functionality."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yüzey akım yoğunluğu, bir yüzey boyunca birim uzunluk başına akan elektrik akım miktarını ölçer. İki boyutlu bir yüzey üzerindeki, örneğin bir iletken veya ince film üzerindeki akımın nasıl dağıldığını gösterir.\n\nSI birimi amper/metre (A/m) olarak ifade edilir. Örneğin, ince bir filmde yüzey akım yoğunluğu 4 A/m ise, bu, yüzeyin her bir metre uzunluğunun 4 amper akım taşıdığı anlamına gelir.\n\nYüzey akım yoğunluğu, ince film iletkenleri, antenler ve süperiletkenler gibi çeşitli elektriksel ve elektronik cihazların tasarımı ve anlaşılması açısından önemlidir. \n\nYüzey akım yoğunluğunun doğru bir şekilde ölçülmesi ve yönetilmesi, akımın yüzey üzerinde nasıl dağıldığının cihazların performansını ve verimliliğini nasıl etkilediğini optimize etmek için gereklidir."
+          }
+        }
+      }
+    },
+    "SurfaceTensionInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surface tension is a physical phenomenon where the surface of a liquid behaves like a stretched elastic membrane. It is caused by the cohesive forces between liquid molecules at the surface, which create a tendency for the liquid to minimize its surface area. \n                \nThe SI unit for surface tension is the newton per meter (N/m).\n                \nFor example, water has a relatively high surface tension, which allows it to form droplets and enables small objects, like a paperclip, to float on its surface if placed gently. \n                \nSurface tension is significant in various processes and applications, including the formation of bubbles, the behavior of liquids in capillary tubes, and the design of detergents and coatings.\n                \nUnderstanding and measuring surface tension are crucial for optimizing chemical reactions, improving fluid handling, and enhancing material properties.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yüzey gerilimi, bir sıvının yüzeyinin gerilmiş elastik bir zar gibi davrandığı fiziksel bir olgudur. Bu durum, sıvının yüzeyindeki moleküller arasındaki kohezif kuvvetlerin bir sonucu olarak ortaya çıkar ve sıvının yüzey alanını minimize etme eğilimi yaratır.\n\nYüzey geriliminin SI birimi newton/metre (N/m) olarak ifade edilir.\n\nÖrneğin, su yüksek bir yüzey gerilimine sahiptir, bu da suyun damlacıklar halinde oluşmasını sağlar ve dikkatlice bırakıldığında küçük nesnelerin, örneğin bir ataşın, yüzeyde yüzmesini mümkün kılar.\n\nYüzey gerilimi, baloncukların oluşumu, sıvıların kapiler tüplerdeki davranışı ve deterjanlar ile kaplamaların tasarımı gibi çeşitli süreçler ve uygulamalar açısından önemlidir.\n\nYüzey gerilimini anlamak ve ölçmek, kimyasal reaksiyonları optimize etmek, akışkan işleme süreçlerini iyileştirmek ve malzeme özelliklerini geliştirmek için kritik öneme sahiptir."
+          }
+        }
+      }
+    },
     "Temperature" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1162,6 +2304,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sıcaklık Aralığı"
+          }
+        }
+      }
+    },
+    "TemperatureInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperature measures the thermal energy or heat within a substance, indicating how hot or cold it is. It is a fundamental physical quantity used in various scientific and everyday contexts.\n                \nThe SI unit for temperature is the kelvin (K), where zero kelvin (0 K) represents absolute zero, the point at which atomic motion ceases.\n                \nTemperature is also commonly measured in degrees Celsius (°C) and degrees Fahrenheit (°F). In the Celsius scale, water freezes at 0°C and boils at 100°C under standard atmospheric conditions. In Fahrenheit, water freezes at 32°F and boils at 212°F.\n                \nAccurate temperature measurement is vital for processes ranging from weather forecasting to chemical reactions and everyday temperature control."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sıcaklık, bir maddenin içinde bulunan termal enerji veya ısıyı ölçer ve bir maddenin ne kadar sıcak veya soğuk olduğunu gösterir. Bilimsel ve günlük birçok bağlamda kullanılan temel bir fiziksel büyüklüktür.\n\nSıcaklık için SI birimi, atomik hareketin durduğu nokta olan mutlak sıfırı temsil eden kelvindir (K).\n\nSıcaklık, aynı zamanda yaygın olarak santigrat derece (°C) ve Fahrenheit derece (°F) cinsinden de ölçülür. Santigrat ölçeğinde, su 0°C'de donar ve standart atmosferik koşullar altında 100°C'de kaynar. Fahrenheit ölçeğinde ise su 32°F'de donar ve 212°F'de kaynar.\n\nHava tahmininden kimyasal reaksiyonlara ve günlük sıcaklık kontrolüne kadar birçok süreç için doğru sıcaklık ölçümü hayati önem taşır."
           }
         }
       }
@@ -1199,6 +2358,57 @@
         }
       }
     },
+    "ThermalConductivityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thermal conductivity measures a material's ability to conduct heat. It quantifies the rate at which heat flows through a material per unit area per unit temperature gradient.\n                \nThe SI unit for thermal conductivity is watts per meter per degree Celsius (W/m·°C) or watts per meter per kelvin (W/m·K).\n                \nFor example, materials like copper have high thermal conductivity, meaning they transfer heat efficiently, while materials like rubber have low thermal conductivity, acting as effective insulators.\n                \nThermal conductivity is crucial in fields such as materials science, engineering, and building construction, influencing the design of thermal insulation, heat exchangers, and electronic cooling systems.\n                \nAccurate measurement of thermal conductivity helps in selecting appropriate materials for thermal management and ensuring energy efficiency in various applications."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termal iletkenlik, bir malzemenin ısıyı iletme yeteneğini ölçer. Bu, ısı transferinin malzeme boyunca birim alan başına ve birim sıcaklık gradyanı başına ne kadar hızlı gerçekleştiğini nicelendirir.\n\nSI birimi watt/metre/kelvin (W/m·K) veya watt/metre/derece Celsius (W/m·°C) olarak ifade edilir.\n\nÖrneğin, bakır gibi malzemeler yüksek termal iletkenliğe sahip olup ısıyı verimli bir şekilde iletirken, kauçuk gibi malzemeler düşük termal iletkenliğe sahiptir ve etkili yalıtkanlar olarak görev yapar.\n\nTermal iletkenlik, malzeme bilimi, mühendislik ve bina inşaatı gibi alanlarda çok önemlidir. Termal yalıtım, ısı değiştiriciler ve elektronik soğutma sistemlerinin tasarımını etkiler.\n\nTermal iletkenliğin doğru ölçülmesi, termal yönetim için uygun malzemelerin seçilmesine ve çeşitli uygulamalarda enerji verimliliğinin sağlanmasına yardımcı olur."
+          }
+        }
+      }
+    },
+    "ThermalExpansionInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thermal expansion refers to the increase in volume or length of a material as its temperature rises. It occurs because most materials expand when heated due to the increased vibration of their atoms or molecules.\n                \nThe degree of expansion is characterized by the coefficient of thermal expansion, which is typically expressed in units such as per degree Celsius (1/°C) or per kelvin (1/K).\n                \nFor example, if a metal rod has a coefficient of thermal expansion of 12 × 10⁻⁶ /°C, its length will increase by 12 micrometers for every meter of length for each degree Celsius increase in temperature.\n                \nUnderstanding and measuring thermal expansion is crucial in engineering and construction, as it helps in designing structures and materials that can accommodate temperature-induced changes, preventing damage and ensuring structural integrity.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termal genleşme, bir malzemenin sıcaklığı arttıkça hacminin veya uzunluğunun artmasıdır. Bu, çoğu malzemenin ısıtıldığında atomlarının veya moleküllerinin titreşimlerinin artması nedeniyle meydana gelir.\n\nGenleşme derecesi, genellikle derece Celsius başına (1/°C) veya kelvin başına (1/K) gibi birimlerde ifade edilen termal genleşme katsayısı ile karakterize edilir.\n\nÖrneğin, bir metal çubuğun termal genleşme katsayısı 12 × 10⁻⁶ /°C ise, sıcaklık her bir derece Celsius arttığında çubuğun uzunluğu her metre başına 12 mikrometre artacaktır.\n\nTermal genleşmeyi anlamak ve ölçmek, mühendislik ve inşaatta çok önemlidir. Bu, yapıların ve malzemelerin sıcaklık kaynaklı değişikliklere uyum sağlamasını sağlamak, hasarı önlemek ve yapısal bütünlüğü korumak için tasarım yapmayı kolaylaştırır."
+          }
+        }
+      }
+    },
+    "ThermalResistanceInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thermal resistance measures a material's ability to resist the flow of heat. It quantifies how well a material or assembly insulates against heat transfer and is the inverse of thermal conductivity.\n                \nThe SI unit for thermal resistance is square meters Kelvin per watt (m²·K/W).\n                \nFor example, if a material has a thermal resistance of 2 m²·K/W, it means that 1 watt of heat is conducted through 2 square meters of the material for each degree Kelvin of temperature difference.\n                \nThermal resistance is crucial in building construction, electronics, and thermal management applications, as it helps in designing insulation, optimizing heat dissipation, and enhancing energy efficiency.\n                \nAccurate measurement of thermal resistance is essential for selecting appropriate materials and ensuring effective thermal control in various systems and environments."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Termal direnç, bir malzemenin ısı akışına karşı direnç gösterme yeteneğini ölçer. Isı transferine karşı ne kadar iyi yalıttığını ve termal iletkenliğin tersini belirler.\n\nSI birimi, metrekare Kelvin başına watt (m²·K/W) olarak ifade edilir.\n\nÖrneğin, bir malzemenin termal direnci 2 m²·K/W ise, bu, her bir derece Kelvin sıcaklık farkı başına malzemenin 2 metrekarelik alanı boyunca 1 watt ısının iletildiği anlamına gelir.\n\nTermal direnç, bina inşaatında, elektroniklerde ve termal yönetim uygulamalarında çok önemlidir. Bu, yalıtım tasarımında, ısı dağılımının optimize edilmesinde ve enerji verimliliğinin artırılmasında yardımcı olur.\n\nTermal direncin doğru ölçülmesi, uygun malzemelerin seçilmesi ve çeşitli sistemlerde ve ortamlarındaki etkili termal kontrolün sağlanması için gereklidir."
+          }
+        }
+      }
+    },
     "To Currency" : {
       "localizations" : {
         "tr" : {
@@ -1226,6 +2436,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tork"
+          }
+        }
+      }
+    },
+    "TorqueInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Torque, also known as the moment of force, measures the tendency of a force to rotate an object around an axis or pivot point. It is a crucial concept in rotational dynamics and engineering.\n                \nThe SI unit for torque is the newton meter (N·m), representing the force applied at a perpendicular distance from the axis of rotation.\n                \nFor example, tightening a bolt with a wrench involves applying a force at a certain distance from the bolt, generating torque that secures the bolt in place.\n                \nTorque is essential for understanding mechanical systems, including engines, gears, and various machinery.\n                \nAccurate torque measurement ensures proper operation and efficiency of rotating equipment and helps in balancing and controlling rotational forces."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tork, aynı zamanda kuvvet momenti olarak da bilinir, bir kuvvetin bir nesneyi bir eksen veya dönme noktasının etrafında döndürme eğilimini ölçer. Bu, döner dinamikler ve mühendislikte kritik bir kavramdır.\n\nTorkun SI birimi newton metre'dir (N·m), bu da dönme ekseninden dik bir mesafede uygulanan kuvveti temsil eder.\n\nÖrneğin, bir anahtar ile bir somunu sıkmak, belirli bir mesafede kuvvet uygulamayı içerir ve bu kuvvet, somunun yerinde sıkışmasını sağlayan tork oluşturur.\n\nTork, motorlar, dişliler ve çeşitli makineler gibi mekanik sistemleri anlamak için gereklidir.\n\nDoğru tork ölçümü, dönen ekipmanların düzgün çalışmasını ve verimliliğini sağlar ve döner kuvvetlerin dengelenmesi ve kontrol edilmesine yardımcı olur."
           }
         }
       }
@@ -1303,6 +2530,40 @@
         }
       }
     },
+    "ViscosityDynamicInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dynamic viscosity measures a fluid's resistance to shear or flow. It quantifies the internal friction between adjacent layers of a fluid as they move relative to each other.\n                \nThe SI unit for dynamic viscosity is the pascal-second (Pa·s), but it is also commonly expressed in poise (P), where 1 P = 0.1 Pa·s.\n                \nFor example, honey has a high dynamic viscosity compared to water, meaning it flows more slowly and resists deformation more.\n                \nDynamic viscosity is crucial in various applications such as fluid dynamics, engineering, and manufacturing, influencing how fluids are pumped, processed, and utilized.\n                \nAccurate measurement of dynamic viscosity is essential for designing efficient systems, optimizing fluid handling, and ensuring product quality in industries like petrochemicals, food processing, and pharmaceuticals."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dinamik viskozite, bir akışkanın kayma veya akmaya karşı gösterdiği dirençtir. Bu, akışkanın ardışık katmanları arasındaki iç sürtünmeyi ölçer, bu katmanlar birbirine göre hareket ederken ortaya çıkar.\n\nDinamik viskozitenin SI birimi pascal-saniye (Pa·s) olarak ifade edilir, ancak genellikle poise (P) cinsinden de ifade edilir; burada 1 P = 0.1 Pa·s'dir.\n\nÖrneğin, bal, suya kıyasla yüksek bir dinamik viskoziteye sahiptir; bu da balın daha yavaş aktığı ve şekil değişimine karşı daha fazla direndiği anlamına gelir.\n\nDinamik viskozite, akışkan dinamiği, mühendislik ve üretim gibi çeşitli uygulamalar açısından kritiktir ve akışkanların pompalanma, işlenme ve kullanma şekillerini etkiler.\n\nDinamik viskozitenin doğru ölçülmesi, verimli sistemler tasarlamak, akışkan işleme süreçlerini optimize etmek ve ürün kalitesini sağlamak için önemlidir; özellikle petrokimya, gıda işleme ve ilaç sanayi gibi endüstrilerde."
+          }
+        }
+      }
+    },
+    "ViscosityKinematicInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kinematic viscosity measures a fluid's resistance to flow under the influence of gravity. It represents the ratio of dynamic viscosity to the fluid's density and is expressed in square meters per second (m²/s) or centistokes (cSt), where 1 cSt = 1 × 10⁻⁶ m²/s.\n                \nFor example, motor oil with a kinematic viscosity of 10 cSt flows more easily than oil with a viscosity of 100 cSt.\n                \nKinematic viscosity is important in various applications, such as lubrication, hydraulic systems, and fluid dynamics, as it affects how fluids move and interact in different conditions.\n                \nAccurate measurement of kinematic viscosity is essential for ensuring proper fluid performance, optimizing system efficiency, and maintaining the quality of products in industries like automotive, aerospace, and manufacturing.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kinematik viskozite, bir akışkanın yerçekimi etkisi altındaki akışa karşı gösterdiği direnci ölçer. Dinamik viskozitenin akışkanın yoğunluğuna oranı olarak temsil edilir ve genellikle kare metre per saniye (m²/s) veya santistokes (cSt) cinsinden ifade edilir; burada 1 cSt = 1 × 10⁻⁶ m²/s'dir.\n\nÖrneğin, 10 cSt kinematik viskoziteye sahip motor yağı, 100 cSt viskoziteye sahip yağdan daha kolay akar.\n\nKinematik viskozite, yağlama, hidrolik sistemler ve akışkan dinamiği gibi çeşitli uygulamalarda önemlidir, çünkü akışkanların farklı koşullarda nasıl hareket ettiğini ve etkileştiğini etkiler.\n\nKinematik viskozitenin doğru ölçülmesi, uygun akışkan performansını sağlamak, sistem verimliliğini optimize etmek ve otomotiv, havacılık ve üretim gibi endüstrilerde ürün kalitesini korumak için esastır."
+          }
+        }
+      }
+    },
     "Volume" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1336,6 +2597,57 @@
         }
       }
     },
+    "VolumeChargeDensityInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume charge density measures the amount of electric charge per unit volume within a three-dimensional region of space. It quantifies how charge is distributed throughout a volume, such as inside a charged object or a semiconductor.\n                \nThe SI unit for volume charge density is coulombs per cubic meter (C/m³). For example, if a region has a volume charge density of 5 µC/m³, it means there are 5 microcoulombs of charge distributed throughout each cubic meter of that region.\n                \nVolume charge density is crucial in electrostatics for understanding the electric field and potential created by charges distributed in a volume, as well as in applications like dielectric materials and charge storage devices.\n                \nAccurate measurement of volume charge density is essential for predicting electric fields and designing devices that rely on volumetric charge distributions."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacimsel yük yoğunluğu, üç boyutlu bir uzay bölgesinde birim hacim başına düşen elektrik yük miktarını ölçer. Yükün bir hacim boyunca nasıl dağıldığını, örneğin bir yüklü nesne veya bir yarı iletken içindeki yükü nicelendirir.\n\nSI birimi coulomb/metreküp (C/m³) olarak ifade edilir. Örneğin, bir bölge hacimsel yük yoğunluğu 5 µC/m³ ise, bu, bölgenin her bir metreküplük kısmında 5 mikroculomb yük bulunduğu anlamına gelir.\n\nHacimsel yük yoğunluğu, elektrostatik alan ve potansiyel ile yüklerin hacim boyunca nasıl dağıldığını anlamak için kritik öneme sahiptir. Ayrıca, dielektrik malzemeler ve yük depolama cihazları gibi uygulamalarda da kullanılır.\n\nHacimsel yük yoğunluğunun doğru bir şekilde ölçülmesi, elektrik alanlarının tahmin edilmesi ve hacimsel yük dağılımlarına dayanan cihazların tasarımı için gereklidir."
+          }
+        }
+      }
+    },
+    "VolumeDryInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dry volume measures the amount of space occupied by a solid substance or dry material, typically in agricultural, culinary, and scientific contexts.\n                \nUnlike liquid volume, which deals with fluids, dry volume quantifies the space taken up by non-liquid substances.\n                \nCommon units for dry volume include cubic meters (m³), liters (L), and bushels. For example, a bushel is often used in agriculture to measure grains and fruits, where one bushel is equivalent to about 35.24 liters.\n                \nAccurate measurement of dry volume is crucial for tasks such as portion control in cooking, inventory management, and agricultural yield estimation.\n                \nUnderstanding dry volume helps in efficient material handling and precise measurement in various fields.\n"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuru hacim, katı bir madde veya kuru malzemenin kapladığı alanı ölçer ve genellikle tarım, mutfak ve bilimsel bağlamlarda kullanılır.\n\nSıvı hacimden farklı olarak, kuru hacim sıvı olmayan maddelerin kapladığı alanı niceliksel olarak ifade eder.\n\nKuru hacim için yaygın birimler arasında metreküp (m³), litre (L) ve boşnak bulunur. Örneğin, tarımda tahılları ve meyveleri ölçmek için kullanılan bir boşnak, yaklaşık 35.24 litreye eşittir.\n\nKuru hacmin doğru ölçümü, yemek pişirmede porsiyon kontrolü, envanter yönetimi ve tarımsal verim tahmini gibi görevler için kritiktir.\n\nKuru hacmi anlamak, çeşitli alanlarda malzeme yönetimini verimli hale getirmek ve hassas ölçümler yapmak için yardımcı olur."
+          }
+        }
+      }
+    },
+    "VolumeInfo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume refers to the amount of three-dimensional space an object or substance occupies. It is a critical measurement in various scientific and practical applications, including fluid dynamics, engineering, and everyday life.\n                \nThe SI unit for volume is the cubic meter (m³), which represents the space occupied by a cube with sides of one meter in length.\n                \nOther common units include liters (L), where one liter equals one cubic decimeter (dm³), and milliliters (mL), where one milliliter equals one cubic centimeter (cm³). \n                \nVolume measurements are essential for determining quantities in cooking, filling containers, and calculating capacities in engineering tasks. Understanding volume is fundamental for working with liquids, gases, and solids."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hacim, bir nesnenin veya maddenin kapladığı üç boyutlu alanı ifade eder. Akışkanlar dinamiği, mühendislik ve günlük yaşam gibi çeşitli bilimsel ve pratik uygulamalarda kritik bir ölçümdür.\n\nHacim için SI birimi, kenarları birer metre uzunluğunda olan bir küpün kapladığı alanı temsil eden metreküptür (m³).\n\nDiğer yaygın birimler arasında litre (L) bulunur; bir litre, bir desimetreküp’e (dm³) eşittir, ve mililitre (mL); bir mililitre bir santimetreküp’e (cm³) eşittir.\n\nHacim ölçümleri, yemek pişirme, kapları doldurma ve mühendislik görevlerinde kapasite hesaplamaları için önemlidir. Hacim kavramını anlamak, sıvılar, gazlar ve katılarla çalışmak için temel bir beceridir."
+          }
+        }
+      }
+    },
     "Weight and Mass" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1343,6 +2655,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ağırlık ve Kütle"
+          }
+        }
+      }
+    },
+    "WelcomeDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your all-in-one solution for seamless unit conversions"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorunsuz birim dönüşümleri için hepsi bir arada çözümünüz"
+          }
+        }
+      }
+    },
+    "WelcomeTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Unit Converter"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Dönüştürücü'ye Hoş Geldiniz"
           }
         }
       }

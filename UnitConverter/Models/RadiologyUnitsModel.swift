@@ -18,10 +18,6 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         LocalizedStringKey(self.rawValue)
     }
     
-    var localizedInfo: LocalizedStringKey {
-        LocalizedStringKey("\(self.rawValue)Info")
-    }
-    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .radiation:
@@ -164,50 +160,16 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
     
-    var info: String {
+    var info: LocalizedStringKey {
         switch self {
         case .radiation:
-            return """
-                Radiation refers to the emission and transmission of energy in the form of waves or particles through space or a medium. It encompasses various types of energy, including electromagnetic radiation (such as light, radio waves, and X-rays) and particulate radiation (such as alpha and beta particles).
-                
-                The SI unit for radiation dose is the sievert (Sv), which quantifies the biological effect of ionizing radiation.
-                
-                For instance, X-rays and gamma rays are forms of high-energy electromagnetic radiation, while alpha and beta particles are types of particulate radiation. 
-                
-                Radiation is crucial in fields like medicine, where it is used in diagnostic imaging and cancer treatment, as well as in nuclear power and research.
-                
-                Understanding radiation helps in managing its safe use and minimizing exposure to harmful effects.
-                """
+            return "RadiationInfo"
         case .radiationAbsorbedDose:
-            return """
-                Radiation absorbed dose measures the amount of energy deposited by ionizing radiation per unit mass of tissue. It quantifies the extent of radiation exposure experienced by an object or biological tissue.
-                
-                The SI unit for absorbed dose is the gray (Gy), where one gray equals one joule of energy absorbed per kilogram of tissue. For example, an absorbed dose of 1 Gy means that 1 joule of energy has been deposited in 1 kilogram of tissue.
-                
-                This measurement is crucial in fields like radiology and radiation therapy to assess and control the amount of radiation delivered to patients or materials.
-                
-                Accurate determination of absorbed dose is essential for effective medical treatments, safety assessments, and minimizing potential radiation damage.
-                """
+            return "RadiationAbsorbedDoseInfo"
         case .radiationActivity:
-            return """
-                Radiation activity measures the rate at which radioactive decay occurs in a material, reflecting how much radiation is emitted over a specific period. It quantifies the number of disintegrations or transformations of radioactive atoms per unit time.
-                
-                The SI unit for radiation activity is the becquerel (Bq), where one becquerel equals one disintegration per second. For example, a sample with an activity of 100 Bq means it emits 100 radiation events per second.
-                
-                Radiation activity is crucial in monitoring and managing radioactive materials, ensuring safety in nuclear power, medical treatments, and research.
-                
-                Accurate measurement of activity helps assess exposure risks, manage radioactive waste, and ensure compliance with safety regulations.
-                """
+            return "RadiationActivityInfo"
         case .radiationExposure:
-            return """
-                Radiation exposure refers to the amount of ionizing radiation that a person or object encounters over a specific period. It measures the potential for radiation to interact with and affect biological tissues. 
-                
-                The SI unit for radiation exposure is the coulomb per kilogram (C/kg), but it is often measured in roentgens (R) in practical applications, where 1 R equals approximately 2.58 × 10⁻⁴ C/kg.
-                
-                For example, an exposure of 1 roentgen indicates that 1 unit of charge has been deposited per kilogram of air. Radiation exposure is critical for assessing safety and health risks in environments where radiation is present, such as in medical imaging, nuclear industries, and research laboratories.
-                
-                Proper measurement and management of radiation exposure help to minimize health risks and ensure safe practices.
-                """
+            return "RadiationExposureInfo"
         }
     }
     
