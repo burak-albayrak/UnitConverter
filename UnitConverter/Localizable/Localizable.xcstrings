@@ -33,6 +33,16 @@
         }
       }
     },
+    "a.u. of length" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "uzunluk birimi"
+          }
+        }
+      }
+    },
     "About" : {
       "localizations" : {
         "tr" : {
@@ -144,6 +154,16 @@
         }
       }
     },
+    "aln" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aln"
+          }
+        }
+      }
+    },
     "Angle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -184,6 +204,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Angola Kvanzası"
+          }
+        }
+      }
+    },
+    "angstrom" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ångström"
           }
         }
       }
@@ -306,11 +336,21 @@
       "localizations" : {
         "en" : {
           "stringUnit" : {
-              "state" : "translated",
+            "state" : "translated",
             "value" : "Ermeni Dramı"
-            }
+          }
         }
+      }
+    },
+    "arpent" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "arpent"
+          }
         }
+      }
     },
     "Aruban Florin" : {
       "localizations" : {
@@ -324,6 +364,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aruba Florini"
+          }
+        }
+      }
+    },
+    "astronomical unit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "astronomik birim"
+          }
+        }
+      }
+    },
+    "attometer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "attometre"
           }
         }
       }
@@ -424,6 +484,16 @@
         }
       }
     },
+    "barleycorn" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "arpa tanesi"
+          }
+        }
+      }
+    },
     "Belarusian Ruble" : {
       "localizations" : {
         "en" : {
@@ -484,6 +554,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Butan Ngultrumu"
+          }
+        }
+      }
+    },
+    "Bohr radius" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bohr yarıçapı"
           }
         }
       }
@@ -626,6 +706,16 @@
         }
       }
     },
+    "caliber" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kalibre"
+          }
+        }
+      }
+    },
     "Cambodian Riel" : {
       "localizations" : {
         "en" : {
@@ -734,6 +824,26 @@
         }
       }
     },
+    "centiinch" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "santiminç"
+          }
+        }
+      }
+    },
+    "centimeter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "santimetre"
+          }
+        }
+      }
+    },
     "Central African CFA Franc" : {
       "localizations" : {
         "en" : {
@@ -762,6 +872,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CFP Frangı"
+          }
+        }
+      }
+    },
+    "chain" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zincir"
+          }
+        }
+      }
+    },
+    "chain (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "zincir (ABD araştırma)"
           }
         }
       }
@@ -1028,6 +1158,26 @@
         }
       }
     },
+    "cubit (Greek)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dirsek (Yunan)"
+          }
+        }
+      }
+    },
+    "cubit (UK)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dirsek (İngiltere)"
+          }
+        }
+      }
+    },
     "Currency" : {
       "localizations" : {
         "tr" : {
@@ -1121,6 +1271,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Koyu Mod"
+          }
+        }
+      }
+    },
+    "decimeter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "desimetre"
+          }
+        }
+      }
+    },
+    "dekameter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dekametre"
           }
         }
       }
@@ -1247,6 +1417,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hız, bir nesnenin hareket ettiği veya zaman içinde konumunu değiştirdiği oranı ölçer. Fizik ve günlük yaşamda temel bir kavramdır ve bir şeyin ne kadar hızlı hareket ettiğini açıklar.\n\nHızın SI birimi, bir saniye içinde metre cinsinden kat edilen mesafeyi temsil eden metre/saniyedir (m/s).\n\nDiğer yaygın birimler arasında kilometre/saat (km/h) ve mil/saat (mph) bulunur. Örneğin, saatte 60 km hızla giden bir araba, bir saatte 60 kilometre yol kat eder.\n\nHız, araç performansından spora, bilimsel deneylerden navigasyona kadar çeşitli uygulamalarda önemlidir.\n\nHızı anlamak, hareketi analiz etmek, performansı optimize etmek ve farklı durumlarda güvenliği sağlamak için hayati öneme sahiptir."
+          }
+        }
+      }
+    },
+    "Earth's distance from sun" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dünyanın güneşten uzaklığı"
+          }
+        }
+      }
+    },
+    "Earth's equatorial radius" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dünyanın ekvator yarıçapı"
+          }
+        }
+      }
+    },
+    "Earth's polar radius" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dünyanın kutup yarıçapı"
           }
         }
       }
@@ -1462,6 +1662,16 @@
         }
       }
     },
+    "Electron radius (classical)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektron yarıçapı (klasik)"
+          }
+        }
+      }
+    },
     "Electrostatic Capacitance" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1486,6 +1696,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elektriksel kapasitans, bir bileşenin bir elektrik alanında elektrik yükünü depolama yeteneğini ölçer ve genellikle bir kapasitörde görülür. Kapasitans, bir kapasitörün plakaları arasında uygulanan her bir volt başına ne kadar yük depolayabildiğini niceler.\n\nKapasitansın SI birimi faraddır (F), bir farad bir volt başına bir coulomb yük depolamak anlamına gelir. Ancak, pratik kapasitörler genellikle mikrofarad (µF) veya pikofarad (pF) ile derecelendirilir, çünkü bir faradın büyüklüğü genellikle çok büyüktür.\n\nÖrneğin, 10 µF kapasitansa sahip bir kapasitör, uygulanan her volt için 10 mikroculomb yük depolayabilir.\n\nKapasitans, elektronik devrelerde çeşitli amaçlar için kullanılan kapasitörler için kritik öneme sahiptir; bu amaçlar arasında filtreleme, enerji depolama ve zamanlama uygulamaları bulunur.\n\nKapasitansı anlamak ve doğru bir şekilde ölçmek, elektronik cihazların tasarımında ve optimizasyonunda esastır ve cihazların doğru ve verimli çalışmasını sağlamada önemli bir rol oynar."
+          }
+        }
+      }
+    },
+    "ell" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dirsek"
           }
         }
       }
@@ -1597,6 +1817,16 @@
         }
       }
     },
+    "exameter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "eksametre"
+          }
+        }
+      }
+    },
     "Failed to create preview: %@" : {
       "localizations" : {
         "tr" : {
@@ -1623,6 +1853,16 @@
         }
       }
     },
+    "famn" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "famn"
+          }
+        }
+      }
+    },
     "Faroese Króna" : {
       "localizations" : {
         "en" : {
@@ -1635,6 +1875,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Faroe Adaları Kronu"
+          }
+        }
+      }
+    },
+    "fathom" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fathom"
+          }
+        }
+      }
+    },
+    "fathom (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fathom (ABD araştırma)"
           }
         }
       }
@@ -1703,6 +1963,26 @@
         }
       }
     },
+    "femtometer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "femtometre"
+          }
+        }
+      }
+    },
+    "fermi" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fermi"
+          }
+        }
+      }
+    },
     "Fijian Dollar" : {
       "localizations" : {
         "en" : {
@@ -1715,6 +1995,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fiji Doları"
+          }
+        }
+      }
+    },
+    "finger (cloth)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "parmak (kumaş)"
+          }
+        }
+      }
+    },
+    "fingerbreadth" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "parmak genişliği"
           }
         }
       }
@@ -1810,6 +2110,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sıvı Dönüştürücüler"
+          }
+        }
+      }
+    },
+    "foot" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ayak"
+          }
+        }
+      }
+    },
+    "foot (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ayak (ABD araştırma)"
           }
         }
       }
@@ -1974,6 +2294,26 @@
         }
       }
     },
+    "furlong" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "furlong"
+          }
+        }
+      }
+    },
+    "furlong (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "furlong (ABD araştırma)"
+          }
+        }
+      }
+    },
     "Gambian Dalasi" : {
       "localizations" : {
         "en" : {
@@ -2069,19 +2409,29 @@
     "Gibraltar Pound" : {
       "localizations" : {
         "en" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Guernsey Pound"
-            }
-          },
-          "tr" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Cebelitarık Poundu"
-            }
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guernsey Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cebelitarık Poundu"
           }
         }
-      },
+      }
+    },
+    "gigameter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gigametre"
+          }
+        }
+      }
+    },
     "Guatemalan Quetzal" : {
       "localizations" : {
         "en" : {
@@ -2158,6 +2508,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Haiti Gurdu"
+          }
+        }
+      }
+    },
+    "hand" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el"
+          }
+        }
+      }
+    },
+    "handbreadth" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "el genişliği"
           }
         }
       }
@@ -2257,6 +2627,16 @@
         }
       }
     },
+    "hectometer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hektometre"
+          }
+        }
+      }
+    },
     "Honduran Lempira" : {
       "localizations" : {
         "en" : {
@@ -2345,6 +2725,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aydınlatma, bir yüzey alanına düşen ışık miktarını ifade eder ve genellikle lüks (lx) veya ayak mumyu (fc) cinsinden ölçülür. Bir alanın ne kadar iyi aydınlatıldığını, üzerine düşen ışığın yoğunluğu ve dağılımına göre açıklar.\n\nAydınlatma, aydınlatma tasarımı, fotoğrafçılık ve mimari gibi çeşitli uygulamalarda kritik öneme sahiptir çünkü görünürlük, estetik ve işlevsellik üzerinde etkili olur.\n\nÖrneğin, iyi aydınlatılmış bir çalışma alanı, üretkenliği artırır ve göz yorgunluğunu azaltır; fotoğrafçılıkta ise uygun aydınlatma, doğru görüntü yakalamayı sağlar.\n\nAydınlatmanın anlaşılması ve ölçülmesi, farklı ortamlar için aydınlatma koşullarını optimize etmeye yardımcı olur, alanların amaçlarına uygun şekilde yeterince aydınlatılmasını sağlar ve enerji tüketimini minimize ederek genel aydınlatma kalitesini artırır."
+          }
+        }
+      }
+    },
+    "inch" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "inç"
+          }
+        }
+      }
+    },
+    "inch (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "inç (ABD araştırma)"
           }
         }
       }
@@ -2537,6 +2937,16 @@
         }
       }
     },
+    "ken" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ken"
+          }
+        }
+      }
+    },
     "Kenyan Shilling" : {
       "localizations" : {
         "en" : {
@@ -2549,6 +2959,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kenya Şilini"
+          }
+        }
+      }
+    },
+    "kilometer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kilometre"
+          }
+        }
+      }
+    },
+    "kiloparsec" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kiloparsek"
+          }
+        }
+      }
+    },
+    "kiloyard" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kiloyarda"
           }
         }
       }
@@ -2633,6 +3073,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Laos Kipi"
+          }
+        }
+      }
+    },
+    "league" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lig"
+          }
+        }
+      }
+    },
+    "league (statute)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "statü ligi"
           }
         }
       }
@@ -2740,6 +3200,16 @@
         }
       }
     },
+    "light year" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ışık yılı"
+          }
+        }
+      }
+    },
     "Linear Charge Density" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2792,6 +3262,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Evet, doğru. Lineer akı yoğunluğu, bir iletken boyunca birim uzunluk başına geçen elektrik akımını ölçer. Bu, belirli bir uzunlukta bir tel veya iletkende ne kadar akımın dağıldığını gösterir.\n\nSI birimi amper/metre (A/m) olarak ifade edilir.\n\nÖrneğin, bir tel 5 amperlik bir akım taşıyorsa ve lineer akı yoğunluğu 2 A/m ise, bu, telin her bir metre uzunluğunun 2 amper akım taşıdığı anlamına gelir.\n\nLineer akı yoğunluğu, elektrik devrelerinin tasarımı ve analizi için kritik öneme sahiptir, özellikle iletkenler boyunca akım dağılımını anlamada ve iletkenlerin gerekli akımı aşırı ısınma veya kayıptan olmadan taşıyabilecek kapasitede olup olmadığını sağlamakta.\n\nLineer akı yoğunluğunu doğru bir şekilde ölçmek, elektriksel ve elektronik sistemlerin performansını ve güvenliğini optimize etmekte yardımcı olur."
+          }
+        }
+      }
+    },
+    "link" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bağlantı"
+          }
+        }
+      }
+    },
+    "link (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bağlantı (ABD araştırma)"
+          }
+        }
+      }
+    },
+    "long cubit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "uzun dirsek"
+          }
+        }
+      }
+    },
+    "long reed" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "uzun kamış"
           }
         }
       }
@@ -3149,16 +3659,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mauritanian Ouguiya"
-                    }
-                  },
-                  "tr" : {
-                    "stringUnit" : {
-                      "state" : "translated",
-                      "value" : "Moritanya Ugiyası"
-                    }
-                  }
-                }
-              },
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moritanya Ugiyası"
+          }
+        }
+      }
+    },
     "Mauritian Rupee" : {
       "localizations" : {
         "en" : {
@@ -3171,6 +3681,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mauritius Rupisi"
+          }
+        }
+      }
+    },
+    "megameter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "megametre"
+          }
+        }
+      }
+    },
+    "megaparsec" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "megaparsek"
           }
         }
       }
@@ -3197,6 +3727,96 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meksika Pesosu"
+          }
+        }
+      }
+    },
+    "microinch" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mikroinç"
+          }
+        }
+      }
+    },
+    "micrometer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mikrometre"
+          }
+        }
+      }
+    },
+    "micron" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mikron"
+          }
+        }
+      }
+    },
+    "mil" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mil"
+          }
+        }
+      }
+    },
+    "mile" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mil"
+          }
+        }
+      }
+    },
+    "mile (Roman)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mil (Romalı)"
+          }
+        }
+      }
+    },
+    "mile (statute)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mil (statü)"
+          }
+        }
+      }
+    },
+    "mile (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mil (ABD araştırma)"
+          }
+        }
+      }
+    },
+    "millimeter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "milimetre"
           }
         }
       }
@@ -3337,6 +3957,16 @@
         }
       }
     },
+    "nail (cloth)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tırnak (kumaş)"
+          }
+        }
+      }
+    },
     "Namibian Dollar" : {
       "localizations" : {
         "en" : {
@@ -3349,6 +3979,56 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Namibya Doları"
+          }
+        }
+      }
+    },
+    "nanometer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nanometre"
+          }
+        }
+      }
+    },
+    "nautical league (int.)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "deniz ligi (uluslararası)"
+          }
+        }
+      }
+    },
+    "nautical league (UK)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "deniz ligi (İngiltere)"
+          }
+        }
+      }
+    },
+    "nautical mile (international)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "deniz mili (uluslararası)"
+          }
+        }
+      }
+    },
+    "nautical mile (UK)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "deniz mili (İngiltere)"
           }
         }
       }
@@ -3575,12 +4255,32 @@
         }
       }
     },
+    "parsec" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "parsek"
+          }
+        }
+      }
+    },
     "paste" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "yapıştır"
+          }
+        }
+      }
+    },
+    "perch" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "direk"
           }
         }
       }
@@ -3629,6 +4329,16 @@
         }
       }
     },
+    "petameter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "petametre"
+          }
+        }
+      }
+    },
     "Philippine Peso" : {
       "localizations" : {
         "en" : {
@@ -3645,12 +4355,62 @@
         }
       }
     },
+    "pica" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pica"
+          }
+        }
+      }
+    },
+    "picometer" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pikometre"
+          }
+        }
+      }
+    },
+    "Planck length" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Planck uzunluğu"
+          }
+        }
+      }
+    },
     "Please restart the app for the language change to take effect." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dil değişikliğinin etkili olması için lütfen uygulamayı yeniden başlatın."
+          }
+        }
+      }
+    },
+    "point" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nokta"
+          }
+        }
+      }
+    },
+    "pole" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "sütun"
           }
         }
       }
@@ -3896,12 +4656,52 @@
         }
       }
     },
+    "reed" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kamış"
+          }
+        }
+      }
+    },
     "Result" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sonuç"
+          }
+        }
+      }
+    },
+    "rod" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "çubuk"
+          }
+        }
+      }
+    },
+    "rod (US survey)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "çubuk (ABD araştırma)"
+          }
+        }
+      }
+    },
+    "Roman actus" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romalı actus"
           }
         }
       }
@@ -3918,6 +4718,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Romen Leyi"
+          }
+        }
+      }
+    },
+    "rope" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "halat"
+          }
+        }
+      }
+    },
+    "Russian archin" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rus archin"
           }
         }
       }
@@ -4192,6 +5012,16 @@
         }
       }
     },
+    "span (cloth)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "aralık (kumaş)"
+          }
+        }
+      }
+    },
     "Special Drawing Rights" : {
       "localizations" : {
         "en" : {
@@ -4208,6 +5038,1456 @@
         }
       }
     },
+    "kilogram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kilogram"
+          }
+        }
+      }
+    },
+    "gram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gram"
+          }
+        }
+      }
+    },
+    "milligram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "miligram"
+          }
+        }
+      }
+    },
+    "ton (metric)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ton (metrik)"
+          }
+        }
+      }
+    },
+    "pound" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pound"
+          }
+        }
+      }
+    },
+    "ounce" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ons"
+          }
+        }
+      }
+    },
+    "carat" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kıta"
+          }
+        }
+      }
+    },
+    "ton (short)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ton (kısa)"
+          }
+        }
+      }
+    },
+    "ton (long)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ton (uzun)"
+          }
+        }
+      }
+    },
+    "Atomic mass unit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atomik kütle birimi"
+          }
+        }
+      }
+    },
+    "exagram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "eksagram"
+          }
+        }
+      }
+    },
+    "petagram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "petagram"
+          }
+        }
+      }
+    },
+    "teragram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "teragram"
+          }
+        }
+      }
+    },
+    "gigagram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gigagram"
+          }
+        }
+      }
+    },
+    "megagram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "megagram"
+          }
+        }
+      }
+    },
+    "hectogram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hektogram"
+          }
+        }
+      }
+    },
+    "dekagram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dekagram"
+          }
+        }
+      }
+    },
+    "decigram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "desigram"
+          }
+        }
+      }
+    },
+    "centigram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "santigram"
+          }
+        }
+      }
+    },
+    "microgram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mikrogram"
+          }
+        }
+      }
+    },
+    "nanogram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nanogram"
+          }
+        }
+      }
+    },
+    "picogram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pikogram"
+          }
+        }
+      }
+    },
+    "femtogram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "femtogram"
+          }
+        }
+      }
+    },
+    "attogram" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "attogram"
+          }
+        }
+      }
+    },
+    "dalton" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "dalton"
+          }
+        }
+      }
+    },
+    "kilogram-force square second/meter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kilogram-kuvvet kare saniye/metre"
+          }
+        }
+      }
+    },
+    "kilopound" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kilopound"
+          }
+        }
+      }
+    },
+    "kip" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kip"
+          }
+        }
+      }
+    },
+    "slug" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "slug"
+          }
+        }
+      }
+    },
+    "pound-force square second/foot" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pound-kuvvet kare saniye/feet"
+          }
+        }
+      }
+    },
+    "pound (troy or apothecary)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pound (troy veya eczacı)"
+          }
+        }
+      }
+    },
+    "poundal" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "poundal"
+          }
+        }
+      }
+    },
+    "ton (assay) (US)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ton (analiz) (ABD)"
+          }
+        }
+      }
+    },
+    "ton (assay) (UK)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ton (analiz) (İngiltere)"
+          }
+        }
+      }
+    },
+    "kiloton (metric)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kiloton (metrik)"
+          }
+        }
+      }
+    },
+    "quintal (metric)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kantar (metrik)"
+          }
+        }
+      }
+    },
+    "hundredweight (US)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yüz pound (ABD)"
+          }
+        }
+      }
+    },
+    "hundredweight (UK)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yüz pound (İngiltere)"
+          }
+        }
+      }
+    },
+    "quarter (US)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "çeyrek (ABD)"
+          }
+        }
+      }
+    },
+    "quarter (UK)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "çeyrek (İngiltere)"
+          }
+        }
+      }
+    },
+    "stone (US)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taş (ABD)"
+          }
+        }
+      }
+    },
+    "stone (UK)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "taş (İngiltere)"
+          }
+        }
+      }
+    },
+    "tonne" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ton"
+          }
+        }
+      }
+    },
+    "pennyweight" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pennyweight"
+          }
+        }
+      }
+    },
+    "scruple (apothecary)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "scruple (eczacı)"
+          }
+        }
+      }
+    },
+    "grain" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tanelik"
+          }
+        }
+      }
+    },
+    "gamma" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gamma"
+          }
+        }
+      }
+    },
+    "talent (Biblical Hebrew)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "talent (Kutsal Kitap İbranice)"
+          }
+        }
+      }
+    },
+    "mina (Biblical Hebrew)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mina (Kutsal Kitap İbranice)"
+          }
+        }
+      }
+    },
+    "shekel (Biblical Hebrew)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "shekel (Kutsal Kitap İbranice)"
+          }
+        }
+      }
+    },
+    "bekan (Biblical Hebrew)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "bekan (Kutsal Kitap İbranice)"
+          }
+        }
+      }
+    },
+    "gerah (Biblical Hebrew)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gerah (Kutsal Kitap İbranice)"
+          }
+        }
+      }
+    },
+    "talent (Biblical Greek)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "talent (Kutsal Kitap Yunanı)"
+          }
+        }
+      }
+    },
+    "mina (Biblical Greek)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mina (Kutsal Kitap Yunanı)"
+          }
+        }
+      }
+    },
+    "tetradrachma (Biblical Greek)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tetradrachma (Kutsal Kitap Yunanı)"
+          }
+        }
+      }
+    },
+    "didrachma (Biblical Greek)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "didrachma (Kutsal Kitap Yunanı)"
+          }
+        }
+      }
+    },
+    "drachma (Biblical Greek)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "drachma (Kutsal Kitap Yunanı)"
+          }
+        }
+      }
+    },
+    "denarius (Biblical Roman)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "denarius (Kutsal Kitap Roma)"
+          }
+        }
+      }
+    },
+    "assarion (Biblical Roman)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "assarion (Kutsal Kitap Roma)"
+          }
+        }
+      }
+    },
+    "quadrans (Biblical Roman)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "quadrans (Kutsal Kitap Roma)"
+          }
+        }
+      }
+    },
+    "lepton (Biblical Roman)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lepton (Kutsal Kitap Roma)"
+          }
+        }
+      }
+    },
+    "Planck mass" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Planck kütlesi"
+          }
+        }
+      }
+    },
+    "Electron mass (rest)" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elektron kütlesi (dinlenme)"
+          }
+        }
+      }
+    },
+    "Muon mass" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miyon kütlesi"
+          }
+        }
+      }
+    },
+    "Proton mass" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proton kütlesi"
+          }
+        }
+      }
+    },
+    "Neutron mass" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nötron kütlesi"
+          }
+        }
+      }
+    },
+    "Deuteron mass" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deuteron kütlesi"
+          }
+        }
+      }
+    },
+    "Earth's mass" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dünya'nın kütlesi"
+          }
+        }
+      }
+    },
+    "Sun's mass" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güneş'in kütlesi"
+          }
+        }
+      }
+    },
+    "cubic meter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp metre"
+          }
+        }
+      }
+    },
+    "cubic kilometer": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp kilometre"
+          }
+        }
+      }
+    },
+    "cubic centimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp santimetre"
+          }
+        }
+      }
+    },
+    "cubic millimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp milimetre"
+          }
+        }
+      }
+    },
+    "liter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "litre"
+          }
+        }
+      }
+    },
+    "milliliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mililitre"
+          }
+        }
+      }
+    },
+    "gallon (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "galon (ABD)"
+          }
+        }
+      }
+    },
+    "quart (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kumpir (ABD)"
+          }
+        }
+      }
+    },
+    "pint (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pint (ABD)"
+          }
+        }
+      }
+    },
+    "cup (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kupa (ABD)"
+          }
+        }
+      }
+    },
+    "tablespoon (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tatlı kaşığı (ABD)"
+          }
+        }
+      }
+    },
+    "teaspoon (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çay kaşığı (ABD)"
+          }
+        }
+      }
+    },
+    "cubic mile": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp mil"
+          }
+        }
+      }
+    },
+    "cubic yard": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp yard"
+          }
+        }
+      }
+    },
+    "cubic foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp ayak"
+          }
+        }
+      }
+    },
+    "cubic inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp inç"
+          }
+        }
+      }
+    },
+    "cubic decimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "küp desimetre"
+          }
+        }
+      }
+    },
+    "exaliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "eksalitre"
+          }
+        }
+      }
+    },
+    "petaliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "petalitrel"
+          }
+        }
+      }
+    },
+    "teraliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "teralitre"
+          }
+        }
+      }
+    },
+    "gigaliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gigalitrel"
+          }
+        }
+      }
+    },
+    "megaliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "megalitre"
+          }
+        }
+      }
+    },
+    "kiloliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilolitre"
+          }
+        }
+      }
+    },
+    "hectoliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hektolitre"
+          }
+        }
+      }
+    },
+    "dekaliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dekalitrel"
+          }
+        }
+      }
+    },
+    "deciliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "desilitre"
+          }
+        }
+      }
+    },
+    "centiliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santilitre"
+          }
+        }
+      }
+    },
+    "microliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mikrolitre"
+          }
+        }
+      }
+    },
+    "nanoliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nanolitre"
+          }
+        }
+      }
+    },
+    "picoliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pikolitre"
+          }
+        }
+      }
+    },
+    "femtoliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "femtolitre"
+          }
+        }
+      }
+    },
+    "attoliter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "attolitre"
+          }
+        }
+      }
+    },
+    "cc": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cc"
+          }
+        }
+      }
+    },
+    "drop": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "damla"
+          }
+        }
+      }
+    },
+    "barrel (oil)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "varil (petrol)"
+          }
+        }
+      }
+    },
+    "barrel (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "varil (ABD)"
+          }
+        }
+      }
+    },
+    "barrel (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "varil (İngiltere)"
+          }
+        }
+      }
+    },
+    "gallon (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "galon (İngiltere)"
+          }
+        }
+      }
+    },
+    "quart (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kumpir (İngiltere)"
+          }
+        }
+      }
+    },
+    "pint (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pint (İngiltere)"
+          }
+        }
+      }
+    },
+    "cup (metric)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kupa (metrik)"
+          }
+        }
+      }
+    },
+    "cup (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kupa (İngiltere)"
+          }
+        }
+      }
+    },
+    "fluid ounce (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sıvı ons (ABD)"
+          }
+        }
+      }
+    },
+    "fluid ounce (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sıvı ons (İngiltere)"
+          }
+        }
+      }
+    },
+    "tablespoon (metric)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yemek kaşığı (metrik)"
+          }
+        }
+      }
+    },
+    "tablespoon (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yemek kaşığı (İngiltere)"
+          }
+        }
+      }
+    },
+    "dessertspoon (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tatlı kaşığı (ABD)"
+          }
+        }
+      }
+    },
+    "dessertspoon (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tatlı kaşığı (İngiltere)"
+          }
+        }
+      }
+    },
+    "teaspoon (metric)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çay kaşığı (metrik)"
+          }
+        }
+      }
+    },
+    "teaspoon (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çay kaşığı (İngiltere)"
+          }
+        }
+      }
+    },
+    "gill (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gill (ABD)"
+          }
+        }
+      }
+    },
+    "gill (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gill (İngiltere)"
+          }
+        }
+      }
+    },
+    "minim (US)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "minim (ABD)"
+          }
+        }
+      }
+    },
+    "minim (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "minim (İngiltere)"
+          }
+        }
+      }
+    },
+    "ton register": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ton kayıt"
+          }
+        }
+      }
+    },
+    "ccf": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ccf"
+          }
+        }
+      }
+    },
+    "hundred-cubic foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yüz küp ayak"
+          }
+        }
+      }
+    },
+    "acre-foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "akre ayak"
+          }
+        }
+      }
+    },
+    "acre-foot (US survey)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "akre ayak (ABD anketi)"
+          }
+        }
+      }
+    },
+    "acre-inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "akre inç"
+          }
+        }
+      }
+    },
+    "dekastere": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dekastere"
+          }
+        }
+      }
+    },
+    "stere": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "stere"
+          }
+        }
+      }
+    },
+    "decistere": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "desistere"
+          }
+        }
+      }
+    },
+    "cord": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kord"
+          }
+        }
+      }
+    },
+    "tun": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tun"
+          }
+        }
+      }
+    },
+    "hogshead": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hogshead"
+          }
+        }
+      }
+    },
+    "board foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tahta ayak"
+          }
+        }
+      }
+    },
+    "dram": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dram"
+          }
+        }
+      }
+    },
+    "cor (Biblical)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kor (Kutsal Kitap)"
+          }
+        }
+      }
+    },
+    "homer (Biblical)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "homer (Kutsal Kitap)"
+          }
+        }
+      }
+    },
+    "bath (Biblical)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bath (Kutsal Kitap)"
+          }
+        }
+      }
+    },
+    "hin (Biblical)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hin (Kutsal Kitap)"
+          }
+        }
+      }
+    },
+    "cab (Biblical)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cab (Kutsal Kitap)"
+          }
+        }
+      }
+    },
+    "log (Biblical)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "log (Kutsal Kitap)"
+          }
+        }
+      }
+    },
+    "Taza (Spanish)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taza (İspanyolca)"
+          }
+        }
+      }
+    },
+    "Earth's volume": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dünya'nın hacmi"
+          }
+        }
+      }
+    },
     "Specific Volume" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4215,6 +6495,1756 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belirli Hacim"
+          }
+        }
+      }
+    },
+    "Kelvin": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kelvin"
+          }
+        }
+      }
+    },
+    "Celsius": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Santigrat"
+          }
+        }
+      }
+    },
+    "Fahrenheit": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fahrenheit"
+          }
+        }
+      }
+    },
+    "Rankine": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rankine"
+          }
+        }
+      }
+    },
+    "Reaumur": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reaumur"
+          }
+        }
+      }
+    },
+    "Triple point of water": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Su'nun Üçlü Noktası"
+          }
+        }
+      }
+    },
+    "square meter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "metrekare"
+          }
+        }
+      }
+    },
+    "square kilometer": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilometrekare"
+          }
+        }
+      }
+    },
+    "square centimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santimetrekare"
+          }
+        }
+      }
+    },
+    "square millimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milimetrekare"
+          }
+        }
+      }
+    },
+    "square micrometer": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mikrometrekare"
+          }
+        }
+      }
+    },
+    "hectare": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hektar"
+          }
+        }
+      }
+    },
+    "acre": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "acre"
+          }
+        }
+      }
+    },
+    "square mile": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "miligram"
+          }
+        }
+      }
+    },
+    "square yard": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "metrekare"
+          }
+        }
+      }
+    },
+    "square foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare ayak"
+          }
+        }
+      }
+    },
+    "square inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare inç"
+          }
+        }
+      }
+    },
+    "square hectometer": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hektometrekare"
+          }
+        }
+      }
+    },
+    "square dekameter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dekametre kare"
+          }
+        }
+      }
+    },
+    "square decimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "desimetrekare"
+          }
+        }
+      }
+    },
+    "square nanometer": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nanometrekare"
+          }
+        }
+      }
+    },
+    "are": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "are"
+          }
+        }
+      }
+    },
+    "barn": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "barn"
+          }
+        }
+      }
+    },
+    "square mile (US survey)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "miligram (ABD anket)"
+          }
+        }
+      }
+    },
+    "square foot (US survey)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare ayak (ABD anket)"
+          }
+        }
+      }
+    },
+    "circular inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dairesel inç"
+          }
+        }
+      }
+    },
+    "township": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "township"
+          }
+        }
+      }
+    },
+    "section": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bölüm"
+          }
+        }
+      }
+    },
+    "acre (US survey)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "acre (ABD anket)"
+          }
+        }
+      }
+    },
+    "rood": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "rood"
+          }
+        }
+      }
+    },
+    "square chain": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare zincir"
+          }
+        }
+      }
+    },
+    "square rod": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare çubuk"
+          }
+        }
+      }
+    },
+    "square rod (US survey)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare çubuk (ABD anket)"
+          }
+        }
+      }
+    },
+    "square perch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare perch"
+          }
+        }
+      }
+    },
+    "square pole": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare pole"
+          }
+        }
+      }
+    },
+    "square mil": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kare mil"
+          }
+        }
+      }
+    },
+    "circular mil": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dairesel mil"
+          }
+        }
+      }
+    },
+    "homestead": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "homestead"
+          }
+        }
+      }
+    },
+    "sabin": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sabin"
+          }
+        }
+      }
+    },
+    "arpent": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "arpent"
+          }
+        }
+      }
+    },
+    "cuerda": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cuerda"
+          }
+        }
+      }
+    },
+    "plaza": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "plaza"
+          }
+        }
+      }
+    },
+    "varas castellanas cuad": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "varas castellanas cuad"
+          }
+        }
+      }
+    },
+    "varas conuqueras cuad": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "varas conuqueras cuad"
+          }
+        }
+      }
+    },
+    "Electron cross section": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elektron çapraz kesit"
+          }
+        }
+      }
+    },
+    "pascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pascal"
+          }
+        }
+      }
+    },
+    "kilopascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilopascal"
+          }
+        }
+      }
+    },
+    "bar": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bar"
+          }
+        }
+      }
+    },
+    "psi": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "psi"
+          }
+        }
+      }
+    },
+    "ksi": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ksi"
+          }
+        }
+      }
+    },
+    "Standard atmosphere": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standart atmosfer"
+          }
+        }
+      }
+    },
+    "exapascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ekspascal"
+          }
+        }
+      }
+    },
+    "petapascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "petapascal"
+          }
+        }
+      }
+    },
+    "terapascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "terapascal"
+          }
+        }
+      }
+    },
+    "gigapascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gigapascal"
+          }
+        }
+      }
+    },
+    "megapascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "megapascal"
+          }
+        }
+      }
+    },
+    "hectopascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hektopascal"
+          }
+        }
+      }
+    },
+    "dekapascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dekapascal"
+          }
+        }
+      }
+    },
+    "decipascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "desipascal"
+          }
+        }
+      }
+    },
+    "centipascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santipascal"
+          }
+        }
+      }
+    },
+    "millipascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milipascal"
+          }
+        }
+      }
+    },
+    "micropascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mikropascal"
+          }
+        }
+      }
+    },
+    "nanopascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nanopascal"
+          }
+        }
+      }
+    },
+    "picopascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pikopascal"
+          }
+        }
+      }
+    },
+    "femtopascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "femtapascal"
+          }
+        }
+      }
+    },
+    "attopascal": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "attopascal"
+          }
+        }
+      }
+    },
+    "newton/square meter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "newton/metrekare"
+          }
+        }
+      }
+    },
+    "newton/square centimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "newton/santimetrekare"
+          }
+        }
+      }
+    },
+    "newton/square millimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "newton/milimetrekare"
+          }
+        }
+      }
+    },
+    "kilonewton/square meter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilonewton/metrekare"
+          }
+        }
+      }
+    },
+    "millibar": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milibar"
+          }
+        }
+      }
+    },
+    "microbar": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mikrobar"
+          }
+        }
+      }
+    },
+    "dyne/square centimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dyne/santimetrekare"
+          }
+        }
+      }
+    },
+    "kilogram-force/square meter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilogram-kuvvet/metrekare"
+          }
+        }
+      }
+    },
+    "kilogram-force/sq. cm": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilogram-kuvvet/santimetrekare"
+          }
+        }
+      }
+    },
+    "kilogram-force/sq. millimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilogram-kuvvet/milimetrekare"
+          }
+        }
+      }
+    },
+    "gram-force/sq. centimeter": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gram-kuvvet/santimetrekare"
+          }
+        }
+      }
+    },
+    "ton-force (short)/sq. foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ton-kuvvet (kısa)/kare ayak"
+          }
+        }
+      }
+    },
+    "ton-force (short)/sq. inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ton-kuvvet (kısa)/kare inç"
+          }
+        }
+      }
+    },
+    "ton-force (long)/square foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ton-kuvvet (uzun)/kare ayak"
+          }
+        }
+      }
+    },
+    "ton-force (long)/square inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ton-kuvvet (uzun)/kare inç"
+          }
+        }
+      }
+    },
+    "kip-force/square inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kip-kuvvet/kare inç"
+          }
+        }
+      }
+    },
+    "pound-force/square foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pound-kuvvet/kare ayak"
+          }
+        }
+      }
+    },
+    "pound-force/square inch": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pound-kuvvet/kare inç"
+          }
+        }
+      }
+    },
+    "poundal/square foot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "poundal/kare ayak"
+          }
+        }
+      }
+    },
+    "torr": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "torr"
+          }
+        }
+      }
+    },
+    "centimeter mercury (0°C)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santimetre cıva (0°C)"
+          }
+        }
+      }
+    },
+    "millimeter mercury (0°C)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milimetre cıva (0°C)"
+          }
+        }
+      }
+    },
+    "inch mercury (32°F)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inç cıva (32°F)"
+          }
+        }
+      }
+    },
+    "inch mercury (60°F)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inç cıva (60°F)"
+          }
+        }
+      }
+    },
+    "centimeter water (4°C)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santimetre su (4°C)"
+          }
+        }
+      }
+    },
+    "millimeter water (4°C)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milimetre su (4°C)"
+          }
+        }
+      }
+    },
+    "inch water (4°C)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inç su (4°C)"
+          }
+        }
+      }
+    },
+    "foot water (4°C)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ayak su (4°C)"
+          }
+        }
+      }
+    },
+    "inch water (60°F)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inç su (60°F)"
+          }
+        }
+      }
+    },
+    "foot water (60°F)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ayak su (60°F)"
+          }
+        }
+      }
+    },
+    "atmosphere technical": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "teknik atmosfer"
+          }
+        }
+      }
+    },
+    "degree": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "derece"
+          }
+        }
+      }
+    },
+    "radian": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "radyan"
+          }
+        }
+      }
+    },
+    "grad": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "grad"
+          }
+        }
+      }
+    },
+    "minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dakika"
+          }
+        }
+      }
+    },
+    "second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "saniye"
+          }
+        }
+      }
+    },
+    "gon": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gon"
+          }
+        }
+      }
+    },
+    "sign": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "işaret"
+          }
+        }
+      }
+    },
+    "mil": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mil"
+          }
+        }
+      }
+    },
+    "revolution": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dönüş"
+          }
+        }
+      }
+    },
+    "circle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "çember"
+          }
+        }
+      }
+    },
+    "turn": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dönüş"
+          }
+        }
+      }
+    },
+    "quadrant": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dörtte bir"
+          }
+        }
+      }
+    },
+    "right angle": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dik açı"
+          }
+        }
+      }
+    },
+    "meter/second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "metre/saniye"
+          }
+        }
+      }
+    },
+    "kilometer/hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilometre/saat"
+          }
+        }
+      }
+    },
+    "mile/hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mil/saat"
+          }
+        }
+      }
+    },
+    "meter/hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "metre/saat"
+          }
+        }
+      }
+    },
+    "meter/minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "metre/dakika"
+          }
+        }
+      }
+    },
+    "kilometer/minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilometre/dakika"
+          }
+        }
+      }
+    },
+    "kilometer/second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kilometre/saniye"
+          }
+        }
+      }
+    },
+    "centimeter/hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santimetre/saat"
+          }
+        }
+      }
+    },
+    "centimeter/minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santimetre/dakika"
+          }
+        }
+      }
+    },
+    "centimeter/second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "santimetre/saniye"
+          }
+        }
+      }
+    },
+    "millimeter/hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milimetre/saat"
+          }
+        }
+      }
+    },
+    "millimeter/minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milimetre/dakika"
+          }
+        }
+      }
+    },
+    "millimeter/second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milimetre/saniye"
+          }
+        }
+      }
+    },
+    "foot/hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ayak/saat"
+          }
+        }
+      }
+    },
+    "foot/minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ayak/dakika"
+          }
+        }
+      }
+    },
+    "foot/second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ayak/saniye"
+          }
+        }
+      }
+    },
+    "yard/hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yarda/saat"
+          }
+        }
+      }
+    },
+    "yard/minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yarda/dakika"
+          }
+        }
+      }
+    },
+    "yard/second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yarda/saniye"
+          }
+        }
+      }
+    },
+    "mile/minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mil/dakika"
+          }
+        }
+      }
+    },
+    "mile/second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mil/saniye"
+          }
+        }
+      }
+    },
+    "knot": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "deniz mili"
+          }
+        }
+      }
+    },
+    "knot (UK)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "deniz mili (İngiltere)"
+          }
+        }
+      }
+    },
+    "Velocity of light in vacuum": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "vakumdaki ışık hızı"
+          }
+        }
+      }
+    },
+    "Cosmic velocity - first": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kozmetik hız - birinci"
+          }
+        }
+      }
+    },
+    "Cosmic velocity - second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kozmetik hız - ikinci"
+          }
+        }
+      }
+    },
+    "Cosmic velocity - third": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kozmetik hız - üçüncü"
+          }
+        }
+      }
+    },
+    "Earth's velocity": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dünya'nın hızı"
+          }
+        }
+      }
+    },
+    "Velocity of sound in pure water": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "saf sudaki ses hızı"
+          }
+        }
+      }
+    },
+    "Velocity of sound in sea water (20°C, 10 meter deep)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "deniz suyundaki ses hızı (20°C, 10 metre derinlik)"
+          }
+        }
+      }
+    },
+    "Mach (20°C, 1 atm)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mach (20°C, 1 atm)"
+          }
+        }
+      }
+    },
+    "Mach (SI standard)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mach (SI standardı)"
+          }
+        }
+      }
+    },
+    "second": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "saniye"
+          }
+        }
+      }
+    },
+    "millisecond": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "milisaniye"
+          }
+        }
+      }
+    },
+    "minute": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dakika"
+          }
+        }
+      }
+    },
+    "hour": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "saat"
+          }
+        }
+      }
+    },
+    "day": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gün"
+          }
+        }
+      }
+    },
+    "week": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hafta"
+          }
+        }
+      }
+    },
+    "month": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ay"
+          }
+        }
+      }
+    },
+    "year": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yıl"
+          }
+        }
+      }
+    },
+    "decade": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "on yıl"
+          }
+        }
+      }
+    },
+    "century": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yüzyıl"
+          }
+        }
+      }
+    },
+    "millennium": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "bin yıl"
+          }
+        }
+      }
+    },
+    "microsecond": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mikrosaniye"
+          }
+        }
+      }
+    },
+    "nanosecond": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nanosaniye"
+          }
+        }
+      }
+    },
+    "picosecond": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pikosaniye"
+          }
+        }
+      }
+    },
+    "femtosecond": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "femtosaniye"
+          }
+        }
+      }
+    },
+    "attosecond": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "attosaniye"
+          }
+        }
+      }
+    },
+    "shake": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "shake"
+          }
+        }
+      }
+    },
+    "month (synodic)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ay (sinodik)"
+          }
+        }
+      }
+    },
+    "year (Julian)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yıl (Julian)"
+          }
+        }
+      }
+    },
+    "year (leap)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yıl (artık)"
+          }
+        }
+      }
+    },
+    "year (tropical)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yıl (tropikal)"
+          }
+        }
+      }
+    },
+    "year (sidereal)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yıl (yıldızsal)"
+          }
+        }
+      }
+    },
+    "day (sidereal)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "gün (yıldızsal)"
+          }
+        }
+      }
+    },
+    "hour (sidereal)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "saat (yıldızsal)"
+          }
+        }
+      }
+    },
+    "minute (sidereal)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dakika (yıldızsal)"
+          }
+        }
+      }
+    },
+    "second (sidereal)": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "saniye (yıldızsal)"
+          }
+        }
+      }
+    },
+    "fortnight": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iki hafta"
+          }
+        }
+      }
+    },
+    "septennial": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "yedi yıl"
+          }
+        }
+      }
+    },
+    "octennial": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sekiz yıl"
+          }
+        }
+      }
+    },
+    "novennial": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dokuz yıl"
+          }
+        }
+      }
+    },
+    "quindecennial": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "on beş yıl"
+          }
+        }
+      }
+    },
+    "quinquennial": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "beş yıl"
+          }
+        }
+      }
+    },
+    "Planck time": {
+      "localizations": {
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Planck zamanı"
           }
         }
       }
@@ -4320,6 +8350,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sudan Poundu"
+          }
+        }
+      }
+    },
+    "Sun's radius" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güneşin yarıçapı"
           }
         }
       }
@@ -4526,10 +8566,10 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tanzanya Şilini"
-                }
-              }
-            }
-          },
+          }
+        }
+      }
+    },
     "Temperature" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4565,6 +8605,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sıcaklık, bir maddenin içinde bulunan termal enerji veya ısıyı ölçer ve bir maddenin ne kadar sıcak veya soğuk olduğunu gösterir. Bilimsel ve günlük birçok bağlamda kullanılan temel bir fiziksel büyüklüktür.\n\nSıcaklık için SI birimi, atomik hareketin durduğu nokta olan mutlak sıfırı temsil eden kelvindir (K).\n\nSıcaklık, aynı zamanda yaygın olarak santigrat derece (°C) ve Fahrenheit derece (°F) cinsinden de ölçülür. Santigrat ölçeğinde, su 0°C'de donar ve standart atmosferik koşullar altında 100°C'de kaynar. Fahrenheit ölçeğinde ise su 32°F'de donar ve 212°F'de kaynar.\n\nHava tahmininden kimyasal reaksiyonlara ve günlük sıcaklık kontrolüne kadar birçok süreç için doğru sıcaklık ölçümü hayati önem taşır."
+          }
+        }
+      }
+    },
+    "terameter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "terametre"
           }
         }
       }
@@ -4823,6 +8873,16 @@
         }
       }
     },
+    "twip" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "twip"
+          }
+        }
+      }
+    },
     "Ugandan Shilling" : {
       "localizations" : {
         "en" : {
@@ -4961,6 +9021,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vanuatu Vatusu"
+          }
+        }
+      }
+    },
+    "vara castellana" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vara castellana"
+          }
+        }
+      }
+    },
+    "vara conuquera" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vara conuquera"
+          }
+        }
+      }
+    },
+    "vara de tarea" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vara de tarea"
           }
         }
       }
@@ -5205,6 +9295,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Batı Afrika CFA Frangı"
+          }
+        }
+      }
+    },
+    "X-unit" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X birimi"
+          }
+        }
+      }
+    },
+    "yard" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "yarda"
           }
         }
       }
