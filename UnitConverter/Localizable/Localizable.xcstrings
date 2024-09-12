@@ -102,6 +102,38 @@
         }
       }
     },
+    "Albanian Lek" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Albanian Lek"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arnavut Leki"
+          }
+        }
+      }
+    },
+    "Algerian Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algerian Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cezayir Dinarı"
+          }
+        }
+      }
+    },
     "All Converters" : {
       "localizations" : {
         "tr" : {
@@ -136,6 +168,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Açı, kesişen iki doğru veya yüzey arasındaki boşluğu temsil eder ve derece veya radyan cinsinden ölçülür. Geometri ve trigonometri alanlarında temel bir kavramdır.\n\nAçılar için SI birimi radyandır (rad). Bir radyan, bir çemberin yay uzunluğunun yarıçapına eşit olduğu durumda oluşan açıyı ifade eder.\n\nDiğer yaygın birim ise derecedir (°); tam bir çember 360 dereceye bölünür. Örneğin, dik açı 90° ve tam bir çember 360°'dir.\n\nAçılar, rotasyonları, eğimleri ve nesnelerin yönelimini tanımlamada gezinme, mühendislik ve fizik gibi çeşitli alanlarda önemlidir. Doğru açı ölçümü, hassas hesaplamalar ve tasarımlar için hayati önem taşır."
+          }
+        }
+      }
+    },
+    "Angolan Kwanza" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angolan Kwanza"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angola Kvanzası"
           }
         }
       }
@@ -238,6 +286,336 @@
         }
       }
     },
+    "Argentine Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Argentine Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arjantin Pesosu"
+          }
+        }
+      }
+    },
+    "Armenian Dram" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+              "state" : "translated",
+            "value" : "Ermeni Dramı"
+            }
+        }
+        }
+    },
+    "Aruban Florin" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aruban Florin"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aruba Florini"
+          }
+        }
+      }
+    },
+    "Australian Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Australian Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avustralya Doları"
+          }
+        }
+      }
+    },
+    "Azerbaijani Manat" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azerbaijani Manat"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Azerbaycan Manatı"
+          }
+        }
+      }
+    },
+    "Bahamian Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bahamian Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bahama Doları"
+          }
+        }
+      }
+    },
+    "Bahraini Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bahraini Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bahreyn Dinarı"
+          }
+        }
+      }
+    },
+    "Bangladeshi Taka" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bangladeshi Taka"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bangladeş Takası"
+          }
+        }
+      }
+    },
+    "Barbadian Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barbadian Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barbados Doları"
+          }
+        }
+      }
+    },
+    "Belarusian Ruble" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belarusian Ruble"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belarus Rublesi"
+          }
+        }
+      }
+    },
+    "Belize Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belize Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Belize Doları"
+          }
+        }
+      }
+    },
+    "Bermudan Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bermudan Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bermuda Doları"
+          }
+        }
+      }
+    },
+    "Bhutanese Ngultrum" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bhutanese Ngultrum"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Butan Ngultrumu"
+          }
+        }
+      }
+    },
+    "Bolivian Boliviano" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolivian Boliviano"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bolivya Bolivyanosu"
+          }
+        }
+      }
+    },
+    "Bosnia-Herzegovina Convertible Mark" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bosnia-Herzegovina Convertible Mark"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bosna-Hersek Konvertibl Markı"
+          }
+        }
+      }
+    },
+    "Botswanan Pula" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Botswanan Pula"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Botsvana Pulası"
+          }
+        }
+      }
+    },
+    "Brazilian Real" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brazilian Real"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brezilya Reali"
+          }
+        }
+      }
+    },
+    "British Pound Sterling" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "British Pound Sterling"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İngiliz Sterlini"
+          }
+        }
+      }
+    },
+    "Brunei Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brunei Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brunei Doları"
+          }
+        }
+      }
+    },
+    "Bulgarian Lev" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulgarian Lev"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bulgar Levası"
+          }
+        }
+      }
+    },
+    "Burundian Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Burundian Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Burundi Frangı"
+          }
+        }
+      }
+    },
     "Buy Me a Coffee" : {
       "localizations" : {
         "tr" : {
@@ -248,12 +626,60 @@
         }
       }
     },
+    "Cambodian Riel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambodian Riel"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kamboçya Rieli"
+          }
+        }
+      }
+    },
+    "Canadian Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canadian Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kanada Doları"
+          }
+        }
+      }
+    },
     "Cancel" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "İptal"
+          }
+        }
+      }
+    },
+    "Cape Verdean Escudo" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cape Verdean Escudo"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cape Verde Eskudosu"
           }
         }
       }
@@ -292,6 +718,54 @@
         }
       }
     },
+    "Cayman Islands Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cayman Islands Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cayman Adaları Doları"
+          }
+        }
+      }
+    },
+    "Central African CFA Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Central African CFA Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orta Afrika CFA Frangı"
+          }
+        }
+      }
+    },
+    "CFP Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CFP Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CFP Frangı"
+          }
+        }
+      }
+    },
     "Charge" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -320,6 +794,38 @@
         }
       }
     },
+    "Chilean Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chilean Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Şili Pesosu"
+          }
+        }
+      }
+    },
+    "Chinese Yuan" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chinese Yuan"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çin Yuanı"
+          }
+        }
+      }
+    },
     "Clear" : {
       "localizations" : {
         "tr" : {
@@ -340,12 +846,44 @@
         }
       }
     },
+    "Colombian Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colombian Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kolombiya Pesosu"
+          }
+        }
+      }
+    },
     "Common Converters" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yaygın Dönüştürücüler"
+          }
+        }
+      }
+    },
+    "Comorian Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comorian Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komorlar Frangı"
           }
         }
       }
@@ -406,6 +944,22 @@
         }
       }
     },
+    "Congolese Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Congolese Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kongo Frangı"
+          }
+        }
+      }
+    },
     "Copied to Clipboard" : {
       "localizations" : {
         "tr" : {
@@ -422,6 +976,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "kopyala"
+          }
+        }
+      }
+    },
+    "Costa Rican Colón" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Costa Rican Colón"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kosta Rika Kolonu"
+          }
+        }
+      }
+    },
+    "Croatian Kuna" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Croatian Kuna"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hırvatistan Kunası"
+          }
+        }
+      }
+    },
+    "Cuban Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuban Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Küba Pesosu"
           }
         }
       }
@@ -477,6 +1079,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elektrik akımı, bir iletken üzerinden geçen elektrik yükünün akışıdır ve genellikle amper (A) cinsinden ölçülür. Akım, bir devrede bir noktadan geçen yükün hızını temsil eder.\n\nAkımın SI birimi olan amper, bir devrede bir saniyede bir coulomb yükün geçtiği olarak tanımlanır.\n\nAkım, iki türde olabilir: doğru akım (DC), yükün bir yönde sürekli olarak aktığı ve alternatif akım (AC), yükün periyodik olarak yön değiştirdiği akım türleri.\n\nElektrik akımı, elektrik ve elektronik mühendisliğinde temel bir kavramdır ve cihazları çalıştırmak, sinyalleri iletmek ve iş yapmak için kritik bir rol oynar. Bu, ev aletlerinden endüstriyel makinelerine kadar geniş bir sistem yelpazesini kapsar.\n\nAkımın hassas ölçümü ve kontrolü, elektrik sistemlerinin güvenli ve verimli çalışması için ve basit devrelerden karmaşık elektronik cihazlara kadar her şeyin tasarımında önemlidir."
+          }
+        }
+      }
+    },
+    "Czech Koruna" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czech Koruna"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Çek Korunası"
+          }
+        }
+      }
+    },
+    "Danish Krone" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danish Krone"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Danimarka Kronu"
           }
         }
       }
@@ -547,6 +1181,38 @@
         }
       }
     },
+    "Djiboutian Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Djiboutian Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cibuti Frangı"
+          }
+        }
+      }
+    },
+    "Dominican Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dominican Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dominik Pesosu"
+          }
+        }
+      }
+    },
     "Done" : {
       "localizations" : {
         "tr" : {
@@ -581,6 +1247,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hız, bir nesnenin hareket ettiği veya zaman içinde konumunu değiştirdiği oranı ölçer. Fizik ve günlük yaşamda temel bir kavramdır ve bir şeyin ne kadar hızlı hareket ettiğini açıklar.\n\nHızın SI birimi, bir saniye içinde metre cinsinden kat edilen mesafeyi temsil eden metre/saniyedir (m/s).\n\nDiğer yaygın birimler arasında kilometre/saat (km/h) ve mil/saat (mph) bulunur. Örneğin, saatte 60 km hızla giden bir araba, bir saatte 60 kilometre yol kat eder.\n\nHız, araç performansından spora, bilimsel deneylerden navigasyona kadar çeşitli uygulamalarda önemlidir.\n\nHızı anlamak, hareketi analiz etmek, performansı optimize etmek ve farklı durumlarda güvenliği sağlamak için hayati öneme sahiptir."
+          }
+        }
+      }
+    },
+    "East Caribbean Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "East Caribbean Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doğu Karayip Doları"
+          }
+        }
+      }
+    },
+    "Egyptian Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Egyptian Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mısır Lirası"
           }
         }
       }
@@ -851,12 +1549,92 @@
         }
       }
     },
+    "Eritrean Nakfa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eritrean Nakfa"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eritre Nakfası"
+          }
+        }
+      }
+    },
+    "Ethiopian Birr" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ethiopian Birr"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Etiyopya Birri"
+          }
+        }
+      }
+    },
+    "Euro" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Euro"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Euro"
+          }
+        }
+      }
+    },
     "Failed to create preview: %@" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Önizleme oluşturulamadı: %@"
+          }
+        }
+      }
+    },
+    "Falkland Islands Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falkland Islands Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Falkland Adaları Poundu"
+          }
+        }
+      }
+    },
+    "Faroese Króna" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faroese Króna"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faroe Adaları Kronu"
           }
         }
       }
@@ -921,6 +1699,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bana geri bildirimde bulun"
+          }
+        }
+      }
+    },
+    "Fijian Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fijian Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fiji Doları"
           }
         }
       }
@@ -1180,6 +1974,38 @@
         }
       }
     },
+    "Gambian Dalasi" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gambian Dalasi"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gambiya Dalasisi"
+          }
+        }
+      }
+    },
+    "Georgian Lari" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Georgian Lari"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gürcistan Larisi"
+          }
+        }
+      }
+    },
     "Get Started" : {
       "localizations" : {
         "tr" : {
@@ -1220,6 +2046,118 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hesaplamalarınızı Basitleştirmeye Hazır mısınız?"
+          }
+        }
+      }
+    },
+    "Ghanaian Cedi" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ghanaian Cedi"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gana Sedisi"
+          }
+        }
+      }
+    },
+    "Gibraltar Pound" : {
+      "localizations" : {
+        "en" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Guernsey Pound"
+            }
+          },
+          "tr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Cebelitarık Poundu"
+            }
+          }
+        }
+      },
+    "Guatemalan Quetzal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guatemalan Quetzal"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guatemala Quetzalı"
+          }
+        }
+      }
+    },
+    "Guernsey Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guernsey Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guernsey Poundu"
+          }
+        }
+      }
+    },
+    "Guinean Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guinean Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gine Frangı"
+          }
+        }
+      }
+    },
+    "Guyanaese Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guyanaese Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guyana Doları"
+          }
+        }
+      }
+    },
+    "Haitian Gourde" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haitian Gourde"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haiti Gurdu"
           }
         }
       }
@@ -1319,6 +2257,70 @@
         }
       }
     },
+    "Honduran Lempira" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Honduran Lempira"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Honduras Lempirası"
+          }
+        }
+      }
+    },
+    "Hong Kong Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hong Kong Doları"
+          }
+        }
+      }
+    },
+    "Hungarian Forint" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hungarian Forint"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macar Forinti"
+          }
+        }
+      }
+    },
+    "Icelandic Króna" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icelandic Króna"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İzlanda Kronu"
+          }
+        }
+      }
+    },
     "Illumination" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1343,6 +2345,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aydınlatma, bir yüzey alanına düşen ışık miktarını ifade eder ve genellikle lüks (lx) veya ayak mumyu (fc) cinsinden ölçülür. Bir alanın ne kadar iyi aydınlatıldığını, üzerine düşen ışığın yoğunluğu ve dağılımına göre açıklar.\n\nAydınlatma, aydınlatma tasarımı, fotoğrafçılık ve mimari gibi çeşitli uygulamalarda kritik öneme sahiptir çünkü görünürlük, estetik ve işlevsellik üzerinde etkili olur.\n\nÖrneğin, iyi aydınlatılmış bir çalışma alanı, üretkenliği artırır ve göz yorgunluğunu azaltır; fotoğrafçılıkta ise uygun aydınlatma, doğru görüntü yakalamayı sağlar.\n\nAydınlatmanın anlaşılması ve ölçülmesi, farklı ortamlar için aydınlatma koşullarını optimize etmeye yardımcı olur, alanların amaçlarına uygun şekilde yeterince aydınlatılmasını sağlar ve enerji tüketimini minimize ederek genel aydınlatma kalitesini artırır."
+          }
+        }
+      }
+    },
+    "Indian Rupee" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indian Rupee"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hindistan Rupisi"
+          }
+        }
+      }
+    },
+    "Indonesian Rupiah" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indonesian Rupiah"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Endonezya Rupisi"
           }
         }
       }
@@ -1375,6 +2409,198 @@
         }
       }
     },
+    "Iranian Rial" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iranian Rial"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İran Riyali"
+          }
+        }
+      }
+    },
+    "Iraqi Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iraqi Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Irak Dinarı"
+          }
+        }
+      }
+    },
+    "Israeli New Shekel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Israeli New Shekel"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İsrail Yeni Şekeli"
+          }
+        }
+      }
+    },
+    "Jamaican Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jamaican Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jamaika Doları"
+          }
+        }
+      }
+    },
+    "Japanese Yen" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japanese Yen"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Japon Yeni"
+          }
+        }
+      }
+    },
+    "Jersey Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jersey Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jersey Poundu"
+          }
+        }
+      }
+    },
+    "Jordanian Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jordanian Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ürdün Dinarı"
+          }
+        }
+      }
+    },
+    "Kazakhstani Tenge" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kazakhstani Tenge"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kazakistan Tengesi"
+          }
+        }
+      }
+    },
+    "Kenyan Shilling" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kenyan Shilling"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kenya Şilini"
+          }
+        }
+      }
+    },
+    "Kiribati Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiribati Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kiribati Doları"
+          }
+        }
+      }
+    },
+    "Kuwaiti Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuwaiti Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kuveyt Dinarı"
+          }
+        }
+      }
+    },
+    "Kyrgystani Som" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kyrgystani Som"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kırgızistan Somu"
+          }
+        }
+      }
+    },
     "Language" : {
       "localizations" : {
         "tr" : {
@@ -1391,6 +2617,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dil Değiştirildi"
+          }
+        }
+      }
+    },
+    "Laotian Kip" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laotian Kip"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laos Kipi"
+          }
+        }
+      }
+    },
+    "Lebanese Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lebanese Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lübnan Lirası"
           }
         }
       }
@@ -1419,6 +2677,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uzunluk, bir nesnenin bir ucundan diğerine kadar olan mesafesini ölçer. Fizik ve mühendislikte temel boyutlardan biridir.\n\nUluslararası Birimler Sistemi'nde (SI), uzunluk için temel birim metredir (m).\n\nUzunluk, kilometre (km), santimetre (cm) ve milimetre (mm) gibi çeşitli birimlerde ölçülebilir. Bunların her biri metreye dayalı türetilmiş birimlerdir.\n\nÖrneğin, bir kilometre 1.000 metreye, bir santimetre ise 0,01 metreye eşittir. Bu birimler günlük yaşamda, bilimsel araştırmalarda ve mühendislikte nesnelerin boyutunu veya mesafeleri ölçmek için kullanılır.\n"
+          }
+        }
+      }
+    },
+    "Lesotho Loti" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lesotho Loti"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lesotho Lotisi"
+          }
+        }
+      }
+    },
+    "Liberian Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liberian Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liberya Doları"
+          }
+        }
+      }
+    },
+    "Libyan Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libyan Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libya Dinarı"
           }
         }
       }
@@ -1546,6 +2852,38 @@
         }
       }
     },
+    "Macanese Pataca" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macanese Pataca"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Makao Patakası"
+          }
+        }
+      }
+    },
+    "Macedonian Denar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Macedonian Denar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Makedonya Dinarı"
+          }
+        }
+      }
+    },
     "Magnetic Field Strength" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1669,6 +3007,86 @@
         }
       }
     },
+    "Malagasy Ariary" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malagasy Ariary"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Madagaskar Ariarisi"
+          }
+        }
+      }
+    },
+    "Malawian Kwacha" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malawian Kwacha"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malavi Kvaçası"
+          }
+        }
+      }
+    },
+    "Malaysian Ringgit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malaysian Ringgit"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malezya Ringgiti"
+          }
+        }
+      }
+    },
+    "Maldivian Rufiyaa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maldivian Rufiyaa"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maldiv Rufiyaası"
+          }
+        }
+      }
+    },
+    "Manx Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manx Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Man Adası Poundu"
+          }
+        }
+      }
+    },
     "Mass" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1721,6 +3139,80 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kütle, bir nesnedeki madde miktarını ölçer ve SI birimi kilogramdır (kg). Fiziksel nesnelerin temel bir özelliğidir ve konumdan bağımsız olarak sabit kalır.\n\nKütle, bir kuvvet uygulandığında bir nesnenin ivmelenmeye karşı direncini ölçmek için kullanılır.\n\nAğırlık ise, yerçekiminin bir nesnenin kütlesi üzerinde uyguladığı kuvvettir. SI birimi newton'dur (N) ve bir kilogramlık kütleyi saniyede bir metre karelik bir ivmeyle hızlandırmak için gereken kuvvet olarak tanımlanır.\n\nAğırlık, bulunulan yerin yerçekimi alanı şiddetine bağlı olarak değişir. Örneğin, bir nesne Ay'da Dünya'dakinden daha az ağırlığa sahiptir çünkü Ay'ın yerçekimi daha zayıftır.\n\nHem ağırlık hem de kütle fizik ve mühendislikte çok önemlidir, ancak maddenin farklı özelliklerini ölçerler.\";\n\n\"LengthInfo\" = \"Uzunluk, bir nesnenin bir ucundan diğer ucuna kadar olan mesafesini ölçer. Fizik ve mühendislikte temel boyutlardan biridir.\n\nUluslararası Birimler Sisteminde (SI), uzunluk için temel birim metredir (m).\n\nUzunluk, kilometre (km), santimetre (cm) ve milimetre (mm) gibi çeşitli birimlerde ölçülebilir ve bunların her biri metreye dayalı türetilmiş birimlerdir.\n\nÖrneğin, bir kilometre 1.000 metreye, bir santimetre ise 0,01 metreye eşittir. Bu birimler günlük yaşamda, bilimsel araştırmalarda ve mühendislikte nesnelerin boyutunu veya mesafeleri ölçmek için kullanılır."
+          }
+        }
+      }
+    },
+    "Mauritanian Ouguiya" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mauritanian Ouguiya"
+                    }
+                  },
+                  "tr" : {
+                    "stringUnit" : {
+                      "state" : "translated",
+                      "value" : "Moritanya Ugiyası"
+                    }
+                  }
+                }
+              },
+    "Mauritian Rupee" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mauritian Rupee"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mauritius Rupisi"
+          }
+        }
+      }
+    },
+    "meter" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "metre"
+          }
+        }
+      }
+    },
+    "Mexican Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mexican Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meksika Pesosu"
+          }
+        }
+      }
+    },
+    "Moldovan Leu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moldovan Leu"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moldova Leyi"
           }
         }
       }
@@ -1781,12 +3273,188 @@
         }
       }
     },
+    "Mongolian Tugrik" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mongolian Tugrik"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moğolistan Tugriki"
+          }
+        }
+      }
+    },
+    "Moroccan Dirham" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moroccan Dirham"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fas Dirhemi"
+          }
+        }
+      }
+    },
+    "Mozambican Metical" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mozambican Metical"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mozambik Metikali"
+          }
+        }
+      }
+    },
+    "Myanmar Kyat" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Myanmar Kyat"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Myanmar Kyatı"
+          }
+        }
+      }
+    },
+    "Namibian Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Namibian Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Namibya Doları"
+          }
+        }
+      }
+    },
+    "Nepalese Rupee" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepalese Rupee"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepal Rupisi"
+          }
+        }
+      }
+    },
+    "Netherlands Antillean Guilder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Netherlands Antillean Guilder"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hollanda Antilleri Guldeni"
+          }
+        }
+      }
+    },
+    "New Taiwan Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Taiwan Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni Tayvan Doları"
+          }
+        }
+      }
+    },
+    "New Zealand Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Zealand Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yeni Zelanda Doları"
+          }
+        }
+      }
+    },
     "Next" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sıradaki"
+          }
+        }
+      }
+    },
+    "Nicaraguan Córdoba" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nicaraguan Córdoba"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nikaragua Kordobası"
+          }
+        }
+      }
+    },
+    "Nigerian Naira" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nigerian Naira"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nijerya Nairası"
           }
         }
       }
@@ -1801,12 +3469,108 @@
         }
       }
     },
+    "Norwegian Krone" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Norwegian Krone"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Norveç Kronu"
+          }
+        }
+      }
+    },
     "OK" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tamam"
+          }
+        }
+      }
+    },
+    "Omani Rial" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omani Rial"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umman Riyali"
+          }
+        }
+      }
+    },
+    "Pakistani Rupee" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pakistani Rupee"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pakistan Rupisi"
+          }
+        }
+      }
+    },
+    "Panamanian Balboa" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panamanian Balboa"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panama Balboası"
+          }
+        }
+      }
+    },
+    "Papua New Guinean Kina" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Papua New Guinean Kina"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Papua Yeni Gine Kinası"
+          }
+        }
+      }
+    },
+    "Paraguayan Guarani" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paraguayan Guarani"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paraguay Guaranisi"
           }
         }
       }
@@ -1849,12 +3613,60 @@
         }
       }
     },
+    "Peruvian Sol" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peruvian Sol"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peru Solü"
+          }
+        }
+      }
+    },
+    "Philippine Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Philippine Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filipin Pesosu"
+          }
+        }
+      }
+    },
     "Please restart the app for the language change to take effect." : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dil değişikliğinin etkili olması için lütfen uygulamayı yeniden başlatın."
+          }
+        }
+      }
+    },
+    "Polish Złoty" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polish Złoty"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Polonya Zlotisi"
           }
         }
       }
@@ -1931,6 +3743,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Satın al"
+          }
+        }
+      }
+    },
+    "Qatari Rial" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qatari Rial"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Katar Riyali"
           }
         }
       }
@@ -2078,6 +3906,118 @@
         }
       }
     },
+    "Romanian Leu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romanian Leu"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Romen Leyi"
+          }
+        }
+      }
+    },
+    "Russian Ruble" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Russian Ruble"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rus Rublesi"
+          }
+        }
+      }
+    },
+    "Rwandan Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rwandan Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruanda Frangı"
+          }
+        }
+      }
+    },
+    "Saint Helena Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saint Helena Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saint Helena Poundu"
+          }
+        }
+      }
+    },
+    "Samoan Tala" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samoan Tala"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Samoa Talası"
+          }
+        }
+      }
+    },
+    "São Tomé and Príncipe Dobra" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "São Tomé and Príncipe Dobra"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "São Tomé ve Príncipe Dobrası"
+          }
+        }
+      }
+    },
+    "Saudi Riyal" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saudi Riyal"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suudi Arabistan Riyali"
+          }
+        }
+      }
+    },
     "Select Currencies" : {
       "localizations" : {
         "tr" : {
@@ -2098,12 +4038,172 @@
         }
       }
     },
+    "Serbian Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serbian Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sırp Dinarı"
+          }
+        }
+      }
+    },
     "Settings" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayarlar"
+          }
+        }
+      }
+    },
+    "Seychellois Rupee" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seychellois Rupee"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seyşeller Rupisi"
+          }
+        }
+      }
+    },
+    "Sierra Leonean Leone" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sierra Leonean Leone"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sierra Leone Leonesi"
+          }
+        }
+      }
+    },
+    "Singapore Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Singapore Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Singapur Doları"
+          }
+        }
+      }
+    },
+    "Solomon Islands Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solomon Islands Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solomon Adaları Doları"
+          }
+        }
+      }
+    },
+    "Somali Shilling" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somali Shilling"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somali Şilini"
+          }
+        }
+      }
+    },
+    "South African Rand" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "South African Rand"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güney Afrika Randı"
+          }
+        }
+      }
+    },
+    "South Korean Won" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "South Korean Won"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güney Kore Wonu"
+          }
+        }
+      }
+    },
+    "South Sudanese Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "South Sudanese Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Güney Sudan Poundu"
+          }
+        }
+      }
+    },
+    "Special Drawing Rights" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Special Drawing Rights"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özel Çekme Hakları"
           }
         }
       }
@@ -2188,6 +4288,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Özgül ısı kapasitesi, bir maddenin sıcaklığını bir derece Celsius (veya bir Kelvin) artırmak için gereken ısı miktarını ölçen bir özelliktir. Bu özellik genellikle joule/kg·°C (J/kg·°C) veya joule/kg·K (J/kg·K) birimlerinde ifade edilir.\n\nÖrneğin, suyun özgül ısı kapasitesi yaklaşık 4.186 J/kg·K'dir, bu da bir kilogram suyun sıcaklığını bir Kelvin artırmak için 4.186 joule ısı gerektiği anlamına gelir.\n\nÖzgül ısı kapasitesi, termodinamik ve ısı transferinde kritik bir öneme sahiptir, çünkü bir maddenin ısıya nasıl tepki verdiğini belirler ve ısıtma, soğutma ve faz değişimleri gibi süreçleri etkiler.\n\nÖzgül ısı kapasitesinin doğru bir şekilde bilinmesi, termal sistemlerin tasarımı, enerji gereksinimlerinin hesaplanması ve çeşitli bilimsel ve mühendislik uygulamalarında malzeme davranışının anlaşılması için esastır."
+          }
+        }
+      }
+    },
+    "Sri Lankan Rupee" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sri Lankan Rupee"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sri Lanka Rupisi"
+          }
+        }
+      }
+    },
+    "Sudanese Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sudanese Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sudan Poundu"
           }
         }
       }
@@ -2286,6 +4418,118 @@
         }
       }
     },
+    "Surinamese Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surinamese Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surinam Doları"
+          }
+        }
+      }
+    },
+    "Swazi Lilangeni" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swazi Lilangeni"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Svaziland Lilangenisi"
+          }
+        }
+      }
+    },
+    "Swedish Krona" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swedish Krona"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İsveç Kronu"
+          }
+        }
+      }
+    },
+    "Swiss Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swiss Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İsviçre Frangı"
+          }
+        }
+      }
+    },
+    "Syrian Pound" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Syrian Pound"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suriye Lirası"
+          }
+        }
+      }
+    },
+    "Tajikistani Somoni" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tajikistani Somoni"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tacikistan Somonisi"
+          }
+        }
+      }
+    },
+    "Tanzanian Shilling" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanzanian Shilling"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tanzanya Şilini"
+                }
+              }
+            }
+          },
     "Temperature" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2321,6 +4565,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sıcaklık, bir maddenin içinde bulunan termal enerji veya ısıyı ölçer ve bir maddenin ne kadar sıcak veya soğuk olduğunu gösterir. Bilimsel ve günlük birçok bağlamda kullanılan temel bir fiziksel büyüklüktür.\n\nSıcaklık için SI birimi, atomik hareketin durduğu nokta olan mutlak sıfırı temsil eden kelvindir (K).\n\nSıcaklık, aynı zamanda yaygın olarak santigrat derece (°C) ve Fahrenheit derece (°F) cinsinden de ölçülür. Santigrat ölçeğinde, su 0°C'de donar ve standart atmosferik koşullar altında 100°C'de kaynar. Fahrenheit ölçeğinde ise su 32°F'de donar ve 212°F'de kaynar.\n\nHava tahmininden kimyasal reaksiyonlara ve günlük sıcaklık kontrolüne kadar birçok süreç için doğru sıcaklık ölçümü hayati önem taşır."
+          }
+        }
+      }
+    },
+    "Thai Baht" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thai Baht"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tayland Bahtı"
           }
         }
       }
@@ -2429,6 +4689,22 @@
         }
       }
     },
+    "Tongan Paʻanga" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tongan Paʻanga"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tonga Paʻangası"
+          }
+        }
+      }
+    },
     "Torque" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2457,12 +4733,124 @@
         }
       }
     },
+    "Trinidad and Tobago Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trinidad and Tobago Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trinidad ve Tobago Doları"
+          }
+        }
+      }
+    },
+    "Tunisian Dinar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tunisian Dinar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tunus Dinarı"
+          }
+        }
+      }
+    },
     "Türkçe" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Türkçe"
+          }
+        }
+      }
+    },
+    "Turkish Lira" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turkish Lira"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Türk Lirası"
+          }
+        }
+      }
+    },
+    "Turkmenistani Manat" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turkmenistani Manat"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Türkmenistan Manatı"
+          }
+        }
+      }
+    },
+    "Tuvaluan Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuvaluan Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tuvalu Doları"
+          }
+        }
+      }
+    },
+    "Ugandan Shilling" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ugandan Shilling"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uganda Şilini"
+          }
+        }
+      }
+    },
+    "Ukrainian Hryvnia" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukrainian Hryvnia"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukrayna Grivnası"
           }
         }
       }
@@ -2477,12 +4865,76 @@
         }
       }
     },
+    "United Arab Emirates Dirham" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "United Arab Emirates Dirham"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birleşik Arap Emirlikleri Dirhemi"
+          }
+        }
+      }
+    },
+    "United States Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "United States Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Amerikan Doları"
+          }
+        }
+      }
+    },
     "Unsupported category: %@" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desteklenmeyen kategori: %@"
+          }
+        }
+      }
+    },
+    "Uruguayan Peso" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruguayan Peso"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uruguay Pesosu"
+          }
+        }
+      }
+    },
+    "Uzbekistani Som" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzbekistani Som"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özbekistan Somu"
           }
         }
       }
@@ -2497,6 +4949,22 @@
         }
       }
     },
+    "Vanuatu Vatu" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vanuatu Vatu"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vanuatu Vatusu"
+          }
+        }
+      }
+    },
     "Velocity - Angular" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2504,6 +4972,38 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hız - Açısal"
+          }
+        }
+      }
+    },
+    "Venezuelan Bolívar Soberano" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venezuelan Bolívar Soberano"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Venezuela Bolívarı"
+          }
+        }
+      }
+    },
+    "Vietnamese Đồng" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vietnamese Đồng"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vietnam Dongu"
           }
         }
       }
@@ -2689,6 +5189,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Birim Dönüştürücü'ye Hoş Geldiniz"
+          }
+        }
+      }
+    },
+    "West African CFA Franc" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "West African CFA Franc"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batı Afrika CFA Frangı"
+          }
+        }
+      }
+    },
+    "Yemeni Rial" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yemeni Rial"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yemen Riyali"
+          }
+        }
+      }
+    },
+    "Zambian Kwacha" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zambian Kwacha"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zambiya Kvaçası"
+          }
+        }
+      }
+    },
+    "Zimbabwean Dollar" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zimbabwean Dollar"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zimbabve Doları"
           }
         }
       }

@@ -19,11 +19,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
     case viscosityKinematic = "Viscosity - Kinematic"
     case surfaceTension = "Surface Tension"
     case permeability = "Permeability"
-
+    
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
-
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .flow:
@@ -46,7 +46,7 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             return convertSurfaceTension(value, from: fromUnit, to: toUnit)
         case .permeability:
             return convertPermeability(value, from: fromUnit, to: toUnit)
-
+            
         }
     }
     
@@ -115,7 +115,7 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = cubicMeterPerSecondValues[fromUnit.lowercased()], let toValue = cubicMeterPerSecondValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let cubicMeterPerSecond = value * fromValue
         return cubicMeterPerSecond / toValue
     }
@@ -158,7 +158,7 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = kilogramPerSecondValues[fromUnit.lowercased()], let toValue = kilogramPerSecondValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let kilogramPerSecond = value * fromValue
         return kilogramPerSecond / toValue
     }
@@ -192,11 +192,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "kilomol/hour": Decimal(string: "0.2777777778")!,
             "kilomol/day": Decimal(string: "0.0115740741")!
         ]
-
+        
         guard let fromValue = molPerSecondValues[fromUnit.lowercased()], let toValue = molPerSecondValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let molPerSecond = value * fromValue
         return molPerSecond / toValue
     }
@@ -211,11 +211,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "pound/hour/square foot": Decimal(string: "1.3562299132")!,
             "pound/second/square foot": Decimal(string: "4882.4276872752")!
         ]
-
+        
         guard let fromValue = gramPerSecondPerSquareMeterValues[fromUnit.lowercased()], let toValue = gramPerSecondPerSquareMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let gramPerSecondPerSquareMeter = value * fromValue
         return gramPerSecondPerSquareMeter / toValue
     }
@@ -235,11 +235,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "millimol/cubic centimeter": 1000,
             "millimol/cubic millimeter": 1000000
         ]
-
+        
         guard let fromValue = molPerCubicMeterValues[fromUnit.lowercased()], let toValue = molPerCubicMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let molPerCubicMeter = value * fromValue
         return molPerCubicMeter / toValue
     }
@@ -258,11 +258,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "pound/million gallon (UK)": Decimal(string: "9.9776373608464e-8")!,
             "pound/cubic foot": Decimal(string: "0.0160184635")!
         ]
-
+        
         guard let fromValue = kilogramPerLiterValues[fromUnit.lowercased()], let toValue = kilogramPerLiterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let kilogramPerLiter = value * fromValue
         return kilogramPerLiter / toValue
     }
@@ -303,7 +303,7 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = pascalSecondValues[fromUnit.lowercased()], let toValue = pascalSecondValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let pascalSecond = value * fromValue
         return pascalSecond / toValue
     }
@@ -335,11 +335,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "femtostokes": Decimal(sign: .minus, exponent: 19, significand: 1),
             "attostokes": Decimal(sign: .minus, exponent: 22, significand: 1)
         ]
-
+        
         guard let fromValue = squareMeterPerSecondValues[fromUnit.lowercased()], let toValue = squareMeterPerSecondValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let squareMeterPerSecond = value * fromValue
         return squareMeterPerSecond / toValue
     }
@@ -355,11 +355,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "poundal/inch": Decimal(string: "5.443108491")!,
             "pound-force/inch": Decimal(string: "175.1268369864")!
         ]
-
+        
         guard let fromValue = newtonPerMeterValues[fromUnit.lowercased()], let toValue = newtonPerMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let newtonPerMeter = value * fromValue
         return newtonPerMeter / toValue
     }
@@ -372,11 +372,11 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "permeability inches (0°C)": Decimal(string: "1.45322e-12")!,
             "permeability inches (23°C)": Decimal(string: "1.45929e-12")!
         ]
-
+        
         guard let fromValue = kgPerPascalSecondSquareMeterValues[fromUnit.lowercased()], let toValue = kgPerPascalSecondSquareMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let kgPerPascalSecondSquareMeter = value * fromValue
         return kgPerPascalSecondSquareMeter / toValue
     }

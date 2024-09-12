@@ -638,7 +638,7 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
         switch self {
         case .length:
             return [
-                ("m", "meter"),
+                ("m", String(localized: "meter")),
                 ("km", "kilometer"),
                 ("dm", "decimeter"),
                 ("cm", "centimeter"),

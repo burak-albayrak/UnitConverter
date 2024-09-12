@@ -19,11 +19,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     case heatDensity = "Heat Density"
     case heatFluxDensity = "Heat Flux Density"
     case heatTransverCoefficient = "Heat Transver Coefficient"
-
+    
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
-
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .fuelEfficiencyMass:
@@ -67,11 +67,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "gram/horsepower (metric)/hour": 2647795500,
             "gram/kilowatt/hour": 3600000000
         ]
-
+        
         guard let fromValue = joulePerKilogramValues[fromUnit.lowercased()], let toValue = joulePerKilogramValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let joulePerKilogram = value * fromValue
         return joulePerKilogram / toValue
     }
@@ -93,11 +93,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "liter/joule": 1000,
             "gallon (US)/horsepower": Decimal(string: "709175035.869")!
         ]
-
+        
         guard let fromValue = joulePerCubicMeterValues[fromUnit.lowercased()], let toValue = joulePerCubicMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let joulePerCubicMeter = value * fromValue
         return joulePerCubicMeter / toValue
     }
@@ -144,11 +144,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "length/length/degree rankine": Decimal(1.8),
             "length/length/degree reaumur": Decimal(0.8)
         ]
-
+        
         guard let fromValue = perKelvinValues[fromUnit.lowercased()], let toValue = perKelvinValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let perKelvin = value * fromValue
         return perKelvin / toValue
     }
@@ -161,11 +161,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "degree fahrenheit second/btu (it)": Decimal(string: "0.0005265651")!,
             "degree fahrenheit second/btu (th)": Decimal(string: "0.0005269175")!
         ]
-
+        
         guard let fromValue = kelvinPerWattValues[fromUnit.lowercased()], let toValue = kelvinPerWattValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let kelvinPerWatt = value * fromValue
         return kelvinPerWatt / toValue
     }
@@ -186,11 +186,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "Btu (IT) inch/hour/sq. foot/°F": Decimal(string: "0.1442278889")!,
             "Btu (th) inch/hour/sq. foot/°F": Decimal(string: "0.1441314338")!
         ]
-
+        
         guard let fromValue = wattPerMeterKelvinValues[fromUnit.lowercased()], let toValue = wattPerMeterKelvinValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let wattPerMeterKelvin = value * fromValue
         return wattPerMeterKelvin / toValue
     }
@@ -218,11 +218,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "Btu (IT)/pound/°C": Decimal(string: "2326.0000001596")!,
             "CHU/pound/°C": Decimal(string: "4186.800000482")!
         ]
-
+        
         guard let fromValue = joulePerKilogramKelvinValues[fromUnit.lowercased()], let toValue = joulePerKilogramKelvinValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let joulePerKilogramKelvin = value * fromValue
         return joulePerKilogramKelvin / toValue
     }
@@ -235,11 +235,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "Btu (IT)/square foot": Decimal(string: "11356.526682227")!,
             "Btu (th)/square foot": Decimal(string: "11348.931794793")!
         ]
-
+        
         guard let fromValue = joulePerSquareMeterValues[fromUnit.lowercased()], let toValue = joulePerSquareMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let joulePerSquareMeter = value * fromValue
         return joulePerSquareMeter / toValue
     }
@@ -273,11 +273,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "Btu (th)/hour/square foot": Decimal(string: "3.1524810541")!,
             "CHU/hour/square foot": Decimal(string: "5.6782633986")!
         ]
-
+        
         guard let fromValue = wattPerSquareMeterValues[fromUnit.lowercased()], let toValue = wattPerSquareMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let wattPerSquareMeter = value * fromValue
         return wattPerSquareMeter / toValue
     }
@@ -296,11 +296,11 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "Btu (th)/hour/square foot/°F": Decimal(string: "5.6744658974")!,
             "CHU/hour/square foot/°C": Decimal(string: "5.6782633411")!
         ]
-
+        
         guard let fromValue = wattPerSquareMeterKelvinValues[fromUnit.lowercased()], let toValue = wattPerSquareMeterKelvinValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let wattPerSquareMeterKelvin = value * fromValue
         return wattPerSquareMeterKelvin / toValue
     }

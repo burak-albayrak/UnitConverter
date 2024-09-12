@@ -35,7 +35,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
- 
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         switch self {
         case .length:
@@ -180,11 +180,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Earth's distance from sun": 149600000000,
             "Sun's radius": 696000000
         ]
-
+        
         guard let fromValue = meterValues[fromUnit.lowercased()], let toValue = meterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let meters = value * fromValue
         return meters / toValue
     }
@@ -261,15 +261,15 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Earth's mass": Decimal(string: "5.9760000000002e24")!,
             "Sun's mass": Decimal(sign: .plus, exponent: 30, significand: 2)
         ]
-
+        
         guard let fromValue = kilogramValues[fromUnit.lowercased()], let toValue = kilogramValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let kilograms = value * fromValue
         return kilograms / toValue
     }
-            
+    
     private func convertVolume(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let cubicMeterValues: [String: Decimal] = [
             "cubic meter": 1,
@@ -353,11 +353,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = cubicMeterValues[fromUnit.lowercased()], let toValue = cubicMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let cubicMeters = value * fromValue
         return cubicMeters / toValue
     }
-            
+    
     private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let kelvin: Decimal
         switch fromUnit.lowercased() {
@@ -376,7 +376,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         default:
             return value
         }
-
+        
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
@@ -437,15 +437,15 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "varas conuqueras cuad": Decimal(string: "6.288633")!,
             "Electron cross section": Decimal(string: "6.6524615999999e-29")!
         ]
-
+        
         guard let fromValue = squareMeterValues[fromUnit.lowercased()], let toValue = squareMeterValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let squareMeters = value * fromValue
         return squareMeters / toValue
     }
-            
+    
     private func convertPressure(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let pascalValues: [String: Decimal] = [
             "pascal": 1,
@@ -501,15 +501,15 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "foot water (60°F)": Decimal(string: "2986.116")!,
             "atmosphere technical": Decimal(string: "98066.500000003")!
         ]
-
+        
         guard let fromValue = pascalValues[fromUnit.lowercased()], let toValue = pascalValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let pascals = value * fromValue
         return pascals / toValue
     }
-            
+    
     private func convertAngle(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let degreeValues: [String: Decimal] = [
             "degree": 1,
@@ -527,11 +527,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "right angle": 90,
             "sextant": 60
         ]
-
+        
         guard let fromValue = degreeValues[fromUnit.lowercased()], let toValue = degreeValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let degrees = value * fromValue
         return degrees / toValue
     }
@@ -575,11 +575,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = meterPerSecondValues[fromUnit.lowercased()], let toValue = meterPerSecondValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let meterPerSecond = value * fromValue
         return meterPerSecond / toValue
     }
-        
+    
     private func convertDuration(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let secondValues: [String: Decimal] = [
             "second": 1,
@@ -620,7 +620,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = secondValues[fromUnit.lowercased()], let toValue = secondValues[toUnit.lowercased()] else {
             return value
         }
-
+        
         let seconds = value * fromValue
         return seconds / toValue
     }
@@ -690,7 +690,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         let joules = value * fromValue
         return joules / toValue
     }
-            
+    
     private func convertPower(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let wattValues: [String: Decimal] = [
             "watt": 1,
@@ -823,7 +823,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         let newtons = value * fromValue
         return newtons / toValue
     }
-        
+    
     private func convertFuelConsumption(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let meterPerLiterValues: [String: Decimal] = [
             "meter/liter": 1,

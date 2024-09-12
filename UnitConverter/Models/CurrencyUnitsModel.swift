@@ -60,7 +60,7 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
         "USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "HKD", "NZD",
         "SEK", "KRW", "SGD", "NOK", "MXN", "INR", "RUB", "ZAR", "TRY", "BRL",
         "TWD", "DKK", "PLN", "THB", "IDR", "HUF", "CZK", "ILS", "CLP", "PHP",
-        "AED", "COP", "SAR", "MYR", "RON",
+        "AED", "COP", "SAR", "MYR", "RON", "ALL", "BBD",
         "AFN", "AMD", "ANG", "AOA", "ARS", "AWG", "AZN", "BAM", "BDD", "BDT",
         "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BSD", "BTN", "BWP", "BYN",
         "BZD", "CDF", "CRC", "CUP", "CVE", "DJF", "DOP", "DZD", "EGP", "ERN",
@@ -83,168 +83,167 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
 
     func getCurrencyFullName(for code: String) -> String {
         switch code {
-        case "USD": return "United States Dollar"
-        case "EUR": return "Euro"
-        case "JPY": return "Japanese Yen"
-        case "GBP": return "British Pound Sterling"
-        case "AUD": return "Australian Dollar"
-        case "CAD": return "Canadian Dollar"
-        case "CHF": return "Swiss Franc"
-        case "CNY": return "Chinese Yuan"
-        case "HKD": return "Hong Kong Dollar"
-        case "NZD": return "New Zealand Dollar"
-        case "SEK": return "Swedish Krona"
-        case "KRW": return "South Korean Won"
-        case "SGD": return "Singapore Dollar"
-        case "NOK": return "Norwegian Krone"
-        case "MXN": return "Mexican Peso"
-        case "INR": return "Indian Rupee"
-        case "RUB": return "Russian Ruble"
-        case "ZAR": return "South African Rand"
-        case "TRY": return "Turkish Lira"
-        case "BRL": return "Brazilian Real"
-        case "TWD": return "New Taiwan Dollar"
-        case "DKK": return "Danish Krone"
-        case "PLN": return "Polish Złoty"
-        case "THB": return "Thai Baht"
-        case "IDR": return "Indonesian Rupiah"
-        case "HUF": return "Hungarian Forint"
-        case "CZK": return "Czech Koruna"
-        case "ILS": return "Israeli New Shekel"
-        case "CLP": return "Chilean Peso"
-        case "PHP": return "Philippine Peso"
-        case "AED": return "United Arab Emirates Dirham"
-        case "COP": return "Colombian Peso"
-        case "SAR": return "Saudi Riyal"
-        case "MYR": return "Malaysian Ringgit"
-        case "RON": return "Romanian Leu"
-        case "AFN": return "Afghan Afghani"
-        case "AMD": return "Armenian Dram"
-        case "ANG": return "Netherlands Antillean Guilder"
-        case "AOA": return "Angolan Kwanza"
-        case "ARS": return "Argentine Peso"
-        case "AWG": return "Aruban Florin"
-        case "AZN": return "Azerbaijani Manat"
-        case "BAM": return "Bosnia-Herzegovina Convertible Mark"
-        case "BDD": return "Brunei Dollar"
-        case "BDT": return "Bangladeshi Taka"
-        case "BGN": return "Bulgarian Lev"
-        case "BHD": return "Bahraini Dinar"
-        case "BIF": return "Burundian Franc"
-        case "BMD": return "Bermudan Dollar"
-        case "BND": return "Brunei Dollar"
-        case "BOB": return "Bolivian Boliviano"
-        case "BSD": return "Bahamian Dollar"
-        case "BTN": return "Bhutanese Ngultrum"
-        case "BWP": return "Botswanan Pula"
-        case "BYN": return "Belarusian Ruble"
-        case "BZD": return "Belize Dollar"
-        case "CDF": return "Congolese Franc"
-        case "CRC": return "Costa Rican Colón"
-        case "CUP": return "Cuban Peso"
-        case "CVE": return "Cape Verdean Escudo"
-        case "DJF": return "Djiboutian Franc"
-        case "DOP": return "Dominican Peso"
-        case "DZD": return "Algerian Dinar"
-        case "EGP": return "Egyptian Pound"
-        case "ERN": return "Eritrean Nakfa"
-        case "ETB": return "Ethiopian Birr"
-        case "FJD": return "Fijian Dollar"
-        case "FKP": return "Falkland Islands Pound"
-        case "FOK": return "Faroese Króna"
-        case "GEL": return "Georgian Lari"
-        case "GGP": return "Guernsey Pound"
-        case "GHS": return "Ghanaian Cedi"
-        case "GIP": return "Gibraltar Pound"
-        case "GMD": return "Gambian Dalasi"
-        case "GNF": return "Guinean Franc"
-        case "GTQ": return "Guatemalan Quetzal"
-        case "GYD": return "Guyanaese Dollar"
-        case "HNL": return "Honduran Lempira"
-        case "HRK": return "Croatian Kuna"
-        case "HTG": return "Haitian Gourde"
-        case "IMP": return "Manx Pound"
-        case "IQD": return "Iraqi Dinar"
-        case "IRR": return "Iranian Rial"
-        case "ISK": return "Icelandic Króna"
-        case "JEP": return "Jersey Pound"
-        case "JMD": return "Jamaican Dollar"
-        case "JOD": return "Jordanian Dinar"
-        case "KES": return "Kenyan Shilling"
-        case "KGS": return "Kyrgystani Som"
-        case "KHR": return "Cambodian Riel"
-        case "KID": return "Kiribati Dollar"
-        case "KMF": return "Comorian Franc"
-        case "KWD": return "Kuwaiti Dinar"
-        case "KYD": return "Cayman Islands Dollar"
-        case "KZT": return "Kazakhstani Tenge"
-        case "LAK": return "Laotian Kip"
-        case "LBP": return "Lebanese Pound"
-        case "LKR": return "Sri Lankan Rupee"
-        case "LRD": return "Liberian Dollar"
-        case "LSL": return "Lesotho Loti"
-        case "LYD": return "Libyan Dinar"
-        case "MAD": return "Moroccan Dirham"
-        case "MDL": return "Moldovan Leu"
-        case "MGA": return "Malagasy Ariary"
-        case "MKD": return "Macedonian Denar"
-        case "MMK": return "Myanmar Kyat"
-        case "MNT": return "Mongolian Tugrik"
-        case "MOP": return "Macanese Pataca"
-        case "MRU": return "Mauritanian Ouguiya"
-        case "MUR": return "Mauritian Rupee"
-        case "MVR": return "Maldivian Rufiyaa"
-        case "MWK": return "Malawian Kwacha"
-        case "MZN": return "Mozambican Metical"
-        case "NAD": return "Namibian Dollar"
-        case "NGN": return "Nigerian Naira"
-        case "NIO": return "Nicaraguan Córdoba"
-        case "NPR": return "Nepalese Rupee"
-        case "OMR": return "Omani Rial"
-        case "PAB": return "Panamanian Balboa"
-        case "PEN": return "Peruvian Sol"
-        case "PGK": return "Papua New Guinean Kina"
-        case "PKR": return "Pakistani Rupee"
-        case "PYG": return "Paraguayan Guarani"
-        case "QAR": return "Qatari Rial"
-        case "RSD": return "Serbian Dinar"
-        case "RWF": return "Rwandan Franc"
-        case "SBD": return "Solomon Islands Dollar"
-        case "SCR": return "Seychellois Rupee"
-        case "SDG": return "Sudanese Pound"
-        case "SHP": return "Saint Helena Pound"
-        case "SLE": return "Sierra Leonean Leone"
-        case "SLL": return "Sierra Leonean Leone"
-        case "SOS": return "Somali Shilling"
-        case "SRD": return "Surinamese Dollar"
-        case "SSP": return "South Sudanese Pound"
-        case "STN": return "São Tomé and Príncipe Dobra"
-        case "SYP": return "Syrian Pound"
-        case "SZL": return "Swazi Lilangeni"
-        case "TJS": return "Tajikistani Somoni"
-        case "TMT": return "Turkmenistani Manat"
-        case "TND": return "Tunisian Dinar"
-        case "TOP": return "Tongan Paʻanga"
-        case "TTD": return "Trinidad and Tobago Dollar"
-        case "TVD": return "Tuvaluan Dollar"
-        case "TZS": return "Tanzanian Shilling"
-        case "UAH": return "Ukrainian Hryvnia"
-        case "UGX": return "Ugandan Shilling"
-        case "UYU": return "Uruguayan Peso"
-        case "UZS": return "Uzbekistani Som"
-        case "VES": return "Venezuelan Bolívar Soberano"
-        case "VND": return "Vietnamese Đồng"
-        case "VUV": return "Vanuatu Vatu"
-        case "WST": return "Samoan Tala"
-        case "XAF": return "Central African CFA Franc"
-        case "XCD": return "East Caribbean Dollar"
-        case "XDR": return "Special Drawing Rights"
-        case "XOF": return "West African CFA Franc"
-        case "XPF": return "CFP Franc"
-        case "YER": return "Yemeni Rial"
-        case "ZMW": return "Zambian Kwacha"
-        case "ZWL": return "Zimbabwean Dollar"
-        default: return "Unknown Currency"
+        case "USD": return String(localized: "United States Dollar")
+        case "EUR": return String(localized: "Euro")
+        case "JPY": return String(localized: "Japanese Yen")
+        case "GBP": return String(localized: "British Pound Sterling")
+        case "AUD": return String(localized: "Australian Dollar")
+        case "CAD": return String(localized: "Canadian Dollar")
+        case "CHF": return String(localized: "Swiss Franc")
+        case "CNY": return String(localized: "Chinese Yuan")
+        case "HKD": return String(localized: "Hong Kong Dollar")
+        case "NZD": return String(localized: "New Zealand Dollar")
+        case "SEK": return String(localized: "Swedish Krona")
+        case "KRW": return String(localized: "South Korean Won")
+        case "SGD": return String(localized: "Singapore Dollar")
+        case "NOK": return String(localized: "Norwegian Krone")
+        case "MXN": return String(localized: "Mexican Peso")
+        case "INR": return String(localized: "Indian Rupee")
+        case "RUB": return String(localized: "Russian Ruble")
+        case "ZAR": return String(localized: "South African Rand")
+        case "TRY": return String(localized: "Turkish Lira")
+        case "BRL": return String(localized: "Brazilian Real")
+        case "TWD": return String(localized: "New Taiwan Dollar")
+        case "DKK": return String(localized: "Danish Krone")
+        case "PLN": return String(localized: "Polish Złoty")
+        case "THB": return String(localized: "Thai Baht")
+        case "IDR": return String(localized: "Indonesian Rupiah")
+        case "HUF": return String(localized: "Hungarian Forint")
+        case "CZK": return String(localized: "Czech Koruna")
+        case "ILS": return String(localized: "Israeli New Shekel")
+        case "CLP": return String(localized: "Chilean Peso")
+        case "PHP": return String(localized: "Philippine Peso")
+        case "AED": return String(localized: "United Arab Emirates Dirham")
+        case "COP": return String(localized: "Colombian Peso")
+        case "SAR": return String(localized: "Saudi Riyal")
+        case "MYR": return String(localized: "Malaysian Ringgit")
+        case "RON": return String(localized: "Romanian Leu")
+        case "ALL": return String(localized: "Albanian Lek")
+        case "AMD": return String(localized: "Armenian Dram")
+        case "ANG": return String(localized: "Netherlands Antillean Guilder")
+        case "AOA": return String(localized: "Angolan Kwanza")
+        case "ARS": return String(localized: "Argentine Peso")
+        case "AWG": return String(localized: "Aruban Florin")
+        case "AZN": return String(localized: "Azerbaijani Manat")
+        case "BAM": return String(localized: "Bosnia-Herzegovina Convertible Mark")
+        case "BBD": return String(localized: "Barbadian Dollar")
+        case "BDT": return String(localized: "Bangladeshi Taka")
+        case "BGN": return String(localized: "Bulgarian Lev")
+        case "BHD": return String(localized: "Bahraini Dinar")
+        case "BIF": return String(localized: "Burundian Franc")
+        case "BMD": return String(localized: "Bermudan Dollar")
+        case "BND": return String(localized: "Brunei Dollar")
+        case "BOB": return String(localized: "Bolivian Boliviano")
+        case "BSD": return String(localized: "Bahamian Dollar")
+        case "BTN": return String(localized: "Bhutanese Ngultrum")
+        case "BWP": return String(localized: "Botswanan Pula")
+        case "BYN": return String(localized: "Belarusian Ruble")
+        case "BZD": return String(localized: "Belize Dollar")
+        case "CDF": return String(localized: "Congolese Franc")
+        case "CRC": return String(localized: "Costa Rican Colón")
+        case "CUP": return String(localized: "Cuban Peso")
+        case "CVE": return String(localized: "Cape Verdean Escudo")
+        case "DJF": return String(localized: "Djiboutian Franc")
+        case "DOP": return String(localized: "Dominican Peso")
+        case "DZD": return String(localized: "Algerian Dinar")
+        case "EGP": return String(localized: "Egyptian Pound")
+        case "ERN": return String(localized: "Eritrean Nakfa")
+        case "ETB": return String(localized: "Ethiopian Birr")
+        case "FJD": return String(localized: "Fijian Dollar")
+        case "FKP": return String(localized: "Falkland Islands Pound")
+        case "FOK": return String(localized: "Faroese Króna")
+        case "GEL": return String(localized: "Georgian Lari")
+        case "GGP": return String(localized: "Guernsey Pound")
+        case "GHS": return String(localized: "Ghanaian Cedi")
+        case "GIP": return String(localized: "Gibraltar Pound")
+        case "GMD": return String(localized: "Gambian Dalasi")
+        case "GNF": return String(localized: "Guinean Franc")
+        case "GTQ": return String(localized: "Guatemalan Quetzal")
+        case "GYD": return String(localized: "Guyanaese Dollar")
+        case "HNL": return String(localized: "Honduran Lempira")
+        case "HRK": return String(localized: "Croatian Kuna")
+        case "HTG": return String(localized: "Haitian Gourde")
+        case "IMP": return String(localized: "Manx Pound")
+        case "IQD": return String(localized: "Iraqi Dinar")
+        case "IRR": return String(localized: "Iranian Rial")
+        case "ISK": return String(localized: "Icelandic Króna")
+        case "JEP": return String(localized: "Jersey Pound")
+        case "JMD": return String(localized: "Jamaican Dollar")
+        case "JOD": return String(localized: "Jordanian Dinar")
+        case "KES": return String(localized: "Kenyan Shilling")
+        case "KGS": return String(localized: "Kyrgystani Som")
+        case "KHR": return String(localized: "Cambodian Riel")
+        case "KID": return String(localized: "Kiribati Dollar")
+        case "KMF": return String(localized: "Comorian Franc")
+        case "KWD": return String(localized: "Kuwaiti Dinar")
+        case "KYD": return String(localized: "Cayman Islands Dollar")
+        case "KZT": return String(localized: "Kazakhstani Tenge")
+        case "LAK": return String(localized: "Laotian Kip")
+        case "LBP": return String(localized: "Lebanese Pound")
+        case "LKR": return String(localized: "Sri Lankan Rupee")
+        case "LRD": return String(localized: "Liberian Dollar")
+        case "LSL": return String(localized: "Lesotho Loti")
+        case "LYD": return String(localized: "Libyan Dinar")
+        case "MAD": return String(localized: "Moroccan Dirham")
+        case "MDL": return String(localized: "Moldovan Leu")
+        case "MGA": return String(localized: "Malagasy Ariary")
+        case "MKD": return String(localized: "Macedonian Denar")
+        case "MMK": return String(localized: "Myanmar Kyat")
+        case "MNT": return String(localized: "Mongolian Tugrik")
+        case "MOP": return String(localized: "Macanese Pataca")
+        case "MRU": return String(localized: "Mauritanian Ouguiya")
+        case "MUR": return String(localized: "Mauritian Rupee")
+        case "MVR": return String(localized: "Maldivian Rufiyaa")
+        case "MWK": return String(localized: "Malawian Kwacha")
+        case "MZN": return String(localized: "Mozambican Metical")
+        case "NAD": return String(localized: "Namibian Dollar")
+        case "NGN": return String(localized: "Nigerian Naira")
+        case "NIO": return String(localized: "Nicaraguan Córdoba")
+        case "NPR": return String(localized: "Nepalese Rupee")
+        case "OMR": return String(localized: "Omani Rial")
+        case "PAB": return String(localized: "Panamanian Balboa")
+        case "PEN": return String(localized: "Peruvian Sol")
+        case "PGK": return String(localized: "Papua New Guinean Kina")
+        case "PKR": return String(localized: "Pakistani Rupee")
+        case "PYG": return String(localized: "Paraguayan Guarani")
+        case "QAR": return String(localized: "Qatari Rial")
+        case "RSD": return String(localized: "Serbian Dinar")
+        case "RWF": return String(localized: "Rwandan Franc")
+        case "SBD": return String(localized: "Solomon Islands Dollar")
+        case "SCR": return String(localized: "Seychellois Rupee")
+        case "SDG": return String(localized: "Sudanese Pound")
+        case "SHP": return String(localized: "Saint Helena Pound")
+        case "SLE": return String(localized: "Sierra Leonean Leone")
+        case "SLL": return String(localized: "Sierra Leonean Leone")
+        case "SOS": return String(localized: "Somali Shilling")
+        case "SRD": return String(localized: "Surinamese Dollar")
+        case "SSP": return String(localized: "South Sudanese Pound")
+        case "STN": return String(localized: "São Tomé and Príncipe Dobra")
+        case "SYP": return String(localized: "Syrian Pound")
+        case "SZL": return String(localized: "Swazi Lilangeni")
+        case "TJS": return String(localized: "Tajikistani Somoni")
+        case "TMT": return String(localized: "Turkmenistani Manat")
+        case "TND": return String(localized: "Tunisian Dinar")
+        case "TOP": return String(localized: "Tongan Paʻanga")
+        case "TTD": return String(localized: "Trinidad and Tobago Dollar")
+        case "TVD": return String(localized: "Tuvaluan Dollar")
+        case "TZS": return String(localized: "Tanzanian Shilling")
+        case "UAH": return String(localized: "Ukrainian Hryvnia")
+        case "UGX": return String(localized: "Ugandan Shilling")
+        case "UYU": return String(localized: "Uruguayan Peso")
+        case "UZS": return String(localized: "Uzbekistani Som")
+        case "VES": return String(localized: "Venezuelan Bolívar Soberano")
+        case "VND": return String(localized: "Vietnamese Đồng")
+        case "VUV": return String(localized: "Vanuatu Vatu")
+        case "WST": return String(localized: "Samoan Tala")
+        case "XAF": return String(localized: "Central African CFA Franc")
+        case "XCD": return String(localized: "East Caribbean Dollar")
+        case "XDR": return String(localized: "Special Drawing Rights")
+        case "XOF": return String(localized: "West African CFA Franc")
+        case "XPF": return String(localized: "CFP Franc")
+        case "YER": return String(localized: "Yemeni Rial")
+        case "ZMW": return String(localized: "Zambian Kwacha")
+        case "ZWL": return String(localized: "Zimbabwean Dollar")
+        default: return code
         }
-    }
-}
+    }}
