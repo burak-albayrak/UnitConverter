@@ -478,208 +478,208 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         switch self {
         case .charge:
             return [
-                ("C", "coulomb"),
-                ("MC", "megacoulomb"),
-                ("kC", "kilocoulomb"),
-                ("mC", "millicoulomb"),
-                ("µC", "microcoulomb"),
-                ("nC", "nanocoulomb"),
-                ("pC", "picocoulomb"),
-                ("abC", "abcoulomb"),
-                ("emuC", "EMU of charge"),
-                ("statC", "statcoulomb"),
-                ("esuC", "ESU of charge"),
-                ("Fr", "franklin"),
-                ("A·h", "ampere-hour"),
-                ("A·min", "ampere-minute"),
-                ("A·s", "ampere-second"),
-                ("F", "faraday (based on carbon 12)"),
-                ("e", "Elementary charge")
+                ("C", String(localized: "coulomb")),
+                ("MC", String(localized: "megacoulomb")),
+                ("kC", String(localized: "kilocoulomb")),
+                ("mC", String(localized: "millicoulomb")),
+                ("µC", String(localized: "microcoulomb")),
+                ("nC", String(localized: "nanocoulomb")),
+                ("pC", String(localized: "picocoulomb")),
+                ("abC", String(localized: "abcoulomb")),
+                ("emuC", String(localized: "EMU of charge")),
+                ("statC", String(localized: "statcoulomb")),
+                ("esuC", String(localized: "ESU of charge")),
+                ("Fr", String(localized: "franklin")),
+                ("A·h", String(localized: "ampere-hour")),
+                ("A·min", String(localized: "ampere-minute")),
+                ("A·s", String(localized: "ampere-second")),
+                ("F", String(localized: "faraday (based on carbon 12)")),
+                ("e", String(localized: "Elementary charge"))
             ]
         case .linearChargeDensity:
             return [
-                ("C/m", "coulomb/meter"),
-                ("C/cm", "coulomb/centimeter"),
-                ("C/in", "coulomb/inch"),
-                ("abC/m", "abcoulomb/meter"),
-                ("abC/cm", "abcoulomb/centimeter"),
-                ("abC/in", "abcoulomb/inch")
+                ("C/m", String(localized: "coulomb/meter")),
+                ("C/cm", String(localized: "coulomb/centimeter")),
+                ("C/in", String(localized: "coulomb/inch")),
+                ("abC/m", String(localized: "abcoulomb/meter")),
+                ("abC/cm", String(localized: "abcoulomb/centimeter")),
+                ("abC/in", String(localized: "abcoulomb/inch"))
             ]
         case .surfaceChargeDensity:
             return [
-                ("C/m²", "coulomb/square meter"),
-                ("C/cm²", "coulomb/square centimeter"),
-                ("C/in²", "coulomb/square inch"),
-                ("abC/m²", "abcoulomb/square meter"),
-                ("abC/cm²", "abcoulomb/square centimeter"),
-                ("abC/in²", "abcoulomb/square inch")
+                ("C/m²", String(localized: "coulomb/square meter")),
+                ("C/cm²", String(localized: "coulomb/square centimeter")),
+                ("C/in²", String(localized: "coulomb/square inch")),
+                ("abC/m²", String(localized: "abcoulomb/square meter")),
+                ("abC/cm²", String(localized: "abcoulomb/square centimeter")),
+                ("abC/in²", String(localized: "abcoulomb/square inch"))
             ]
         case .volumeChargeDensity:
             return [
-                ("C/m³", "coulomb/cubic meter"),
-                ("C/cm³", "coulomb/cubic centimeter"),
-                ("C/in³", "coulomb/cubic inch"),
-                ("abC/m³", "abcoulomb/cubic meter"),
-                ("abC/cm³", "abcoulomb/cubic centimeter"),
-                ("abC/in³", "abcoulomb/cubic inch")
+                ("C/m³", String(localized: "coulomb/cubic meter")),
+                ("C/cm³", String(localized: "coulomb/cubic centimeter")),
+                ("C/in³", String(localized: "coulomb/cubic inch")),
+                ("abC/m³", String(localized: "abcoulomb/cubic meter")),
+                ("abC/cm³", String(localized: "abcoulomb/cubic centimeter")),
+                ("abC/in³", String(localized: "abcoulomb/cubic inch"))
             ]
         case .current:
             return [
-                ("A", "ampere"),
-                ("kA", "kiloampere"),
-                ("mA", "milliampere"),
-                ("Bi", "biot"),
-                ("abA", "abampere"),
-                ("emuI", "EMU of current"),
-                ("statA", "statampere"),
-                ("esuI", "ESU of current"),
-                ("CGSem", "CGS e.m. unit"),
-                ("CGSes", "CGS e.s. unit")
+                ("A", String(localized: "ampere")),
+                ("kA", String(localized: "kiloampere")),
+                ("mA", String(localized: "milliampere")),
+                ("Bi", String(localized: "biot")),
+                ("abA", String(localized: "abampere")),
+                ("emuI", String(localized: "EMU of current")),
+                ("statA", String(localized: "statampere")),
+                ("esuI", String(localized: "ESU of current")),
+                ("CGSem", String(localized: "CGS e.m. unit")),
+                ("CGSes", String(localized: "CGS e.s. unit"))
             ]
         case .linearCurrentDensity:
             return [
-                ("A/m", "ampere/meter"),
-                ("A/cm", "ampere/centimeter"),
-                ("A/in", "ampere/inch"),
-                ("abA/m", "abampere/meter"),
-                ("abA/cm", "abampere/centimeter"),
-                ("abA/in", "abampere/inch"),
-                ("Oe", "oersted"),
-                ("Gb/cm", "gilbert/centimeter")
+                ("A/m", String(localized: "ampere/meter")),
+                ("A/cm", String(localized: "ampere/centimeter")),
+                ("A/in", String(localized: "ampere/inch")),
+                ("abA/m", String(localized: "abampere/meter")),
+                ("abA/cm", String(localized: "abampere/centimeter")),
+                ("abA/in", String(localized: "abampere/inch")),
+                ("Oe", String(localized: "oersted")),
+                ("Gb/cm", String(localized: "gilbert/centimeter"))
             ]
         case .surfaceCurrentDensity:
             return [
-                ("A/m²", "ampere/square meter"),
-                ("A/cm²", "ampere/square centimeter"),
-                ("A/in²", "ampere/square inch"),
-                ("A/mil²", "ampere/square mil"),
-                ("A/cmil", "ampere/circular mil"),
-                ("abA/cm²", "abampere/square centimeter")
+                ("A/m²", String(localized: "ampere/square meter")),
+                ("A/cm²", String(localized: "ampere/square centimeter")),
+                ("A/in²", String(localized: "ampere/square inch")),
+                ("A/mil²", String(localized: "ampere/square mil")),
+                ("A/cmil", String(localized: "ampere/circular mil")),
+                ("abA/cm²", String(localized: "abampere/square centimeter"))
             ]
         case .electricFieldStrength:
             return [
-                ("V/m", "volt/meter"),
-                ("kV/m", "kilovolt/meter"),
-                ("kV/cm", "kilovolt/centimeter"),
-                ("V/cm", "volt/centimeter"),
-                ("mV/m", "millivolt/meter"),
-                ("µV/m", "microvolt/meter"),
-                ("kV/in", "kilovolt/inch"),
-                ("V/in", "volt/inch"),
-                ("V/mil", "volt/mil"),
-                ("abV/cm", "abvolt/centimeter"),
-                ("statV/cm", "statvolt/centimeter"),
-                ("statV/in", "statvolt/inch"),
-                ("N/C", "newton/coulomb")
+                ("V/m", String(localized: "volt/meter")),
+                ("kV/m", String(localized: "kilovolt/meter")),
+                ("kV/cm", String(localized: "kilovolt/centimeter")),
+                ("V/cm", String(localized: "volt/centimeter")),
+                ("mV/m", String(localized: "millivolt/meter")),
+                ("µV/m", String(localized: "microvolt/meter")),
+                ("kV/in", String(localized: "kilovolt/inch")),
+                ("V/in", String(localized: "volt/inch")),
+                ("V/mil", String(localized: "volt/mil")),
+                ("abV/cm", String(localized: "abvolt/centimeter")),
+                ("statV/cm", String(localized: "statvolt/centimeter")),
+                ("statV/in", String(localized: "statvolt/inch")),
+                ("N/C", String(localized: "newton/coulomb"))
             ]
         case .electricPotential:
             return [
-                ("V", "volt"),
-                ("W/A", "watt/ampere"),
-                ("abV", "abvolt"),
-                ("emuV", "EMU of electric potential"),
-                ("statV", "statvolt"),
-                ("esuV", "ESU of electric potential")
+                ("V", String(localized: "volt")),
+                ("W/A", String(localized: "watt/ampere")),
+                ("abV", String(localized: "abvolt")),
+                ("emuV", String(localized: "EMU of electric potential")),
+                ("statV", String(localized: "statvolt")),
+                ("esuV", String(localized: "ESU of electric potential"))
             ]
         case .electricResistance:
             return [
-                ("Ω", "ohm"),
-                ("MΩ", "megohm"),
-                ("µΩ", "microhm"),
-                ("V/A", "volt/ampere"),
-                ("S⁻¹", "reciprocal siemens"),
-                ("abΩ", "abohm"),
-                ("emuR", "EMU of resistance"),
-                ("statΩ", "statohm"),
-                ("esuR", "ESU of resistance"),
-                ("RH", "Quantized Hall resistance")
+                ("Ω", String(localized: "ohm")),
+                ("MΩ", String(localized: "megohm")),
+                ("µΩ", String(localized: "microhm")),
+                ("V/A", String(localized: "volt/ampere")),
+                ("S⁻¹", String(localized: "reciprocal siemens")),
+                ("abΩ", String(localized: "abohm")),
+                ("emuR", String(localized: "EMU of resistance")),
+                ("statΩ", String(localized: "statohm")),
+                ("esuR", String(localized: "ESU of resistance")),
+                ("RH", String(localized: "Quantized Hall resistance"))
             ]
         case .electricResistivity:
             return [
-                ("Ω·m", "ohm meter"),
-                ("Ω·cm", "ohm centimeter"),
-                ("Ω·in", "ohm inch"),
-                ("µΩ·cm", "microhm centimeter"),
-                ("µΩ·in", "microhm inch"),
-                ("abΩ·cm", "abohm centimeter"),
-                ("statΩ·cm", "statohm centimeter"),
-                ("cmil·Ω/ft", "circular mil ohm/foot")
+                ("Ω·m", String(localized: "ohm meter")),
+                ("Ω·cm", String(localized: "ohm centimeter")),
+                ("Ω·in", String(localized: "ohm inch")),
+                ("µΩ·cm", String(localized: "microhm centimeter")),
+                ("µΩ·in", String(localized: "microhm inch")),
+                ("abΩ·cm", String(localized: "abohm centimeter")),
+                ("statΩ·cm", String(localized: "statohm centimeter")),
+                ("cmil·Ω/ft", String(localized: "circular mil ohm/foot"))
             ]
         case .electricConductance:
             return [
-                ("S", "siemens"),
-                ("MS", "megasiemens"),
-                ("kS", "kilosiemens"),
-                ("mS", "millisiemens"),
-                ("µS", "microsiemens"),
-                ("A/V", "ampere/volt"),
-                ("℧", "mho"),
-                ("g℧", "gemmho"),
-                ("µ℧", "micromho"),
-                ("ab℧", "abmho"),
-                ("stat℧", "statmho"),
-                ("G₀", "Quantized Hall conductance")
+                ("S", String(localized: "siemens")),
+                ("MS", String(localized: "megasiemens")),
+                ("kS", String(localized: "kilosiemens")),
+                ("mS", String(localized: "millisiemens")),
+                ("µS", String(localized: "microsiemens")),
+                ("A/V", String(localized: "ampere/volt")),
+                ("℧", String(localized: "mho")),
+                ("g℧", String(localized: "gemmho")),
+                ("µ℧", String(localized: "micromho")),
+                ("ab℧", String(localized: "abmho")),
+                ("stat℧", String(localized: "statmho")),
+                ("G₀", String(localized: "Quantized Hall conductance"))
             ]
         case .electricConductivity:
             return [
-                ("S/m", "siemens/meter"),
-                ("pS/m", "picosiemens/meter"),
-                ("℧/m", "mho/meter"),
-                ("℧/cm", "mho/centimeter"),
-                ("ab℧/m", "abmho/meter"),
-                ("ab℧/cm", "abmho/centimeter"),
-                ("stat℧/m", "statmho/meter"),
-                ("stat℧/cm", "statmho/centimeter")
+                ("S/m", String(localized: "siemens/meter")),
+                ("pS/m", String(localized: "picosiemens/meter")),
+                ("℧/m", String(localized: "mho/meter")),
+                ("℧/cm", String(localized: "mho/centimeter")),
+                ("ab℧/m", String(localized: "abmho/meter")),
+                ("ab℧/cm", String(localized: "abmho/centimeter")),
+                ("stat℧/m", String(localized: "statmho/meter")),
+                ("stat℧/cm", String(localized: "statmho/centimeter"))
             ]
         case .electrostaticCapacitance:
             return [
-                ("F", "farad"),
-                ("EF", "exafarad"),
-                ("PF", "petafarad"),
-                ("TF", "terafarad"),
-                ("GF", "gigafarad"),
-                ("MF", "megafarad"),
-                ("kF", "kilofarad"),
-                ("hF", "hectofarad"),
-                ("daF", "dekafarad"),
-                ("dF", "decifarad"),
-                ("cF", "centifarad"),
-                ("mF", "millifarad"),
-                ("µF", "microfarad"),
-                ("nF", "nanofarad"),
-                ("pF", "picofarad"),
-                ("fF", "femtofarad"),
-                ("aF", "attofarad"),
-                ("C/V", "coulomb/volt"),
-                ("abF", "abfarad"),
-                ("emuC", "EMU of capacitance"),
-                ("statF", "statfarad"),
-                ("esuC", "ESU of capacitance")
+                ("F", String(localized: "farad")),
+                ("EF", String(localized: "exafarad")),
+                ("PF", String(localized: "petafarad")),
+                ("TF", String(localized: "terafarad")),
+                ("GF", String(localized: "gigafarad")),
+                ("MF", String(localized: "megafarad")),
+                ("kF", String(localized: "kilofarad")),
+                ("hF", String(localized: "hectofarad")),
+                ("daF", String(localized: "dekafarad")),
+                ("dF", String(localized: "decifarad")),
+                ("cF", String(localized: "centifarad")),
+                ("mF", String(localized: "millifarad")),
+                ("µF", String(localized: "microfarad")),
+                ("nF", String(localized: "nanofarad")),
+                ("pF", String(localized: "picofarad")),
+                ("fF", String(localized: "femtofarad")),
+                ("aF", String(localized: "attofarad")),
+                ("C/V", String(localized: "coulomb/volt")),
+                ("abF", String(localized: "abfarad")),
+                ("emuC", String(localized: "EMU of capacitance")),
+                ("statF", String(localized: "statfarad")),
+                ("esuC", String(localized: "ESU of capacitance"))
             ]
         case .inductance:
             return [
-                ("H", "henry"),
-                ("EH", "exahenry"),
-                ("PH", "petahenry"),
-                ("TH", "terahenry"),
-                ("GH", "gigahenry"),
-                ("MH", "megahenry"),
-                ("kH", "kilohenry"),
-                ("hH", "hectohenry"),
-                ("daH", "dekahenry"),
-                ("dH", "decihenry"),
-                ("cH", "centihenry"),
-                ("mH", "millihenry"),
-                ("µH", "microhenry"),
-                ("nH", "nanohenry"),
-                ("pH", "picohenry"),
-                ("fH", "femtohenry"),
-                ("aH", "attohenry"),
-                ("Wb/A", "weber/ampere"),
-                ("abH", "abhenry"),
-                ("emuL", "EMU of inductance"),
-                ("statH", "stathenry"),
-                ("esuL", "ESU of inductance")
+                ("H", String(localized: "henry")),
+                ("EH", String(localized: "exahenry")),
+                ("PH", String(localized: "petahenry")),
+                ("TH", String(localized: "terahenry")),
+                ("GH", String(localized: "gigahenry")),
+                ("MH", String(localized: "megahenry")),
+                ("kH", String(localized: "kilohenry")),
+                ("hH", String(localized: "hectohenry")),
+                ("daH", String(localized: "dekahenry")),
+                ("dH", String(localized: "decihenry")),
+                ("cH", String(localized: "centihenry")),
+                ("mH", String(localized: "millihenry")),
+                ("µH", String(localized: "microhenry")),
+                ("nH", String(localized: "nanohenry")),
+                ("pH", String(localized: "picohenry")),
+                ("fH", String(localized: "femtohenry")),
+                ("aH", String(localized: "attohenry")),
+                ("Wb/A", String(localized: "weber/ampere")),
+                ("abH", String(localized: "abhenry")),
+                ("emuL", String(localized: "EMU of inductance")),
+                ("statH", String(localized: "stathenry")),
+                ("esuL", String(localized: "ESU of inductance"))
             ]
         }
     }}

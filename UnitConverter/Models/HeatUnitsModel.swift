@@ -359,153 +359,153 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         switch self {
         case .fuelEfficiencyMass:
             return [
-                ("J/kg", "joule/kilogram"),
-                ("kJ/kg", "kilojoule/kilogram"),
-                ("cal(IT)/g", "calorie (IT)/gram"),
-                ("cal(th)/g", "calorie (th)/gram"),
-                ("Btu(IT)/lb", "Btu (IT)/pound"),
-                ("Btu(th)/lb", "Btu (th)/pound"),
-                ("kg/J", "kilogram/joule"),
-                ("kg/kJ", "kilogram/kilojoule"),
-                ("g/cal(IT)", "gram/calorie (IT)"),
-                ("g/cal(th)", "gram/calorie (th)"),
-                ("lb/Btu(IT)", "pound/Btu (IT)"),
-                ("lb/Btu(th)", "pound/Btu (th)"),
-                ("lb/hp/h", "pound/horsepower/hour"),
-                ("g/hp(m)/h", "gram/horsepower (metric)/hour"),
-                ("g/kW/h", "gram/kilowatt/hour")
+                ("J/kg", String(localized: "joule/kilogram")),
+                ("kJ/kg", String(localized: "kilojoule/kilogram")),
+                ("cal(IT)/g", String(localized: "calorie (IT)/gram")),
+                ("cal(th)/g", String(localized: "calorie (th)/gram")),
+                ("Btu(IT)/lb", String(localized: "Btu (IT)/pound")),
+                ("Btu(th)/lb", String(localized: "Btu (th)/pound")),
+                ("kg/J", String(localized: "kilogram/joule")),
+                ("kg/kJ", String(localized: "kilogram/kilojoule")),
+                ("g/cal(IT)", String(localized: "gram/calorie (IT)")),
+                ("g/cal(th)", String(localized: "gram/calorie (th)")),
+                ("lb/Btu(IT)", String(localized: "pound/Btu (IT)")),
+                ("lb/Btu(th)", String(localized: "pound/Btu (th)")),
+                ("lb/hp/h", String(localized: "pound/horsepower/hour")),
+                ("g/hp(m)/h", String(localized: "gram/horsepower (metric)/hour")),
+                ("g/kW/h", String(localized: "gram/kilowatt/hour"))
             ]
         case .fuelEfficiencyVolume:
             return [
-                ("J/m³", "joule/cubic meter"),
-                ("J/L", "joule/liter"),
-                ("MJ/m³", "megajoule/cubic meter"),
-                ("kJ/m³", "kilojoule/cubic meter"),
-                ("kcal(IT)/m³", "kilocalorie (IT)/cubic meter"),
-                ("cal(IT)/cm³", "calorie (IT)/cubic centimeter"),
-                ("therm/ft³", "therm/cubic foot"),
-                ("therm/gal(UK)", "therm/gallon (UK)"),
-                ("Btu(IT)/ft³", "Btu (IT)/cubic foot"),
-                ("Btu(th)/ft³", "Btu (th)/cubic foot"),
-                ("CHU/ft³", "CHU/cubic foot"),
-                ("m³/J", "cubic meter/joule"),
-                ("L/J", "liter/joule"),
-                ("gal(US)/hp", "gallon (US)/horsepower")
+                ("J/m³", String(localized: "joule/cubic meter")),
+                ("J/L", String(localized: "joule/liter")),
+                ("MJ/m³", String(localized: "megajoule/cubic meter")),
+                ("kJ/m³", String(localized: "kilojoule/cubic meter")),
+                ("kcal(IT)/m³", String(localized: "kilocalorie (IT)/cubic meter")),
+                ("cal(IT)/cm³", String(localized: "calorie (IT)/cubic centimeter")),
+                ("therm/ft³", String(localized: "therm/cubic foot")),
+                ("therm/gal(UK)", String(localized: "therm/gallon (UK)")),
+                ("Btu(IT)/ft³", String(localized: "Btu (IT)/cubic foot")),
+                ("Btu(th)/ft³", String(localized: "Btu (th)/cubic foot")),
+                ("CHU/ft³", String(localized: "CHU/cubic foot")),
+                ("m³/J", String(localized: "cubic meter/joule")),
+                ("L/J", String(localized: "liter/joule")),
+                ("gal(US)/hp", String(localized: "gallon (US)/horsepower"))
             ]
         case .temperatureInterval:
             return [
-                ("K", "kelvin"),
-                ("°C", "degree Celsius"),
-                ("°C", "degree centigrade"),
-                ("°F", "degree Fahrenheit"),
-                ("°R", "degree Rankine"),
-                ("°Ré", "degree Reaumur")
+                ("K", String(localized: "Kelvin")),
+                ("°C", String(localized: "Celsius")),
+                ("°F", String(localized: "Fahrenheit")),
+                ("°R", String(localized: "Rankine")),
+                ("°Ré", String(localized: "Reaumur")),
+                ("Tw", String(localized: "Triple point of water"))
             ]
         case .thermalExpansion:
             return [
-                ("1/K", "length/length/kelvin"),
-                ("1/°C", "length/length/degree Celsius"),
-                ("1/°F", "length/length/degree Fahrenheit"),
-                ("1/°R", "length/length/degree Rankine"),
-                ("1/°Ré", "length/length/degree Reaumur")
+                ("1/K", String(localized: "length/length/kelvin")),
+                ("1/°C", String(localized: "length/length/degree Celsius")),
+                ("1/°F", String(localized: "length/length/degree Fahrenheit")),
+                ("1/°R", String(localized: "length/length/degree Rankine")),
+                ("1/°Ré", String(localized: "length/length/degree Reaumur"))
             ]
         case .thermalResistance:
             return [
-                ("K/W", "kelvin/watt"),
-                ("°F·h/Btu(IT)", "degree Fahrenheit hour/Btu (IT)"),
-                ("°F·h/Btu(th)", "degree Fahrenheit hour/Btu (th)"),
-                ("°F·s/Btu(IT)", "degree Fahrenheit second/Btu (IT)"),
-                ("°F·s/Btu(th)", "degree Fahrenheit second/Btu (th)")
+                ("K/W", String(localized: "kelvin/watt")),
+                ("°F·h/Btu(IT)", String(localized: "degree Fahrenheit hour/Btu (IT)")),
+                ("°F·h/Btu(th)", String(localized: "degree Fahrenheit hour/Btu (th)")),
+                ("°F·s/Btu(IT)", String(localized: "degree Fahrenheit second/Btu (IT)")),
+                ("°F·s/Btu(th)", String(localized: "degree Fahrenheit second/Btu (th)"))
             ]
         case .thermalConductivity:
             return [
-                ("W/m·K", "watt/meter/K"),
-                ("W/cm·°C", "watt/centimeter/°C"),
-                ("kW/m·K", "kilowatt/meter/K"),
-                ("cal(IT)/s·cm·°C", "calorie (IT)/second/cm/°C"),
-                ("cal(th)/s·cm·°C", "calorie (th)/second/cm/°C"),
-                ("kcal(IT)/h·m·°C", "kilocalorie (IT)/hour/meter/°C"),
-                ("kcal(th)/h·m·°C", "kilocalorie (th)/hour/meter/°C"),
-                ("Btu(IT)·in/s·ft²·°F", "Btu (IT) inch/second/sq. foot/°F"),
-                ("Btu(th)·in/s·ft²·°F", "Btu (th) inch/second/sq. foot/°F"),
-                ("Btu(IT)·ft/h·ft²·°F", "Btu (IT) foot/hour/sq. foot/°F"),
-                ("Btu(th)·ft/h·ft²·°F", "Btu (th) foot/hour/sq. foot/°F"),
-                ("Btu(IT)·in/h·ft²·°F", "Btu (IT) inch/hour/sq. foot/°F"),
-                ("Btu(th)·in/h·ft²·°F", "Btu (th) inch/hour/sq. foot/°F")
+                ("W/m·K", String(localized: "watt/meter/K")),
+                ("W/cm·°C", String(localized: "watt/centimeter/°C")),
+                ("kW/m·K", String(localized: "kilowatt/meter/K")),
+                ("cal(IT)/s·cm·°C", String(localized: "calorie (IT)/second/cm/°C")),
+                ("cal(th)/s·cm·°C", String(localized: "calorie (th)/second/cm/°C")),
+                ("kcal(IT)/h·m·°C", String(localized: "kilocalorie (IT)/hour/meter/°C")),
+                ("kcal(th)/h·m·°C", String(localized: "kilocalorie (th)/hour/meter/°C")),
+                ("Btu(IT)·in/s·ft²·°F", String(localized: "Btu (IT) inch/second/sq. foot/°F")),
+                ("Btu(th)·in/s·ft²·°F", String(localized: "Btu (th) inch/second/sq. foot/°F")),
+                ("Btu(IT)·ft/h·ft²·°F", String(localized: "Btu (IT) foot/hour/sq. foot/°F")),
+                ("Btu(th)·ft/h·ft²·°F", String(localized: "Btu (th) foot/hour/sq. foot/°F")),
+                ("Btu(IT)·in/h·ft²·°F", String(localized: "Btu (IT) inch/hour/sq. foot/°F")),
+                ("Btu(th)·in/h·ft²·°F", String(localized: "Btu (th) inch/hour/sq. foot/°F"))
             ]
         case .spesificHeatCapacity:
             return [
-                ("J/kg·K", "joule/kilogram/K"),
-                ("J/kg·°C", "joule/kilogram/°C"),
-                ("J/g·°C", "joule/gram/°C"),
-                ("kJ/kg·K", "kilojoule/kilogram/K"),
-                ("kJ/kg·°C", "kilojoule/kilogram/°C"),
-                ("cal(IT)/g·°C", "calorie (IT)/gram/°C"),
-                ("cal(IT)/g·°F", "calorie (IT)/gram/°F"),
-                ("cal(th)/g·°C", "calorie (th)/gram/°C"),
-                ("kcal(IT)/kg·°C", "kilocalorie (IT)/kilogram/°C"),
-                ("kcal(th)/kg·°C", "kilocalorie (th)/kilogram/°C"),
-                ("kcal(IT)/kg·K", "kilocalorie (IT)/kilogram/K"),
-                ("kcal(th)/kg·K", "kilocalorie (th)/kilogram/K"),
-                ("kgf·m/kg·K", "kilogram-force meter/kilogram/K"),
-                ("lbf·ft/lb·°R", "pound-force foot/pound/°R"),
-                ("Btu(IT)/lb·°F", "Btu (IT)/pound/°F"),
-                ("Btu(th)/lb·°F", "Btu (th)/pound/°F"),
-                ("Btu(IT)/lb·°R", "Btu (IT)/pound/°R"),
-                ("Btu(th)/lb·°R", "Btu (th)/pound/°R"),
-                ("Btu(IT)/lb·°C", "Btu (IT)/pound/°C"),
-                ("CHU/lb·°C", "CHU/pound/°C")
+                ("J/kg·K", String(localized: "joule/kilogram/K")),
+                ("J/kg·°C", String(localized: "joule/kilogram/°C")),
+                ("J/g·°C", String(localized: "joule/gram/°C")),
+                ("kJ/kg·K", String(localized: "kilojoule/kilogram/K")),
+                ("kJ/kg·°C", String(localized: "kilojoule/kilogram/°C")),
+                ("cal(IT)/g·°C", String(localized: "calorie (IT)/gram/°C")),
+                ("cal(IT)/g·°F", String(localized: "calorie (IT)/gram/°F")),
+                ("cal(th)/g·°C", String(localized: "calorie (th)/gram/°C")),
+                ("kcal(IT)/kg·°C", String(localized: "kilocalorie (IT)/kilogram/°C")),
+                ("kcal(th)/kg·°C", String(localized: "kilocalorie (th)/kilogram/°C")),
+                ("kcal(IT)/kg·K", String(localized: "kilocalorie (IT)/kilogram/K")),
+                ("kcal(th)/kg·K", String(localized: "kilocalorie (th)/kilogram/K")),
+                ("kgf·m/kg·K", String(localized: "kilogram-force meter/kilogram/K")),
+                ("lbf·ft/lb·°R", String(localized: "pound-force foot/pound/°R")),
+                ("Btu(IT)/lb·°F", String(localized: "Btu (IT)/pound/°F")),
+                ("Btu(th)/lb·°F", String(localized: "Btu (th)/pound/°F")),
+                ("Btu(IT)/lb·°R", String(localized: "Btu (IT)/pound/°R")),
+                ("Btu(th)/lb·°R", String(localized: "Btu (th)/pound/°R")),
+                ("Btu(IT)/lb·°C", String(localized: "Btu (IT)/pound/°C")),
+                ("CHU/lb·°C", String(localized: "CHU/pound/°C"))
             ]
         case .heatDensity:
             return [
-                ("J/m²", "joule/square meter"),
-                ("cal(th)/cm²", "calorie (th)/square centimeter"),
-                ("Ly", "langley"),
-                ("Btu(IT)/ft²", "Btu (IT)/square foot"),
-                ("Btu(th)/ft²", "Btu (th)/square foot")
+                ("J/m²", String(localized: "joule/square meter")),
+                ("cal(th)/cm²", String(localized: "calorie (th)/square centimeter")),
+                ("Ly", String(localized: "langley")),
+                ("Btu(IT)/ft²", String(localized: "Btu (IT)/square foot")),
+                ("Btu(th)/ft²", String(localized: "Btu (th)/square foot"))
             ]
         case .heatFluxDensity:
             return [
-                ("W/m²", "watt/square meter"),
-                ("kW/m²", "kilowatt/square meter"),
-                ("W/cm²", "watt/square centimeter"),
-                ("W/in²", "watt/square inch"),
-                ("J/s·m²", "joule/second/square meter"),
-                ("kcal(IT)/h·m²", "kilocalorie (IT)/hour/square meter"),
-                ("kcal(IT)/h·ft²", "kilocalorie (IT)/hour/square foot"),
-                ("cal(IT)/s·cm²", "calorie (IT)/second/square centimeter"),
-                ("cal(IT)/min·cm²", "calorie (IT)/minute/square centimeter"),
-                ("cal(IT)/h·cm²", "calorie (IT)/hour/square centimeter"),
-                ("cal(th)/s·cm²", "calorie (th)/second/square centimeter"),
-                ("cal(th)/min·cm²", "calorie (th)/minute/square centimeter"),
-                ("cal(th)/h·cm²", "calorie (th)/hour/square centimeter"),
-                ("dyn/h·cm", "dyne/hour/centimeter"),
-                ("erg/h·mm²", "erg/hour/square millimeter"),
-                ("ft·lb/min·ft²", "foot pound/minute/square foot"),
-                ("hp/ft²", "horsepower/square foot"),
-                ("hp(m)/ft²", "horsepower (metric)/square foot"),
-                ("Btu(IT)/s·ft²", "Btu (IT)/second/square foot"),
-                ("Btu(IT)/min·ft²", "Btu (IT)/minute/square foot"),
-                ("Btu(IT)/h·ft²", "Btu (IT)/hour/square foot"),
-                ("Btu(th)/s·in²", "Btu (th)/second/square inch"),
-                ("Btu(th)/s·ft²", "Btu (th)/second/square foot"),
-                ("Btu(th)/min·ft²", "Btu (th)/minute/square foot"),
-                ("Btu(th)/h·ft²", "Btu (th)/hour/square foot"),
-                ("CHU/h·ft²", "CHU/hour/square foot")
+                ("W/m²", String(localized: "watt/square meter")),
+                ("kW/m²", String(localized: "kilowatt/square meter")),
+                ("W/cm²", String(localized: "watt/square centimeter")),
+                ("W/in²", String(localized: "watt/square inch")),
+                ("J/s·m²", String(localized: "joule/second/square meter")),
+                ("kcal(IT)/h·m²", String(localized: "kilocalorie (IT)/hour/square meter")),
+                ("kcal(IT)/h·ft²", String(localized: "kilocalorie (IT)/hour/square foot")),
+                ("cal(IT)/s·cm²", String(localized: "calorie (IT)/second/square centimeter")),
+                ("cal(IT)/min·cm²", String(localized: "calorie (IT)/minute/square centimeter")),
+                ("cal(IT)/h·cm²", String(localized: "calorie (IT)/hour/square centimeter")),
+                ("cal(th)/s·cm²", String(localized: "calorie (th)/second/square centimeter")),
+                ("cal(th)/min·cm²", String(localized: "calorie (th)/minute/square centimeter")),
+                ("cal(th)/h·cm²", String(localized: "calorie (th)/hour/square centimeter")),
+                ("dyn/h·cm", String(localized: "dyne/hour/centimeter")),
+                ("erg/h·mm²", String(localized: "erg/hour/square millimeter")),
+                ("ft·lb/min·ft²", String(localized: "foot pound/minute/square foot")),
+                ("hp/ft²", String(localized: "horsepower/square foot")),
+                ("hp(m)/ft²", String(localized: "horsepower (metric)/square foot")),
+                ("Btu(IT)/s·ft²", String(localized: "Btu (IT)/second/square foot")),
+                ("Btu(IT)/min·ft²", String(localized: "Btu (IT)/minute/square foot")),
+                ("Btu(IT)/h·ft²", String(localized: "Btu (IT)/hour/square foot")),
+                ("Btu(th)/s·in²", String(localized: "Btu (th)/second/square inch")),
+                ("Btu(th)/s·ft²", String(localized: "Btu (th)/second/square foot")),
+                ("Btu(th)/min·ft²", String(localized: "Btu (th)/minute/square foot")),
+                ("Btu(th)/h·ft²", String(localized: "Btu (th)/hour/square foot")),
+                ("CHU/h·ft²", String(localized: "CHU/hour/square foot"))
             ]
         case .heatTransverCoefficient:
             return [
-                ("W/m²·K", "watt/square meter/K"),
-                ("W/m²·°C", "watt/square meter/°C"),
-                ("J/s·m²·K", "joule/second/square meter/K"),
-                ("cal(IT)/s·cm²·°C", "calorie (IT)/second/square centimeter/°C"),
-                ("kcal(IT)/h·m²·°C", "kilocalorie (IT)/hour/square meter/°C"),
-                ("kcal(IT)/h·ft²·°C", "kilocalorie (IT)/hour/square foot/°C"),
-                ("Btu(IT)/s·ft²·°F", "Btu (IT)/second/square foot/°F"),
-                ("Btu(th)/s·ft²·°F", "Btu (th)/second/square foot/°F"),
-                ("Btu(IT)/h·ft²·°F", "Btu (IT)/hour/square foot/°F"),
-                ("Btu(th)/h·ft²·°F", "Btu (th)/hour/square foot/°F"),
-                ("CHU/h·ft²·°C", "CHU/hour/square foot/°C")
+                ("W/m²·K", String(localized: "watt/square meter/K")),
+                ("W/m²·°C", String(localized: "watt/square meter/°C")),
+                ("J/s·m²·K", String(localized: "joule/second/square meter/K")),
+                ("cal(IT)/s·cm²·°C", String(localized: "calorie (IT)/second/square centimeter/°C")),
+                ("kcal(IT)/h·m²·°C", String(localized: "kilocalorie (IT)/hour/square meter/°C")),
+                ("kcal(IT)/h·ft²·°C", String(localized: "kilocalorie (IT)/hour/square foot/°C")),
+                ("Btu(IT)/s·ft²·°F", String(localized: "Btu (IT)/second/square foot/°F")),
+                ("Btu(th)/s·ft²·°F", String(localized: "Btu (th)/second/square foot/°F")),
+                ("Btu(IT)/h·ft²·°F", String(localized: "Btu (IT)/hour/square foot/°F")),
+                ("Btu(th)/h·ft²·°F", String(localized: "Btu (th)/hour/square foot/°F")),
+                ("CHU/h·ft²·°C", String(localized: "CHU/hour/square foot/°C"))
             ]
         }
     }

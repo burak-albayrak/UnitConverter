@@ -142,48 +142,48 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         switch self {
         case .magnetomotiveForce:
             return [
-                ("At", "ampere turn"),
-                ("kAt", "kiloampere turn"),
-                ("mAt", "milliampere turn"),
-                ("abAt", "abampere turn"),
-                ("Gb", "gilbert")
+                ("At", String(localized: "ampere turn")),
+                ("kAt", String(localized: "kiloampere turn")),
+                ("mAt", String(localized: "milliampere turn")),
+                ("abAt", String(localized: "abampere turn")),
+                ("Gb", String(localized: "gilbert"))
             ]
         case .magneticFieldStrength:
             return [
-                ("A/m", "ampere/meter"),
-                ("At/m", "ampere turn/meter"),
-                ("kA/m", "kiloampere/meter"),
-                ("Oe", "oersted")
+                ("A/m", String(localized: "ampere/meter")),
+                ("At/m", String(localized: "ampere turn/meter")),
+                ("kA/m", String(localized: "kiloampere/meter")),
+                ("Oe", String(localized: "oersted"))
             ]
         case .magneticFlux:
             return [
-                ("Wb", "weber"),
-                ("mWb", "milliweber"),
-                ("µWb", "microweber"),
-                ("V·s", "volt second"),
-                ("up", "unit pole"),
-                ("MΦ", "megaline"),
-                ("kΦ", "kiloline"),
-                ("Φ", "line"),
-                ("Mx", "maxwell"),
-                ("T·m²", "tesla square meter"),
-                ("T·cm²", "tesla square centimeter"),
-                ("G·cm²", "gauss square centimeter"),
-                ("Φ₀", "Magnetic flux quantum")
+                ("Wb", String(localized: "weber")),
+                ("mWb", String(localized: "milliweber")),
+                ("µWb", String(localized: "microweber")),
+                ("V·s", String(localized: "volt second")),
+                ("up", String(localized: "unit pole")),
+                ("MΦ", String(localized: "megaline")),
+                ("kΦ", String(localized: "kiloline")),
+                ("Φ", String(localized: "line")),
+                ("Mx", String(localized: "maxwell")),
+                ("T·m²", String(localized: "tesla square meter")),
+                ("T·cm²", String(localized: "tesla square centimeter")),
+                ("G·cm²", String(localized: "gauss square centimeter")),
+                ("Φ₀", String(localized: "Magnetic flux quantum"))
             ]
         case .magneticFluxDensity:
             return [
-                ("T", "tesla"),
-                ("Wb/m²", "weber/square meter"),
-                ("Wb/cm²", "weber/square centimeter"),
-                ("Wb/in²", "weber/square inch"),
-                ("Mx/m²", "maxwell/square meter"),
-                ("Mx/cm²", "maxwell/square centimeter"),
-                ("Mx/in²", "maxwell/square inch"),
-                ("G", "gauss"),
-                ("Φ/cm²", "line/square centimeter"),
-                ("Φ/in²", "line/square inch"),
-                ("γ", "gamma")
+                ("T", String(localized: "tesla")),
+                ("Wb/m²", String(localized: "weber/square meter")),
+                ("Wb/cm²", String(localized: "weber/square centimeter")),
+                ("Wb/in²", String(localized: "weber/square inch")),
+                ("Mx/m²", String(localized: "maxwell/square meter")),
+                ("Mx/cm²", String(localized: "maxwell/square centimeter")),
+                ("Mx/in²", String(localized: "maxwell/square inch")),
+                ("G", String(localized: "gauss")),
+                ("Φ/cm²", String(localized: "line/square centimeter")),
+                ("Φ/in²", String(localized: "line/square inch")),
+                ("γ", String(localized: "gamma"))
             ]
         }
     }
