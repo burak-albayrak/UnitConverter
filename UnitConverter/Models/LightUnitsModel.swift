@@ -36,25 +36,25 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     
     private func convertLuminance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let candelaPerSquareMeterValues: [String: Decimal] = [
-            "candela/square meter": 1,
-            "candela/square centimeter": 10000,
-            "candela/square foot": Decimal(string: "10.7639104167")!,
-            "candela/square inch": Decimal(string: "1550.0031000062")!,
-            "kilocandela/square meter": 1000,
-            "stilb": 10000,
-            "lumen/sq. meter/steradian": 1,
-            "lumen/sq. cm/steradian": 10000,
-            "lumen/square foot/steradian": Decimal(string: "10.7639104167")!,
-            "watt/sq. cm/steradian (at 555 nm)": 6830000,
-            "nit": 1,
-            "millinit": Decimal(string: "0.001")!,
-            "lambert": Decimal(string: "3183.0988618379")!,
-            "millilambert": Decimal(string: "3.1830988618")!,
-            "foot-lambert": Decimal(string: "3.4262590996")!,
-            "apostilb": Decimal(string: "0.3183098862")!,
-            "blondel": Decimal(string: "0.3183098862")!,
+            "cd/m²": 1,
+            "cd/cm²": 10000,
+            "cd/ft²": Decimal(string: "10.7639104167")!,
+            "cd/in²": Decimal(string: "1550.0031000062")!,
+            "kcd/m²": 1000,
+            "sb": 10000,
+            "lm/m²/sr": 1,
+            "lm/cm²/sr": 10000,
+            "lm/ft²/sr": Decimal(string: "10.7639104167")!,
+            "W/cm²/sr": 6830000,
+            "nt": 1,
+            "mnt": Decimal(string: "0.001")!,
+            "L": Decimal(string: "3183.0988618379")!,
+            "mL": Decimal(string: "3.1830988618")!,
+            "fL": Decimal(string: "3.4262590996")!,
+            "asb": Decimal(string: "0.3183098862")!,
+            "bl": Decimal(string: "0.3183098862")!,
             "bril": Decimal(string: "3.1830988618379e-8")!,
-            "skot": Decimal(string: "0.0003183099")!
+            "sk": Decimal(string: "0.0003183099")!
         ]
         
         guard let fromValue = candelaPerSquareMeterValues[fromUnit.lowercased()], let toValue = candelaPerSquareMeterValues[toUnit.lowercased()] else {
@@ -67,16 +67,16 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     
     private func convertLuminousIntensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let candleInternationalValues: [String: Decimal] = [
-            "candle (international)": 1,
-            "candle (German)": Decimal(string: "1.0526315789")!,
-            "candle (UK)": Decimal(string: "1.0416666667")!,
-            "decimal candle": 1,
-            "candle (pentane)": 1,
-            "pentane candle (10 candle power)": 10,
-            "hefner candle": Decimal(string: "0.9000000001")!,
-            "carcel unit": Decimal(string: "9.610000003")!,
-            "bougie decimal": 1,
-            "lumen/steradian": 1
+            "cd": 1,
+            "cd (G)": Decimal(string: "1.0526315789")!,
+            "cd (UK)": Decimal(string: "1.0416666667")!,
+            "dc": 1,
+            "cp": 1,
+            "10 cp": 10,
+            "HC": Decimal(string: "0.9000000001")!,
+            "cu": Decimal(string: "9.610000003")!,
+            "bd": 1,
+            "lm/sr": 1
         ]
         
         guard let fromValue = candleInternationalValues[fromUnit.lowercased()], let toValue = candleInternationalValues[toUnit.lowercased()] else {
@@ -89,18 +89,18 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     
     private func convertIlluminance(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let luxValues: [String: Decimal] = [
-            "lux": 1,
-            "meter-candle": 1,
-            "centimeter-candle": 10000,
-            "foot-candle": Decimal(string: "10.7639104167")!,
-            "flame": Decimal(string: "43.0556416668")!,
-            "phot": 10000,
-            "nox": Decimal(string: "0.001")!,
-            "candela steradian/sq. meter": 1,
-            "lumen/square meter": 1,
-            "lumen/square centimeter": 10000,
-            "lumen/square foot": Decimal(string: "10.7639104167")!,
-            "watt/sq. cm (at 555 nm)": 6830000
+            "lx": 1,
+            "m·cd": 1,
+            "cm·cd": 10000,
+            "fc": Decimal(string: "10.7639104167")!,
+            "fl": Decimal(string: "43.0556416668")!,
+            "ph": 10000,
+            "nx": Decimal(string: "0.001")!,
+            "cd·sr/m²": 1,
+            "lm/m²": 1,
+            "lm/cm²": 10000,
+            "lm/ft²": Decimal(string: "10.7639104167")!,
+            "W/cm²": 6830000
         ]
         
         guard let fromValue = luxValues[fromUnit.lowercased()], let toValue = luxValues[toUnit.lowercased()] else {
@@ -113,10 +113,10 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     
     private func convertResolution(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let dotPerMeterValues: [String: Decimal] = [
-            "dot/meter": 1,
-            "dot/millimeter": 1000,
-            "dot/inch": Decimal(string: "39.3700787402")!,
-            "pixel/inch": Decimal(string: "39.3700787402")!
+            "dpm": 1,
+            "dpmm": 1000,
+            "dpi": Decimal(string: "39.3700787402")!,
+            "ppi": Decimal(string: "39.3700787402")!
         ]
         
         guard let fromValue = dotPerMeterValues[fromUnit.lowercased()], let toValue = dotPerMeterValues[toUnit.lowercased()] else {
@@ -129,41 +129,41 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
     
     private func convertFrequency(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let hertzValues: [String: Decimal] = [
-            "hertz": 1,
-            "exahertz": Decimal(sign: .plus, exponent: 18, significand: 1),
-            "petahertz": Decimal(sign: .plus, exponent: 15, significand: 1),
-            "terahertz": Decimal(sign: .plus, exponent: 12, significand: 1),
-            "gigahertz": Decimal(sign: .plus, exponent: 9, significand: 1),
-            "megahertz": Decimal(sign: .plus, exponent: 6, significand: 1),
-            "kilohertz": Decimal(sign: .plus, exponent: 3, significand: 1),
-            "hectohertz": Decimal(sign: .plus, exponent: 2, significand: 1),
-            "dekahertz": Decimal(sign: .plus, exponent: 1, significand: 1),
-            "decihertz": Decimal(sign: .minus, exponent: 1, significand: 1),
-            "centihertz": Decimal(sign: .minus, exponent: 2, significand: 1),
-            "millihertz": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "microhertz": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nanohertz": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "picohertz": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "femtohertz": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "attohertz": Decimal(sign: .minus, exponent: 18, significand: 1),
-            "cycle/second": 1,
-            "wavelength in exametres": Decimal(string: "2.99792458e-10")!,
-            "wavelength in petametres": Decimal(string: "2.99792458e-7")!,
-            "wavelength in terametres": Decimal(string: "0.0002997925")!,
-            "wavelength in gigametres": Decimal(string: "0.299792458")!,
-            "wavelength in megametres": Decimal(string: "299.792458")!,
-            "wavelength in kilometres": Decimal(string: "299792.458")!,
-            "wavelength in hectometres": Decimal(string: "2997924.58")!,
-            "wavelength in dekametres": Decimal(string: "29979245.8")!,
-            "wavelength in metres": 299792458,
-            "wavelength in decimetres": 2997924580,
-            "wavelength in centimetres": 29979245800,
-            "wavelength in millimetres": 299792458000,
-            "wavelength in micrometres": Decimal(string: "2.99792458e14")!,
-            "wavelength in nanometres": Decimal(string: "2.99792458e17")!,
-            "Electron Compton wavelength": Decimal(string: "1.235589789993e20")!,
-            "Proton Compton wavelength": Decimal(string: "2.2687315327002e23")!,
-            "Neutron Compton wavelength": Decimal(string: "2.2718587447278e23")!
+            "Hz": 1,
+            "EHz": Decimal(sign: .plus, exponent: 18, significand: 1),
+            "PHz": Decimal(sign: .plus, exponent: 15, significand: 1),
+            "THz": Decimal(sign: .plus, exponent: 12, significand: 1),
+            "GHz": Decimal(sign: .plus, exponent: 9, significand: 1),
+            "MHz": Decimal(sign: .plus, exponent: 6, significand: 1),
+            "kHz": Decimal(sign: .plus, exponent: 3, significand: 1),
+            "hHz": Decimal(sign: .plus, exponent: 2, significand: 1),
+            "daHz": Decimal(sign: .plus, exponent: 1, significand: 1),
+            "dHz": Decimal(sign: .minus, exponent: 1, significand: 1),
+            "cHz": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "mHz": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "µHz": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "nHz": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "pHz": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "fHz": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "aHz": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "c/s": 1,
+            "λ Em": Decimal(string: "2.99792458e-10")!,
+            "λ Pm": Decimal(string: "2.99792458e-7")!,
+            "λ Tm": Decimal(string: "0.0002997925")!,
+            "λ Gm": Decimal(string: "0.299792458")!,
+            "λ Mm": Decimal(string: "299.792458")!,
+            "λ km": Decimal(string: "299792.458")!,
+            "λ hm": Decimal(string: "2997924.58")!,
+            "λ dam": Decimal(string: "29979245.8")!,
+            "λ m": 299792458,
+            "λ dm": 2997924580,
+            "λ cm": 29979245800,
+            "λ mm": 299792458000,
+            "λ µm": Decimal(string: "2.99792458e14")!,
+            "λ nm": Decimal(string: "2.99792458e17")!,
+            "λC,e": Decimal(string: "1.235589789993e20")!,
+            "λC,p": Decimal(string: "2.2687315327002e23")!,
+            "λC,n": Decimal(string: "2.2718587447278e23")!
         ]
         
         guard let fromValue = hertzValues[fromUnit.lowercased()], let toValue = hertzValues[toUnit.lowercased()] else {

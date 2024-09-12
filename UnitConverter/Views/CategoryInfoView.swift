@@ -16,7 +16,7 @@ struct CategoryInfoView<T: UnitCategory>: View {
             VStack {
                 Image(systemName: category.icon)
                     .foregroundColor(.cyan)
-                Text(category.rawValue)
+                Text(category.localizedName)
                     .bold()
             }
             .padding(.top, 40)

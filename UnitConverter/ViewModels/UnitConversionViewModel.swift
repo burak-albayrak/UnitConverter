@@ -32,31 +32,38 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     }
     
     func convertUnits(value: String) -> String {
-        guard let decimalValue = Decimal(string: value),
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current // Kullanıcının yerel ayarlarına göre biçimlendir
+
+        formatter.decimalSeparator = "."
+        
+        guard let decimalValue = formatter.number(from: value)?.decimalValue,
               selectedFirstUnitIndex < availableUnits.count,
               selectedSecondUnitIndex < availableUnits.count else {
             return "0"
         }
 
-        let fromUnit = availableUnits[selectedFirstUnitIndex].name
-        let toUnit = availableUnits[selectedSecondUnitIndex].name
+        let fromUnit = availableUnits[selectedFirstUnitIndex].symbol
+        let toUnit = availableUnits[selectedSecondUnitIndex].symbol
 
         let result = category.convert(decimalValue, from: fromUnit, to: toUnit)
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 6
-        formatter.minimumFractionDigits = 0 // Sıfırdan sonraki gereksiz ondalık basamakları kaldırır
-        
+
+        let resultFormatter = NumberFormatter()
+        resultFormatter.numberStyle = .decimal
+        resultFormatter.maximumFractionDigits = 6
+        resultFormatter.minimumFractionDigits = 0
+
         if abs(result) >= 0.000001 && abs(result) < 1000000 {
-            return formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
+            return resultFormatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
         } else {
-            formatter.numberStyle = .scientific
-            formatter.exponentSymbol = "e"
-            let formattedResult = formatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
+            resultFormatter.numberStyle = .scientific
+            resultFormatter.exponentSymbol = "e"
+            let formattedResult = resultFormatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
             return formattedResult == "0e0" ? "0" : formattedResult
         }
     }
+
     
     func setFromFavorite(_ favorite: FavoriteConversion) {
         selectedFirstUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.fromUnit }) ?? 0

@@ -56,7 +56,6 @@ class CurrencyConversionViewModel: ObservableObject {
         }
     }
     
-    
     func convertCurrency() {
         guard let inputNumber = Decimal(string: inputValue),
               selectedFromCurrencyIndex < availableCurrencies.count,
