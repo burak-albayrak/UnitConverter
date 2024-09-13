@@ -35,7 +35,7 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         let ampereTurnValues: [String: Decimal] = [
             "At": 1,
             "kAt": Decimal(sign: .plus, exponent: 3, significand: 1),
-            "mAt": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "mAt": Decimal(sign: .plus, exponent: -3, significand: 1),
             "abAt": 10,
             "Gb": Decimal(string: "0.7957747151")!
         ]
@@ -67,17 +67,17 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
     private func convertMagneticFlux(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let weberValues: [String: Decimal] = [
             "Wb": 1,
-            "mWb": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µWb": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "mWb": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µWb": Decimal(sign: .plus, exponent: -6, significand: 1),
             "V·s": 1,
             "up": Decimal(string: "1.256637061436e-7")!,
             "MΦ": Decimal(string: "0.01")!,
-            "kΦ": Decimal(sign: .minus, exponent: 5, significand: 1),
-            "Φ": Decimal(sign: .minus, exponent: 8, significand: 1),
-            "Mx": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "kΦ": Decimal(sign: .plus, exponent: -5, significand: 1),
+            "Φ": Decimal(sign: .plus, exponent: -8, significand: 1),
+            "Mx": Decimal(sign: .plus, exponent: -8, significand: 1),
             "T·m²": 1,
-            "T·cm²": Decimal(sign: .minus, exponent: 4, significand: 1),
-            "G·cm²": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "T·cm²": Decimal(sign: .plus, exponent: -4, significand: 1),
+            "G·cm²": Decimal(sign: .plus, exponent: -8, significand: 1),
             "Φ₀": Decimal(string: "2.06783461e-15")!
         ]
 
@@ -96,12 +96,12 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "Wb/cm²": Decimal(sign: .plus, exponent: 4, significand: 1),
             "Wb/in²": Decimal(string: "1550.0031000062")!,
             "Mx/m²": 1,
-            "Mx/cm²": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "Mx/cm²": Decimal(sign: .plus, exponent: -4, significand: 1),
             "Mx/in²": Decimal(string: "1.55e-5")!,
-            "G": Decimal(sign: .minus, exponent: 4, significand: 1),
-            "Φ/cm²": Decimal(sign: .minus, exponent: 4, significand: 1),
+            "G": Decimal(sign: .plus, exponent: -4, significand: 1),
+            "Φ/cm²": Decimal(sign: .plus, exponent: -4, significand: 1),
             "Φ/in²": Decimal(string: "1.55e-5")!,
-            "γ": Decimal(sign: .minus, exponent: 9, significand: 1)
+            "γ": Decimal(sign: .plus, exponent: -9, significand: 1)
         ]
 
         guard let fromValue = teslaValues[fromUnit], let toValue = teslaValues[toUnit] else {
@@ -115,11 +115,11 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
     var icon: String {
         switch self {
         case .magneticFieldStrength:
-            return "waveform.circle"
+            return "bolt.shield"
         case .magneticFlux:
-            return "circle.grid.cross"
+            return "bolt.brakesignal"
         case .magneticFluxDensity:
-            return "dot.circle.and.hand.point.up.left.fill"
+            return "bolt.horizontal"
         case .magnetomotiveForce:
             return "bolt.square"
         }

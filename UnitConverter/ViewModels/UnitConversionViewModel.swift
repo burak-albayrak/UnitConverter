@@ -34,26 +34,27 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     func convertUnits(value: String) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.locale = Locale.current
-
-        formatter.decimalSeparator = "."
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.usesGroupingSeparator = false
         
         guard let decimalValue = formatter.number(from: value)?.decimalValue,
               selectedFirstUnitIndex < availableUnits.count,
               selectedSecondUnitIndex < availableUnits.count else {
             return "0"
         }
-
+        
         let fromUnit = availableUnits[selectedFirstUnitIndex].symbol
         let toUnit = availableUnits[selectedSecondUnitIndex].symbol
-
+        
         let result = category.convert(decimalValue, from: fromUnit, to: toUnit)
-
+        
         let resultFormatter = NumberFormatter()
         resultFormatter.numberStyle = .decimal
         resultFormatter.maximumFractionDigits = 22
         resultFormatter.minimumFractionDigits = 0
-
+        resultFormatter.usesGroupingSeparator = false
+        resultFormatter.locale = Locale(identifier: "en_US")
+        
         if abs(result) >= 0.000001 && abs(result) < pow(Decimal(10), 22) {
             return resultFormatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
         } else {

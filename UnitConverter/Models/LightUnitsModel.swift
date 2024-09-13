@@ -138,40 +138,61 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "kHz": Decimal(sign: .plus, exponent: 3, significand: 1),
             "hHz": Decimal(sign: .plus, exponent: 2, significand: 1),
             "daHz": Decimal(sign: .plus, exponent: 1, significand: 1),
-            "dHz": Decimal(sign: .minus, exponent: 1, significand: 1),
-            "cHz": Decimal(sign: .minus, exponent: 2, significand: 1),
-            "mHz": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µHz": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nHz": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pHz": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fHz": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aHz": Decimal(sign: .minus, exponent: 18, significand: 1),
-            "c/s": 1,
-            "λ Em": Decimal(string: "2.99792458e-10")!,
-            "λ Pm": Decimal(string: "2.99792458e-7")!,
-            "λ Tm": Decimal(string: "0.0002997925")!,
-            "λ Gm": Decimal(string: "0.299792458")!,
-            "λ Mm": Decimal(string: "299.792458")!,
-            "λ km": Decimal(string: "299792.458")!,
-            "λ hm": Decimal(string: "2997924.58")!,
-            "λ dam": Decimal(string: "29979245.8")!,
-            "λ m": 299792458,
-            "λ dm": 2997924580,
-            "λ cm": 29979245800,
-            "λ mm": 299792458000,
-            "λ µm": Decimal(string: "2.99792458e14")!,
-            "λ nm": Decimal(string: "2.99792458e17")!,
-            "λC,e": Decimal(string: "1.235589789993e20")!,
-            "λC,p": Decimal(string: "2.2687315327002e23")!,
-            "λC,n": Decimal(string: "2.2718587447278e23")!
+            "dHz": Decimal(sign: .plus, exponent: -1, significand: 1),
+            "cHz": Decimal(sign: .plus, exponent: -2, significand: 1),
+            "mHz": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µHz": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nHz": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pHz": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fHz": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aHz": Decimal(sign: .plus, exponent: -18, significand: 1),
+            "c/s": 1
         ]
         
-        guard let fromValue = hertzValues[fromUnit], let toValue = hertzValues[toUnit] else {
-            return value
+        let wavelengthValues: [String: Decimal] = [
+            "λ Em": Decimal(string: "1e-18")!,
+            "λ Pm": Decimal(string: "1e-15")!,
+            "λ Tm": Decimal(string: "1e-12")!,
+            "λ Gm": Decimal(string: "1e-9")!,
+            "λ Mm": Decimal(string: "1e-6")!,
+            "λ km": Decimal(string: "1e-3")!,
+            "λ hm": Decimal(string: "1e-2")!,
+            "λ dam": Decimal(string: "1e-1")!,
+            "λ m": 1,
+            "λ dm": 10,
+            "λ cm": 100,
+            "λ mm": 1000,
+            "λ µm": Decimal(string: "1e6")!,
+            "λ nm": Decimal(string: "1e9")!,
+            "λC,e": Decimal(string: "2.42631023867e-12")!,
+            "λC,p": Decimal(string: "1.32141e-15")!,
+            "λC,n": Decimal(string: "1.31959e-15")!
+        ]
+        
+        let c = Decimal(299792458) // Speed of light in m/s
+        
+        func toHz(_ value: Decimal, from unit: String) -> Decimal {
+            if let hertzMultiplier = hertzValues[unit] {
+                return value * hertzMultiplier
+            } else if let wavelengthMultiplier = wavelengthValues[unit] {
+                let wavelengthInMeters = value * wavelengthMultiplier
+                return c / wavelengthInMeters
+            }
+            return value // Default case if unit is not recognized
         }
         
-        let hertz = value * fromValue
-        return hertz / toValue
+        func fromHz(_ value: Decimal, to unit: String) -> Decimal {
+            if let hertzDivisor = hertzValues[unit] {
+                return value / hertzDivisor
+            } else if let wavelengthDivisor = wavelengthValues[unit] {
+                let wavelengthInMeters = c / value
+                return wavelengthInMeters / wavelengthDivisor
+            }
+            return value // Default case if unit is not recognized
+        }
+        
+        let hertz = toHz(value, from: fromUnit)
+        return fromHz(hertz, to: toUnit)
     }
     
     var icon: String {

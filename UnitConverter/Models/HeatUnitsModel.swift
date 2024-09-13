@@ -104,33 +104,36 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     
     private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let kelvin: Decimal
-        
         switch fromUnit.lowercased() {
         case "kelvin", "k":
             kelvin = value
-        case "degree celsius", "°c", "degree centigrade":
+        case "celsius", "°c":
             kelvin = value + Decimal(273.15)
-        case "degree fahrenheit", "°f":
+        case "fahrenheit", "°f":
             kelvin = (value - 32) * 5/9 + Decimal(273.15)
-        case "degree rankine", "°r":
+        case "rankine", "°r":
             kelvin = value * 5/9
-        case "degree reaumur", "°re":
-            kelvin = value * Decimal(1.25) + Decimal(273.15)
+        case "reaumur", "°re", "°ré":
+            kelvin = value * 5/4 + Decimal(273.15)
+        case "triple point of water", "tw":
+            kelvin = value * Decimal(273.16)
         default:
             return value
         }
-        
+
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
-        case "degree celsius", "°c", "degree centigrade":
+        case "celsius", "°c":
             return kelvin - Decimal(273.15)
-        case "degree fahrenheit", "°f":
+        case "fahrenheit", "°f":
             return (kelvin - Decimal(273.15)) * 9/5 + 32
-        case "degree rankine", "°r":
-            return kelvin * Decimal(1.8)
-        case "degree reaumur", "°re":
-            return (kelvin - Decimal(273.15)) * Decimal(0.8)
+        case "rankine", "°r":
+            return kelvin * 9/5
+        case "reaumur", "°re", "°ré":
+            return (kelvin - Decimal(273.15)) * 4/5
+        case "triple point of water", "tw":
+            return kelvin / Decimal(273.16)
         default:
             return value
         }
@@ -315,19 +318,19 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         case .heatDensity:
             return "flame"
         case .heatFluxDensity:
-            return "waveform.path.badge.plus"
+            return "waveform.path.ecg.rectangle"
         case .heatTransverCoefficient:
-            return "thermometer"
+            return "thermometer.sun"
         case .spesificHeatCapacity:
             return "flame.circle"
         case .temperatureInterval:
-            return "thermometer.sun"
+            return "thermometer"
         case .thermalConductivity:
             return "waveform.path"
         case .thermalExpansion:
-            return "arrow.up.right.circle"
+            return "arrow.up.left.and.arrow.down.right"
         case .thermalResistance:
-            return "snowflake"
+            return "staroflife.shield"
         }
     }
     

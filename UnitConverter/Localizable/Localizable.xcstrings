@@ -387,7 +387,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "akre ayak"
+            "value" : "akre fit"
           }
         }
       }
@@ -397,7 +397,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "akre ayak (ABD anketi)"
+            "value" : "akre fit (ABD)"
           }
         }
       }
@@ -407,7 +407,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "eksen ayak/gün"
+            "value" : "eksen fit/gün"
           }
         }
       }
@@ -417,7 +417,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "eksen ayak/saat"
+            "value" : "eksen fit/saat"
           }
         }
       }
@@ -427,7 +427,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "eksen ayak/yıl"
+            "value" : "eksen fit/yıl"
           }
         }
       }
@@ -1449,7 +1449,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tahta ayak"
+            "value" : "tahta fit"
           }
         }
       }
@@ -1595,7 +1595,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT) ayak/saat/kare ayak/°F"
+            "value" : "Btu (IT) fit/saat/kare fit/°F"
           }
         }
       }
@@ -1605,7 +1605,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT) inç/saat/kare ayak/°F"
+            "value" : "Btu (IT) inç/saat/kare fit/°F"
           }
         }
       }
@@ -1615,7 +1615,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT) inç/saniye/kare ayak/°F"
+            "value" : "Btu (IT) inç/saniye/kare fit/°F"
           }
         }
       }
@@ -1625,7 +1625,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT)/kübik ayak"
+            "value" : "Btu (IT)/kübik fit"
           }
         }
       }
@@ -1645,7 +1645,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT)/saat/kare ayak"
+            "value" : "Btu (IT)/saat/kare fit"
           }
         }
       }
@@ -1655,7 +1655,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT)/saat/kare ayak/°F"
+            "value" : "Btu (IT)/saat/kare fit/°F"
           }
         }
       }
@@ -1675,7 +1675,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT)/dakika/kare ayak"
+            "value" : "Btu (IT)/dakika/kare fit"
           }
         }
       }
@@ -1735,7 +1735,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT)/saniye/kare ayak"
+            "value" : "Btu (IT)/saniye/kare fit"
           }
         }
       }
@@ -1745,7 +1745,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT)/saniye/kare ayak/°F"
+            "value" : "Btu (IT)/saniye/kare fit/°F"
           }
         }
       }
@@ -1755,7 +1755,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (IT)/kare ayak"
+            "value" : "Btu (IT)/kare fit"
           }
         }
       }
@@ -1775,7 +1775,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th) ayak/saat/kare ayak/°F"
+            "value" : "Btu (th) fit/saat/kare fit/°F"
           }
         }
       }
@@ -1785,7 +1785,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th) inç/saat/kare ayak/°F"
+            "value" : "Btu (th) inç/saat/kare fit/°F"
           }
         }
       }
@@ -1795,7 +1795,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th) inç/saniye/kare ayak/°F"
+            "value" : "Btu (th) inç/saniye/kare fit/°F"
           }
         }
       }
@@ -1805,7 +1805,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th)/kübik ayak"
+            "value" : "Btu (th)/kübik fit"
           }
         }
       }
@@ -1825,7 +1825,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th)/saat/kare ayak"
+            "value" : "Btu (th)/saat/kare fit"
           }
         }
       }
@@ -1835,7 +1835,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th)/saat/kare ayak/°F"
+            "value" : "Btu (th)/saat/kare fit/°F"
           }
         }
       }
@@ -1855,7 +1855,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th)/dakika/kare ayak"
+            "value" : "Btu (th)/dakika/kare fit"
           }
         }
       }
@@ -1905,7 +1905,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th)/saniye/kare ayak"
+            "value" : "Btu (th)/saniye/kare fit"
           }
         }
       }
@@ -1915,7 +1915,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th)/saniye/kare ayak/°F"
+            "value" : "Btu (th)/saniye/kare fit/°F"
           }
         }
       }
@@ -1935,7 +1935,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Btu (th)/kare ayak"
+            "value" : "Btu (th)/kare fit"
           }
         }
       }
@@ -2938,7 +2938,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CHU/kübik ayak"
+            "value" : "CHU/kübik fit"
           }
         }
       }
@@ -2948,7 +2948,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CHU/saat/kare ayak"
+            "value" : "CHU/saat/kare fit"
           }
         }
       }
@@ -2958,7 +2958,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CHU/saat/kare ayak/°C"
+            "value" : "CHU/saat/kare fit/°C"
           }
         }
       }
@@ -3460,7 +3460,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "küp ayak"
+            "value" : "küp fit"
           }
         }
       }
@@ -3470,7 +3470,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "küp ayak/saat"
+            "value" : "küp fit/saat"
           }
         }
       }
@@ -3490,7 +3490,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "küp ayak/dakika"
+            "value" : "küp fit/dakika"
           }
         }
       }
@@ -3510,7 +3510,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "küp ayak/saniye"
+            "value" : "küp fit/saniye"
           }
         }
       }
@@ -4664,7 +4664,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hız, bir nesnenin hareket ettiği veya zaman içinde konumunu değiştirdiği oranı ölçer. Fizik ve günlük yaşamda temel bir kavramdır ve bir şeyin ne kadar hızlı hareket ettiğini açıklar.\n\nHızın SI birimi, bir saniye içinde metre cinsinden kat edilen mesafeyi temsil eden metre/saniyedir (m/s).\n\nDiğer yaygın birimler arasında kilometre/saat (km/h) ve mil/saat (mph) bulunur. Örneğin, saatte 60 km hızla giden bir araba, bir saatte 60 kilometre yol kat eder.\n\nHız, araç performansından spora, bilimsel deneylerden navigasyona kadar çeşitli uygulamalarda önemlidir.\n\nHızı anlamak, hareketi analiz etmek, performansı optimize etmek ve farklı durumlarda güvenliği sağlamak için hayati öneme sahiptir."
+            "value" : "Süre, bir olayın veya aktivitenin gerçekleştiği toplam zaman aralığını ifade eder. Bir şeyin başlangıcından sonuna kadar ne kadar sürdüğünü ölçer.\n\nSüre, zaman ölçümü ve planlama açısından temel bir kavramdır ve kısa görevlerden uzun vadeli projelere kadar çeşitli aktivitelerin uzunluğunu niceliksel olarak belirlemek için kullanılır.\n\nSürenin SI birimi saniyedir (s), ancak genellikle daha büyük birimlerle, örneğin dakika, saat, gün veya hatta yıl cinsinden ifade edilir.\n\nÖrneğin, 5 dakika süren bir olay, 300 saniye olarak ölçülür.\n\nDoğru süre ölçümü, zamanlama, proje yönetimi ve bilim, mühendislik ve günlük yaşam gibi çeşitli alanlarda zaman bazlı hesaplamalar için çok önemlidir."
           }
         }
       }
@@ -4868,7 +4868,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elektriksel İletkenlik2"
+            "value" : "Elektrik İletkenliği"
           }
         }
       }
@@ -4912,7 +4912,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elektriksel Direnç2"
+            "value" : "Elektriksel Dirençliği"
           }
         }
       }
@@ -4974,7 +4974,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elektrik Dönüştürücüler"
+            "value" : "Elektrik Dönüştürücüleri"
           }
         }
       }
@@ -6129,7 +6129,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sıvı Dönüştürücüler"
+            "value" : "Sıvı Dönüştürücüleri"
           }
         }
       }
@@ -6139,7 +6139,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak"
+            "value" : "fit"
           }
         }
       }
@@ -6149,7 +6149,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak (ABD araştırma)"
+            "value" : "fit (ABD)"
           }
         }
       }
@@ -6159,7 +6159,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak pound-kuvveti/saat"
+            "value" : "fit pound-kuvveti/saat"
           }
         }
       }
@@ -6169,7 +6169,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak pound-kuvveti/dakika"
+            "value" : "fit pound-kuvveti/dakika"
           }
         }
       }
@@ -6179,7 +6179,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak pound-kuvveti/saniye"
+            "value" : "fit pound-kuvveti/saniye"
           }
         }
       }
@@ -6189,7 +6189,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak pound/dakika/kare ayak"
+            "value" : "fit pound/dakika/kare fit"
           }
         }
       }
@@ -6199,7 +6199,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak su (4°C)"
+            "value" : "fit su (4°C)"
           }
         }
       }
@@ -6209,7 +6209,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak su (60°F)"
+            "value" : "fit su (60°F)"
           }
         }
       }
@@ -6239,7 +6239,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak-pound"
+            "value" : "fit-pound"
           }
         }
       }
@@ -6249,7 +6249,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak/saat"
+            "value" : "fit/saat"
           }
         }
       }
@@ -6259,7 +6259,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak/dakika"
+            "value" : "fit/dakika"
           }
         }
       }
@@ -6269,7 +6269,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ayak/saniye"
+            "value" : "fit/saniye"
           }
         }
       }
@@ -7147,7 +7147,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tanelik/metreküp ayak"
+            "value" : "tanelik/metreküp fit"
           }
         }
       }
@@ -8004,7 +8004,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "beygir gücü (metrik)/kare ayak"
+            "value" : "beygir gücü (metrik)/kare fit"
           }
         }
       }
@@ -8034,7 +8034,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "beygir gücü/kare ayak"
+            "value" : "beygir gücü/kare fit"
           }
         }
       }
@@ -8064,7 +8064,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yüz küp ayak"
+            "value" : "yüz küp fit"
           }
         }
       }
@@ -8174,7 +8174,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aydınlatma, bir yüzey alanına düşen ışık miktarını ifade eder ve genellikle lüks (lx) veya ayak mumyu (fc) cinsinden ölçülür. Bir alanın ne kadar iyi aydınlatıldığını, üzerine düşen ışığın yoğunluğu ve dağılımına göre açıklar.\n\nAydınlatma, aydınlatma tasarımı, fotoğrafçılık ve mimari gibi çeşitli uygulamalarda kritik öneme sahiptir çünkü görünürlük, estetik ve işlevsellik üzerinde etkili olur.\n\nÖrneğin, iyi aydınlatılmış bir çalışma alanı, üretkenliği artırır ve göz yorgunluğunu azaltır; fotoğrafçılıkta ise uygun aydınlatma, doğru görüntü yakalamayı sağlar.\n\nAydınlatmanın anlaşılması ve ölçülmesi, farklı ortamlar için aydınlatma koşullarını optimize etmeye yardımcı olur, alanların amaçlarına uygun şekilde yeterince aydınlatılmasını sağlar ve enerji tüketimini minimize ederek genel aydınlatma kalitesini artırır."
+            "value" : "Aydınlatma, bir yüzey alanına düşen ışık miktarını ifade eder ve genellikle lüks (lx) veya fit mumu (fc) cinsinden ölçülür. Bir alanın ne kadar iyi aydınlatıldığını, üzerine düşen ışığın yoğunluğu ve dağılımına göre açıklar.\n\nAydınlatma, aydınlatma tasarımı, fotoğrafçılık ve mimari gibi çeşitli uygulamalarda kritik öneme sahiptir çünkü görünürlük, estetik ve işlevsellik üzerinde etkili olur.\n\nÖrneğin, iyi aydınlatılmış bir çalışma alanı, üretkenliği artırır ve göz yorgunluğunu azaltır; fotoğrafçılıkta ise uygun aydınlatma, doğru görüntü yakalamayı sağlar.\n\nAydınlatmanın anlaşılması ve ölçülmesi, farklı ortamlar için aydınlatma koşullarını optimize etmeye yardımcı olur, alanların amaçlarına uygun şekilde yeterince aydınlatılmasını sağlar ve enerji tüketimini minimize ederek genel aydınlatma kalitesini artırır."
           }
         }
       }
@@ -8799,7 +8799,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kilokalori (IT)/saat/kare ayak"
+            "value" : "kilokalori (IT)/saat/kare fit"
           }
         }
       }
@@ -8809,7 +8809,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kilokalori (IT)/saat/kare ayak/°C"
+            "value" : "kilokalori (IT)/saat/kare fit/°C"
           }
         }
       }
@@ -9849,7 +9849,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kiloyarda"
+            "value" : "kiloyard"
           }
         }
       }
@@ -10893,13 +10893,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mass measures the amount of matter in an object, and its SI unit is the kilogram (kg). It is a fundamental property of physical objects and remains constant regardless of location. \n\nMass is used to quantify the resistance of an object to acceleration when a force is applied.\n\nWeight, on the other hand, is the force exerted by gravity on an object's mass. Its SI unit is the newton (N), defined as the force needed to accelerate a one-kilogram mass by one meter per second squared.\n\nWeight varies depending on the gravitational field strength of the location. For example, an object weighs less on the Moon than on Earth due to the Moon's weaker gravity. \n\nBoth weight and mass are crucial in physics and engineering, but they measure different properties of matter.\";\n\n\"LengthInfo\" = \"Length is a measure of how long an object is from one end to the other. It is one of the fundamental dimensions in physics and engineering. \n\nIn the International System of Units (SI), the base unit for length is the meter (m).\n\nLength can be measured in various units, such as kilometers (km), centimeters (cm), and millimeters (mm), each of which is a derived unit based on the meter.\n\nFor example, one kilometer equals 1,000 meters, and one centimeter equals 0.01 meters. These units are used in everyday life, scientific research, and engineering to quantify the size or extent of objects and distances."
+            "value" : "Mass measures the amount of matter in an object, and its SI unit is the kilogram (kg). It is a fundamental property of physical objects and remains constant regardless of location. \n\nMass is used to quantify the resistance of an object to acceleration when a force is applied.\n\nWeight, on the other hand, is the force exerted by gravity on an object's mass. Its SI unit is the newton (N), defined as the force needed to accelerate a one-kilogram mass by one meter per second squared.\n\nWeight varies depending on the gravitational field strength of the location. For example, an object weighs less on the Moon than on Earth due to the Moon's weaker gravity. \n\nBoth weight and mass are crucial in physics and engineering, but they measure different properties of matter."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kütle, bir nesnedeki madde miktarını ölçer ve SI birimi kilogramdır (kg). Fiziksel nesnelerin temel bir özelliğidir ve konumdan bağımsız olarak sabit kalır.\n\nKütle, bir kuvvet uygulandığında bir nesnenin ivmelenmeye karşı direncini ölçmek için kullanılır.\n\nAğırlık ise, yerçekiminin bir nesnenin kütlesi üzerinde uyguladığı kuvvettir. SI birimi newton'dur (N) ve bir kilogramlık kütleyi saniyede bir metre karelik bir ivmeyle hızlandırmak için gereken kuvvet olarak tanımlanır.\n\nAğırlık, bulunulan yerin yerçekimi alanı şiddetine bağlı olarak değişir. Örneğin, bir nesne Ay'da Dünya'dakinden daha az ağırlığa sahiptir çünkü Ay'ın yerçekimi daha zayıftır.\n\nHem ağırlık hem de kütle fizik ve mühendislikte çok önemlidir, ancak maddenin farklı özelliklerini ölçerler.\";\n\n\"LengthInfo\" = \"Uzunluk, bir nesnenin bir ucundan diğer ucuna kadar olan mesafesini ölçer. Fizik ve mühendislikte temel boyutlardan biridir.\n\nUluslararası Birimler Sisteminde (SI), uzunluk için temel birim metredir (m).\n\nUzunluk, kilometre (km), santimetre (cm) ve milimetre (mm) gibi çeşitli birimlerde ölçülebilir ve bunların her biri metreye dayalı türetilmiş birimlerdir.\n\nÖrneğin, bir kilometre 1.000 metreye, bir santimetre ise 0,01 metreye eşittir. Bu birimler günlük yaşamda, bilimsel araştırmalarda ve mühendislikte nesnelerin boyutunu veya mesafeleri ölçmek için kullanılır."
+            "value" : "Kütle, bir nesnedeki madde miktarını ölçer ve SI birimi kilogramdır (kg). Fiziksel nesnelerin temel bir özelliğidir ve konumdan bağımsız olarak sabit kalır.\n\nKütle, bir kuvvet uygulandığında bir nesnenin ivmelenmeye karşı direncini ölçmek için kullanılır.\n\nAğırlık ise, yerçekiminin bir nesnenin kütlesi üzerinde uyguladığı kuvvettir. SI birimi newton'dur (N) ve bir kilogramlık kütleyi saniyede bir metre karelik bir ivmeyle hızlandırmak için gereken kuvvet olarak tanımlanır.\n\nAğırlık, bulunulan yerin yerçekimi alanı şiddetine bağlı olarak değişir. Örneğin, bir nesne Ay'da Dünya'dakinden daha az ağırlığa sahiptir çünkü Ay'ın yerçekimi daha zayıftır.\n\nHem ağırlık hem de kütle fizik ve mühendislikte çok önemlidir, ancak maddenin farklı özelliklerini ölçerler."
           }
         }
       }
@@ -11331,7 +11331,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/küçük ayak"
+            "value" : "metre/küçük fit"
           }
         }
       }
@@ -11361,7 +11361,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/küçük yarda"
+            "value" : "metre/küçük yard"
           }
         }
       }
@@ -13688,7 +13688,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ons kuvvet ayak"
+            "value" : "Ons kuvvet fit"
           }
         }
       }
@@ -13718,7 +13718,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ons/metreküp ayak"
+            "value" : "ons/metreküp fit"
           }
         }
       }
@@ -14670,7 +14670,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pound ayak/kare saniye"
+            "value" : "pound fit/kare saniye"
           }
         }
       }
@@ -14740,7 +14740,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pound-kuvvet ayak"
+            "value" : "pound-kuvvet fit"
           }
         }
       }
@@ -14760,7 +14760,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pound-kuvvet ayak/pound/°R"
+            "value" : "pound-kuvvet fit/pound/°R"
           }
         }
       }
@@ -14830,7 +14830,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pound-kuvvet/kare ayak"
+            "value" : "pound-kuvvet/kare fit"
           }
         }
       }
@@ -14870,7 +14870,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pound/metreküp ayak"
+            "value" : "pound/metreküp fit"
           }
         }
       }
@@ -15080,7 +15080,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "poundal ayak"
+            "value" : "poundal fit"
           }
         }
       }
@@ -15120,7 +15120,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "poundal/kare ayak"
+            "value" : "poundal/kare fit"
           }
         }
       }
@@ -15765,7 +15765,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "çubuk"
+            "value" : "rod"
           }
         }
       }
@@ -15775,7 +15775,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "çubuk (ABD araştırma)"
+            "value" : "rod (ABD)"
           }
         }
       }
@@ -15831,7 +15831,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "halat"
+            "value" : "rope"
           }
         }
       }
@@ -16221,7 +16221,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "slug/metreküp ayak"
+            "value" : "slug/metreküp fit"
           }
         }
       }
@@ -16481,7 +16481,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kare ayak"
+            "value" : "kare fit"
           }
         }
       }
@@ -16491,7 +16491,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kare ayak (ABD anket)"
+            "value" : "kare fit (ABD)"
           }
         }
       }
@@ -16681,7 +16681,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kare çubuk"
+            "value" : "kare rod"
           }
         }
       }
@@ -16691,7 +16691,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kare çubuk (ABD anket)"
+            "value" : "kare rod (ABD)"
           }
         }
       }
@@ -17248,10 +17248,16 @@
     "Temperature Interval" : {
       "extractionState" : "manual",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Temperature"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sıcaklık Aralığı"
+            "value" : "Sıcaklık"
           }
         }
       }
@@ -17576,7 +17582,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "therm/küçük ayak"
+            "value" : "therm/küçük fit"
           }
         }
       }
@@ -17880,7 +17886,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ton-kuvvet (uzun)/kare ayak"
+            "value" : "ton-kuvvet (uzun)/kare fit"
           }
         }
       }
@@ -17940,7 +17946,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ton-kuvvet (kısa)/kare ayak"
+            "value" : "ton-kuvvet (kısa)/kare fit"
           }
         }
       }
@@ -18377,7 +18383,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hız - Açısal"
+            "value" : "Açısal Hız"
           }
         }
       }
@@ -18597,7 +18603,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hacim - kuru"
+            "value" : "Kuru Hacim"
           }
         }
       }
@@ -19080,7 +19086,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yarda"
+            "value" : "yard"
           }
         }
       }
@@ -19090,7 +19096,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yarda/saat"
+            "value" : "yard/saat"
           }
         }
       }
@@ -19100,7 +19106,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yarda/dakika"
+            "value" : "yard/dakika"
           }
         }
       }
@@ -19110,7 +19116,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yarda/saniye"
+            "value" : "yard/saniye"
           }
         }
       }

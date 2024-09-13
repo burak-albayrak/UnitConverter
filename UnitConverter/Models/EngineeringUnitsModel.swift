@@ -92,8 +92,8 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "dm": Decimal(string: "0.1")!,
             "cm": Decimal(string: "0.01")!,
             "mm": Decimal(string: "0.001")!,
-            "µm": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nm": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "µm": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nm": Decimal(sign: .plus, exponent: -9, significand: 1),
             "mi": Decimal(string: "1609.344")!,
             "yd": Decimal(string: "0.9144")!,
             "ft": Decimal(string: "0.3048")!,
@@ -106,10 +106,10 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Mm": Decimal(sign: .plus, exponent: 6, significand: 1),
             "hm": 100,
             "dam": 10,
-            "µ": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "pm": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fm": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "am": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "µ": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "pm": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fm": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "am": Decimal(sign: .plus, exponent: -18, significand: 1),
             "Mpc": Decimal(string: "3.08567758128e22")!,
             "kpc": Decimal(string: "3.08567758128e19")!,
             "pc": Decimal(string: "3.08567758128e16")!,
@@ -148,10 +148,10 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "barleycorn": Decimal(string: "0.0084666667")!,
             "mil": Decimal(string: "2.54e-5")!,
             "µin": Decimal(string: "2.54e-8")!,
-            "Å": Decimal(sign: .minus, exponent: 10, significand: 1),
+            "Å": Decimal(sign: .plus, exponent: -10, significand: 1),
             "au(l)": Decimal(string: "5.2917724900001e-11")!,
             "X": Decimal(string: "1.00208e-13")!,
-            "F": Decimal(sign: .minus, exponent: 15, significand: 1),
+            "F": Decimal(sign: .plus, exponent: -15, significand: 1),
             "arpent": Decimal(string: "58.5216")!,
             "pica": Decimal(string: "0.0042333333")!,
             "point": Decimal(string: "0.0003527778")!,
@@ -193,7 +193,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         let kilogramValues: [String: Decimal] = [
             "kg": 1,
             "g": Decimal(string: "0.001")!,
-            "mg": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "mg": Decimal(sign: .plus, exponent: -6, significand: 1),
             " t": 1000,
             "lb": Decimal(string: "0.45359237")!,
             "oz": Decimal(string: "0.0283495231")!,
@@ -209,12 +209,12 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "hg": Decimal(string: "0.1")!,
             "dag": Decimal(string: "0.01")!,
             "dg": Decimal(string: "0.0001")!,
-            "cg": Decimal(sign: .minus, exponent: 5, significand: 1),
-            "µg": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "ng": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "pg": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "fg": Decimal(sign: .minus, exponent: 18, significand: 1),
-            "ag": Decimal(sign: .minus, exponent: 21, significand: 1),
+            "cg": Decimal(sign: .plus, exponent: -5, significand: 1),
+            "µg": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "ng": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "pg": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "fg": Decimal(sign: .plus, exponent: -18, significand: 1),
+            "ag": Decimal(sign: .plus, exponent: -21, significand: 1),
             "Da": Decimal(string: "1.6605300000013e-27")!,
             "kgf·s²/m": Decimal(string: "9.80665")!,
             "klb": Decimal(string: "453.59237")!,
@@ -237,7 +237,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "dwt": Decimal(string: "0.0015551738")!,
             "s(ap)": Decimal(string: "0.0012959782")!,
             "gr": Decimal(string: "6.47989e-5")!,
-            "γ": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "γ": Decimal(sign: .plus, exponent: -9, significand: 1),
             "talent(BH)": Decimal(string: "34.2")!,
             "mina(BH)": Decimal(string: "0.57")!,
             "shekel(BH)": Decimal(string: "0.0114")!,
@@ -274,10 +274,10 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         let cubicMeterValues: [String: Decimal] = [
             "m³": 1,
             "km³": Decimal(sign: .plus, exponent: 9, significand: 1),
-            "cm³": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "mm³": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "cm³": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "mm³": Decimal(sign: .plus, exponent: -9, significand: 1),
             "L": Decimal(string: "0.001")!,
-            "mL": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "mL": Decimal(sign: .plus, exponent: -6, significand: 1),
             "gal(US)": Decimal(string: "0.0037854118")!,
             "qt(US)": Decimal(string: "0.0009463529")!,
             "pt(US)": Decimal(string: "0.0004731765")!,
@@ -298,14 +298,14 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "hL": Decimal(string: "0.1")!,
             "daL": Decimal(string: "0.01")!,
             "dL": Decimal(string: "0.0001")!,
-            "cL": Decimal(sign: .minus, exponent: 5, significand: 1),
-            "µL": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "nL": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "pL": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "fL": Decimal(sign: .minus, exponent: 18, significand: 1),
-            "aL": Decimal(sign: .minus, exponent: 21, significand: 1),
-            "cc": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "drop": Decimal(sign: .minus, exponent: 8, significand: 5),
+            "cL": Decimal(sign: .plus, exponent: -5, significand: 1),
+            "µL": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "nL": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "pL": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "fL": Decimal(sign: .plus, exponent: -18, significand: 1),
+            "aL": Decimal(sign: .plus, exponent: -21, significand: 1),
+            "cc": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "drop": Decimal(sign: .plus, exponent: -8, significand: 5),
             "bbl(oil)": Decimal(string: "0.1589872949")!,
             "bbl(US)": Decimal(string: "0.1192404712")!,
             "bbl(UK)": Decimal(string: "0.16365924")!,
@@ -369,14 +369,14 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             kelvin = (value - 32) * 5/9 + Decimal(273.15)
         case "rankine", "°r":
             kelvin = value * 5/9
-        case "reaumur", "°re":
+        case "reaumur", "°re", "°ré":
             kelvin = value * 5/4 + Decimal(273.15)
-        case "triple point of water":
-            kelvin = Decimal(273.16)
+        case "triple point of water", "tw":
+            kelvin = value * Decimal(273.16)
         default:
             return value
         }
-        
+
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
@@ -386,10 +386,10 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             return (kelvin - Decimal(273.15)) * 9/5 + 32
         case "rankine", "°r":
             return kelvin * 9/5
-        case "reaumur", "°re":
+        case "reaumur", "°re", "°ré":
             return (kelvin - Decimal(273.15)) * 4/5
-        case "triple point of water":
-            return Decimal(273.16)
+        case "triple point of water", "tw":
+            return kelvin / Decimal(273.16)
         default:
             return value
         }
@@ -399,9 +399,9 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         let squareMeterValues: [String: Decimal] = [
             "m²": 1,
             "km²": Decimal(sign: .plus, exponent: 6, significand: 1),
-            "cm²": Decimal(sign: .minus, exponent: 4, significand: 1),
-            "mm²": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "µm²": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "cm²": Decimal(sign: .plus, exponent: -4, significand: 1),
+            "mm²": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "µm²": Decimal(sign: .plus, exponent: -12, significand: 1),
             "ha": Decimal(sign: .plus, exponent: 4, significand: 1),
             "ac": Decimal(string: "4046.8564224")!,
             "mi²": Decimal(string: "2589988.110336")!,
@@ -411,9 +411,9 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "hm²": Decimal(sign: .plus, exponent: 4, significand: 1),
             "dam²": 100,
             "dm²": Decimal(string: "0.01")!,
-            "nm²": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "nm²": Decimal(sign: .plus, exponent: -18, significand: 1),
             "a": 100,
-            "b": Decimal(sign: .minus, exponent: 28, significand: 1),
+            "b": Decimal(sign: .plus, exponent: -28, significand: 1),
             "mi²(US)": Decimal(string: "2589998.4703195")!,
             "ft²(US)": Decimal(string: "0.0929034116")!,
             "cir in": Decimal(string: "0.0005067075")!,
@@ -464,11 +464,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "dPa": Decimal(string: "0.1")!,
             "cPa": Decimal(string: "0.01")!,
             "mPa": Decimal(string: "0.001")!,
-            "µPa": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nPa": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pPa": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fPa": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aPa": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "µPa": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nPa": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pPa": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fPa": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aPa": Decimal(sign: .plus, exponent: -18, significand: 1),
             "N/m²": 1,
             "N/cm²": 10000,
             "N/mm²": 1000000,
@@ -593,12 +593,12 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "dec": 315576000,
             "cent": 3155760000,
             "mill": 31557600000,
-            "µs": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "ns": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "ps": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fs": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "as": Decimal(sign: .minus, exponent: 18, significand: 1),
-            "shake": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "µs": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "ns": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "ps": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fs": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "as": Decimal(sign: .plus, exponent: -18, significand: 1),
+            "shake": Decimal(sign: .plus, exponent: -8, significand: 1),
             "mo(syn)": Decimal(string: "2551443.84")!,
             "yr(J)": 31557600,
             "yr(leap)": 31622400,
@@ -638,13 +638,13 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "GJ": Decimal(sign: .plus, exponent: 9, significand: 1),
             "MJ": Decimal(sign: .plus, exponent: 6, significand: 1),
             "mJ": Decimal(string: "0.001")!,
-            "µJ": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nJ": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "aJ": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "µJ": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nJ": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "aJ": Decimal(sign: .plus, exponent: -18, significand: 1),
             "MeV": Decimal(string: "1.6021766339999e-13")!,
             "keV": Decimal(string: "1.6021766339999e-16")!,
             "eV": Decimal(string: "1.6021766339999e-19")!,
-            "erg": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "erg": Decimal(sign: .plus, exponent: -7, significand: 1),
             "GWh": Decimal(string: "3.6e12")!,
             "MWh": Decimal(string: "3.6e9")!,
             "kW·s": 1000,
@@ -663,7 +663,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Mt": Decimal(string: "4.184e15")!,
             "kt": Decimal(string: "4.184e12")!,
             "t(TNT)": Decimal(string: "4.184e9")!,
-            "dyn·cm": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "dyn·cm": Decimal(sign: .plus, exponent: -7, significand: 1),
             "gf·m": Decimal(string: "0.00980665")!,
             "gf·cm": Decimal(string: "9.80665e-5")!,
             "kgf·cm": Decimal(string: "0.0980665")!,
@@ -702,14 +702,14 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "kW": Decimal(sign: .plus, exponent: 3, significand: 1),
             "hW": Decimal(sign: .plus, exponent: 2, significand: 1),
             "daW": Decimal(sign: .plus, exponent: 1, significand: 1),
-            "dW": Decimal(sign: .minus, exponent: 1, significand: 1),
-            "cW": Decimal(sign: .minus, exponent: 2, significand: 1),
-            "mW": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µW": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nW": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pW": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fW": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aW": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "dW": Decimal(sign: .plus, exponent: -1, significand: 1),
+            "cW": Decimal(sign: .plus, exponent: -2, significand: 1),
+            "mW": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µW": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nW": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pW": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fW": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aW": Decimal(sign: .plus, exponent: -18, significand: 1),
             "hp": Decimal(string: "745.6998715823")!,
             "hp(550)": Decimal(string: "745.6998715823")!,
             "hp(m)": Decimal(string: "735.49875")!,
@@ -744,7 +744,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "lb·ft/h": Decimal(string: "0.0003766161")!,
             "lb·ft/min": Decimal(string: "0.0225969658")!,
             "lb·ft/s": Decimal(string: "1.3558179483")!,
-            "erg/s": Decimal(sign: .minus, exponent: 7, significand: 1),
+            "erg/s": Decimal(sign: .plus, exponent: -7, significand: 1),
             "kVA": 1000,
             "VA": 1,
             "N·m/s": 1,
@@ -757,14 +757,14 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "kJ/s": Decimal(sign: .plus, exponent: 3, significand: 1),
             "hJ/s": Decimal(sign: .plus, exponent: 2, significand: 1),
             "daJ/s": Decimal(sign: .plus, exponent: 1, significand: 1),
-            "dJ/s": Decimal(sign: .minus, exponent: 1, significand: 1),
-            "cJ/s": Decimal(sign: .minus, exponent: 2, significand: 1),
-            "mJ/s": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µJ/s": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nJ/s": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pJ/s": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fJ/s": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aJ/s": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "dJ/s": Decimal(sign: .plus, exponent: -1, significand: 1),
+            "cJ/s": Decimal(sign: .plus, exponent: -2, significand: 1),
+            "mJ/s": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µJ/s": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nJ/s": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pJ/s": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fJ/s": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aJ/s": Decimal(sign: .plus, exponent: -18, significand: 1),
             "J/h": Decimal(string: "0.0002777778")!,
             "J/min": Decimal(string: "0.0166666667")!,
             "kJ/h": Decimal(string: "0.2777777778")!,
@@ -796,12 +796,12 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "dN": Decimal(string: "0.1")!,
             "cN": Decimal(string: "0.01")!,
             "mN": Decimal(string: "0.001")!,
-            "µN": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nN": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pN": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fN": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aN": Decimal(sign: .minus, exponent: 18, significand: 1),
-            "dyn": Decimal(sign: .minus, exponent: 5, significand: 1),
+            "µN": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nN": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pN": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fN": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aN": Decimal(sign: .plus, exponent: -18, significand: 1),
+            "dyn": Decimal(sign: .plus, exponent: -5, significand: 1),
             "J/m": 1,
             "J/cm": Decimal(string: "0.01")!,
             "tf(sh)": Decimal(string: "8896.443230521")!,
@@ -933,11 +933,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "dam/s²": 10,
             "cm/s²": Decimal(string: "0.01")!,
             "mm/s²": Decimal(string: "0.001")!,
-            "µm/s²": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nm/s²": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pm/s²": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fm/s²": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "am/s²": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "µm/s²": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nm/s²": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pm/s²": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fm/s²": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "am/s²": Decimal(sign: .plus, exponent: -18, significand: 1),
             "Gal": Decimal(string: "0.01")!,
             " Gal": Decimal(string: "0.01")!, // FIXME: ÜSTTEKİYLE AYNI
             "mi/s²": Decimal(string: "1609.344")!,
@@ -979,7 +979,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "kg/cm³": 1000000,
             "g/m³": Decimal(string: "0.001")!,
             "g/mm³": 1000000,
-            "mg/m³": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "mg/m³": Decimal(sign: .plus, exponent: -6, significand: 1),
             "mg/cm³": 1,
             "mg/mm³": 1000,
             "Eg/L": Decimal(sign: .plus, exponent: 18, significand: 1),
@@ -994,11 +994,11 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "dg/L": Decimal(string: "0.1")!,
             "cg/L": Decimal(string: "0.01")!,
             "mg/L": Decimal(string: "0.001")!,
-            "µg/L": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "ng/L": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pg/L": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fg/L": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "ag/L": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "µg/L": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "ng/L": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pg/L": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fg/L": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "ag/L": Decimal(sign: .plus, exponent: -18, significand: 1),
             "lb/in³": Decimal(string: "27679.904710191")!,
             "lb/ft³": Decimal(string: "16.018463374")!,
             "lb/yd³": Decimal(string: "0.5932764213")!,
@@ -1050,9 +1050,9 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         let kilogramSquareMeterValues: [String: Decimal] = [
             "kg·m²": 1,
             "kg·cm²": Decimal(string: "0.0001")!,
-            "kg·mm²": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "g·cm²": Decimal(sign: .minus, exponent: 7, significand: 1),
-            "g·mm²": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "kg·mm²": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "g·cm²": Decimal(sign: .plus, exponent: -7, significand: 1),
+            "g·mm²": Decimal(sign: .plus, exponent: -9, significand: 1),
             "kgf·m·s²": Decimal(string: "9.8066499998")!,
             "kgf·cm·s²": Decimal(string: "0.0980665")!,
             "oz·in²": Decimal(string: "1.829e-5")!,
@@ -1077,7 +1077,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "N·m": 1,
             "kN·m": 1000,
             "mN·m": Decimal(string: "0.001")!,
-            "µN·m": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "µN·m": Decimal(sign: .plus, exponent: -6, significand: 1),
             "tonf(sh)·m": Decimal(string: "8896.4400000035")!,
             "tonf(l)·m": Decimal(string: "9964.0200000047")!,
             "tonf(m)·m": Decimal(string: "9806.6499999993")!,
@@ -1102,9 +1102,9 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "N·cm": Decimal(string: "0.01")!,
             "N·mm": Decimal(string: "0.001")!,
             "kN·m": 1000,
-            "dyn·m": Decimal(sign: .minus, exponent: 5, significand: 1),
-            "dyn·cm": Decimal(sign: .minus, exponent: 7, significand: 1),
-            "dyn·mm": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "dyn·m": Decimal(sign: .plus, exponent: -5, significand: 1),
+            "dyn·cm": Decimal(sign: .plus, exponent: -7, significand: 1),
+            "dyn·mm": Decimal(sign: .plus, exponent: -8, significand: 1),
             "kgf·m": Decimal(string: "9.80665")!,
             "kgf·cm": Decimal(string: "0.0980665")!,
             "kgf·mm": Decimal(string: "0.00980665")!,
@@ -1115,13 +1115,6 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "ozf·in": Decimal(string: "0.007061552")!,
             "lbf·ft": Decimal(string: "1.355818")!,
             "lbf·in": Decimal(string: "0.1129848333")!,
-            "mN·m": Decimal(string: "0.001")!,
-            "µN·m": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "tonf(sh)·m": Decimal(string: "8896.4400000035")!,
-            "tonf(l)·m": Decimal(string: "9964.0200000047")!,
-            "tonf(m)·m": Decimal(string: "9806.6499999993")!,
-            "pdl·ft": Decimal(string: "0.0421401")!,
-            "pdl·in": Decimal(string: "0.003511675")!
         ]
         
         guard let fromValue = newtonMeterValues[fromUnit], let toValue = newtonMeterValues[toUnit] else {
@@ -1155,29 +1148,29 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         case .energy:
             return "bolt"
         case .power:
-            return "power" // TODO: daha iyisini bul
+            return "bolt.circle"
         case .force:
-            return "arrow.left.arrow.right" // TODO: daha iyisini bul
+            return "arrow.left.arrow.right"
         case .fuelConsumption:
             return "fuelpump"
         case .volumeDry:
-            return "speaker.wave.2"
+            return "cube"
         case .velocityAngular:
             return "arrow.clockwise"
         case .acceleration:
-            return "gauge.open.with.lines.needle.84percent.exclamation" // TODO: daha iyisini bul
+            return "gauge.open.with.lines.needle.33percent.and.arrowtriangle"
         case .accelerationAngular:
-            return "digitalcrown.arrow.clockwise" // TODO: daha iyisini bul
+            return "digitalcrown.arrow.clockwise"
         case .density:
-            return "circle.dotted.and.circle" // TODO: daha iyisini bul
+            return "circle.dotted.and.circle"
         case .specificVolume:
-            return "cube"
+            return "shippingbox"
         case .momentOfInertia:
-            return "arrow.right.arrow.left" // TODO: daha iyisini bul
+            return "rotate.right"
         case .momentOfForce:
-            return "circle" // TODO: daha iyisini bul
+            return "wrench"
         case .torque:
-            return "gearshape" // TODO: daha iyisini bul
+            return "gearshape"
         }
     }
     
@@ -2053,13 +2046,6 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
                 ("ozf·in", String(localized: "ounce-force inch")),
                 ("lbf·ft", String(localized: "pound-force foot")),
                 ("lbf·in", String(localized: "pound-force inch")),
-                ("mN·m", String(localized: "millinewton meter")),
-                ("µN·m", String(localized: "micronewton meter")),
-                ("tonf(sh)·m", String(localized: "ton-force (short) meter")),
-                ("tonf(l)·m", String(localized: "ton-force (long) meter")),
-                ("tonf(m)·m", String(localized: "ton-force (metric) meter")),
-                ("pdl·ft", String(localized: "poundal foot")),
-                ("pdl·in", String(localized: "poundal inch"))
             ]
         }
     }

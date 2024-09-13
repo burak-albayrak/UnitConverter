@@ -42,19 +42,19 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "kGy/s": Decimal(sign: .plus, exponent: 3, significand: 1),
             "hGy/s": Decimal(sign: .plus, exponent: 2, significand: 1),
             "daGy/s": Decimal(sign: .plus, exponent: 1, significand: 1),
-            "dGy/s": Decimal(sign: .minus, exponent: 1, significand: 1),
-            "cGy/s": Decimal(sign: .minus, exponent: 2, significand: 1),
-            "mGy/s": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µGy/s": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nGy/s": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pGy/s": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fGy/s": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aGy/s": Decimal(sign: .minus, exponent: 18, significand: 1),
-            "rad/s": Decimal(sign: .minus, exponent: 2, significand: 1),
+            "dGy/s": Decimal(sign: .plus, exponent: -1, significand: 1),
+            "cGy/s": Decimal(sign: .plus, exponent: -2, significand: 1),
+            "mGy/s": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µGy/s": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nGy/s": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pGy/s": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fGy/s": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aGy/s": Decimal(sign: .plus, exponent: -18, significand: 1),
+            "rad/s": Decimal(sign: .plus, exponent: -2, significand: 1),
             "J/kg/s": 1,
             "W/kg": 1,
             "Sv/s": 1,
-            "rem/s": Decimal(sign: .minus, exponent: 2, significand: 1)
+            "rem/s": Decimal(sign: .plus, exponent: -2, significand: 1)
         ]
         
         guard let fromValue = grayPerSecondValues[fromUnit], let toValue = grayPerSecondValues[toUnit] else {
@@ -72,7 +72,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "GBq": Decimal(sign: .plus, exponent: 9, significand: 1),
             "MBq": Decimal(sign: .plus, exponent: 6, significand: 1),
             "kBq": Decimal(sign: .plus, exponent: 3, significand: 1),
-            "mBq": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "mBq": Decimal(sign: .plus, exponent: -3, significand: 1),
             "Ci": Decimal(string: "3.7e10")!,
             "kCi": Decimal(string: "3.7e13")!,
             "mCi": Decimal(string: "3.7e7")!,
@@ -96,8 +96,8 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     private func convertRadiationExposure(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let coulombPerKilogramValues: [String: Decimal] = [
             "C/kg": 1,
-            "mC/kg": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µC/kg": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "mC/kg": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µC/kg": Decimal(sign: .plus, exponent: -6, significand: 1),
             "R": Decimal(string: "0.000258")!,
             "TR": Decimal(string: "0.000258")!,
             "P": Decimal(string: "0.000258")!,
@@ -115,7 +115,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     private func convertRadiationAbsorbedDose(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let radValues: [String: Decimal] = [
             "rad": 1,
-            "mrad": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "mrad": Decimal(sign: .plus, exponent: -3, significand: 1),
             "J/kg": 100,
             "J/g": Decimal(sign: .plus, exponent: 5, significand: 1),
             "J/cg": Decimal(sign: .plus, exponent: 7, significand: 1),
@@ -132,11 +132,11 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "dGy": 10,
             "cGy": 1,
             "mGy": Decimal(string: "0.1")!,
-            "µGy": Decimal(sign: .minus, exponent: 4, significand: 1),
-            "nGy": Decimal(sign: .minus, exponent: 7, significand: 1),
-            "pGy": Decimal(sign: .minus, exponent: 10, significand: 1),
-            "fGy": Decimal(sign: .minus, exponent: 13, significand: 1),
-            "aGy": Decimal(sign: .minus, exponent: 16, significand: 1)
+            "µGy": Decimal(sign: .plus, exponent: -4, significand: 1),
+            "nGy": Decimal(sign: .plus, exponent: -7, significand: 1),
+            "pGy": Decimal(sign: .plus, exponent: -10, significand: 1),
+            "fGy": Decimal(sign: .plus, exponent: -13, significand: 1),
+            "aGy": Decimal(sign: .plus, exponent: -16, significand: 1)
         ]
 
         guard let fromValue = radValues[fromUnit], let toValue = radValues[toUnit] else {

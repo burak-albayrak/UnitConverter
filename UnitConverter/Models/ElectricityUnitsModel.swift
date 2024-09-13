@@ -69,10 +69,10 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "C": 1,
             "MC": Decimal(sign: .plus, exponent: 6, significand: 1),
             "kC": Decimal(sign: .plus, exponent: 3, significand: 1),
-            "mC": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µC": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nC": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pC": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "mC": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µC": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nC": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pC": Decimal(sign: .plus, exponent: -12, significand: 1),
             "abC": 10,
             "emuC": 10,
             "statC": Decimal(string: "3.335640951982e-10")!,
@@ -151,7 +151,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         let ampereValues: [String: Decimal] = [
             "A": 1,
             "kA": Decimal(sign: .plus, exponent: 3, significand: 1),
-            "mA": Decimal(sign: .minus, exponent: 3, significand: 1),
+            "mA": Decimal(sign: .plus, exponent: -3, significand: 1),
             "Bi": 10,
             "abA": 10,
             "emuI": 10,
@@ -213,12 +213,12 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "kV/m": 1000,
             "kV/cm": 100000,
             "V/cm": 100,
-            "mV/m": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µV/m": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "mV/m": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µV/m": Decimal(sign: .plus, exponent: -6, significand: 1),
             "kV/in": Decimal(string: "39370.078740157")!,
             "V/in": Decimal(string: "39.3700787402")!,
             "V/mil": Decimal(string: "39370.078740157")!,
-            "abV/cm": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "abV/cm": Decimal(sign: .plus, exponent: -6, significand: 1),
             "statV/cm": Decimal(string: "29979.19999934")!,
             "statV/in": Decimal(string: "11802.834645298")!,
             "N/C": 1
@@ -236,8 +236,8 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         let voltValues: [String: Decimal] = [
             "V": 1,
             "W/A": 1,
-            "abV": Decimal(sign: .minus, exponent: 8, significand: 1),
-            "emuV": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "abV": Decimal(sign: .plus, exponent: -8, significand: 1),
+            "emuV": Decimal(sign: .plus, exponent: -8, significand: 1),
             "statV": Decimal(string: "299.7925")!,
             "esuV": Decimal(string: "299.7925")!
         ]
@@ -254,11 +254,11 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         let ohmValues: [String: Decimal] = [
             "Ω": 1,
             "MΩ": Decimal(sign: .plus, exponent: 6, significand: 1),
-            "µΩ": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "µΩ": Decimal(sign: .plus, exponent: -6, significand: 1),
             "V/A": 1,
             "S⁻¹": 1,
-            "abΩ": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "emuR": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "abΩ": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "emuR": Decimal(sign: .plus, exponent: -9, significand: 1),
             "statΩ": Decimal(string: "898755200000")!,
             "esuR": Decimal(string: "898755200000")!,
             "RH": Decimal(string: "25812.8056")!
@@ -277,9 +277,9 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "Ω·m": 1,
             "Ω·cm": Decimal(string: "0.01")!,
             "Ω·in": Decimal(string: "0.0254")!,
-            "µΩ·cm": Decimal(sign: .minus, exponent: 8, significand: 1),
+            "µΩ·cm": Decimal(sign: .plus, exponent: -8, significand: 1),
             "µΩ·in": Decimal(string: "2.5400000000102e-8")!,
-            "abΩ·cm": Decimal(sign: .minus, exponent: 11, significand: 1),
+            "abΩ·cm": Decimal(sign: .plus, exponent: -11, significand: 1),
             "statΩ·cm": Decimal(string: "8987524324.0156")!,
             "cmil·Ω/ft": Decimal(string: "1.6624261130101e-9")!
         ]
@@ -297,12 +297,12 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "S": 1,
             "MS": Decimal(sign: .plus, exponent: 6, significand: 1),
             "kS": Decimal(sign: .plus, exponent: 3, significand: 1),
-            "mS": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µS": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "mS": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µS": Decimal(sign: .plus, exponent: -6, significand: 1),
             "A/V": 1,
             "℧": 1,
-            "g℧": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "µ℧": Decimal(sign: .minus, exponent: 6, significand: 1),
+            "g℧": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "µ℧": Decimal(sign: .plus, exponent: -6, significand: 1),
             "ab℧": Decimal(sign: .plus, exponent: 9, significand: 1),
             "stat℧": Decimal(string: "1.1123470522803e-12")!,
             "G₀": Decimal(string: "3.87405e-5")!
@@ -319,7 +319,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
     private func convertElectricConductivity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let siemensPerMeterValues: [String: Decimal] = [
             "S/m": 1,
-            "pS/m": Decimal(sign: .minus, exponent: 12, significand: 1),
+            "pS/m": Decimal(sign: .plus, exponent: -12, significand: 1),
             "℧/m": 1,
             "℧/cm": 100,
             "ab℧/m": Decimal(sign: .plus, exponent: 9, significand: 1),
@@ -347,14 +347,14 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "kF": Decimal(sign: .plus, exponent: 3, significand: 1),
             "hF": Decimal(sign: .plus, exponent: 2, significand: 1),
             "daF": Decimal(sign: .plus, exponent: 1, significand: 1),
-            "dF": Decimal(sign: .minus, exponent: 1, significand: 1),
-            "cF": Decimal(sign: .minus, exponent: 2, significand: 1),
-            "mF": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µF": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nF": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pF": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fF": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aF": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "dF": Decimal(sign: .plus, exponent: -1, significand: 1),
+            "cF": Decimal(sign: .plus, exponent: -2, significand: 1),
+            "mF": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µF": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nF": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pF": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fF": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aF": Decimal(sign: .plus, exponent: -18, significand: 1),
             "C/V": 1,
             "abF": Decimal(sign: .plus, exponent: 9, significand: 1),
             "emuC": Decimal(sign: .plus, exponent: 9, significand: 1),
@@ -381,17 +381,17 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "kH": Decimal(sign: .plus, exponent: 3, significand: 1),
             "hH": Decimal(sign: .plus, exponent: 2, significand: 1),
             "daH": Decimal(sign: .plus, exponent: 1, significand: 1),
-            "dH": Decimal(sign: .minus, exponent: 1, significand: 1),
-            "cH": Decimal(sign: .minus, exponent: 2, significand: 1),
-            "mH": Decimal(sign: .minus, exponent: 3, significand: 1),
-            "µH": Decimal(sign: .minus, exponent: 6, significand: 1),
-            "nH": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "pH": Decimal(sign: .minus, exponent: 12, significand: 1),
-            "fH": Decimal(sign: .minus, exponent: 15, significand: 1),
-            "aH": Decimal(sign: .minus, exponent: 18, significand: 1),
+            "dH": Decimal(sign: .plus, exponent: -1, significand: 1),
+            "cH": Decimal(sign: .plus, exponent: -2, significand: 1),
+            "mH": Decimal(sign: .plus, exponent: -3, significand: 1),
+            "µH": Decimal(sign: .plus, exponent: -6, significand: 1),
+            "nH": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "pH": Decimal(sign: .plus, exponent: -12, significand: 1),
+            "fH": Decimal(sign: .plus, exponent: -15, significand: 1),
+            "aH": Decimal(sign: .plus, exponent: -18, significand: 1),
             "Wb/A": 1,
-            "abH": Decimal(sign: .minus, exponent: 9, significand: 1),
-            "emuL": Decimal(sign: .minus, exponent: 9, significand: 1),
+            "abH": Decimal(sign: .plus, exponent: -9, significand: 1),
+            "emuL": Decimal(sign: .plus, exponent: -9, significand: 1),
             "statH": Decimal(string: "898755200000")!,
             "esuL": Decimal(string: "898755200000")!
         ]
@@ -423,7 +423,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
         case .electricResistivity:
             return "waveform.path.badge.minus"
         case .electrostaticCapacitance:
-            return "capsule.portrait"
+            return "rectangle.on.rectangle"
         case .inductance:
             return "waveform.path.badge.plus"
         case .linearChargeDensity:
