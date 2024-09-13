@@ -1,6 +1,16 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "-" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
+    },
     "%@ (%@)" : {
       "localizations" : {
         "en" : {
@@ -2436,13 +2446,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "From everyday measurements to scientific units, we've got every conversion you need"
+            "value" : "Whether it’s everyday measurements or advanced scientific units, we’ve got every conversion you need, all in one place"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Günlük ölçümlerden bilimsel birimlere kadar, ihtiyacınız olan her dönüşüm burada"
+            "value" : "Günlük ölçümlerden gelişmiş bilimsel birimlere kadar, ihtiyacınız olan tüm dönüşümleri tek bir yerde kolayca bulabilirsiniz."
           }
         }
       }
@@ -6782,13 +6792,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Let's start converting units with ease and precision!"
+            "value" : "Ready to make your calculations easier than ever?"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hadi, birimleri kolaylıkla ve hassasiyetle dönüştürmeye başlayalım!"
+            "value" : "Hesaplamalarınızı her zamankinden daha kolay hale getirmeye hazır mısınız?"
           }
         }
       }
@@ -6799,13 +6809,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ready to Simplify Your Calculations"
+            "value" : "Let's Start Converting Units!"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hesaplamalarınızı Basitleştirmeye Hazır mısınız?"
+            "value" : "Birimleri Dönüştürmeye Başlayalım!"
           }
         }
       }
@@ -19011,13 +19021,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your all-in-one solution for seamless unit conversions"
+            "value" : "Effortlessly convert units across various fields."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sorunsuz birim dönüşümleri için hepsi bir arada çözümünüz"
+            "value" : "Çeşitli alanlardaki birimleri zahmetsizce dönüştürün."
           }
         }
       }

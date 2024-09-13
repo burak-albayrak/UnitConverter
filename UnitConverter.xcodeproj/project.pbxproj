@@ -39,7 +39,6 @@
 		EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFCCD2902C911745001E0B5F /* InfoPlist.strings */; };
 		EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8C2C8F8EFD009699EC /* MailView.swift */; };
 		EFDFFB902C8F9414009699EC /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */; };
-		EFDFFB962C8FBA08009699EC /* AppReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */; };
 		EFDFFB992C8FBD4B009699EC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */; };
 		EFDFFB9B2C8FBD91009699EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB9A2C8FBD91009699EC /* ContentView.swift */; };
 		EFDFFBA12C904CBE009699EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
@@ -80,7 +79,6 @@
 		EFCCD2932C911826001E0B5F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFDFFB8C2C8F8EFD009699EC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		EFDFFB8F2C8F9414009699EC /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
-		EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewManager.swift; sourceTree = "<group>"; };
 		EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		EFDFFB9A2C8FBD91009699EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			children = (
 				EFDFFB9F2C904C32009699EC /* Localizable */,
 				EF85EF742C8E3215006E6548 /* LaunchScreen */,
-				EFDFFB942C8FB9F7009699EC /* AppReview */,
 				EFDFFB8E2C8F940A009699EC /* Payment */,
 				EF85EF7A2C8E5CF8006E6548 /* Extension */,
 				EF85EF682C8E06E8006E6548 /* Favorite */,
@@ -235,14 +232,6 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
-		EFDFFB942C8FB9F7009699EC /* AppReview */ = {
-			isa = PBXGroup;
-			children = (
-				EFDFFB952C8FBA08009699EC /* AppReviewManager.swift */,
-			);
-			path = AppReview;
-			sourceTree = "<group>";
-		};
 		EFDFFB9F2C904C32009699EC /* Localizable */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,7 +330,6 @@
 				EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */,
 				EF37C0752C8682E6004B974A /* LightUnitsModel.swift in Sources */,
 				EF0F874E2C82870400114906 /* CommonUnitsModel.swift in Sources */,
-				EFDFFB962C8FBA08009699EC /* AppReviewManager.swift in Sources */,
 				EF37C0622C834FE1004B974A /* AllConvertersMenu.swift in Sources */,
 				EF37ACD92C8C91A600477945 /* CurrencyUnitsModel.swift in Sources */,
 				EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */,

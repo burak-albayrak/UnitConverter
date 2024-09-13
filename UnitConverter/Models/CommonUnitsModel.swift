@@ -322,7 +322,7 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             
     private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let kelvin: Decimal
-        switch fromUnit {
+        switch fromUnit.lowercased() {
         case "kelvin", "k":
             kelvin = value
         case "celsius", "°c":
@@ -339,7 +339,7 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             return value
         }
 
-        switch toUnit {
+        switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
         case "celsius", "°c":

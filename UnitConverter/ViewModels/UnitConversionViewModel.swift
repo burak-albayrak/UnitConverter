@@ -34,7 +34,7 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     func convertUnits(value: String) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.locale = Locale.current // Kullanıcının yerel ayarlarına göre biçimlendir
+        formatter.locale = Locale.current
 
         formatter.decimalSeparator = "."
         
@@ -51,10 +51,10 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
 
         let resultFormatter = NumberFormatter()
         resultFormatter.numberStyle = .decimal
-        resultFormatter.maximumFractionDigits = 6
+        resultFormatter.maximumFractionDigits = 22
         resultFormatter.minimumFractionDigits = 0
 
-        if abs(result) >= 0.000001 && abs(result) < 1000000 {
+        if abs(result) >= 0.000001 && abs(result) < pow(Decimal(10), 22) {
             return resultFormatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"
         } else {
             resultFormatter.numberStyle = .scientific

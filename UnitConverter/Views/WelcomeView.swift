@@ -23,19 +23,19 @@ struct WelcomeView: View {
         WelcomePage(
             titleKey: "CategoriesTitle",
             descriptionKey: "CategoriesDescription",
-            imageName: "square.grid.2x2",
+            imageName: "rectangle.stack",
             isSymbol: true
         ),
         WelcomePage(
             titleKey: "FavoritesTitle",
             descriptionKey: "FavoritesDescription",
-            imageName: "star.circle",
+            imageName: "star",
             isSymbol: true
         ),
         WelcomePage(
             titleKey: "GetStartedTitle",
             descriptionKey: "GetStartedDescription",
-            imageName: "arrow.right.circle",
+            imageName: "arrow.2.squarepath",
             isSymbol: true
         )
     ]
@@ -79,6 +79,7 @@ struct WelcomeView: View {
                                 .padding()
                                 .opacity(currentPage == index ? 1 : textOpacity)
                                 .animation(.easeIn(duration: 0.5), value: currentPage)
+                                .padding()
                         }
                         .tag(index)
                     }

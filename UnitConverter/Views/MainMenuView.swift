@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainMenuView: View {
-    @StateObject private var reviewManager = AppReviewManager()
     @State private var selectedCategory: AllConvertersCategory?
     @State private var selectedUnitCategory: UnitCategory?
     @State private var showSettings = false
@@ -69,9 +68,6 @@ struct MainMenuView: View {
                     }
                 }
             }
-        }
-        .onAppear {
-            reviewManager.checkIfReviewShouldBeRequested()
         }
         .sheet(isPresented: $showSettings) {
             SettingsView()
