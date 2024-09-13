@@ -244,6 +244,7 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
         case "YER": return String(localized: "Yemeni Rial")
         case "ZMW": return String(localized: "Zambian Kwacha")
         case "ZWL": return String(localized: "Zimbabwean Dollar")
+        case "AFN": return String(localized: "Afghan Afghani")
         default: return code
         }
     }}

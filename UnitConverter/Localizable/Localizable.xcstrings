@@ -58,7 +58,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "abampe"
+            "value" : "abamper"
           }
         }
       }
@@ -357,7 +357,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hızlanma, bir nesnenin hızının zamanla nasıl değiştiğini ölçer. Mekanik ve fizik alanlarında temel bir kavramdır ve bir nesnenin ne kadar hızlı hızlandığını veya yavaşladığını açıklar.\n\nHızlanmanın SI birimi metre/saniye kare'dir (m/s²), bu bir saniyede meydana gelen hız değişimini (metre/saniye cinsinden) ifade eder.\n\nÖrneğin, 9.8 m/s²'lik bir hızlanma, Dünya'nın yerçekimi nedeniyle serbest düşüşteki nesnelerin her saniye 9.8 metre/saniye hızlandığını gösterir.\n\nHızlanma, hareket dinamiklerini anlamak, araç tasarlamak ve çeşitli uygulamalarda kuvvetleri analiz etmek için kritik öneme sahiptir.\n\nHızlanmanın doğru ölçümü, nesnelerin ve sistemlerin hareketini tahmin etmek ve kontrol etmekte yardımcı olur."
+            "value" : "İvme, bir nesnenin hızının zamanla nasıl değiştiğini ölçer. Mekanik ve fizik alanlarında temel bir kavramdır ve bir nesnenin ne kadar hızlı hızlandığını veya yavaşladığını açıklar.\n\nİvmenin SI birimi metre/saniye kare'dir (m/s²), bu bir saniyede meydana gelen hız değişimini (metre/saniye cinsinden) ifade eder.\n\nÖrneğin, 9.8 m/s²'lik bir ivme, Dünya'nın yerçekimi nedeniyle serbest düşüşteki nesnelerin her saniye 9.8 metre/saniye hızlandığını gösterir.\n\nİvme, hareket dinamiklerini anlamak, araç tasarlamak ve çeşitli uygulamalarda kuvvetleri analiz etmek için kritik öneme sahiptir.\n\nİvmenin doğru ölçümü, nesnelerin ve sistemlerin hareketini tahmin etmek ve kontrol etmekte yardımcı olur."
           }
         }
       }
@@ -377,7 +377,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "acre (ABD anket)"
+            "value" : "acre (ABD)"
           }
         }
       }
@@ -387,7 +387,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "akre fit"
+            "value" : "acre-fit"
           }
         }
       }
@@ -397,7 +397,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "akre fit (ABD)"
+            "value" : "acre-fit (ABD)"
           }
         }
       }
@@ -407,7 +407,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "eksen fit/gün"
+            "value" : "acre-fit/gün"
           }
         }
       }
@@ -417,7 +417,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "eksen fit/saat"
+            "value" : "acre-fit/saat"
           }
         }
       }
@@ -427,7 +427,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "eksen fit/yıl"
+            "value" : "acre-fit/yıl"
           }
         }
       }
@@ -437,7 +437,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "akre inç"
+            "value" : "acre-inç"
           }
         }
       }
@@ -458,6 +458,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favorilere Eklendi"
+          }
+        }
+      }
+    },
+    "Afghan Afghani" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afgan Afganisi"
           }
         }
       }
@@ -519,7 +529,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ampe"
+            "value" : "amper"
           }
         }
       }
@@ -713,7 +723,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ångström"
+            "value" : "angstrom"
           }
         }
       }
@@ -730,7 +740,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Açısal hızlanma, bir nesnenin açısal hızının zamanla nasıl değiştiğini ölçer. Bir nesnenin bir eksen etrafındaki dönüş hızının ne kadar hızlı arttığını veya azaldığını açıklar.\n\nAçısal hızlanmanın SI birimi radyan/saniye kare'dir (rad/s²), bu bir saniyede meydana gelen açısal hız değişimini (radyan/saniye cinsinden) ifade eder.\n\nÖrneğin, bir nesnenin açısal hızı her saniye 2 rad/s artıyorsa, açısal hızlanması 2 rad/s²'dir.\n\nAçısal hızlanma, dönüş dinamiklerinde kritik bir rol oynar ve dönen makinelerin performansını, göksel cisimlerin hareketini ve çeşitli mekanik sistemlerin davranışını etkiler.\n\nAçısal hızlanmanın doğru ölçümü, döner sistemlerin tasarımında ve analizinde yardımcı olur ve dönüş hareketini anlamayı sağlar."
+            "value" : "Açısal ivme, bir nesnenin açısal hızının zamanla nasıl değiştiğini ölçer. Bir nesnenin bir eksen etrafındaki dönüş hızının ne kadar hızlı arttığını veya azaldığını açıklar.\n\nAçısal ivmenin SI birimi radyan/saniye kare'dir (rad/s²), bu bir saniyede meydana gelen açısal hız değişimini (radyan/saniye cinsinden) ifade eder.\n\nÖrneğin, bir nesnenin açısal ivmesi her saniye 2 rad/s artıyorsa, açısal ivmesi 2 rad/s²'dir.\n\nAçısal ivme, dönüş dinamiklerinde kritik bir rol oynar ve dönen makinelerin performansını, göksel cisimlerin hareketini ve çeşitli mekanik sistemlerin davranışını etkiler.\n\nAçısal ivmenin doğru ölçümü, döner sistemlerin tasarımında ve analizinde yardımcı olur ve dönüş hareketini anlamayı sağlar."
           }
         }
       }
@@ -899,7 +909,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "assarion (Kutsal Kitap Roma)"
+            "value" : ""
           }
         }
       }
@@ -1049,7 +1059,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "attometre/kare saniye"
+            "value" : "attometre/saniye kare"
           }
         }
       }
@@ -1235,7 +1245,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "arpa tanesi"
+            "value" : "barleycorn"
           }
         }
       }
@@ -1335,7 +1345,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "bath (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -1345,7 +1355,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "bekaral"
+            "value" : ""
           }
         }
       }
@@ -1355,7 +1365,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "bekan (Kutsal Kitap İbranice)"
+            "value" : ""
           }
         }
       }
@@ -2007,7 +2017,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "cab (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -2369,7 +2379,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mum (Alman)"
+            "value" : "kandela (Alman)"
           }
         }
       }
@@ -2379,7 +2389,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mum (uluslararası)"
+            "value" : "kandela (uluslararası)"
           }
         }
       }
@@ -2389,7 +2399,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mum (pentan)"
+            "value" : "kandela (pentan)"
           }
         }
       }
@@ -2399,7 +2409,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mum (İngiltere)"
+            "value" : "kandela (İngiltere)"
           }
         }
       }
@@ -2665,7 +2675,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "santimetre-mum"
+            "value" : "santimetre-kandela"
           }
         }
       }
@@ -2715,7 +2725,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "santimetre/kare saniye"
+            "value" : "santimetre/saniye kare"
           }
         }
       }
@@ -2858,7 +2868,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "zincir"
+            "value" : "chain"
           }
         }
       }
@@ -2868,7 +2878,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "zincir (ABD araştırma)"
+            "value" : "chain (ABD)"
           }
         }
       }
@@ -2879,7 +2889,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Şarj"
+            "value" : "Elektrik Yükü"
           }
         }
       }
@@ -3172,7 +3182,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kor (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -3700,7 +3710,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "dirsek (Yunan)"
+            "value" : "cubit (Yunan)"
           }
         }
       }
@@ -3710,7 +3720,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "dirsek (İngiltere)"
+            "value" : "cubit (İngiltere)"
           }
         }
       }
@@ -4017,7 +4027,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ondalık mum"
+            "value" : "ondalık kandela"
           }
         }
       }
@@ -4037,7 +4047,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "desimetre/kare saniye"
+            "value" : "desimetre/saniye kare"
           }
         }
       }
@@ -4308,7 +4318,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "dekalitrel"
+            "value" : "dekalitre"
           }
         }
       }
@@ -4338,7 +4348,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "dekametre/kare saniye"
+            "value" : "dekametre/saniye kare"
           }
         }
       }
@@ -4418,7 +4428,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "denarius (Kutsal Kitap Roma)"
+            "value" : ""
           }
         }
       }
@@ -4486,7 +4496,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "didrachma (Kutsal Kitap Yunanı)"
+            "value" : ""
           }
         }
       }
@@ -4616,7 +4626,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "drachma (Kutsal Kitap Yunanı)"
+            "value" : ""
           }
         }
       }
@@ -4694,7 +4704,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dine metre"
+            "value" : "dyne metre"
           }
         }
       }
@@ -4704,7 +4714,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dine milimetre"
+            "value" : "dyne milimetre"
           }
         }
       }
@@ -4714,7 +4724,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "din saniye/santimetrekare"
+            "value" : "dyne saniye/santimetrekare"
           }
         }
       }
@@ -4879,7 +4889,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elektrik Alan Gücü"
+            "value" : "Elektrik Alan Şiddeti"
           }
         }
       }
@@ -5123,7 +5133,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "dirsek"
+            "value" : "ell"
           }
         }
       }
@@ -5252,7 +5262,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "efa (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -5714,7 +5724,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "fathom (ABD araştırma)"
+            "value" : "fathom (ABD)"
           }
         }
       }
@@ -5888,7 +5898,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "femtometre/kare saniye"
+            "value" : "femtometre/saniye kare"
           }
         }
       }
@@ -5994,7 +6004,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "parmak (kumaş)"
+            "value" : "finger (cloth)"
           }
         }
       }
@@ -6004,7 +6014,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "parmak genişliği"
+            "value" : "fingerbreadth"
           }
         }
       }
@@ -6279,7 +6289,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "fit/kare saniye"
+            "value" : "fit/saniye kare"
           }
         }
       }
@@ -6428,7 +6438,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yakıt yağı eşdeğeri @kiloliter"
+            "value" : "yakıt yağı eşdeğeri @kilolitre"
           }
         }
       }
@@ -6499,7 +6509,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "furlong (ABD araştırma)"
+            "value" : "furlong (ABD)"
           }
         }
       }
@@ -6771,7 +6781,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "gerah (Kutsal Kitap İbranice)"
+            "value" : ""
           }
         }
       }
@@ -6857,7 +6867,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "gigabekaral"
+            "value" : ""
           }
         }
       }
@@ -6967,7 +6977,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "gigalitrel"
+            "value" : "gigalitre"
           }
         }
       }
@@ -7137,7 +7147,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tanelik"
+            "value" : "grain"
           }
         }
       }
@@ -7147,7 +7157,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tanelik/metreküp fit"
+            "value" : "grain/metreküp fit"
           }
         }
       }
@@ -7157,7 +7167,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tanelik/galon (İngiltere)"
+            "value" : "grain/galon (İngiltere)"
           }
         }
       }
@@ -7167,7 +7177,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tanelik/galon (ABD)"
+            "value" : "grain/galon (ABD)"
           }
         }
       }
@@ -7517,7 +7527,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "el"
+            "value" : "hand"
           }
         }
       }
@@ -7527,7 +7537,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "el genişliği"
+            "value" : "handbreadth"
           }
         }
       }
@@ -7772,7 +7782,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "hektometre/kare saniye"
+            "value" : "hektometre/saniye kare"
           }
         }
       }
@@ -7842,7 +7852,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "hefner mumu"
+            "value" : "hefner kandela"
           }
         }
       }
@@ -7872,7 +7882,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "hin (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -7892,7 +7902,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "homer (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -8104,7 +8114,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yüz pound (İngiltere)"
+            "value" : "hundredweight (İngiltere)"
           }
         }
       }
@@ -8114,7 +8124,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yüz pound (ABD)"
+            "value" : "hundredweight(ABD)"
           }
         }
       }
@@ -8194,7 +8204,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "inç (ABD araştırma)"
+            "value" : "inç (ABD)"
           }
         }
       }
@@ -8264,7 +8274,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "inç/kare saniye"
+            "value" : "inç/saniye kare"
           }
         }
       }
@@ -8709,7 +8719,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kiloampe"
+            "value" : "kiloamper"
           }
         }
       }
@@ -8749,7 +8759,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kilobekaral"
+            "value" : ""
           }
         }
       }
@@ -9119,7 +9129,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kilogram-kuvvet kare saniye/metre"
+            "value" : "kilogram-kuvvet saniye kare/metre"
           }
         }
       }
@@ -9529,7 +9539,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kilometre/kare saniye"
+            "value" : "kilometre/saniye kare"
           }
         }
       }
@@ -10023,7 +10033,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "lig"
+            "value" : "league"
           }
         }
       }
@@ -10033,7 +10043,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "statü ligi"
+            "value" : "league (statute)"
           }
         }
       }
@@ -10137,7 +10147,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "lepton (Kutsal Kitap Roma)"
+            "value" : ""
           }
         }
       }
@@ -10275,7 +10285,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Doğru. Lineer yük yoğunluğu, bir hat boyunca veya bir tel üzerinde birim uzunluk başına elektrik yük miktarını ölçer. Bu, yükün doğrusal bir iletken boyunca veya yüklü bir çizgi boyunca nasıl dağıldığını nicelendirir.\n\nSI birimi coulomb/metre (C/m) olarak ifade edilir.\n\nÖrneğin, bir yüklü telin lineer yük yoğunluğu 2 µC/m ise, bu, telin her bir metre uzunluğu boyunca 2 mikroculomb yük bulunduğu anlamına gelir.\n\nLineer yük yoğunluğu, uzun ve ince iletkenlerin oluşturduğu elektrik alanlarını anlamada ve iletim hatları ile yüklü çubuklar gibi uygulamalarda önemlidir.\n\nLineer yük yoğunluğunu doğru bir şekilde ölçmek ve hesaplamak, çeşitli elektriksel ve elektronik sistemlerde elektrik alanlarını ve kuvvetleri tahmin etmek için kritik öneme sahiptir."
+            "value" : "Lineer yük yoğunluğu, bir hat boyunca veya bir tel üzerinde birim uzunluk başına elektrik yük miktarını ölçer. Bu, yükün doğrusal bir iletken boyunca veya yüklü bir çizgi boyunca nasıl dağıldığını nicelendirir.\n\nSI birimi coulomb/metre (C/m) olarak ifade edilir.\n\nÖrneğin, bir yüklü telin lineer yük yoğunluğu 2 µC/m ise, bu, telin her bir metre uzunluğu boyunca 2 mikroculomb yük bulunduğu anlamına gelir.\n\nLineer yük yoğunluğu, uzun ve ince iletkenlerin oluşturduğu elektrik alanlarını anlamada ve iletim hatları ile yüklü çubuklar gibi uygulamalarda önemlidir.\n\nLineer yük yoğunluğunu doğru bir şekilde ölçmek ve hesaplamak, çeşitli elektriksel ve elektronik sistemlerde elektrik alanlarını ve kuvvetleri tahmin etmek için kritik öneme sahiptir."
           }
         }
       }
@@ -10292,7 +10302,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Evet, doğru. Lineer akı yoğunluğu, bir iletken boyunca birim uzunluk başına geçen elektrik akımını ölçer. Bu, belirli bir uzunlukta bir tel veya iletkende ne kadar akımın dağıldığını gösterir.\n\nSI birimi amper/metre (A/m) olarak ifade edilir.\n\nÖrneğin, bir tel 5 amperlik bir akım taşıyorsa ve lineer akı yoğunluğu 2 A/m ise, bu, telin her bir metre uzunluğunun 2 amper akım taşıdığı anlamına gelir.\n\nLineer akı yoğunluğu, elektrik devrelerinin tasarımı ve analizi için kritik öneme sahiptir, özellikle iletkenler boyunca akım dağılımını anlamada ve iletkenlerin gerekli akımı aşırı ısınma veya kayıptan olmadan taşıyabilecek kapasitede olup olmadığını sağlamakta.\n\nLineer akı yoğunluğunu doğru bir şekilde ölçmek, elektriksel ve elektronik sistemlerin performansını ve güvenliğini optimize etmekte yardımcı olur."
+            "value" : "Doğrusal akı yoğunluğu, bir iletken boyunca birim uzunluk başına geçen elektrik akımını ölçer. Bu, belirli bir uzunlukta bir tel veya iletkende ne kadar akımın dağıldığını gösterir.\n\nSI birimi amper/metre (A/m) olarak ifade edilir.\n\nÖrneğin, bir tel 5 amperlik bir akım taşıyorsa ve lineer akı yoğunluğu 2 A/m ise, bu, telin her bir metre uzunluğunun 2 amper akım taşıdığı anlamına gelir.\n\nDoğrusal akı yoğunluğu, elektrik devrelerinin tasarımı ve analizi için kritik öneme sahiptir, özellikle iletkenler boyunca akım dağılımını anlamada ve iletkenlerin gerekli akımı aşırı ısınma veya kayıptan olmadan taşıyabilecek kapasitede olup olmadığını sağlamakta.\n\nDoğrusal akı yoğunluğunu doğru bir şekilde ölçmek, elektriksel ve elektronik sistemlerin performansını ve güvenliğini optimize etmekte yardımcı olur."
           }
         }
       }
@@ -10302,7 +10312,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "bağlantı"
+            "value" : "link"
           }
         }
       }
@@ -10312,7 +10322,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "bağlantı (ABD araştırma)"
+            "value" : "link (ABD)"
           }
         }
       }
@@ -10342,7 +10352,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "liter/gün"
+            "value" : "litre/gün"
           }
         }
       }
@@ -10362,7 +10372,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "liter/saat"
+            "value" : "litre/saat"
           }
         }
       }
@@ -10402,7 +10412,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "liter/dakika"
+            "value" : "litre/dakika"
           }
         }
       }
@@ -10412,7 +10422,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "liter/saniye"
+            "value" : "litre/saniye"
           }
         }
       }
@@ -10422,7 +10432,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "log (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -10432,7 +10442,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "uzun dirsek"
+            "value" : "uzun cubit"
           }
         }
       }
@@ -10540,7 +10550,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lüminans, belirli bir yönde bir yüzeyden yayılan, iletilen veya yansıyan ışık miktarını ölçer ve bu yüzeyin parlaklığını gösterir.\n\nLüminans'ın SI birimi kandela/metrekare (cd/m²) ile ifade edilir.\n\nGöz tarafından algılanan ışık miktarını nicelendirir ve fotoğrafçılık, ekran teknolojisi ve aydınlatma tasarımı gibi alanlarda kritik öneme sahiptir.\n\nÖrneğin, parlak bir bilgisayar ekranı 300 cd/m² lüminansa sahip olabilir, bu da farklı aydınlatma koşullarında okunabilirliğini artırır.\n\nLüminans, görsel algıyı anlamak, ekran kalitesini optimize etmek ve etkili aydınlatma sistemleri tasarlamak için önemlidir.\n\nLüminans'ın doğru ölçülmesi, görsel ekranların ve ortamların konfor ve işlevsellik için istenen parlaklık seviyelerini karşılamasını sağlar."
+            "value" : "Parlaklık veya lüminans, belirli bir yönde bir yüzeyden yayılan, iletilen veya yansıyan ışık miktarını ölçer ve bu yüzeyin parlaklığını gösterir.\n\nLüminans'ın SI birimi kandela/metrekare (cd/m²) ile ifade edilir.\n\nGöz tarafından algılanan ışık miktarını nicelendirir ve fotoğrafçılık, ekran teknolojisi ve aydınlatma tasarımı gibi alanlarda kritik öneme sahiptir.\n\nÖrneğin, parlak bir bilgisayar ekranı 300 cd/m² lüminansa sahip olabilir, bu da farklı aydınlatma koşullarında okunabilirliğini artırır.\n\nLüminans, görsel algıyı anlamak, ekran kalitesini optimize etmek ve etkili aydınlatma sistemleri tasarlamak için önemlidir.\n\nLüminans'ın doğru ölçülmesi, görsel ekranların ve ortamların konfor ve işlevsellik için istenen parlaklık seviyelerini karşılamasını sağlar."
           }
         }
       }
@@ -10568,7 +10578,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Işık akısı, bir kaynağın belirli bir yönünde yaydığı görünür ışığın miktarını ölçer ve kaynağın belirli bir yönde ne kadar parlak göründüğünü gösterir. Bu ölçüm, kandela (cd) birimiyle ifade edilir ve bir candela, bir kaynağın belirli bir yönde yaydığı ışık gücünü temsil eder.\n\nÖrneğin, standart bir mumun yaklaşık bir kandela ışık akısına sahip olduğu kabul edilir.\n\nIşık akısı, aydınlatma tasarımı ve fotometri gibi alanlarda önemlidir. Bu ölçüm, bir ışık kaynağının bir alanı ne kadar etkili bir şekilde aydınlattığını veya ışığı ne kadar iyi yönlendirdiğini değerlendirmeye yardımcı olur.\n\nIşık akısının doğru ölçülmesi, etkili aydınlatma çözümleri oluşturmak için kritik öneme sahiptir ve ışık kaynaklarının yeterli parlaklık sağladığından ve çeşitli uygulamalar için özel gereksinimleri karşıladığından emin olmak için gereklidir."
+            "value" : "Işık şiddeti, bir kaynağın belirli bir yönünde yaydığı görünür ışığın miktarını ölçer ve kaynağın belirli bir yönde ne kadar parlak göründüğünü gösterir. Bu ölçüm, kandela (cd) birimiyle ifade edilir ve bir candela, bir kaynağın belirli bir yönde yaydığı ışık gücünü temsil eder.\n\nÖrneğin, standart bir mumun yaklaşık bir kandela ışık şiddetine sahip olduğu kabul edilir.\n\nIşık şiddeti, aydınlatma tasarımı ve fotometri gibi alanlarda önemlidir. Bu ölçüm, bir ışık kaynağının bir alanı ne kadar etkili bir şekilde aydınlattığını veya ışığı ne kadar iyi yönlendirdiğini değerlendirmeye yardımcı olur.\n\nIşık şiddetinin doğru ölçülmesi, etkili aydınlatma çözümleri oluşturmak için kritik öneme sahiptir ve ışık kaynaklarının yeterli parlaklık sağladığından ve çeşitli uygulamalar için özel gereksinimleri karşıladığından emin olmak için gereklidir."
           }
         }
       }
@@ -10641,7 +10651,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Manyetik Alan Gücü"
+            "value" : "Manyetik Alan Şiddeti"
           }
         }
       }
@@ -10882,7 +10892,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kütle akış yoğunluğu, veya kütle akış hızı, birim alandan birim zamanda geçen kütle miktarını ölçer. Belirli bir zaman diliminde bir kesit alanından geçen kütle miktarını nicelendirir ve genellikle kilogram/metrekare/saniye (kg/m²/s) cinsinden ifade edilir.\n\nÖrneğin, bir akışkanın kütle akış yoğunluğu 3 kg/m²/s ise, bu, her saniye her bir metrekare kesit alanından 3 kilogram kütlenin geçtiğini gösterir.\n\nBu kavram, akışkan dinamiği, meteoroloji ve kimyasal mühendislik gibi çeşitli alanlarda önemlidir ve akışkanların veya parçacıklı maddelerin hareketi ile ilgili sistemlerin anlaşılması ve tasarlanmasında yardımcı olur.\n\nKütle akış yoğunluğunun doğru ölçülmesi, süreçlerin optimize edilmesi, çevresel etkilerin kontrol edilmesi ve boru hatları tasarımı ve atmosfer çalışmaları gibi uygulamalarda etkin bir işletim sağlanması için kritik öneme sahiptir."
+            "value" : "Kütle akış yoğunluğu veya kütle akış hızı, birim alandan birim zamanda geçen kütle miktarını ölçer. Belirli bir zaman diliminde bir kesit alanından geçen kütle miktarını nicelendirir ve genellikle kilogram/metrekare/saniye (kg/m²/s) cinsinden ifade edilir.\n\nÖrneğin, bir akışkanın kütle akış yoğunluğu 3 kg/m²/s ise, bu, her saniye her bir metrekare kesit alanından 3 kilogram kütlenin geçtiğini gösterir.\n\nBu kavram, akışkan dinamiği, meteoroloji ve kimyasal mühendislik gibi çeşitli alanlarda önemlidir ve akışkanların veya parçacıklı maddelerin hareketi ile ilgili sistemlerin anlaşılması ve tasarlanmasında yardımcı olur.\n\nKütle akış yoğunluğunun doğru ölçülmesi, süreçlerin optimize edilmesi, çevresel etkilerin kontrol edilmesi ve boru hatları tasarımı ve atmosfer çalışmaları gibi uygulamalarda etkin bir işletim sağlanması için kritik öneme sahiptir."
           }
         }
       }
@@ -11011,7 +11021,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "megabekaral"
+            "value" : ""
           }
         }
       }
@@ -11311,7 +11321,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre-mum"
+            "value" : "metre-kandela"
           }
         }
       }
@@ -11321,7 +11331,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/küçük santimetre"
+            "value" : "metre/santimetre küp"
           }
         }
       }
@@ -11331,7 +11341,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/küçük fit"
+            "value" : "metre/fit küp"
           }
         }
       }
@@ -11341,7 +11351,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/küçük inç"
+            "value" : "metre/inç küp"
           }
         }
       }
@@ -11351,7 +11361,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/küçük metre"
+            "value" : "metre/metre küp"
           }
         }
       }
@@ -11361,7 +11371,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/küçük yard"
+            "value" : "metre/yard küp"
           }
         }
       }
@@ -11481,7 +11491,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/kvart (İngiltere)"
+            "value" : "metre/quart (İngiltere)"
           }
         }
       }
@@ -11491,7 +11501,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/kvart (ABD)"
+            "value" : "metre/quart (ABD)"
           }
         }
       }
@@ -11511,7 +11521,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "metre/kare saniye"
+            "value" : "metre/saniye kare"
           }
         }
       }
@@ -11767,7 +11777,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mikrometre/kare saniye"
+            "value" : "mikrometre/saniye kare"
           }
         }
       }
@@ -11947,7 +11957,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mil (ABD araştırma)"
+            "value" : "mil (ABD)"
           }
         }
       }
@@ -12017,7 +12027,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mil/yatay saniye"
+            "value" : "mil/saniye kare"
           }
         }
       }
@@ -12037,7 +12047,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "miliampe"
+            "value" : "miliamper"
           }
         }
       }
@@ -12067,7 +12077,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "milibekaral"
+            "value" : ""
           }
         }
       }
@@ -12287,7 +12297,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mililiter/gün"
+            "value" : "mililitre/gün"
           }
         }
       }
@@ -12297,7 +12307,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mililiter/saat"
+            "value" : "mililitre/saat"
           }
         }
       }
@@ -12307,7 +12317,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mililiter/dakika"
+            "value" : "mililitre/dakika"
           }
         }
       }
@@ -12317,7 +12327,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mililiter/saniye"
+            "value" : "mililitre/saniye"
           }
         }
       }
@@ -12387,7 +12397,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "milimetre/kare saniye"
+            "value" : "milimetre/saniye kare"
           }
         }
       }
@@ -12628,7 +12638,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mina (Kutsal Kitap Yunanı)"
+            "value" : ""
           }
         }
       }
@@ -12638,7 +12648,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "mina (Kutsal Kitap İbranice)"
+            "value" : ""
           }
         }
       }
@@ -12785,7 +12795,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kuvvet Anı"
+            "value" : "Kuvvet Momenti"
           }
         }
       }
@@ -12830,7 +12840,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eğilme momenti, aynı zamanda döner moment olarak da bilinir, bir nesnenin bir eksen etrafındaki döner hareketindeki değişikliklere karşı direncini ölçer. Bu, kütle dağılımına bağlı olarak değişir.\n\nEğilme momentinin SI birimi kilogram metrekare'dir (kg·m²).\n\nÖrneğin, merkezi eksen etrafında dönen bir katı silindirin eğilme momenti, aynı kütle ve yarıçapa sahip bir boş silindirin eğilme momentinden farklıdır.\n\nEğilme momenti, dönüş dinamiklerinde kritik bir rol oynar ve dönen sistemlerde açısal hızlanma, tork ve kinetik enerjiyi hesaplamak için kullanılır.\n\nEğilme momentinin doğru belirlenmesi, tekerlekler, dişliler ve enerji depolayıcılar gibi döner hareketin önemli olduğu mekanik sistemlerin tasarımı ve analizinde hayati öneme sahiptir."
+            "value" : "Eylemsizlik momenti, aynı zamanda atalet moment olarak da bilinir, bir nesnenin bir eksen etrafındaki döner hareketindeki değişikliklere karşı direncini ölçer. Bu, kütle dağılımına bağlı olarak değişir.\n\nEylemsizlik momentinin SI birimi kilogram metrekare'dir (kg·m²).\n\nÖrneğin, merkezi eksen etrafında dönen bir katı silindirin eylemsizlik momenti, aynı kütle ve yarıçapa sahip bir boş silindirin eğilme momentinden farklıdır.\n\nEylemsizlik momenti, dönüş dinamiklerinde kritik bir rol oynar ve dönen sistemlerde açısal hızlanma, tork ve kinetik enerjiyi hesaplamak için kullanılır.\n\nEylemsizlik momentinin doğru belirlenmesi, tekerlekler, dişliler ve enerji depolayıcılar gibi döner hareketin önemli olduğu mekanik sistemlerin tasarımı ve analizinde hayati öneme sahiptir."
           }
         }
       }
@@ -12934,7 +12944,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tırnak (kumaş)"
+            "value" : "nail (cloth)"
           }
         }
       }
@@ -13090,7 +13100,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nanometre/kare saniye"
+            "value" : "nanometre/saniye kare"
           }
         }
       }
@@ -13170,7 +13180,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "deniz ligi (uluslararası)"
+            "value" : "nautical league (int.)"
           }
         }
       }
@@ -13180,7 +13190,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "deniz ligi (İngiltere)"
+            "value" : "nautical league (UK)"
           }
         }
       }
@@ -13608,7 +13618,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "omer (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -13942,7 +13952,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pentan mum (10 mum gücü)"
+            "value" : "pentan kandela (10 kandela gücü)"
           }
         }
       }
@@ -13952,7 +13962,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "direk"
+            "value" : "perch"
           }
         }
       }
@@ -14147,7 +14157,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "petalitrel"
+            "value" : "petalitre"
           }
         }
       }
@@ -14274,7 +14284,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "fot"
+            "value" : "phot"
           }
         }
       }
@@ -14414,7 +14424,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pikometre/kare saniye"
+            "value" : "pikometre/saniye kare"
           }
         }
       }
@@ -14594,7 +14604,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nokta"
+            "value" : "point"
           }
         }
       }
@@ -14614,7 +14624,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "sütun"
+            "value" : "pole"
           }
         }
       }
@@ -14670,7 +14680,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pound fit/kare saniye"
+            "value" : "pound fit/saniye kare"
           }
         }
       }
@@ -14810,7 +14820,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pound-kuvvet kare saniye/feet"
+            "value" : "pound-kuvvet saniye kare/feet"
           }
         }
       }
@@ -15262,7 +15272,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "quadrans (Kutsal Kitap Roma)"
+            "value" : ""
           }
         }
       }
@@ -15302,7 +15312,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kumpir (İngiltere)"
+            "value" : "quart (İngiltere)"
           }
         }
       }
@@ -15312,7 +15322,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kumpir (ABD)"
+            "value" : "quart (ABD)"
           }
         }
       }
@@ -15332,7 +15342,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "çeyrek (İngiltere)"
+            "value" : "quarter (İngiltere)"
           }
         }
       }
@@ -15342,7 +15352,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "çeyrek (ABD)"
+            "value" : "quarter (ABD)"
           }
         }
       }
@@ -15372,7 +15382,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kantar (metrik)"
+            "value" : "quintal (metrik)"
           }
         }
       }
@@ -15452,7 +15462,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "radyan/kare dakika"
+            "value" : "radyan/dakika kare"
           }
         }
       }
@@ -15462,7 +15472,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "radyan/kare saniye"
+            "value" : "radyan/saniye kare"
           }
         }
       }
@@ -15735,7 +15745,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "devir/kare dakika"
+            "value" : "devir/dakika kare"
           }
         }
       }
@@ -15745,7 +15755,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "devir/kare saniye"
+            "value" : "devir/saniye kare"
           }
         }
       }
@@ -15987,7 +15997,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "seah (Kutsal Kitap)"
+            "value" : ""
           }
         }
       }
@@ -16109,7 +16119,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "shekel (Kutsal Kitap İbranice)"
+            "value" : ""
           }
         }
       }
@@ -16321,7 +16331,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "aralık (kumaş)"
+            "value" : "span (cloth)"
           }
         }
       }
@@ -16348,7 +16358,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Belirli Hacim"
+            "value" : "Özgül Hacim"
           }
         }
       }
@@ -16451,7 +16461,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kare zincir"
+            "value" : "kare chain"
           }
         }
       }
@@ -16621,7 +16631,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "miligram (ABD anket)"
+            "value" : "miligram (ABD)"
           }
         }
       }
@@ -16737,7 +16747,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "statampe"
+            "value" : "statamper"
           }
         }
       }
@@ -16887,7 +16897,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "taş (İngiltere)"
+            "value" : "stone (İngiltere)"
           }
         }
       }
@@ -16897,7 +16907,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "taş (ABD)"
+            "value" : "stone (ABD)"
           }
         }
       }
@@ -16954,7 +16964,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Doğrusal Yük Yoğunluğu"
+            "value" : "Yüzey Yük Yoğunluğu"
           }
         }
       }
@@ -16993,7 +17003,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Evet, yüzey yük yoğunluğu, bir yüzeyde birim alan başına bulunan elektrik yük miktarını ölçer. Yüzeydeki yüklerin nasıl dağıldığını iki boyutlu bir yüzey üzerinde gösterir.\n\nSI birimi coulombs/metrekare (C/m²) olarak ifade edilir. Örneğin, yüklenmiş bir plakanın yüzey yük yoğunluğu 3 µC/m² ise, bu, plakanın her bir metrekarelik yüzeyinde 3 mikroculomb yük bulunduğu anlamına gelir.\n\nYüzey yük yoğunluğu, elektrostatikte yüklenmiş yüzeylerin yarattığı elektrik alanı ve potansiyeli anlamada önemlidir. Ayrıca, kapasitörler, sensörler ve elektrostatik precipitatorler gibi uygulamalarda da önemli bir rol oynar.\n\nYüzey yük yoğunluğunun doğru bir şekilde ölçülmesi ve kontrol edilmesi, yüzey yük etkilerine dayanan cihazların tasarımı ve optimizasyonu için gereklidir."
+            "value" : "Yüzey yük yoğunluğu, bir yüzeyde birim alan başına bulunan elektrik yük miktarını ölçer. Yüzeydeki yüklerin nasıl dağıldığını iki boyutlu bir yüzey üzerinde gösterir.\n\nSI birimi coulombs/metrekare (C/m²) olarak ifade edilir. Örneğin, yüklenmiş bir plakanın yüzey yük yoğunluğu 3 µC/m² ise, bu, plakanın her bir metrekarelik yüzeyinde 3 mikroculomb yük bulunduğu anlamına gelir.\n\nYüzey yük yoğunluğu, elektrostatikte yüklenmiş yüzeylerin yarattığı elektrik alanı ve potansiyeli anlamada önemlidir. Ayrıca, kapasitörler, sensörler ve elektrostatik precipitatorler gibi uygulamalarda da önemli bir rol oynar.\n\nYüzey yük yoğunluğunun doğru bir şekilde ölçülmesi ve kontrol edilmesi, yüzey yük etkilerine dayanan cihazların tasarımı ve optimizasyonu için gereklidir."
           }
         }
       }
@@ -17163,7 +17173,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "talent (Kutsal Kitap Yunanı)"
+            "value" : ""
           }
         }
       }
@@ -17173,7 +17183,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "talent (Kutsal Kitap İbranice)"
+            "value" : ""
           }
         }
       }
@@ -17284,7 +17294,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "terabekaral"
+            "value" : ""
           }
         }
       }
@@ -17526,7 +17536,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tetradrachma (Kutsal Kitap Yunanı)"
+            "value" : ""
           }
         }
       }
@@ -17582,7 +17592,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "therm/küçük fit"
+            "value" : "therm/fit küp"
           }
         }
       }
@@ -17603,7 +17613,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Isıl İletkenlik"
+            "value" : "Termal İletkenlik"
           }
         }
       }
@@ -17625,7 +17635,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Isıl Direnç"
+            "value" : "Termal Direnç"
           }
         }
       }
@@ -17716,7 +17726,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ton (analiz) (İngiltere)"
+            "value" : "ton (assay) (İngiltere)"
           }
         }
       }
@@ -17726,7 +17736,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ton (analiz) (ABD)"
+            "value" : "ton (assay) (ABD)"
           }
         }
       }
@@ -18066,7 +18076,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Su'nun Üçlü Noktası"
+            "value" : "Suyun Üçlü Noktası"
           }
         }
       }
@@ -18222,7 +18232,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "birim kutup"
+            "value" : "birim pole"
           }
         }
       }
@@ -18541,7 +18551,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "volt/ampe"
+            "value" : "volt/amper"
           }
         }
       }
@@ -18705,7 +18715,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "watt/ampi"
+            "value" : "watt/amper"
           }
         }
       }
@@ -18965,7 +18975,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "weber/ampere"
+            "value" : "weber/amper"
           }
         }
       }
@@ -19126,7 +19136,7 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "yard/kare saniye"
+            "value" : "yard/saniye kare"
           }
         }
       }
