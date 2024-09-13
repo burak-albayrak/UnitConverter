@@ -57,7 +57,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "sk": Decimal(string: "0.0003183099")!
         ]
         
-        guard let fromValue = candelaPerSquareMeterValues[fromUnit.lowercased()], let toValue = candelaPerSquareMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = candelaPerSquareMeterValues[fromUnit], let toValue = candelaPerSquareMeterValues[toUnit] else {
             return value
         }
         
@@ -79,7 +79,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "lm/sr": 1
         ]
         
-        guard let fromValue = candleInternationalValues[fromUnit.lowercased()], let toValue = candleInternationalValues[toUnit.lowercased()] else {
+        guard let fromValue = candleInternationalValues[fromUnit], let toValue = candleInternationalValues[toUnit] else {
             return value
         }
         
@@ -103,7 +103,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "W/cm²": 6830000
         ]
         
-        guard let fromValue = luxValues[fromUnit.lowercased()], let toValue = luxValues[toUnit.lowercased()] else {
+        guard let fromValue = luxValues[fromUnit], let toValue = luxValues[toUnit] else {
             return value
         }
         
@@ -119,7 +119,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "ppi": Decimal(string: "39.3700787402")!
         ]
         
-        guard let fromValue = dotPerMeterValues[fromUnit.lowercased()], let toValue = dotPerMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = dotPerMeterValues[fromUnit], let toValue = dotPerMeterValues[toUnit] else {
             return value
         }
         
@@ -166,7 +166,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "λC,n": Decimal(string: "2.2718587447278e23")!
         ]
         
-        guard let fromValue = hertzValues[fromUnit.lowercased()], let toValue = hertzValues[toUnit.lowercased()] else {
+        guard let fromValue = hertzValues[fromUnit], let toValue = hertzValues[toUnit] else {
             return value
         }
         

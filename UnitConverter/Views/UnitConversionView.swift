@@ -41,6 +41,26 @@ struct UnitConversionView<T: UnitCategory>: View {
             
             Section("Value") {
                 HStack {
+                    Button(action: {
+                        if !viewModel.firstUnitInputValue.starts(with: "-") {
+                            viewModel.firstUnitInputValue = "-" + viewModel.firstUnitInputValue
+                        }
+                    }) {
+                        Text("-")
+                            .padding(7)
+                            .padding(.horizontal, 7)
+                            .foregroundStyle(.cyan)
+                            .background(.ultraThinMaterial)
+                            .containerShape(.rect(cornerRadius: 10))
+                            .opacity(isPasteButtonPressed ? 0.5 : 1.0)
+                            .animation(.easeInOut(duration: 0.1), value: isPasteButtonPressed)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .simultaneousGesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { _ in isPasteButtonPressed = true }
+                            .onEnded { _ in isPasteButtonPressed = false }
+                    )
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.firstUnitInputValue)
                         .keyboardType(.decimalPad)
                     Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)

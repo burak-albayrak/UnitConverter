@@ -40,7 +40,7 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "Gb": Decimal(string: "0.7957747151")!
         ]
 
-        guard let fromValue = ampereTurnValues[fromUnit.lowercased()], let toValue = ampereTurnValues[toUnit.lowercased()] else {
+        guard let fromValue = ampereTurnValues[fromUnit], let toValue = ampereTurnValues[toUnit] else {
             return value 
         }
 
@@ -56,8 +56,8 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "Oe": Decimal(string: "79.5774715459")!
         ]
 
-        guard let fromValue = amperePerMeterValues[fromUnit.lowercased()], let toValue = amperePerMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = amperePerMeterValues[fromUnit], let toValue = amperePerMeterValues[toUnit] else {
+            return value
         }
 
         let amperePerMeter = value * fromValue
@@ -81,8 +81,8 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "Φ₀": Decimal(string: "2.06783461e-15")!
         ]
 
-        guard let fromValue = weberValues[fromUnit.lowercased()], let toValue = weberValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = weberValues[fromUnit], let toValue = weberValues[toUnit] else {
+            return value
         }
 
         let webers = value * fromValue
@@ -104,8 +104,8 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "γ": Decimal(sign: .minus, exponent: 9, significand: 1)
         ]
 
-        guard let fromValue = teslaValues[fromUnit.lowercased()], let toValue = teslaValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = teslaValues[fromUnit], let toValue = teslaValues[toUnit] else {
+            return value
         }
 
         let teslas = value * fromValue

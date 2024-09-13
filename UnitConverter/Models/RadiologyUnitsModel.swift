@@ -57,7 +57,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "rem/s": Decimal(sign: .minus, exponent: 2, significand: 1)
         ]
         
-        guard let fromValue = grayPerSecondValues[fromUnit.lowercased()], let toValue = grayPerSecondValues[toUnit.lowercased()] else {
+        guard let fromValue = grayPerSecondValues[fromUnit], let toValue = grayPerSecondValues[toUnit] else {
             return value
         }
 
@@ -85,8 +85,8 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "dis/min": Decimal(1) / Decimal(60)
         ]
 
-        guard let fromValue = becquerelValues[fromUnit.lowercased()], let toValue = becquerelValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = becquerelValues[fromUnit], let toValue = becquerelValues[toUnit] else {
+            return value
         }
 
         let becquerels = value * fromValue
@@ -104,7 +104,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "rep": Decimal(string: "0.000258")!
         ]
 
-        guard let fromValue = coulombPerKilogramValues[fromUnit.lowercased()], let toValue = coulombPerKilogramValues[toUnit.lowercased()] else {
+        guard let fromValue = coulombPerKilogramValues[fromUnit], let toValue = coulombPerKilogramValues[toUnit] else {
             return value
         }
 
@@ -139,8 +139,8 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "aGy": Decimal(sign: .minus, exponent: 16, significand: 1)
         ]
 
-        guard let fromValue = radValues[fromUnit.lowercased()], let toValue = radValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = radValues[fromUnit], let toValue = radValues[toUnit] else {
+            return value
         }
 
         let rads = value * fromValue

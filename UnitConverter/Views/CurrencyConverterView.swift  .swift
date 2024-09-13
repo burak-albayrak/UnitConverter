@@ -37,6 +37,26 @@ struct CurrencyConversionView: View {
             
             Section("Value") {
                 HStack {
+                    Button(action: {
+                        if !viewModel.inputValue.starts(with: "-") {
+                            viewModel.inputValue = "-" + viewModel.inputValue
+                        }
+                    }) {
+                        Text("-")
+                            .padding(7)
+                            .padding(.horizontal, 7)
+                            .foregroundStyle(.cyan)
+                            .background(.ultraThinMaterial)
+                            .containerShape(.rect(cornerRadius: 10))
+                            .opacity(isPasteButtonPressed ? 0.5 : 1.0)
+                            .animation(.easeInOut(duration: 0.1), value: isPasteButtonPressed)
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .simultaneousGesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { _ in isPasteButtonPressed = true }
+                            .onEnded { _ in isPasteButtonPressed = false }
+                    )
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
                         .keyboardType(.decimalPad)
                         .onChange(of: viewModel.inputValue) { _, _ in

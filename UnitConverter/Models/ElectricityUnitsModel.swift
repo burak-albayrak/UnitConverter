@@ -85,8 +85,8 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "e": Decimal(string: "1.60217733e-19")!
         ]
 
-        guard let fromValue = coulombValues[fromUnit.lowercased()], let toValue = coulombValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = coulombValues[fromUnit], let toValue = coulombValues[toUnit] else {
+            return value
         }
 
         let coulombs = value * fromValue
@@ -103,8 +103,8 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "abC/in": Decimal(string: "393.7007874016")!
         ]
 
-        guard let fromValue = coulombPerMeterValues[fromUnit.lowercased()], let toValue = coulombPerMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = coulombPerMeterValues[fromUnit], let toValue = coulombPerMeterValues[toUnit] else {
+            return value
         }
 
         let coulombsPerMeter = value * fromValue
@@ -121,8 +121,8 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "abC/in²": Decimal(string: "15500.031000062")!
         ]
         
-        guard let fromValue = coulombPerSquareMeterValues[fromUnit.lowercased()], let toValue = coulombPerSquareMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = coulombPerSquareMeterValues[fromUnit], let toValue = coulombPerSquareMeterValues[toUnit] else {
+            return value
         }
         
         let coulombsPerSquareMeter = value * fromValue
@@ -139,8 +139,8 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "abC/in³": Decimal(string: "610237.44094732")!
         ]
         
-        guard let fromValue = coulombPerCubicMeterValues[fromUnit.lowercased()], let toValue = coulombPerCubicMeterValues[toUnit.lowercased()] else {
-            return value // Eğer birim bulunamazsa, orijinal değeri döndür
+        guard let fromValue = coulombPerCubicMeterValues[fromUnit], let toValue = coulombPerCubicMeterValues[toUnit] else {
+            return value
         }
         
         let coulombsPerCubicMeter = value * fromValue
@@ -161,7 +161,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "CGSes": Decimal(string: "3.335641e-10")!
         ]
         
-        guard let fromValue = ampereValues[fromUnit.lowercased()], let toValue = ampereValues[toUnit.lowercased()] else {
+        guard let fromValue = ampereValues[fromUnit], let toValue = ampereValues[toUnit] else {
             return value
         }
         
@@ -181,7 +181,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "Gb/cm": Decimal(string: "79.5774715102")!
         ]
         
-        guard let fromValue = amperePerMeterValues[fromUnit.lowercased()], let toValue = amperePerMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = amperePerMeterValues[fromUnit], let toValue = amperePerMeterValues[toUnit] else {
             return value
         }
         
@@ -199,7 +199,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "abA/cm²": 100000
         ]
         
-        guard let fromValue = amperePerSquareMeterValues[fromUnit.lowercased()], let toValue = amperePerSquareMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = amperePerSquareMeterValues[fromUnit], let toValue = amperePerSquareMeterValues[toUnit] else {
             return value
         }
         
@@ -224,7 +224,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "N/C": 1
         ]
         
-        guard let fromValue = voltPerMeterValues[fromUnit.lowercased()], let toValue = voltPerMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = voltPerMeterValues[fromUnit], let toValue = voltPerMeterValues[toUnit] else {
             return value
         }
         
@@ -242,7 +242,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "esuV": Decimal(string: "299.7925")!
         ]
         
-        guard let fromValue = voltValues[fromUnit.lowercased()], let toValue = voltValues[toUnit.lowercased()] else {
+        guard let fromValue = voltValues[fromUnit], let toValue = voltValues[toUnit] else {
             return value
         }
         
@@ -264,7 +264,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "RH": Decimal(string: "25812.8056")!
         ]
         
-        guard let fromValue = ohmValues[fromUnit.lowercased()], let toValue = ohmValues[toUnit.lowercased()] else {
+        guard let fromValue = ohmValues[fromUnit], let toValue = ohmValues[toUnit] else {
             return value
         }
         
@@ -284,7 +284,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "cmil·Ω/ft": Decimal(string: "1.6624261130101e-9")!
         ]
         
-        guard let fromValue = ohmMeterValues[fromUnit.lowercased()], let toValue = ohmMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = ohmMeterValues[fromUnit], let toValue = ohmMeterValues[toUnit] else {
             return value
         }
         
@@ -308,7 +308,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "G₀": Decimal(string: "3.87405e-5")!
         ]
         
-        guard let fromValue = siemensValues[fromUnit.lowercased()], let toValue = siemensValues[toUnit.lowercased()] else {
+        guard let fromValue = siemensValues[fromUnit], let toValue = siemensValues[toUnit] else {
             return value
         }
         
@@ -328,7 +328,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "stat℧/cm": Decimal(string: "1.1126534560019e-10")!
         ]
         
-        guard let fromValue = siemensPerMeterValues[fromUnit.lowercased()], let toValue = siemensPerMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = siemensPerMeterValues[fromUnit], let toValue = siemensPerMeterValues[toUnit] else {
             return value
         }
         
@@ -362,7 +362,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "esuC": Decimal(string: "1.112650056054e-12")!
         ]
         
-        guard let fromValue = faradValues[fromUnit.lowercased()], let toValue = faradValues[toUnit.lowercased()] else {
+        guard let fromValue = faradValues[fromUnit], let toValue = faradValues[toUnit] else {
             return value
         }
         
@@ -396,7 +396,7 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "esuL": Decimal(string: "898755200000")!
         ]
         
-        guard let fromValue = henryValues[fromUnit.lowercased()], let toValue = henryValues[toUnit.lowercased()] else {
+        guard let fromValue = henryValues[fromUnit], let toValue = henryValues[toUnit] else {
             return value
         }
         

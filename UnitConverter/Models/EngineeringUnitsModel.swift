@@ -181,7 +181,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "RS": 696000000
         ]
         
-        guard let fromValue = meterValues[fromUnit.lowercased()], let toValue = meterValues[toUnit.lowercased()] else {
+        guard let fromValue = meterValues[fromUnit], let toValue = meterValues[toUnit] else {
             return value
         }
         
@@ -262,7 +262,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "MS": Decimal(sign: .plus, exponent: 30, significand: 2)
         ]
         
-        guard let fromValue = kilogramValues[fromUnit.lowercased()], let toValue = kilogramValues[toUnit.lowercased()] else {
+        guard let fromValue = kilogramValues[fromUnit], let toValue = kilogramValues[toUnit] else {
             return value
         }
         
@@ -350,7 +350,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "VE": Decimal(string: "1.083e21")!
         ]
         
-        guard let fromValue = cubicMeterValues[fromUnit.lowercased()], let toValue = cubicMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = cubicMeterValues[fromUnit], let toValue = cubicMeterValues[toUnit] else {
             return value
         }
         
@@ -360,7 +360,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
     
     private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let kelvin: Decimal
-        switch fromUnit.lowercased() {
+        switch fromUnit {
         case "kelvin", "k":
             kelvin = value
         case "celsius", "°c":
@@ -377,7 +377,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             return value
         }
         
-        switch toUnit.lowercased() {
+        switch toUnit {
         case "kelvin", "k":
             return kelvin
         case "celsius", "°c":
@@ -438,7 +438,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "σe": Decimal(string: "6.6524615999999e-29")!
         ]
         
-        guard let fromValue = squareMeterValues[fromUnit.lowercased()], let toValue = squareMeterValues[toUnit.lowercased()] else {
+        guard let fromValue = squareMeterValues[fromUnit], let toValue = squareMeterValues[toUnit] else {
             return value
         }
         
@@ -502,7 +502,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "at": Decimal(string: "98066.500000003")!
         ]
         
-        guard let fromValue = pascalValues[fromUnit.lowercased()], let toValue = pascalValues[toUnit.lowercased()] else {
+        guard let fromValue = pascalValues[fromUnit], let toValue = pascalValues[toUnit] else {
             return value
         }
         
@@ -528,7 +528,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "sextant": 60
         ]
         
-        guard let fromValue = degreeValues[fromUnit.lowercased()], let toValue = degreeValues[toUnit.lowercased()] else {
+        guard let fromValue = degreeValues[fromUnit], let toValue = degreeValues[toUnit] else {
             return value
         }
         
@@ -572,7 +572,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "M(SI)": Decimal(string: "295.0464000003")!
         ]
         
-        guard let fromValue = meterPerSecondValues[fromUnit.lowercased()], let toValue = meterPerSecondValues[toUnit.lowercased()] else {
+        guard let fromValue = meterPerSecondValues[fromUnit], let toValue = meterPerSecondValues[toUnit] else {
             return value
         }
         
@@ -617,7 +617,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "tP": Decimal(string: "5.39056e-44")!
         ]
         
-        guard let fromValue = secondValues[fromUnit.lowercased()], let toValue = secondValues[toUnit.lowercased()] else {
+        guard let fromValue = secondValues[fromUnit], let toValue = secondValues[toUnit] else {
             return value
         }
         
@@ -683,7 +683,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Ry": Decimal(string: "2.1798741e-18")!
         ]
         
-        guard let fromValue = jouleValues[fromUnit.lowercased()], let toValue = jouleValues[toUnit.lowercased()] else {
+        guard let fromValue = jouleValues[fromUnit], let toValue = jouleValues[toUnit] else {
             return value
         }
         
@@ -771,7 +771,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "kJ/min": Decimal(string: "16.6666666667")!
         ]
         
-        guard let fromValue = wattValues[fromUnit.lowercased()], let toValue = wattValues[toUnit.lowercased()] else {
+        guard let fromValue = wattValues[fromUnit], let toValue = wattValues[toUnit] else {
             return value
         }
         
@@ -816,7 +816,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "kp": Decimal(string: "9.80665")!
         ]
         
-        guard let fromValue = newtonValues[fromUnit.lowercased()], let toValue = newtonValues[toUnit.lowercased()] else {
+        guard let fromValue = newtonValues[fromUnit], let toValue = newtonValues[toUnit] else {
             return value
         }
         
