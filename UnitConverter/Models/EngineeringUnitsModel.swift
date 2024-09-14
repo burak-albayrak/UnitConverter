@@ -865,12 +865,26 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "gal(UK)/100mi": Decimal(string: "35400.618995592")!
         ]
         
-        guard let fromValue = meterPerLiterValues[fromUnit], let toValue = meterPerLiterValues[toUnit] else {
-            return value
+        func convertToStandard(_ val: Decimal, unit: String) -> Decimal {
+            switch unit {
+            case "L/100km", "gal(US)/100mi", "gal(UK)/100mi", "gal(US)/mi", "gal(UK)/mi":
+                return meterPerLiterValues[unit]! / val
+            default:
+                return val * (meterPerLiterValues[unit] ?? 1)
+            }
         }
         
-        let meterPerLiter = value * fromValue
-        return meterPerLiter / toValue
+        func convertFromStandard(_ val: Decimal, unit: String) -> Decimal {
+            switch unit {
+            case "L/100km", "gal(US)/100mi", "gal(UK)/100mi", "gal(US)/mi", "gal(UK)/mi":
+                return meterPerLiterValues[unit]! / val
+            default:
+                return val / (meterPerLiterValues[unit] ?? 1)
+            }
+        }
+        
+        let standardValue = convertToStandard(value, unit: fromUnit)
+        return convertFromStandard(standardValue, unit: toUnit)
     }
     
     private func convertVolumeDry(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {

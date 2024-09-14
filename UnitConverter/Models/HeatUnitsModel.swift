@@ -50,7 +50,7 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
     }
     
     private func convertSpecificEnergy(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
-        let joulePerKilogramValues: [String: Decimal] = [
+        let baseValues: [String: Decimal] = [
             "J/kg": 1,
             "kJ/kg": 1000,
             "cal(IT)/g": Decimal(string: "4186.8")!,
@@ -58,26 +58,41 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "Btu(IT)/lb": 2326,
             "Btu(th)/lb": Decimal(string: "2324.4444444446")!,
             "kg/J": 1,
-            "kg/kJ": 1000,
-            "g/cal(IT)": Decimal(string: "4186.8")!,
-            "g/cal(th)": Decimal(string: "4184.000000005")!,
-            "lb/Btu(IT)": 2326,
-            "lb/Btu(th)": Decimal(string: "2324.4444444446")!,
-            "lb/hp/h": Decimal(string: "5918352.5016")!,
-            "g/hp(m)/h": 2647795500,
-            "g/kW/h": 3600000000
+            "kg/kJ": 0.001,
+            "g/cal(IT)": 1 / Decimal(string: "4186.8")!,
+            "g/cal(th)": 1 / Decimal(string: "4184.000000005")!,
+            "lb/Btu(IT)": 1 / 2326,
+            "lb/Btu(th)": 1 / Decimal(string: "2324.4444444446")!,
+            "lb/hp/h": 1 / Decimal(string: "5918352.5016")!,
+            "g/hp(m)/h": 1 / 2647795500,
+            "g/kW/h": 1 / 3600000000
         ]
         
-        guard let fromValue = joulePerKilogramValues[fromUnit], let toValue = joulePerKilogramValues[toUnit] else {
+        guard let fromBase = baseValues[fromUnit], let toBase = baseValues[toUnit] else {
             return value
         }
         
-        let joulePerKilogram = value * fromValue
-        return joulePerKilogram / toValue
+        var result: Decimal
+        
+        // Convert from input unit to J/kg
+        if fromUnit.starts(with: "g/") || fromUnit.starts(with: "lb/") {
+            result = 1 / (value * fromBase)
+        } else {
+            result = value * fromBase
+        }
+        
+        // Convert from J/kg to output unit
+        if toUnit.starts(with: "g/") || toUnit.starts(with: "lb/") {
+            result = 1 / (result * toBase)
+        } else {
+            result = result / toBase
+        }
+        
+        return result
     }
     
     private func convertEnergyDensity(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
-        let joulePerCubicMeterValues: [String: Decimal] = [
+        let baseValues: [String: Decimal] = [
             "J/m³": 1,
             "J/L": 1000,
             "MJ/m³": 1000000,
@@ -90,16 +105,31 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "Btu(th)/ft³": Decimal(string: "37234.028198186")!,
             "CHU/ft³": Decimal(string: "67066.103121737")!,
             "m³/J": 1,
-            "L/J": 1000,
-            "gal(US)/hp": Decimal(string: "709175035.869")!
+            "L/J": 0.001,
+            "gal(US)/hp": 1 / Decimal(string: "709175035.869")!
         ]
         
-        guard let fromValue = joulePerCubicMeterValues[fromUnit], let toValue = joulePerCubicMeterValues[toUnit] else {
+        guard let fromBase = baseValues[fromUnit], let toBase = baseValues[toUnit] else {
             return value
         }
         
-        let joulePerCubicMeter = value * fromValue
-        return joulePerCubicMeter / toValue
+        var result: Decimal
+        
+        // Convert from input unit to J/m³
+        if fromUnit.starts(with: "m³/") || fromUnit.starts(with: "L/") || fromUnit == "gal(US)/hp" {
+            result = 1 / (value * fromBase)
+        } else {
+            result = value * fromBase
+        }
+        
+        // Convert from J/m³ to output unit
+        if toUnit.starts(with: "m³/") || toUnit.starts(with: "L/") || toUnit == "gal(US)/hp" {
+            result = 1 / (result * toBase)
+        } else {
+            result = result / toBase
+        }
+        
+        return result
     }
     
     private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
