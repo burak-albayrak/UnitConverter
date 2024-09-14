@@ -73,7 +73,9 @@ class CurrencyConversionViewModel: ObservableObject {
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
-        
+        formatter.usesGroupingSeparator = false
+        formatter.decimalSeparator = "."
+
         convertedValue = formatter.string(from: NSDecimalNumber(decimal: result)) ?? ""
     }
     

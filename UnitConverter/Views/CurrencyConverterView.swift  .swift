@@ -59,8 +59,10 @@ struct CurrencyConversionView: View {
                     )
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
                         .keyboardType(.decimalPad)
+
                         .onChange(of: viewModel.inputValue) { _, _ in
                             viewModel.convertCurrency()
+                            viewModel.inputValue = viewModel.inputValue.replacingOccurrences(of: ",", with: ".")
                     }
                     Spacer()
                     Button(action: {

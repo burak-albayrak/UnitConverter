@@ -150,23 +150,23 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
         ]
         
         let wavelengthValues: [String: Decimal] = [
-            "λ Em": Decimal(string: "1e-18")!,
-            "λ Pm": Decimal(string: "1e-15")!,
-            "λ Tm": Decimal(string: "1e-12")!,
-            "λ Gm": Decimal(string: "1e-9")!,
-            "λ Mm": Decimal(string: "1e-6")!,
-            "λ km": Decimal(string: "1e-3")!,
-            "λ hm": Decimal(string: "1e-2")!,
-            "λ dam": Decimal(string: "1e-1")!,
-            "λ m": 1,
-            "λ dm": 10,
-            "λ cm": 100,
-            "λ mm": 1000,
-            "λ µm": Decimal(string: "1e6")!,
-            "λ nm": Decimal(string: "1e9")!,
-            "λC,e": Decimal(string: "2.42631023867e-12")!,
-            "λC,p": Decimal(string: "1.32141e-15")!,
-            "λC,n": Decimal(string: "1.31959e-15")!
+            "λ Em": Decimal(sign: .plus, exponent: -10, significand: 2.99792458),
+            "λ Pm": Decimal(sign: .plus, exponent: -7, significand: 2.99792458),
+            "λ Tm": Decimal(sign: .plus, exponent: -4, significand: 2.99792458),
+            "λ Gm": Decimal(string: "0.299792458")!,
+            "λ Mm": Decimal(string: "299.792458")!,
+            "λ km": Decimal(string: "299792.458")!,
+            "λ hm": Decimal(string: "2997924.58")!,
+            "λ dam": Decimal(string: "29979245.8")!,
+            "λ m": Decimal(299792458),
+            "λ dm": Decimal(2997924580),
+            "λ cm": Decimal(29979245800),
+            "λ mm": Decimal(299792458000),
+            "λ µm": Decimal(sign: .plus, exponent: 14, significand: 2.99792458),
+            "λ nm": Decimal(sign: .plus, exponent: 17, significand: 2.99792458),
+            "λC,e": Decimal(string: "1.235589789993e20")!,
+            "λC,p": Decimal(string: "2.2687315327002e23")!,
+            "λC,n": Decimal(string: "2.2718587447278e23")!
         ]
         
         let c = Decimal(299792458) // Speed of light in m/s
@@ -174,9 +174,8 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
         func toHz(_ value: Decimal, from unit: String) -> Decimal {
             if let hertzMultiplier = hertzValues[unit] {
                 return value * hertzMultiplier
-            } else if let wavelengthMultiplier = wavelengthValues[unit] {
-                let wavelengthInMeters = value * wavelengthMultiplier
-                return c / wavelengthInMeters
+            } else if let wavelengthValue = wavelengthValues[unit] {
+                return wavelengthValue / value
             }
             return value // Default case if unit is not recognized
         }
@@ -184,9 +183,8 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
         func fromHz(_ value: Decimal, to unit: String) -> Decimal {
             if let hertzDivisor = hertzValues[unit] {
                 return value / hertzDivisor
-            } else if let wavelengthDivisor = wavelengthValues[unit] {
-                let wavelengthInMeters = c / value
-                return wavelengthInMeters / wavelengthDivisor
+            } else if let wavelengthValue = wavelengthValues[unit] {
+                return wavelengthValue / value
             }
             return value // Default case if unit is not recognized
         }

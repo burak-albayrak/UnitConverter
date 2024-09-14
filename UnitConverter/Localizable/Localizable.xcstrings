@@ -9296,6 +9296,12 @@
     },
     "kilogram/pascal/second/square meter" : {
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "kilogram/pascal/second/sq. meter"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",

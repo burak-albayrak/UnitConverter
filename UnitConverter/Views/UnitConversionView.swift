@@ -63,6 +63,9 @@ struct UnitConversionView<T: UnitCategory>: View {
                     )
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.firstUnitInputValue)
                         .keyboardType(.decimalPad)
+                        .onChange(of: viewModel.firstUnitInputValue) {
+                            viewModel.firstUnitInputValue = viewModel.firstUnitInputValue.replacingOccurrences(of: ",", with: ".")
+                        }
                     Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
                     Spacer()
                     Button(action: {
