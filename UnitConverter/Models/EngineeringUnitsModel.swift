@@ -869,6 +869,8 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             switch unit {
             case "L/100km", "gal(US)/100mi", "gal(UK)/100mi", "gal(US)/mi", "gal(UK)/mi":
                 return meterPerLiterValues[unit]! / val
+            case "L/m":
+                return 1 / val
             default:
                 return val * (meterPerLiterValues[unit] ?? 1)
             }
@@ -878,6 +880,8 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             switch unit {
             case "L/100km", "gal(US)/100mi", "gal(UK)/100mi", "gal(US)/mi", "gal(UK)/mi":
                 return meterPerLiterValues[unit]! / val
+            case "L/m":
+                return 1 / val
             default:
                 return val / (meterPerLiterValues[unit] ?? 1)
             }
