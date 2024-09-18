@@ -16,7 +16,7 @@ struct CurrencyConversionView: View {
     @State private var isPasteButtonPressed: Bool = false
     @State private var isFavoriteButtonPressed: Bool = false
     @State private var addedToFavorites: Bool = false
-
+    
     var body: some View {
         Form {
             Section(LocalizedStringKey("Select Currencies")) {
@@ -26,7 +26,7 @@ struct CurrencyConversionView: View {
                     }
                 }
                 .id(viewModel.selectedFromCurrencyIndex)
-
+                
                 Picker(LocalizedStringKey("To Currency"), selection: $viewModel.selectedToCurrencyIndex) {
                     ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
                         Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
@@ -59,11 +59,11 @@ struct CurrencyConversionView: View {
                     )
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
                         .keyboardType(.decimalPad)
-
+                    
                         .onChange(of: viewModel.inputValue) { _, _ in
                             viewModel.convertCurrency()
                             viewModel.inputValue = viewModel.inputValue.replacingOccurrences(of: ",", with: ".")
-                    }
+                        }
                     Spacer()
                     Button(action: {
                         if let pasteboardString = UIPasteboard.general.string {

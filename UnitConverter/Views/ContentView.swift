@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var mainMenuScale: CGFloat = 0.8
     @State private var mainMenuOpacity: Double = 0.0
     @State private var isTransitioningToMainMenu: Bool = false
-
+    
     var body: some View {
         ZStack {
             if !hasSeenWelcomeScreen {
@@ -42,7 +42,6 @@ struct ContentView: View {
         }
         .onAppear {
             if hasSeenWelcomeScreen && !isTransitioningToMainMenu {
-                // Uygulama yeniden başlatıldığında ve Welcome Screen zaten görülmüşse
                 mainMenuScale = 1.0
                 mainMenuOpacity = 1.0
             }

@@ -12,7 +12,7 @@ class StoreKitManager: ObservableObject {
     @Published var purchaseResult: Result<Bool, Error>?
     
     private var products: [Product] = []
-    private let productIdentifiers = ["com.yourapp.coffee"] 
+    private let productIdentifiers = ["com.yourapp.coffee"]
     // App Store Connect'te oluşturduğunuz ürün ID'si
     // FIXME: Apple Dev alınca yap!!!!
     

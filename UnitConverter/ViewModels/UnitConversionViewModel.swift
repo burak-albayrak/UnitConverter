@@ -25,7 +25,7 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     var availableUnits: [(symbol: String, name: String)] {
         category.availableUnits
     }
-
+    
     
     var availableUnitsIndices: Range<Int> {
         0..<availableUnits.count
@@ -64,7 +64,7 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
             return formattedResult == "0e0" ? "0" : formattedResult
         }
     }
-
+    
     
     func setFromFavorite(_ favorite: FavoriteConversion) {
         selectedFirstUnitIndex = availableUnits.firstIndex(where: { $0.name == favorite.fromUnit }) ?? 0

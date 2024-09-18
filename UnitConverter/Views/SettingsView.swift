@@ -23,11 +23,11 @@ struct SettingsView: View {
     @State private var showLanguageChangeAlert = false
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("appLanguage") private var appLanguage = "en"
-
+    
     var body: some View {
         NavigationView {
             Form {
-
+                
                 Section(header: Text("Appearance")) {
                     Toggle("Dark Mode", isOn: $isDarkMode)
                 }
@@ -67,7 +67,7 @@ struct SettingsView: View {
                 
                 Section(header: Text("About")) {
                     Link("Rate the App", destination: URL(string: "https://apps.apple.com/app/id123456789")!) // FIXME: app sayfası
-//                    Link("Privacy Policy", destination: URL(string: "https://yourwebsite.com/privacy")!)
+                    //                    Link("Privacy Policy", destination: URL(string: "https://yourwebsite.com/privacy")!)
                 }
                 
             }

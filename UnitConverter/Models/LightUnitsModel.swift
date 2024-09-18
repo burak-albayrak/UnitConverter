@@ -169,7 +169,7 @@ enum LightUnitsCategory: String, CaseIterable, UnitCategory {
             "λC,n": Decimal(string: "2.2718587447278e23")!
         ]
         
-        let c = Decimal(299792458) // Speed of light in m/s
+        // let c = Decimal(299792458) // Speed of light in m/s
         
         func toHz(_ value: Decimal, from unit: String) -> Decimal {
             if let hertzMultiplier = hertzValues[unit] {

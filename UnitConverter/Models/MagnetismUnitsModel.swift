@@ -39,11 +39,11 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "abAt": 10,
             "Gb": Decimal(string: "0.7957747151")!
         ]
-
+        
         guard let fromValue = ampereTurnValues[fromUnit], let toValue = ampereTurnValues[toUnit] else {
             return value 
         }
-
+        
         let ampereTurns = value * fromValue
         return ampereTurns / toValue
     }
@@ -55,11 +55,11 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "kA/m": Decimal(sign: .plus, exponent: 3, significand: 1),
             "Oe": Decimal(string: "79.5774715459")!
         ]
-
+        
         guard let fromValue = amperePerMeterValues[fromUnit], let toValue = amperePerMeterValues[toUnit] else {
             return value
         }
-
+        
         let amperePerMeter = value * fromValue
         return amperePerMeter / toValue
     }
@@ -80,11 +80,11 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "G·cm²": Decimal(sign: .plus, exponent: -8, significand: 1),
             "Φ₀": Decimal(string: "2.06783461e-15")!
         ]
-
+        
         guard let fromValue = weberValues[fromUnit], let toValue = weberValues[toUnit] else {
             return value
         }
-
+        
         let webers = value * fromValue
         return webers / toValue
     }
@@ -103,11 +103,11 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
             "Φ/in²": Decimal(string: "1.55e-5")!,
             "γ": Decimal(sign: .plus, exponent: -9, significand: 1)
         ]
-
+        
         guard let fromValue = teslaValues[fromUnit], let toValue = teslaValues[toUnit] else {
             return value
         }
-
+        
         let teslas = value * fromValue
         return teslas / toValue
     }
@@ -188,4 +188,3 @@ enum MagnetismUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
 }
-

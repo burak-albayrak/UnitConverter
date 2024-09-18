@@ -24,29 +24,29 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
     }
     
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
-            switch self {
-            case .length:
-                return convertLength(value, from: fromUnit, to: toUnit)
-            case .mass:
-                return convertMass(value, from: fromUnit, to: toUnit)
-            case .volume:
-                return convertVolume(value, from: fromUnit, to: toUnit)
-            case .temperature:
-                return convertTemperature(value, from: fromUnit, to: toUnit)
-            case .area:
-                return convertArea(value, from: fromUnit, to: toUnit)
-            case .pressure:
-                return convertPressure(value, from: fromUnit, to: toUnit)
-            case .angle:
-                return convertAngle(value, from: fromUnit, to: toUnit)
-            case .speed:
-                return convertSpeed(value, from: fromUnit, to: toUnit)
-            case .duration:
-                return convertDuration(value, from: fromUnit, to: toUnit)
-                
-            }
+        switch self {
+        case .length:
+            return convertLength(value, from: fromUnit, to: toUnit)
+        case .mass:
+            return convertMass(value, from: fromUnit, to: toUnit)
+        case .volume:
+            return convertVolume(value, from: fromUnit, to: toUnit)
+        case .temperature:
+            return convertTemperature(value, from: fromUnit, to: toUnit)
+        case .area:
+            return convertArea(value, from: fromUnit, to: toUnit)
+        case .pressure:
+            return convertPressure(value, from: fromUnit, to: toUnit)
+        case .angle:
+            return convertAngle(value, from: fromUnit, to: toUnit)
+        case .speed:
+            return convertSpeed(value, from: fromUnit, to: toUnit)
+        case .duration:
+            return convertDuration(value, from: fromUnit, to: toUnit)
+            
         }
-
+    }
+    
     private func convertLength(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let meterValues: [String: Decimal] = [
             "m": 1,
@@ -142,11 +142,11 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             "AU": 149600000000,
             "RS": 696000000
         ]
-
+        
         guard let fromValue = meterValues[fromUnit], let toValue = meterValues[toUnit] else {
             return value
         }
-
+        
         let meters = value * fromValue
         return meters / toValue
     }
@@ -223,15 +223,15 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             "ME": Decimal(string: "5.9760000000002e24")!,
             "MS": Decimal(sign: .plus, exponent: 30, significand: 2)
         ]
-
+        
         guard let fromValue = kilogramValues[fromUnit], let toValue = kilogramValues[toUnit] else {
             return value
         }
-
+        
         let kilograms = value * fromValue
         return kilograms / toValue
     }
-            
+    
     private func convertVolume(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let cubicMeterValues: [String: Decimal] = [
             "m³": 1,
@@ -315,11 +315,11 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = cubicMeterValues[fromUnit], let toValue = cubicMeterValues[toUnit] else {
             return value
         }
-
+        
         let cubicMeters = value * fromValue
         return cubicMeters / toValue
     }
-            
+    
     private func convertTemperature(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let kelvin: Decimal
         switch fromUnit.lowercased() {
@@ -338,7 +338,7 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
         default:
             return value
         }
-
+        
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
@@ -399,15 +399,15 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             "var²(con)": Decimal(string: "6.288633")!,
             "σe": Decimal(string: "6.6524615999999e-29")!
         ]
-
+        
         guard let fromValue = squareMeterValues[fromUnit], let toValue = squareMeterValues[toUnit] else {
             return value
         }
-
+        
         let squareMeters = value * fromValue
         return squareMeters / toValue
     }
-            
+    
     private func convertPressure(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let pascalValues: [String: Decimal] = [
             "Pa": 1,
@@ -463,15 +463,15 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             "ftH2O(60°F)": Decimal(string: "2986.116")!,
             "at": Decimal(string: "98066.500000003")!
         ]
-
+        
         guard let fromValue = pascalValues[fromUnit], let toValue = pascalValues[toUnit] else {
             return value
         }
-
+        
         let pascals = value * fromValue
         return pascals / toValue
     }
-            
+    
     private func convertAngle(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let degreeValues: [String: Decimal] = [
             "°": 1,
@@ -489,11 +489,11 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             "right angle": 90,
             "sextant": 60
         ]
-
+        
         guard let fromValue = degreeValues[fromUnit], let toValue = degreeValues[toUnit] else {
             return value
         }
-
+        
         let degrees = value * fromValue
         return degrees / toValue
     }
@@ -537,11 +537,11 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = meterPerSecondValues[fromUnit], let toValue = meterPerSecondValues[toUnit] else {
             return value
         }
-
+        
         let meterPerSecond = value * fromValue
         return meterPerSecond / toValue
     }
-        
+    
     private func convertDuration(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let secondValues: [String: Decimal] = [
             "s": 1,
@@ -582,7 +582,7 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = secondValues[fromUnit], let toValue = secondValues[toUnit] else {
             return value
         }
-
+        
         let seconds = value * fromValue
         return seconds / toValue
     }
@@ -609,7 +609,7 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
             return "stopwatch"
         }
     }
-
+    
     
     var info: LocalizedStringKey {
         switch self {
@@ -803,85 +803,85 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
                 ("ME", String(localized: "Earth's mass")),
                 ("MS", String(localized: "Sun's mass"))
             ]
-            case .volume:
-                return [
-                    ("m³", String(localized: "cubic meter")),
-                    ("km³", String(localized: "cubic kilometer")),
-                    ("cm³", String(localized: "cubic centimeter")),
-                    ("mm³", String(localized: "cubic millimeter")),
-                    ("L", String(localized: "liter")),
-                    ("mL", String(localized: "milliliter")),
-                    ("gal(US)", String(localized: "gallon (US)")),
-                    ("qt(US)", String(localized: "quart (US)")),
-                    ("pt(US)", String(localized: "pint (US)")),
-                    ("cup(US)", String(localized: "cup (US)")),
-                    ("tbsp(US)", String(localized: "tablespoon (US)")),
-                    ("tsp(US)", String(localized: "teaspoon (US)")),
-                    ("mi³", String(localized: "cubic mile")),
-                    ("yd³", String(localized: "cubic yard")),
-                    ("ft³", String(localized: "cubic foot")),
-                    ("in³", String(localized: "cubic inch")),
-                    ("dm³", String(localized: "cubic decimeter")),
-                    ("EL", String(localized: "exaliter")),
-                    ("PL", String(localized: "petaliter")),
-                    ("TL", String(localized: "teraliter")),
-                    ("GL", String(localized: "gigaliter")),
-                    ("ML", String(localized: "megaliter")),
-                    ("kL", String(localized: "kiloliter")),
-                    ("hL", String(localized: "hectoliter")),
-                    ("daL", String(localized: "dekaliter")),
-                    ("dL", String(localized: "deciliter")),
-                    ("cL", String(localized: "centiliter")),
-                    ("µL", String(localized: "microliter")),
-                    ("nL", String(localized: "nanoliter")),
-                    ("pL", String(localized: "picoliter")),
-                    ("fL", String(localized: "femtoliter")),
-                    ("aL", String(localized: "attoliter")),
-                    ("cc", String(localized: "cc")),
-                    ("drop", String(localized: "drop")),
-                    ("bbl(oil)", String(localized: "barrel (oil)")),
-                    ("bbl(US)", String(localized: "barrel (US)")),
-                    ("bbl(UK)", String(localized: "barrel (UK)")),
-                    ("gal(UK)", String(localized: "gallon (UK)")),
-                    ("qt(UK)", String(localized: "quart (UK)")),
-                    ("pt(UK)", String(localized: "pint (UK)")),
-                    ("cup(m)", String(localized: "cup (metric)")),
-                    ("cup(UK)", String(localized: "cup (UK)")),
-                    ("fl oz(US)", String(localized: "fluid ounce (US)")),
-                    ("fl oz(UK)", String(localized: "fluid ounce (UK)")),
-                    ("tbsp(m)", String(localized: "tablespoon (metric)")),
-                    ("tbsp(UK)", String(localized: "tablespoon (UK)")),
-                    ("dsp(US)", String(localized: "dessertspoon (US)")),
-                    ("dsp(UK)", String(localized: "dessertspoon (UK)")),
-                    ("tsp(m)", String(localized: "teaspoon (metric)")),
-                    ("tsp(UK)", String(localized: "teaspoon (UK)")),
-                    ("gill(US)", String(localized: "gill (US)")),
-                    ("gill(UK)", String(localized: "gill (UK)")),
-                    ("min(US)", String(localized: "minim (US)")),
-                    ("min(UK)", String(localized: "minim (UK)")),
-                    ("reg ton", String(localized: "ton register")),
-                    ("ccf", String(localized: "ccf")),
-                    ("hcf", String(localized: "hundred-cubic foot")),
-                    ("ac·ft", String(localized: "acre-foot")),
-                    ("ac·ft(US)", String(localized: "acre-foot (US survey)")),
-                    ("ac·in", String(localized: "acre-inch")),
-                    ("das", String(localized: "dekastere")),
-                    ("s", String(localized: "stere")),
-                    ("ds", String(localized: "decistere")),
-                    ("cord", String(localized: "cord")),
-                    ("tun", String(localized: "tun")),
-                    ("hhd", String(localized: "hogshead")),
-                    ("bf", String(localized: "board foot")),
-                    ("dr", String(localized: "dram")),
-                    ("cor(B)", String(localized: "cor (Biblical)")),
-                    ("homer(B)", String(localized: "homer (Biblical)")),
-                    ("bath(B)", String(localized: "bath (Biblical)")),
-                    ("hin(B)", String(localized: "hin (Biblical)")),
-                    ("cab(B)", String(localized: "cab (Biblical)")),
-                    ("log(B)", String(localized: "log (Biblical)")),
-                    ("taza", String(localized: "Taza (Spanish)")),
-                    ("VE", String(localized: "Earth's volume"))
-                ]
+        case .volume:
+            return [
+                ("m³", String(localized: "cubic meter")),
+                ("km³", String(localized: "cubic kilometer")),
+                ("cm³", String(localized: "cubic centimeter")),
+                ("mm³", String(localized: "cubic millimeter")),
+                ("L", String(localized: "liter")),
+                ("mL", String(localized: "milliliter")),
+                ("gal(US)", String(localized: "gallon (US)")),
+                ("qt(US)", String(localized: "quart (US)")),
+                ("pt(US)", String(localized: "pint (US)")),
+                ("cup(US)", String(localized: "cup (US)")),
+                ("tbsp(US)", String(localized: "tablespoon (US)")),
+                ("tsp(US)", String(localized: "teaspoon (US)")),
+                ("mi³", String(localized: "cubic mile")),
+                ("yd³", String(localized: "cubic yard")),
+                ("ft³", String(localized: "cubic foot")),
+                ("in³", String(localized: "cubic inch")),
+                ("dm³", String(localized: "cubic decimeter")),
+                ("EL", String(localized: "exaliter")),
+                ("PL", String(localized: "petaliter")),
+                ("TL", String(localized: "teraliter")),
+                ("GL", String(localized: "gigaliter")),
+                ("ML", String(localized: "megaliter")),
+                ("kL", String(localized: "kiloliter")),
+                ("hL", String(localized: "hectoliter")),
+                ("daL", String(localized: "dekaliter")),
+                ("dL", String(localized: "deciliter")),
+                ("cL", String(localized: "centiliter")),
+                ("µL", String(localized: "microliter")),
+                ("nL", String(localized: "nanoliter")),
+                ("pL", String(localized: "picoliter")),
+                ("fL", String(localized: "femtoliter")),
+                ("aL", String(localized: "attoliter")),
+                ("cc", String(localized: "cc")),
+                ("drop", String(localized: "drop")),
+                ("bbl(oil)", String(localized: "barrel (oil)")),
+                ("bbl(US)", String(localized: "barrel (US)")),
+                ("bbl(UK)", String(localized: "barrel (UK)")),
+                ("gal(UK)", String(localized: "gallon (UK)")),
+                ("qt(UK)", String(localized: "quart (UK)")),
+                ("pt(UK)", String(localized: "pint (UK)")),
+                ("cup(m)", String(localized: "cup (metric)")),
+                ("cup(UK)", String(localized: "cup (UK)")),
+                ("fl oz(US)", String(localized: "fluid ounce (US)")),
+                ("fl oz(UK)", String(localized: "fluid ounce (UK)")),
+                ("tbsp(m)", String(localized: "tablespoon (metric)")),
+                ("tbsp(UK)", String(localized: "tablespoon (UK)")),
+                ("dsp(US)", String(localized: "dessertspoon (US)")),
+                ("dsp(UK)", String(localized: "dessertspoon (UK)")),
+                ("tsp(m)", String(localized: "teaspoon (metric)")),
+                ("tsp(UK)", String(localized: "teaspoon (UK)")),
+                ("gill(US)", String(localized: "gill (US)")),
+                ("gill(UK)", String(localized: "gill (UK)")),
+                ("min(US)", String(localized: "minim (US)")),
+                ("min(UK)", String(localized: "minim (UK)")),
+                ("reg ton", String(localized: "ton register")),
+                ("ccf", String(localized: "ccf")),
+                ("hcf", String(localized: "hundred-cubic foot")),
+                ("ac·ft", String(localized: "acre-foot")),
+                ("ac·ft(US)", String(localized: "acre-foot (US survey)")),
+                ("ac·in", String(localized: "acre-inch")),
+                ("das", String(localized: "dekastere")),
+                ("s", String(localized: "stere")),
+                ("ds", String(localized: "decistere")),
+                ("cord", String(localized: "cord")),
+                ("tun", String(localized: "tun")),
+                ("hhd", String(localized: "hogshead")),
+                ("bf", String(localized: "board foot")),
+                ("dr", String(localized: "dram")),
+                ("cor(B)", String(localized: "cor (Biblical)")),
+                ("homer(B)", String(localized: "homer (Biblical)")),
+                ("bath(B)", String(localized: "bath (Biblical)")),
+                ("hin(B)", String(localized: "hin (Biblical)")),
+                ("cab(B)", String(localized: "cab (Biblical)")),
+                ("log(B)", String(localized: "log (Biblical)")),
+                ("taza", String(localized: "Taza (Spanish)")),
+                ("VE", String(localized: "Earth's volume"))
+            ]
         case .temperature:
             return [
                 ("K", String(localized: "Kelvin")),
@@ -891,103 +891,103 @@ enum CommonUnitsCategory: String, CaseIterable, UnitCategory {
                 ("°Ré", String(localized: "Reaumur")),
                 ("Tw", String(localized: "Triple point of water"))
             ]
-            case .area:
-                return [
-                    ("m²", String(localized: "square meter")),
-                    ("km²", String(localized: "square kilometer")),
-                    ("cm²", String(localized: "square centimeter")),
-                    ("mm²", String(localized: "square millimeter")),
-                    ("µm²", String(localized: "square micrometer")),
-                    ("ha", String(localized: "hectare")),
-                    ("ac", String(localized: "acre")),
-                    ("mi²", String(localized: "square mile")),
-                    ("yd²", String(localized: "square yard")),
-                    ("ft²", String(localized: "square foot")),
-                    ("in²", String(localized: "square inch")),
-                    ("hm²", String(localized: "square hectometer")),
-                    ("dam²", String(localized: "square dekameter")),
-                    ("dm²", String(localized: "square decimeter")),
-                    ("nm²", String(localized: "square nanometer")),
-                    ("a", String(localized: "are")),
-                    ("b", String(localized: "barn")),
-                    ("mi²(US)", String(localized: "square mile (US survey)")),
-                    ("ft²(US)", String(localized: "square foot (US survey)")),
-                    ("cir in", String(localized: "circular inch")),
-                    ("twp", String(localized: "township")),
-                    ("sec", String(localized: "section")),
-                    ("ac(US)", String(localized: "acre (US survey)")),
-                    ("rood", String(localized: "rood")),
-                    ("ch²", String(localized: "square chain")),
-                    ("rod²", String(localized: "square rod")),
-                    ("rod²(US)", String(localized: "square rod (US survey)")),
-                    ("per²", String(localized: "square perch")),
-                    ("pole²", String(localized: "square pole")),
-                    ("mil²", String(localized: "square mil")),
-                    ("cir mil", String(localized: "circular mil")),
-                    ("homestead", String(localized: "homestead")),
-                    ("sabin", String(localized: "sabin")),
-                    ("arpent", String(localized: "arpent")),
-                    ("cuerda", String(localized: "cuerda")),
-                    ("plaza", String(localized: "plaza")),
-                    ("var²(cas)", String(localized: "varas castellanas cuad")),
-                    ("var²(con)", String(localized: "varas conuqueras cuad")),
-                    ("σe", String(localized: "Electron cross section"))
-                ]
-            case .pressure:
-                return [
-                    ("Pa", String(localized: "pascal")),
-                    ("kPa", String(localized: "kilopascal")),
-                    ("bar", String(localized: "bar")),
-                    ("psi", String(localized: "psi")),
-                    ("ksi", String(localized: "ksi")),
-                    ("atm", String(localized: "Standard atmosphere")),
-                    ("EPa", String(localized: "exapascal")),
-                    ("PPa", String(localized: "petapascal")),
-                    ("TPa", String(localized: "terapascal")),
-                    ("GPa", String(localized: "gigapascal")),
-                    ("MPa", String(localized: "megapascal")),
-                    ("hPa", String(localized: "hectopascal")),
-                    ("daPa", String(localized: "dekapascal")),
-                    ("dPa", String(localized: "decipascal")),
-                    ("cPa", String(localized: "centipascal")),
-                    ("mPa", String(localized: "millipascal")),
-                    ("µPa", String(localized: "micropascal")),
-                    ("nPa", String(localized: "nanopascal")),
-                    ("pPa", String(localized: "picopascal")),
-                    ("fPa", String(localized: "femtopascal")),
-                    ("aPa", String(localized: "attopascal")),
-                    ("N/m²", String(localized: "newton/square meter")),
-                    ("N/cm²", String(localized: "newton/square centimeter")),
-                    ("N/mm²", String(localized: "newton/square millimeter")),
-                    ("kN/m²", String(localized: "kilonewton/square meter")),
-                    ("mbar", String(localized: "millibar")),
-                    ("µbar", String(localized: "microbar")),
-                    ("dyn/cm²", String(localized: "dyne/square centimeter")),
-                    ("kgf/m²", String(localized: "kilogram-force/square meter")),
-                    ("kgf/cm²", String(localized: "kilogram-force/sq. cm")),
-                    ("kgf/mm²", String(localized: "kilogram-force/sq. millimeter")),
-                    ("gf/cm²", String(localized: "gram-force/sq. centimeter")),
-                    ("tonf(sh)/ft²", String(localized: "ton-force (short)/sq. foot")),
-                    ("tonf(sh)/in²", String(localized: "ton-force (short)/sq. inch")),
-                    ("tonf(l)/ft²", String(localized: "ton-force (long)/square foot")),
-                    ("tonf(l)/in²", String(localized: "ton-force (long)/square inch")),
-                    ("kipf/in²", String(localized: "kip-force/square inch")),
-                    ("lbf/ft²", String(localized: "pound-force/square foot")),
-                    ("lbf/in²", String(localized: "pound-force/square inch")),
-                    ("pdl/ft²", String(localized: "poundal/square foot")),
-                    ("Torr", String(localized: "torr")),
-                    ("cmHg", String(localized: "centimeter mercury (0°C)")),
-                    ("mmHg", String(localized: "millimeter mercury (0°C)")),
-                    ("inHg", String(localized: "inch mercury (32°F)")),
-                    ("inHg(60°F)", String(localized: "inch mercury (60°F)")),
-                    ("cmH2O", String(localized: "centimeter water (4°C)")),
-                    ("mmH2O", String(localized: "millimeter water (4°C)")),
-                    ("inH2O", String(localized: "inch water (4°C)")),
-                    ("ftH2O", String(localized: "foot water (4°C)")),
-                    ("inH2O(60°F)", String(localized: "inch water (60°F)")),
-                    ("ftH2O(60°F)", String(localized: "foot water (60°F)")),
-                    ("at", String(localized: "atmosphere technical"))
-                ]
+        case .area:
+            return [
+                ("m²", String(localized: "square meter")),
+                ("km²", String(localized: "square kilometer")),
+                ("cm²", String(localized: "square centimeter")),
+                ("mm²", String(localized: "square millimeter")),
+                ("µm²", String(localized: "square micrometer")),
+                ("ha", String(localized: "hectare")),
+                ("ac", String(localized: "acre")),
+                ("mi²", String(localized: "square mile")),
+                ("yd²", String(localized: "square yard")),
+                ("ft²", String(localized: "square foot")),
+                ("in²", String(localized: "square inch")),
+                ("hm²", String(localized: "square hectometer")),
+                ("dam²", String(localized: "square dekameter")),
+                ("dm²", String(localized: "square decimeter")),
+                ("nm²", String(localized: "square nanometer")),
+                ("a", String(localized: "are")),
+                ("b", String(localized: "barn")),
+                ("mi²(US)", String(localized: "square mile (US survey)")),
+                ("ft²(US)", String(localized: "square foot (US survey)")),
+                ("cir in", String(localized: "circular inch")),
+                ("twp", String(localized: "township")),
+                ("sec", String(localized: "section")),
+                ("ac(US)", String(localized: "acre (US survey)")),
+                ("rood", String(localized: "rood")),
+                ("ch²", String(localized: "square chain")),
+                ("rod²", String(localized: "square rod")),
+                ("rod²(US)", String(localized: "square rod (US survey)")),
+                ("per²", String(localized: "square perch")),
+                ("pole²", String(localized: "square pole")),
+                ("mil²", String(localized: "square mil")),
+                ("cir mil", String(localized: "circular mil")),
+                ("homestead", String(localized: "homestead")),
+                ("sabin", String(localized: "sabin")),
+                ("arpent", String(localized: "arpent")),
+                ("cuerda", String(localized: "cuerda")),
+                ("plaza", String(localized: "plaza")),
+                ("var²(cas)", String(localized: "varas castellanas cuad")),
+                ("var²(con)", String(localized: "varas conuqueras cuad")),
+                ("σe", String(localized: "Electron cross section"))
+            ]
+        case .pressure:
+            return [
+                ("Pa", String(localized: "pascal")),
+                ("kPa", String(localized: "kilopascal")),
+                ("bar", String(localized: "bar")),
+                ("psi", String(localized: "psi")),
+                ("ksi", String(localized: "ksi")),
+                ("atm", String(localized: "Standard atmosphere")),
+                ("EPa", String(localized: "exapascal")),
+                ("PPa", String(localized: "petapascal")),
+                ("TPa", String(localized: "terapascal")),
+                ("GPa", String(localized: "gigapascal")),
+                ("MPa", String(localized: "megapascal")),
+                ("hPa", String(localized: "hectopascal")),
+                ("daPa", String(localized: "dekapascal")),
+                ("dPa", String(localized: "decipascal")),
+                ("cPa", String(localized: "centipascal")),
+                ("mPa", String(localized: "millipascal")),
+                ("µPa", String(localized: "micropascal")),
+                ("nPa", String(localized: "nanopascal")),
+                ("pPa", String(localized: "picopascal")),
+                ("fPa", String(localized: "femtopascal")),
+                ("aPa", String(localized: "attopascal")),
+                ("N/m²", String(localized: "newton/square meter")),
+                ("N/cm²", String(localized: "newton/square centimeter")),
+                ("N/mm²", String(localized: "newton/square millimeter")),
+                ("kN/m²", String(localized: "kilonewton/square meter")),
+                ("mbar", String(localized: "millibar")),
+                ("µbar", String(localized: "microbar")),
+                ("dyn/cm²", String(localized: "dyne/square centimeter")),
+                ("kgf/m²", String(localized: "kilogram-force/square meter")),
+                ("kgf/cm²", String(localized: "kilogram-force/sq. cm")),
+                ("kgf/mm²", String(localized: "kilogram-force/sq. millimeter")),
+                ("gf/cm²", String(localized: "gram-force/sq. centimeter")),
+                ("tonf(sh)/ft²", String(localized: "ton-force (short)/sq. foot")),
+                ("tonf(sh)/in²", String(localized: "ton-force (short)/sq. inch")),
+                ("tonf(l)/ft²", String(localized: "ton-force (long)/square foot")),
+                ("tonf(l)/in²", String(localized: "ton-force (long)/square inch")),
+                ("kipf/in²", String(localized: "kip-force/square inch")),
+                ("lbf/ft²", String(localized: "pound-force/square foot")),
+                ("lbf/in²", String(localized: "pound-force/square inch")),
+                ("pdl/ft²", String(localized: "poundal/square foot")),
+                ("Torr", String(localized: "torr")),
+                ("cmHg", String(localized: "centimeter mercury (0°C)")),
+                ("mmHg", String(localized: "millimeter mercury (0°C)")),
+                ("inHg", String(localized: "inch mercury (32°F)")),
+                ("inHg(60°F)", String(localized: "inch mercury (60°F)")),
+                ("cmH2O", String(localized: "centimeter water (4°C)")),
+                ("mmH2O", String(localized: "millimeter water (4°C)")),
+                ("inH2O", String(localized: "inch water (4°C)")),
+                ("ftH2O", String(localized: "foot water (4°C)")),
+                ("inH2O(60°F)", String(localized: "inch water (60°F)")),
+                ("ftH2O(60°F)", String(localized: "foot water (60°F)")),
+                ("at", String(localized: "atmosphere technical"))
+            ]
         case .angle:
             return [
                 ("°", String(localized: "degree")),

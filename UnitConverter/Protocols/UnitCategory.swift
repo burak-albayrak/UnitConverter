@@ -14,6 +14,6 @@ protocol UnitCategory {
     var info: LocalizedStringKey { get }
     var availableUnits: [(symbol: String, name: String)] { get }
     var localizedName: LocalizedStringKey { get }
-
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal
 }

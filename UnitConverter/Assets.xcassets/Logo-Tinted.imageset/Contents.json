@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Welcome2.jpeg",
+      "filename" : "Logo-Tinted.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Welcome2 1.jpeg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Welcome2 2.jpeg",
       "idiom" : "universal",
       "scale" : "3x"
     }

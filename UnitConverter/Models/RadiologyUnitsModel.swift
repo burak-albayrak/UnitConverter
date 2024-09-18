@@ -13,7 +13,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
     case radiationActivity = "Radiation - Activity"
     case radiationExposure = "Radiation - Exposure"
     case radiationAbsorbedDose = "Radiation - Absorbed Dose"
-
+    
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
@@ -30,7 +30,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             return convertRadiationAbsorbedDose(value, from: fromUnit, to: toUnit)
         }
     }
-
+    
     private func convertRadiation(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         let grayPerSecondValues: [String: Decimal] = [
             "Gy/s": 1,
@@ -60,7 +60,7 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         guard let fromValue = grayPerSecondValues[fromUnit], let toValue = grayPerSecondValues[toUnit] else {
             return value
         }
-
+        
         let grayPerSecond = value * fromValue
         return grayPerSecond / toValue
     }
@@ -84,11 +84,11 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "dis/s": 1,
             "dis/min": Decimal(1) / Decimal(60)
         ]
-
+        
         guard let fromValue = becquerelValues[fromUnit], let toValue = becquerelValues[toUnit] else {
             return value
         }
-
+        
         let becquerels = value * fromValue
         return becquerels / toValue
     }
@@ -103,11 +103,11 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "P": Decimal(string: "0.000258")!,
             "rep": Decimal(string: "0.000258")!
         ]
-
+        
         guard let fromValue = coulombPerKilogramValues[fromUnit], let toValue = coulombPerKilogramValues[toUnit] else {
             return value
         }
-
+        
         let coulombPerKilogram = value * fromValue
         return coulombPerKilogram / toValue
     }
@@ -138,11 +138,11 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
             "fGy": Decimal(sign: .plus, exponent: -13, significand: 1),
             "aGy": Decimal(sign: .plus, exponent: -16, significand: 1)
         ]
-
+        
         guard let fromValue = radValues[fromUnit], let toValue = radValues[toUnit] else {
             return value
         }
-
+        
         let rads = value * fromValue
         return rads / toValue
     }
@@ -258,4 +258,3 @@ enum RadiollogyUnitsCategory: String, CaseIterable, UnitCategory {
         }
     }
 }
-

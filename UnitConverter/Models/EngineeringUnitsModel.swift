@@ -376,7 +376,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
         default:
             return value
         }
-
+        
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin

@@ -27,13 +27,13 @@ class CurrencyConversionViewModel: ObservableObject {
     func setDefaultCurrencies() {
         let usdIndex = availableCurrencies.firstIndex(where: { $0.symbol == "USD" }) ?? 0
         let eurIndex = availableCurrencies.firstIndex(where: { $0.symbol == "EUR" }) ?? 1
-
+        
         selectedFromCurrencyIndex = usdIndex
         selectedToCurrencyIndex = eurIndex
         
         convertCurrency()
     }
-
+    
     
     func fetchExchangeRates() {
         isLoading = true
@@ -75,7 +75,7 @@ class CurrencyConversionViewModel: ObservableObject {
         formatter.minimumFractionDigits = 2
         formatter.usesGroupingSeparator = false
         formatter.decimalSeparator = "."
-
+        
         convertedValue = formatter.string(from: NSDecimalNumber(decimal: result)) ?? ""
     }
     

@@ -2790,17 +2790,6 @@
         }
       }
     },
-    "centiwatt-hour" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "santivatt-saat"
-          }
-        }
-      }
-    },
     "Central African CFA Franc" : {
       "localizations" : {
         "en" : {
@@ -4118,17 +4107,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "desiwatt"
-          }
-        }
-      }
-    },
-    "deciwatt-hour" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "desiwatt-saat"
           }
         }
       }
@@ -5505,17 +5483,6 @@
         }
       }
     },
-    "exajoule" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "exajoule"
-          }
-        }
-      }
-    },
     "exajoule/second" : {
       "localizations" : {
         "tr" : {
@@ -5616,33 +5583,12 @@
         }
       }
     },
-    "exawatt-hour" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "exawatt-saat"
-          }
-        }
-      }
-    },
     "Fahrenheit" : {
       "localizations" : {
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fahrenheit"
-          }
-        }
-      }
-    },
-    "Failed to create preview: %@" : {
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Önizleme oluşturulamadı: %@"
           }
         }
       }
@@ -8607,17 +8553,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "joule/saniye"
-          }
-        }
-      }
-    },
-    "joule/second (SI)" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "joule/saniye (SI)"
           }
         }
       }
@@ -12618,17 +12553,6 @@
         }
       }
     },
-    "milliwatt-hour" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "milivatt-saat"
-          }
-        }
-      }
-    },
     "milliweber" : {
       "localizations" : {
         "tr" : {
@@ -14137,17 +14061,6 @@
         }
       }
     },
-    "petajoule" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "petajoule"
-          }
-        }
-      }
-    },
     "petajoule/second" : {
       "localizations" : {
         "tr" : {
@@ -14244,17 +14157,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "petawatt"
-          }
-        }
-      }
-    },
-    "petawatt-hour" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "petawatt-saat"
           }
         }
       }
@@ -17385,17 +17287,6 @@
         }
       }
     },
-    "terajoule" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "terajoule"
-          }
-        }
-      }
-    },
     "terajoule/second" : {
       "localizations" : {
         "tr" : {
@@ -17492,17 +17383,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "terawatt"
-          }
-        }
-      }
-    },
-    "terawatt-hour" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "terawatt-saat"
           }
         }
       }

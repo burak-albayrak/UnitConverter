@@ -430,7 +430,7 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             return "ViscosityKinematicInfo"
         }
     }
-        
+    
     var availableUnits: [(symbol: String, name: String)] {
         switch self {
         case .flow:

@@ -65,129 +65,129 @@ struct FavoritesView: View {
     @ViewBuilder
     private func destinationView(for favorite: FavoriteConversion) -> some View {
         switch favorite.category {
-        // CommonUnitsCategory
+            // CommonUnitsCategory
         case CommonUnitsCategory.length.rawValue,
-             CommonUnitsCategory.mass.rawValue,
-             CommonUnitsCategory.volume.rawValue,
-             CommonUnitsCategory.temperature.rawValue,
-             CommonUnitsCategory.area.rawValue,
-             CommonUnitsCategory.pressure.rawValue,
-             CommonUnitsCategory.angle.rawValue,
-             CommonUnitsCategory.speed.rawValue,
-             CommonUnitsCategory.duration.rawValue:
+            CommonUnitsCategory.mass.rawValue,
+            CommonUnitsCategory.volume.rawValue,
+            CommonUnitsCategory.temperature.rawValue,
+            CommonUnitsCategory.area.rawValue,
+            CommonUnitsCategory.pressure.rawValue,
+            CommonUnitsCategory.angle.rawValue,
+            CommonUnitsCategory.speed.rawValue,
+            CommonUnitsCategory.duration.rawValue:
             if let category = CommonUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // EngineeringUnitsCategory
+            
+            // EngineeringUnitsCategory
         case EngineeringUnitsCategory.length.rawValue,
-                EngineeringUnitsCategory.mass.rawValue,
-                EngineeringUnitsCategory.volume.rawValue,
-                EngineeringUnitsCategory.temperature.rawValue,
-                EngineeringUnitsCategory.area.rawValue,
-                EngineeringUnitsCategory.pressure.rawValue,
-                EngineeringUnitsCategory.angle.rawValue,
-                EngineeringUnitsCategory.speed.rawValue,
-                EngineeringUnitsCategory.duration.rawValue,
-                EngineeringUnitsCategory.energy.rawValue,
-                EngineeringUnitsCategory.power.rawValue,
-                EngineeringUnitsCategory.force.rawValue,
-                EngineeringUnitsCategory.fuelConsumption.rawValue,
-                EngineeringUnitsCategory.volumeDry.rawValue,
-                EngineeringUnitsCategory.velocityAngular.rawValue,
-                EngineeringUnitsCategory.acceleration.rawValue,
-                EngineeringUnitsCategory.accelerationAngular.rawValue,
-                EngineeringUnitsCategory.density.rawValue,
-                EngineeringUnitsCategory.specificVolume.rawValue,
-                EngineeringUnitsCategory.momentOfInertia.rawValue,
-                EngineeringUnitsCategory.momentOfForce.rawValue,
-                EngineeringUnitsCategory.torque.rawValue:
+            EngineeringUnitsCategory.mass.rawValue,
+            EngineeringUnitsCategory.volume.rawValue,
+            EngineeringUnitsCategory.temperature.rawValue,
+            EngineeringUnitsCategory.area.rawValue,
+            EngineeringUnitsCategory.pressure.rawValue,
+            EngineeringUnitsCategory.angle.rawValue,
+            EngineeringUnitsCategory.speed.rawValue,
+            EngineeringUnitsCategory.duration.rawValue,
+            EngineeringUnitsCategory.energy.rawValue,
+            EngineeringUnitsCategory.power.rawValue,
+            EngineeringUnitsCategory.force.rawValue,
+            EngineeringUnitsCategory.fuelConsumption.rawValue,
+            EngineeringUnitsCategory.volumeDry.rawValue,
+            EngineeringUnitsCategory.velocityAngular.rawValue,
+            EngineeringUnitsCategory.acceleration.rawValue,
+            EngineeringUnitsCategory.accelerationAngular.rawValue,
+            EngineeringUnitsCategory.density.rawValue,
+            EngineeringUnitsCategory.specificVolume.rawValue,
+            EngineeringUnitsCategory.momentOfInertia.rawValue,
+            EngineeringUnitsCategory.momentOfForce.rawValue,
+            EngineeringUnitsCategory.torque.rawValue:
             if let category = EngineeringUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // HeatUnitsCategory
+            
+            // HeatUnitsCategory
         case HeatUnitsCategory.fuelEfficiencyMass.rawValue,
-             HeatUnitsCategory.fuelEfficiencyVolume.rawValue,
-             HeatUnitsCategory.temperatureInterval.rawValue,
-             HeatUnitsCategory.thermalExpansion.rawValue,
-             HeatUnitsCategory.thermalResistance.rawValue,
-             HeatUnitsCategory.thermalConductivity.rawValue,
-             HeatUnitsCategory.spesificHeatCapacity.rawValue,
-             HeatUnitsCategory.heatDensity.rawValue,
-             HeatUnitsCategory.heatFluxDensity.rawValue,
-             HeatUnitsCategory.heatTransverCoefficient.rawValue:
+            HeatUnitsCategory.fuelEfficiencyVolume.rawValue,
+            HeatUnitsCategory.temperatureInterval.rawValue,
+            HeatUnitsCategory.thermalExpansion.rawValue,
+            HeatUnitsCategory.thermalResistance.rawValue,
+            HeatUnitsCategory.thermalConductivity.rawValue,
+            HeatUnitsCategory.spesificHeatCapacity.rawValue,
+            HeatUnitsCategory.heatDensity.rawValue,
+            HeatUnitsCategory.heatFluxDensity.rawValue,
+            HeatUnitsCategory.heatTransverCoefficient.rawValue:
             if let category = HeatUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // FluidsUnitsCategory
+            
+            // FluidsUnitsCategory
         case FluidsUnitsCategory.flow.rawValue,
-             FluidsUnitsCategory.flowMass.rawValue,
-             FluidsUnitsCategory.flowMolar.rawValue,
-             FluidsUnitsCategory.massFluxDensity.rawValue,
-             FluidsUnitsCategory.concentrationMolar.rawValue,
-             FluidsUnitsCategory.concentrationSolution.rawValue,
-             FluidsUnitsCategory.viscosityDynamic.rawValue,
-             FluidsUnitsCategory.viscosityKinematic.rawValue,
-             FluidsUnitsCategory.surfaceTension.rawValue,
-             FluidsUnitsCategory.permeability.rawValue:
+            FluidsUnitsCategory.flowMass.rawValue,
+            FluidsUnitsCategory.flowMolar.rawValue,
+            FluidsUnitsCategory.massFluxDensity.rawValue,
+            FluidsUnitsCategory.concentrationMolar.rawValue,
+            FluidsUnitsCategory.concentrationSolution.rawValue,
+            FluidsUnitsCategory.viscosityDynamic.rawValue,
+            FluidsUnitsCategory.viscosityKinematic.rawValue,
+            FluidsUnitsCategory.surfaceTension.rawValue,
+            FluidsUnitsCategory.permeability.rawValue:
             if let category = FluidsUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // LightUnitsCategory
+            
+            // LightUnitsCategory
         case LightUnitsCategory.luminance.rawValue,
-             LightUnitsCategory.luminousIntensity.rawValue,
-             LightUnitsCategory.illumination.rawValue,
-             LightUnitsCategory.digitalImageResolution.rawValue,
-             LightUnitsCategory.frequencyWavelength.rawValue:
+            LightUnitsCategory.luminousIntensity.rawValue,
+            LightUnitsCategory.illumination.rawValue,
+            LightUnitsCategory.digitalImageResolution.rawValue,
+            LightUnitsCategory.frequencyWavelength.rawValue:
             if let category = LightUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // ElectricityUnitsCategory
+            
+            // ElectricityUnitsCategory
         case ElectricityUnitsCategory.charge.rawValue,
-             ElectricityUnitsCategory.linearChargeDensity.rawValue,
-             ElectricityUnitsCategory.surfaceChargeDensity.rawValue,
-             ElectricityUnitsCategory.volumeChargeDensity.rawValue,
-             ElectricityUnitsCategory.current.rawValue,
-             ElectricityUnitsCategory.linearCurrentDensity.rawValue,
-             ElectricityUnitsCategory.surfaceCurrentDensity.rawValue,
-             ElectricityUnitsCategory.electricFieldStrength.rawValue,
-             ElectricityUnitsCategory.electricPotential.rawValue,
-             ElectricityUnitsCategory.electricResistance.rawValue,
-             ElectricityUnitsCategory.electricResistivity.rawValue,
-             ElectricityUnitsCategory.electricConductance.rawValue,
-             ElectricityUnitsCategory.electricConductivity.rawValue,
-             ElectricityUnitsCategory.electrostaticCapacitance.rawValue,
-             ElectricityUnitsCategory.inductance.rawValue:
+            ElectricityUnitsCategory.linearChargeDensity.rawValue,
+            ElectricityUnitsCategory.surfaceChargeDensity.rawValue,
+            ElectricityUnitsCategory.volumeChargeDensity.rawValue,
+            ElectricityUnitsCategory.current.rawValue,
+            ElectricityUnitsCategory.linearCurrentDensity.rawValue,
+            ElectricityUnitsCategory.surfaceCurrentDensity.rawValue,
+            ElectricityUnitsCategory.electricFieldStrength.rawValue,
+            ElectricityUnitsCategory.electricPotential.rawValue,
+            ElectricityUnitsCategory.electricResistance.rawValue,
+            ElectricityUnitsCategory.electricResistivity.rawValue,
+            ElectricityUnitsCategory.electricConductance.rawValue,
+            ElectricityUnitsCategory.electricConductivity.rawValue,
+            ElectricityUnitsCategory.electrostaticCapacitance.rawValue,
+            ElectricityUnitsCategory.inductance.rawValue:
             if let category = ElectricityUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // MagnetismUnitsCategory
+            
+            // MagnetismUnitsCategory
         case MagnetismUnitsCategory.magnetomotiveForce.rawValue,
-             MagnetismUnitsCategory.magneticFieldStrength.rawValue,
-             MagnetismUnitsCategory.magneticFlux.rawValue,
-             MagnetismUnitsCategory.magneticFluxDensity.rawValue:
+            MagnetismUnitsCategory.magneticFieldStrength.rawValue,
+            MagnetismUnitsCategory.magneticFlux.rawValue,
+            MagnetismUnitsCategory.magneticFluxDensity.rawValue:
             if let category = MagnetismUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // RadiollogyUnitsCategory
+            
+            // RadiollogyUnitsCategory
         case RadiollogyUnitsCategory.radiation.rawValue,
-             RadiollogyUnitsCategory.radiationActivity.rawValue,
-             RadiollogyUnitsCategory.radiationExposure.rawValue,
-             RadiollogyUnitsCategory.radiationAbsorbedDose.rawValue:
+            RadiollogyUnitsCategory.radiationActivity.rawValue,
+            RadiollogyUnitsCategory.radiationExposure.rawValue,
+            RadiollogyUnitsCategory.radiationAbsorbedDose.rawValue:
             if let category = RadiollogyUnitsCategory(rawValue: favorite.category) {
                 UnitConversionView(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
-        
-        // CurrencyUnitsCategory
+            
+            // CurrencyUnitsCategory
         case CurrencyUnitsCategory.currency.rawValue:
             CurrencyConversionView()
-        
+            
         default:
             Text("Unsupported category: \(favorite.category)")
         }

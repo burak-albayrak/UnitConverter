@@ -172,7 +172,7 @@ struct UnitConversionView<T: UnitCategory>: View {
                         .font(.title3)
                         .foregroundColor(.cyan)
                 })
-
+                
             }
         }
         .onAppear {

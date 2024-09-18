@@ -21,7 +21,7 @@ struct CategoryInfoView<T: UnitCategory>: View {
             }
             .padding(.top, 40)
             .font(.largeTitle)
-
+            
             ScrollView {
                 Text(category.info)
                     .padding(.horizontal, 33)
@@ -39,15 +39,15 @@ struct CategoryInfoView<T: UnitCategory>: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 27)
                         .frame(width: 160, height: 54)
-                    .foregroundStyle(.cyan.gradient)
+                        .foregroundStyle(.cyan.gradient)
                     Text("OK")
                         .font(.headline)
                         .bold()
                         .foregroundColor(.white)
                 }
-
+                
             })
-                .padding(.bottom, 20)
+            .padding(.bottom, 20)
         }
     }
 }

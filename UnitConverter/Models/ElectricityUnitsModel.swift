@@ -84,11 +84,11 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "F": Decimal(string: "96485.309000004")!,
             "e": Decimal(string: "1.60217733e-19")!
         ]
-
+        
         guard let fromValue = coulombValues[fromUnit], let toValue = coulombValues[toUnit] else {
             return value
         }
-
+        
         let coulombs = value * fromValue
         return coulombs / toValue
     }
@@ -102,11 +102,11 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
             "abC/cm": 1000,
             "abC/in": Decimal(string: "393.7007874016")!
         ]
-
+        
         guard let fromValue = coulombPerMeterValues[fromUnit], let toValue = coulombPerMeterValues[toUnit] else {
             return value
         }
-
+        
         let coulombsPerMeter = value * fromValue
         return coulombsPerMeter / toValue
     }
@@ -682,4 +682,5 @@ enum ElectricityUnitsCategory: String, CaseIterable, UnitCategory {
                 ("esuL", String(localized: "ESU of inductance"))
             ]
         }
-    }}
+    }
+}

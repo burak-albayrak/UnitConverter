@@ -150,7 +150,7 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         default:
             return value
         }
-
+        
         switch toUnit.lowercased() {
         case "kelvin", "k":
             return kelvin
@@ -270,10 +270,10 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
         ]
         
         guard let fromValue = joulePerSquareMeterValues[fromUnit], let toValue = joulePerSquareMeterValues[toUnit] else {
-
+            
             return value
         }
-
+        
         let joulePerSquareMeter = value * fromValue
         return joulePerSquareMeter / toValue
     }

@@ -10,7 +10,7 @@ import SwiftUI
 
 enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
     case currency = "Currency"
-
+    
     static var exchangeRates: [String: Decimal] = [:]
     
     static func updateExchangeRates(completion: @escaping (Bool) -> Void) {
@@ -29,32 +29,32 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
     var localizedName: LocalizedStringKey {
         LocalizedStringKey(self.rawValue)
     }
-
+    
     func convert(_ value: Decimal, from fromUnit: String, to toUnit: String) -> Decimal {
         guard let fromRate = CurrencyUnitsCategory.exchangeRates[fromUnit],
               let toRate = CurrencyUnitsCategory.exchangeRates[toUnit] else {
             return value // Return original value if conversion rates are not available
         }
-
+        
         // Convert to USD first, then to the target currency
         let usdValue = value / fromRate
         return usdValue * toRate
     }
-
+    
     var icon: String {
         return "dollarsign.circle"
     }
-
+    
     var info: LocalizedStringKey {
         return "CurrencyInfo"
     }
-
+    
     var availableUnits: [(symbol: String, name: String)] {
         return CurrencyUnitsCategory.exchangeRates.keys.sorted().map { code in
             (symbol: code, name: getCurrencyFullName(for: code))
         }
     }
-
+    
     // Predefined list of common currencies for fallback
     static let commonCurrencies = [
         "USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "HKD", "NZD",
@@ -75,12 +75,12 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
         "UAH", "UGX", "UYU", "UZS", "VES", "VND", "VUV", "WST", "XAF", "XCD",
         "XDR", "XOF", "XPF", "YER", "ZMW", "ZWL"
     ]
-
+    
     // Fallback method if API fails
     static func setDefaultExchangeRates() {
         exchangeRates = Dictionary(uniqueKeysWithValues: commonCurrencies.map { ($0, 1.0) })
     }
-
+    
     func getCurrencyFullName(for code: String) -> String {
         switch code {
         case "USD": return String(localized: "United States Dollar")
@@ -247,4 +247,5 @@ enum CurrencyUnitsCategory: String, CaseIterable, UnitCategory {
         case "AFN": return String(localized: "Afghan Afghani")
         default: return code
         }
-    }}
+    }
+}
