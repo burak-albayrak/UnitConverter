@@ -5593,6 +5593,9 @@
         }
       }
     },
+    "Failed to create preview: %@" : {
+
+    },
     "Falkland Islands Pound" : {
       "localizations" : {
         "en" : {
@@ -5725,6 +5728,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geri Bildirim"
+          }
+        }
+      }
+    },
+    "Feedback for Unit Converter App" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Dönüştürücü için geri bildirim"
           }
         }
       }
@@ -6317,6 +6330,7 @@
       }
     },
     "From Currency" : {
+      "extractionState" : "manual",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -6324,7 +6338,8 @@
             "value" : "Bu Birimden"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "From Unit" : {
       "localizations" : {
@@ -15941,6 +15956,7 @@
       }
     },
     "Select Currencies" : {
+      "extractionState" : "manual",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -16260,6 +16276,17 @@
         }
       }
     },
+    "Specific Heat Capacity" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Özgül Isı Kapasitesi"
+          }
+        }
+      }
+    },
     "Specific Volume" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -16312,17 +16339,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hız, bir nesnenin hareket ettiği veya zaman içinde konumunu değiştirdiği oranı ölçer. Fizik ve günlük yaşamda temel bir kavramdır ve bir şeyin ne kadar hızlı hareket ettiğini açıklar.\n\nHızın SI birimi, bir saniye içinde metre cinsinden kat edilen mesafeyi temsil eden metre/saniyedir (m/s).\n\nDiğer yaygın birimler arasında kilometre/saat (km/h) ve mil/saat (mph) bulunur. Örneğin, saatte 60 km hızla giden bir araba, bir saatte 60 kilometre yol kat eder.\n\nHız, araç performansından spora, bilimsel deneylerden navigasyona kadar çeşitli uygulamalarda önemlidir.\n\nHızı anlamak, hareketi analiz etmek, performansı optimize etmek ve farklı durumlarda güvenliği sağlamak için hayati öneme sahiptir."
-          }
-        }
-      }
-    },
-    "Spesific Heat Capacity" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Özgül Isı Kapasitesi"
           }
         }
       }
@@ -17588,6 +17604,7 @@
       }
     },
     "To Currency" : {
+      "extractionState" : "manual",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

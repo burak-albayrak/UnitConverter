@@ -52,12 +52,12 @@ struct SettingsView: View {
                     .foregroundColor(.red)
                 }
                 
-                Section(header: Text("Support Me")) {
-                    Button("Buy Me a Coffee") {
-                        storeKit.purchaseCoffee()
-                    }
-                    .disabled(storeKit.isLoading)
-                }
+//                Section(header: Text("Support Me")) {
+//                    Button("Buy Me a Coffee") {
+//                        storeKit.purchaseCoffee()
+//                    }
+//                    .disabled(storeKit.isLoading)
+//                }
                 
                 Section(header: Text("Feedback")) {
                     Button("Feedback Me") {
@@ -82,7 +82,7 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $isShowingMailView) {
             MailView(result: $mailResult) { composer in
-                composer.setSubject("Feedback for Unit Converter App")
+                composer.setSubject(String(localized: "Feedback for Unit Converter App"))
                 composer.setToRecipients(["burak_albayrak0@icloud.com"])
             }
         }
