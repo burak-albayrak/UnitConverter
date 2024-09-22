@@ -35,7 +35,7 @@ The project follows the MVVM (Model-View-ViewModel) architecture to ensure a cle
 
 **Custom Unit Models:** Extends conversions beyond the limitations of the Measurement framework.
 
-**SwiftData:** Utilized for saving and retrieving user conversion history.
+**SwiftData:** Utilized for saving and retrieving user favorites.
 
 **NumberFormatter:** To format numbers in a locale-aware manner, ensuring proper decimal and group separators.
 
