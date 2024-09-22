@@ -1,4 +1,4 @@
-# UnitConverter
+# Unit Converter - Scientific
 
 UnitConverter is a SwiftUI-based application that allows users to convert various units across different categories such as length, temperature, time, volume, and more. 
 The app supports both SI and non-standard units and includes features like conversion history and localization for multiple languages.
