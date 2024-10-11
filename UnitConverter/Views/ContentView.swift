@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var mainMenuScale: CGFloat = 0.8
     @State private var mainMenuOpacity: Double = 0.0
     @State private var isTransitioningToMainMenu: Bool = false
+    @Environment(\.colorScheme) var colorScheme
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
         ZStack {
@@ -46,6 +48,8 @@ struct ContentView: View {
                 mainMenuOpacity = 1.0
             }
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .environment(\.colorScheme, isDarkMode ? .dark : .light)
     }
 }
 

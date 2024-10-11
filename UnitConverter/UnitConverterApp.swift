@@ -22,6 +22,7 @@ struct UnitConverterApp: App {
         WindowGroup {
             ContentView(hasSeenWelcomeScreen: $hasSeenWelcomeScreen)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
+                .environment(\.colorScheme, isDarkMode ? .dark : .light)
                 .environment(\.locale, .init(identifier: appLanguage))
         }
         .modelContainer(for: FavoriteConversion.self)

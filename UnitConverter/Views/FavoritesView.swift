@@ -5,6 +5,7 @@ struct FavoritesView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @StateObject private var favoritesViewModel = FavoritesViewModel()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     @State private var favorites: [FavoriteConversion] = []
     
     var body: some View {
@@ -48,6 +49,8 @@ struct FavoritesView: View {
             favoritesViewModel.setModelContext(modelContext)
             updateFavorites()
         }
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .environment(\.colorScheme, isDarkMode ? .dark : .light)
     }
     
     private func deleteFavorites(at offsets: IndexSet) {

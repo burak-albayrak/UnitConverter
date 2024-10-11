@@ -2003,6 +2003,7 @@
       }
     },
     "Buy Me a Coffee" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -5592,9 +5593,6 @@
           }
         }
       }
-    },
-    "Failed to create preview: %@" : {
-
     },
     "Falkland Islands Pound" : {
       "localizations" : {
@@ -16873,6 +16871,7 @@
       }
     },
     "Support Me" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

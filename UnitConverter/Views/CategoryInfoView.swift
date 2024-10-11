@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CategoryInfoView<T: UnitCategory>: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
+    @AppStorage("isDarkMode") private var isDarkMode = false
     var category: T
     
     var body: some View {
@@ -49,6 +51,9 @@ struct CategoryInfoView<T: UnitCategory>: View {
             })
             .padding(.bottom, 20)
         }
+        .background(isDarkMode ? Color.black : Color.white)
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .environment(\.colorScheme, isDarkMode ? .dark : .light)
     }
 }
 
