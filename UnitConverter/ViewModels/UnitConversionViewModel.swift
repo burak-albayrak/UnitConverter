@@ -11,6 +11,10 @@ import SwiftData
 
 final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     @Environment(\.modelContext) private var modelContext
+    @Published var availableCurrencies: [(symbol: String, name: String)] = [
+        ("USD", "United States Dollar"),
+        ("EUR", "Euro")
+    ]
     @Published var selectedFirstUnitIndex = 0
     @Published var selectedSecondUnitIndex = 1
     @Published var firstUnitInputValue = ""

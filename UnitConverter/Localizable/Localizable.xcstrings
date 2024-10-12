@@ -5607,9 +5607,6 @@
         }
       }
     },
-    "Failed to create preview: %@" : {
-
-    },
     "Falkland Islands Pound" : {
       "localizations" : {
         "en" : {
@@ -6356,7 +6353,6 @@
       "shouldTranslate" : false
     },
     "From Unit" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -15982,7 +15978,6 @@
       }
     },
     "Select Units" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -17007,7 +17002,6 @@
       }
     },
     "Swap" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -17672,7 +17666,6 @@
       }
     },
     "To Unit" : {
-      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

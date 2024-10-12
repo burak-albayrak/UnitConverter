@@ -64,6 +64,9 @@ struct CurrencyConversionView: View {
                             viewModel.convertCurrency()
                             viewModel.inputValue = viewModel.inputValue.replacingOccurrences(of: ",", with: ".")
                         }
+                    if viewModel.selectedFromCurrencyIndex < viewModel.availableCurrencies.count {
+                        Text(viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol)
+                    }
                     Spacer()
                     Button(action: {
                         if let pasteboardString = UIPasteboard.general.string {
@@ -234,4 +237,5 @@ struct CurrencyConversionView: View {
 
 #Preview {
     CurrencyConversionView()
+        .environmentObject(CurrencyConversionViewModel())
 }
