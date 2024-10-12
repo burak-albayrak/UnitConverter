@@ -52,7 +52,8 @@
             "value" : ""
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "a.u. of length" : {
       "localizations" : {
@@ -2022,7 +2023,8 @@
             "value" : "Bana bir kahve Ismarla"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "cab (Biblical)" : {
       "localizations" : {
@@ -5605,6 +5607,9 @@
         }
       }
     },
+    "Failed to create preview: %@" : {
+
+    },
     "Falkland Islands Pound" : {
       "localizations" : {
         "en" : {
@@ -6351,6 +6356,7 @@
       "shouldTranslate" : false
     },
     "From Unit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -15976,6 +15982,7 @@
       }
     },
     "Select Units" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
@@ -16884,13 +16891,20 @@
     "Support Me" : {
       "extractionState" : "stale",
       "localizations" : {
-        "tr" : {
+        "en" : {
           "stringUnit" : {
             "state" : "translated",
+            "value" : "Support Me"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
             "value" : "Bana Destek Ol"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Surface Charge Density" : {
       "extractionState" : "manual",
@@ -16988,6 +17002,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Surinam Doları"
+          }
+        }
+      }
+    },
+    "Swap" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap Units"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birimlerin Yerini Değiştir"
           }
         }
       }
@@ -17625,6 +17656,7 @@
       }
     },
     "To Unit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

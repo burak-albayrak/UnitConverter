@@ -126,6 +126,18 @@ struct UnitConversionView<T: UnitCategory>: View {
                     )
                 }
             }
+            
+            Section {
+                Button(action: swapUnitsAndValues) {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "arrow.up.arrow.down")
+                        Text(LocalizedStringKey("Swap"))
+                        Spacer()
+                    }
+                }
+                .foregroundStyle(.cyan)
+            }
         }
         .sheet(isPresented: $viewModel.isInfoPresented, content: {
             CategoryInfoView(category: viewModel.category)
@@ -203,6 +215,12 @@ struct UnitConversionView<T: UnitCategory>: View {
             .shadow(radius: 5)
             .transition(.move(edge: .bottom))
             .frame(maxHeight: .infinity, alignment: .bottom)
+    }
+    
+    private func swapUnitsAndValues() {
+        let tempIndex = viewModel.selectedFirstUnitIndex
+        viewModel.selectedFirstUnitIndex = viewModel.selectedSecondUnitIndex
+        viewModel.selectedSecondUnitIndex = tempIndex
     }
 }
 
