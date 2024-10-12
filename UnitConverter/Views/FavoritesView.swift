@@ -26,9 +26,9 @@ struct FavoritesView: View {
                     ForEach(favorites) { favorite in
                         NavigationLink(destination: destinationView(for: favorite)) {
                             VStack(alignment: .leading) {
-                                Text(favorite.category)
+                                Text(localizedString(favorite.category))
                                     .font(.headline)
-                                Text("\(favorite.fromUnit) to \(favorite.toUnit)")
+                                Text("\(localizedString(favorite.fromUnit))  ->  \(localizedString(favorite.toUnit))")
                                     .font(.subheadline)
                             }
                         }
@@ -196,6 +196,11 @@ struct FavoritesView: View {
         }
     }
 }
+
+func localizedString(_ key: String) -> String {
+    NSLocalizedString(key, comment: "")
+}
+
 
 #Preview {
     do {
