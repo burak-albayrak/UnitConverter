@@ -17023,6 +17023,22 @@
         }
       }
     },
+    "SwapCurrencies" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swap Currencies"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Dövizlerin Yerini Değiştir"
+          }
+        }
+      }
+    },
     "Swazi Lilangeni" : {
       "localizations" : {
         "en" : {

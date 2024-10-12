@@ -128,6 +128,18 @@ struct CurrencyConversionView: View {
                     )
                 }
             }
+            
+            Section {
+                Button(action: swapCurrencies) {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "arrow.up.arrow.down")
+                        Text(LocalizedStringKey("SwapCurrencies"))
+                        Spacer()
+                    }
+                }
+                .foregroundStyle(.cyan)
+            }
         }
         .navigationTitle(LocalizedStringKey("Currency"))
         .toolbar {
@@ -210,6 +222,13 @@ struct CurrencyConversionView: View {
             .shadow(radius: 5)
             .transition(.move(edge: .bottom))
             .frame(maxHeight: .infinity, alignment: .bottom)
+    }
+    
+    private func swapCurrencies() {
+        let tempIndex = viewModel.selectedFromCurrencyIndex
+        viewModel.selectedFromCurrencyIndex = viewModel.selectedToCurrencyIndex
+        viewModel.selectedToCurrencyIndex = tempIndex
+        viewModel.convertCurrency() 
     }
 }
 
