@@ -5607,9 +5607,6 @@
         }
       }
     },
-    "Failed to create preview: %@" : {
-
-    },
     "Falkland Islands Pound" : {
       "localizations" : {
         "en" : {
@@ -17021,7 +17018,6 @@
       }
     },
     "SwapCurrencies" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

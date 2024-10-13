@@ -16,7 +16,8 @@ struct CurrencyConversionView: View {
     @State private var isPasteButtonPressed: Bool = false
     @State private var isFavoriteButtonPressed: Bool = false
     @State private var addedToFavorites: Bool = false
-    
+    @State private var isFavorite: Bool = false
+
     var body: some View {
         Form {
             Section(LocalizedStringKey("Select Currencies")) {
@@ -157,29 +158,12 @@ struct CurrencyConversionView: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    favoritesViewModel.addFavorite(
-                        category: CurrencyUnitsCategory.currency.rawValue,
-                        fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
-                        toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
-                    )
-                    withAnimation(.easeIn(duration: 0.5)) {
-                        addedToFavorites = true
-                        isFavoriteButtonPressed = true
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        withAnimation(.easeOut(duration: 0.1)) {
-                            isFavoriteButtonPressed = false
-                        }
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        withAnimation(.easeOut(duration: 2)) {
-                            addedToFavorites = false
-                        }
-                    }
+                    toggleFavorite()
                 }) {
-                    Image(systemName: "star")
+                    Image(systemName: isFavorite ? "star.fill" : "star")
                         .font(.title3)
                         .foregroundColor(.cyan)
+                        .scaleEffect(isFavoriteButtonPressed ? 1.2 : 1.0)
                 }
             }
             
@@ -200,8 +184,10 @@ struct CurrencyConversionView: View {
         }
         .onAppear {
             favoritesViewModel.setModelContext(modelContext)
-            viewModel.setDefaultCurrencies()
+            updateFavoriteStatus()
         }
+        .onChange(of: viewModel.selectedFromCurrencyIndex) { _, _ in updateFavoriteStatus() }
+        .onChange(of: viewModel.selectedToCurrencyIndex) { _, _ in updateFavoriteStatus() }
         .sheet(isPresented: $viewModel.isInfoPresented) {
             CategoryInfoView(category: viewModel.category)
         }
@@ -215,6 +201,44 @@ struct CurrencyConversionView: View {
         }
     }
     
+    private func toggleFavorite() {
+        if isFavorite {
+            if let favorite = favoritesViewModel.getFavorites().first(where: {
+                $0.category == CurrencyUnitsCategory.currency.rawValue &&
+                $0.fromUnit == viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol &&
+                $0.toUnit == viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+            }) {
+                favoritesViewModel.removeFavorite(favorite)
+            }
+        } else {
+            favoritesViewModel.addFavorite(
+                category: CurrencyUnitsCategory.currency.rawValue,
+                fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
+                toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+            )
+        }
+        
+        withAnimation(.spring()) {
+            isFavorite.toggle()
+        }
+        isFavoriteButtonPressed = true
+        
+        if isFavorite {
+            withAnimation(.easeIn(duration: 0.5)) {
+                addedToFavorites = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                withAnimation(.easeOut(duration: 2)) {
+                    addedToFavorites = false
+                }
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            isFavoriteButtonPressed = false
+        }
+    }
+    
     private func feedbackOverlay(message: LocalizedStringKey) -> some View {
         Text(message)
             .font(.system(.body, design: .rounded, weight: .semibold))
@@ -225,6 +249,20 @@ struct CurrencyConversionView: View {
             .shadow(radius: 5)
             .transition(.move(edge: .bottom))
             .frame(maxHeight: .infinity, alignment: .bottom)
+    }
+    
+    private func updateFavoriteStatus() {
+        guard viewModel.selectedFromCurrencyIndex < viewModel.availableCurrencies.count,
+              viewModel.selectedToCurrencyIndex < viewModel.availableCurrencies.count else {
+            isFavorite = false
+            return
+        }
+        
+        isFavorite = favoritesViewModel.isFavorite(
+            category: CurrencyUnitsCategory.currency.rawValue,
+            fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
+            toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+        )
     }
     
     private func swapCurrencies() {
