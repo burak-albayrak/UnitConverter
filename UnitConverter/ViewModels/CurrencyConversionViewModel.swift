@@ -57,7 +57,7 @@ class CurrencyConversionViewModel: ObservableObject {
     }
     
     func convertCurrency() {
-        guard let inputNumber = Decimal(string: inputValue),
+        guard let inputNumber = Decimal(string: inputValue.replacingOccurrences(of: ",", with: ".")),
               selectedFromCurrencyIndex < availableCurrencies.count,
               selectedToCurrencyIndex < availableCurrencies.count else {
             convertedValue = ""
@@ -73,8 +73,8 @@ class CurrencyConversionViewModel: ObservableObject {
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
-        formatter.usesGroupingSeparator = false
-        formatter.decimalSeparator = "."
+        formatter.usesGroupingSeparator = true
+        formatter.locale = Locale.current
         
         convertedValue = formatter.string(from: NSDecimalNumber(decimal: result)) ?? ""
     }

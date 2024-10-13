@@ -36,12 +36,12 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
     }
     
     func convertUnits(value: String) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.locale = Locale(identifier: "en_US")
-        formatter.usesGroupingSeparator = false
+        let inputFormatter = NumberFormatter()
+        inputFormatter.numberStyle = .decimal
+        inputFormatter.locale = Locale.current
+        inputFormatter.usesGroupingSeparator = false
         
-        guard let decimalValue = formatter.number(from: value)?.decimalValue,
+        guard let decimalValue = inputFormatter.number(from: value)?.decimalValue,
               selectedFirstUnitIndex < availableUnits.count,
               selectedSecondUnitIndex < availableUnits.count else {
             return "0"
@@ -54,10 +54,10 @@ final class UnitConversionViewModel<T: UnitCategory>: ObservableObject {
         
         let resultFormatter = NumberFormatter()
         resultFormatter.numberStyle = .decimal
-        resultFormatter.maximumFractionDigits = 22
+        resultFormatter.maximumFractionDigits = 10
         resultFormatter.minimumFractionDigits = 0
-        resultFormatter.usesGroupingSeparator = false
-        resultFormatter.locale = Locale(identifier: "en_US")
+        resultFormatter.usesGroupingSeparator = true
+        resultFormatter.locale = Locale.current
         
         if abs(result) >= 0.000001 && abs(result) < pow(Decimal(10), 22) {
             return resultFormatter.string(from: NSDecimalNumber(decimal: result)) ?? "0"

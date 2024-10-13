@@ -64,8 +64,11 @@ struct UnitConversionView<T: UnitCategory>: View {
                     )
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.firstUnitInputValue)
                         .keyboardType(.decimalPad)
-                        .onChange(of: viewModel.firstUnitInputValue) {
-                            viewModel.firstUnitInputValue = viewModel.firstUnitInputValue.replacingOccurrences(of: ",", with: ".")
+                        .onChange(of: viewModel.firstUnitInputValue) { oldValue, newValue in
+                            let filtered = newValue.filter { "0123456789.,".contains($0) }
+                            if filtered != newValue {
+                                viewModel.firstUnitInputValue = filtered
+                            }
                         }
                     Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
                     Spacer()

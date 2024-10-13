@@ -60,10 +60,12 @@ struct CurrencyConversionView: View {
                     )
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
                         .keyboardType(.decimalPad)
-                    
-                        .onChange(of: viewModel.inputValue) { _, _ in
+                        .onChange(of: viewModel.inputValue) { oldValue, newValue in
+                            let filtered = newValue.filter { "0123456789.,".contains($0) }
+                            if filtered != newValue {
+                                viewModel.inputValue = filtered
+                            }
                             viewModel.convertCurrency()
-                            viewModel.inputValue = viewModel.inputValue.replacingOccurrences(of: ",", with: ".")
                         }
                     if viewModel.selectedFromCurrencyIndex < viewModel.availableCurrencies.count {
                         Text(viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol)
