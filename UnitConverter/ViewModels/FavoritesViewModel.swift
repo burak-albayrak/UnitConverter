@@ -29,6 +29,15 @@ class FavoritesViewModel: ObservableObject {
         modelContext.insert(newFavorite)
     }
     
+    func isFavorite(category: String, fromUnit: String, toUnit: String) -> Bool {
+        let favorites = getFavorites()
+        return favorites.contains { favorite in
+            favorite.category == category &&
+            favorite.fromUnit == fromUnit &&
+            favorite.toUnit == toUnit
+        }
+    }
+    
     func removeFavorite(_ favorite: FavoriteConversion) {
         guard let modelContext = modelContext else { return }
         modelContext.delete(favorite)

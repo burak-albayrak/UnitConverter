@@ -16,6 +16,7 @@ struct UnitConversionView<T: UnitCategory>: View {
     @State private var isPasteButtonPressed: Bool = false
     @State private var isFavoriteButtonPressed: Bool = false
     @State private var addedToFavorites: Bool = false
+    @State private var isFavorite: Bool = false
     
     init(viewModel: UnitConversionViewModel<T>, favorite: FavoriteConversion? = nil) {
         self._viewModel = StateObject(wrappedValue: viewModel)
@@ -153,29 +154,48 @@ struct UnitConversionView<T: UnitCategory>: View {
                         .foregroundColor(.cyan)
                 })
                 Button(action: {
-                    favoritesViewModel.addFavorite(
-                        category: viewModel.category.rawValue,
-                        fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name,
-                        toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].name
-                    )
-                    withAnimation(.easeIn(duration: 0.5)) {
-                        addedToFavorites = true
-                        isFavoriteButtonPressed = true
+                    if isFavorite {
+                        // Favorilerden kaldır
+                        if let favorite = favoritesViewModel.getFavorites().first(where: {
+                            $0.category == viewModel.category.rawValue &&
+                            $0.fromUnit == viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name &&
+                            $0.toUnit == viewModel.availableUnits[viewModel.selectedSecondUnitIndex].name
+                        }) {
+                            favoritesViewModel.removeFavorite(favorite)
+                        }
+                    } else {
+                        // Favorilere ekle
+                        favoritesViewModel.addFavorite(
+                            category: viewModel.category.rawValue,
+                            fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name,
+                            toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].name
+                        )
                     }
+                    withAnimation(.spring()) {
+                        isFavorite.toggle()
+                    }
+                    isFavoriteButtonPressed = true
+                    
+                    // "Favorilere eklendi" mesajını göster
+                    if isFavorite {
+                        withAnimation(.easeIn(duration: 0.5)) {
+                            addedToFavorites = true
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation(.easeOut(duration: 2)) {
+                                addedToFavorites = false
+                            }
+                        }
+                    }
+                    
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        withAnimation(.easeOut(duration: 0.1)) {
-                            isFavoriteButtonPressed = false
-                        }
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        withAnimation(.easeOut(duration: 2)) {
-                            addedToFavorites = false
-                        }
+                        isFavoriteButtonPressed = false
                     }
                 }) {
-                    Image(systemName: "star")
+                    Image(systemName: isFavorite ? "star.fill" : "star")
                         .font(.title3)
                         .foregroundColor(.cyan)
+                        .scaleEffect(isFavoriteButtonPressed ? 1.2 : 1.0)
                 }
                 Button(action: {
                     viewModel.isInfoPresented = true
@@ -189,7 +209,10 @@ struct UnitConversionView<T: UnitCategory>: View {
         }
         .onAppear {
             favoritesViewModel.setModelContext(modelContext)
+            updateFavoriteStatus()
         }
+        .onChange(of: viewModel.selectedFirstUnitIndex) { _,_ in updateFavoriteStatus() }
+        .onChange(of: viewModel.selectedSecondUnitIndex) { _,_ in updateFavoriteStatus() }
         .overlay {
             if copiedToClipboard {
                 feedbackOverlay(message: LocalizedStringKey("Copied to Clipboard"))
@@ -221,6 +244,14 @@ struct UnitConversionView<T: UnitCategory>: View {
         let tempIndex = viewModel.selectedFirstUnitIndex
         viewModel.selectedFirstUnitIndex = viewModel.selectedSecondUnitIndex
         viewModel.selectedSecondUnitIndex = tempIndex
+    }
+    
+    private func updateFavoriteStatus() {
+        isFavorite = favoritesViewModel.isFavorite(
+            category: viewModel.category.rawValue,
+            fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name,
+            toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].name
+        )
     }
 }
 
