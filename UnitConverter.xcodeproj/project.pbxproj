@@ -29,6 +29,8 @@
 		EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
 		EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
 		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
+		EF46C2112CBC55630090F5B6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2102CBC55630090F5B6 /* CustomTextField.swift */; };
+		EF46C2132CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */; };
 		EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */; };
 		EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF632C8DFD29006E6548 /* SettingsView.swift */; };
 		EF85EF6A2C8E06F8006E6548 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
@@ -81,6 +83,8 @@
 		EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricityUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagnetismUnitsModel.swift; sourceTree = "<group>"; };
 		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
+		EF46C2102CBC55630090F5B6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldRepresentable.swift; sourceTree = "<group>"; };
 		EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF85EF632C8DFD29006E6548 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteConversion.swift; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 		EF0F873D2C8285FF00114906 /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
+				EF46C20F2CBC554B0090F5B6 /* CustomKeyboard */,
 				EFDFFB9F2C904C32009699EC /* Localizable */,
 				EF85EF742C8E3215006E6548 /* LaunchScreen */,
 				EFDFFB8E2C8F940A009699EC /* Payment */,
@@ -210,6 +215,15 @@
 				EF37C06C2C860C94004B974A /* UnitCategory.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EF46C20F2CBC554B0090F5B6 /* CustomKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EF46C2102CBC55630090F5B6 /* CustomTextField.swift */,
+				EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */,
+			);
+			path = CustomKeyboard;
 			sourceTree = "<group>";
 		};
 		EF85EF682C8E06E8006E6548 /* Favorite */ = {
@@ -330,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */,
+				EF46C2132CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift in Sources */,
 				EF37ACD72C8C918500477945 /* CurrencyConverterNetwork.swift in Sources */,
 				EF37C0732C8680BA004B974A /* FluidsUnitsModel.swift in Sources */,
 				EF37C0792C86862D004B974A /* MagnetismUnitsModel.swift in Sources */,
@@ -347,6 +362,7 @@
 				EF37C0622C834FE1004B974A /* AllConvertersMenu.swift in Sources */,
 				EF37ACD92C8C91A600477945 /* CurrencyUnitsModel.swift in Sources */,
 				EF37C0662C835F59004B974A /* AllConvertersModel.swift in Sources */,
+				EF46C2112CBC55630090F5B6 /* CustomTextField.swift in Sources */,
 				EF37C06D2C860C94004B974A /* UnitCategory.swift in Sources */,
 				EF0F873F2C8285FF00114906 /* UnitConverterApp.swift in Sources */,
 				EF37ACDB2C8C91D100477945 /* CurrencyConversionViewModel.swift in Sources */,

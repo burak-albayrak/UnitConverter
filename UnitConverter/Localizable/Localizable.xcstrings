@@ -5240,6 +5240,7 @@
       }
     },
     "Enter value" : {
+      "comment" : "Placeholder for value input",
       "localizations" : {
         "tr" : {
           "stringUnit" : {

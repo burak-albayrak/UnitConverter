@@ -62,14 +62,8 @@ struct UnitConversionView<T: UnitCategory>: View {
                             .onChanged { _ in isPasteButtonPressed = true }
                             .onEnded { _ in isPasteButtonPressed = false }
                     )
-                    TextField(LocalizedStringKey("Enter value"), text: $viewModel.firstUnitInputValue)
-                        .keyboardType(.decimalPad)
-                        .onChange(of: viewModel.firstUnitInputValue) { oldValue, newValue in
-                            let filtered = newValue.filter { "0123456789.,".contains($0) }
-                            if filtered != newValue {
-                                viewModel.firstUnitInputValue = filtered
-                            }
-                        }
+                    CustomTextFieldRepresentable(text: $viewModel.firstUnitInputValue)
+                        .frame(height: 40)
                     Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
                     Spacer()
                     Button(action: {
