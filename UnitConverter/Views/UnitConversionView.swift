@@ -48,7 +48,9 @@ struct UnitConversionView<T: UnitCategory>: View {
                     Spacer()
                     Button(action: {
                         if let pasteboardString = UIPasteboard.general.string {
-                            viewModel.firstUnitInputValue = pasteboardString
+                            // Sadece sayısal değerleri ve nokta/virgülü kabul et
+                            let filteredString = pasteboardString.filter { "0123456789.,".contains($0) }
+                            viewModel.firstUnitInputValue = filteredString
                         }
                     }) {
                         Text(LocalizedStringKey("paste"))

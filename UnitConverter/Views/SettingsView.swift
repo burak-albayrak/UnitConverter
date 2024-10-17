@@ -17,7 +17,6 @@ struct SettingsView: View {
     @State private var showingClearConfirmation = false
     @State private var isShowingMailView = false
     @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
-    @StateObject private var storeKit = StoreKitManager()
     @State private var showingPurchaseAlert = false
     @State private var purchaseAlertMessage = ""
     @State private var showLanguageChangeAlert = false
@@ -52,13 +51,6 @@ struct SettingsView: View {
                     .foregroundColor(.red)
                 }
                 
-//                Section(header: Text("Support Me")) {
-//                    Button("Buy Me a Coffee") {
-//                        storeKit.purchaseCoffee()
-//                    }
-//                    .disabled(storeKit.isLoading)
-//                }
-                
                 Section(header: Text("Feedback")) {
                     Button("Feedback Me") {
                         isShowingMailView = true
@@ -66,8 +58,7 @@ struct SettingsView: View {
                 }
                 
                 Section(header: Text("About")) {
-                    Link("Rate the App", destination: URL(string: "https://apps.apple.com/tr/app/unit-converter-scientific/id6692634387")!) // FIXME: app sayfası
-                    //                    Link("Privacy Policy", destination: URL(string: "https://yourwebsite.com/privacy")!)
+                    Link("Rate the App", destination: URL(string: "https://apps.apple.com/tr/app/unit-converter-scientific/id6692634387")!)
                 }
                 
             }
@@ -100,17 +91,6 @@ struct SettingsView: View {
                     exit(0) // This will force quit the app
                 }
             )
-        }
-        .onReceive(storeKit.$purchaseResult) { result in
-            if let result = result {
-                showingPurchaseAlert = true
-                switch result {
-                case .success:
-                    purchaseAlertMessage = "Thank you for your support!"
-                case .failure(let error):
-                    purchaseAlertMessage = "Purchase failed: \(error.localizedDescription)"
-                }
-            }
         }
         .alert("Clear All Favorites", isPresented: $showingClearConfirmation) {
             Button("Cancel", role: .cancel) { }

@@ -7,6 +7,8 @@
 		<string>en</string>
 		<string>Turkish</string>
 	</array>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-8348766791209327~4221562090 </string>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 </dict>
