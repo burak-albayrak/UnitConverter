@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,18 +33,45 @@
 		EF46C2132CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */; };
 		EF5157A52CC0112500FCA157 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5157A42CC0112500FCA157 /* StoreKit.framework */; };
 		EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */; };
+		EF6EF7062CC1B16B00EAC348 /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
+		EF6EF7072CC1B16B00EAC348 /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
+		EF6EF7082CC1B16B00EAC348 /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
+		EF6EF7092CC1B16B00EAC348 /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
+		EF6EF70A2CC1B16B00EAC348 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
+		EF6EF70B2CC1B16B00EAC348 /* FluidsUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */; };
+		EF6EF70C2CC1B16B00EAC348 /* UnitConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */; };
+		EF6EF70D2CC1B16B00EAC348 /* CurrencyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */; };
+		EF6EF70E2CC1B16B00EAC348 /* HeatUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0702C867E90004B974A /* HeatUnitsModel.swift */; };
+		EF6EF70F2CC1B16B00EAC348 /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
+		EF6EF7102CC1B16B00EAC348 /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
+		EF6EF7112CC1B16B00EAC348 /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
+		EF6EF7122CC1B16B00EAC348 /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
+		EF6EF7132CC1B19D00EAC348 /* UnitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C06C2C860C94004B974A /* UnitCategory.swift */; };
+		EF6EF7142CC1B1D500EAC348 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
+		EF6EF7152CC1B23100EAC348 /* CurrencyConverterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */; };
 		EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF632C8DFD29006E6548 /* SettingsView.swift */; };
 		EF85EF6A2C8E06F8006E6548 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
 		EF85EF6C2C8E0717006E6548 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
 		EF85EF6E2C8E076B006E6548 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */; };
 		EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
 		EF85EF7C2C8E5D0A006E6548 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
+		EF9DBEBB2CC18C6A00BEB194 /* UnitConverterWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFCCD2902C911745001E0B5F /* InfoPlist.strings */; };
 		EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8C2C8F8EFD009699EC /* MailView.swift */; };
 		EFDFFB992C8FBD4B009699EC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */; };
 		EFDFFB9B2C8FBD91009699EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB9A2C8FBD91009699EC /* ContentView.swift */; };
 		EFDFFBA12C904CBE009699EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF9DBEB92CC18C6A00BEB194 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF9DBEAD2CC18C6800BEB194;
+			remoteInfo = "UnitConverterWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		EF3A78B22CBC24B0004C620D /* Embed Foundation Extensions */ = {
@@ -55,6 +82,17 @@
 			files = (
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFEBD9B02CC18BF500154486 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				EF9DBEBB2CC18C6A00BEB194 /* UnitConverterWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -87,12 +125,14 @@
 		EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldRepresentable.swift; sourceTree = "<group>"; };
 		EF5157A42CC0112500FCA157 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF6EF7172CC1B2F900EAC348 /* UnitConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitConverter.entitlements; sourceTree = "<group>"; };
 		EF85EF632C8DFD29006E6548 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteConversion.swift; sourceTree = "<group>"; };
 		EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		EF85EF7B2C8E5D0A006E6548 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverterWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCCD2912C911745001E0B5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFCCD2932C911826001E0B5F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFDFFB8C2C8F8EFD009699EC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
@@ -100,6 +140,10 @@
 		EFDFFB9A2C8FBD91009699EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		EF9DBEAF2CC18C6800BEB194 /* UnitConverterWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UnitConverterWatch Watch App"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EF0F87382C8285FF00114906 /* Frameworks */ = {
@@ -110,6 +154,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF9DBEAB2CC18C6800BEB194 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				EF0F873D2C8285FF00114906 /* UnitConverter */,
+				EF9DBEAF2CC18C6800BEB194 /* UnitConverterWatch Watch App */,
 				EF5157A32CC0112500FCA157 /* Frameworks */,
 				EF0F873C2C8285FF00114906 /* Products */,
 			);
@@ -126,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				EF0F873B2C8285FF00114906 /* UnitConverter.app */,
+				EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +199,7 @@
 				EF0F873E2C8285FF00114906 /* UnitConverterApp.swift */,
 				EF0F87422C82860100114906 /* Assets.xcassets */,
 				EF0F87442C82860100114906 /* Preview Content */,
+				EF6EF7172CC1B2F900EAC348 /* UnitConverter.entitlements */,
 			);
 			path = UnitConverter;
 			sourceTree = "<group>";
@@ -280,14 +334,38 @@
 				EF0F87382C8285FF00114906 /* Frameworks */,
 				EF0F87392C8285FF00114906 /* Resources */,
 				EF3A78B22CBC24B0004C620D /* Embed Foundation Extensions */,
+				EFEBD9B02CC18BF500154486 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF9DBEBA2CC18C6A00BEB194 /* PBXTargetDependency */,
+			);
+			name = UnitConverter;
+			productName = UnitConverter;
+			productReference = EF0F873B2C8285FF00114906 /* UnitConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF9DBEAD2CC18C6800BEB194 /* UnitConverterWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF9DBEBE2CC18C6A00BEB194 /* Build configuration list for PBXNativeTarget "UnitConverterWatch Watch App" */;
+			buildPhases = (
+				EF9DBEAA2CC18C6800BEB194 /* Sources */,
+				EF9DBEAB2CC18C6800BEB194 /* Frameworks */,
+				EF9DBEAC2CC18C6800BEB194 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = UnitConverter;
-			productName = UnitConverter;
-			productReference = EF0F873B2C8285FF00114906 /* UnitConverter.app */;
+			fileSystemSynchronizedGroups = (
+				EF9DBEAF2CC18C6800BEB194 /* UnitConverterWatch Watch App */,
+			);
+			name = "UnitConverterWatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "UnitConverterWatch Watch App";
+			productReference = EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -302,6 +380,9 @@
 				TargetAttributes = {
 					EF0F873A2C8285FF00114906 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					EF9DBEAD2CC18C6800BEB194 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -320,6 +401,7 @@
 			projectRoot = "";
 			targets = (
 				EF0F873A2C8285FF00114906 /* UnitConverter */,
+				EF9DBEAD2CC18C6800BEB194 /* UnitConverterWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +416,13 @@
 				EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */,
 				EF0F87432C82860100114906 /* Assets.xcassets in Resources */,
 				EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF9DBEAC2CC18C6800BEB194 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +467,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF9DBEAA2CC18C6800BEB194 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6EF7062CC1B16B00EAC348 /* MagnetismUnitsModel.swift in Sources */,
+				EF6EF7072CC1B16B00EAC348 /* CurrencyConversionViewModel.swift in Sources */,
+				EF6EF7082CC1B16B00EAC348 /* CommonUnitsModel.swift in Sources */,
+				EF6EF7092CC1B16B00EAC348 /* EngineeringUnitsModel.swift in Sources */,
+				EF6EF70A2CC1B16B00EAC348 /* FavoritesViewModel.swift in Sources */,
+				EF6EF70B2CC1B16B00EAC348 /* FluidsUnitsModel.swift in Sources */,
+				EF6EF7152CC1B23100EAC348 /* CurrencyConverterNetwork.swift in Sources */,
+				EF6EF70C2CC1B16B00EAC348 /* UnitConversionViewModel.swift in Sources */,
+				EF6EF70D2CC1B16B00EAC348 /* CurrencyUnitsModel.swift in Sources */,
+				EF6EF70E2CC1B16B00EAC348 /* HeatUnitsModel.swift in Sources */,
+				EF6EF70F2CC1B16B00EAC348 /* LightUnitsModel.swift in Sources */,
+				EF6EF7102CC1B16B00EAC348 /* ElectricityUnitsModel.swift in Sources */,
+				EF6EF7132CC1B19D00EAC348 /* UnitCategory.swift in Sources */,
+				EF6EF7112CC1B16B00EAC348 /* AllConvertersModel.swift in Sources */,
+				EF6EF7122CC1B16B00EAC348 /* RadiologyUnitsModel.swift in Sources */,
+				EF6EF7142CC1B1D500EAC348 /* FavoriteConversion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF9DBEBA2CC18C6A00BEB194 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF9DBEAD2CC18C6800BEB194 /* UnitConverterWatch Watch App */;
+			targetProxy = EF9DBEB92CC18C6A00BEB194 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EFCCD2902C911745001E0B5F /* InfoPlist.strings */ = {
@@ -520,6 +640,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = UnitConverter/UnitConverter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter/Preview Content\"";
@@ -554,6 +675,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = UnitConverter/UnitConverter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter/Preview Content\"";
@@ -582,6 +704,70 @@
 			};
 			name = Release;
 		};
+		EF9DBEBC2CC18C6A00BEB194 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "UnitConverterWatch Watch App/UnitConverterWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverterWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Unit Converter for Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.burrk.UnitConverter;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10;
+			};
+			name = Debug;
+		};
+		EF9DBEBD2CC18C6A00BEB194 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "UnitConverterWatch Watch App/UnitConverterWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverterWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Unit Converter for Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.burrk.UnitConverter;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -599,6 +785,15 @@
 			buildConfigurations = (
 				EF0F874A2C82860100114906 /* Debug */,
 				EF0F874B2C82860100114906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF9DBEBE2CC18C6A00BEB194 /* Build configuration list for PBXNativeTarget "UnitConverterWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF9DBEBC2CC18C6A00BEB194 /* Debug */,
+				EF9DBEBD2CC18C6A00BEB194 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
