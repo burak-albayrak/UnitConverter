@@ -90,7 +90,7 @@ struct WelcomeViewWatch: View {
                     }
                     .buttonStyle(.plain)
                     .padding(.horizontal)
-                    .padding(.top, 15)
+                    .padding(.top, 10)
                     .padding(.bottom, 25)
                 }
                 .tag(index)

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentViewWatch: View {
     @Binding var hasSeenWelcomeScreen: Bool
-    @AppStorage("isDarkMode") private var isDarkMode = false
     
     var body: some View {
         ZStack {
@@ -26,8 +25,8 @@ struct ContentViewWatch: View {
                 MainMenuViewWatch()
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light)
-        .environment(\.colorScheme, isDarkMode ? .dark : .light)
+        // Watch OS için varsayılan renk şemasını kullan
+        .environment(\.colorScheme, .dark)
     }
 }
 
