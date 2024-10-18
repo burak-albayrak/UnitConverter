@@ -25,7 +25,6 @@ struct ContentViewWatch: View {
                 MainMenuViewWatch()
             }
         }
-        // Watch OS için varsayılan renk şemasını kullan
         .environment(\.colorScheme, .dark)
     }
 }

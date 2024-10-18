@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import SwiftUI_Apple_Watch_Decimal_Pad
 
 struct CurrencyConverterViewWatch: View {
     @StateObject private var viewModel = CurrencyConversionViewModel()
     @State private var showingFromCurrencyPicker = false
     @State private var showingToCurrencyPicker = false
+    @State public var presentingModal: Bool
 
     var body: some View {
         List {
@@ -32,14 +34,21 @@ struct CurrencyConverterViewWatch: View {
             }
             
             Section("Value") {
-                TextField("Enter value", text: $viewModel.inputValue)
+                DigiTextView(placeholder: "Enter value", text: $viewModel.inputValue, presentingModal: false, style: .decimal)
                     .onChange(of: viewModel.inputValue) { _, newValue in
-                        let filtered = newValue.filter { "0123456789.,".contains($0) }
+                        let filtered = newValue.filter { "-0123456789.,".contains($0) }
                         if filtered != newValue {
                             viewModel.inputValue = filtered
                         }
                         viewModel.convertCurrency()
                     }
+                
+                Button(action: toggleNegative) {
+                    HStack {
+                        Image(systemName: "minus")
+                        Text("Make Negative")
+                    }
+                }
             }
             
             Section("Result") {
@@ -53,14 +62,17 @@ struct CurrencyConverterViewWatch: View {
                 }
             }
             
-            Button("Swap Currencies") {
-                swapCurrencies()
-            }
-            
-            Button("Refresh Rates") {
-                viewModel.fetchExchangeRates()
+            Section {
+                Button("Swap Currencies") {
+                    swapCurrencies()
+                }
+                
+                Button("Refresh Rates") {
+                    viewModel.fetchExchangeRates()
+                }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Currency")
         .sheet(isPresented: $showingFromCurrencyPicker) {
             currencyPicker(selection: $viewModel.selectedFromCurrencyIndex)
@@ -95,6 +107,24 @@ struct CurrencyConverterViewWatch: View {
         viewModel.selectedToCurrencyIndex = tempIndex
         viewModel.convertCurrency()
     }
+    
+    private func toggleNegative() {
+        if viewModel.inputValue.isEmpty {
+            return
+        }
+        
+        if viewModel.inputValue.hasPrefix("-") {
+            viewModel.inputValue.removeFirst()
+        } else {
+            viewModel.inputValue = "-" + viewModel.inputValue
+        }
+        
+        if viewModel.inputValue.last == "." || viewModel.inputValue.last == "," {
+            viewModel.inputValue.removeLast()
+        }
+        
+        viewModel.convertCurrency()
+    }
 }
 
 struct AllConvertersView: View {
@@ -108,6 +138,8 @@ struct AllConvertersView: View {
     }
 }
 
+
+
 #Preview {
-    CurrencyConverterViewWatch()
+    CurrencyConverterViewWatch(presentingModal: false)
 }

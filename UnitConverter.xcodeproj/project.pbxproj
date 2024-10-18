@@ -62,6 +62,8 @@
 		EFDFFB9B2C8FBD91009699EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB9A2C8FBD91009699EC /* ContentView.swift */; };
 		EFDFFBA12C904CBE009699EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
 		EFF0E5FA2CC2449500060C91 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
+		EFF0E6142CC26FA200060C91 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
+		EFF0E6172CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad in Frameworks */ = {isa = PBXBuildFile; productRef = EFF0E6162CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF0E6172CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +367,7 @@
 			);
 			name = "UnitConverterWatch Watch App";
 			packageProductDependencies = (
+				EFF0E6162CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad */,
 			);
 			productName = "UnitConverterWatch Watch App";
 			productReference = EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */;
@@ -397,6 +401,9 @@
 				tr,
 			);
 			mainGroup = EF0F87322C8285FF00114906;
+			packageReferences = (
+				EFF0E6152CC2749E00060C91 /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */,
+			);
 			productRefGroup = EF0F873C2C8285FF00114906 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -485,6 +492,7 @@
 				EF6EF70E2CC1B16B00EAC348 /* HeatUnitsModel.swift in Sources */,
 				EF6EF70F2CC1B16B00EAC348 /* LightUnitsModel.swift in Sources */,
 				EF6EF7102CC1B16B00EAC348 /* ElectricityUnitsModel.swift in Sources */,
+				EFF0E6142CC26FA200060C91 /* PreviewContainer.swift in Sources */,
 				EF6EF7132CC1B19D00EAC348 /* UnitCategory.swift in Sources */,
 				EF6EF7112CC1B16B00EAC348 /* AllConvertersModel.swift in Sources */,
 				EF6EF7122CC1B16B00EAC348 /* RadiologyUnitsModel.swift in Sources */,
@@ -803,6 +811,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFF0E6152CC2749E00060C91 /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ApplebaumIan/SwiftUI-Apple-Watch-Decimal-Pad.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFF0E6162CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFF0E6152CC2749E00060C91 /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */;
+			productName = "SwiftUI Apple Watch Decimal Pad";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EF0F87332C8285FF00114906 /* Project object */;
 }

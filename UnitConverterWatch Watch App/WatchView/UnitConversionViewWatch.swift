@@ -12,7 +12,7 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
     @StateObject var viewModel: UnitConversionViewModel<T>
     @State private var showingUnitPicker = false
     @State private var isSelectingFromUnit = true
-
+    
     var body: some View {
         List {
             Section {
@@ -46,6 +46,7 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
                 swapUnitsAndValues()
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .navigationTitle(viewModel.category.localizedName)
         .sheet(isPresented: $showingUnitPicker) {
             unitPicker
