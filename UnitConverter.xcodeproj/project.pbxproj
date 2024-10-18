@@ -61,6 +61,7 @@
 		EFDFFB992C8FBD4B009699EC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */; };
 		EFDFFB9B2C8FBD91009699EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB9A2C8FBD91009699EC /* ContentView.swift */; };
 		EFDFFBA12C904CBE009699EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
+		EFF0E5FA2CC2449500060C91 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,6 +424,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFF0E5FA2CC2449500060C91 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

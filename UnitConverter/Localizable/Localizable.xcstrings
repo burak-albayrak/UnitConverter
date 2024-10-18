@@ -516,6 +516,9 @@
         }
       }
     },
+    "All" : {
+
+    },
     "All Converters" : {
       "localizations" : {
         "tr" : {
@@ -820,6 +823,9 @@
           }
         }
       }
+    },
+    "Are you sure you want to clear all favorites?" : {
+
     },
     "Are you sure you want to clear all favorites? This action cannot be undone." : {
       "localizations" : {
@@ -2481,6 +2487,16 @@
         }
       }
     },
+    "CategoriesDescriptionWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "From everyday to advanced units, we have every conversion you need."
+          }
+        }
+      }
+    },
     "CategoriesTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2494,6 +2510,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Çeşitli Dönüşüm Kategorileri"
+          }
+        }
+      }
+    },
+    "CategoriesTitleWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diverse Conversion Categories"
           }
         }
       }
@@ -3062,6 +3088,9 @@
         }
       }
     },
+    "Common" : {
+
+    },
     "Common Converters" : {
       "localizations" : {
         "tr" : {
@@ -3159,6 +3188,9 @@
           }
         }
       }
+    },
+    "Converter" : {
+
     },
     "Copied to Clipboard" : {
       "localizations" : {
@@ -3777,6 +3809,9 @@
           }
         }
       }
+    },
+    "Currencies" : {
+
     },
     "Currency" : {
       "localizations" : {
@@ -5720,6 +5755,16 @@
         }
       }
     },
+    "FavoritesDescriptionWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save your frequently used conversions for quick access anytime."
+          }
+        }
+      }
+    },
     "FavoritesTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5733,6 +5778,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deneyiminizi Kişiselleştirin"
+          }
+        }
+      }
+    },
+    "FavoritesTitleWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalize Your Experience"
           }
         }
       }
@@ -6366,6 +6421,9 @@
         }
       }
     },
+    "From:" : {
+
+    },
     "Fuel Consumption" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6789,6 +6847,16 @@
         }
       }
     },
+    "GetStartedDescriptionWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ready to make your calculations easier?"
+          }
+        }
+      }
+    },
     "GetStartedTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6802,6 +6870,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Birimleri Dönüştürmeye Başlayalım!"
+          }
+        }
+      }
+    },
+    "GetStartedTitleWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Let's Start Converting Units!"
           }
         }
       }
@@ -12841,6 +12919,9 @@
         }
       }
     },
+    "More" : {
+
+    },
     "Moroccan Dirham" : {
       "localizations" : {
         "en" : {
@@ -15588,6 +15669,9 @@
         }
       }
     },
+    "Refresh Rates" : {
+
+    },
     "rem/second" : {
       "localizations" : {
         "tr" : {
@@ -16681,6 +16765,9 @@
         }
       }
     },
+    "Start" : {
+
+    },
     "statampere" : {
       "localizations" : {
         "tr" : {
@@ -17020,6 +17107,9 @@
           }
         }
       }
+    },
+    "Swap Currencies" : {
+
     },
     "SwapCurrencies" : {
       "localizations" : {
@@ -17678,6 +17768,9 @@
           }
         }
       }
+    },
+    "To:" : {
+
     },
     "ton (assay) (UK)" : {
       "localizations" : {
@@ -19006,6 +19099,16 @@
         }
       }
     },
+    "WelcomeDescriptionWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effortlessly convert units across various fields."
+          }
+        }
+      }
+    },
     "WelcomeTitle" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19019,6 +19122,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Birim Dönüştürücü'ye Hoş Geldiniz"
+          }
+        }
+      }
+    },
+    "WelcomeTitleWatch" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome to Unit Converter"
           }
         }
       }

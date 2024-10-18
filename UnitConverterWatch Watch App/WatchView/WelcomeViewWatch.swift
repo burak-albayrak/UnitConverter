@@ -13,26 +13,26 @@ struct WelcomeViewWatch: View {
     
     let pages: [WelcomePage] = [
         WelcomePage(
-            titleKey: "WelcomeTitle",
-            descriptionKey: "WelcomeDescription",
+            titleKey: "WelcomeTitleWatch",
+            descriptionKey: "WelcomeDescriptionWatch",
             imageName: "WelcomeImageWatch",
             isSymbol: false
         ),
         WelcomePage(
-            titleKey: "CategoriesTitle",
-            descriptionKey: "CategoriesDescription",
+            titleKey: "CategoriesTitleWatch",
+            descriptionKey: "CategoriesDescriptionWatch",
             imageName: "rectangle.stack",
             isSymbol: true
         ),
         WelcomePage(
-            titleKey: "FavoritesTitle",
-            descriptionKey: "FavoritesDescription",
+            titleKey: "FavoritesTitleWatch",
+            descriptionKey: "FavoritesDescriptionWatch",
             imageName: "star",
             isSymbol: true
         ),
         WelcomePage(
-            titleKey: "GetStartedTitle",
-            descriptionKey: "GetStartedDescription",
+            titleKey: "GetStartedTitleWatch",
+            descriptionKey: "GetStartedDescriptionWatch",
             imageName: "arrow.2.squarepath",
             isSymbol: true
         )
@@ -62,13 +62,14 @@ struct WelcomeViewWatch: View {
                         .fontWeight(.bold)
                         .multilineTextAlignment(.center)
                         .padding(.top, 5)
+                        .fixedSize(horizontal: false, vertical: true)
                     
                     Text(pages[index].descriptionKey)
                         .font(.caption2)
                         .multilineTextAlignment(.center)
-                        .padding(.top, 2)
-                    
-                    Spacer(minLength: 40)
+                        .padding(.top, 5)
+                        .fixedSize(horizontal: false, vertical: true)
+
                     Button(action: {
                         if currentPage < pages.count - 1 {
                             withAnimation {
@@ -89,6 +90,8 @@ struct WelcomeViewWatch: View {
                     }
                     .buttonStyle(.plain)
                     .padding(.horizontal)
+                    .padding(.top, 15)
+                    .padding(.bottom, 25)
                 }
                 .tag(index)
             }
