@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " " : {
+
+    },
     "-" : {
       "localizations" : {
         "tr" : {
@@ -17,6 +20,16 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@  ->  %2$@"
+          }
+        }
+      }
+    },
+    "%@ -> %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ -> %2$@"
           }
         }
       }
@@ -454,6 +467,9 @@
         }
       }
     },
+    "Add Exponent (e)" : {
+
+    },
     "Add some conversions to your favorites!" : {
       "localizations" : {
         "tr" : {
@@ -463,6 +479,9 @@
           }
         }
       }
+    },
+    "Add to Favorites" : {
+
     },
     "Added to Favorites" : {
       "localizations" : {
@@ -3084,9 +3103,6 @@
           }
         }
       }
-    },
-    "Common" : {
-
     },
     "Common Converters" : {
       "localizations" : {
@@ -10821,6 +10837,9 @@
         }
       }
     },
+    "Make Negative/Positive" : {
+
+    },
     "Malagasy Ariary" : {
       "localizations" : {
         "en" : {
@@ -15672,6 +15691,12 @@
           }
         }
       }
+    },
+    "Remove from Favorites" : {
+
+    },
+    "Removed from Favorites" : {
+
     },
     "rep" : {
       "localizations" : {

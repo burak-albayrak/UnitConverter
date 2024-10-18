@@ -134,7 +134,6 @@ struct UnitConversionView<T: UnitCategory>: View {
                 })
                 Button(action: {
                     if isFavorite {
-                        // Favorilerden kaldır
                         if let favorite = favoritesViewModel.getFavorites().first(where: {
                             $0.category == viewModel.category.rawValue &&
                             $0.fromUnit == viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name &&
@@ -143,7 +142,6 @@ struct UnitConversionView<T: UnitCategory>: View {
                             favoritesViewModel.removeFavorite(favorite)
                         }
                     } else {
-                        // Favorilere ekle
                         favoritesViewModel.addFavorite(
                             category: viewModel.category.rawValue,
                             fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name,
@@ -155,7 +153,6 @@ struct UnitConversionView<T: UnitCategory>: View {
                     }
                     isFavoriteButtonPressed = true
                     
-                    // "Favorilere eklendi" mesajını göster
                     if isFavorite {
                         withAnimation(.easeIn(duration: 0.5)) {
                             addedToFavorites = true

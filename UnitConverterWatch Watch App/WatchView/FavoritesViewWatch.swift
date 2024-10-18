@@ -12,28 +12,31 @@ struct FavoritesViewWatch: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var favorites: [FavoriteConversion] = []
+    @State private var selectedFavorite: FavoriteConversion?
     
     var body: some View {
         Group {
             if favorites.isEmpty {
                 VStack {
                     Text("No Favorites Yet")
-                        .font(.title)
+                        .font(.title3)
                         .foregroundColor(.secondary)
                         .padding(.vertical)
                     Text("Add some conversions to your favorites!")
-                        .font(.subheadline)
+                        .font(.caption)
                         .foregroundColor(.secondary)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 List {
                     ForEach(favorites) { favorite in
-                        NavigationLink(destination: destinationView(for: favorite)) {
+                        Button(action: {
+                            selectedFavorite = favorite
+                        }) {
                             VStack(alignment: .leading) {
                                 Text(localizedString(favorite.category))
                                     .font(.headline)
-                                Text("\(localizedString(favorite.fromUnit))  ->  \(localizedString(favorite.toUnit))")
+                                Text("\(localizedString(favorite.fromUnit)) -> \(localizedString(favorite.toUnit))")
                                     .font(.subheadline)
                             }
                         }
@@ -46,6 +49,9 @@ struct FavoritesViewWatch: View {
         .onAppear {
             favoritesViewModel.setModelContext(modelContext)
             updateFavorites()
+        }
+        .sheet(item: $selectedFavorite) { favorite in
+            destinationView(for: favorite)
         }
     }
     
@@ -74,7 +80,7 @@ struct FavoritesViewWatch: View {
              CommonUnitsCategory.speed.rawValue,
              CommonUnitsCategory.duration.rawValue:
             if let category = CommonUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case EngineeringUnitsCategory.length.rawValue,
              EngineeringUnitsCategory.mass.rawValue,
@@ -99,7 +105,7 @@ struct FavoritesViewWatch: View {
              EngineeringUnitsCategory.momentOfForce.rawValue,
              EngineeringUnitsCategory.torque.rawValue:
             if let category = EngineeringUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case HeatUnitsCategory.fuelEfficiencyMass.rawValue,
              HeatUnitsCategory.fuelEfficiencyVolume.rawValue,
@@ -112,7 +118,7 @@ struct FavoritesViewWatch: View {
              HeatUnitsCategory.heatFluxDensity.rawValue,
              HeatUnitsCategory.heatTransverCoefficient.rawValue:
             if let category = HeatUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case FluidsUnitsCategory.flow.rawValue,
              FluidsUnitsCategory.flowMass.rawValue,
@@ -125,7 +131,7 @@ struct FavoritesViewWatch: View {
              FluidsUnitsCategory.surfaceTension.rawValue,
              FluidsUnitsCategory.permeability.rawValue:
             if let category = FluidsUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case LightUnitsCategory.luminance.rawValue,
              LightUnitsCategory.luminousIntensity.rawValue,
@@ -133,7 +139,7 @@ struct FavoritesViewWatch: View {
              LightUnitsCategory.digitalImageResolution.rawValue,
              LightUnitsCategory.frequencyWavelength.rawValue:
             if let category = LightUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case ElectricityUnitsCategory.charge.rawValue,
              ElectricityUnitsCategory.linearChargeDensity.rawValue,
@@ -151,21 +157,21 @@ struct FavoritesViewWatch: View {
              ElectricityUnitsCategory.electrostaticCapacitance.rawValue,
              ElectricityUnitsCategory.inductance.rawValue:
             if let category = ElectricityUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case MagnetismUnitsCategory.magnetomotiveForce.rawValue,
              MagnetismUnitsCategory.magneticFieldStrength.rawValue,
              MagnetismUnitsCategory.magneticFlux.rawValue,
              MagnetismUnitsCategory.magneticFluxDensity.rawValue:
             if let category = MagnetismUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case RadiollogyUnitsCategory.radiation.rawValue,
              RadiollogyUnitsCategory.radiationActivity.rawValue,
              RadiollogyUnitsCategory.radiationExposure.rawValue,
              RadiollogyUnitsCategory.radiationAbsorbedDose.rawValue:
             if let category = RadiollogyUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
+                UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case CurrencyUnitsCategory.currency.rawValue:
             CurrencyConverterViewWatch(presentingModal: false)

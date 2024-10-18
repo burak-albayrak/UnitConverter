@@ -14,7 +14,13 @@ struct MainMenuViewWatch: View {
     var body: some View {
         NavigationStack {
             List {
-                Section("Common") {
+                Section {
+                    Button(action: { showFavorites = true }) {
+                        Label("Favorites", systemImage: "star.fill")
+                    }
+                }
+                
+                Section("Common Converters") {
                     ForEach(CommonUnitsCategory.allCases, id: \.self) { category in
                         NavigationLink {
                             UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category))
@@ -24,7 +30,7 @@ struct MainMenuViewWatch: View {
                     }
                 }
                 
-                Section("Currency") {
+                Section("Price Converter") {
                     NavigationLink {
                         CurrencyConverterViewWatch(presentingModal: false)
                     } label: {
@@ -42,10 +48,7 @@ struct MainMenuViewWatch: View {
                     }
                 }
                 
-                Section {
-                    Button(action: { showFavorites = true }) {
-                        Label("Favorites", systemImage: "star.fill")
-                    }
+                Section(" ") {
                     Button(action: { showSettings = true }) {
                         Label("Settings", systemImage: "gear")
                     }

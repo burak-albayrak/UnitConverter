@@ -45,8 +45,8 @@ struct CurrencyConverterViewWatch: View {
                 
                 Button(action: toggleNegative) {
                     HStack {
-                        Image(systemName: "minus")
-                        Text("Make Negative")
+                        Image(systemName: "plusminus")
+                        Text("Make Negative/Positive")
                     }
                 }
             }
