@@ -44,7 +44,7 @@ struct SettingsViewWatch: View {
         .alert("Clear All Favorites", isPresented: $showingClearConfirmation) {
             Button("Cancel", role: .cancel) { }
             Button("Clear", role: .destructive) {
-                favoritesViewModel.clearAllFavorites()
+                clearAllFavorites()
             }
         } message: {
             Text("Are you sure you want to clear all favorites?")
@@ -55,7 +55,13 @@ struct SettingsViewWatch: View {
         let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
         return "Version \(version)"
     }
-        
+    
+    private func clearAllFavorites() {
+        let favorites = favoritesViewModel.getFavorites()
+        for favorite in favorites {
+            favoritesViewModel.removeFavorite(favorite)
+        }
+    }
 }
 
 #Preview {

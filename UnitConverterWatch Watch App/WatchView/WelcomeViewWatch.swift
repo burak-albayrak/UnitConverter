@@ -64,11 +64,11 @@ struct WelcomeViewWatch: View {
                         .padding(.top, 5)
                         .fixedSize(horizontal: false, vertical: true)
                     
-                    Text(pages[index].descriptionKey)
-                        .font(.caption2)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 5)
-                        .fixedSize(horizontal: false, vertical: true)
+//                    Text(pages[index].descriptionKey)
+//                        .font(.system(size: 14))
+//                        .multilineTextAlignment(.center)
+//                        .padding(.top, 5)
+//                        .fixedSize(horizontal: false, vertical: true)
 
                     Button(action: {
                         if currentPage < pages.count - 1 {

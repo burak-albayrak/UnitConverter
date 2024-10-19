@@ -13,6 +13,7 @@ struct CurrencyConverterViewWatch: View {
     @State private var showingFromCurrencyPicker = false
     @State private var showingToCurrencyPicker = false
     @State public var presentingModal: Bool
+    @State private var showingInfoView = false
 
     var body: some View {
         List {
@@ -70,15 +71,20 @@ struct CurrencyConverterViewWatch: View {
                 Button("Refresh Rates") {
                     viewModel.fetchExchangeRates()
                 }
+                
+                Button(action: { showingInfoView = true }) {
+                    HStack {
+                        Image(systemName: "info.circle")
+                        Text("Currency Info")
+                    }
+                }
+                .foregroundColor(.indigo)
             }
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Currency")
-        .sheet(isPresented: $showingFromCurrencyPicker) {
-            currencyPicker(selection: $viewModel.selectedFromCurrencyIndex)
-        }
-        .sheet(isPresented: $showingToCurrencyPicker) {
-            currencyPicker(selection: $viewModel.selectedToCurrencyIndex)
+        .sheet(isPresented: $showingInfoView) {
+            CategoryInfoViewWatch(category: CurrencyUnitsCategory.currency)
         }
     }
     
@@ -137,8 +143,6 @@ struct AllConvertersView: View {
         .navigationTitle("All Converters")
     }
 }
-
-
 
 #Preview {
     CurrencyConverterViewWatch(presentingModal: false)

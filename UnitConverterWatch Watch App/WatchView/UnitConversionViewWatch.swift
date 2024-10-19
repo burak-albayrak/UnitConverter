@@ -17,7 +17,8 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
         @State private var isSelectingFromUnit = true
         @State private var isFavorite = false
         @State private var showingFavoriteMessage = false
-    
+        @State private var showingInfoView = false
+
         var favorite: FavoriteConversion?
     
     init(viewModel: UnitConversionViewModel<T>, favorite: FavoriteConversion? = nil) {
@@ -81,15 +82,24 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
                 Button(action: toggleFavorite) {
                     HStack {
                         Image(systemName: isFavorite ? "star.fill" : "star")
+                            .foregroundColor(isFavorite ? .indigo : .primary)
                         Text(isFavorite ? "Remove from Favorites" : "Add to Favorites")
+                            .foregroundColor(isFavorite ? .indigo : .primary)
+                    }
+                }
+                
+                Button(action: { showingInfoView = true }) {
+                    HStack {
+                        Image(systemName: "info.circle")
+                        Text("Category Info")
                     }
                 }
                 .foregroundColor(.indigo)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(viewModel.category.localizedName)
-            .sheet(isPresented: $showingUnitPicker) {
-                unitPicker
+            .sheet(isPresented: $showingInfoView) {
+                CategoryInfoViewWatch(category: viewModel.category)
             }
             .onAppear {
                 favoritesViewModel.setModelContext(modelContext)

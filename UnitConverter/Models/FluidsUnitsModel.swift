@@ -229,7 +229,7 @@ enum FluidsUnitsCategory: String, CaseIterable, UnitCategory {
             "kmol/m³": 1000,
             "kmol/L": 1000000,
             "kmol/cm³": 1000000000,
-            "kmol/mm³": 1000000000000,
+            "kmol/mm³": Decimal(string: "1000000000000")!,
             "mmol/m³": Decimal(string: "0.001")!,
             "mmol/L": 1,
             "mmol/cm³": 1000,

@@ -113,7 +113,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "Mpc": Decimal(string: "3.08567758128e22")!,
             "kpc": Decimal(string: "3.08567758128e19")!,
             "pc": Decimal(string: "3.08567758128e16")!,
-            "au": 149597870691,
+            "au": Decimal(string: "149597870691")!,
             "lea": Decimal(string: "4828.032")!,
             "nlea(UK)": Decimal(string: "5559.552")!,
             "nlea(int)": 5556,
@@ -177,7 +177,7 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "a0": Decimal(string: "5.2917724900001e-11")!,
             "RE": 6378160,
             "RP": Decimal(string: "6356776.9999999")!,
-            "AU": 149600000000,
+            "AU": Decimal(string: "149600000000")!,
             "RS": 696000000
         ]
         
@@ -591,8 +591,8 @@ enum EngineeringUnitsCategory: String, CaseIterable, UnitCategory {
             "mo": 2628000,
             "yr": 31557600,
             "dec": 315576000,
-            "cent": 3155760000,
-            "mill": 31557600000,
+            "cent": Decimal(string: "3155760000")!,
+            "mill": Decimal(string: "31557600000")!,
             "µs": Decimal(sign: .plus, exponent: -6, significand: 1),
             "ns": Decimal(sign: .plus, exponent: -9, significand: 1),
             "ps": Decimal(sign: .plus, exponent: -12, significand: 1),

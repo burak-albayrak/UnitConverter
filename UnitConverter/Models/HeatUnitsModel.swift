@@ -64,8 +64,8 @@ enum HeatUnitsCategory: String, CaseIterable, UnitCategory {
             "lb/Btu(IT)": 1 / 2326,
             "lb/Btu(th)": 1 / Decimal(string: "2324.4444444446")!,
             "lb/hp/h": 1 / Decimal(string: "5918352.5016")!,
-            "g/hp(m)/h": 1 / 2647795500,
-            "g/kW/h": 1 / 3600000000
+            "g/hp(m)/h": 1 / Decimal(string: "2647795500")!,
+            "g/kW/h": 1 / Decimal(string: "3600000000")!
         ]
         
         guard let fromBase = baseValues[fromUnit], let toBase = baseValues[toUnit] else {
