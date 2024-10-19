@@ -13,7 +13,8 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
         @Environment(\.modelContext) private var modelContext
         @StateObject var viewModel: UnitConversionViewModel<T>
         @StateObject private var favoritesViewModel = FavoritesViewModel()
-        @State private var showingUnitPicker = false
+        @State private var showingFromUnitPicker = false
+        @State private var showingToUnitPicker = false
         @State private var isSelectingFromUnit = true
         @State private var isFavorite = false
         @State private var showingFavoriteMessage = false
@@ -40,16 +41,14 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
                         Text("From:")
                         Spacer()
                         Button(unitText(for: viewModel.selectedFirstUnitIndex)) {
-                            isSelectingFromUnit = true
-                            showingUnitPicker = true
+                            showingFromUnitPicker = true
                         }
                     }
                     HStack {
                         Text("To:")
                         Spacer()
                         Button(unitText(for: viewModel.selectedSecondUnitIndex)) {
-                            isSelectingFromUnit = false
-                            showingUnitPicker = true
+                            showingToUnitPicker = true
                         }
                     }
                 }
@@ -96,6 +95,12 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
                 }
                 .foregroundColor(.indigo)
             }
+            .sheet(isPresented: $showingFromUnitPicker) {
+                unitPicker(selection: $viewModel.selectedFirstUnitIndex)
+            }
+            .sheet(isPresented: $showingToUnitPicker) {
+                unitPicker(selection: $viewModel.selectedSecondUnitIndex)
+            }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(viewModel.category.localizedName)
             .sheet(isPresented: $showingInfoView) {
@@ -118,20 +123,17 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
             }
         }
         
-        private var unitPicker: some View {
-            List {
-                ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
-                    Button(unitText(for: index)) {
-                        if isSelectingFromUnit {
-                            viewModel.selectedFirstUnitIndex = index
-                        } else {
-                            viewModel.selectedSecondUnitIndex = index
-                        }
-                        showingUnitPicker = false
-                    }
+    private func unitPicker(selection: Binding<Int>) -> some View {
+        List {
+            ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
+                Button(unitText(for: index)) {
+                    selection.wrappedValue = index
+                    showingFromUnitPicker = false
+                    showingToUnitPicker = false
                 }
             }
         }
+    }
         
         private func unitText(for index: Int) -> String {
             let unit = viewModel.availableUnits[index]

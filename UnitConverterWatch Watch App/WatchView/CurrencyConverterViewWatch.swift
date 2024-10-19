@@ -9,24 +9,35 @@ import SwiftUI
 import SwiftUI_Apple_Watch_Decimal_Pad
 
 struct CurrencyConverterViewWatch: View {
-    @StateObject private var viewModel = CurrencyConversionViewModel()
+    @Environment(\.modelContext) private var modelContext
+    @StateObject private var viewModel: CurrencyConversionViewModel
+    @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var showingFromCurrencyPicker = false
     @State private var showingToCurrencyPicker = false
     @State public var presentingModal: Bool
     @State private var showingInfoView = false
+    @State private var isFavorite: Bool = false
+    @State private var addedToFavorites: Bool = false
+    let favorite: FavoriteConversion?
+
+    init(presentingModal: Bool, favorite: FavoriteConversion? = nil) {
+        self._viewModel = StateObject(wrappedValue: CurrencyConversionViewModel())
+        self._presentingModal = State(initialValue: presentingModal)
+        self.favorite = favorite
+    }
 
     var body: some View {
         List {
-            Section("Currencies") {
+            Section(LocalizedStringKey("Currencies")) {
                 HStack {
-                    Text("From:")
+                    Text(LocalizedStringKey("From:"))
                     Spacer()
                     Button(currencyText(for: viewModel.selectedFromCurrencyIndex)) {
                         showingFromCurrencyPicker = true
                     }
                 }
                 HStack {
-                    Text("To:")
+                    Text(LocalizedStringKey("To:"))
                     Spacer()
                     Button(currencyText(for: viewModel.selectedToCurrencyIndex)) {
                         showingToCurrencyPicker = true
@@ -34,8 +45,8 @@ struct CurrencyConverterViewWatch: View {
                 }
             }
             
-            Section("Value") {
-                DigiTextView(placeholder: "Enter value", text: $viewModel.inputValue, presentingModal: false, style: .decimal)
+            Section(LocalizedStringKey("Value")) {
+                DigiTextView(placeholder: String(localized: "Enter value"), text: $viewModel.inputValue, presentingModal: false, style: .decimal)
                     .onChange(of: viewModel.inputValue) { _, newValue in
                         let filtered = newValue.filter { "-0123456789.,".contains($0) }
                         if filtered != newValue {
@@ -47,16 +58,16 @@ struct CurrencyConverterViewWatch: View {
                 Button(action: toggleNegative) {
                     HStack {
                         Image(systemName: "plusminus")
-                        Text("Make Negative/Positive")
+                        Text(LocalizedStringKey("Make Negative/Positive"))
                     }
                 }
             }
             
-            Section("Result") {
+            Section(LocalizedStringKey("Result")) {
                 if viewModel.isLoading {
                     ProgressView()
                 } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
+                    Text(LocalizedStringKey(errorMessage))
                         .foregroundColor(.red)
                 } else {
                     Text(viewModel.convertedValue)
@@ -64,27 +75,92 @@ struct CurrencyConverterViewWatch: View {
             }
             
             Section {
-                Button("Swap Currencies") {
+                Button(LocalizedStringKey("Swap Currencies")) {
                     swapCurrencies()
                 }
                 
-                Button("Refresh Rates") {
+                Button(LocalizedStringKey("Refresh Rates")) {
                     viewModel.fetchExchangeRates()
+                }
+                
+                Button(action: toggleFavorite) {
+                    HStack {
+                        Image(systemName: isFavorite ? "star.fill" : "star")
+                            .foregroundColor(isFavorite ? .indigo : .primary)
+                        Text(LocalizedStringKey(isFavorite ? "Remove from Favorites" : "Add to Favorites"))
+                            .foregroundColor(isFavorite ? .indigo : .primary)
+                    }
                 }
                 
                 Button(action: { showingInfoView = true }) {
                     HStack {
                         Image(systemName: "info.circle")
-                        Text("Currency Info")
+                        Text(LocalizedStringKey("Currency Info"))
                     }
                 }
                 .foregroundColor(.indigo)
             }
         }
+        .sheet(isPresented: $showingFromCurrencyPicker) {
+            currencyPicker(selection: $viewModel.selectedFromCurrencyIndex)
+        }
+        .sheet(isPresented: $showingToCurrencyPicker) {
+            currencyPicker(selection: $viewModel.selectedToCurrencyIndex)
+        }
         .navigationBarTitleDisplayMode(.inline)
-        .navigationTitle("Currency")
+        .navigationTitle(LocalizedStringKey("Currency"))
         .sheet(isPresented: $showingInfoView) {
             CategoryInfoViewWatch(category: CurrencyUnitsCategory.currency)
+        }
+        .onAppear {
+            favoritesViewModel.setModelContext(modelContext)
+            updateFavoriteStatus()
+        }
+        .task {
+            await setInitialCurrencies()
+        }
+        .onChange(of: viewModel.selectedFromCurrencyIndex) { _, _ in updateFavoriteStatus() }
+        .onChange(of: viewModel.selectedToCurrencyIndex) { _, _ in updateFavoriteStatus() }
+        .overlay {
+            if addedToFavorites {
+                Text(LocalizedStringKey("Added to Favorites"))
+                    .font(.caption)
+                    .padding()
+                    .background(Color.indigo.opacity(0.8))
+                    .cornerRadius(10)
+                    .transition(.move(edge: .top))
+                    .animation(.easeInOut, value: addedToFavorites)
+                    .onAppear {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            withAnimation {
+                                addedToFavorites = false
+                            }
+                        }
+                    }
+            }
+        }
+    }
+    
+    private func setInitialCurrencies() async {
+        await MainActor.run {
+            if let favorite = favorite,
+               let fromIndex = viewModel.availableCurrencies.firstIndex(where: { $0.symbol == favorite.fromUnit }),
+               let toIndex = viewModel.availableCurrencies.firstIndex(where: { $0.symbol == favorite.toUnit }) {
+                viewModel.selectedFromCurrencyIndex = fromIndex
+                viewModel.selectedToCurrencyIndex = toIndex
+                viewModel.convertCurrency()
+            }
+        }
+    }
+    
+    private func setFromFavorite() {
+        if let favorite = favorite {
+            if let fromIndex = viewModel.availableCurrencies.firstIndex(where: { $0.symbol == favorite.fromUnit }),
+               let toIndex = viewModel.availableCurrencies.firstIndex(where: { $0.symbol == favorite.toUnit }) {
+                viewModel.selectedFromCurrencyIndex = fromIndex
+                viewModel.selectedToCurrencyIndex = toIndex
+                viewModel.convertCurrency()
+            }
         }
     }
     
@@ -131,6 +207,45 @@ struct CurrencyConverterViewWatch: View {
         
         viewModel.convertCurrency()
     }
+    
+    private func toggleFavorite() {
+        if isFavorite {
+            if let favorite = favoritesViewModel.getFavorites().first(where: {
+                $0.category == CurrencyUnitsCategory.currency.rawValue &&
+                $0.fromUnit == viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol &&
+                $0.toUnit == viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+            }) {
+                favoritesViewModel.removeFavorite(favorite)
+            }
+        } else {
+            favoritesViewModel.addFavorite(
+                category: CurrencyUnitsCategory.currency.rawValue,
+                fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
+                toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+            )
+            withAnimation {
+                addedToFavorites = true
+            }
+        }
+        
+        withAnimation {
+            isFavorite.toggle()
+        }
+    }
+    
+    private func updateFavoriteStatus() {
+        guard viewModel.selectedFromCurrencyIndex < viewModel.availableCurrencies.count,
+              viewModel.selectedToCurrencyIndex < viewModel.availableCurrencies.count else {
+            isFavorite = false
+            return
+        }
+        
+        isFavorite = favoritesViewModel.isFavorite(
+            category: CurrencyUnitsCategory.currency.rawValue,
+            fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
+            toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+        )
+    }
 }
 
 struct AllConvertersView: View {
@@ -140,7 +255,7 @@ struct AllConvertersView: View {
                 Label(category.localizedName, systemImage: category.icon)
             }
         }
-        .navigationTitle("All Converters")
+        .navigationTitle(String(localized: String.LocalizationValue("All Converters")))
     }
 }
 

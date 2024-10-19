@@ -2540,6 +2540,9 @@
         }
       }
     },
+    "Category Info" : {
+
+    },
     "Cayman Islands Dollar" : {
       "localizations" : {
         "en" : {
@@ -3832,6 +3835,9 @@
           }
         }
       }
+    },
+    "Currency Info" : {
+
     },
     "CurrencyInfo" : {
       "extractionState" : "manual",

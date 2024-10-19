@@ -174,7 +174,8 @@ struct FavoritesViewWatch: View {
                 UnitConversionViewWatch(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
             }
         case CurrencyUnitsCategory.currency.rawValue:
-            CurrencyConverterViewWatch(presentingModal: false)
+            CurrencyConverterViewWatch(presentingModal: false, favorite: favorite)
+                .id(favorite.id)
         default:
             Text("Unsupported category: \(favorite.category)")
         }
