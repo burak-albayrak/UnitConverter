@@ -39,8 +39,12 @@ struct CurrencyConversionView: View {
             Section("Value") {
                 HStack {
                     Button(action: {
-                        if !viewModel.inputValue.starts(with: "-") {
-                            viewModel.inputValue = "-" + viewModel.inputValue
+                        withAnimation {
+                            if viewModel.inputValue.starts(with: "-") {
+                                viewModel.inputValue.removeFirst()
+                            } else {
+                                viewModel.inputValue = "-" + viewModel.inputValue
+                            }
                         }
                     }) {
                         Text("-")
@@ -61,7 +65,7 @@ struct CurrencyConversionView: View {
                     TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
                         .keyboardType(.decimalPad)
                         .onChange(of: viewModel.inputValue) { oldValue, newValue in
-                            let filtered = newValue.filter { "0123456789.,".contains($0) }
+                            let filtered = newValue.filter { "0123456789.,-".contains($0) }
                             if filtered != newValue {
                                 viewModel.inputValue = filtered
                             }

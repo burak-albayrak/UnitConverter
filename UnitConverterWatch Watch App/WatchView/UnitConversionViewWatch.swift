@@ -54,7 +54,7 @@ struct UnitConversionViewWatch<T: UnitCategory>: View {
                 }
                 
                 Section("Value") {
-                    DigiTextView(placeholder: "Enter value", text: $viewModel.firstUnitInputValue, presentingModal: false, style: .decimal)
+                    DigiTextView(placeholder: String(localized: "Enter value"), text: $viewModel.firstUnitInputValue, presentingModal: false, style: .decimal)
                     
                     Button(action: toggleNegative) {
                         HStack {

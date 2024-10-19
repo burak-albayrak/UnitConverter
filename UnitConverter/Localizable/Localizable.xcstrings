@@ -468,7 +468,14 @@
       }
     },
     "Add Exponent (e)" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "üs ekle (e)"
+          }
+        }
+      }
     },
     "Add some conversions to your favorites!" : {
       "localizations" : {
@@ -481,7 +488,14 @@
       }
     },
     "Add to Favorites" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriye Ekle"
+          }
+        }
+      }
     },
     "Added to Favorites" : {
       "localizations" : {
@@ -2537,11 +2551,24 @@
             "state" : "translated",
             "value" : "Diverse Conversion Categories"
           }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birimler Kategorilere Ayrılmıştır"
+          }
         }
       }
     },
     "Category Info" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilgi"
+          }
+        }
+      }
     },
     "Cayman Islands Dollar" : {
       "localizations" : {
@@ -3824,7 +3851,14 @@
       }
     },
     "Currencies" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Döviz"
+          }
+        }
+      }
     },
     "Currency" : {
       "localizations" : {
@@ -3837,7 +3871,14 @@
       }
     },
     "Currency Info" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bilgi"
+          }
+        }
+      }
     },
     "CurrencyInfo" : {
       "extractionState" : "manual",
@@ -5659,9 +5700,6 @@
         }
       }
     },
-    "Failed to create preview: %@" : {
-
-    },
     "Falkland Islands Pound" : {
       "localizations" : {
         "en" : {
@@ -5804,6 +5842,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Personalize Your Experience"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deneyimini Kişiselleştir"
           }
         }
       }
@@ -6438,7 +6482,14 @@
       }
     },
     "From:" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu birimden:"
+          }
+        }
+      }
     },
     "Fuel Consumption" : {
       "extractionState" : "manual",
@@ -10844,7 +10895,14 @@
       }
     },
     "Make Negative/Positive" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozitif veya Negatif yap"
+          }
+        }
+      }
     },
     "Malagasy Ariary" : {
       "localizations" : {
@@ -15686,7 +15744,14 @@
       }
     },
     "Refresh Rates" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yenile"
+          }
+        }
+      }
     },
     "rem/second" : {
       "localizations" : {
@@ -15699,10 +15764,24 @@
       }
     },
     "Remove from Favorites" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorilerden Kaldır"
+          }
+        }
+      }
     },
     "Removed from Favorites" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorilerden Kaldırıldı"
+          }
+        }
+      }
     },
     "rep" : {
       "localizations" : {
@@ -16788,7 +16867,14 @@
       }
     },
     "Start" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başlayın!"
+          }
+        }
+      }
     },
     "statampere" : {
       "localizations" : {
@@ -17131,7 +17217,14 @@
       }
     },
     "Swap Currencies" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dövizlerin Yerini Değiştir"
+          }
+        }
+      }
     },
     "SwapCurrencies" : {
       "localizations" : {
@@ -17792,7 +17885,14 @@
       }
     },
     "To:" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu birime:"
+          }
+        }
+      }
     },
     "ton (assay) (UK)" : {
       "localizations" : {
@@ -19154,6 +19254,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Welcome to Unit Converter"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Dönüştürücüye Hoşgeldin"
           }
         }
       }

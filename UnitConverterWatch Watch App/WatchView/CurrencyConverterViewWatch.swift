@@ -83,14 +83,14 @@ struct CurrencyConverterViewWatch: View {
                     viewModel.fetchExchangeRates()
                 }
                 
-                Button(action: toggleFavorite) {
-                    HStack {
-                        Image(systemName: isFavorite ? "star.fill" : "star")
-                            .foregroundColor(isFavorite ? .indigo : .primary)
-                        Text(LocalizedStringKey(isFavorite ? "Remove from Favorites" : "Add to Favorites"))
-                            .foregroundColor(isFavorite ? .indigo : .primary)
-                    }
-                }
+//                Button(action: toggleFavorite) {
+//                    HStack {
+//                        Image(systemName: isFavorite ? "star.fill" : "star")
+//                            .foregroundColor(isFavorite ? .indigo : .primary)
+//                        Text(LocalizedStringKey(isFavorite ? "Remove from Favorites" : "Add to Favorites"))
+//                            .foregroundColor(isFavorite ? .indigo : .primary)
+//                    }
+//                }
                 
                 Button(action: { showingInfoView = true }) {
                     HStack {
