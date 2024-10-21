@@ -12,14 +12,22 @@ struct AllConvertersMenuIPad: View {
     let onDismiss: () -> Void
     @State private var selectedUnitCategoryIndex: Int?
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
+    @State private var showSettings = false
+    @State private var showFavorites = false
 
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
-            List(Array(category.unitCategory.enumerated()), id: \.offset) { index, unitCategory in
+            List(Array(category.unitCategory.enumerated()), id: \.offset, selection: $selectedUnitCategoryIndex) { index, unitCategory in
                 Button(action: {
                     selectedUnitCategoryIndex = index
                 }) {
-                    Label(unitCategory.localizedName, systemImage: unitCategory.icon)
+                    Label {
+                        Text(unitCategory.localizedName)
+                            .foregroundColor(selectedUnitCategoryIndex == index ? .accentColor : .primary)
+                    } icon: {
+                        Image(systemName: unitCategory.icon)
+                            .foregroundColor(.accentColor)
+                    }
                 }
                 .buttonStyle(PlainButtonStyle())
             }
@@ -31,11 +39,27 @@ struct AllConvertersMenuIPad: View {
                         Label("Back", systemImage: "chevron.left")
                     }
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Button(action: { showFavorites = true }) {
+                            Image(systemName: "star.fill")
+                                .font(.title2)
+                                .foregroundColor(.accentColor)
+                        }
+                        
+                        Button(action: { showSettings = true }) {
+                            Image(systemName: "gear")
+                                .font(.title2)
+                                .foregroundColor(.accentColor)
+                        }
+                    }
+                }
             }
         } detail: {
             if let index = selectedUnitCategoryIndex,
                let selectedCategory = category.unitCategory[safe: index] {
                 makeUnitConversionView(for: selectedCategory)
+                    .id(index) // Add this line
             } else {
                 Text("Bir dönüştürücü seçin")
                     .font(.title)
@@ -45,6 +69,26 @@ struct AllConvertersMenuIPad: View {
         .navigationSplitViewStyle(.balanced)
         .onAppear {
             columnVisibility = .all
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsViewIPad(showSettings: $showSettings)
+        }
+        .sheet(isPresented: $showFavorites) {
+            NavigationView {
+                FavoritesViewIPad()
+            }
+        }
+        .navigationSplitViewStyle(.balanced)
+        .onAppear {
+            columnVisibility = .all
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsViewIPad(showSettings: $showSettings)
+        }
+        .sheet(isPresented: $showFavorites) {
+            NavigationView {
+                FavoritesViewIPad()
+            }
         }
     }
     
