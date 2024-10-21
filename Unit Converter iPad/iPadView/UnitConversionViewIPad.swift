@@ -55,7 +55,7 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
                         Text(LocalizedStringKey("paste"))
                             .padding(9)
                             .padding(.horizontal)
-                            .foregroundStyle(.cyan)
+                            .foregroundColor(.accentColor)
                             .background(.ultraThinMaterial)
                             .containerShape(.rect(cornerRadius: 10))
                             .opacity(isPasteButtonPressed ? 0.5 : 1.0)
@@ -91,7 +91,7 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
                         Text(LocalizedStringKey("copy"))
                             .padding(9)
                             .padding(.horizontal)
-                            .foregroundStyle(.cyan)
+                            .foregroundColor(.accentColor)
                             .background(.ultraThinMaterial)
                             .containerShape(.rect(cornerRadius: 10))
                             .opacity(isCopyButtonPressed ? 0.5 : 1.0)
@@ -115,7 +115,7 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
                         Spacer()
                     }
                 }
-                .foregroundStyle(.cyan)
+                .foregroundColor(.accentColor)
             }
         }
         .navigationTitle(viewModel.category.localizedName)
@@ -126,7 +126,7 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
                 }, label: {
                     Image(systemName: "keyboard.chevron.compact.down")
                         .font(.callout)
-                        .foregroundColor(.cyan)
+                        .foregroundColor(.accentColor)
                 })
                 Button(action: {
                     if isFavorite {
@@ -166,7 +166,7 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
                 }) {
                     Image(systemName: isFavorite ? "star.fill" : "star")
                         .font(.title3)
-                        .foregroundColor(.cyan)
+                        .foregroundColor(.accentColor)
                         .scaleEffect(isFavoriteButtonPressed ? 1.2 : 1.0)
                 }
                 Button(action: {
@@ -174,7 +174,7 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
                 }, label: {
                     Image(systemName: "info.circle")
                         .font(.title3)
-                        .foregroundColor(.cyan)
+                        .foregroundColor(.accentColor)
                 })
             }
         }
@@ -207,7 +207,7 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
             .font(.system(.body, design: .rounded, weight: .semibold))
             .foregroundStyle(.white)
             .padding()
-            .background(Color.cyan.cornerRadius(20))
+            .background(Color.accentColor.cornerRadius(20))
             .padding(.bottom)
             .shadow(radius: 5)
             .transition(.move(edge: .bottom))

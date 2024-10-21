@@ -11,91 +11,75 @@ import MessageUI
 import StoreKit
 
 struct SettingsViewIPad: View {
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.horizontalSizeClass) var sizeClass
     @StateObject private var favoritesViewModel = FavoritesViewModel()
-    @State private var showingClearConfirmation = false
-    @State private var isShowingMailView = false
-    @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
-    @State private var showingPurchaseAlert = false
-    @State private var purchaseAlertMessage = ""
-    @State private var showLanguageChangeAlert = false
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("appLanguage") private var appLanguage = "en"
+    @Binding var showSettings: Bool
     
     var body: some View {
-        NavigationView {
-            Form {
-                Group {
-                    appearanceSection
-                    languageSection
-                    favoritesSection
-                    feedbackSection
-                    aboutSection
+        NavigationSplitView {
+            List {
+                NavigationLink(destination: AppearanceView()) {
+                    Label("Appearance", systemImage: "paintbrush")
+                }
+                NavigationLink(destination: LanguageView()) {
+                    Label("Language", systemImage: "globe")
+                }
+                NavigationLink(destination: FavoritesView()) {
+                    Label("Favorites", systemImage: "star")
+                }
+                NavigationLink(destination: FeedbackView()) {
+                    Label("Feedback", systemImage: "envelope")
+                }
+                NavigationLink(destination: AboutView()) {
+                    Label("About", systemImage: "info.circle")
                 }
             }
+            .listStyle(SidebarListStyle())
             .navigationTitle("Settings")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
-                        dismiss()
+        } detail: {
+            Text("Select a setting to view details")
+                .font(.largeTitle)
+                .foregroundColor(.secondary)
+        }
+        .navigationSplitViewStyle(.balanced)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    showSettings = false
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("Back to Main Menu")
                     }
                 }
-            }
-            
-            if sizeClass == .regular {
-                // Placeholder view for iPad
-                Text("Select a setting to view details")
-                    .font(.largeTitle)
-                    .foregroundColor(.secondary)
-            }
-        }
-        .navigationViewStyle(DoubleColumnNavigationViewStyle())
-        .sheet(isPresented: $isShowingMailView) {
-            MailViewIPad(result: $mailResult) { composer in
-                composer.setSubject(String(localized: "Feedback for Unit Converter App"))
-                composer.setToRecipients(["burak_albayrak0@icloud.com"])
             }
         }
         .onAppear {
             favoritesViewModel.setModelContext(modelContext)
         }
-        .alert(isPresented: $showingPurchaseAlert) {
-            Alert(title: Text("Purchase"), message: Text(purchaseAlertMessage), dismissButton: .default(Text("OK")))
-        }
-        .alert(isPresented: $showLanguageChangeAlert) {
-            Alert(
-                title: Text("Language Changed"),
-                message: Text("Please restart the app for the language change to take effect."),
-                dismissButton: .default(Text("OK")) {
-                    exit(0) // This will force quit the app
-                }
-            )
-        }
-        .alert("Clear All Favorites", isPresented: $showingClearConfirmation) {
-            Button("Cancel", role: .cancel) { }
-            Button("Clear", role: .destructive) {
-                favoritesViewModel.clearAllFavorites()
-            }
-        } message: {
-            Text("Are you sure you want to clear all favorites? This action cannot be undone.")
-        }
         .preferredColorScheme(isDarkMode ? .dark : .light)
-        
-        Text(getAppVersion())
-            .foregroundColor(.secondary)
-            .padding(.top, 20)
     }
-    
-    private var appearanceSection: some View {
-        Section(header: Text("Appearance")) {
+}
+
+struct AppearanceView: View {
+    @AppStorage("isDarkMode") private var isDarkMode = false
+
+    var body: some View {
+        Form {
             Toggle("Dark Mode", isOn: $isDarkMode)
         }
+        .navigationTitle("Appearance")
     }
-    
-    private var languageSection: some View {
-        Section(header: Text("Language")) {
+}
+
+struct LanguageView: View {
+    @AppStorage("appLanguage") private var appLanguage = "en"
+    @State private var showLanguageChangeAlert = false
+
+    var body: some View {
+        Form {
             Picker("Language", selection: $appLanguage) {
                 Text("English").tag("en")
                 Text("Türkçe").tag("tr")
@@ -107,41 +91,79 @@ struct SettingsViewIPad: View {
                 showLanguageChangeAlert = true
             }
         }
+        .navigationTitle("Language")
+        .alert(isPresented: $showLanguageChangeAlert) {
+            Alert(
+                title: Text("Language Changed"),
+                message: Text("Please restart the app for the language change to take effect."),
+                dismissButton: .default(Text("OK")) {
+                    exit(0)
+                }
+            )
+        }
     }
-    
-    private var favoritesSection: some View {
-        Section(header: Text("Favorites")) {
+}
+
+struct FavoritesView: View {
+    @StateObject private var favoritesViewModel = FavoritesViewModel()
+    @State private var showingClearConfirmation = false
+
+    var body: some View {
+        Form {
             Button("Clear All Favorites") {
                 showingClearConfirmation = true
             }
             .foregroundColor(.red)
         }
+        .navigationTitle("Favorites")
+        .alert("Clear All Favorites", isPresented: $showingClearConfirmation) {
+            Button("Cancel", role: .cancel) { }
+            Button("Clear", role: .destructive) {
+                favoritesViewModel.clearAllFavorites()
+            }
+        } message: {
+            Text("Are you sure you want to clear all favorites? This action cannot be undone.")
+        }
     }
-    
-    private var feedbackSection: some View {
-        Section(header: Text("Feedback")) {
-            Button("Feedback Me") {
-                isShowingMailView = true
+}
+
+struct FeedbackView: View {
+    @State private var isShowingMailView = false
+    @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
+
+    var body: some View {
+        Button("Send Feedback") {
+            isShowingMailView = true
+        }
+        .navigationTitle("Feedback")
+        .sheet(isPresented: $isShowingMailView) {
+            MailViewIPad(result: $mailResult) { composer in
+                composer.setSubject(String(localized: "Feedback for Unit Converter App"))
+                composer.setToRecipients(["burak_albayrak0@icloud.com"])
             }
         }
     }
-    
-    private var aboutSection: some View {
-        Section(header: Text("About")) {
+}
+
+struct AboutView: View {
+    var body: some View {
+        Form {
             Link("Rate the App", destination: URL(string: "https://apps.apple.com/tr/app/unit-converter-scientific/id6692634387")!)
+            Text("Version \(getAppVersion())")
+                .foregroundColor(.secondary)
         }
+        .navigationTitle("About")
     }
-    
+
     func getAppVersion() -> String {
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
-        return "version \(version)"
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
     }
 }
 
 #Preview {
     do {
         let container = try PreviewContainer().container
-        return SettingsViewIPad()
+        return SettingsViewIPad(showSettings: .constant(true))
             .modelContainer(container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

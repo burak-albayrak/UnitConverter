@@ -15,44 +15,53 @@ struct CategoryInfoViewIPad<T: UnitCategory>: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                HStack(spacing: 20) {
-                    Image(systemName: category.icon)
-                        .foregroundColor(.cyan)
-                        .font(.system(size: 60))
-                    Text(category.localizedName)
-                        .bold()
-                        .font(.system(size: 40))
-                }
-                .padding(.top, geometry.size.height * 0.05)
+            ZStack {
+                (isDarkMode ? Color.black : Color.white)
+                    .edgesIgnoringSafeArea(.all)
                 
-                ScrollView {
-                    Text(category.info)
-                        .padding(.horizontal, geometry.size.width * 0.1)
-                        .padding(.vertical, 20)
-                        .multilineTextAlignment(.leading)
-                        .font(.system(size: 20))
+                VStack(spacing: 30) {
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            presentationMode.wrappedValue.dismiss()
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                                .font(.system(size: 30))
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    
+                    VStack(spacing: 35) {
+                        Image(systemName: category.icon)
+                            .foregroundColor(.accentColor)
+                            .font(.system(size: 40))
+                            .background(
+                                Circle()
+                                    .fill(Color.accentColor.opacity(0.1))
+                                    .frame(width: 100, height: 100)
+                            )
+                            .padding(.bottom, 10)
+                        
+                        Text(category.localizedName)
+                            .font(.system(size: 36, weight: .bold))
+                            .foregroundColor(isDarkMode ? .white : .black)
+                        
+                    }
+                    
+                    ScrollView {
+                        Text(category.info)
+                            .font(.system(size: 22))
+                            .foregroundColor(isDarkMode ? .white : .black)
+                            .padding(.horizontal, geometry.size.width * 0.1)
+                    }
+                    .frame(maxWidth: 800)
                 }
-                .frame(maxWidth: 800)
-                
-                Spacer()
-                
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    Text("OK")
-                        .font(.headline)
-                        .bold()
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 60)
-                        .background(RoundedRectangle(cornerRadius: 30).fill(Color.cyan.gradient))
-                }
-                .padding(.bottom, geometry.size.height * 0.05)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(.vertical, 20)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(isDarkMode ? Color.black : Color.white)
-            .preferredColorScheme(isDarkMode ? .dark : .light)
         }
+        .navigationBarHidden(true)
     }
 }
 

@@ -13,28 +13,85 @@ struct MainMenuViewIPad: View {
     @State private var showSettings = false
     @State private var showFavorites = false
     @State private var selectedItem: String?
-    
+    @State private var selectedCommonCategory: CommonUnitsCategory?
+    @State private var columnVisibility: NavigationSplitViewVisibility = .all
+    @State private var showAllConvertersMenu = false
+
     var body: some View {
-        NavigationSplitView {
+        Group {
+            if showAllConvertersMenu, let category = selectedCategory {
+                AllConvertersMenuIPad(category: category, onDismiss: {
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        showAllConvertersMenu = false
+                        selectedCategory = nil
+                    }
+                })
+            } else {
+                mainMenuContent
+            }
+        }
+        .navigationSplitViewStyle(.balanced)
+        .onAppear {
+            columnVisibility = .all
+        }
+        .sheet(isPresented: $showSettings) {
+            SettingsViewIPad(showSettings: $showSettings)
+        }
+        .sheet(isPresented: $showFavorites) {
+            NavigationView {
+                FavoritesViewIPad()
+            }
+        }
+    }
+
+    private var mainMenuContent: some View {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
             List(selection: $selectedItem) {
                 Section("Common Converters") {
                     ForEach(CommonUnitsCategory.allCases, id: \.self) { category in
                         NavigationLink(value: category.rawValue) {
-                            Label(category.localizedName, systemImage: category.icon)
+                            Label {
+                                Text(category.localizedName)
+                                    .foregroundColor(selectedItem == category.rawValue ? .accentColor : .primary)
+
+                            } icon: {
+                                Image(systemName: category.icon)
+                                    .foregroundColor(.accentColor)
+
+                            }
                         }
                     }
                 }
                 
                 Section("Price Converter") {
                     NavigationLink(value: "Currency") {
-                        Label("Currency", systemImage: "dollarsign.circle")
+                        Label {
+                            Text("Currency")
+                                .foregroundColor(selectedItem == "Currency" ? .accentColor : .primary)
+
+                        } icon: {
+                            Image(systemName: "dollarsign.circle")
+                                .foregroundColor(.accentColor)
+
+                        }
                     }
                 }
                 
                 Section("All Converters") {
                     ForEach(AllConvertersCategory.allCases) { category in
-                        NavigationLink(value: category.rawValue) {
-                            Label(category.localizedName, systemImage: category.icon)
+                        Button(action: {
+                            selectedCategory = category
+                            withAnimation(.easeInOut(duration: 0.3)) {
+                                showAllConvertersMenu = true
+                            }
+                        }) {
+                            Label {
+                                Text(category.localizedName)
+                                    .foregroundColor(selectedCategory == category ? .accentColor : .primary)
+                            } icon: {
+                                Image(systemName: category.icon)
+                                    .foregroundColor(.accentColor)
+                            }
                         }
                     }
                 }
@@ -46,13 +103,13 @@ struct MainMenuViewIPad: View {
                         Button(action: { showFavorites = true }) {
                             Image(systemName: "star.fill")
                                 .font(.title2)
-                                .foregroundColor(.cyan)
+                                .foregroundColor(.accentColor)
                         }
                         
                         Button(action: { showSettings = true }) {
                             Image(systemName: "gear")
                                 .font(.title2)
-                                .foregroundColor(.cyan)
+                                .foregroundColor(.accentColor)
                         }
                     }
                 }
@@ -61,24 +118,16 @@ struct MainMenuViewIPad: View {
             if let selectedItem = selectedItem {
                 if let commonCategory = CommonUnitsCategory(rawValue: selectedItem) {
                     UnitConversionViewIPad(viewModel: UnitConversionViewModel(category: commonCategory))
+                        .id(commonCategory)
                 } else if selectedItem == "Currency" {
                     CurrencyConversionViewIPad()
                 } else if let allConvertersCategory = AllConvertersCategory(rawValue: selectedItem) {
-                    AllConvertersMenuIPad(category: allConvertersCategory)
+                    AllConvertersMenuIPad(category: allConvertersCategory, onDismiss: {})
                 }
             } else {
                 Text("Bir dönüştürücü seçin")
                     .font(.title)
                     .foregroundColor(.secondary)
-            }
-        }
-        .navigationSplitViewStyle(.balanced)
-        .sheet(isPresented: $showSettings) {
-            SettingsViewIPad()
-        }
-        .sheet(isPresented: $showFavorites) {
-            NavigationView {
-                FavoritesViewIPad()
             }
         }
     }

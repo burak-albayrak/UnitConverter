@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CurrencyConversionViewIPad: View {
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.horizontalSizeClass) var sizeClass
     @StateObject private var viewModel = CurrencyConversionViewModel()
     @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var copiedToClipboard: Bool = false
@@ -20,32 +19,87 @@ struct CurrencyConversionViewIPad: View {
     @State private var isFavorite: Bool = false
 
     var body: some View {
-        GeometryReader { geometry in
-            Form {
-                if sizeClass == .regular {
-                    // iPad layout
-                    HStack(spacing: 20) {
-                        VStack {
-                            currencySelectionSection
-                            swapButton
-                        }
-                        .frame(width: geometry.size.width * 0.4)
-                        
-                        VStack {
-                            inputSection
-                            resultSection
-                        }
-                        .frame(width: geometry.size.width * 0.5)
+        Form {
+            Section(LocalizedStringKey("Select Currencies")) {
+                Picker(LocalizedStringKey("From Currency"), selection: $viewModel.selectedFromCurrencyIndex) {
+                    ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
+                        Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                     }
-                } else {
-                    // iPhone layout (unchanged)
-                    currencySelectionSection
-                    inputSection
-                    resultSection
-                    swapButton
+                }
+                .id(viewModel.selectedFromCurrencyIndex)
+                
+                Picker(LocalizedStringKey("To Currency"), selection: $viewModel.selectedToCurrencyIndex) {
+                    ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
+                        Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
+                    }
+                }
+                .id(viewModel.selectedToCurrencyIndex)
+            }
+            
+            Section("Value") {
+                HStack {
+                    Button(action: {
+                        withAnimation {
+                            if viewModel.inputValue.starts(with: "-") {
+                                viewModel.inputValue.removeFirst()
+                            } else {
+                                viewModel.inputValue = "-" + viewModel.inputValue
+                            }
+                        }
+                    }) {
+                        Text("-")
+                            .padding(7)
+                            .padding(.horizontal, 7)
+                            .foregroundColor(.accentColor)
+                            .background(.ultraThinMaterial)
+                            .containerShape(.rect(cornerRadius: 10))
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    
+                    TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
+                        .keyboardType(.decimalPad)
+                        .onChange(of: viewModel.inputValue) { oldValue, newValue in
+                            let filtered = newValue.filter { "0123456789.,-".contains($0) }
+                            if filtered != newValue {
+                                viewModel.inputValue = filtered
+                            }
+                            viewModel.convertCurrency()
+                        }
+                    if viewModel.selectedFromCurrencyIndex < viewModel.availableCurrencies.count {
+                        Text(viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol)
+                    }
+                    Spacer()
+                    pasteButton
                 }
             }
-            .listStyle(InsetGroupedListStyle())
+            
+            Section("Result") {
+                HStack {
+                    if viewModel.isLoading {
+                        ProgressView()
+                    } else if let errorMessage = viewModel.errorMessage {
+                        Text(LocalizedStringKey(errorMessage))
+                            .foregroundColor(.red)
+                    } else {
+                        Text(viewModel.convertedValue)
+                        Spacer()
+                        Text(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol)
+                    }
+                    copyButton
+                }
+            }
+            
+            Section {
+                Button(action: swapCurrencies) {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "arrow.up.arrow.down")
+                        Text(LocalizedStringKey("SwapCurrencies"))
+                        Spacer()
+                    }
+                }
+                .foregroundColor(.accentColor)
+            }
         }
         .navigationTitle(LocalizedStringKey("Currency"))
         .toolbar {
@@ -72,124 +126,6 @@ struct CurrencyConversionViewIPad: View {
         }
     }
     
-    private var currencySelectionSection: some View {
-        Section(LocalizedStringKey("Select Currencies")) {
-            Picker(LocalizedStringKey("From Currency"), selection: $viewModel.selectedFromCurrencyIndex) {
-                ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
-                    Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
-                }
-            }
-            .id(viewModel.selectedFromCurrencyIndex)
-//            .pickerStyle(sizeClass == .regular ? .wheel : .automatic)
-            
-            Picker(LocalizedStringKey("To Currency"), selection: $viewModel.selectedToCurrencyIndex) {
-                ForEach(0 ..< viewModel.availableCurrencies.count, id: \.self) { index in
-                    Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
-                }
-            }
-            .id(viewModel.selectedToCurrencyIndex)
-//            .pickerStyle(sizeClass == .regular ? .wheel : .automatic)
-        }
-    }
-    
-    private var inputSection: some View {
-        Section("Value") {
-            HStack {
-                Button(action: {
-                    withAnimation {
-                        if viewModel.inputValue.starts(with: "-") {
-                            viewModel.inputValue.removeFirst()
-                        } else {
-                            viewModel.inputValue = "-" + viewModel.inputValue
-                        }
-                    }
-                }) {
-                    Text("-")
-                        .padding(7)
-                        .padding(.horizontal, 7)
-                        .foregroundStyle(.cyan)
-                        .background(.ultraThinMaterial)
-                        .containerShape(.rect(cornerRadius: 10))
-                }
-                .buttonStyle(PlainButtonStyle())
-                
-                TextField(LocalizedStringKey("Enter value"), text: $viewModel.inputValue)
-                    .keyboardType(.decimalPad)
-                    .onChange(of: viewModel.inputValue) { oldValue, newValue in
-                        let filtered = newValue.filter { "0123456789.,-".contains($0) }
-                        if filtered != newValue {
-                            viewModel.inputValue = filtered
-                        }
-                        viewModel.convertCurrency()
-                    }
-                if viewModel.selectedFromCurrencyIndex < viewModel.availableCurrencies.count {
-                    Text(viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol)
-                }
-                Spacer()
-                pasteButton
-            }
-        }
-    }
-    
-    private var resultSection: some View {
-        Section("Result") {
-            HStack {
-                if viewModel.isLoading {
-                    ProgressView()
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(LocalizedStringKey(errorMessage))
-                        .foregroundColor(.red)
-                } else {
-                    Text(viewModel.convertedValue)
-                    Spacer()
-                    Text(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol)
-                }
-                copyButton
-            }
-        }
-    }
-    
-    private var swapButton: some View {
-        Section {
-            Button(action: swapCurrencies) {
-                HStack {
-                    Spacer()
-                    Image(systemName: "arrow.up.arrow.down")
-                    Text(LocalizedStringKey("SwapCurrencies"))
-                    Spacer()
-                }
-            }
-            .foregroundStyle(.cyan)
-        }
-    }
-    
-    private var toolbarButtons: some View {
-        Group {
-            Button(action: {
-                UIApplication.shared.hideKeyboard()
-            }) {
-                Image(systemName: "keyboard.chevron.compact.down")
-                    .font(.callout)
-                    .foregroundColor(.cyan)
-            }
-            
-            Button(action: toggleFavorite) {
-                Image(systemName: isFavorite ? "star.fill" : "star")
-                    .font(.title3)
-                    .foregroundColor(.cyan)
-                    .scaleEffect(isFavoriteButtonPressed ? 1.2 : 1.0)
-            }
-            
-            Button(action: viewModel.fetchExchangeRates) {
-                Image(systemName: "arrow.clockwise")
-            }
-            
-            Button(action: { viewModel.isInfoPresented = true }) {
-                Image(systemName: "info.circle")
-            }
-        }
-    }
-    
     private var pasteButton: some View {
         Button(action: {
             if let pasteboardString = UIPasteboard.general.string {
@@ -199,7 +135,7 @@ struct CurrencyConversionViewIPad: View {
             Text("paste")
                 .padding(9)
                 .padding(.horizontal)
-                .foregroundStyle(.cyan)
+                .foregroundColor(.accentColor)
                 .background(.ultraThinMaterial)
                 .containerShape(.rect(cornerRadius: 10))
                 .opacity(isPasteButtonPressed ? 0.5 : 1.0)
@@ -228,7 +164,7 @@ struct CurrencyConversionViewIPad: View {
             Text("copy")
                 .padding(9)
                 .padding(.horizontal)
-                .foregroundStyle(.cyan)
+                .foregroundColor(.accentColor)
                 .background(.ultraThinMaterial)
                 .containerShape(.rect(cornerRadius: 10))
                 .opacity(isCopyButtonPressed ? 0.5 : 1.0)
@@ -240,6 +176,33 @@ struct CurrencyConversionViewIPad: View {
                 .onChanged { _ in isCopyButtonPressed = true }
                 .onEnded { _ in isCopyButtonPressed = false }
         )
+    }
+    
+    private var toolbarButtons: some View {
+        Group {
+            Button(action: {
+                UIApplication.shared.hideKeyboard()
+            }) {
+                Image(systemName: "keyboard.chevron.compact.down")
+                    .font(.callout)
+                    .foregroundColor(.accentColor)
+            }
+            
+            Button(action: toggleFavorite) {
+                Image(systemName: isFavorite ? "star.fill" : "star")
+                    .font(.title3)
+                    .foregroundColor(.accentColor)
+                    .scaleEffect(isFavoriteButtonPressed ? 1.2 : 1.0)
+            }
+            
+            Button(action: viewModel.fetchExchangeRates) {
+                Image(systemName: "arrow.clockwise")
+            }
+            
+            Button(action: { viewModel.isInfoPresented = true }) {
+                Image(systemName: "info.circle")
+            }
+        }
     }
     
     private func toggleFavorite() {
@@ -285,7 +248,7 @@ struct CurrencyConversionViewIPad: View {
             .font(.system(.body, design: .rounded, weight: .semibold))
             .foregroundStyle(.white)
             .padding()
-            .background(Color.cyan.cornerRadius(20))
+            .background(Color.accentColor.cornerRadius(20))
             .padding(.bottom)
             .shadow(radius: 5)
             .transition(.move(edge: .bottom))

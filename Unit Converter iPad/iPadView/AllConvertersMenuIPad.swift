@@ -9,10 +9,12 @@ import SwiftUI
 
 struct AllConvertersMenuIPad: View {
     let category: AllConvertersCategory
+    let onDismiss: () -> Void
     @State private var selectedUnitCategoryIndex: Int?
-    
+    @State private var columnVisibility: NavigationSplitViewVisibility = .all
+
     var body: some View {
-        NavigationSplitView {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
             List(Array(category.unitCategory.enumerated()), id: \.offset) { index, unitCategory in
                 Button(action: {
                     selectedUnitCategoryIndex = index
@@ -22,6 +24,13 @@ struct AllConvertersMenuIPad: View {
                 .buttonStyle(PlainButtonStyle())
             }
             .navigationTitle(category.localizedName)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: onDismiss) {
+                        Label("Back", systemImage: "chevron.left")
+                    }
+                }
+            }
         } detail: {
             if let index = selectedUnitCategoryIndex,
                let selectedCategory = category.unitCategory[safe: index] {
@@ -33,6 +42,9 @@ struct AllConvertersMenuIPad: View {
             }
         }
         .navigationSplitViewStyle(.balanced)
+        .onAppear {
+            columnVisibility = .all
+        }
     }
     
     @ViewBuilder
@@ -63,6 +75,6 @@ extension Array {
 
 #Preview {
     NavigationView {
-        AllConvertersMenuIPad(category: AllConvertersCategory.fluidsConverters)
+        AllConvertersMenuIPad(category: AllConvertersCategory.fluidsConverters, onDismiss: {})
     }
 }
