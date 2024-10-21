@@ -18,7 +18,7 @@ struct WelcomeViewIPad: View {
         WelcomePage(
             titleKey: "WelcomeTitle",
             descriptionKey: "WelcomeDescription",
-            imageName: "WelcomeImage1",
+            imageName: "Logo",
             isSymbol: false
         ),
         WelcomePage(

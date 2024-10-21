@@ -34,13 +34,17 @@ struct FavoritesViewIPad: View {
                     }
                 }
             }
-            .navigationDestination(for: FavoriteConversion.self) { favorite in
-                destinationView(for: favorite)
-            }
         } detail: {
-            Text("Select a favorite to view details")
-                .font(.largeTitle)
-                .foregroundColor(.secondary)
+            Group {
+                if let favorite = selectedFavorite {
+                    destinationView(for: favorite)
+                } else {
+                    Text("Select a favorite to view details")
+                        .font(.largeTitle)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .navigationTitle(selectedFavorite?.category ?? "Details")
         }
         .onAppear {
             favoritesViewModel.setModelContext(modelContext)
@@ -66,17 +70,25 @@ struct FavoritesViewIPad: View {
     private var favoritesList: some View {
         List(selection: $selectedFavorite) {
             ForEach(favorites) { favorite in
-                NavigationLink(value: favorite) {
+                HStack {
                     VStack(alignment: .leading) {
                         Text(localizedString(favorite.category))
                             .font(.headline)
                         Text("\(localizedString(favorite.fromUnit))  ->  \(localizedString(favorite.toUnit))")
                             .font(.subheadline)
                     }
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.secondary)
+                }
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    selectedFavorite = favorite
                 }
             }
             .onDelete(perform: deleteFavorites)
         }
+        .listStyle(SidebarListStyle())
     }
     
     private func deleteFavorites(at offsets: IndexSet) {
