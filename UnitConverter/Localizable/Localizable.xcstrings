@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     " " : {
-
+      "shouldTranslate" : false
     },
     "-" : {
       "localizations" : {
@@ -22,7 +22,8 @@
             "value" : "%1$@  ->  %2$@"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%@ -> %@" : {
       "localizations" : {
@@ -32,7 +33,8 @@
             "value" : "%1$@ -> %2$@"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%@ (%@)" : {
       "localizations" : {
@@ -855,7 +857,7 @@
       }
     },
     "Are you sure you want to clear all favorites?" : {
-
+      "shouldTranslate" : false
     },
     "Are you sure you want to clear all favorites? This action cannot be undone." : {
       "localizations" : {
@@ -2059,8 +2061,7 @@
             "value" : "Bana bir kahve Ismarla"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "cab (Biblical)" : {
       "localizations" : {
@@ -2525,7 +2526,8 @@
             "value" : "From everyday to advanced units, we have every conversion you need."
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "CategoriesTitle" : {
       "extractionState" : "manual",
@@ -5817,7 +5819,8 @@
             "value" : "Save your frequently used conversions for quick access anytime."
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "FavoritesTitle" : {
       "extractionState" : "manual",
@@ -6468,8 +6471,7 @@
             "value" : "Bu Birimden"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "From Unit" : {
       "localizations" : {
@@ -6922,7 +6924,8 @@
             "value" : "Ready to make your calculations easier?"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "GetStartedTitle" : {
       "extractionState" : "manual",
@@ -6949,7 +6952,8 @@
             "value" : "Let's Start Converting Units!"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Ghanaian Cedi" : {
       "localizations" : {
@@ -17236,7 +17240,7 @@
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Dövizlerin Yerini Değiştir"
           }
         }
@@ -19229,7 +19233,8 @@
             "value" : "Effortlessly convert units across various fields."
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "WelcomeTitle" : {
       "extractionState" : "manual",
