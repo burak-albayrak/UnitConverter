@@ -1216,6 +1216,12 @@
         }
       }
     },
+    "Back" : {
+
+    },
+    "Back to Main Menu" : {
+
+    },
     "Bahamian Dollar" : {
       "localizations" : {
         "en" : {
@@ -1493,6 +1499,9 @@
           }
         }
       }
+    },
+    "Bir dönüştürücü seçin" : {
+
     },
     "blondel" : {
       "localizations" : {
@@ -5701,6 +5710,9 @@
           }
         }
       }
+    },
+    "Failed to create preview: %@" : {
+
     },
     "Falkland Islands Pound" : {
       "localizations" : {
@@ -16159,6 +16171,12 @@
         }
       }
     },
+    "Select a favorite to view details" : {
+
+    },
+    "Select a setting to view details" : {
+
+    },
     "Select Currencies" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -16179,6 +16197,9 @@
           }
         }
       }
+    },
+    "Send Feedback" : {
+
     },
     "septennial" : {
       "localizations" : {
@@ -18620,6 +18641,9 @@
           }
         }
       }
+    },
+    "Version %@" : {
+
     },
     "Vietnamese Đồng" : {
       "localizations" : {

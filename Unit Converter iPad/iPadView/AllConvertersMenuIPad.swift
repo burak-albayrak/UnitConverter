@@ -59,7 +59,7 @@ struct AllConvertersMenuIPad: View {
             if let index = selectedUnitCategoryIndex,
                let selectedCategory = category.unitCategory[safe: index] {
                 makeUnitConversionView(for: selectedCategory)
-                    .id(index) // Add this line
+                    .id(index)
             } else {
                 Text("Bir dönüştürücü seçin")
                     .font(.title)

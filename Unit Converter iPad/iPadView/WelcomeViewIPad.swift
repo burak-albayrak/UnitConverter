@@ -44,7 +44,7 @@ struct WelcomeViewIPad: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color.cyan.opacity(0.1).edgesIgnoringSafeArea(.all)
+                Color.accentColor.opacity(0.1).edgesIgnoringSafeArea(.all)
                 
                 VStack {
                     TabView(selection: $currentPage) {
@@ -117,7 +117,7 @@ struct WelcomeViewIPad: View {
                 Image(systemName: page.imageName)
                     .resizable()
                     .scaledToFit()
-                    .foregroundColor(.cyan)
+                    .foregroundColor(.accentColor)
             } else {
                 Image(page.imageName)
                     .resizable()
@@ -161,7 +161,7 @@ struct WelcomeViewIPad: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
                 .frame(width: 200, height: 50)
-                .background(Color.cyan)
+                .background(Color.accentColor)
                 .cornerRadius(10)
         }
         .padding()
@@ -184,7 +184,7 @@ struct CustomPageControl: UIViewRepresentable {
         control.numberOfPages = numberOfPages
         control.currentPage = currentPage
         control.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.5)
-        control.currentPageIndicatorTintColor = UIColor(Color.customCyan)
+        control.currentPageIndicatorTintColor = UIColor(Color.accentColor)
         return control
     }
     

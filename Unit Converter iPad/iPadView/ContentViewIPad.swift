@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentViewIPad: View {
     @Binding var hasSeenWelcomeScreen: Bool
-    @State private var mainMenuScale: CGFloat = 0.8
+    @State private var mainMenuScale: CGFloat = 1
     @State private var mainMenuOpacity: Double = 0.0
     @State private var isTransitioningToMainMenu: Bool = false
     @Environment(\.colorScheme) var colorScheme
@@ -20,11 +20,28 @@ struct ContentViewIPad: View {
         GeometryReader { geometry in
             ZStack {
                 if !hasSeenWelcomeScreen {
-                    welcomeView
+                    WelcomeViewIPad(showWelcomeScreen: Binding(
+                        get: { !self.hasSeenWelcomeScreen },
+                        set: { newValue in
+                            withAnimation(.easeInOut(duration: 0.5)) {
+                                self.hasSeenWelcomeScreen = !newValue
+                                if !newValue {
+                                    self.isTransitioningToMainMenu = true
+                                    withAnimation(.easeInOut(duration: 0.5).delay(0.3)) {
+                                        self.mainMenuScale = 1.0
+                                        self.mainMenuOpacity = 1.0
+                                    }
+                                }
+                            }
+                        }
+                    ))
+                    .transition(.opacity)
                 }
                 
                 if hasSeenWelcomeScreen || isTransitioningToMainMenu {
                     mainMenuView(geometry: geometry)
+                        .scaleEffect(mainMenuScale)
+                        .opacity(mainMenuOpacity)
                 }
             }
         }
@@ -38,30 +55,9 @@ struct ContentViewIPad: View {
         .environment(\.colorScheme, isDarkMode ? .dark : .light)
     }
     
-    private var welcomeView: some View {
-        WelcomeViewIPad(showWelcomeScreen: Binding(
-            get: { !self.hasSeenWelcomeScreen },
-            set: { newValue in
-                withAnimation(.easeInOut(duration: 0.5)) {
-                    self.hasSeenWelcomeScreen = !newValue
-                    if !newValue {
-                        self.isTransitioningToMainMenu = true
-                        withAnimation(.easeInOut(duration: 0.5).delay(0.3)) {
-                            self.mainMenuScale = 1.0
-                            self.mainMenuOpacity = 1.0
-                        }
-                    }
-                }
-            }
-        ))
-        .transition(.opacity)
-    }
-    
     private func mainMenuView(geometry: GeometryProxy) -> some View {
         MainMenuViewIPad()
-            .scaleEffect(mainMenuScale)
-            .opacity(mainMenuOpacity)
-            .frame(width: sizeClass == .regular ? geometry.size.width * 0.8 : nil)
+            .frame(width: sizeClass == .regular ? geometry.size.width * 1 : nil)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
