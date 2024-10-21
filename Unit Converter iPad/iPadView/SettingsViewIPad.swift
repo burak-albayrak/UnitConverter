@@ -38,6 +38,15 @@ struct SettingsViewIPad: View {
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        showSettings = false
+                    }) {
+                        Label("Back", systemImage: "chevron.left")
+                    }
+                }
+            }
         } detail: {
             Text("Select a setting to view details")
                 .font(.largeTitle)
@@ -132,8 +141,11 @@ struct FeedbackView: View {
     @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
 
     var body: some View {
-        Button("Send Feedback") {
-            isShowingMailView = true
+        Form {
+            Button("Send Feedback") {
+                isShowingMailView = true
+            }
+            .foregroundColor(.accentColor)
         }
         .navigationTitle("Feedback")
         .sheet(isPresented: $isShowingMailView) {

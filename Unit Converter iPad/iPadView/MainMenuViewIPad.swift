@@ -114,6 +114,8 @@ struct MainMenuViewIPad: View {
                     }
                 }
             }
+            .navigationSplitViewColumnWidth(min: 250, ideal: 336, max: 400)
+
         } detail: {
             if let selectedItem = selectedItem {
                 if let commonCategory = CommonUnitsCategory(rawValue: selectedItem) {

@@ -23,6 +23,7 @@ struct AllConvertersMenuIPad: View {
                 }
                 .buttonStyle(PlainButtonStyle())
             }
+            .navigationSplitViewColumnWidth(min: 250, ideal: 400, max: 400)
             .navigationTitle(category.localizedName)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
