@@ -90,9 +90,10 @@ struct WelcomeViewIPad: View {
     private func welcomePageView(for page: WelcomePage, geometry: GeometryProxy) -> some View {
         if sizeClass == .regular {
             // iPad layout
-            HStack(spacing: 50) {
+            HStack(spacing: 25) {
                 pageImage(for: page)
-                    .frame(width: geometry.size.width * 0.3)
+                    .frame(width: geometry.size.width * 0.25)
+                    .padding(.horizontal, 20)
                 
                 VStack(alignment: .leading, spacing: 20) {
                     pageTitle(for: page)

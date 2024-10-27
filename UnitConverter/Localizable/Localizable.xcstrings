@@ -5725,6 +5725,9 @@
         }
       }
     },
+    "Failed to create preview: %@" : {
+
+    },
     "Falkland Islands Pound" : {
       "localizations" : {
         "en" : {
