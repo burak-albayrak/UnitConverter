@@ -1217,10 +1217,24 @@
       }
     },
     "Back" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri"
+          }
+        }
+      }
     },
     "Back to Main Menu" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ana Sayfaya Dön"
+          }
+        }
+      }
     },
     "Bahamian Dollar" : {
       "localizations" : {
@@ -1499,9 +1513,6 @@
           }
         }
       }
-    },
-    "Bir dönüştürücü seçin" : {
-
     },
     "blondel" : {
       "localizations" : {
@@ -5352,6 +5363,9 @@
           }
         }
       }
+    },
+    "Enter Value" : {
+
     },
     "ephah (Biblical)" : {
       "localizations" : {
@@ -13609,6 +13623,17 @@
         }
       }
     },
+    "No Favorite Selected" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favori Seçili Değil"
+          }
+        }
+      }
+    },
     "No Favorites Yet" : {
       "localizations" : {
         "tr" : {
@@ -16168,11 +16193,28 @@
         }
       }
     },
-    "Select a favorite to view details" : {
+    "Select a converter from the list" : {
 
     },
+    "Select a favorite from the list" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listeden bir favori seçin"
+          }
+        }
+      }
+    },
     "Select a setting to view details" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayrıntıları görüntülemek için bir ayar seçin"
+          }
+        }
+      }
     },
     "Select Currencies" : {
       "extractionState" : "manual",
@@ -16196,7 +16238,14 @@
       }
     },
     "Send Feedback" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geri Bildirim Gönder"
+          }
+        }
+      }
     },
     "septennial" : {
       "localizations" : {

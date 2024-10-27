@@ -16,9 +16,10 @@ struct SettingsViewIPad: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("appLanguage") private var appLanguage = "en"
     @Binding var showSettings: Bool
+    @State private var columnVisibility: NavigationSplitViewVisibility = .all
     
     var body: some View {
-        NavigationSplitView {
+        NavigationSplitView(columnVisibility: $columnVisibility) {
             List {
                 NavigationLink(destination: AppearanceView()) {
                     Label("Appearance", systemImage: "paintbrush")
@@ -26,9 +27,9 @@ struct SettingsViewIPad: View {
                 NavigationLink(destination: LanguageView()) {
                     Label("Language", systemImage: "globe")
                 }
-                NavigationLink(destination: FavoritesView()) {
-                    Label("Favorites", systemImage: "star")
-                }
+//                NavigationLink(destination: FavoritesView()) {
+//                    Label("Favorites", systemImage: "star")
+//                } TODO: !!!
                 NavigationLink(destination: FeedbackView()) {
                     Label("Feedback", systemImage: "envelope")
                 }
@@ -49,7 +50,7 @@ struct SettingsViewIPad: View {
             }
         } detail: {
             Text("Select a setting to view details")
-                .font(.largeTitle)
+                .font(.title)
                 .foregroundColor(.secondary)
         }
         .navigationSplitViewStyle(.balanced)
@@ -66,6 +67,7 @@ struct SettingsViewIPad: View {
             }
         }
         .onAppear {
+            columnVisibility = .all
             favoritesViewModel.setModelContext(modelContext)
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
@@ -114,9 +116,10 @@ struct LanguageView: View {
 }
 
 struct FavoritesView: View {
+    @Environment(\.modelContext) private var modelContext
     @StateObject private var favoritesViewModel = FavoritesViewModel()
     @State private var showingClearConfirmation = false
-
+    
     var body: some View {
         Form {
             Button("Clear All Favorites") {
@@ -128,14 +131,18 @@ struct FavoritesView: View {
         .alert("Clear All Favorites", isPresented: $showingClearConfirmation) {
             Button("Cancel", role: .cancel) { }
             Button("Clear", role: .destructive) {
+                favoritesViewModel.setModelContext(modelContext)
                 favoritesViewModel.clearAllFavorites()
+                NotificationCenter.default.post(name: NSNotification.Name("FavoritesCleared"), object: nil)
             }
         } message: {
             Text("Are you sure you want to clear all favorites? This action cannot be undone.")
         }
+        .onAppear {
+            favoritesViewModel.setModelContext(modelContext)
+        }
     }
 }
-
 struct FeedbackView: View {
     @State private var isShowingMailView = false
     @State private var mailResult: Result<MFMailComposeResult, Error>? = nil

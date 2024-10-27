@@ -16,6 +16,7 @@ struct MainMenuViewIPad: View {
     @State private var selectedCommonCategory: CommonUnitsCategory?
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
     @State private var showAllConvertersMenu = false
+    @AppStorage("isDarkMode") private var isDarkMode = false
 
     var body: some View {
         Group {
@@ -38,9 +39,7 @@ struct MainMenuViewIPad: View {
             SettingsViewIPad(showSettings: $showSettings)
         }
         .sheet(isPresented: $showFavorites) {
-            NavigationView {
-                FavoritesViewIPad()
-            }
+            FavoritesViewIPad()
         }
     }
 
@@ -115,6 +114,8 @@ struct MainMenuViewIPad: View {
                 }
             }
             .navigationSplitViewColumnWidth(min: 250, ideal: 336, max: 400)
+            .preferredColorScheme(isDarkMode ? .dark : .light)
+            .environment(\.colorScheme, isDarkMode ? .dark : .light)
 
         } detail: {
             if let selectedItem = selectedItem {
@@ -127,10 +128,22 @@ struct MainMenuViewIPad: View {
                     AllConvertersMenuIPad(category: allConvertersCategory, onDismiss: {})
                 }
             } else {
-                Text("Bir dönüştürücü seçin")
-                    .font(.title)
-                    .foregroundColor(.secondary)
+                VStack(spacing: 16) {
+                    Image(systemName: "arrow.left.circle")
+                        .font(.system(size: 50))
+                        .foregroundColor(.secondary)
+                    
+                    Text("Select a converter from the list")
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                }
             }
+        }
+        .fullScreenCover(isPresented: $showSettings) {
+            SettingsViewIPad(showSettings: $showSettings)
+        }
+        .fullScreenCover(isPresented: $showFavorites) {
+            FavoritesViewIPad()
         }
     }
 }

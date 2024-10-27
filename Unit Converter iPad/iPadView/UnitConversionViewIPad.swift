@@ -42,8 +42,17 @@ struct UnitConversionViewIPad<T: UnitCategory>: View {
             
             Section("Value") {
                 HStack {
-                    CustomTextFieldRepresentable(text: $viewModel.firstUnitInputValue)
-                        .frame(height: 40)
+                    TextField("Enter Value", text: $viewModel.firstUnitInputValue)
+                        .keyboardType(.decimalPad)
+                        .onChange(of: viewModel.firstUnitInputValue) { _, newValue in
+                            let allowedCharacters = CharacterSet(charactersIn: "0123456789eE-.,")
+                            let filtered = newValue.filter { char in
+                                String(char).rangeOfCharacter(from: allowedCharacters) != nil
+                            }
+                            if filtered != newValue {
+                                viewModel.firstUnitInputValue = filtered
+                            }
+                        }
                     Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
                     Spacer()
                     Button(action: {

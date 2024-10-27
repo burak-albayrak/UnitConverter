@@ -21,26 +21,21 @@ struct UnitConverterApp: App {
     @AppStorage("hasSeenWelcomeScreen") private var hasSeenWelcomeScreen = false
     @AppStorage("appLanguage") private var appLanguage: String = ""
     @Environment(\.horizontalSizeClass) var sizeClass
-
+    
     init() {
         setupInitialLanguage()
     }
     
     var body: some Scene {
         WindowGroup {
-            GeometryReader { geometry in
-                ContentViewIPad(hasSeenWelcomeScreen: $hasSeenWelcomeScreen)
-                    .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .environment(\.colorScheme, isDarkMode ? .dark : .light)
-                    .environment(\.locale, .init(identifier: appLanguage))
-                    .frame(maxWidth: maxWidth(for: geometry.size.width),
-                           maxHeight: .infinity,
-                           alignment: .center)
-            }
+            ContentViewIPad(hasSeenWelcomeScreen: $hasSeenWelcomeScreen)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
+                .environment(\.colorScheme, isDarkMode ? .dark : .light)
+                .environment(\.locale, .init(identifier: appLanguage))
         }
         .modelContainer(for: FavoriteConversion.self)
     }
-
+    
     private func setupInitialLanguage() {
         if appLanguage.isEmpty {
             let preferredLanguage = Locale.preferredLanguages.first ?? "en"
@@ -51,7 +46,6 @@ struct UnitConverterApp: App {
     }
     
     private func maxWidth(for width: CGFloat) -> CGFloat? {
-        // iPad'de içeriği sınırla, iPhone'da tam genişlik kullan
         return sizeClass == .regular ? min(width, 800) : nil
     }
 }

@@ -16,75 +16,71 @@ struct FavoritesViewIPad: View {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @State private var favorites: [FavoriteConversion] = []
     @State private var selectedFavorite: FavoriteConversion?
+    @State private var columnVisibility: NavigationSplitViewVisibility = .all
     
     var body: some View {
-        NavigationSplitView {
-            Group {
-                if favorites.isEmpty {
-                    emptyStateView
-                } else {
-                    favoritesList
-                }
+        NavigationSplitView(columnVisibility: $columnVisibility) {
+            List(favorites, selection: $selectedFavorite) { favorite in
+                FavoriteRowView(favorite: favorite)
+                    .tag(favorite)
             }
             .navigationTitle("Favorites")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
-                        dismiss()
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: { dismiss() }) {
+                        Image(systemName: "chevron.left")
+                            .imageScale(.large)
+                            .fontWeight(.semibold)
                     }
                 }
             }
+            .overlay {
+                if favorites.isEmpty {
+                    ContentUnavailableView(
+                        "No Favorites Yet",
+                        systemImage: "star.slash",
+                        description: Text("Add some conversions to your favorites!")
+                    )
+                }
+            }
         } detail: {
-            Group {
-                if let favorite = selectedFavorite {
-                    destinationView(for: favorite)
-                } else {
-                    Text("Select a favorite to view details")
-                        .font(.largeTitle)
+            if let favorite = selectedFavorite {
+                destinationView(for: favorite)
+                    .id(favorite.id)
+            } else {
+                VStack(spacing: 16) {
+                    Image(systemName: "arrow.left.circle")
+                        .font(.system(size: 50))
+                        .foregroundColor(.secondary)
+                    
+                    Text("Select a favorite from the list")
+                        .font(.title)
                         .foregroundColor(.secondary)
                 }
             }
-            .navigationTitle(selectedFavorite?.category ?? "Details")
         }
+        .navigationSplitViewStyle(.balanced)
         .onAppear {
+            columnVisibility = .all
             favoritesViewModel.setModelContext(modelContext)
             updateFavorites()
+            
+            NotificationCenter.default.addObserver(
+                forName: NSNotification.Name("FavoritesCleared"),
+                object: nil,
+                queue: .main) { _ in
+                    updateFavorites()
+                }
         }
         .preferredColorScheme(isDarkMode ? .dark : .light)
         .environment(\.colorScheme, isDarkMode ? .dark : .light)
     }
     
-    private var emptyStateView: some View {
-        VStack {
-            Text("No Favorites Yet")
-                .font(.title)
-                .foregroundColor(.secondary)
-                .padding(.vertical)
-            Text("Add some conversions to your favorites!")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-    }
-    
     private var favoritesList: some View {
         List(selection: $selectedFavorite) {
             ForEach(favorites) { favorite in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(localizedString(favorite.category))
-                            .font(.headline)
-                        Text("\(localizedString(favorite.fromUnit))  ->  \(localizedString(favorite.toUnit))")
-                            .font(.subheadline)
-                    }
-                    Spacer()
-                    Image(systemName: "chevron.right")
-                        .foregroundColor(.secondary)
-                }
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    selectedFavorite = favorite
-                }
+                FavoriteRowView(favorite: favorite)
+                    .tag(favorite)
             }
             .onDelete(perform: deleteFavorites)
         }
@@ -235,7 +231,39 @@ struct FavoritesViewIPad: View {
     }
 }
 
-func localizedString(_ key: String) -> String {
+struct FavoriteRowView: View {
+    let favorite: FavoriteConversion
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(localizedString(favorite.category))
+                .font(.headline)
+                .foregroundStyle(.primary)
+            
+            HStack(spacing: 8) {
+                Text(localizedString(favorite.fromUnit))
+                    .font(.subheadline)
+                    .padding(8)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
+                
+                Image(systemName: "arrow.right")
+                    .foregroundStyle(.secondary)
+                    .font(.caption)
+                
+                Text(localizedString(favorite.toUnit))
+                    .font(.subheadline)
+                    .padding(8)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8)
+            }
+            .foregroundStyle(.secondary)
+        }
+        .padding(.vertical, 8)
+    }
+}
+
+private func localizedString(_ key: String) -> String {
     NSLocalizedString(key, comment: "")
 }
 

@@ -14,6 +14,7 @@ struct AllConvertersMenuIPad: View {
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
     @State private var showSettings = false
     @State private var showFavorites = false
+    @AppStorage("isDarkMode") private var isDarkMode = false
 
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
@@ -55,16 +56,30 @@ struct AllConvertersMenuIPad: View {
                     }
                 }
             }
+            .preferredColorScheme(isDarkMode ? .dark : .light)
+            .environment(\.colorScheme, isDarkMode ? .dark : .light)
         } detail: {
             if let index = selectedUnitCategoryIndex,
                let selectedCategory = category.unitCategory[safe: index] {
                 makeUnitConversionView(for: selectedCategory)
                     .id(index)
             } else {
-                Text("Bir dönüştürücü seçin")
-                    .font(.title)
-                    .foregroundColor(.secondary)
+                VStack(spacing: 16) {
+                    Image(systemName: "arrow.left.circle")
+                        .font(.system(size: 50))
+                        .foregroundColor(.secondary)
+                    
+                    Text("Select a converter from the list")
+                        .font(.title)
+                        .foregroundColor(.secondary)
+                }
             }
+        }
+        .fullScreenCover(isPresented: $showSettings) {
+            SettingsViewIPad(showSettings: $showSettings)
+        }
+        .fullScreenCover(isPresented: $showFavorites) {
+            FavoritesViewIPad()
         }
         .navigationSplitViewStyle(.balanced)
         .onAppear {
@@ -74,21 +89,7 @@ struct AllConvertersMenuIPad: View {
             SettingsViewIPad(showSettings: $showSettings)
         }
         .sheet(isPresented: $showFavorites) {
-            NavigationView {
-                FavoritesViewIPad()
-            }
-        }
-        .navigationSplitViewStyle(.balanced)
-        .onAppear {
-            columnVisibility = .all
-        }
-        .sheet(isPresented: $showSettings) {
-            SettingsViewIPad(showSettings: $showSettings)
-        }
-        .sheet(isPresented: $showFavorites) {
-            NavigationView {
-                FavoritesViewIPad()
-            }
+            FavoritesViewIPad()
         }
     }
     
