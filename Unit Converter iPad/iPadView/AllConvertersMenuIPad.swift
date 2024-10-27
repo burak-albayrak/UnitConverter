@@ -19,24 +19,28 @@ struct AllConvertersMenuIPad: View {
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             List(Array(category.unitCategory.enumerated()), id: \.offset, selection: $selectedUnitCategoryIndex) { index, unitCategory in
-                Button(action: {
-                    selectedUnitCategoryIndex = index
-                }) {
+                NavigationLink(value: index) {
                     Label {
                         Text(unitCategory.localizedName)
-                            .foregroundColor(selectedUnitCategoryIndex == index ? .accentColor : .primary)
                     } icon: {
                         Image(systemName: unitCategory.icon)
-                            .foregroundColor(.accentColor)
                     }
                 }
-                .buttonStyle(PlainButtonStyle())
+                .tint(.accentColor)
             }
             .navigationSplitViewColumnWidth(min: 250, ideal: 400, max: 400)
             .navigationTitle(category.localizedName)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: onDismiss) {
+                    Button(action: {
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            withAnimation(.easeInOut(duration: 0.3)) {
+                                onDismiss()
+                            }
+                        } else {
+                            onDismiss()
+                        }
+                    }) {
                         Label("Back", systemImage: "chevron.left")
                     }
                 }

@@ -51,14 +51,11 @@ struct MainMenuViewIPad: View {
                         NavigationLink(value: category.rawValue) {
                             Label {
                                 Text(category.localizedName)
-                                    .foregroundColor(selectedItem == category.rawValue ? .accentColor : .primary)
-
                             } icon: {
                                 Image(systemName: category.icon)
-                                    .foregroundColor(.accentColor)
-
                             }
                         }
+                        .tint(.accentColor)
                     }
                 }
                 
@@ -66,21 +63,22 @@ struct MainMenuViewIPad: View {
                     NavigationLink(value: "Currency") {
                         Label {
                             Text("Currency")
-                                .foregroundColor(selectedItem == "Currency" ? .accentColor : .primary)
-
                         } icon: {
                             Image(systemName: "dollarsign.circle")
-                                .foregroundColor(.accentColor)
-
                         }
                     }
+                    .tint(.accentColor)
                 }
                 
                 Section("All Converters") {
                     ForEach(AllConvertersCategory.allCases) { category in
                         Button(action: {
                             selectedCategory = category
-                            withAnimation(.easeInOut(duration: 0.3)) {
+                            if UIDevice.current.userInterfaceIdiom == .pad {
+                                withAnimation(.easeInOut(duration: 0.3)) {
+                                    showAllConvertersMenu = true
+                                }
+                            } else {
                                 showAllConvertersMenu = true
                             }
                         }) {
