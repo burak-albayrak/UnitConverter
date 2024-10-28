@@ -32,6 +32,7 @@
 		EF46C2112CBC55630090F5B6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2102CBC55630090F5B6 /* CustomTextField.swift */; };
 		EF46C2132CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */; };
 		EF5157A52CC0112500FCA157 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5157A42CC0112500FCA157 /* StoreKit.framework */; };
+		EF5DEDCD2CCFAAAE00A50439 /* UnitConverterIPad.app in Resources */ = {isa = PBXBuildFile; fileRef = EFCE0DDB2CC5D9F500BA0B2D /* UnitConverterIPad.app */; };
 		EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */; };
 		EF6EF7062CC1B16B00EAC348 /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
 		EF6EF7072CC1B16B00EAC348 /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
@@ -90,6 +91,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EF5DEDCE2CCFAAAE00A50439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFCE0DDA2CC5D9F500BA0B2D;
+			remoteInfo = UnitConverterIPad;
+		};
+		EF5DEDD02CCFAAB600A50439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFCE0DDA2CC5D9F500BA0B2D;
+			remoteInfo = UnitConverterIPad;
+		};
+		EF5DEDD22CCFAAC100A50439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFCE0DDA2CC5D9F500BA0B2D;
+			remoteInfo = UnitConverterIPad;
+		};
 		EF9DBEB92CC18C6A00BEB194 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
@@ -380,6 +402,9 @@
 			);
 			dependencies = (
 				EF9DBEBA2CC18C6A00BEB194 /* PBXTargetDependency */,
+				EF5DEDCF2CCFAAAE00A50439 /* PBXTargetDependency */,
+				EF5DEDD12CCFAAB600A50439 /* PBXTargetDependency */,
+				EF5DEDD32CCFAAC100A50439 /* PBXTargetDependency */,
 			);
 			name = UnitConverter;
 			productName = UnitConverter;
@@ -485,6 +510,7 @@
 				EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */,
 				EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */,
 				EF0F87432C82860100114906 /* Assets.xcassets in Resources */,
+				EF5DEDCD2CCFAAAE00A50439 /* UnitConverterIPad.app in Resources */,
 				EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +628,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EF5DEDCF2CCFAAAE00A50439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */;
+			targetProxy = EF5DEDCE2CCFAAAE00A50439 /* PBXContainerItemProxy */;
+		};
+		EF5DEDD12CCFAAB600A50439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */;
+			targetProxy = EF5DEDD02CCFAAB600A50439 /* PBXContainerItemProxy */;
+		};
+		EF5DEDD32CCFAAC100A50439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */;
+			targetProxy = EF5DEDD22CCFAAC100A50439 /* PBXContainerItemProxy */;
+		};
 		EF9DBEBA2CC18C6A00BEB194 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EF9DBEAD2CC18C6800BEB194 /* UnitConverterWatch Watch App */;
@@ -774,11 +815,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -813,11 +854,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
