@@ -31,93 +31,66 @@
 		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
 		EF46C2112CBC55630090F5B6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2102CBC55630090F5B6 /* CustomTextField.swift */; };
 		EF46C2132CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */; };
-		EF5157A52CC0112500FCA157 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5157A42CC0112500FCA157 /* StoreKit.framework */; };
-		EF5DEDCD2CCFAAAE00A50439 /* UnitConverterIPad.app in Resources */ = {isa = PBXBuildFile; fileRef = EFCE0DDB2CC5D9F500BA0B2D /* UnitConverterIPad.app */; };
 		EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */; };
-		EF6EF7062CC1B16B00EAC348 /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
-		EF6EF7072CC1B16B00EAC348 /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
-		EF6EF7082CC1B16B00EAC348 /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
-		EF6EF7092CC1B16B00EAC348 /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
-		EF6EF70A2CC1B16B00EAC348 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
-		EF6EF70B2CC1B16B00EAC348 /* FluidsUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */; };
-		EF6EF70C2CC1B16B00EAC348 /* UnitConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */; };
-		EF6EF70D2CC1B16B00EAC348 /* CurrencyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */; };
-		EF6EF70E2CC1B16B00EAC348 /* HeatUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0702C867E90004B974A /* HeatUnitsModel.swift */; };
-		EF6EF70F2CC1B16B00EAC348 /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
-		EF6EF7102CC1B16B00EAC348 /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
-		EF6EF7112CC1B16B00EAC348 /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
-		EF6EF7122CC1B16B00EAC348 /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
-		EF6EF7132CC1B19D00EAC348 /* UnitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C06C2C860C94004B974A /* UnitCategory.swift */; };
-		EF6EF7142CC1B1D500EAC348 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
-		EF6EF7152CC1B23100EAC348 /* CurrencyConverterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */; };
+		EF6878AD2CD009D3009947FB /* UnitConverter Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EF6878B22CD00A8F009947FB /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
+		EF6878B32CD00A8F009947FB /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
+		EF6878B42CD00A8F009947FB /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
+		EF6878B62CD00A8F009947FB /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
+		EF6878B72CD00A8F009947FB /* FluidsUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */; };
+		EF6878B82CD00A8F009947FB /* HeatUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0702C867E90004B974A /* HeatUnitsModel.swift */; };
+		EF6878B92CD00A8F009947FB /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
+		EF6878BA2CD00A8F009947FB /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
+		EF6878BB2CD00A8F009947FB /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
+		EF6878BC2CD00A8F009947FB /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
+		EF6878BD2CD00A8F009947FB /* CurrencyConverterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */; };
+		EF6878BE2CD00A8F009947FB /* UnitConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */; };
+		EF6878BF2CD00A8F009947FB /* UnitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C06C2C860C94004B974A /* UnitCategory.swift */; };
+		EF6878C02CD00A8F009947FB /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
+		EF6878C12CD00A8F009947FB /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
+		EF6878C22CD00A8F009947FB /* CurrencyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */; };
+		EF6878C32CD00A8F009947FB /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
+		EF6878C42CD00A8F009947FB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
+		EF6878CF2CD00AC9009947FB /* SwiftUI Apple Watch Decimal Pad in Frameworks */ = {isa = PBXBuildFile; productRef = EF6878CE2CD00AC9009947FB /* SwiftUI Apple Watch Decimal Pad */; };
+		EF68796B2CD01150009947FB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
+		EF68796C2CD01150009947FB /* CurrencyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */; };
+		EF68796D2CD01150009947FB /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
+		EF68796E2CD01150009947FB /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
+		EF68796F2CD01150009947FB /* CurrencyConverterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */; };
+		EF6879702CD01150009947FB /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
+		EF6879712CD01150009947FB /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
+		EF6879722CD01150009947FB /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
+		EF6879732CD01150009947FB /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
+		EF6879742CD01150009947FB /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
+		EF6879752CD01150009947FB /* UnitConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */; };
+		EF6879762CD01150009947FB /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
+		EF6879772CD01150009947FB /* HeatUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0702C867E90004B974A /* HeatUnitsModel.swift */; };
+		EF6879782CD01150009947FB /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
+		EF6879792CD01150009947FB /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
+		EF68797A2CD01150009947FB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
+		EF68797B2CD01150009947FB /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
+		EF68797C2CD01150009947FB /* UnitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C06C2C860C94004B974A /* UnitCategory.swift */; };
+		EF68797D2CD01150009947FB /* FluidsUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */; };
 		EF85EF642C8DFD29006E6548 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF632C8DFD29006E6548 /* SettingsView.swift */; };
 		EF85EF6A2C8E06F8006E6548 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
 		EF85EF6C2C8E0717006E6548 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
 		EF85EF6E2C8E076B006E6548 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */; };
 		EF85EF702C8E0ADF006E6548 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
 		EF85EF7C2C8E5D0A006E6548 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
-		EF9DBEBB2CC18C6A00BEB194 /* UnitConverterWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFCCD2902C911745001E0B5F /* InfoPlist.strings */; };
-		EFCE0DEB2CC5DAB900BA0B2D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFCCD2902C911745001E0B5F /* InfoPlist.strings */; };
-		EFCE0DEC2CC5DB1600BA0B2D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF7B2C8E5D0A006E6548 /* Extension.swift */; };
-		EFCE0DED2CC5DB1600BA0B2D /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
-		EFCE0DEE2CC5DB1600BA0B2D /* HeatUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0702C867E90004B974A /* HeatUnitsModel.swift */; };
-		EFCE0DEF2CC5DB1600BA0B2D /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
-		EFCE0DF02CC5DB1600BA0B2D /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
-		EFCE0DF12CC5DB1600BA0B2D /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
-		EFCE0DF22CC5DB1600BA0B2D /* FluidsUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */; };
-		EFCE0DF32CC5DB1600BA0B2D /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
-		EFCE0DF42CC5DB1600BA0B2D /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
-		EFCE0DF52CC5DB1600BA0B2D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2102CBC55630090F5B6 /* CustomTextField.swift */; };
-		EFCE0DF62CC5DB1600BA0B2D /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
-		EFCE0DF72CC5DB1600BA0B2D /* CustomTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */; };
-		EFCE0DF82CC5DB1600BA0B2D /* CurrencyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */; };
-		EFCE0DF92CC5DB1600BA0B2D /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
-		EFCE0DFA2CC5DB1600BA0B2D /* UnitConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */; };
-		EFCE0DFB2CC5DB1600BA0B2D /* CurrencyConverterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */; };
-		EFCE0DFC2CC5DB1600BA0B2D /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
-		EFCE0DFD2CC5DB1600BA0B2D /* UnitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C06C2C860C94004B974A /* UnitCategory.swift */; };
-		EFCE0DFE2CC5DB1600BA0B2D /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
-		EFCE0DFF2CC5DB1600BA0B2D /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
-		EFCE0E002CC5DB1F00BA0B2D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFCCD2902C911745001E0B5F /* InfoPlist.strings */; };
-		EFCE0E012CC5DB2700BA0B2D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
 		EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB8C2C8F8EFD009699EC /* MailView.swift */; };
 		EFDFFB992C8FBD4B009699EC /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */; };
 		EFDFFB9B2C8FBD91009699EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFFB9A2C8FBD91009699EC /* ContentView.swift */; };
 		EFDFFBA12C904CBE009699EC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
-		EFF0E5FA2CC2449500060C91 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
-		EFF0E6142CC26FA200060C91 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
-		EFF0E6172CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad in Frameworks */ = {isa = PBXBuildFile; productRef = EFF0E6162CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EF5DEDCE2CCFAAAE00A50439 /* PBXContainerItemProxy */ = {
+		EF6878AB2CD009D3009947FB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EFCE0DDA2CC5D9F500BA0B2D;
-			remoteInfo = UnitConverterIPad;
-		};
-		EF5DEDD02CCFAAB600A50439 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EFCE0DDA2CC5D9F500BA0B2D;
-			remoteInfo = UnitConverterIPad;
-		};
-		EF5DEDD22CCFAAC100A50439 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EFCE0DDA2CC5D9F500BA0B2D;
-			remoteInfo = UnitConverterIPad;
-		};
-		EF9DBEB92CC18C6A00BEB194 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EF0F87332C8285FF00114906 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EF9DBEAD2CC18C6800BEB194;
-			remoteInfo = "UnitConverterWatch Watch App";
+			remoteGlobalIDString = EF68789F2CD009D1009947FB;
+			remoteInfo = "UnitConverter Watch Watch App";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -138,7 +111,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				EF9DBEBB2CC18C6A00BEB194 /* UnitConverterWatch Watch App.app in Embed Watch Content */,
+				EF6878AD2CD009D3009947FB /* UnitConverter Watch Watch App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,8 +144,9 @@
 		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
 		EF46C2102CBC55630090F5B6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldRepresentable.swift; sourceTree = "<group>"; };
-		EF5157A42CC0112500FCA157 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6879462CD010DF009947FB /* UnitConverter Ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter Ipad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6EF7172CC1B2F900EAC348 /* UnitConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitConverter.entitlements; sourceTree = "<group>"; };
 		EF85EF632C8DFD29006E6548 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteConversion.swift; sourceTree = "<group>"; };
@@ -180,20 +154,17 @@
 		EF85EF6D2C8E076B006E6548 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		EF85EF7B2C8E5D0A006E6548 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverterWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCCD2912C911745001E0B5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EFCCD2932C911826001E0B5F /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		EFCE0DDB2CC5D9F500BA0B2D /* UnitConverterIPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverterIPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFDFFB8C2C8F8EFD009699EC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		EFDFFB982C8FBD4B009699EC /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		EFDFFB9A2C8FBD91009699EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		EFFA92A52CC77DAA009110D7 /* UnitConverterIPad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitConverterIPad.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		EF9DBEAF2CC18C6800BEB194 /* UnitConverterWatch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UnitConverterWatch Watch App"; sourceTree = "<group>"; };
-		EFCE0DDC2CC5D9F500BA0B2D /* Unit Converter iPad */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Unit Converter iPad"; sourceTree = "<group>"; };
+		EF6878A12CD009D1009947FB /* UnitConverter Watch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UnitConverter Watch Watch App"; sourceTree = "<group>"; };
+		EF6879472CD010DF009947FB /* UnitConverter Ipad */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UnitConverter Ipad"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,19 +172,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5157A52CC0112500FCA157 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF9DBEAB2CC18C6800BEB194 /* Frameworks */ = {
+		EF68789D2CD009D1009947FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFF0E6172CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad in Frameworks */,
+				EF6878CF2CD00AC9009947FB /* SwiftUI Apple Watch Decimal Pad in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFCE0DD82CC5D9F500BA0B2D /* Frameworks */ = {
+		EF6879432CD010DF009947FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -226,10 +196,9 @@
 		EF0F87322C8285FF00114906 = {
 			isa = PBXGroup;
 			children = (
-				EFFA92A52CC77DAA009110D7 /* UnitConverterIPad.entitlements */,
 				EF0F873D2C8285FF00114906 /* UnitConverter */,
-				EF9DBEAF2CC18C6800BEB194 /* UnitConverterWatch Watch App */,
-				EFCE0DDC2CC5D9F500BA0B2D /* Unit Converter iPad */,
+				EF6878A12CD009D1009947FB /* UnitConverter Watch Watch App */,
+				EF6879472CD010DF009947FB /* UnitConverter Ipad */,
 				EF5157A32CC0112500FCA157 /* Frameworks */,
 				EF0F873C2C8285FF00114906 /* Products */,
 			);
@@ -239,8 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				EF0F873B2C8285FF00114906 /* UnitConverter.app */,
-				EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */,
-				EFCE0DDB2CC5D9F500BA0B2D /* UnitConverterIPad.app */,
+				EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */,
+				EF6879462CD010DF009947FB /* UnitConverter Ipad.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -346,7 +315,6 @@
 		EF5157A32CC0112500FCA157 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EF5157A42CC0112500FCA157 /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -401,59 +369,56 @@
 			buildRules = (
 			);
 			dependencies = (
-				EF9DBEBA2CC18C6A00BEB194 /* PBXTargetDependency */,
-				EF5DEDCF2CCFAAAE00A50439 /* PBXTargetDependency */,
-				EF5DEDD12CCFAAB600A50439 /* PBXTargetDependency */,
-				EF5DEDD32CCFAAC100A50439 /* PBXTargetDependency */,
+				EF6878AC2CD009D3009947FB /* PBXTargetDependency */,
 			);
 			name = UnitConverter;
 			productName = UnitConverter;
 			productReference = EF0F873B2C8285FF00114906 /* UnitConverter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EF9DBEAD2CC18C6800BEB194 /* UnitConverterWatch Watch App */ = {
+		EF68789F2CD009D1009947FB /* UnitConverter Watch Watch App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF9DBEBE2CC18C6A00BEB194 /* Build configuration list for PBXNativeTarget "UnitConverterWatch Watch App" */;
+			buildConfigurationList = EF6878AE2CD009D3009947FB /* Build configuration list for PBXNativeTarget "UnitConverter Watch Watch App" */;
 			buildPhases = (
-				EF9DBEAA2CC18C6800BEB194 /* Sources */,
-				EF9DBEAB2CC18C6800BEB194 /* Frameworks */,
-				EF9DBEAC2CC18C6800BEB194 /* Resources */,
+				EF68789C2CD009D1009947FB /* Sources */,
+				EF68789D2CD009D1009947FB /* Frameworks */,
+				EF68789E2CD009D1009947FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				EF9DBEAF2CC18C6800BEB194 /* UnitConverterWatch Watch App */,
+				EF6878A12CD009D1009947FB /* UnitConverter Watch Watch App */,
 			);
-			name = "UnitConverterWatch Watch App";
+			name = "UnitConverter Watch Watch App";
 			packageProductDependencies = (
-				EFF0E6162CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad */,
+				EF6878CE2CD00AC9009947FB /* SwiftUI Apple Watch Decimal Pad */,
 			);
-			productName = "UnitConverterWatch Watch App";
-			productReference = EF9DBEAE2CC18C6800BEB194 /* UnitConverterWatch Watch App.app */;
+			productName = "UnitConverter Watch Watch App";
+			productReference = EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */ = {
+		EF6879452CD010DF009947FB /* UnitConverter Ipad */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EFCE0DEA2CC5D9F700BA0B2D /* Build configuration list for PBXNativeTarget "UnitConverterIPad" */;
+			buildConfigurationList = EF6879532CD010E0009947FB /* Build configuration list for PBXNativeTarget "UnitConverter Ipad" */;
 			buildPhases = (
-				EFCE0DD72CC5D9F500BA0B2D /* Sources */,
-				EFCE0DD82CC5D9F500BA0B2D /* Frameworks */,
-				EFCE0DD92CC5D9F500BA0B2D /* Resources */,
+				EF6879422CD010DF009947FB /* Sources */,
+				EF6879432CD010DF009947FB /* Frameworks */,
+				EF6879442CD010DF009947FB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				EFCE0DDC2CC5D9F500BA0B2D /* Unit Converter iPad */,
+				EF6879472CD010DF009947FB /* UnitConverter Ipad */,
 			);
-			name = UnitConverterIPad;
+			name = "UnitConverter Ipad";
 			packageProductDependencies = (
 			);
-			productName = "Unit Converter iPad";
-			productReference = EFCE0DDB2CC5D9F500BA0B2D /* UnitConverterIPad.app */;
+			productName = "UnitConverter Ipad";
+			productReference = EF6879462CD010DF009947FB /* UnitConverter Ipad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -462,17 +427,17 @@
 		EF0F87332C8285FF00114906 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					EF0F873A2C8285FF00114906 = {
 						CreatedOnToolsVersion = 15.4;
 					};
-					EF9DBEAD2CC18C6800BEB194 = {
+					EF68789F2CD009D1009947FB = {
 						CreatedOnToolsVersion = 16.0;
 					};
-					EFCE0DDA2CC5D9F500BA0B2D = {
+					EF6879452CD010DF009947FB = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -495,8 +460,8 @@
 			projectRoot = "";
 			targets = (
 				EF0F873A2C8285FF00114906 /* UnitConverter */,
-				EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */,
-				EF9DBEAD2CC18C6800BEB194 /* UnitConverterWatch Watch App */,
+				EF68789F2CD009D1009947FB /* UnitConverter Watch Watch App */,
+				EF6879452CD010DF009947FB /* UnitConverter Ipad */,
 			);
 		};
 /* End PBXProject section */
@@ -510,26 +475,23 @@
 				EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */,
 				EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */,
 				EF0F87432C82860100114906 /* Assets.xcassets in Resources */,
-				EF5DEDCD2CCFAAAE00A50439 /* UnitConverterIPad.app in Resources */,
 				EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF9DBEAC2CC18C6800BEB194 /* Resources */ = {
+		EF68789E2CD009D1009947FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCE0DEB2CC5DAB900BA0B2D /* InfoPlist.strings in Resources */,
-				EFF0E5FA2CC2449500060C91 /* Localizable.xcstrings in Resources */,
+				EF6878C42CD00A8F009947FB /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFCE0DD92CC5D9F500BA0B2D /* Resources */ = {
+		EF6879442CD010DF009947FB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCE0E002CC5DB1F00BA0B2D /* InfoPlist.strings in Resources */,
-				EFCE0E012CC5DB2700BA0B2D /* Localizable.xcstrings in Resources */,
+				EF68796B2CD01150009947FB /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,79 +536,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF9DBEAA2CC18C6800BEB194 /* Sources */ = {
+		EF68789C2CD009D1009947FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF6EF7062CC1B16B00EAC348 /* MagnetismUnitsModel.swift in Sources */,
-				EF6EF7072CC1B16B00EAC348 /* CurrencyConversionViewModel.swift in Sources */,
-				EF6EF7082CC1B16B00EAC348 /* CommonUnitsModel.swift in Sources */,
-				EF6EF7092CC1B16B00EAC348 /* EngineeringUnitsModel.swift in Sources */,
-				EF6EF70A2CC1B16B00EAC348 /* FavoritesViewModel.swift in Sources */,
-				EF6EF70B2CC1B16B00EAC348 /* FluidsUnitsModel.swift in Sources */,
-				EF6EF7152CC1B23100EAC348 /* CurrencyConverterNetwork.swift in Sources */,
-				EF6EF70C2CC1B16B00EAC348 /* UnitConversionViewModel.swift in Sources */,
-				EF6EF70D2CC1B16B00EAC348 /* CurrencyUnitsModel.swift in Sources */,
-				EF6EF70E2CC1B16B00EAC348 /* HeatUnitsModel.swift in Sources */,
-				EF6EF70F2CC1B16B00EAC348 /* LightUnitsModel.swift in Sources */,
-				EF6EF7102CC1B16B00EAC348 /* ElectricityUnitsModel.swift in Sources */,
-				EFF0E6142CC26FA200060C91 /* PreviewContainer.swift in Sources */,
-				EF6EF7132CC1B19D00EAC348 /* UnitCategory.swift in Sources */,
-				EF6EF7112CC1B16B00EAC348 /* AllConvertersModel.swift in Sources */,
-				EF6EF7122CC1B16B00EAC348 /* RadiologyUnitsModel.swift in Sources */,
-				EF6EF7142CC1B1D500EAC348 /* FavoriteConversion.swift in Sources */,
+				EF6878B22CD00A8F009947FB /* FavoriteConversion.swift in Sources */,
+				EF6878B32CD00A8F009947FB /* PreviewContainer.swift in Sources */,
+				EF6878B42CD00A8F009947FB /* FavoritesViewModel.swift in Sources */,
+				EF6878B62CD00A8F009947FB /* ElectricityUnitsModel.swift in Sources */,
+				EF6878B72CD00A8F009947FB /* FluidsUnitsModel.swift in Sources */,
+				EF6878B82CD00A8F009947FB /* HeatUnitsModel.swift in Sources */,
+				EF6878B92CD00A8F009947FB /* CurrencyConversionViewModel.swift in Sources */,
+				EF6878BA2CD00A8F009947FB /* CommonUnitsModel.swift in Sources */,
+				EF6878BB2CD00A8F009947FB /* AllConvertersModel.swift in Sources */,
+				EF6878BC2CD00A8F009947FB /* MagnetismUnitsModel.swift in Sources */,
+				EF6878BD2CD00A8F009947FB /* CurrencyConverterNetwork.swift in Sources */,
+				EF6878BE2CD00A8F009947FB /* UnitConversionViewModel.swift in Sources */,
+				EF6878BF2CD00A8F009947FB /* UnitCategory.swift in Sources */,
+				EF6878C02CD00A8F009947FB /* RadiologyUnitsModel.swift in Sources */,
+				EF6878C12CD00A8F009947FB /* LightUnitsModel.swift in Sources */,
+				EF6878C22CD00A8F009947FB /* CurrencyUnitsModel.swift in Sources */,
+				EF6878C32CD00A8F009947FB /* EngineeringUnitsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EFCE0DD72CC5D9F500BA0B2D /* Sources */ = {
+		EF6879422CD010DF009947FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFCE0DEC2CC5DB1600BA0B2D /* Extension.swift in Sources */,
-				EFCE0DED2CC5DB1600BA0B2D /* LightUnitsModel.swift in Sources */,
-				EFCE0DEE2CC5DB1600BA0B2D /* HeatUnitsModel.swift in Sources */,
-				EFCE0DEF2CC5DB1600BA0B2D /* ElectricityUnitsModel.swift in Sources */,
-				EFCE0DF02CC5DB1600BA0B2D /* EngineeringUnitsModel.swift in Sources */,
-				EFCE0DF12CC5DB1600BA0B2D /* CurrencyConversionViewModel.swift in Sources */,
-				EFCE0DF22CC5DB1600BA0B2D /* FluidsUnitsModel.swift in Sources */,
-				EFCE0DF32CC5DB1600BA0B2D /* FavoritesViewModel.swift in Sources */,
-				EFCE0DF42CC5DB1600BA0B2D /* AllConvertersModel.swift in Sources */,
-				EFCE0DF52CC5DB1600BA0B2D /* CustomTextField.swift in Sources */,
-				EFCE0DF62CC5DB1600BA0B2D /* FavoriteConversion.swift in Sources */,
-				EFCE0DF72CC5DB1600BA0B2D /* CustomTextFieldRepresentable.swift in Sources */,
-				EFCE0DF82CC5DB1600BA0B2D /* CurrencyUnitsModel.swift in Sources */,
-				EFCE0DF92CC5DB1600BA0B2D /* PreviewContainer.swift in Sources */,
-				EFCE0DFA2CC5DB1600BA0B2D /* UnitConversionViewModel.swift in Sources */,
-				EFCE0DFB2CC5DB1600BA0B2D /* CurrencyConverterNetwork.swift in Sources */,
-				EFCE0DFC2CC5DB1600BA0B2D /* CommonUnitsModel.swift in Sources */,
-				EFCE0DFD2CC5DB1600BA0B2D /* UnitCategory.swift in Sources */,
-				EFCE0DFE2CC5DB1600BA0B2D /* RadiologyUnitsModel.swift in Sources */,
-				EFCE0DFF2CC5DB1600BA0B2D /* MagnetismUnitsModel.swift in Sources */,
+				EF68796C2CD01150009947FB /* CurrencyUnitsModel.swift in Sources */,
+				EF68796D2CD01150009947FB /* RadiologyUnitsModel.swift in Sources */,
+				EF68796E2CD01150009947FB /* EngineeringUnitsModel.swift in Sources */,
+				EF68796F2CD01150009947FB /* CurrencyConverterNetwork.swift in Sources */,
+				EF6879702CD01150009947FB /* ElectricityUnitsModel.swift in Sources */,
+				EF6879712CD01150009947FB /* FavoriteConversion.swift in Sources */,
+				EF6879722CD01150009947FB /* LightUnitsModel.swift in Sources */,
+				EF6879732CD01150009947FB /* MagnetismUnitsModel.swift in Sources */,
+				EF6879742CD01150009947FB /* CommonUnitsModel.swift in Sources */,
+				EF6879752CD01150009947FB /* UnitConversionViewModel.swift in Sources */,
+				EF6879762CD01150009947FB /* CurrencyConversionViewModel.swift in Sources */,
+				EF6879772CD01150009947FB /* HeatUnitsModel.swift in Sources */,
+				EF6879782CD01150009947FB /* FavoritesViewModel.swift in Sources */,
+				EF6879792CD01150009947FB /* PreviewContainer.swift in Sources */,
+				EF68797A2CD01150009947FB /* Extension.swift in Sources */,
+				EF68797B2CD01150009947FB /* AllConvertersModel.swift in Sources */,
+				EF68797C2CD01150009947FB /* UnitCategory.swift in Sources */,
+				EF68797D2CD01150009947FB /* FluidsUnitsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EF5DEDCF2CCFAAAE00A50439 /* PBXTargetDependency */ = {
+		EF6878AC2CD009D3009947FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */;
-			targetProxy = EF5DEDCE2CCFAAAE00A50439 /* PBXContainerItemProxy */;
-		};
-		EF5DEDD12CCFAAB600A50439 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */;
-			targetProxy = EF5DEDD02CCFAAB600A50439 /* PBXContainerItemProxy */;
-		};
-		EF5DEDD32CCFAAC100A50439 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EFCE0DDA2CC5D9F500BA0B2D /* UnitConverterIPad */;
-			targetProxy = EF5DEDD22CCFAAC100A50439 /* PBXContainerItemProxy */;
-		};
-		EF9DBEBA2CC18C6A00BEB194 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EF9DBEAD2CC18C6800BEB194 /* UnitConverterWatch Watch App */;
-			targetProxy = EF9DBEB92CC18C6A00BEB194 /* PBXContainerItemProxy */;
+			target = EF68789F2CD009D1009947FB /* UnitConverter Watch Watch App */;
+			targetProxy = EF6878AB2CD009D3009947FB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -795,6 +740,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = UnitConverter/UnitConverter.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter/Preview Content\"";
@@ -815,16 +761,17 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,4";
 			};
 			name = Debug;
 		};
@@ -835,6 +782,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = UnitConverter/UnitConverter.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter/Preview Content\"";
@@ -855,42 +803,40 @@
 					"@executable_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.5;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,4";
 			};
 			name = Release;
 		};
-		EF9DBEBC2CC18C6A00BEB194 /* Debug */ = {
+		EF6878AF2CD009D3009947FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "UnitConverterWatch Watch App/UnitConverterWatch Watch App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnitConverterWatch Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Unit Converter ";
+				INFOPLIST_KEY_CFBundleDisplayName = "UnitConverter Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.burrk.UnitConverter;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				ONLY_ACTIVE_ARCH = NO;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverter.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -898,33 +844,30 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
 		};
-		EF9DBEBD2CC18C6A00BEB194 /* Release */ = {
+		EF6878B02CD009D3009947FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "UnitConverterWatch Watch App/UnitConverterWatch Watch App.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"UnitConverterWatch Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter Watch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Unit Converter ";
+				INFOPLIST_KEY_CFBundleDisplayName = "UnitConverter Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.burrk.UnitConverter;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				ONLY_ACTIVE_ARCH = NO;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverter.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -932,20 +875,19 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
-		EFCE0DE82CC5D9F700BA0B2D /* Debug */ = {
+		EF6879542CD010E0009947FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = UnitConverterIPad.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Unit Converter iPad/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter Ipad/Preview Content\"";
 				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -961,28 +903,27 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "burrk.Unit-Converter-iPad";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverterIpad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
-		EFCE0DE92CC5D9F700BA0B2D /* Release */ = {
+		EF6879552CD010E0009947FB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = UnitConverterIPad.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Unit Converter iPad/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter Ipad/Preview Content\"";
 				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -998,12 +939,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
-				PRODUCT_BUNDLE_IDENTIFIER = "burrk.Unit-Converter-iPad";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.burrk.UnitConverterIpad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = NO;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1031,20 +972,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF9DBEBE2CC18C6A00BEB194 /* Build configuration list for PBXNativeTarget "UnitConverterWatch Watch App" */ = {
+		EF6878AE2CD009D3009947FB /* Build configuration list for PBXNativeTarget "UnitConverter Watch Watch App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EF9DBEBC2CC18C6A00BEB194 /* Debug */,
-				EF9DBEBD2CC18C6A00BEB194 /* Release */,
+				EF6878AF2CD009D3009947FB /* Debug */,
+				EF6878B02CD009D3009947FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EFCE0DEA2CC5D9F700BA0B2D /* Build configuration list for PBXNativeTarget "UnitConverterIPad" */ = {
+		EF6879532CD010E0009947FB /* Build configuration list for PBXNativeTarget "UnitConverter Ipad" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EFCE0DE82CC5D9F700BA0B2D /* Debug */,
-				EFCE0DE92CC5D9F700BA0B2D /* Release */,
+				EF6879542CD010E0009947FB /* Debug */,
+				EF6879552CD010E0009947FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1063,7 +1004,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EFF0E6162CC274F800060C91 /* SwiftUI Apple Watch Decimal Pad */ = {
+		EF6878CE2CD00AC9009947FB /* SwiftUI Apple Watch Decimal Pad */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EFF0E6152CC2749E00060C91 /* XCRemoteSwiftPackageReference "SwiftUI-Apple-Watch-Decimal-Pad" */;
 			productName = "SwiftUI Apple Watch Decimal Pad";

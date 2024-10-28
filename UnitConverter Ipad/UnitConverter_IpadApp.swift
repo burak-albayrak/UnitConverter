@@ -5,18 +5,11 @@
 //  Created by Burak Albayrak on 21.10.2024.
 //
 
-//
-//  Unit_Converter_iPadApp.swift
-//  Unit Converter iPad
-//
-//  Created by Burak Albayrak on 21.10.2024.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
-struct UnitConverterApp: App {
+struct UnitConverter_IpadApp: App {
     @AppStorage("isDarkMode") private var isDarkMode = false
     @AppStorage("hasSeenWelcomeScreen") private var hasSeenWelcomeScreen = false
     @AppStorage("appLanguage") private var appLanguage: String = ""

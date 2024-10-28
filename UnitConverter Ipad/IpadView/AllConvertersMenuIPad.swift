@@ -28,7 +28,7 @@ struct AllConvertersMenuIPad: View {
                 }
                 .tint(.accentColor)
             }
-            .navigationSplitViewColumnWidth(min: 250, ideal: 400, max: 400)
+            .navigationSplitViewColumnWidth(min: 250, ideal: 336, max: 400)
             .navigationTitle(category.localizedName)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {

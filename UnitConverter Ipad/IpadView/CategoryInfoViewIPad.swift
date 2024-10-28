@@ -61,7 +61,6 @@ struct CategoryInfoViewIPad<T: UnitCategory>: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationBarHidden(true)
     }
 }
 
