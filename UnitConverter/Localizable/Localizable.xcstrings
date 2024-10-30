@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     " " : {
 
     },
@@ -318,6 +321,9 @@
           }
         }
       }
+    },
+    "About Unit Converter" : {
+
     },
     "abvolt" : {
       "localizations" : {
@@ -3136,6 +3142,9 @@
         }
       }
     },
+    "Clear All" : {
+
+    },
     "Clear All Favorites" : {
       "localizations" : {
         "tr" : {
@@ -3145,6 +3154,9 @@
           }
         }
       }
+    },
+    "Clear Favorites" : {
+
     },
     "Colombian Peso" : {
       "localizations" : {
@@ -3279,6 +3291,9 @@
           }
         }
       }
+    },
+    "Copy" : {
+
     },
     "cor (Biblical)" : {
       "localizations" : {
@@ -4534,6 +4549,9 @@
           }
         }
       }
+    },
+    "Delete" : {
+
     },
     "denarius (Biblical Roman)" : {
       "localizations" : {
@@ -10161,6 +10179,9 @@
         }
       }
     },
+    "Language Settings" : {
+
+    },
     "Laotian Kip" : {
       "localizations" : {
         "en" : {
@@ -13640,6 +13661,9 @@
         }
       }
     },
+    "No Favorites" : {
+
+    },
     "No Favorites Yet" : {
       "localizations" : {
         "tr" : {
@@ -13649,6 +13673,9 @@
           }
         }
       }
+    },
+    "No Selection" : {
+
     },
     "Norwegian Krone" : {
       "localizations" : {
@@ -14075,6 +14102,9 @@
           }
         }
       }
+    },
+    "Paste" : {
+
     },
     "peck (UK)" : {
       "localizations" : {
@@ -16208,6 +16238,12 @@
           }
         }
       }
+    },
+    "Select a converter from the sidebar" : {
+
+    },
+    "Select a favorite conversion from the sidebar" : {
+
     },
     "Select a favorite from the list" : {
       "localizations" : {
@@ -18719,6 +18755,9 @@
           }
         }
       }
+    },
+    "View" : {
+
     },
     "Viscosity - Dynamic" : {
       "extractionState" : "manual",

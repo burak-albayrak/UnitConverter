@@ -21,20 +21,6 @@
                ReferencedContainer = "container:UnitConverter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EF9DBEAD2CC18C6800BEB194"
-               BuildableName = "UnitConverterWatch Watch App.app"
-               BlueprintName = "UnitConverterWatch Watch App"
-               ReferencedContainer = "container:UnitConverter.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

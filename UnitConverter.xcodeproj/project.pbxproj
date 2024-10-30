@@ -31,6 +31,24 @@
 		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
 		EF46C2112CBC55630090F5B6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2102CBC55630090F5B6 /* CustomTextField.swift */; };
 		EF46C2132CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */; };
+		EF63B82D2CD0226B0018F6E5 /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
+		EF63B82E2CD0226B0018F6E5 /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
+		EF63B82F2CD0226B0018F6E5 /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
+		EF63B8302CD0226B0018F6E5 /* MagnetismUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0782C86862D004B974A /* MagnetismUnitsModel.swift */; };
+		EF63B8312CD0226B0018F6E5 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6F2C8E0ADF006E6548 /* PreviewContainer.swift */; };
+		EF63B8322CD0226B0018F6E5 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF6B2C8E0717006E6548 /* FavoritesViewModel.swift */; };
+		EF63B8332CD0226B0018F6E5 /* HeatUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0702C867E90004B974A /* HeatUnitsModel.swift */; };
+		EF63B8342CD0226B0018F6E5 /* CurrencyConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACDA2C8C91D100477945 /* CurrencyConversionViewModel.swift */; };
+		EF63B8352CD0226B0018F6E5 /* CommonUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F874D2C82870400114906 /* CommonUnitsModel.swift */; };
+		EF63B8362CD0226B0018F6E5 /* CurrencyConverterNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD62C8C918500477945 /* CurrencyConverterNetwork.swift */; };
+		EF63B8372CD0226B0018F6E5 /* EngineeringUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0632C8359BF004B974A /* EngineeringUnitsModel.swift */; };
+		EF63B8382CD0226B0018F6E5 /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
+		EF63B8392CD0226B0018F6E5 /* UnitConversionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0582C828D0D004B974A /* UnitConversionViewModel.swift */; };
+		EF63B83A2CD0226B0018F6E5 /* UnitCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C06C2C860C94004B974A /* UnitCategory.swift */; };
+		EF63B83B2CD0226B0018F6E5 /* FluidsUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0722C8680BA004B974A /* FluidsUnitsModel.swift */; };
+		EF63B83C2CD0226B0018F6E5 /* ElectricityUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0762C8683DB004B974A /* ElectricityUnitsModel.swift */; };
+		EF63B83D2CD0226B0018F6E5 /* CurrencyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37ACD82C8C91A600477945 /* CurrencyUnitsModel.swift */; };
+		EF63B83E2CD0226B0018F6E5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = EFDFFBA02C904CBE009699EC /* Localizable.xcstrings */; };
 		EF66F12E2C90FDBB0068324D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */; };
 		EF6878AD2CD009D3009947FB /* UnitConverter Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EF6878B22CD00A8F009947FB /* FavoriteConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF85EF692C8E06F8006E6548 /* FavoriteConversion.swift */; };
@@ -144,6 +162,7 @@
 		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
 		EF46C2102CBC55630090F5B6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldRepresentable.swift; sourceTree = "<group>"; };
+		EF63B81C2CD022310018F6E5 /* UnitConverter mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6879462CD010DF009947FB /* UnitConverter Ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter Ipad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,12 +182,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		EF63B81D2CD022310018F6E5 /* UnitConverter mac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UnitConverter mac"; sourceTree = "<group>"; };
 		EF6878A12CD009D1009947FB /* UnitConverter Watch Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UnitConverter Watch Watch App"; sourceTree = "<group>"; };
 		EF6879472CD010DF009947FB /* UnitConverter Ipad */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "UnitConverter Ipad"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EF0F87382C8285FF00114906 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF63B8192CD022310018F6E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,6 +226,7 @@
 				EF0F873D2C8285FF00114906 /* UnitConverter */,
 				EF6878A12CD009D1009947FB /* UnitConverter Watch Watch App */,
 				EF6879472CD010DF009947FB /* UnitConverter Ipad */,
+				EF63B81D2CD022310018F6E5 /* UnitConverter mac */,
 				EF5157A32CC0112500FCA157 /* Frameworks */,
 				EF0F873C2C8285FF00114906 /* Products */,
 			);
@@ -210,6 +238,7 @@
 				EF0F873B2C8285FF00114906 /* UnitConverter.app */,
 				EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */,
 				EF6879462CD010DF009947FB /* UnitConverter Ipad.app */,
+				EF63B81C2CD022310018F6E5 /* UnitConverter mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -376,6 +405,28 @@
 			productReference = EF0F873B2C8285FF00114906 /* UnitConverter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EF63B81B2CD022310018F6E5 /* UnitConverter mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF63B82A2CD022330018F6E5 /* Build configuration list for PBXNativeTarget "UnitConverter mac" */;
+			buildPhases = (
+				EF63B8182CD022310018F6E5 /* Sources */,
+				EF63B8192CD022310018F6E5 /* Frameworks */,
+				EF63B81A2CD022310018F6E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				EF63B81D2CD022310018F6E5 /* UnitConverter mac */,
+			);
+			name = "UnitConverter mac";
+			packageProductDependencies = (
+			);
+			productName = "UnitConverter mac";
+			productReference = EF63B81C2CD022310018F6E5 /* UnitConverter mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		EF68789F2CD009D1009947FB /* UnitConverter Watch Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF6878AE2CD009D3009947FB /* Build configuration list for PBXNativeTarget "UnitConverter Watch Watch App" */;
@@ -434,6 +485,9 @@
 					EF0F873A2C8285FF00114906 = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					EF63B81B2CD022310018F6E5 = {
+						CreatedOnToolsVersion = 16.0;
+					};
 					EF68789F2CD009D1009947FB = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -462,6 +516,7 @@
 				EF0F873A2C8285FF00114906 /* UnitConverter */,
 				EF68789F2CD009D1009947FB /* UnitConverter Watch Watch App */,
 				EF6879452CD010DF009947FB /* UnitConverter Ipad */,
+				EF63B81B2CD022310018F6E5 /* UnitConverter mac */,
 			);
 		};
 /* End PBXProject section */
@@ -476,6 +531,14 @@
 				EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */,
 				EF0F87432C82860100114906 /* Assets.xcassets in Resources */,
 				EFCCD2922C911745001E0B5F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF63B81A2CD022310018F6E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF63B83E2CD0226B0018F6E5 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +596,30 @@
 				EF37C05E2C829315004B974A /* UnitConversionView.swift in Sources */,
 				EFDFFB8D2C8F8EFD009699EC /* MailView.swift in Sources */,
 				EF37C0772C8683DB004B974A /* ElectricityUnitsModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF63B8182CD022310018F6E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF63B82D2CD0226B0018F6E5 /* AllConvertersModel.swift in Sources */,
+				EF63B82E2CD0226B0018F6E5 /* LightUnitsModel.swift in Sources */,
+				EF63B82F2CD0226B0018F6E5 /* RadiologyUnitsModel.swift in Sources */,
+				EF63B8302CD0226B0018F6E5 /* MagnetismUnitsModel.swift in Sources */,
+				EF63B8312CD0226B0018F6E5 /* PreviewContainer.swift in Sources */,
+				EF63B8322CD0226B0018F6E5 /* FavoritesViewModel.swift in Sources */,
+				EF63B8332CD0226B0018F6E5 /* HeatUnitsModel.swift in Sources */,
+				EF63B8342CD0226B0018F6E5 /* CurrencyConversionViewModel.swift in Sources */,
+				EF63B8352CD0226B0018F6E5 /* CommonUnitsModel.swift in Sources */,
+				EF63B8362CD0226B0018F6E5 /* CurrencyConverterNetwork.swift in Sources */,
+				EF63B8372CD0226B0018F6E5 /* EngineeringUnitsModel.swift in Sources */,
+				EF63B8382CD0226B0018F6E5 /* FavoriteConversion.swift in Sources */,
+				EF63B8392CD0226B0018F6E5 /* UnitConversionViewModel.swift in Sources */,
+				EF63B83A2CD0226B0018F6E5 /* UnitCategory.swift in Sources */,
+				EF63B83B2CD0226B0018F6E5 /* FluidsUnitsModel.swift in Sources */,
+				EF63B83C2CD0226B0018F6E5 /* ElectricityUnitsModel.swift in Sources */,
+				EF63B83D2CD0226B0018F6E5 /* CurrencyUnitsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -817,6 +904,64 @@
 			};
 			name = Release;
 		};
+		EF63B82B2CD022330018F6E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "UnitConverter mac/UnitConverter_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.burrk.UnitConverter.UnitConverter-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EF63B82C2CD022330018F6E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "UnitConverter mac/UnitConverter_mac.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter mac/Preview Content\"";
+				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.burrk.UnitConverter.UnitConverter-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		EF6878AF2CD009D3009947FB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -972,6 +1117,15 @@
 			buildConfigurations = (
 				EF0F874A2C82860100114906 /* Debug */,
 				EF0F874B2C82860100114906 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF63B82A2CD022330018F6E5 /* Build configuration list for PBXNativeTarget "UnitConverter mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF63B82B2CD022330018F6E5 /* Debug */,
+				EF63B82C2CD022330018F6E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
