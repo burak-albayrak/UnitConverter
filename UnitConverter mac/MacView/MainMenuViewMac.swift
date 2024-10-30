@@ -23,7 +23,6 @@ struct MainMenuViewMac: View {
     
     var body: some View {
         NavigationSplitView {
-            // Sidebar
             List(selection: $selectedSidebarItem) {
                 Section("Common Converters") {
                     ForEach(CommonUnitsCategory.allCases, id: \.self) { category in
@@ -61,7 +60,6 @@ struct MainMenuViewMac: View {
                 }
             }
         } detail: {
-            // Detail View
             if let selectedItem = selectedSidebarItem {
                 switch selectedItem {
                 case .common(let category):

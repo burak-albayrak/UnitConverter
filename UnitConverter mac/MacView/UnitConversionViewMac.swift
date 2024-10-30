@@ -24,45 +24,33 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
     
     var body: some View {
         Form {
-            Section {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("From Unit")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        Picker("", selection: $viewModel.selectedFirstUnitIndex) {
-                            ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
-                                Text(unitText(for: index))
-                            }
-                        }
-                        .labelsHidden()
-                        .frame(width: 200)
-                    }
-                    
-                    Image(systemName: "arrow.right")
-                        .foregroundColor(.secondary)
-                        .padding(.horizontal)
-                    
-                    VStack(alignment: .leading) {
-                        Text("To Unit")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        Picker("", selection: $viewModel.selectedSecondUnitIndex) {
-                            ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
-                                Text(unitText(for: index))
-                            }
-                        }
-                        .labelsHidden()
-                        .frame(width: 200)
+            Section(LocalizedStringKey("Select Units")) {
+                Picker(LocalizedStringKey("From Unit"), selection: $viewModel.selectedFirstUnitIndex) {
+                    ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
+                        Text(unitText(for: index))
                     }
                 }
-                .padding()
+                
+                HStack {
+                    Spacer()
+                    Button(action: swapUnitsAndValues) {
+                        Image(systemName: "arrow.up.arrow.down")
+                            .font(.title2)
+                    }
+                    .buttonStyle(.borderless)
+                    Spacer()
+                }
+                
+                Picker(LocalizedStringKey("To Unit"), selection: $viewModel.selectedSecondUnitIndex) {
+                    ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
+                        Text(unitText(for: index))
+                    }
+                }
             }
             
-            Section {
+            Section(LocalizedStringKey("Value")) {
                 HStack {
-                    TextField("Enter value", text: $viewModel.firstUnitInputValue)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                    CustomTextField(text: $viewModel.firstUnitInputValue, placeholder: "Enter value")
                         .frame(width: 200)
                     
                     Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
@@ -78,12 +66,11 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
                     }) {
                         Text("Paste")
                     }
-                    .buttonStyle(.bordered)
+                    .buttonStyle(TransparentButtonStyle())
                 }
-                .padding()
             }
-            
-            Section {
+
+            Section(LocalizedStringKey("Result")) {
                 HStack {
                     let convertedValue = viewModel.convertUnits(value: viewModel.firstUnitInputValue)
                     Text(convertedValue)
@@ -95,49 +82,36 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
                     
                     Button(action: {
                         NSPasteboard.general.clearContents()
-                        NSPasteboard.general.setString(convertedValue, forType: .string)
+                        NSPasteboard.general.setString(viewModel.convertUnits(value: viewModel.firstUnitInputValue), forType: .string)
                         withAnimation {
                             copiedToClipboard = true
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            withAnimation {
-                                copiedToClipboard = false
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation {
+                                    copiedToClipboard = false
+                                }
                             }
                         }
                     }) {
                         Text("Copy")
                     }
-                    .buttonStyle(.bordered)
-                }
-                .padding()
-            }
-            
-            Button(action: swapUnitsAndValues) {
-                HStack {
-                    Spacer()
-                    Image(systemName: "arrow.up.arrow.down")
-                    Text("Swap")
-                    Spacer()
+                    .buttonStyle(TransparentButtonStyle())
                 }
             }
-            .buttonStyle(.bordered)
-            .padding()
         }
         .formStyle(.grouped)
         .toolbar {
-            ToolbarItem {
-                Button(action: {
-                    toggleFavorite()
-                }) {
+            ToolbarItemGroup(placement: .automatic) {
+                Spacer()
+                Button(action: toggleFavorite) {
                     Image(systemName: isFavorite ? "star.fill" : "star")
+                        .foregroundColor(.accentColor)
                 }
-            }
-            
-            ToolbarItem {
+                
                 Button(action: {
                     viewModel.isInfoPresented = true
                 }) {
                     Image(systemName: "info.circle")
+                        .foregroundColor(.accentColor)
                 }
             }
         }
@@ -150,17 +124,32 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
         }
         .onChange(of: viewModel.selectedFirstUnitIndex) { updateFavoriteStatus() }
         .onChange(of: viewModel.selectedSecondUnitIndex) { updateFavoriteStatus() }
+        .overlay {
+            if copiedToClipboard {
+                feedbackOverlay(message: "Copied to Clipboard")
+            }
+            if addedToFavorites {
+                feedbackOverlay(message: "Added to Favorites")
+            }
+        }
     }
+    
+    private func feedbackOverlay(message: String) -> some View {
+        Text(message)
+            .font(.system(.body, design: .rounded, weight: .semibold))
+            .foregroundStyle(.white)
+            .padding()
+            .background(Color.accentColor.cornerRadius(10))
+            .shadow(radius: 5)
+            .transition(.move(edge: .bottom))
+            .frame(maxHeight: .infinity, alignment: .bottom)
+            .padding(.bottom)
+    }
+
     
     private func unitText(for index: Int) -> String {
         let unit = viewModel.availableUnits[index]
-        return "\(unit.symbol) (\(unit.name))"
-    }
-    
-    private func swapUnitsAndValues() {
-        let tempIndex = viewModel.selectedFirstUnitIndex
-        viewModel.selectedFirstUnitIndex = viewModel.selectedSecondUnitIndex
-        viewModel.selectedSecondUnitIndex = tempIndex
+        return "\(unit.name) (\(unit.symbol))"
     }
     
     private func toggleFavorite() {
@@ -193,11 +182,17 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
         }
     }
     
+    private func swapUnitsAndValues() {
+        let tempIndex = viewModel.selectedFirstUnitIndex
+        viewModel.selectedFirstUnitIndex = viewModel.selectedSecondUnitIndex
+        viewModel.selectedSecondUnitIndex = tempIndex
+    }
+    
     private func updateFavoriteStatus() {
         isFavorite = favoritesViewModel.isFavorite(
             category: viewModel.category.rawValue,
-            fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name,
-            toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].name
+            fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol,
+            toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol
         )
     }
 }
@@ -210,5 +205,51 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
             .frame(width: 600, height: 400)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
+    }
+}
+
+struct CustomTextField: NSViewRepresentable {
+    @Binding var text: String
+    var placeholder: String
+    
+    func makeNSView(context: Context) -> NSTextField {
+        let textField = NSTextField()
+        textField.placeholderString = placeholder
+        textField.delegate = context.coordinator
+        textField.alignment = .left
+        textField.bezelStyle = .roundedBezel
+        return textField
+    }
+    
+    func updateNSView(_ nsView: NSTextField, context: Context) {
+        nsView.stringValue = text
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(text: $text)
+    }
+    
+    class Coordinator: NSObject, NSTextFieldDelegate {
+        var text: Binding<String>
+        
+        init(text: Binding<String>) {
+            self.text = text
+        }
+        
+        func controlTextDidChange(_ obj: Notification) {
+            if let textField = obj.object as? NSTextField {
+                self.text.wrappedValue = textField.stringValue
+            }
+        }
+    }
+}
+
+struct TransparentButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding(8)
+            .background(Color.accentColor.opacity(configuration.isPressed ? 0.1 : 0.2))
+            .cornerRadius(8)
+            .foregroundColor(.accentColor)
     }
 }

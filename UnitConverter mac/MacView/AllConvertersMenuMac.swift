@@ -9,27 +9,19 @@ import SwiftUI
 
 struct AllConvertersMenuMac: View {
     let category: AllConvertersCategory
+    @State private var selectedCategory: Any?
     
     var body: some View {
         List {
             ForEach(category.unitCategory, id: \.rawValue) { unitCategory in
                 NavigationLink {
-                    AnyView(makeUnitConversionView(for: unitCategory))
+                    makeUnitConversionView(for: unitCategory)
                 } label: {
-                    VStack(alignment: .leading) {
-                        Text(unitCategory.localizedName)
-                            .font(.headline)
-                        Text(unitCategory.info)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                    }
-                    .padding(.vertical, 4)
+                    Label(unitCategory.localizedName, systemImage: unitCategory.icon)
                 }
             }
         }
         .navigationTitle(category.localizedName)
-        .frame(minWidth: 300, idealWidth: 350, maxWidth: .infinity,
-               minHeight: 400, idealHeight: 500, maxHeight: .infinity)
     }
     
     @ViewBuilder
