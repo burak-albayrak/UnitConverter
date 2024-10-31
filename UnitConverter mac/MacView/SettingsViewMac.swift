@@ -18,56 +18,76 @@ struct SettingsViewMac: View {
     @AppStorage("appLanguage") private var appLanguage = "en"
     
     var body: some View {
-        Form {
-            Section {
-                Toggle("Dark Mode", isOn: $isDarkMode)
-            } header: {
-                Text("Appearance")
-            }
-            
-            Section {
-                Picker("Language", selection: $appLanguage) {
-                    Text("English").tag("en")
-                    Text("Türkçe").tag("tr")
+        VStack(spacing: 0) {
+            HStack {
+                Text("Settings")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                Spacer()
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundStyle(.secondary)
+                        .font(.title2)
                 }
-                .pickerStyle(.radioGroup)
-                .onChange(of: appLanguage) { _, newValue in
-                    UserDefaults.standard.set([newValue], forKey: "AppleLanguages")
-                    UserDefaults.standard.synchronize()
-                    showLanguageChangeAlert = true
+                .buttonStyle(.plain)
+            }
+            .padding()
+            .background(Color(NSColor.windowBackgroundColor))
+            
+            // Settings Content
+            Form {
+                Section {
+                    Toggle("Dark Mode", isOn: $isDarkMode)
+                } header: {
+                    Text("Appearance")
                 }
-            } header: {
-                Text("Language Settings")
-            }
-            
-            Section {
-                Button("Clear All Favorites") {
-                    showingClearConfirmation = true
+                
+                Section {
+                    Picker("Language", selection: $appLanguage) {
+                        Text("English").tag("en")
+                        Text("Türkçe").tag("tr")
+                    }
+                    .pickerStyle(.radioGroup)
+                    .onChange(of: appLanguage) { _, newValue in
+                        UserDefaults.standard.set([newValue], forKey: "AppleLanguages")
+                        UserDefaults.standard.synchronize()
+                        showLanguageChangeAlert = true
+                    }
+                } header: {
+                    Text("Language Settings")
                 }
-                .foregroundColor(.red)
-            } header: {
-                Text("Favorites")
+                
+                Section {
+                    Button("Clear All Favorites") {
+                        showingClearConfirmation = true
+                    }
+                    .foregroundColor(.red)
+                } header: {
+                    Text("Favorites")
+                }
+                
+                Section {
+                    Link("Send Feedback", destination: URL(string: "mailto:burak_albayrak0@icloud.com")!)
+                } header: {
+                    Text("Feedback")
+                }
+                
+                Section {
+                    Link("Rate the App", destination: URL(string: "https://apps.apple.com/tr/app/unit-converter-scientific/id6692634387")!)
+                } header: {
+                    Text("About")
+                }
+                
+                Text(getAppVersion())
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding(.bottom, -5)
             }
-            
-            Section {
-                Link("Send Feedback", destination: URL(string: "mailto:burak_albayrak0@icloud.com")!)
-            } header: {
-                Text("Feedback")
-            }
-            
-            Section {
-                Link("Rate the App", destination: URL(string: "https://apps.apple.com/tr/app/unit-converter-scientific/id6692634387")!)
-            } header: {
-                Text("About")
-            }
-            
-            Text(getAppVersion())
-                .foregroundColor(.secondary)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.top)
+            .formStyle(.grouped)
         }
-        .formStyle(.grouped)
-        .frame(width: 400, height: 500)
+        .frame(width: 500, height: 500)
         .alert("Language Changed", isPresented: $showLanguageChangeAlert) {
             Button("OK") {
                 NSApplication.shared.terminate(self)

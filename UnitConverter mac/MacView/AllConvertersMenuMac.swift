@@ -9,37 +9,76 @@ import SwiftUI
 
 struct AllConvertersMenuMac: View {
     let category: AllConvertersCategory
-    @State private var selectedCategory: Any?
+    @State private var selectedUnitCategory: (any UnitCategory)?
     
     var body: some View {
-        List {
-            ForEach(category.unitCategory, id: \.rawValue) { unitCategory in
-                NavigationLink {
-                    makeUnitConversionView(for: unitCategory)
-                } label: {
-                    Label(unitCategory.localizedName, systemImage: unitCategory.icon)
+        if let selectedCategory = selectedUnitCategory {
+            makeUnitConversionView(for: selectedCategory)
+                .transition(.asymmetric(
+                    insertion: .move(edge: .trailing).combined(with: .opacity),
+                    removal: .move(edge: .leading).combined(with: .opacity)
+                ))
+        } else {
+            List {
+                ForEach(category.unitCategory, id: \.rawValue) { unitCategory in
+                    Button {
+                        withAnimation(.smooth) {
+                            selectedUnitCategory = unitCategory
+                        }
+                    } label: {
+                        Label(unitCategory.localizedName, systemImage: unitCategory.icon)
+                            .foregroundColor(.accentColor)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
+            .navigationTitle(category.localizedName)
+            .transition(.asymmetric(
+                insertion: .move(edge: .leading).combined(with: .opacity),
+                removal: .move(edge: .trailing).combined(with: .opacity)
+            ))
         }
-        .navigationTitle(category.localizedName)
     }
     
     @ViewBuilder
     private func makeUnitConversionView(for unitCategory: any UnitCategory) -> some View {
-        if let engineeringCategory = unitCategory as? EngineeringUnitsCategory {
-            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: engineeringCategory))
-        } else if let heatCategory = unitCategory as? HeatUnitsCategory {
-            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: heatCategory))
-        } else if let fluidsCategory = unitCategory as? FluidsUnitsCategory {
-            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: fluidsCategory))
-        } else if let lightCategory = unitCategory as? LightUnitsCategory {
-            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: lightCategory))
-        } else if let electricityCategory = unitCategory as? ElectricityUnitsCategory {
-            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: electricityCategory))
-        } else if let magnetismCategory = unitCategory as? MagnetismUnitsCategory {
-            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: magnetismCategory))
-        } else if let radiologyCategory = unitCategory as? RadiollogyUnitsCategory {
-            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: radiologyCategory))
+        VStack {
+            HStack {
+                Button {
+                    withAnimation(.smooth) {
+                        selectedUnitCategory = nil
+                    }
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(.accentColor)
+                        Text(category.localizedName)
+                            .buttonStyle(TransparentButtonStyle())
+                            .foregroundColor(.accentColor)
+                    }
+                }
+                .buttonStyle(.bordered)
+                Spacer()
+            }
+            .padding(.horizontal)
+            
+            Group {
+                if let engineeringCategory = unitCategory as? EngineeringUnitsCategory {
+                    UnitConversionViewMac(viewModel: UnitConversionViewModel(category: engineeringCategory))
+                } else if let heatCategory = unitCategory as? HeatUnitsCategory {
+                    UnitConversionViewMac(viewModel: UnitConversionViewModel(category: heatCategory))
+                } else if let fluidsCategory = unitCategory as? FluidsUnitsCategory {
+                    UnitConversionViewMac(viewModel: UnitConversionViewModel(category: fluidsCategory))
+                } else if let lightCategory = unitCategory as? LightUnitsCategory {
+                    UnitConversionViewMac(viewModel: UnitConversionViewModel(category: lightCategory))
+                } else if let electricityCategory = unitCategory as? ElectricityUnitsCategory {
+                    UnitConversionViewMac(viewModel: UnitConversionViewModel(category: electricityCategory))
+                } else if let magnetismCategory = unitCategory as? MagnetismUnitsCategory {
+                    UnitConversionViewMac(viewModel: UnitConversionViewModel(category: magnetismCategory))
+                } else if let radiologyCategory = unitCategory as? RadiollogyUnitsCategory {
+                    UnitConversionViewMac(viewModel: UnitConversionViewModel(category: radiologyCategory))
+                }
+            }
         }
     }
 }

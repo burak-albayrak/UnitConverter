@@ -54,6 +54,16 @@
         }
       }
     },
+    "%@ → %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ → %2$@"
+          }
+        }
+      }
+    },
     "%@ to %@" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -323,7 +333,14 @@
       }
     },
     "About Unit Converter" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Birim Dönüştürücü Hakkında"
+          }
+        }
+      }
     },
     "abvolt" : {
       "localizations" : {
@@ -3142,9 +3159,6 @@
         }
       }
     },
-    "Clear All" : {
-
-    },
     "Clear All Favorites" : {
       "localizations" : {
         "tr" : {
@@ -3156,7 +3170,14 @@
       }
     },
     "Clear Favorites" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorileri Temizle"
+          }
+        }
+      }
     },
     "Colombian Peso" : {
       "localizations" : {
@@ -3293,7 +3314,14 @@
       }
     },
     "Copy" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopyala"
+          }
+        }
+      }
     },
     "cor (Biblical)" : {
       "localizations" : {
@@ -4550,9 +4578,6 @@
         }
       }
     },
-    "Delete" : {
-
-    },
     "denarius (Biblical Roman)" : {
       "localizations" : {
         "tr" : {
@@ -5389,7 +5414,14 @@
       }
     },
     "Enter Value" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Değer giriniz"
+          }
+        }
+      }
     },
     "ephah (Biblical)" : {
       "localizations" : {
@@ -5748,9 +5780,6 @@
           }
         }
       }
-    },
-    "Failed to create preview: %@" : {
-
     },
     "Falkland Islands Pound" : {
       "localizations" : {
@@ -10183,7 +10212,14 @@
       }
     },
     "Language Settings" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dil Ayarları"
+          }
+        }
+      }
     },
     "Laotian Kip" : {
       "localizations" : {
@@ -10596,6 +10632,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "litre/saniye"
+          }
+        }
+      }
+    },
+    "Loading currencies..." : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dövizler yükleniyor…"
           }
         }
       }
@@ -13664,9 +13710,6 @@
         }
       }
     },
-    "No Favorites" : {
-
-    },
     "No Favorites Yet" : {
       "localizations" : {
         "tr" : {
@@ -13676,9 +13719,6 @@
           }
         }
       }
-    },
-    "No Selection" : {
-
     },
     "Norwegian Krone" : {
       "localizations" : {
@@ -14107,7 +14147,14 @@
       }
     },
     "Paste" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yapıştır"
+          }
+        }
+      }
     },
     "peck (UK)" : {
       "localizations" : {
@@ -16243,10 +16290,24 @@
       }
     },
     "Select a converter from the sidebar" : {
-
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kenar çubuğundan bir dönüştürücü seçin"
+          }
+        }
+      }
     },
-    "Select a favorite conversion from the sidebar" : {
-
+    "Select a favorite conversion" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir favorilenmiş dönüşüm seçin"
+          }
+        }
+      }
     },
     "Select a favorite from the list" : {
       "localizations" : {
@@ -19532,6 +19593,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yemen Riyali"
+          }
+        }
+      }
+    },
+    "Your favorite conversions will appear here" : {
+      "localizations" : {
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favori dönüşümleriniz burada görünecek"
           }
         }
       }

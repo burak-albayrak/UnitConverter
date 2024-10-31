@@ -17,130 +17,153 @@ struct CurrencyConversionViewMac: View {
     
     var body: some View {
         Form {
-            Section {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("From Currency")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        Picker("", selection: $viewModel.selectedFromCurrencyIndex) {
-                            ForEach(0..<viewModel.availableCurrencies.count, id: \.self) { index in
-                                Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
-                            }
+            Text("Currency")
+                .font(.largeTitle)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.bottom, -5)
+                .foregroundColor(.accentColor)
+            
+            Section(LocalizedStringKey("Select Units")) {
+                if viewModel.availableCurrencies.isEmpty {
+                    ProgressView("Loading currencies...")
+                        .frame(maxWidth: .infinity)
+                } else {
+                    Picker(LocalizedStringKey("From Currency"), selection: $viewModel.selectedFromCurrencyIndex) {
+                        ForEach(0..<viewModel.availableCurrencies.count, id: \.self) { index in
+                            Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                         }
-                        .labelsHidden()
-                        .frame(width: 250)
+                    }
+                    .id(viewModel.selectedFromCurrencyIndex)
+                    
+                    HStack {
+                        Spacer()
+                        Button(action: swapCurrenciesAndValues) {
+                            Image(systemName: "arrow.up.arrow.down")
+                                .font(.title2)
+                        }
+                        .buttonStyle(.borderless)
+                        Spacer()
                     }
                     
-                    Image(systemName: "arrow.right")
-                        .foregroundColor(.secondary)
-                        .padding(.horizontal)
-                    
-                    VStack(alignment: .leading) {
-                        Text("To Currency")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
-                        Picker("", selection: $viewModel.selectedToCurrencyIndex) {
-                            ForEach(0..<viewModel.availableCurrencies.count, id: \.self) { index in
-                                Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
-                            }
+                    Picker(LocalizedStringKey("To Currency"), selection: $viewModel.selectedToCurrencyIndex) {
+                        ForEach(0..<viewModel.availableCurrencies.count, id: \.self) { index in
+                            Text("\(viewModel.availableCurrencies[index].symbol) (\(viewModel.availableCurrencies[index].name))")
                         }
-                        .labelsHidden()
-                        .frame(width: 250)
                     }
+                    .id(viewModel.selectedToCurrencyIndex)
                 }
-                .padding()
             }
             
-            Section {
-                HStack {
-                    TextField("Enter value", text: $viewModel.inputValue)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .frame(width: 200)
-                    
-                    Text(viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol)
-                        .foregroundColor(.secondary)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        if let pasteboardString = NSPasteboard.general.string(forType: .string) {
-                            let filteredString = pasteboardString.filter { "0123456789.,".contains($0) }
-                            viewModel.inputValue = filteredString
-                            viewModel.convertCurrency()
+            if !viewModel.availableCurrencies.isEmpty {
+                Section(LocalizedStringKey("Value")) {
+                    HStack {
+                        CustomTextFieldMac(text: $viewModel.inputValue, placeholder: "Enter value")
+                            .frame(width: 200)
+                        
+                        if viewModel.selectedFromCurrencyIndex < viewModel.availableCurrencies.count {
+                            Text(viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol)
+                                .foregroundColor(.secondary)
                         }
-                    }) {
-                        Text("Paste")
-                    }
-                    .buttonStyle(.bordered)
-                }
-                .padding()
-            }
-            
-            Section {
-                HStack {
-                    Text(viewModel.convertedValue)
-                        .font(.title2)
-                    Text(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol)
-                        .foregroundColor(.secondary)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        NSPasteboard.general.clearContents()
-                        NSPasteboard.general.setString(viewModel.convertedValue, forType: .string)
-                        withAnimation {
-                            copiedToClipboard = true
-                        }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            withAnimation {
-                                copiedToClipboard = false
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            if let pasteboardString = NSPasteboard.general.string(forType: .string) {
+                                let filteredString = pasteboardString.filter { char in
+                                    let decimalSeparator = Locale.current.decimalSeparator ?? "."
+                                    return "0123456789-\(decimalSeparator)".contains(char)
+                                }
+                                viewModel.inputValue = filteredString
                             }
+                        }) {
+                            Text("Paste")
                         }
-                    }) {
-                        Text("Copy")
+                        .buttonStyle(TransparentButtonStyle())
                     }
-                    .buttonStyle(.bordered)
                 }
-                .padding()
-            }
-            
-            Button(action: swapCurrencies) {
-                HStack {
-                    Spacer()
-                    Image(systemName: "arrow.up.arrow.down")
-                    Text("Swap")
-                    Spacer()
+                
+                Section(LocalizedStringKey("Result")) {
+                    HStack {
+                        if viewModel.isLoading {
+                            ProgressView()
+                        } else if let errorMessage = viewModel.errorMessage {
+                            Text(LocalizedStringKey(errorMessage))
+                                .foregroundColor(.red)
+                            Spacer()
+                            Button(action: {
+                                viewModel.fetchExchangeRates()
+                            }) {
+                                Image(systemName: "arrow.clockwise")
+                                    .foregroundColor(.accentColor)
+                            }
+                        } else {
+                            Text(viewModel.convertedValue)
+                                .font(.title2)
+                            
+                            if viewModel.selectedToCurrencyIndex < viewModel.availableCurrencies.count {
+                                Text(viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol)
+                                    .foregroundColor(.secondary)
+                            }
+                            
+                            Spacer()
+                            
+                            Button(action: {
+                                NSPasteboard.general.clearContents()
+                                NSPasteboard.general.setString(viewModel.convertedValue, forType: .string)
+                                withAnimation {
+                                    copiedToClipboard = true
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        withAnimation {
+                                            copiedToClipboard = false
+                                        }
+                                    }
+                                }
+                            }) {
+                                Text("Copy")
+                            }
+                            .buttonStyle(TransparentButtonStyle())
+                        }
+                    }
                 }
             }
-            .buttonStyle(.bordered)
-            .padding()
         }
         .formStyle(.grouped)
         .toolbar {
-            ToolbarItem {
+            ToolbarItemGroup(placement: .automatic) {
+                Spacer()
+                Button(action: {
+                    viewModel.fetchExchangeRates()
+                }) {
+                    Image(systemName: "arrow.clockwise")
+                        .foregroundColor(.accentColor)
+                }
                 Button(action: toggleFavorite) {
                     Image(systemName: isFavorite ? "star.fill" : "star")
+                        .foregroundColor(.accentColor)
                 }
-            }
-            
-            ToolbarItem {
                 Button(action: {
                     viewModel.isInfoPresented = true
                 }) {
                     Image(systemName: "info.circle")
+                        .foregroundColor(.accentColor)
                 }
             }
         }
         .sheet(isPresented: $viewModel.isInfoPresented) {
             CategoryInfoViewMac(category: viewModel.category)
         }
-        .onAppear {
+        .task {
+            if viewModel.availableCurrencies.isEmpty {
+                viewModel.fetchExchangeRates()
+            }
             favoritesViewModel.setModelContext(modelContext)
             updateFavoriteStatus()
         }
         .onChange(of: viewModel.selectedFromCurrencyIndex) { updateFavoriteStatus() }
         .onChange(of: viewModel.selectedToCurrencyIndex) { updateFavoriteStatus() }
+        .onChange(of: viewModel.inputValue) { _,_ in
+            viewModel.convertCurrency()
+        }
         .overlay {
             if copiedToClipboard {
                 feedbackOverlay(message: "Copied to Clipboard")
@@ -163,7 +186,7 @@ struct CurrencyConversionViewMac: View {
             .padding(.bottom)
     }
     
-    private func swapCurrencies() {
+    private func swapCurrenciesAndValues() {
         let tempIndex = viewModel.selectedFromCurrencyIndex
         viewModel.selectedFromCurrencyIndex = viewModel.selectedToCurrencyIndex
         viewModel.selectedToCurrencyIndex = tempIndex
@@ -173,17 +196,17 @@ struct CurrencyConversionViewMac: View {
     private func toggleFavorite() {
         if isFavorite {
             if let favorite = favoritesViewModel.getFavorites().first(where: {
-                $0.category == CurrencyUnitsCategory.currency.rawValue &&
-                $0.fromUnit == viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol &&
-                $0.toUnit == viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+                $0.category == viewModel.category.rawValue &&
+                $0.fromUnit == viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].name &&
+                $0.toUnit == viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].name
             }) {
                 favoritesViewModel.removeFavorite(favorite)
             }
         } else {
             favoritesViewModel.addFavorite(
-                category: CurrencyUnitsCategory.currency.rawValue,
-                fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
-                toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
+                category: viewModel.category.rawValue,
+                fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].name,
+                toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].name
             )
         }
         
@@ -201,21 +224,12 @@ struct CurrencyConversionViewMac: View {
     }
     
     private func updateFavoriteStatus() {
+        guard !viewModel.availableCurrencies.isEmpty else { return }
+        
         isFavorite = favoritesViewModel.isFavorite(
-            category: CurrencyUnitsCategory.currency.rawValue,
+            category: viewModel.category.rawValue,
             fromUnit: viewModel.availableCurrencies[viewModel.selectedFromCurrencyIndex].symbol,
             toUnit: viewModel.availableCurrencies[viewModel.selectedToCurrencyIndex].symbol
         )
-    }
-}
-
-#Preview {
-    do {
-        let container = try PreviewContainer().container
-        return CurrencyConversionViewMac()
-            .modelContainer(container)
-            .frame(width: 600, height: 400)
-    } catch {
-        return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }

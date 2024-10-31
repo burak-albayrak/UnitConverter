@@ -10,7 +10,6 @@ import SwiftData
 
 @main
 struct UnitConverter_macApp: App {
-    @AppStorage("hasSeenWelcomeScreen") private var hasSeenWelcomeScreen = false
     @AppStorage("isDarkMode") private var isDarkMode = false
     
     var sharedModelContainer: ModelContainer = {
@@ -28,7 +27,7 @@ struct UnitConverter_macApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentViewMac(hasSeenWelcomeScreen: $hasSeenWelcomeScreen)
+            ContentViewMac()
                 .modelContainer(sharedModelContainer)
         }
         .windowStyle(.hiddenTitleBar)

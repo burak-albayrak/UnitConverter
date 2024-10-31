@@ -23,90 +23,14 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
     }
     
     var body: some View {
-        Form {
-            Section(LocalizedStringKey("Select Units")) {
-                Picker(LocalizedStringKey("From Unit"), selection: $viewModel.selectedFirstUnitIndex) {
-                    ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
-                        Text(unitText(for: index))
-                    }
-                }
-                
-                HStack {
-                    Spacer()
-                    Button(action: swapUnitsAndValues) {
-                        Image(systemName: "arrow.up.arrow.down")
-                            .font(.title2)
-                    }
-                    .buttonStyle(.borderless)
-                    Spacer()
-                }
-                
-                Picker(LocalizedStringKey("To Unit"), selection: $viewModel.selectedSecondUnitIndex) {
-                    ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
-                        Text(unitText(for: index))
-                    }
-                }
-            }
-            
-            Section(LocalizedStringKey("Value")) {
-                HStack {
-                    CustomTextField(text: $viewModel.firstUnitInputValue, placeholder: "Enter value")
-                        .frame(width: 200)
-                    
-                    Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
-                        .foregroundColor(.secondary)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        if let pasteboardString = NSPasteboard.general.string(forType: .string) {
-                            let filteredString = pasteboardString.filter { "0123456789.,".contains($0) }
-                            viewModel.firstUnitInputValue = filteredString
-                        }
-                    }) {
-                        Text("Paste")
-                    }
-                    .buttonStyle(TransparentButtonStyle())
-                }
-            }
-
-            Section(LocalizedStringKey("Result")) {
-                HStack {
-                    let convertedValue = viewModel.convertUnits(value: viewModel.firstUnitInputValue)
-                    Text(convertedValue)
-                        .font(.title2)
-                    Text(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)
-                        .foregroundColor(.secondary)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        NSPasteboard.general.clearContents()
-                        NSPasteboard.general.setString(viewModel.convertUnits(value: viewModel.firstUnitInputValue), forType: .string)
-                        withAnimation {
-                            copiedToClipboard = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                withAnimation {
-                                    copiedToClipboard = false
-                                }
-                            }
-                        }
-                    }) {
-                        Text("Copy")
-                    }
-                    .buttonStyle(TransparentButtonStyle())
-                }
-            }
-        }
-        .formStyle(.grouped)
-        .toolbar {
-            ToolbarItemGroup(placement: .automatic) {
+        VStack(spacing: 0) {
+            // Toolbar buttons
+            HStack {
                 Spacer()
                 Button(action: toggleFavorite) {
                     Image(systemName: isFavorite ? "star.fill" : "star")
                         .foregroundColor(.accentColor)
                 }
-                
                 Button(action: {
                     viewModel.isInfoPresented = true
                 }) {
@@ -114,6 +38,92 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
                         .foregroundColor(.accentColor)
                 }
             }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+            
+            // Main content
+            Form {
+                Text(viewModel.category.localizedName)
+                    .font(.largeTitle)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.bottom, -5)
+                    .foregroundColor(.accentColor)
+                
+                Section(LocalizedStringKey("Select Units")) {
+                    Picker(LocalizedStringKey("From Unit"), selection: $viewModel.selectedFirstUnitIndex) {
+                        ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
+                            Text(unitText(for: index))
+                        }
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        Button(action: swapUnitsAndValues) {
+                            Image(systemName: "arrow.up.arrow.down")
+                                .font(.title2)
+                        }
+                        .buttonStyle(.borderless)
+                        Spacer()
+                    }
+                    
+                    Picker(LocalizedStringKey("To Unit"), selection: $viewModel.selectedSecondUnitIndex) {
+                        ForEach(viewModel.availableUnitsIndices, id: \.self) { index in
+                            Text(unitText(for: index))
+                        }
+                    }
+                }
+                
+                Section(LocalizedStringKey("Value")) {
+                    HStack {
+                        CustomTextField(text: $viewModel.firstUnitInputValue, placeholder: "Enter value")
+                            .frame(width: 200)
+                        
+                        Text(viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol)
+                            .foregroundColor(.secondary)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            if let pasteboardString = NSPasteboard.general.string(forType: .string) {
+                                let filteredString = pasteboardString.filter { "0123456789.,".contains($0) }
+                                viewModel.firstUnitInputValue = filteredString
+                            }
+                        }) {
+                            Text("Paste")
+                        }
+                        .buttonStyle(TransparentButtonStyle())
+                    }
+                }
+                
+                Section(LocalizedStringKey("Result")) {
+                    HStack {
+                        let convertedValue = viewModel.convertUnits(value: viewModel.firstUnitInputValue)
+                        Text(convertedValue)
+                            .font(.title2)
+                        Text(viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol)
+                            .foregroundColor(.secondary)
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            NSPasteboard.general.clearContents()
+                            NSPasteboard.general.setString(viewModel.convertUnits(value: viewModel.firstUnitInputValue), forType: .string)
+                            withAnimation {
+                                copiedToClipboard = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    withAnimation {
+                                        copiedToClipboard = false
+                                    }
+                                }
+                            }
+                        }) {
+                            Text("Copy")
+                        }
+                        .buttonStyle(TransparentButtonStyle())
+                    }
+                }
+            }
+            .formStyle(.grouped)
         }
         .sheet(isPresented: $viewModel.isInfoPresented) {
             CategoryInfoViewMac(category: viewModel.category)
@@ -126,15 +136,14 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
         .onChange(of: viewModel.selectedSecondUnitIndex) { updateFavoriteStatus() }
         .overlay {
             if copiedToClipboard {
-                feedbackOverlay(message: "Copied to Clipboard")
+                feedbackOverlay(message: LocalizedStringKey("Copied to Clipboard"))
             }
             if addedToFavorites {
-                feedbackOverlay(message: "Added to Favorites")
+                feedbackOverlay(message: LocalizedStringKey("Added to Favorites"))
             }
         }
     }
-    
-    private func feedbackOverlay(message: String) -> some View {
+    private func feedbackOverlay(message: LocalizedStringKey) -> some View {
         Text(message)
             .font(.system(.body, design: .rounded, weight: .semibold))
             .foregroundStyle(.white)
@@ -145,7 +154,6 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
             .frame(maxHeight: .infinity, alignment: .bottom)
             .padding(.bottom)
     }
-
     
     private func unitText(for index: Int) -> String {
         let unit = viewModel.availableUnits[index]
@@ -191,8 +199,8 @@ struct UnitConversionViewMac<T: UnitCategory>: View {
     private func updateFavoriteStatus() {
         isFavorite = favoritesViewModel.isFavorite(
             category: viewModel.category.rawValue,
-            fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].symbol,
-            toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].symbol
+            fromUnit: viewModel.availableUnits[viewModel.selectedFirstUnitIndex].name,
+            toUnit: viewModel.availableUnits[viewModel.selectedSecondUnitIndex].name
         )
     }
 }
@@ -237,9 +245,55 @@ struct CustomTextField: NSViewRepresentable {
         }
         
         func controlTextDidChange(_ obj: Notification) {
-            if let textField = obj.object as? NSTextField {
-                self.text.wrappedValue = textField.stringValue
+            guard let textField = obj.object as? NSTextField else { return }
+            
+            let newValue = textField.stringValue
+            let decimalSeparator = Locale.current.decimalSeparator ?? "."
+            
+            let filtered = newValue.filter { char in
+                return "0123456789e-\(decimalSeparator)".contains(char)
             }
+            
+            var finalValue = filtered
+            if filtered.contains("-") {
+                let components = filtered.components(separatedBy: "-")
+                if filtered.first == "-" {
+                    finalValue = "-" + components.dropFirst().joined()
+                } else if let eIndex = filtered.firstIndex(of: "e"),
+                          let nextChar = filtered[filtered.index(after: eIndex)...].first,
+                          nextChar == "-" {
+                    finalValue = filtered
+                } else {
+                    finalValue = components.joined()
+                }
+            }
+            
+            if filtered.contains("e") {
+                let components = filtered.components(separatedBy: "e")
+                if components.count > 2 {
+                    finalValue = components[0] + "e" + components[1]
+                }
+                
+                if let firstComponent = components.first,
+                   firstComponent.isEmpty || firstComponent == "-" {
+                    finalValue = finalValue.replacingOccurrences(of: "e", with: "")
+                }
+            }
+            
+            if filtered.components(separatedBy: decimalSeparator).count > 2 {
+                let components = filtered.components(separatedBy: decimalSeparator)
+                finalValue = components[0] + decimalSeparator + components[1]
+            }
+            
+            if finalValue != newValue {
+                textField.stringValue = finalValue
+            }
+            
+            self.text.wrappedValue = finalValue
+        }
+        
+        func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+            return false
         }
     }
 }

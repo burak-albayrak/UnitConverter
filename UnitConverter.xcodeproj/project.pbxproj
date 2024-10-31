@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF04219E2CD3A61E00C3C4FE /* CustomTextFieldMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF04219D2CD3A61E00C3C4FE /* CustomTextFieldMac.swift */; };
+		EF04219F2CD3A61E00C3C4FE /* CustomTextFieldMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF04219D2CD3A61E00C3C4FE /* CustomTextFieldMac.swift */; };
 		EF0F873F2C8285FF00114906 /* UnitConverterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0F873E2C8285FF00114906 /* UnitConverterApp.swift */; };
 		EF0F87432C82860100114906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0F87422C82860100114906 /* Assets.xcassets */; };
 		EF0F87462C82860100114906 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF0F87452C82860100114906 /* Preview Assets.xcassets */; };
@@ -137,6 +139,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EF04219D2CD3A61E00C3C4FE /* CustomTextFieldMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldMac.swift; sourceTree = "<group>"; };
 		EF0F873B2C8285FF00114906 /* UnitConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0F873E2C8285FF00114906 /* UnitConverterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitConverterApp.swift; sourceTree = "<group>"; };
 		EF0F87422C82860100114906 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -337,6 +340,7 @@
 			children = (
 				EF46C2102CBC55630090F5B6 /* CustomTextField.swift */,
 				EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */,
+				EF04219D2CD3A61E00C3C4FE /* CustomTextFieldMac.swift */,
 			);
 			path = CustomKeyboard;
 			sourceTree = "<group>";
@@ -480,7 +484,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					EF0F873A2C8285FF00114906 = {
 						CreatedOnToolsVersion = 15.4;
@@ -573,6 +577,7 @@
 				EF37ACDD2C8C920A00477945 /* CurrencyConverterView.swift  .swift in Sources */,
 				EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */,
 				EF37C0712C867E90004B974A /* HeatUnitsModel.swift in Sources */,
+				EF04219E2CD3A61E00C3C4FE /* CustomTextFieldMac.swift in Sources */,
 				EF37C0602C829390004B974A /* CategoryInfoView.swift in Sources */,
 				EF37C05C2C829111004B974A /* MainMenuView.swift in Sources */,
 				EF85EF7C2C8E5D0A006E6548 /* Extension.swift in Sources */,
@@ -617,6 +622,7 @@
 				EF63B8382CD0226B0018F6E5 /* FavoriteConversion.swift in Sources */,
 				EF63B8392CD0226B0018F6E5 /* UnitConversionViewModel.swift in Sources */,
 				EF63B83A2CD0226B0018F6E5 /* UnitCategory.swift in Sources */,
+				EF04219F2CD3A61E00C3C4FE /* CustomTextFieldMac.swift in Sources */,
 				EF63B83B2CD0226B0018F6E5 /* FluidsUnitsModel.swift in Sources */,
 				EF63B83C2CD0226B0018F6E5 /* ElectricityUnitsModel.swift in Sources */,
 				EF63B83D2CD0226B0018F6E5 /* CurrencyUnitsModel.swift in Sources */,
@@ -913,11 +919,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter mac/Preview Content\"";
 				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "UnitConverter-mac-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -942,11 +950,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"UnitConverter mac/Preview Content\"";
 				DEVELOPMENT_TEAM = 52Q7AQ2WL5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "UnitConverter-mac-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

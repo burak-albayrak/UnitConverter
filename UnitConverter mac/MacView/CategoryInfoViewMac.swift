@@ -13,7 +13,7 @@ struct CategoryInfoViewMac<T: UnitCategory>: View {
     var category: T
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack {
             HStack {
                 Spacer()
                 Button(action: { dismiss() }) {
@@ -27,13 +27,14 @@ struct CategoryInfoViewMac<T: UnitCategory>: View {
             
             VStack {
                 Image(systemName: category.icon)
-                    .foregroundColor(.cyan)
-                    .font(.system(size: 60))
+                    .foregroundColor(.accentColor)
+                    .font(.system(size: 40))
+                    .padding()
                 Text(category.localizedName)
                     .font(.title)
                     .bold()
             }
-            .padding(.top, 20)
+            .padding(.top, -50)
             
             ScrollView {
                 Text(category.info)
@@ -44,7 +45,7 @@ struct CategoryInfoViewMac<T: UnitCategory>: View {
             
             Spacer()
         }
-        .frame(width: 500, height: 400)
+        .frame(width: 500, height: 500)
         .background(isDarkMode ? Color(.windowBackgroundColor) : .white)
     }
 }

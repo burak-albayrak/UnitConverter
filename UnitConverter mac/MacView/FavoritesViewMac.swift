@@ -11,240 +11,127 @@ import SwiftData
 struct FavoritesViewMac: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @StateObject private var favoritesViewModel = FavoritesViewModel()
-    @AppStorage("isDarkMode") private var isDarkMode = false
-    @State private var favorites: [FavoriteConversion] = []
+    @Query private var favorites: [FavoriteConversion]
     @State private var selectedFavorite: FavoriteConversion?
-    @State private var showingClearConfirmation = false
+    @State private var isPressed = false
     
     var body: some View {
         NavigationSplitView {
-            Group {
+            VStack(spacing: 0) {
+                HStack {
+                    Text("Favorites")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                    Spacer()
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .foregroundStyle(.secondary)
+                            .font(.title2)
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding()
+                .background(Color(NSColor.windowBackgroundColor))
+                
                 if favorites.isEmpty {
-                    ContentUnavailableView {
-                        Label("No Favorites", systemImage: "star.slash")
-                    } description: {
-                        Text("Add some conversions to your favorites!")
+                    VStack {
+                        Spacer()
+                        Image(systemName: "star.fill")
+                            .font(.system(size: 50))
+                            .foregroundColor(.secondary)
+                        Text("No Favorites Yet")
+                            .font(.title2)
+                            .foregroundColor(.secondary)
+                        Text("Your favorite conversions will appear here")
+                            .font(.subheadline)
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.secondary)
+                        Spacer()
                     }
                 } else {
-                    List(favorites, selection: $selectedFavorite) { favorite in
-                        FavoriteRowView(favorite: favorite)
-                            .tag(favorite)
-                            .contextMenu {
-                                Button(role: .destructive) {
-                                    favoritesViewModel.removeFavorite(favorite)
-                                    updateFavorites()
-                                } label: {
-                                    Label("Delete", systemImage: "trash")
-                                }
+                    List(selection: $selectedFavorite) {
+                        ForEach(favorites) { favorite in
+                            HStack {
+                                Image(systemName: getCategoryIcon(for: favorite.category))
+                                    .foregroundColor(selectedFavorite == favorite ? .white : .accentColor)
+                                Text("\(favorite.fromUnit) → \(favorite.toUnit)")
                             }
-                    }
-                }
-            }
-            .navigationTitle("Favorites")
-            .toolbar {
-                if !favorites.isEmpty {
-                    ToolbarItem {
-                        Button(action: {
-                            showingClearConfirmation = true
-                        }) {
-                            Label("Clear All", systemImage: "trash")
+                            .tag(favorite)
+                        }
+                        .onDelete { indexSet in
+                            for index in indexSet {
+                                modelContext.delete(favorites[index])
+                            }
                         }
                     }
+                    .listStyle(.sidebar)
                 }
             }
         } detail: {
             if let favorite = selectedFavorite {
-                destinationView(for: favorite)
+                makeConversionView(for: favorite)
+                    .id(favorite.id)
+                    .transition(.asymmetric(
+                        insertion: .move(edge: .trailing).combined(with: .opacity),
+                        removal: .move(edge: .leading).combined(with: .opacity)
+                    ))
             } else {
-                ContentUnavailableView {
-                    Label("No Selection", systemImage: "star")
-                } description: {
-                    Text("Select a favorite conversion from the sidebar")
-                }
+                Text("Select a favorite conversion")
+                    .font(.title2)
+                    .foregroundColor(.secondary)
             }
         }
-        .alert("Clear All Favorites", isPresented: $showingClearConfirmation) {
-            Button("Cancel", role: .cancel) { }
-            Button("Clear", role: .destructive) {
-                favoritesViewModel.clearAllFavorites()
-                updateFavorites()
-            }
-        } message: {
-            Text("Are you sure you want to clear all favorites? This action cannot be undone.")
-        }
-        .onAppear {
-            favoritesViewModel.setModelContext(modelContext)
-            updateFavorites()
-        }
-    }
-    
-    private func updateFavorites() {
-        favorites = favoritesViewModel.getFavorites()
+        .navigationSplitViewStyle(.balanced)
+        .frame(width: 1000, height: 700)
+        .animation(.smooth, value: selectedFavorite)
     }
     
     @ViewBuilder
-    private func destinationView(for favorite: FavoriteConversion) -> some View {
-        switch favorite.category {
-            // CommonUnitsCategory
-        case CommonUnitsCategory.length.rawValue,
-            CommonUnitsCategory.mass.rawValue,
-            CommonUnitsCategory.volume.rawValue,
-            CommonUnitsCategory.temperature.rawValue,
-            CommonUnitsCategory.area.rawValue,
-            CommonUnitsCategory.pressure.rawValue,
-            CommonUnitsCategory.angle.rawValue,
-            CommonUnitsCategory.speed.rawValue,
-            CommonUnitsCategory.duration.rawValue:
-            if let category = CommonUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // EngineeringUnitsCategory
-        case EngineeringUnitsCategory.length.rawValue,
-            EngineeringUnitsCategory.mass.rawValue,
-            EngineeringUnitsCategory.volume.rawValue,
-            EngineeringUnitsCategory.temperature.rawValue,
-            EngineeringUnitsCategory.area.rawValue,
-            EngineeringUnitsCategory.pressure.rawValue,
-            EngineeringUnitsCategory.angle.rawValue,
-            EngineeringUnitsCategory.speed.rawValue,
-            EngineeringUnitsCategory.duration.rawValue,
-            EngineeringUnitsCategory.energy.rawValue,
-            EngineeringUnitsCategory.power.rawValue,
-            EngineeringUnitsCategory.force.rawValue,
-            EngineeringUnitsCategory.fuelConsumption.rawValue,
-            EngineeringUnitsCategory.volumeDry.rawValue,
-            EngineeringUnitsCategory.velocityAngular.rawValue,
-            EngineeringUnitsCategory.acceleration.rawValue,
-            EngineeringUnitsCategory.accelerationAngular.rawValue,
-            EngineeringUnitsCategory.density.rawValue,
-            EngineeringUnitsCategory.specificVolume.rawValue,
-            EngineeringUnitsCategory.momentOfInertia.rawValue,
-            EngineeringUnitsCategory.momentOfForce.rawValue,
-            EngineeringUnitsCategory.torque.rawValue:
-            if let category = EngineeringUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // HeatUnitsCategory
-        case HeatUnitsCategory.fuelEfficiencyMass.rawValue,
-            HeatUnitsCategory.fuelEfficiencyVolume.rawValue,
-            HeatUnitsCategory.temperatureInterval.rawValue,
-            HeatUnitsCategory.thermalExpansion.rawValue,
-            HeatUnitsCategory.thermalResistance.rawValue,
-            HeatUnitsCategory.thermalConductivity.rawValue,
-            HeatUnitsCategory.spesificHeatCapacity.rawValue,
-            HeatUnitsCategory.heatDensity.rawValue,
-            HeatUnitsCategory.heatFluxDensity.rawValue,
-            HeatUnitsCategory.heatTransverCoefficient.rawValue:
-            if let category = HeatUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // FluidsUnitsCategory
-        case FluidsUnitsCategory.flow.rawValue,
-            FluidsUnitsCategory.flowMass.rawValue,
-            FluidsUnitsCategory.flowMolar.rawValue,
-            FluidsUnitsCategory.massFluxDensity.rawValue,
-            FluidsUnitsCategory.concentrationMolar.rawValue,
-            FluidsUnitsCategory.concentrationSolution.rawValue,
-            FluidsUnitsCategory.viscosityDynamic.rawValue,
-            FluidsUnitsCategory.viscosityKinematic.rawValue,
-            FluidsUnitsCategory.surfaceTension.rawValue,
-            FluidsUnitsCategory.permeability.rawValue:
-            if let category = FluidsUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // LightUnitsCategory
-        case LightUnitsCategory.luminance.rawValue,
-            LightUnitsCategory.luminousIntensity.rawValue,
-            LightUnitsCategory.illumination.rawValue,
-            LightUnitsCategory.digitalImageResolution.rawValue,
-            LightUnitsCategory.frequencyWavelength.rawValue:
-            if let category = LightUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // ElectricityUnitsCategory
-        case ElectricityUnitsCategory.charge.rawValue,
-            ElectricityUnitsCategory.linearChargeDensity.rawValue,
-            ElectricityUnitsCategory.surfaceChargeDensity.rawValue,
-            ElectricityUnitsCategory.volumeChargeDensity.rawValue,
-            ElectricityUnitsCategory.current.rawValue,
-            ElectricityUnitsCategory.linearCurrentDensity.rawValue,
-            ElectricityUnitsCategory.surfaceCurrentDensity.rawValue,
-            ElectricityUnitsCategory.electricFieldStrength.rawValue,
-            ElectricityUnitsCategory.electricPotential.rawValue,
-            ElectricityUnitsCategory.electricResistance.rawValue,
-            ElectricityUnitsCategory.electricResistivity.rawValue,
-            ElectricityUnitsCategory.electricConductance.rawValue,
-            ElectricityUnitsCategory.electricConductivity.rawValue,
-            ElectricityUnitsCategory.electrostaticCapacitance.rawValue,
-            ElectricityUnitsCategory.inductance.rawValue:
-            if let category = ElectricityUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // MagnetismUnitsCategory
-        case MagnetismUnitsCategory.magnetomotiveForce.rawValue,
-            MagnetismUnitsCategory.magneticFieldStrength.rawValue,
-            MagnetismUnitsCategory.magneticFlux.rawValue,
-            MagnetismUnitsCategory.magneticFluxDensity.rawValue:
-            if let category = MagnetismUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // RadiollogyUnitsCategory
-        case RadiollogyUnitsCategory.radiation.rawValue,
-            RadiollogyUnitsCategory.radiationActivity.rawValue,
-            RadiollogyUnitsCategory.radiationExposure.rawValue,
-            RadiollogyUnitsCategory.radiationAbsorbedDose.rawValue:
-            if let category = RadiollogyUnitsCategory(rawValue: favorite.category) {
-                UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
-            }
-            
-            // CurrencyUnitsCategory
-        case CurrencyUnitsCategory.currency.rawValue:
+    private func makeConversionView(for favorite: FavoriteConversion) -> some View {
+        if favorite.category == CurrencyUnitsCategory.currency.rawValue {
             CurrencyConversionViewMac()
-            
-        default:
-            Text("Unsupported category: \(favorite.category)")
+        } else if let category = CommonUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
+        } else if let category = EngineeringUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
+        } else if let category = HeatUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
+        } else if let category = FluidsUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
+        } else if let category = LightUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
+        } else if let category = ElectricityUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
+        } else if let category = MagnetismUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
+        } else if let category = RadiollogyUnitsCategory.allCases.first(where: { $0.rawValue == favorite.category }) {
+            UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category), favorite: favorite)
         }
     }
-}
-
-struct FavoriteRowView: View {
-    let favorite: FavoriteConversion
     
-    var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(getCategoryName(favorite.category))
-                .font(.headline)
-            HStack {
-                Text(localizedString(favorite.fromUnit))
-                Image(systemName: "arrow.right")
-                    .foregroundColor(.secondary)
-                Text(localizedString(favorite.toUnit))
-            }
-            .font(.subheadline)
-            .foregroundColor(.secondary)
+    private func getCategoryIcon(for category: String) -> String {
+        if category == CurrencyUnitsCategory.currency.rawValue {
+            return "dollarsign.circle"
+        } else if let commonCategory = CommonUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return commonCategory.icon
+        } else if let engineeringCategory = EngineeringUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return engineeringCategory.icon
+        } else if let heatCategory = HeatUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return heatCategory.icon
+        } else if let fluidsCategory = FluidsUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return fluidsCategory.icon
+        } else if let lightCategory = LightUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return lightCategory.icon
+        } else if let electricityCategory = ElectricityUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return electricityCategory.icon
+        } else if let magnetismCategory = MagnetismUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return magnetismCategory.icon
+        } else if let radiologyCategory = RadiollogyUnitsCategory.allCases.first(where: { $0.rawValue == category }) {
+            return radiologyCategory.icon
         }
-        .padding(.vertical, 4)
-    }
-    
-    private func getCategoryName(_ category: String) -> String {
-        if let commonCategory = CommonUnitsCategory(rawValue: category) {
-            return localizedString(commonCategory.rawValue)
-        } else if category == CurrencyUnitsCategory.currency.rawValue {
-            return "Currency"
-        }
-        return localizedString(category)
-    }
-    
-    private func localizedString(_ key: String) -> String {
-        NSLocalizedString(key, comment: "")
+        return "star"
     }
 }
 
@@ -253,7 +140,6 @@ struct FavoriteRowView: View {
         let container = try PreviewContainer().container
         return FavoritesViewMac()
             .modelContainer(container)
-            .frame(width: 800, height: 500)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }

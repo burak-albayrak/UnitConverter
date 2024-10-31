@@ -47,6 +47,7 @@ struct MainMenuViewMac: View {
                 }
             }
             .navigationTitle("Unit Converter")
+            .navigationSplitViewColumnWidth(min: 200, ideal: 250, max: 300)
             .toolbar {
                 ToolbarItem {
                     Button(action: { showFavorites = true }) {
@@ -59,22 +60,40 @@ struct MainMenuViewMac: View {
                     }
                 }
             }
-        } detail: {
+        }
+        detail: {
             if let selectedItem = selectedSidebarItem {
                 switch selectedItem {
                 case .common(let category):
                     UnitConversionViewMac(viewModel: UnitConversionViewModel(category: category))
+                        .id(selectedItem)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing).combined(with: .opacity),
+                            removal: .move(edge: .leading).combined(with: .opacity)
+                        ))
                 case .currency:
                     CurrencyConversionViewMac()
+                        .id(selectedItem)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing).combined(with: .opacity),
+                            removal: .move(edge: .leading).combined(with: .opacity)
+                        ))
                 case .allConverters(let category):
                     AllConvertersMenuMac(category: category)
+                        .id(selectedItem)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .trailing).combined(with: .opacity),
+                            removal: .move(edge: .leading).combined(with: .opacity)
+                        ))
                 }
             } else {
                 Text("Select a converter from the sidebar")
                     .font(.title2)
                     .foregroundColor(.secondary)
+                    .transition(.opacity)
             }
         }
+        .animation(.smooth, value: selectedSidebarItem)
         .sheet(isPresented: $showSettings) {
             SettingsViewMac()
         }
