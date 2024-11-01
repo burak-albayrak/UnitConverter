@@ -45,6 +45,13 @@ struct UnitConverter_macApp: App {
                 Toggle("Dark Mode", isOn: $isDarkMode)
                     .keyboardShortcut("d", modifiers: [.command])
             }
+            
+            CommandMenu("Window") {
+                Button("Show Main Window") {
+                    NSApplication.shared.windows.first?.makeKeyAndOrderFront(nil)
+                }
+                .keyboardShortcut("m", modifiers: [.command])
+            }
         }
     }
 }

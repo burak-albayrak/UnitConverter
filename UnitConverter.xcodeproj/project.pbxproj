@@ -33,6 +33,7 @@
 		EF37C07B2C86870B004B974A /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
 		EF46C2112CBC55630090F5B6 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2102CBC55630090F5B6 /* CustomTextField.swift */; };
 		EF46C2132CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */; };
+		EF53C9122CD5035000AB5832 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EFCCD2902C911745001E0B5F /* InfoPlist.strings */; };
 		EF63B82D2CD0226B0018F6E5 /* AllConvertersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0652C835F59004B974A /* AllConvertersModel.swift */; };
 		EF63B82E2CD0226B0018F6E5 /* LightUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C0742C8682E6004B974A /* LightUnitsModel.swift */; };
 		EF63B82F2CD0226B0018F6E5 /* RadiologyUnitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */; };
@@ -165,7 +166,7 @@
 		EF37C07A2C86870B004B974A /* RadiologyUnitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiologyUnitsModel.swift; sourceTree = "<group>"; };
 		EF46C2102CBC55630090F5B6 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		EF46C2122CBC55A40090F5B6 /* CustomTextFieldRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldRepresentable.swift; sourceTree = "<group>"; };
-		EF63B81C2CD022310018F6E5 /* UnitConverter mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF63B81C2CD022310018F6E5 /* Unit Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF66F12D2C90FDBB0068324D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6879462CD010DF009947FB /* UnitConverter Ipad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UnitConverter Ipad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,7 +242,7 @@
 				EF0F873B2C8285FF00114906 /* UnitConverter.app */,
 				EF6878A02CD009D1009947FB /* UnitConverter Watch Watch App.app */,
 				EF6879462CD010DF009947FB /* UnitConverter Ipad.app */,
-				EF63B81C2CD022310018F6E5 /* UnitConverter mac.app */,
+				EF63B81C2CD022310018F6E5 /* Unit Converter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,7 +429,7 @@
 			packageProductDependencies = (
 			);
 			productName = "UnitConverter mac";
-			productReference = EF63B81C2CD022310018F6E5 /* UnitConverter mac.app */;
+			productReference = EF63B81C2CD022310018F6E5 /* Unit Converter.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EF68789F2CD009D1009947FB /* UnitConverter Watch Watch App */ = {
@@ -542,6 +543,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF53C9122CD5035000AB5832 /* InfoPlist.strings in Resources */,
 				EF63B83E2CD0226B0018F6E5 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +917,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "UnitConverter mac/UnitConverter_mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -926,6 +929,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UnitConverter-mac-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Unit Converter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -934,7 +939,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.burrk.UnitConverter.UnitConverter-mac";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Unit Converter";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -946,6 +951,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "UnitConverter mac/UnitConverter_mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -957,6 +963,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "UnitConverter-mac-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Unit Converter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -965,7 +973,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.burrk.UnitConverter.UnitConverter-mac";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Unit Converter";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

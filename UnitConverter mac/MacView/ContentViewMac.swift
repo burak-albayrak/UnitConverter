@@ -14,6 +14,9 @@ struct ContentViewMac: View {
     var body: some View {
         MainMenuViewMac()
             .preferredColorScheme(isDarkMode ? .dark : .light)
+            .onDisappear {
+                NSApplication.shared.terminate(nil)
+            }
     }
 }
 
