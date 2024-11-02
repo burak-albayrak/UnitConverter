@@ -3,6 +3,9 @@
 UnitConverter is a SwiftUI-based application that allows users to convert various units across different categories such as length, temperature, time, volume, and more. 
 The app supports both SI and non-standard units and includes features like conversion history and localization for multiple languages.
 
+<img src="https://github.com/user-attachments/assets/72d83787-bf98-4460-ba65-90f4238480fb" width="300" height="300" />
+<img src="https://github.com/user-attachments/assets/57c175e5-ea36-4b94-a694-002e1b75e5e2" width="300" height="300" />
+
 ## Features
 
 **Multiple Unit Categories:** Choose from a wide range of unit categories including length, temperature, time, volume, engineering, electricity, and more.
