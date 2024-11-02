@@ -20,6 +20,14 @@ The app supports both SI and non-standard units and includes features like conve
 
 **Custom Unit Conversions:** Expands beyond Apple's default Measurement framework to include additional conversions.
 
+<img src="https://github.com/user-attachments/assets/0de0c1ea-1ca6-4bec-87d3-17bb223623bf" width="150" />
+<img src="https://github.com/user-attachments/assets/d94fe848-18fa-460f-b777-74670b117f0a" width="150" />
+<img src="https://github.com/user-attachments/assets/b38c6894-dc05-4728-ad79-0f859a55aa3f" width="150" />
+<img src="https://github.com/user-attachments/assets/e40d6bbe-c3db-4e5c-a576-b234954ef271" width="150" />
+<img src="https://github.com/user-attachments/assets/4ff9e899-96c7-454d-8856-9cdfd5ff7850" width="150" />
+<img src="https://github.com/user-attachments/assets/09f1f5ae-468f-43ae-88c0-a54cc2771e65" width="150" />
+
+
 ## Technical Overview
 
 The project follows the MVVM (Model-View-ViewModel) architecture to ensure a clean and scalable codebase:
